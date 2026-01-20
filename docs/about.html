@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AI Feature Tracker</title>
+    <meta name="description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+    <style>
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .about-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .about-content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
+        .about-content h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .about-content p { margin-bottom: 1rem; line-height: 1.6; }
+        .about-content ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+        .about-content li { margin-bottom: 0.5rem; line-height: 1.5; }
+        .about-content a { color: var(--accent); }
+        .about-content code { background: var(--card-bg); padding: 0.2em 0.4em; border-radius: 3px; font-size: 0.9em; }
+        .about-content pre { background: var(--card-bg); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; }
+        .about-content pre code { background: none; padding: 0; }
+        .about-content blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1rem 0; font-style: italic; }
+        .about-content table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        .about-content th, .about-content td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--card-border); }
+        .about-content hr { border: none; border-top: 1px solid var(--card-border); margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;">🤖 AI Feature Tracker</a></h1>
+        <div class="header-meta">
+            <a href="index.html" class="about-link" onclick="passTheme(this)">← Back to Dashboard</a>
+            <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="about-content">
+            <h1>AI Feature Tracker</h1>
+
+<strong>Community-maintained tracker of AI feature availability across subscription tiers.</strong>
+
+<p>🔗 <strong><a href="https://snapsynapse.github.io/ai-feature-tracker">View the Dashboard</a></strong></p>
+
+<hr>
+
+<h2>What is this?</h2>
+
+<p>A single source of truth for answering questions like:</p>
+<ul><li>"Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)</li>
+<li>"Can I use Claude Cowork on Windows?" (Not yet, macOS only)</li>
+<li>"Which local models can I run on my hardware?" (Depends on VRAM)</li>
+<p></ul></p>
+<p>Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.</p>
+
+<h2>Platforms Covered</h2>
+
+<table><thead><tr><th>Platform</th><th>Vendor</th><th>Features Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Local Models</strong></td><td>Various</td><td>Llama, Mistral, DeepSeek, Qwen, Codestral</td></tr></tbody></table>
+<h2>Features</h2>
+
+<ul><li><strong>Plan-by-plan availability</strong> — See exactly which tier unlocks each feature</li>
+<li><strong>Platform support</strong> — Windows, macOS, Linux, iOS, Android, web, terminal, API</li>
+<li><strong>Talking points</strong> — Ready-to-use sentences for presentations (click to copy)</li>
+<li><strong>Category filtering</strong> — Voice, Coding, Research, Agents, and more</li>
+<li><strong>Price tier filtering</strong> — Find features at your budget</li>
+<li><strong>Provider toggles</strong> — Focus on specific platforms</li>
+<li><strong>Dark/light mode</strong> — Toggle for your preference</li>
+<li><strong>Keyboard navigation</strong> — ↑/↓/j/k to navigate, Enter to copy talking point</li>
+<li><strong>Shareable URLs</strong> — Filter state preserved in URL parameters</li>
+<li><strong>Community maintained</strong> — Submit PRs to keep it current</li>
+<p></ul></p>
+<h2>How to Contribute</h2>
+
+<p>Found outdated info? Want to add a feature? See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<p>Quick version:</p>
+<p>1. Edit the relevant file in <code>data/platforms/</code></p>
+<p>2. Include a source link</p>
+<p>3. Submit a PR</p>
+
+<h2>Local Development</h2>
+
+<pre><code># Clone the repo
+<p>git clone https://github.com/snapsynapse/ai-feature-tracker.git</p>
+<p>cd ai-feature-tracker</p>
+
+<h1>Build the dashboard</h1>
+<p>node scripts/build.js</p>
+
+<h1>Open it</h1>
+<p>open docs/index.html</p>
+<p></code></pre></p>
+
+<h2>Data Format</h2>
+
+<p>Platform data is stored in simple markdown files. Example:</p>
+
+<pre><code>## Feature Name
+
+<table><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Category</td><td>agent</td></tr><tr><td>Status</td><td>ga</td></tr></tbody></table>
+<h3>Availability</h3>
+
+<table><thead><tr><th>Plan</th><th>Available</th><th>Limits</th><th>Notes</th></tr></thead><tbody><tr><td>Free</td><td>❌</td><td>—</td><td>Not available</td></tr><tr><td>Plus</td><td>✅</td><td>40/month</td><td>Message limit</td></tr></tbody></table>
+<h3>Talking Point</h3>
+
+<blockquote>"Your presenter-ready sentence with <strong>key details bolded</strong>."</blockquote>
+
+<h3>Sources</h3>
+
+<ul><li><a href="https://example.com">Official docs</a></li>
+<p></ul></code></pre></p>
+
+<p>See <a href="data/_schema.md">data/_schema.md</a> for the full specification.</p>
+
+<h2>Deployment</h2>
+
+<p>The site auto-deploys to GitHub Pages when changes are merged to <code>main</code>. The GitHub Action runs <code>scripts/build.js</code> and commits the updated <code>docs/index.html</code>.</p>
+
+<h2>License</h2>
+
+<p>MIT - see <a href="LICENSE">LICENSE</a></p>
+
+<h2>Credits</h2>
+
+<p>Created by <a href="https://snapsynapse.com">SnapSynapse</a> for the AI training community.</p>
+
+<p>Built with help from Claude.</p>
+
+<hr>
+
+<strong>Found an error?</strong> <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or submit a PR!
+
+        </div>
+
+        <footer>
+            <p>
+                Community-maintained. Found an error?
+                <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or
+                <a href="https://github.com/snapsynapse/ai-feature-tracker/pulls">submit a PR</a>.
+            </p>
+            <p style="margin-top: 8px;">
+                Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | You're welcome.
+            </p>
+        </footer>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function passTheme(link) {
+            const isLight = document.body.classList.contains('light-mode');
+            if (isLight) {
+                link.href = link.href.split('?')[0] + '?theme=light';
+            }
+        }
+    </script>
+</body>
+</html>

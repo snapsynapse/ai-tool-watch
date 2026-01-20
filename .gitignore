@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build artifacts (docs/index.html is committed intentionally)
+# docs/index.html is generated but committed for GitHub Pages
+
+# Environment
+.env
+.env.local

@@ -1,0 +1,337 @@
+---
+name: Grok
+vendor: xAI
+logo: https://grok.com/favicon.ico
+status_page: https://status.x.ai
+pricing_page: https://x.ai/grok
+last_verified: 2026-01-20
+---
+
+## Pricing
+
+| Plan | Price | Notes |
+|------|-------|-------|
+| Free | $0 | Limited queries via X |
+| X Premium | $8/mo | Basic Grok access |
+| X Premium+ | $16/mo | Enhanced limits |
+| SuperGrok | $30/mo | Highest limits, priority |
+
+---
+
+## Grok Chat
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/grok |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ⚠️ | Very limited | Few queries/day via X |
+| X Premium | ✅ | Standard | Regular access |
+| X Premium+ | ✅ | Enhanced | Higher limits |
+| SuperGrok | ✅ | Highest | Priority access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Standalone app |
+| macOS | ✅ | Standalone app |
+| Linux | ❌ |  |
+| iOS | ✅ | X app + standalone |
+| Android | ✅ | X app + standalone |
+| web | ✅ | x.ai/grok and x.com |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+### Regional
+
+Available globally where X is available.
+
+### Talking Point
+
+> "Grok is xAI's chatbot, available through X (Twitter) or standalone apps. **Free users get very limited access; X Premium ($8/mo) unlocks regular use.** SuperGrok at $30/mo gets you the highest limits."
+
+### Sources
+
+- [Grok Official](https://x.ai/grok)
+- [X Premium Features](https://help.x.com/en/using-x/x-premium)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Grok Image Generation (Aurora)
+
+| Property | Value |
+|----------|-------|
+| Category | image-gen |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/blog/grok-image-generation |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| X Premium | ✅ | Limited | Basic generation |
+| X Premium+ | ✅ | Higher | More generations |
+| SuperGrok | ✅ | Highest | Priority + most generations |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ |  |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ |  |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Grok can generate images using Aurora. **Requires X Premium ($8/mo) or higher.** SuperGrok gets the most generations per day."
+
+### Sources
+
+- [Grok Image Generation](https://x.ai/blog/grok-image-generation)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## DeepSearch
+
+| Property | Value |
+|----------|-------|
+| Category | research |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/blog/grok-deepsearch |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| X Premium | ⚠️ | Limited | Basic access |
+| X Premium+ | ✅ | Standard | Full access |
+| SuperGrok | ✅ | Unlimited | Priority |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ |  |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ |  |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "DeepSearch is Grok's multi-step research mode. **Premium+ or SuperGrok recommended** for full access; basic Premium has limited DeepSearch."
+
+### Sources
+
+- [Grok DeepSearch](https://x.ai/blog/grok-deepsearch)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Think Mode
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/blog/grok-3 |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| X Premium | ✅ | Limited | Extended reasoning |
+| X Premium+ | ✅ | Standard | |
+| SuperGrok | ✅ | Full | Longest thinking time |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ |  |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ |  |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Think Mode lets Grok reason through complex problems step-by-step. **Available on all paid tiers**, with SuperGrok getting the longest thinking time."
+
+### Sources
+
+- [Grok Think Mode](https://x.ai/blog/grok-3)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Real-time X/Twitter Data
+
+| Property | Value |
+|----------|-------|
+| Category | search |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/grok |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ⚠️ | Limited | Basic access |
+| X Premium | ✅ | Full | Real-time posts |
+| X Premium+ | ✅ | Full | |
+| SuperGrok | ✅ | Full | |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ |  |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ |  |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Grok has **real-time access to X/Twitter posts**—its unique advantage over other chatbots. Even free users get some access to this."
+
+### Sources
+
+- [Grok Official](https://x.ai/grok)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Grok Voice Mode
+
+| Property | Value |
+|----------|-------|
+| Category | voice |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/blog/grok-voice |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| X Premium | ✅ | Standard | Voice conversations |
+| X Premium+ | ✅ | Enhanced | Priority |
+| SuperGrok | ✅ | Highest | Best quality |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ❌ | Mobile only |
+| macOS | ❌ | Mobile only |
+| Linux | ❌ |  |
+| iOS | ✅ | X app + standalone |
+| Android | ✅ | X app + standalone |
+| web | ❌ | Mobile only |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+
+### Regional
+
+Available globally where X is available.
+
+### Talking Point
+
+> "Grok Voice Mode allows natural voice conversations with Grok. **Requires X Premium ($8/mo) or higher**—not available to free users. Currently mobile only (iOS and Android)."
+
+### Sources
+
+- [Grok Voice](https://x.ai/blog/grok-voice)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definitions - AI Feature Tracker</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+    <style>
+        .def-container { max-width: 900px; margin: 0 auto; }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--card-border);
+        }
+        section h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        section h3 {
+            color: var(--text-heading);
+            font-size: 1rem;
+            margin: 20px 0 12px 0;
+        }
+        section p { margin-bottom: 12px; color: var(--text-primary); }
+
+        .def-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 8px 16px;
+            margin: 16px 0;
+        }
+        .def-term {
+            font-weight: 600;
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .def-desc { color: var(--text-primary); }
+
+        .badge-example {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+        .badge-example.avail-ga { background: #4caf50; color: #000; }
+        .badge-example.avail-beta { background: #ff9800; color: #000; }
+        .badge-example.avail-preview { background: #9c27b0; color: #fff; }
+        .badge-example.avail-deprecated { background: #666; color: #fff; }
+        .badge-example.gate-free { background: #2196f3; color: #fff; }
+        .badge-example.gate-paid { background: #1a3a5c; color: #4fc3f7; border: 1px solid #4fc3f7; }
+        .badge-example.gate-invite { background: #5c1a3a; color: #f74fc3; border: 1px solid #f74fc3; }
+        .badge-example.gate-org { background: #3a5c1a; color: #c3f74f; border: 1px solid #c3f74f; }
+
+        .provider-example {
+            display: inline-block;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 14px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .price-example {
+            display: inline-block;
+            background: var(--input-bg);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+        th {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        td { color: var(--text-primary); font-size: 0.9rem; }
+        td:first-child {
+            font-family: monospace;
+            color: var(--text-heading);
+            white-space: nowrap;
+        }
+
+        .note {
+            background: var(--input-bg);
+            border-left: 3px solid var(--accent);
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        code {
+            background: var(--input-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: var(--text-primary);
+        }
+        ol { margin: 16px 0; padding-left: 24px; color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;">🤖 AI Feature Tracker</a></h1>
+        <div class="header-meta">
+            <a href="index.html" class="about-link" onclick="passTheme(this)">← Back to Dashboard</a>
+            <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
+        </div>
+    </header>
+    <div class="container def-container">
+        <h2 style="margin-bottom: 24px; color: var(--text-heading);">Definitions & How to Read This</h2>
+
+        <section>
+            <h2>Categories</h2>
+            <p>Features are organized by what they do, separating inputs from outputs:</p>
+
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td>vision</td>
+                    <td>Image/document understanding (input)</td>
+                    <td>Claude Vision, GPT-4 Vision</td>
+                </tr>
+                <tr>
+                    <td>image-gen</td>
+                    <td>Image creation (output)</td>
+                    <td>DALL-E, Imagen, Aurora</td>
+                </tr>
+                <tr>
+                    <td>voice</td>
+                    <td>Voice input and/or output</td>
+                    <td>Advanced Voice Mode</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>Web search capabilities</td>
+                    <td>Real-time X data, Focus Modes</td>
+                </tr>
+                <tr>
+                    <td>research</td>
+                    <td>Deep/agentic research</td>
+                    <td>Deep Research, Pro Search</td>
+                </tr>
+                <tr>
+                    <td>browser</td>
+                    <td>Dedicated browser experiences</td>
+                    <td>Atlas, Comet, Copilot Vision</td>
+                </tr>
+                <tr>
+                    <td>coding</td>
+                    <td>Code generation, editing, execution</td>
+                    <td>Claude Code, Codex</td>
+                </tr>
+                <tr>
+                    <td>agents</td>
+                    <td>Autonomous task execution</td>
+                    <td>Agent Mode, Cowork, Operator</td>
+                </tr>
+                <tr>
+                    <td>local-files</td>
+                    <td>Local file/document handling</td>
+                    <td>Projects, Artifacts, Collections</td>
+                </tr>
+                <tr>
+                    <td>cloud-files</td>
+                    <td>Cloud storage integration</td>
+                    <td>Copilot in Office, Gemini in Workspace</td>
+                </tr>
+                <tr>
+                    <td>video</td>
+                    <td>Video generation or editing</td>
+                    <td>Sora</td>
+                </tr>
+                <tr>
+                    <td>other</td>
+                    <td>Base models, reasoning modes, etc.</td>
+                    <td>Extended Thinking, Gems</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Providers</h2>
+            <p>Filter by company. Sorted by estimated active users (descending):</p>
+
+            <div style="margin: 16px 0;">
+                <span class="provider-example">OpenAI</span>
+                <span class="provider-example">Microsoft</span>
+                <span class="provider-example">Google</span>
+                <span class="provider-example">Anthropic</span>
+                <span class="provider-example">Perplexity AI</span>
+                <span class="provider-example">xAI</span>
+                <span class="provider-example">Various</span>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Provider</th>
+                    <th>Products</th>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>ChatGPT (Free, Go, Plus, Pro, Team, Enterprise)</td>
+                </tr>
+                <tr>
+                    <td>Microsoft</td>
+                    <td>Copilot (Free, Pro, M365 Copilot)</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>Gemini (Free, AI Premium, Workspace)</td>
+                </tr>
+                <tr>
+                    <td>Anthropic</td>
+                    <td>Claude (Free, Pro, Max 5x, Max 20x, Team, Enterprise)</td>
+                </tr>
+                <tr>
+                    <td>Perplexity AI</td>
+                    <td>Perplexity (Free, Pro)</td>
+                </tr>
+                <tr>
+                    <td>xAI</td>
+                    <td>Grok (Free, X Premium, X Premium+, SuperGrok)</td>
+                </tr>
+                <tr>
+                    <td>Various</td>
+                    <td>Local/open models (Llama, Mistral, DeepSeek, Qwen)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Pricing Tiers</h2>
+            <p>We normalize pricing across providers to make comparison easier:</p>
+
+            <div style="margin: 16px 0;">
+                <span class="price-example">$0/mo</span>
+                <span class="price-example">$8/mo</span>
+                <span class="price-example">$16/mo</span>
+                <span class="price-example">$20/mo</span>
+                <span class="price-example">$30/mo</span>
+                <span class="price-example">$100/mo</span>
+                <span class="price-example">$200/mo</span>
+                <span class="price-example">Team</span>
+                <span class="price-example">Enterprise</span>
+            </div>
+
+            <h3>How Prices Are Normalized</h3>
+            <div class="def-grid">
+                <span class="def-term">$0/mo</span>
+                <span class="def-desc">Free tiers across all providers</span>
+
+                <span class="def-term">$X/mo</span>
+                <span class="def-desc">Individual subscription prices (monthly)</span>
+
+                <span class="def-term">Team</span>
+                <span class="def-desc">Any per-user pricing (e.g., $25/user/mo, $30/user/mo) — indicates team/business plans</span>
+
+                <span class="def-term">Enterprise</span>
+                <span class="def-desc">Custom pricing, contact sales, SSO, etc.</span>
+            </div>
+
+            <div class="note">
+                <strong>Why "Team" instead of specific prices?</strong><br>
+                Per-user pricing varies widely ($20–$40/user/mo) and often requires minimums. We group these as "Team" since the key distinction is individual vs. organization billing.
+            </div>
+        </section>
+
+        <section>
+            <h2>Status Badges</h2>
+            <p>Each feature shows two badges:</p>
+
+            <h3>Release Status (first badge)</h3>
+            <p>
+                <span class="badge-example avail-ga">GA</span>
+                <span class="badge-example avail-beta">Beta</span>
+                <span class="badge-example avail-preview">Preview</span>
+                <span class="badge-example avail-deprecated">Deprecated</span>
+            </p>
+            <div class="def-grid">
+                <span class="def-term">GA</span>
+                <span class="def-desc">Generally Available — stable, production-ready</span>
+
+                <span class="def-term">Beta</span>
+                <span class="def-desc">Public beta — available but may have bugs</span>
+
+                <span class="def-term">Preview</span>
+                <span class="def-desc">Research preview — early access, limited availability</span>
+
+                <span class="def-term">Deprecated</span>
+                <span class="def-desc">Being phased out — may stop working soon</span>
+            </div>
+
+            <h3>Access Type (second badge)</h3>
+            <p>
+                <span class="badge-example gate-free">Free</span>
+                <span class="badge-example gate-paid">Paid</span>
+                <span class="badge-example gate-invite">Invite</span>
+                <span class="badge-example gate-org">Org-only</span>
+            </p>
+            <div class="def-grid">
+                <span class="def-term">Free</span>
+                <span class="def-desc">Available on free tier</span>
+
+                <span class="def-term">Paid</span>
+                <span class="def-desc">Requires paid subscription</span>
+
+                <span class="def-term">Invite</span>
+                <span class="def-desc">Invite-only or waitlist</span>
+
+                <span class="def-term">Org-only</span>
+                <span class="def-desc">Enterprise/organization accounts only</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Availability Symbols</h2>
+            <p>In the plan availability grid:</p>
+            <div class="def-grid">
+                <span class="def-term" style="color: #4caf50;">✓</span>
+                <span class="def-desc">Available on this plan</span>
+
+                <span class="def-term" style="color: #666;">✗</span>
+                <span class="def-desc">Not available on this plan</span>
+
+                <span class="def-term" style="color: #ff9800;">Soon</span>
+                <span class="def-desc">Announced, coming soon</span>
+
+                <span class="def-term" style="color: #ffeb3b;">~</span>
+                <span class="def-desc">Partial or with caveats</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Date Fields</h2>
+            <p>Each feature tracks three dates to separate truth from confidence:</p>
+            <div class="def-grid">
+                <span class="def-term">Launched</span>
+                <span class="def-desc">When the feature actually launched or last changed (absolute truth)</span>
+
+                <span class="def-term">Verified</span>
+                <span class="def-desc">When someone confirmed the info is accurate against official sources</span>
+
+                <span class="def-term">Checked</span>
+                <span class="def-desc">When someone last looked at this entry (freshness indicator)</span>
+            </div>
+
+            <div class="note">
+                <strong>Click on "Launched" dates</strong> to see the changelog history for that feature.
+            </div>
+        </section>
+
+        <section>
+            <h2>Contributing</h2>
+            <p>This tracker is community-maintained. To update information:</p>
+            <ol>
+                <li>Fork the repository on GitHub</li>
+                <li>Edit the relevant markdown file in <code>data/platforms/</code></li>
+                <li>Update the date fields appropriately</li>
+                <li>Submit a pull request</li>
+            </ol>
+            <p>See the <a href="https://github.com/snapsynapse/ai-feature-tracker">repository README</a> for detailed contribution guidelines.</p>
+        </section>
+
+        <footer>
+            <p>
+                Community-maintained. Found an error?
+                <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or
+                <a href="https://github.com/snapsynapse/ai-feature-tracker/pulls">submit a PR</a>.
+            </p>
+            <p style="margin-top: 8px;">
+                Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | You're welcome.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function passTheme(link) {
+            const isLight = document.body.classList.contains('light-mode');
+            if (isLight) {
+                link.href = link.href.split('?')[0] + '?theme=light';
+            }
+        }
+    </script>
+</body>
+</html>

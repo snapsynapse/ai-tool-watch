@@ -1,0 +1,273 @@
+---
+name: Microsoft Copilot
+vendor: Microsoft
+logo: https://copilot.microsoft.com/favicon.ico
+status_page: https://status.office.com
+pricing_page: https://www.microsoft.com/en-us/microsoft-copilot
+last_verified: 2026-01-20
+---
+
+## Pricing
+
+| Plan | Price | Notes |
+|------|-------|-------|
+| Free | $0 | Basic Copilot access |
+| Copilot Pro | $20/mo | Priority access, Office integration |
+| Copilot for Microsoft 365 | $30/user/mo | Full Copilot in M365 apps (requires M365 license) |
+
+---
+
+## Copilot in Office Apps
+
+| Property | Value |
+|----------|-------|
+| Category | cloud-files |
+| Status | ga |
+| Gating | paid |
+| URL | https://www.microsoft.com/en-us/microsoft-365/copilot |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| Copilot Pro | ✅ | Priority | Word, Excel, PowerPoint, Outlook |
+| M365 Copilot | ✅ | Full | Enterprise features |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Office desktop apps |
+| macOS | ✅ | Office desktop apps |
+| Linux | ❌ |  |
+| iOS | ✅ | Office mobile apps |
+| Android | ✅ | Office mobile apps |
+| web | ✅ | Office web apps |
+| terminal | ❌ |  |
+| API | ❌ | No consumer API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Copilot in Word, Excel, PowerPoint requires **Copilot Pro ($20/mo) or M365 Copilot ($30/user/mo)**. Free Copilot doesn't include Office integration."
+
+### Sources
+
+- [Copilot Pro](https://www.microsoft.com/en-us/store/b/copilotpro)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Image Generation (Designer)
+
+| Property | Value |
+|----------|-------|
+| Category | image-gen |
+| Status | ga |
+| Gating | paid |
+| URL | https://designer.microsoft.com/ |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | 15 boosts/day | Basic generation |
+| Copilot Pro | ✅ | 100 boosts/day | Faster, priority |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Native integration |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ | copilot.microsoft.com |
+| terminal | ❌ |  |
+| API | ❌ | No consumer API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Image generation with Designer is **available on free Copilot** with 15 boosts per day. Pro gets 100 boosts and priority generation."
+
+### Sources
+
+- [Microsoft Designer](https://designer.microsoft.com/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## GPT-4 Access
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | paid |
+| URL | https://copilot.microsoft.com/ |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ⚠️ | Limited | Falls back to faster models at peak |
+| Copilot Pro | ✅ | Priority | Consistent GPT-4 access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ |  |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ |  |
+| Android | ✅ |  |
+| web | ✅ |  |
+| terminal | ❌ |  |
+| API | ❌ | No consumer API |
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Free Copilot uses GPT-4 when available but may fall back to faster models during peak times. **Pro guarantees priority GPT-4 access.**"
+
+### Sources
+
+- [Copilot Pro Features](https://www.microsoft.com/en-us/store/b/copilotpro)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Copilot Vision
+
+| Property | Value |
+|----------|-------|
+| Category | browser |
+| Status | preview |
+| Gating | paid |
+| URL | https://blogs.microsoft.com/blog/2024/10/01/an-ai-companion-for-everyone/ |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| Copilot Pro | ✅ | Preview | See and discuss webpages |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Edge browser |
+| macOS | ⚠️ | Edge on Mac |
+| Linux | ❌ |  |
+| iOS | ❌ | Not available |
+| Android | ❌ | Not available |
+| web | ❌ | Edge browser only |
+| terminal | ❌ |  |
+| API | ❌ | No consumer API |
+### Regional
+
+Available in preview; limited regions.
+
+### Talking Point
+
+> "Copilot Vision lets Copilot see and discuss the webpage you're viewing in Edge. **Pro only, and currently Edge browser on desktop only.**"
+
+### Sources
+
+- [Copilot Vision](https://blogs.microsoft.com/blog/2024/10/01/an-ai-companion-for-everyone/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
+
+---
+
+## Copilot Voice
+
+| Property | Value |
+|----------|-------|
+| Category | voice |
+| Status | ga |
+| Gating | free |
+| URL | https://www.microsoft.com/en-us/microsoft-copilot |
+| Launched | 2026-01-20T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Voice input and output |
+| Copilot Pro | ✅ | Priority | Enhanced voice features |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Native integration |
+| macOS | ✅ |  |
+| Linux | ❌ |  |
+| iOS | ✅ | Copilot app |
+| Android | ✅ | Copilot app |
+| web | ✅ | Browser with microphone |
+| terminal | ❌ |  |
+| API | ❌ | No consumer API |
+
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Copilot Voice is **available on all tiers including free**. You can speak to Copilot on desktop, mobile, and web."
+
+### Sources
+
+- [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-20T12:00Z | Initial entry |
