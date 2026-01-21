@@ -506,6 +506,56 @@ body.light-mode .badge.gate-org { background: #f1f8e9; color: #33691e; border: 1
 }
 
 .avail-item .plan { color: var(--text-secondary); display: block; }
+.avail-item .plan.has-tooltip {
+    position: relative;
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+}
+
+.plan-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 200px;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--text);
+    z-index: 100;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.15s, visibility 0.15s;
+}
+
+.plan.has-tooltip:hover .plan-tooltip,
+.plan.has-tooltip:focus .plan-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Plan tooltip arrow */
+.plan-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--border);
+}
+
 .avail-item .status { font-weight: 600; }
 
 /* Status indicators - WCAG compliant */
@@ -605,6 +655,63 @@ body.light-mode .talking-point.copied { background: #2e7d32 !important; color: #
 .date-item.launched .date-label::before { content: '🚀 '; }
 .date-item.verified .date-label::before { content: '✓ '; }
 .date-item.checked .date-label::before { content: '👁 '; }
+
+/* Notes tooltip */
+.notes-tooltip {
+    position: relative;
+    margin-left: auto;
+    cursor: help;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+}
+
+.notes-tooltip:hover,
+.notes-tooltip:focus {
+    opacity: 1;
+}
+
+.notes-icon {
+    display: inline-block;
+}
+
+.notes-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    width: 280px;
+    max-width: 90vw;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--text);
+    z-index: 100;
+    white-space: normal;
+    transition: opacity 0.15s, visibility 0.15s;
+}
+
+.notes-tooltip:hover .notes-content,
+.notes-tooltip:focus .notes-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip arrow */
+.notes-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 12px;
+    border: 6px solid transparent;
+    border-top-color: var(--border);
+}
 
 /* Permalink button */
 .permalink-btn {

@@ -365,7 +365,7 @@ Available globally.
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ❌ | — | Not available |
+| Free | ⚠️ | Limited | Custom not available |
 | Pro | ✅ | Standard | Full access |
 | Max 5x | ✅ | Extended | Higher limits |
 | Max 20x | ✅ | Extended | Higher limits |
@@ -391,7 +391,15 @@ Available globally where Claude is available.
 
 ### Talking Point
 
-> "Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. **Available on Pro and above**; not available on the free tier."
+> "Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. **All Skills require a paid plan (Pro and above)**—both prebuilt skills from Anthropic and custom skills you create. Free tier has no access to Skills at all."
+
+### Notes
+
+**Prebuilt vs Custom Skills:**
+- **Prebuilt Skills**: Created and maintained by Anthropic (Excel, Word, PowerPoint, PDF creation). Activate automatically when relevant.
+- **Custom Skills**: User-created skills uploaded as ZIP files. Private to individual accounts; Team/Enterprise can provision org-wide.
+
+Both types require Pro, Max, Team, or Enterprise plans. Free accounts cannot use any Skills.
 
 ### Sources
 

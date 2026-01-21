@@ -88,6 +88,7 @@ function parseFeature(section) {
     platforms: [],
     regional: '',
     talking_point: '',
+    notes: '',
     sources: [],
     changelog: []
   };
@@ -129,6 +130,18 @@ function parseFeature(section) {
   const talkingMatch = trimmed.match(/### Talking Point\n\n> "([^"]+)"/);
   if (talkingMatch) {
     feature.talking_point = talkingMatch[1];
+  }
+
+  // Parse notes (single line or multiline, plaintext for tooltip)
+  const notesMatch = trimmed.match(/### Notes\n\n([\s\S]*?)(?=\n###|\n---|\n## |$)/);
+  if (notesMatch) {
+    // Convert markdown to plain text for tooltip, collapse to single line
+    feature.notes = notesMatch[1].trim()
+      .replace(/\*\*([^*]+)\*\*/g, '$1')  // Remove bold
+      .replace(/\*([^*]+)\*/g, '$1')      // Remove italic
+      .replace(/^- /gm, '• ')             // Convert bullets
+      .replace(/\n+/g, ' ')               // Collapse newlines
+      .trim();
   }
 
   // Parse sources
@@ -447,11 +460,15 @@ function generateHTML(platforms) {
                         <span class="badges"><button class="permalink-btn" onclick="copyPermalink('${featureId}')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button>${availabilityBadge(f.status)}${gatingBadge(f.gating)}</span>
                     </div>
                     <div class="avail-grid">
-                        ${f.availability.map(a => `
+                        ${f.availability.map(a => {
+                          const hasTooltip = a.limits || a.notes;
+                          const tooltipText = [a.limits, a.notes].filter(Boolean).join(' • ').replace(/"/g, '&quot;');
+                          return `
                         <div class="avail-item">
-                            <span class="plan">${a.plan}</span>
+                            <span class="plan${hasTooltip ? ' has-tooltip' : ''}"${hasTooltip ? ` tabindex="0"` : ''}>${a.plan}${hasTooltip ? `<span class="plan-tooltip">${tooltipText}</span>` : ''}</span>
                             <span class="status">${availBadge(a.available)}</span>
-                        </div>`).join('')}
+                        </div>`;
+                        }).join('')}
                     </div>
                     <div class="platforms-row">
                         ${(() => {
@@ -474,6 +491,7 @@ function generateHTML(platforms) {
                     <div class="dates-row">
                         ${f.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(f.launched)}</span></span>` : ''}
                         ${f.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(f.verified)}</span></span>` : ''}
+                        ${f.notes ? `<span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">${f.notes.replace(/"/g, '&quot;')}</span></span>` : ''}
                     </div>
                 </div>`;
                 }).join('')}
