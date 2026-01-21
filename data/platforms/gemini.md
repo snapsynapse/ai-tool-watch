@@ -480,3 +480,166 @@ Available globally where Gemini is available.
 |------|--------|
 | 2025-10-01T12:00Z | Gemini CLI Extensions added with MCP support |
 | 2023-09-19T12:00Z | Initial entry |
+
+---
+
+## Canvas
+
+| Property | Value |
+|----------|-------|
+| Category | coding |
+| Status | ga |
+| Gating | free |
+| URL | https://gemini.google/overview/canvas/ |
+| Launched | 2025-03-18T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | 5 prompts/day | 32K context |
+| AI Premium | ✅ | 100-500/day | 1M context window |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Web-based |
+| macOS | ✅ | Web-based |
+| Linux | ❌ |  |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| web | ✅ | gemini.google.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally where Gemini is available.
+
+### Talking Point
+
+> "Gemini Canvas is an interactive workspace for creating and refining writing and code projects. **Available on all plans including free**—free users get limited prompts per day, while AI Premium unlocks a 1 million token context window."
+
+### Sources
+
+- [Gemini Canvas](https://gemini.google/overview/canvas/)
+- [Gemini Collaboration Features](https://blog.google/products/gemini/gemini-collaboration-features/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-03-18T12:00Z | Initial entry |
+
+---
+
+## Audio Overview
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://blog.google/technology/ai/notebooklm-audio-overviews/ |
+| Launched | 2024-09-11T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | 3/day | AI-generated podcast summaries |
+| AI Premium | ✅ | 20/day | Higher limits |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Web-based |
+| macOS | ✅ | Web-based |
+| Linux | ❌ |  |
+| iOS | ✅ | Gemini app |
+| Android | ✅ | Gemini app |
+| web | ✅ | gemini.google.com, notebooklm.google.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally; initially English only, now 50+ languages.
+
+### Talking Point
+
+> "Audio Overview transforms your content into AI-generated podcast-style discussions. **Free users get 3 per day**; AI Premium gets 20. Originally from NotebookLM, now integrated into Gemini."
+
+### Sources
+
+- [NotebookLM Audio Overviews](https://blog.google/technology/ai/notebooklm-audio-overviews/)
+- [Gemini Collaboration Features](https://blog.google/products/gemini/gemini-collaboration-features/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-04-01T12:00Z | 50+ languages supported |
+| 2025-03-18T12:00Z | Integrated into Gemini app |
+| 2024-09-11T12:00Z | Initial entry (NotebookLM) |
+
+---
+
+## Project Astra
+
+| Property | Value |
+|----------|-------|
+| Category | vision |
+| Status | ga |
+| Gating | free |
+| URL | https://deepmind.google/models/project-astra/ |
+| Launched | 2024-12-11T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Camera + screen sharing |
+| AI Premium | ✅ | Full | Early access to new features |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ❌ | Mobile only |
+| macOS | ❌ | Mobile only |
+| Linux | ❌ |  |
+| iOS | ✅ | Gemini app |
+| Android | ✅ | Gemini app, Android 10+ |
+| web | ❌ | Mobile only |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally where Gemini is available.
+
+### Talking Point
+
+> "Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. **Now free for everyone** on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more."
+
+### Sources
+
+- [Project Astra](https://deepmind.google/models/project-astra/)
+- [Gemini 2.0 Announcement](https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-05-20T12:00Z | Free for all users |
+| 2025-04-07T12:00Z | Expanded to Pixel 9 and Galaxy S25 |
+| 2024-12-11T12:00Z | Initial entry

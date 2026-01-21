@@ -129,6 +129,12 @@ body.light-mode .site-header {
 
 h1, .site-header h1 { font-size: 1.4rem; color: var(--text-heading); margin: 0; }
 
+.header-logo {
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -2px;
+}
+
 .header-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 
 .last-updated {

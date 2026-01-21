@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Feature Tracker - Feature Availability by Plan</title>
     <meta name="description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Feature Tracker">
+    <meta property="og:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="https://snapsynapse.github.io/ai-feature-tracker/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Feature Tracker">
+    <meta name="twitter:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta name="twitter:image" content="assets/og-image.png">
+
     <link rel="stylesheet" href="assets/styles.css">
     <script>
         // Initialize theme BEFORE body renders to prevent flash
@@ -23,7 +42,7 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container" id="main-content">
         <header>
-            <h1>🤖 AI Feature Tracker</h1>
+            <h1><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</h1>
             <div class="header-meta">
                 <span class="last-updated">Last built: 2026-01-21</span>
                 <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
@@ -76,7 +95,7 @@
                     <option value="enterprise">Enterprise</option>
                 </select>
             </div>
-            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>51</strong> of <strong>51</strong> features</span>
+            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>67</strong> of <strong>67</strong> features</span>
             <a href="definitions.html" class="definitions-link" onclick="passTheme(this)">ℹ️ What's this mean?</a>
         </div>
 
@@ -362,6 +381,216 @@
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
                 </div>
+                <div class="feature-card" data-category="coding" data-prices="0_8_20_200_team_enterprise">
+                    <div class="feature-header">
+                        <h3><a href="https://openai.com/index/introducing-canvas/" target="_blank" class="feature-link">Canvas</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Go</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Plus</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon soon" title="iOS">iOS</span><span class="plat-icon soon" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Canvas is ChatGPT's split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. <strong>Available on all plans including free</strong>, but currently desktop and web only. Mobile is coming soon.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('chatgpt-canvas')"><span class="date-label">Launched</span><span class="date-value">2024-10-03T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="local-files" data-prices="0_8_20_200_team_enterprise">
+                    <div class="feature-header">
+                        <h3><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" class="feature-link">Projects</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Go</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Plus</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon partial" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Projects let you group related chats, files, and custom instructions into workspaces. <strong>Available on all plans including free</strong>—organize your work across topics with project-specific context.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('chatgpt-projects')"><span class="date-label">Launched</span><span class="date-value">2024-12-13T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="other" data-prices="0_8_20_200_team_enterprise">
+                    <div class="feature-header">
+                        <h3><a href="https://openai.com/index/memory-and-new-controls-for-chatgpt/" target="_blank" class="feature-link">Memory</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Go</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Plus</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Memory lets ChatGPT remember your preferences and context across conversations. <strong>All plans get saved memories</strong>; Plus/Pro also get full chat history reference for richer personalization.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('chatgpt-memory')"><span class="date-label">Launched</span><span class="date-value">2024-09-05T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="image-gen" data-prices="20_200_team">
+                    <div class="feature-header">
+                        <h3><a href="https://openai.com/index/sora-is-here/" target="_blank" class="feature-link">Sora (Video Generation)</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-paid">Paid</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Go</span>
+                            <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Plus</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Sora generates videos from text prompts—up to 25 seconds at 1080p. <strong>Requires Plus ($20/mo) or Pro ($200/mo)</strong>. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('chatgpt-sora--video-generation-')"><span class="date-label">Launched</span><span class="date-value">2024-12-09T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="search" data-prices="0_8_20_200_team_enterprise">
+                    <div class="feature-header">
+                        <h3><a href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" class="feature-link">ChatGPT Search</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Go</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Plus</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">ChatGPT Search provides real-time web results with cited sources—news, weather, stocks, and more. <strong>Available on all plans including free</strong> and even logged-out users. Powered by Bing and partner publishers.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('chatgpt-chatgpt-search')"><span class="date-label">Launched</span><span class="date-value">2024-10-31T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -541,6 +770,40 @@
                     <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. <strong>Requires M365 Copilot ($30/user/mo)</strong>—not available on free or Pro plans. MCP support was added in November 2025.</div>
                     <div class="dates-row">
                         <span class="date-item launched clickable" onclick="showChangelog('microsoft copilot-copilot-connectors')"><span class="date-label">Launched</span><span class="date-value">2023-11-01T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="agents" data-prices="">
+                    <div class="feature-header">
+                        <h3><a href="https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder" target="_blank" class="feature-link">Agent Builder</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-paid">Paid</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Copilot Pro</span>
+                            <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">M365 Copilot</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Copilot Chat (M365 commercial)</span>
+                            <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon partial" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Agent Builder lets you create custom AI agents using natural language—no coding required. <strong>Requires M365 Copilot ($30/user/mo)</strong> for full access. Basic agents work in Copilot Chat for M365 commercial users. Will be rebranded as 'Copilot Studio Lite'.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('microsoft copilot-agent-builder')"><span class="date-label">Launched</span><span class="date-value">2025-02-24T12:00Z</span></span>
                         <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
@@ -798,6 +1061,84 @@
                     <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Extensions connect to Google services like Gmail, Drive, YouTube, Maps, and more. <strong>Available on all plans including free.</strong> The Gemini CLI also supports extensions via MCP for developers.</div>
                     <div class="dates-row">
                         <span class="date-item launched clickable" onclick="showChangelog('gemini-extensions')"><span class="date-label">Launched</span><span class="date-value">2023-09-19T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="coding" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://gemini.google/overview/canvas/" target="_blank" class="feature-link">Canvas</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">AI Premium</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Canvas is an interactive workspace for creating and refining writing and code projects. <strong>Available on all plans including free</strong>—free users get limited prompts per day, while AI Premium unlocks a 1 million token context window.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('gemini-canvas')"><span class="date-label">Launched</span><span class="date-value">2025-03-18T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="other" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://blog.google/technology/ai/notebooklm-audio-overviews/" target="_blank" class="feature-link">Audio Overview</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">AI Premium</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Audio Overview transforms your content into AI-generated podcast-style discussions. <strong>Free users get 3 per day</strong>; AI Premium gets 20. Originally from NotebookLM, now integrated into Gemini.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('gemini-audio-overview')"><span class="date-label">Launched</span><span class="date-value">2024-09-11T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="vision" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://deepmind.google/models/project-astra/" target="_blank" class="feature-link">Project Astra</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">AI Premium</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. <strong>Now free for everyone</strong> on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('gemini-project-astra')"><span class="date-label">Launched</span><span class="date-value">2024-12-11T12:00Z</span></span>
                         <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
@@ -1124,6 +1465,48 @@
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
                 </div>
+                <div class="feature-card" data-category="integrations" data-prices="0_20_100_200_team_enterprise">
+                    <div class="feature-header">
+                        <h3><a href="https://claude.ai/directory" target="_blank" class="feature-link">Connectors</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-paid">Paid</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Max 5x</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Max 20x</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Team</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon partial" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Connectors let Claude access 75+ services—Google Drive, Notion, Slack, Stripe, and more. <strong>Pro and above get full access</strong>; free users can only use desktop extensions and GitHub. Browse available connectors at claude.ai/directory.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('claude-connectors')"><span class="date-label">Launched</span><span class="date-value">2025-05-01T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1384,6 +1767,70 @@
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
                 </div>
+                <div class="feature-card" data-category="research" data-prices="0_20_200_team">
+                    <div class="feature-header">
+                        <h3><a href="https://www.perplexity.ai/hub/blog/perplexity-pages" target="_blank" class="feature-link">Pages</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Max</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Enterprise Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon partial" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Pages let you turn research into shareable, formatted articles with AI-generated sections and citations. <strong>Available on all plans including free.</strong> Created pages are public and searchable.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('perplexity-pages')"><span class="date-label">Launched</span><span class="date-value">2024-05-30T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="other" data-prices="0_20_200">
+                    <div class="feature-header">
+                        <h3><a href="https://www.perplexity.ai/hub/blog/shop-like-a-pro" target="_blank" class="feature-link">Buy with Pro (Shopping)</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Pro</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Max</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Buy with Pro lets you research and purchase products directly in Perplexity—no ads, just AI recommendations. <strong>Now available on all plans</strong> via PayPal integration. Free shipping on all orders. Currently US only.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('perplexity-buy-with-pro--shopping-')"><span class="date-label">Launched</span><span class="date-value">2024-11-18T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1398,8 +1845,8 @@
             </div>
             <div class="pricing-bar">
                 <span class="price-tag"><strong>Free</strong>: $0</span>
-                <span class="price-tag"><strong>X Premium</strong>: $8/mo</span>
-                <span class="price-tag"><strong>X Premium+</strong>: $16/mo</span>
+                <span class="price-tag"><strong>Premium</strong>: $8/mo</span>
+                <span class="price-tag"><strong>Premium+</strong>: $16/mo</span>
                 <span class="price-tag"><strong>SuperGrok</strong>: $30/mo</span>
             </div>
             <div class="features-grid">
@@ -1416,11 +1863,11 @@
                             <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1431,7 +1878,7 @@
                     <div class="platforms-row">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                     </div>
-                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok is xAI's chatbot, available through X (Twitter) or standalone apps. <strong>Free users get very limited access; X Premium ($8/mo) unlocks regular use.</strong> SuperGrok at $30/mo gets you the highest limits.</div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok is xAI's chatbot, available through X (Twitter) or standalone apps. <strong>Free users get very limited access; Premium ($8/mo) unlocks regular use.</strong> SuperGrok at $30/mo gets you the highest limits.</div>
                     <div class="dates-row">
                         <span class="date-item launched clickable" onclick="showChangelog('grok-grok-chat')"><span class="date-label">Launched</span><span class="date-value">2023-11-04T12:00Z</span></span>
                         <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
@@ -1450,11 +1897,11 @@
                             <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1465,7 +1912,7 @@
                     <div class="platforms-row">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                     </div>
-                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok can generate images using Aurora. <strong>Requires X Premium ($8/mo) or higher.</strong> SuperGrok gets the most generations per day.</div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok can generate images using Aurora. <strong>Requires Premium ($8/mo) or higher.</strong> SuperGrok gets the most generations per day.</div>
                     <div class="dates-row">
                         <span class="date-item launched clickable" onclick="showChangelog('grok-grok-image-generation--aurora-')"><span class="date-label">Launched</span><span class="date-value">2024-12-09T12:00Z</span></span>
                         <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
@@ -1484,11 +1931,11 @@
                             <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1518,11 +1965,11 @@
                             <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1552,11 +1999,11 @@
                             <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1586,11 +2033,11 @@
                             <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium</span>
+                            <span class="plan">Premium</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
-                            <span class="plan">X Premium+</span>
+                            <span class="plan">Premium+</span>
                             <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                         </div>
                         <div class="avail-item">
@@ -1601,9 +2048,43 @@
                     <div class="platforms-row">
                         <span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                     </div>
-                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok Voice Mode allows natural voice conversations with Grok. <strong>Requires X Premium ($8/mo) or higher</strong>—not available to free users. Currently mobile only (iOS and Android).</div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok Voice Mode allows natural voice conversations with Grok. <strong>Requires Premium ($8/mo) or higher</strong>—not available to free users. Currently mobile only (iOS and Android).</div>
                     <div class="dates-row">
                         <span class="date-item launched clickable" onclick="showChangelog('grok-grok-voice-mode')"><span class="date-label">Launched</span><span class="date-value">2025-02-24T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="coding" data-prices="0_8_16_30">
+                    <div class="feature-header">
+                        <h3><a href="https://grok.com" target="_blank" class="feature-link">Grok Studio</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Free</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Premium</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">Premium+</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                        <div class="avail-item">
+                            <span class="plan">SuperGrok</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok Studio is a split-screen workspace for creating documents, running code, and building games—similar to Canvas or Artifacts. <strong>Available on all tiers including free</strong> at grok.com. Supports Python, JavaScript, TypeScript, C++, and HTML preview.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('grok-grok-studio')"><span class="date-label">Launched</span><span class="date-value">2025-04-16T12:00Z</span></span>
                         <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
@@ -1779,6 +2260,72 @@
                         <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
                     </div>
                 </div>
+                <div class="feature-card" data-category="other" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://qwenlm.github.io/blog/qwen3/" target="_blank" class="feature-link">Qwen 3 (Alibaba)</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Self-hosted</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Qwen 3 is Alibaba's latest open model family with <strong>hybrid thinking modes</strong>—switch between reasoning and fast response with `/think`. Sizes from 0.6B to 235B MoE, supports 119 languages. Fully open under Apache 2.0.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('local/open models-qwen-3--alibaba-')"><span class="date-label">Launched</span><span class="date-value">2025-04-28T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="other" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://www.llama.com/models/llama-4/" target="_blank" class="feature-link">Llama 4 (Meta)</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Self-hosted</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Llama 4 is Meta's first natively multimodal model—text and vision built-in. <strong>Scout has a 10 million token context window</strong> and fits on a single H100. Maverick rivals GPT-4o on benchmarks. Free for commercial use under 700M monthly users.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('local/open models-llama-4--meta-')"><span class="date-label">Launched</span><span class="date-value">2025-04-05T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
+                <div class="feature-card" data-category="other" data-prices="0">
+                    <div class="feature-header">
+                        <h3><a href="https://mistral.ai/news/mistral-small-3" target="_blank" class="feature-link">Mistral Small 3</a></h3>
+                        <span class="badges"><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                    </div>
+                    <div class="avail-grid">
+                        
+                        <div class="avail-item">
+                            <span class="plan">Self-hosted</span>
+                            <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                        </div>
+                    </div>
+                    <div class="platforms-row">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                    </div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral Small 3 is a 24B model that matches 70B performance while being <strong>3x faster</strong>. Fits on a single RTX 4090 or a MacBook with 32GB RAM. 81%+ on MMLU, 128K context in v3.1+. Fully open under Apache 2.0.</div>
+                    <div class="dates-row">
+                        <span class="date-item launched clickable" onclick="showChangelog('local/open models-mistral-small-3')"><span class="date-label">Launched</span><span class="date-value">2025-01-30T12:00Z</span></span>
+                        <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                        <span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-01-20T12:00Z</span></span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1869,6 +2416,52 @@
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2025-04-16T12:00Z", change: "Initial entry" }]
             },
+            "chatgpt-canvas": {
+                name: "Canvas",
+                platform: "ChatGPT",
+                launched: "2024-10-03T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2024-10-03T12:00Z", change: "Initial entry" }]
+            },
+            "chatgpt-projects": {
+                name: "Projects",
+                platform: "ChatGPT",
+                launched: "2024-12-13T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2024-12-13T12:00Z", change: "Initial entry" }]
+            },
+            "chatgpt-memory": {
+                name: "Memory",
+                platform: "ChatGPT",
+                launched: "2024-09-05T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-06-03T12:00Z", change: "Memory improvements for free users" },
+                { date: "2025-04-10T12:00Z", change: "Enhanced memory for Plus/Pro" },
+                { date: "2024-09-05T12:00Z", change: "Initial entry" }]
+            },
+            "chatgpt-sora--video-generation-": {
+                name: "Sora (Video Generation)",
+                platform: "ChatGPT",
+                launched: "2024-12-09T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2026-01-10T12:00Z", change: "Free tier access discontinued" },
+                { date: "2025-10-01T12:00Z", change: "API access launched" },
+                { date: "2024-12-09T12:00Z", change: "Initial entry" }]
+            },
+            "chatgpt-chatgpt-search": {
+                name: "ChatGPT Search",
+                platform: "ChatGPT",
+                launched: "2024-10-31T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-02-05T12:00Z", change: "Available to all users including logged-out" },
+                { date: "2024-12-16T12:00Z", change: "Available to all logged-in users" },
+                { date: "2024-10-31T12:00Z", change: "Initial entry" }]
+            },
             "claude-claude-code": {
                 name: "Claude Code",
                 platform: "Claude",
@@ -1933,6 +2526,16 @@
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2024-11-25T12:00Z", change: "Initial entry" }]
             },
+            "claude-connectors": {
+                name: "Connectors",
+                platform: "Claude",
+                launched: "2025-05-01T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-07-14T12:00Z", change: "Connectors Directory launched" },
+                { date: "2025-06-03T12:00Z", change: "Expanded to Pro plan" },
+                { date: "2025-05-01T12:00Z", change: "Initial entry" }]
+            },
             "microsoft copilot-copilot-in-office-apps": {
                 name: "Copilot in Office Apps",
                 platform: "Microsoft Copilot",
@@ -1981,6 +2584,15 @@
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2025-11-01T12:00Z", change: "MCP integration added" },
                 { date: "2023-11-01T12:00Z", change: "Initial entry" }]
+            },
+            "microsoft copilot-agent-builder": {
+                name: "Agent Builder",
+                platform: "Microsoft Copilot",
+                launched: "2025-02-24T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-11-18T12:00Z", change: "Rebranding to Copilot Studio Lite announced" },
+                { date: "2025-02-24T12:00Z", change: "Initial entry" }]
             },
             "gemini-gemini-advanced": {
                 name: "Gemini Advanced",
@@ -2055,6 +2667,34 @@
                 changes: [{ date: "2025-10-01T12:00Z", change: "Gemini CLI Extensions added with MCP support" },
                 { date: "2023-09-19T12:00Z", change: "Initial entry" }]
             },
+            "gemini-canvas": {
+                name: "Canvas",
+                platform: "Gemini",
+                launched: "2025-03-18T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-03-18T12:00Z", change: "Initial entry" }]
+            },
+            "gemini-audio-overview": {
+                name: "Audio Overview",
+                platform: "Gemini",
+                launched: "2024-09-11T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-04-01T12:00Z", change: "50+ languages supported" },
+                { date: "2025-03-18T12:00Z", change: "Integrated into Gemini app" },
+                { date: "2024-09-11T12:00Z", change: "Initial entry (NotebookLM)" }]
+            },
+            "gemini-project-astra": {
+                name: "Project Astra",
+                platform: "Gemini",
+                launched: "2024-12-11T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-05-20T12:00Z", change: "Free for all users" },
+                { date: "2025-04-07T12:00Z", change: "Expanded to Pixel 9 and Galaxy S25" },
+                { date: "2024-12-11T12:00Z", change: "Initial entry" }]
+            },
             "grok-grok-chat": {
                 name: "Grok Chat",
                 platform: "Grok",
@@ -2102,6 +2742,14 @@
                 verified: "2026-01-20T12:00Z",
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2025-02-24T12:00Z", change: "Initial entry" }]
+            },
+            "grok-grok-studio": {
+                name: "Grok Studio",
+                platform: "Grok",
+                launched: "2025-04-16T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-04-16T12:00Z", change: "Initial entry" }]
             },
             "local/open models-llama-3-3--meta-": {
                 name: "Llama 3.3 (Meta)",
@@ -2158,6 +2806,32 @@
                 verified: "2026-01-20T12:00Z",
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2023-07-01T12:00Z", change: "Initial entry" }]
+            },
+            "local/open models-qwen-3--alibaba-": {
+                name: "Qwen 3 (Alibaba)",
+                platform: "Local/Open Models",
+                launched: "2025-04-28T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-04-28T12:00Z", change: "Initial entry" }]
+            },
+            "local/open models-llama-4--meta-": {
+                name: "Llama 4 (Meta)",
+                platform: "Local/Open Models",
+                launched: "2025-04-05T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-04-05T12:00Z", change: "Initial entry" }]
+            },
+            "local/open models-mistral-small-3": {
+                name: "Mistral Small 3",
+                platform: "Local/Open Models",
+                launched: "2025-01-30T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-06-01T12:00Z", change: "Mistral Small 3.2 with improved function calling" },
+                { date: "2025-03-01T12:00Z", change: "Mistral Small 3.1 with vision, 128K context" },
+                { date: "2025-01-30T12:00Z", change: "Initial entry" }]
             },
             "perplexity-comet-browser": {
                 name: "Comet Browser",
@@ -2222,12 +2896,30 @@
                 verified: "2026-01-20T12:00Z",
                 checked: "2026-01-20T12:00Z",
                 changes: [{ date: "2024-09-01T12:00Z", change: "Initial entry" }]
+            },
+            "perplexity-pages": {
+                name: "Pages",
+                platform: "Perplexity",
+                launched: "2024-05-30T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2024-05-30T12:00Z", change: "Initial entry" }]
+            },
+            "perplexity-buy-with-pro--shopping-": {
+                name: "Buy with Pro (Shopping)",
+                platform: "Perplexity",
+                launched: "2024-11-18T12:00Z",
+                verified: "2026-01-20T12:00Z",
+                checked: "2026-01-20T12:00Z",
+                changes: [{ date: "2025-11-25T12:00Z", change: "PayPal integration launched" },
+                { date: "2025-11-19T12:00Z", change: "Expanded to free users" },
+                { date: "2024-11-18T12:00Z", change: "Initial entry (Pro only)" }]
             }
         };
     </script>
 
     <script>
-        const TOTAL_FEATURES = 51;
+        const TOTAL_FEATURES = 67;
 
         function copyTalkingPoint(el) {
             const text = el.innerText;

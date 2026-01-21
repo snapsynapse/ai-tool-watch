@@ -460,3 +460,63 @@ Available globally where Claude is available.
 | Date | Change |
 |------|--------|
 | 2024-11-25T12:00Z | Initial entry |
+
+---
+
+## Connectors
+
+| Property | Value |
+|----------|-------|
+| Category | integrations |
+| Status | ga |
+| Gating | paid |
+| URL | https://claude.ai/directory |
+| Launched | 2025-05-01T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ⚠️ | Limited | Desktop extensions + GitHub only |
+| Pro | ✅ | Full | All remote connectors |
+| Max 5x | ✅ | Full | All remote connectors |
+| Max 20x | ✅ | Full | All remote connectors |
+| Team | ✅ | Full | Shared connectors |
+| Enterprise | ✅ | Full | Google Drive Cataloging exclusive |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ |  |
+| iOS | ⚠️ | Use only (setup on desktop) |
+| Android | ⚠️ | Use only (setup on desktop) |
+| web | ✅ | claude.ai |
+| terminal | ✅ | Via Claude Code |
+| API | ✅ | MCP Connector |
+
+### Regional
+
+Available globally where Claude is available.
+
+### Talking Point
+
+> "Connectors let Claude access 75+ services—Google Drive, Notion, Slack, Stripe, and more. **Pro and above get full access**; free users can only use desktop extensions and GitHub. Browse available connectors at claude.ai/directory."
+
+### Sources
+
+- [Claude Integrations](https://claude.ai/blog/integrations)
+- [Connectors Directory](https://claude.ai/directory)
+- [Setting Up Integrations](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-07-14T12:00Z | Connectors Directory launched |
+| 2025-06-03T12:00Z | Expanded to Pro plan |
+| 2025-05-01T12:00Z | Initial entry

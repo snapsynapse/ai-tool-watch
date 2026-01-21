@@ -378,3 +378,164 @@ No restrictions.
 | Date | Change |
 |------|--------|
 | 2023-07-01T12:00Z | Initial entry |
+
+---
+
+## Qwen 3 (Alibaba)
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://qwenlm.github.io/blog/qwen3/ |
+| Launched | 2025-04-28T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Self-hosted | ✅ | Your hardware | 0.6B to 235B MoE |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Ollama, LM Studio |
+| macOS | ✅ | Ollama, LM Studio |
+| Linux | ✅ | All options |
+| iOS | ❌ |  |
+| Android | ⚠️ | Limited |
+| web | ✅ | Web UIs |
+| terminal | ✅ | Ollama CLI |
+| API | ✅ | Local API |
+
+### Regional
+
+No restrictions (Apache 2.0 license).
+
+### Talking Point
+
+> "Qwen 3 is Alibaba's latest open model family with **hybrid thinking modes**—switch between reasoning and fast response with `/think`. Sizes from 0.6B to 235B MoE, supports 119 languages. Fully open under Apache 2.0."
+
+### Sources
+
+- [Qwen 3 Blog](https://qwenlm.github.io/blog/qwen3/)
+- [Ollama Qwen 3](https://ollama.com/library/qwen3)
+- [GitHub Qwen 3](https://github.com/QwenLM/Qwen3)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-04-28T12:00Z | Initial entry |
+
+---
+
+## Llama 4 (Meta)
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://www.llama.com/models/llama-4/ |
+| Launched | 2025-04-05T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Self-hosted | ✅ | Your hardware | Scout 109B, Maverick 400B MoE |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | LM Studio, vLLM |
+| macOS | ✅ | LM Studio (quantized) |
+| Linux | ✅ | All options |
+| iOS | ❌ |  |
+| Android | ❌ |  |
+| web | ✅ | Web UIs |
+| terminal | ✅ | Ollama CLI |
+| API | ✅ | Local API |
+
+### Regional
+
+Llama 4 Community License (commercial use under 700M MAU).
+
+### Talking Point
+
+> "Llama 4 is Meta's first natively multimodal model—text and vision built-in. **Scout has a 10 million token context window** and fits on a single H100. Maverick rivals GPT-4o on benchmarks. Free for commercial use under 700M monthly users."
+
+### Sources
+
+- [Llama 4 Blog](https://ai.meta.com/blog/llama-4-multimodal-intelligence/)
+- [Llama 4 Models](https://www.llama.com/models/llama-4/)
+- [HuggingFace Llama 4](https://huggingface.co/meta-llama)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-04-05T12:00Z | Initial entry |
+
+---
+
+## Mistral Small 3
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://mistral.ai/news/mistral-small-3 |
+| Launched | 2025-01-30T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Self-hosted | ✅ | Your hardware | 24B parameters |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Ollama, LM Studio |
+| macOS | ✅ | Runs on 32GB RAM MacBook |
+| Linux | ✅ | Single RTX 4090 |
+| iOS | ❌ |  |
+| Android | ❌ |  |
+| web | ✅ | Web UIs |
+| terminal | ✅ | Ollama CLI |
+| API | ✅ | Local API |
+
+### Regional
+
+No restrictions (Apache 2.0 license).
+
+### Talking Point
+
+> "Mistral Small 3 is a 24B model that matches 70B performance while being **3x faster**. Fits on a single RTX 4090 or a MacBook with 32GB RAM. 81%+ on MMLU, 128K context in v3.1+. Fully open under Apache 2.0."
+
+### Sources
+
+- [Mistral Small 3](https://mistral.ai/news/mistral-small-3)
+- [Ollama Mistral Small](https://ollama.com/library/mistral-small)
+- [HuggingFace Mistral Small](https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-06-01T12:00Z | Mistral Small 3.2 with improved function calling |
+| 2025-03-01T12:00Z | Mistral Small 3.1 with vision, 128K context |
+| 2025-01-30T12:00Z | Initial entry

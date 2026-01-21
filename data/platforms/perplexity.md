@@ -435,3 +435,114 @@ Available globally where Perplexity Enterprise is available.
 | Date | Change |
 |------|--------|
 | 2024-09-01T12:00Z | Initial entry |
+
+---
+
+## Pages
+
+| Property | Value |
+|----------|-------|
+| Category | research |
+| Status | ga |
+| Gating | free |
+| URL | https://www.perplexity.ai/hub/blog/perplexity-pages |
+| Launched | 2024-05-30T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Full access |
+| Pro | ✅ | Standard | Full access |
+| Max | ✅ | Standard | Full access |
+| Enterprise Pro | ✅ | Standard | Full access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Web + Comet |
+| macOS | ✅ | Web + Comet |
+| Linux | ❌ |  |
+| iOS | ⚠️ | View only |
+| Android | ⚠️ | View only |
+| web | ✅ | perplexity.ai |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally.
+
+### Talking Point
+
+> "Pages let you turn research into shareable, formatted articles with AI-generated sections and citations. **Available on all plans including free.** Created pages are public and searchable."
+
+### Sources
+
+- [Perplexity Pages](https://www.perplexity.ai/hub/blog/perplexity-pages)
+- [Pages Help Center](https://www.perplexity.ai/help-center/en/articles/10352968-perplexity-pages)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2024-05-30T12:00Z | Initial entry |
+
+---
+
+## Buy with Pro (Shopping)
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://www.perplexity.ai/hub/blog/shop-like-a-pro |
+| Launched | 2024-11-18T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Via PayPal | Added Nov 2025 |
+| Pro | ✅ | Full | One-click checkout |
+| Max | ✅ | Full | One-click checkout |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Web + Comet |
+| macOS | ✅ | Web + Comet |
+| Linux | ❌ |  |
+| iOS | ✅ | Snap to Shop camera |
+| Android | ✅ | Snap to Shop camera |
+| web | ✅ | perplexity.ai |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+US only. International users redirected to merchant sites.
+
+### Talking Point
+
+> "Buy with Pro lets you research and purchase products directly in Perplexity—no ads, just AI recommendations. **Now available on all plans** via PayPal integration. Free shipping on all orders. Currently US only."
+
+### Sources
+
+- [Shop like a Pro](https://www.perplexity.ai/hub/blog/shop-like-a-pro)
+- [Buy with Pro Help](https://www.perplexity.ai/help-center/en/articles/10352906-what-is-shop-like-a-pro)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-11-25T12:00Z | PayPal integration launched |
+| 2025-11-19T12:00Z | Expanded to free users |
+| 2024-11-18T12:00Z | Initial entry (Pro only)

@@ -218,6 +218,25 @@ function generateHTML(platforms) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Feature Tracker - Feature Availability by Plan</title>
     <meta name="description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Feature Tracker">
+    <meta property="og:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="https://snapsynapse.github.io/ai-feature-tracker/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Feature Tracker">
+    <meta name="twitter:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta name="twitter:image" content="assets/og-image.png">
+
     <link rel="stylesheet" href="assets/styles.css">
     <script>
         // Initialize theme BEFORE body renders to prevent flash
@@ -236,7 +255,7 @@ function generateHTML(platforms) {
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container" id="main-content">
         <header>
-            <h1>🤖 AI Feature Tracker</h1>
+            <h1><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</h1>
             <div class="header-meta">
                 <span class="last-updated">Last built: ${now}</span>
                 <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
@@ -849,6 +868,24 @@ function generateAboutHTML() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - AI Feature Tracker</title>
     <meta name="description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About - AI Feature Tracker">
+    <meta property="og:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About - AI Feature Tracker">
+    <meta name="twitter:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta name="twitter:image" content="assets/og-image.png">
+
     <link rel="stylesheet" href="assets/styles.css">
     <script>
         (function() {
@@ -886,7 +923,7 @@ function generateAboutHTML() {
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;">🤖 AI Feature Tracker</a></h1>
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</a></h1>
         <div class="header-meta">
             <a href="index.html" class="about-link" onclick="passTheme(this)">← Back to Dashboard</a>
             <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>

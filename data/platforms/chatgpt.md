@@ -408,3 +408,292 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2025-04-16T12:00Z | Initial entry |
+
+---
+
+## Canvas
+
+| Property | Value |
+|----------|-------|
+| Category | coding |
+| Status | ga |
+| Gating | free |
+| URL | https://openai.com/index/introducing-canvas/ |
+| Launched | 2024-10-03T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Full access |
+| Go | ✅ | Standard | Full access |
+| Plus | ✅ | Standard | Full access |
+| Pro | ✅ | Standard | Full access |
+| Team | ✅ | Standard | Full access |
+| Enterprise | ✅ | Standard | Full access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ |  |
+| iOS | 🔜 | Coming soon |
+| Android | 🔜 | Coming soon |
+| web | ✅ | chatgpt.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally where ChatGPT is available.
+
+### Talking Point
+
+> "Canvas is ChatGPT's split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. **Available on all plans including free**, but currently desktop and web only. Mobile is coming soon."
+
+### Sources
+
+- [Introducing Canvas](https://openai.com/index/introducing-canvas/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2024-10-03T12:00Z | Initial entry |
+
+---
+
+## Projects
+
+| Property | Value |
+|----------|-------|
+| Category | local-files |
+| Status | ga |
+| Gating | free |
+| URL | https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt |
+| Launched | 2024-12-13T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Full access |
+| Go | ✅ | Standard | Full access |
+| Plus | ✅ | Standard | Full access |
+| Pro | ✅ | Standard | Full access |
+| Team | ✅ | Standard | Shared projects |
+| Enterprise | ✅ | Standard | Admin controls |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ |  |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| web | ✅ | chatgpt.com |
+| terminal | ❌ |  |
+| API | ⚠️ | Compliance API only |
+
+### Regional
+
+Available globally where ChatGPT is available.
+
+### Talking Point
+
+> "Projects let you group related chats, files, and custom instructions into workspaces. **Available on all plans including free**—organize your work across topics with project-specific context."
+
+### Sources
+
+- [Using Projects in ChatGPT](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2024-12-13T12:00Z | Initial entry |
+
+---
+
+## Memory
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://openai.com/index/memory-and-new-controls-for-chatgpt/ |
+| Launched | 2024-09-05T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ⚠️ | Limited | Saved memories only |
+| Go | ✅ | Standard | Full chat history reference |
+| Plus | ✅ | Full | Full memory + chat history |
+| Pro | ✅ | Full | Full memory + chat history |
+| Team | ✅ | Full | Admin controls |
+| Enterprise | ✅ | Full | Admin controls, no training |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ |  |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| web | ✅ | chatgpt.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally; off by default in EEA/UK/Switzerland (must enable manually).
+
+### Talking Point
+
+> "Memory lets ChatGPT remember your preferences and context across conversations. **All plans get saved memories**; Plus/Pro also get full chat history reference for richer personalization."
+
+### Sources
+
+- [Memory and new controls for ChatGPT](https://openai.com/index/memory-and-new-controls-for-chatgpt/)
+- [Memory FAQ](https://help.openai.com/en/articles/8590148-memory-faq)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-06-03T12:00Z | Memory improvements for free users |
+| 2025-04-10T12:00Z | Enhanced memory for Plus/Pro |
+| 2024-09-05T12:00Z | Initial entry |
+
+---
+
+## Sora (Video Generation)
+
+| Property | Value |
+|----------|-------|
+| Category | image-gen |
+| Status | ga |
+| Gating | paid |
+| URL | https://openai.com/index/sora-is-here/ |
+| Launched | 2024-12-09T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Discontinued Jan 2026 |
+| Go | ❌ | — | Not available |
+| Plus | ✅ | 1000 credits/mo | ~50 videos at 480p |
+| Pro | ✅ | 10000 credits/mo | Unlimited relaxed mode |
+| Team | ⚠️ | Limited | Consumer ToS applies |
+| Enterprise | ❌ | — | Business version in development |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Via sora.com |
+| macOS | ✅ | Via sora.com |
+| Linux | ❌ |  |
+| iOS | ✅ | Select regions |
+| Android | ✅ | Select regions |
+| web | ✅ | sora.com |
+| terminal | ❌ |  |
+| API | ✅ | Async processing |
+
+### Regional
+
+Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.
+
+### Talking Point
+
+> "Sora generates videos from text prompts—up to 25 seconds at 1080p. **Requires Plus ($20/mo) or Pro ($200/mo)**. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe."
+
+### Sources
+
+- [Sora is here](https://openai.com/index/sora-is-here/)
+- [Sora Billing FAQ](https://help.openai.com/en/articles/10245774-sora-billing-faq)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-10T12:00Z | Free tier access discontinued |
+| 2025-10-01T12:00Z | API access launched |
+| 2024-12-09T12:00Z | Initial entry |
+
+---
+
+## ChatGPT Search
+
+| Property | Value |
+|----------|-------|
+| Category | search |
+| Status | ga |
+| Gating | free |
+| URL | https://openai.com/index/introducing-chatgpt-search/ |
+| Launched | 2024-10-31T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | 30 turns/hr | Full access |
+| Go | ✅ | Higher | Full access |
+| Plus | ✅ | Higher | Priority |
+| Pro | ✅ | Highest | Priority |
+| Team | ✅ | Higher | Full access |
+| Enterprise | ✅ | Custom | Full access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ |  |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| web | ✅ | chatgpt.com |
+| terminal | ❌ |  |
+| API | ✅ | web_search_preview tool |
+
+### Regional
+
+Available globally where ChatGPT is available.
+
+### Talking Point
+
+> "ChatGPT Search provides real-time web results with cited sources—news, weather, stocks, and more. **Available on all plans including free** and even logged-out users. Powered by Bing and partner publishers."
+
+### Sources
+
+- [Introducing ChatGPT Search](https://openai.com/index/introducing-chatgpt-search/)
+- [ChatGPT Search Help](https://help.openai.com/en/articles/9237897-chatgpt-search)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-02-05T12:00Z | Available to all users including logged-out |
+| 2024-12-16T12:00Z | Available to all logged-in users |
+| 2024-10-31T12:00Z | Initial entry

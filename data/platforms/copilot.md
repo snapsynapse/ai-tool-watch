@@ -326,3 +326,59 @@ Available globally where M365 Copilot is available.
 |------|--------|
 | 2025-11-01T12:00Z | MCP integration added |
 | 2023-11-01T12:00Z | Initial entry |
+
+---
+
+## Agent Builder
+
+| Property | Value |
+|----------|-------|
+| Category | agents |
+| Status | ga |
+| Gating | paid |
+| URL | https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder |
+| Launched | 2025-02-24T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| Copilot Pro | ❌ | — | Not available |
+| M365 Copilot | ✅ | Included | No-code agent creation |
+| Copilot Chat (M365 commercial) | ⚠️ | Limited | Free for basic agents |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | M365 apps |
+| macOS | ✅ | M365 apps |
+| Linux | ❌ |  |
+| iOS | ❌ | Not available on mobile |
+| Android | ❌ | Not available on mobile |
+| web | ✅ | microsoft365.com/chat |
+| terminal | ❌ |  |
+| API | ⚠️ | Via Copilot Studio |
+
+### Regional
+
+Available in 17 regions including US, Europe, Asia Pacific.
+
+### Talking Point
+
+> "Agent Builder lets you create custom AI agents using natural language—no coding required. **Requires M365 Copilot ($30/user/mo)** for full access. Basic agents work in Copilot Chat for M365 commercial users. Will be rebranded as 'Copilot Studio Lite'."
+
+### Sources
+
+- [Agent Builder Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder)
+- [Build Agents Guide](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-11-18T12:00Z | Rebranding to Copilot Studio Lite announced |
+| 2025-02-24T12:00Z | Initial entry

@@ -12,8 +12,8 @@ last_verified: 2026-01-20
 | Plan | Price | Notes |
 |------|-------|-------|
 | Free | $0 | Limited queries via X |
-| X Premium | $8/mo | Basic Grok access |
-| X Premium+ | $16/mo | Enhanced limits |
+| Premium | $8/mo | Basic Grok access |
+| Premium+ | $16/mo | Enhanced limits |
 | SuperGrok | $30/mo | Highest limits, priority |
 
 ---
@@ -35,8 +35,8 @@ last_verified: 2026-01-20
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ⚠️ | Very limited | Few queries/day via X |
-| X Premium | ✅ | Standard | Regular access |
-| X Premium+ | ✅ | Enhanced | Higher limits |
+| Premium | ✅ | Standard | Regular access |
+| Premium+ | ✅ | Enhanced | Higher limits |
 | SuperGrok | ✅ | Highest | Priority access |
 
 ### Platforms
@@ -57,12 +57,12 @@ Available globally where X is available.
 
 ### Talking Point
 
-> "Grok is xAI's chatbot, available through X (Twitter) or standalone apps. **Free users get very limited access; X Premium ($8/mo) unlocks regular use.** SuperGrok at $30/mo gets you the highest limits."
+> "Grok is xAI's chatbot, available through X (Twitter) or standalone apps. **Free users get very limited access; Premium ($8/mo) unlocks regular use.** SuperGrok at $30/mo gets you the highest limits."
 
 ### Sources
 
 - [Grok Official](https://x.ai/grok)
-- [X Premium Features](https://help.x.com/en/using-x/x-premium)
+- [Premium Features](https://help.x.com/en/using-x/x-premium)
 
 ### Changelog
 
@@ -89,8 +89,8 @@ Available globally where X is available.
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Not available |
-| X Premium | ✅ | Limited | Basic generation |
-| X Premium+ | ✅ | Higher | More generations |
+| Premium | ✅ | Limited | Basic generation |
+| Premium+ | ✅ | Higher | More generations |
 | SuperGrok | ✅ | Highest | Priority + most generations |
 
 ### Platforms
@@ -111,7 +111,7 @@ Available globally.
 
 ### Talking Point
 
-> "Grok can generate images using Aurora. **Requires X Premium ($8/mo) or higher.** SuperGrok gets the most generations per day."
+> "Grok can generate images using Aurora. **Requires Premium ($8/mo) or higher.** SuperGrok gets the most generations per day."
 
 ### Sources
 
@@ -142,8 +142,8 @@ Available globally.
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Not available |
-| X Premium | ⚠️ | Limited | Basic access |
-| X Premium+ | ✅ | Standard | Full access |
+| Premium | ⚠️ | Limited | Basic access |
+| Premium+ | ✅ | Standard | Full access |
 | SuperGrok | ✅ | Unlimited | Priority |
 
 ### Platforms
@@ -195,8 +195,8 @@ Available globally.
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Not available |
-| X Premium | ✅ | Limited | Extended reasoning |
-| X Premium+ | ✅ | Standard | |
+| Premium | ✅ | Limited | Extended reasoning |
+| Premium+ | ✅ | Standard | |
 | SuperGrok | ✅ | Full | Longest thinking time |
 
 ### Platforms
@@ -248,8 +248,8 @@ Available globally.
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ⚠️ | Limited | Basic access |
-| X Premium | ✅ | Full | Real-time posts |
-| X Premium+ | ✅ | Full | |
+| Premium | ✅ | Full | Real-time posts |
+| Premium+ | ✅ | Full | |
 | SuperGrok | ✅ | Full | |
 
 ### Platforms
@@ -301,8 +301,8 @@ Available globally.
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Not available |
-| X Premium | ✅ | Standard | Voice conversations |
-| X Premium+ | ✅ | Enhanced | Priority |
+| Premium | ✅ | Standard | Voice conversations |
+| Premium+ | ✅ | Enhanced | Priority |
 | SuperGrok | ✅ | Highest | Best quality |
 
 ### Platforms
@@ -324,7 +324,7 @@ Available globally where X is available.
 
 ### Talking Point
 
-> "Grok Voice Mode allows natural voice conversations with Grok. **Requires X Premium ($8/mo) or higher**—not available to free users. Currently mobile only (iOS and Android)."
+> "Grok Voice Mode allows natural voice conversations with Grok. **Requires Premium ($8/mo) or higher**—not available to free users. Currently mobile only (iOS and Android)."
 
 ### Sources
 
@@ -335,3 +335,58 @@ Available globally where X is available.
 | Date | Change |
 |------|--------|
 | 2025-02-24T12:00Z | Initial entry |
+
+---
+
+## Grok Studio
+
+| Property | Value |
+|----------|-------|
+| Category | coding |
+| Status | ga |
+| Gating | free |
+| URL | https://grok.com |
+| Launched | 2025-04-16T12:00Z |
+| Verified | 2026-01-20T12:00Z |
+| Checked | 2026-01-20T12:00Z |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | ~10 requests/2hrs | Split-screen workspace |
+| Premium | ✅ | Standard | Full access |
+| Premium+ | ✅ | 50 requests/2hrs | Priority |
+| SuperGrok | ✅ | 100 requests/2hrs | Highest limits |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Via grok.com |
+| macOS | ✅ | Via grok.com |
+| Linux | ❌ |  |
+| iOS | ❌ | Web only |
+| Android | ❌ | Web only |
+| web | ✅ | grok.com |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+
+### Regional
+
+Available globally where Grok is available.
+
+### Talking Point
+
+> "Grok Studio is a split-screen workspace for creating documents, running code, and building games—similar to Canvas or Artifacts. **Available on all tiers including free** at grok.com. Supports Python, JavaScript, TypeScript, C++, and HTML preview."
+
+### Sources
+
+- [Grok Studio Announcement](https://techcrunch.com/2025/04/15/grok-gains-a-canvas-like-tool-for-creating-docs-and-apps/)
+- [xAI Grok](https://x.ai/grok)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2025-04-16T12:00Z | Initial entry
