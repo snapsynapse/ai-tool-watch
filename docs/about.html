@@ -98,9 +98,22 @@
 <li><strong>Price tier filtering</strong> — Find features at your budget</li>
 <li><strong>Provider toggles</strong> — Focus on specific platforms</li>
 <li><strong>Dark/light mode</strong> — Toggle for your preference</li>
-<li><strong>Keyboard navigation</strong> — ↑/↓/j/k to navigate, Enter to copy talking point</li>
+<li><strong>Permalinks</strong> — Link directly to any feature with shareable URLs</li>
 <li><strong>Shareable URLs</strong> — Filter state preserved in URL parameters</li>
 <li><strong>Community maintained</strong> — Submit PRs to keep it current</li>
+<p></ul></p>
+<h2>Accessibility</h2>
+
+<p>This site is designed to meet WCAG 2.1 AA standards:</p>
+
+<ul><li><strong>Keyboard navigation</strong> — Full keyboard support with ↑/↓/j/k to navigate cards, Enter to copy, Tab to move between interactive elements</li>
+<li><strong>Skip link</strong> — "Skip to main content" link for screen reader users (visible on focus)</li>
+<li><strong>Focus indicators</strong> — Clear 2px accent-colored outlines on all interactive elements</li>
+<li><strong>Color contrast</strong> — Minimum 4.5:1 contrast ratio for all text in both light and dark modes</li>
+<li><strong>Reduced motion</strong> — Animations and transitions disabled when <code>prefers-reduced-motion</code> is enabled</li>
+<li><strong>Touch targets</strong> — Minimum 44px touch targets on mobile for easier tapping</li>
+<li><strong>ARIA attributes</strong> — Live regions announce filter count changes, decorative images marked with <code>aria-hidden</code></li>
+<li><strong>Semantic HTML</strong> — Proper heading hierarchy, landmark regions, and button/link semantics</li>
 <p></ul></p>
 <h2>How to Contribute</h2>
 
@@ -110,19 +123,6 @@
 <p>1. Edit the relevant file in <code>data/platforms/</code></p>
 <p>2. Include a source link</p>
 <p>3. Submit a PR</p>
-
-<h2>Local Development</h2>
-
-<pre><code># Clone the repo
-<p>git clone https://github.com/snapsynapse/ai-feature-tracker.git</p>
-<p>cd ai-feature-tracker</p>
-
-<h1>Build the dashboard</h1>
-<p>node scripts/build.js</p>
-
-<h1>Open it</h1>
-<p>open docs/index.html</p>
-<p></code></pre></p>
 
 <h2>Data Format</h2>
 

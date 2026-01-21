@@ -58,6 +58,15 @@ function parseTable(tableText) {
 }
 
 /**
+ * Format ISO date for display (strip time portion)
+ * Input: "2024-12-06T12:00Z" -> Output: "2024-12-06"
+ */
+function formatDateForDisplay(isoDate) {
+  if (!isoDate) return '';
+  return isoDate.split('T')[0];
+}
+
+/**
  * Parse a feature section from markdown
  */
 function parseFeature(section) {
@@ -371,7 +380,7 @@ function generateHTML(platforms) {
                     })()}
                 </select>
             </div>
-            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong> of <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong> features</span>
+            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong> of <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong></span>
             <a href="definitions.html" class="definitions-link" onclick="passTheme(this)">ℹ️ What's this mean?</a>
         </div>
 
@@ -429,11 +438,12 @@ function generateHTML(platforms) {
                     .filter(a => a.available.includes('✅') || a.available.includes('⚠️'))
                     .map(a => planPriceMap.get(a.plan))
                     .filter(Boolean))].join('_');
+                  const featureId = `${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
                   return `
-                <div class="feature-card" data-category="${f.category}" data-prices="${availablePrices}">
+                <div class="feature-card" id="${featureId}" data-category="${f.category}" data-prices="${availablePrices}">
                     <div class="feature-header">
                         <h3>${f.url ? `<a href="${f.url}" target="_blank" class="feature-link">${f.name}</a>` : f.name}</h3>
-                        <span class="badges">${availabilityBadge(f.status)}${gatingBadge(f.gating)}</span>
+                        <span class="badges"><button class="permalink-btn" onclick="copyPermalink('${featureId}')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button>${availabilityBadge(f.status)}${gatingBadge(f.gating)}</span>
                     </div>
                     <div class="avail-grid">
                         ${f.availability.map(a => `
@@ -461,9 +471,8 @@ function generateHTML(platforms) {
                     </div>
                     ${f.talking_point ? `<div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">${f.talking_point.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</div>` : ''}
                     <div class="dates-row">
-                        ${f.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}')"><span class="date-label">Launched</span><span class="date-value">${f.launched}</span></span>` : ''}
-                        ${f.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${f.verified}</span></span>` : ''}
-                        ${f.checked ? `<span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">${f.checked}</span></span>` : ''}
+                        ${f.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(f.launched)}</span></span>` : ''}
+                        ${f.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(f.verified)}</span></span>` : ''}
                     </div>
                 </div>`;
                 }).join('')}
@@ -527,6 +536,61 @@ function generateHTML(platforms) {
             setTimeout(() => el.classList.remove('copied'), 1000);
         }
 
+        function copyPermalink(featureId) {
+            const url = new URL(window.location);
+            url.hash = featureId;
+            // Preserve only the hash, clear filters for a clean link
+            url.search = '';
+            navigator.clipboard.writeText(url.toString());
+
+            // Visual feedback
+            const btn = document.querySelector('#' + CSS.escape(featureId) + ' .permalink-btn');
+            if (btn) {
+                const original = btn.textContent;
+                btn.textContent = '✓';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.classList.remove('copied');
+                }, 1000);
+            }
+        }
+
+        function scrollToFeature() {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+
+            const card = document.getElementById(hash);
+            if (card) {
+                // Make sure the platform section is visible
+                const section = card.closest('.platform-section');
+                if (section) {
+                    const vendor = section.dataset.vendor;
+                    if (!activeProviders.has(vendor)) {
+                        activeProviders.add(vendor);
+                        const toggle = document.querySelector('.provider-toggle[data-vendor="' + vendor + '"]');
+                        if (toggle) {
+                            toggle.classList.add('active');
+                            toggle.setAttribute('aria-pressed', 'true');
+                        }
+                        filterProviders();
+                    }
+                }
+
+                // Clear any category/tier filters that might hide the card
+                document.getElementById('categoryFilter').value = '';
+                document.getElementById('tierFilter').value = '';
+                filterFeatures(true);
+
+                // Scroll and highlight
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.classList.add('permalink-highlight');
+                    setTimeout(() => card.classList.remove('permalink-highlight'), 2000);
+                }, 100);
+            }
+        }
+
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             document.documentElement.classList.toggle('light-mode');
@@ -548,7 +612,7 @@ function generateHTML(platforms) {
             );
 
             document.getElementById('featureCount').innerHTML =
-                'Showing <strong>' + visibleCards.length + '</strong> of <strong>' + TOTAL_FEATURES + '</strong> features';
+                'Showing <strong>' + visibleCards.length + '</strong> of <strong>' + TOTAL_FEATURES + '</strong>';
         }
 
         function filterFeatures(skipURLUpdate) {
@@ -739,7 +803,13 @@ function generateHTML(platforms) {
         }
 
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', initFromURL);
+        document.addEventListener('DOMContentLoaded', () => {
+            initFromURL();
+            scrollToFeature();
+        });
+
+        // Handle hash changes (e.g., back/forward navigation)
+        window.addEventListener('hashchange', scrollToFeature);
 
         // Keyboard navigation for feature cards
         let currentCardIndex = -1;
@@ -858,7 +928,11 @@ function markdownToHTML(md) {
  */
 function generateAboutHTML() {
   const readmePath = path.join(__dirname, '..', 'README.md');
-  const readme = fs.readFileSync(readmePath, 'utf-8');
+  let readme = fs.readFileSync(readmePath, 'utf-8');
+
+  // Remove "Local Development" section (not relevant for about page)
+  readme = readme.replace(/## Local Development[\s\S]*?(?=## |$)/, '');
+
   const content = markdownToHTML(readme);
 
   return `<!DOCTYPE html>

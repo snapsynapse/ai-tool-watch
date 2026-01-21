@@ -606,6 +606,58 @@ body.light-mode .talking-point.copied { background: #2e7d32 !important; color: #
 .date-item.verified .date-label::before { content: '✓ '; }
 .date-item.checked .date-label::before { content: '👁 '; }
 
+/* Permalink button */
+.permalink-btn {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    margin-right: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+    vertical-align: middle;
+}
+
+.feature-card:hover .permalink-btn,
+.permalink-btn:focus {
+    opacity: 1;
+}
+
+.permalink-btn:focus,
+.permalink-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.permalink-btn.copied {
+    opacity: 1;
+    color: var(--status-yes);
+}
+
+/* Permalink highlight animation */
+.feature-card.permalink-highlight {
+    animation: highlightPulse 2s ease-out;
+}
+
+@keyframes highlightPulse {
+    0% {
+        box-shadow: 0 0 0 4px var(--accent);
+        border-color: var(--accent);
+    }
+    100% {
+        box-shadow: 0 0 0 0 transparent;
+        border-color: var(--card-border);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-card.permalink-highlight {
+        animation: none;
+        box-shadow: 0 0 0 3px var(--accent);
+    }
+}
+
 /* Modal */
 .modal-overlay {
     display: none;

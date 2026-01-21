@@ -36,9 +36,22 @@ Built for fellow AI facilitators, educators, designers, and anyone who needs acc
 - **Price tier filtering** — Find features at your budget
 - **Provider toggles** — Focus on specific platforms
 - **Dark/light mode** — Toggle for your preference
-- **Keyboard navigation** — ↑/↓/j/k to navigate, Enter to copy talking point
+- **Permalinks** — Link directly to any feature with shareable URLs
 - **Shareable URLs** — Filter state preserved in URL parameters
 - **Community maintained** — Submit PRs to keep it current
+
+## Accessibility
+
+This site is designed to meet WCAG 2.1 AA standards:
+
+- **Keyboard navigation** — Full keyboard support with ↑/↓/j/k to navigate cards, Enter to copy, Tab to move between interactive elements
+- **Skip link** — "Skip to main content" link for screen reader users (visible on focus)
+- **Focus indicators** — Clear 2px accent-colored outlines on all interactive elements
+- **Color contrast** — Minimum 4.5:1 contrast ratio for all text in both light and dark modes
+- **Reduced motion** — Animations and transitions disabled when `prefers-reduced-motion` is enabled
+- **Touch targets** — Minimum 44px touch targets on mobile for easier tapping
+- **ARIA attributes** — Live regions announce filter count changes, decorative images marked with `aria-hidden`
+- **Semantic HTML** — Proper heading hierarchy, landmark regions, and button/link semantics
 
 ## How to Contribute
 

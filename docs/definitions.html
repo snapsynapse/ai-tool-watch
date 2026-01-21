@@ -82,14 +82,35 @@
             text-transform: uppercase;
             margin-right: 8px;
         }
+        /* Match main stylesheet badge colors */
         .badge-example.avail-ga { background: #4caf50; color: #000; }
         .badge-example.avail-beta { background: #ff9800; color: #000; }
         .badge-example.avail-preview { background: #9c27b0; color: #fff; }
-        .badge-example.avail-deprecated { background: #666; color: #fff; }
-        .badge-example.gate-free { background: #2196f3; color: #fff; }
-        .badge-example.gate-paid { background: #1a3a5c; color: #4fc3f7; border: 1px solid #4fc3f7; }
-        .badge-example.gate-invite { background: #5c1a3a; color: #f74fc3; border: 1px solid #f74fc3; }
-        .badge-example.gate-org { background: #3a5c1a; color: #c3f74f; border: 1px solid #c3f74f; }
+        .badge-example.avail-deprecated { background: #757575; color: #fff; }
+        .badge-example.gate-free { background: #1976d2; color: #fff; }
+        .badge-example.gate-paid { background: #1a3a5c; color: #7dd3fc; border: 1px solid #7dd3fc; }
+        .badge-example.gate-invite { background: #5c1a3a; color: #f9a8d4; border: 1px solid #f9a8d4; }
+        .badge-example.gate-org { background: #3a5c1a; color: #bef264; border: 1px solid #bef264; }
+
+        /* Light mode badge colors */
+        html.light-mode .badge-example.avail-ga,
+        body.light-mode .badge-example.avail-ga { background: #2e7d32; color: #fff; }
+        html.light-mode .badge-example.avail-beta,
+        body.light-mode .badge-example.avail-beta { background: #e65100; color: #fff; }
+        html.light-mode .badge-example.gate-free,
+        body.light-mode .badge-example.gate-free { background: #1565c0; color: #fff; }
+        html.light-mode .badge-example.gate-paid,
+        body.light-mode .badge-example.gate-paid { background: #e3f2fd; color: #0d47a1; border: 1px solid #0d47a1; }
+        html.light-mode .badge-example.gate-invite,
+        body.light-mode .badge-example.gate-invite { background: #fce4ec; color: #880e4f; border: 1px solid #880e4f; }
+        html.light-mode .badge-example.gate-org,
+        body.light-mode .badge-example.gate-org { background: #f1f8e9; color: #33691e; border: 1px solid #33691e; }
+
+        /* Availability symbols - match main stylesheet */
+        .def-term.avail-yes { color: var(--status-yes); }
+        .def-term.avail-no { color: var(--status-no); }
+        .def-term.avail-soon { color: var(--status-soon); }
+        .def-term.avail-partial { color: var(--status-partial); }
 
         .provider-example {
             display: inline-block;
@@ -379,16 +400,16 @@
             <h2>Availability Symbols</h2>
             <p>In the plan availability grid:</p>
             <div class="def-grid">
-                <span class="def-term" style="color: #4caf50;">✓</span>
+                <span class="def-term avail-yes">✓</span>
                 <span class="def-desc">Available on this plan</span>
 
-                <span class="def-term" style="color: #666;">✗</span>
+                <span class="def-term avail-no">✗</span>
                 <span class="def-desc">Not available on this plan</span>
 
-                <span class="def-term" style="color: #ff9800;">Soon</span>
+                <span class="def-term avail-soon">Soon</span>
                 <span class="def-desc">Announced, coming soon</span>
 
-                <span class="def-term" style="color: #ffeb3b;">~</span>
+                <span class="def-term avail-partial">~</span>
                 <span class="def-desc">Partial or with caveats</span>
             </div>
         </section>
