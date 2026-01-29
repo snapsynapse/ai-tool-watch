@@ -21,6 +21,8 @@ const PROVIDER_MODEL_MAP = {
  */
 function buildVerificationPrompt(platform, feature) {
     const planList = platform.pricing.map(p => p.plan).join(', ');
+    const featureUrl = feature.url ? `\n   Current stored URL: ${feature.url}` : '';
+    const regional = feature.regional ? `\n   Current stored regional info: "${feature.regional}"` : '';
 
     return `For ${platform.name}'s "${feature.name}" feature, please verify the current:
 
@@ -37,7 +39,15 @@ function buildVerificationPrompt(platform, feature) {
 4. Access gating:
    - Is it free, paid-only, invite-only, or org-only?
 
-5. Recent changes:
+5. Regional availability:
+   - Is this feature available globally or restricted to certain regions?
+   - Any country-specific limitations?${regional}
+
+6. Official URL:
+   - What is the official product/feature page URL?
+   - Is it still active and accessible?${featureUrl}
+
+7. Recent changes:
    - Any announcements or changes in the last 30 days?
 
 Please provide specific, factual information and cite official sources where possible.
@@ -57,8 +67,8 @@ function buildGrokPrompt(platform, feature) {
         'Claude': '@AnthropicAI',
         'Gemini': '@GoogleAI, @Google',
         'Copilot': '@Microsoft, @MicrosoftCopilot',
-        'Perplexity': '@peraboratoryai',
-        'Grok': '@xaboratoryai, @xAI'
+        'Perplexity': '@perplexity_ai',
+        'Grok': '@xai, @gaboratory'
     };
 
     const accounts = twitterAccounts[platform.name] || `official ${platform.vendor} accounts`;
@@ -69,7 +79,8 @@ Look for:
 1. Any announcements about pricing changes, new tier availability, or plan restrictions
 2. Platform availability updates (desktop apps, mobile apps, web, API)
 3. Feature status changes (beta, GA, deprecated)
-4. Any changes in the last 30-60 days
+4. Regional availability announcements (new country rollouts, restrictions)
+5. Any changes in the last 30-60 days
 
 Focus on official announcements and verified account posts.
 Summarize what you find about current availability and any recent changes.`;

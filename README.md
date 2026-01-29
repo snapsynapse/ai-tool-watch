@@ -77,16 +77,16 @@ This project includes an automated pricing verification system that uses multipl
 
 ```bash
 # Verify all features
-node scripts/verify-pricing.js
+node scripts/verify-features.js
 
 # Verify a specific platform
-node scripts/verify-pricing.js --platform claude
+node scripts/verify-features.js --platform claude
 
 # Check only stale features (>30 days since last check)
-node scripts/verify-pricing.js --stale-only
+node scripts/verify-features.js --stale-only
 
 # Dry run (no issues created)
-node scripts/verify-pricing.js --dry-run
+node scripts/verify-features.js --dry-run
 ```
 
 Requires API keys: `GEMINI_API_KEY`, `PERPLEXITY_API_KEY`, `XAI_API_KEY`, `ANTHROPIC_API_KEY`

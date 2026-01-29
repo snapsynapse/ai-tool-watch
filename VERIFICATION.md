@@ -1,6 +1,6 @@
-# Automated Pricing Verification System
+# Automated Feature Verification System
 
-This document describes the automated system for verifying pricing tier availability, surface/platform support, and other feature information across all tracked AI platforms.
+This document describes the automated system for verifying feature data across all tracked AI platforms, including pricing tiers, platform availability, status, gating, regional availability, and URLs.
 
 ## Overview
 
@@ -49,7 +49,7 @@ For each feature to verify:
    └─ Remove same-provider model from list
 
 2. QUERY FIRST MODEL
-   ├─ Ask about: pricing tiers, surfaces, status, gating, recent changes
+   ├─ Ask about: pricing tiers, surfaces, status, gating, regional, URL, recent changes
    └─ Compare response to stored data
 
 3. EVALUATE RESULT
@@ -86,6 +86,8 @@ For each feature, the system verifies:
 | **Status** | Release status | GA, Beta, Preview, Deprecated |
 | **Gating** | Access type | Free, Paid, Invite, Org-only |
 | **Limits** | Usage restrictions | "40/month", "Unlimited" |
+| **Regional** | Geographic availability | "US only", "Global", "Not available in EU" |
+| **URL** | Official feature page | Valid and accessible URL |
 
 ### Query Template
 
@@ -107,7 +109,15 @@ For [Platform]'s "[Feature Name]" feature, please verify the current:
 4. Access gating:
    - Is it free, paid-only, invite-only, or org-only?
 
-5. Recent changes:
+5. Regional availability:
+   - Is this feature available globally or restricted to certain regions?
+   - Any country-specific limitations?
+
+6. Official URL:
+   - What is the official product/feature page URL?
+   - Is it still active and accessible?
+
+7. Recent changes:
    - Any announcements or changes in the last 30 days?
 
 Please cite official sources where possible.
@@ -119,16 +129,16 @@ Please cite official sources where possible.
 
 ```bash
 # Verify all features across all platforms
-node scripts/verify-pricing.js
+node scripts/verify-features.js
 
 # Verify a specific platform
-node scripts/verify-pricing.js --platform claude
+node scripts/verify-features.js --platform claude
 
 # Verify a specific feature
-node scripts/verify-pricing.js --platform chatgpt --feature "Agent Mode"
+node scripts/verify-features.js --platform chatgpt --feature "Agent Mode"
 
 # Dry run (no PRs/issues created)
-node scripts/verify-pricing.js --dry-run
+node scripts/verify-features.js --dry-run
 ```
 
 ### Scheduled (GitHub Actions)
@@ -142,7 +152,7 @@ The workflow runs automatically:
 A lightweight check runs daily to identify features with `Checked` date > 30 days old:
 
 ```bash
-node scripts/verify-pricing.js --stale-only
+node scripts/verify-features.js --stale-only
 ```
 
 This creates an issue listing stale features without running the full cascade.
@@ -250,7 +260,7 @@ Optional `verification.config.json` in repo root:
 
 ```
 scripts/
-├── verify-pricing.js       # Main entry point / orchestrator
+├── verify-features.js       # Main entry point / orchestrator
 └── lib/
     ├── cascade.js          # Cascade logic and flow control
     ├── ai-clients.js       # API wrappers for each AI model
@@ -260,7 +270,7 @@ scripts/
 
 .github/
 ├── workflows/
-│   └── verify-pricing.yml  # Scheduled + manual workflow
+│   └── verify-features.yml  # Scheduled + manual workflow
 └── ISSUE_TEMPLATE/
     ├── verification_conflict.md
     └── verification_inconclusive.md
@@ -284,7 +294,7 @@ pricing or availability changes in the last 30 days.
 ## Example Verification Run
 
 ```
-$ node scripts/verify-pricing.js --platform claude --feature "Projects"
+$ node scripts/verify-features.js --platform claude --feature "Projects"
 
 🔍 Verifying: Claude → Projects
 
