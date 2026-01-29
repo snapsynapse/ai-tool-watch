@@ -48,6 +48,11 @@ const {
     createGitHubIssue
 } = require('./lib/reporter');
 
+const {
+    batchUpdateCheckedDates,
+    batchUpdateVerifiedDates
+} = require('./lib/file-updater');
+
 // Parse command line arguments
 function parseArgs() {
     const args = process.argv.slice(2);
@@ -263,6 +268,41 @@ async function main() {
     const report = generateMarkdownReport(results, summary);
     const reportPath = saveReport(report);
     console.log(`\nFull report saved to: ${reportPath}`);
+
+    // Update dates in markdown files (unless dry run)
+    if (!options.dryRun) {
+        console.log('\nUpdating dates in data files...');
+
+        // Collect all features that were checked (for Checked date update)
+        const allChecked = results.map(r => ({
+            filepath: featuresToVerify.find(f =>
+                f.platform.name === r.platform && f.feature.name === r.feature
+            )?.platform._filepath,
+            featureName: r.feature
+        })).filter(f => f.filepath);
+
+        // Collect features with no changes (for Verified date update)
+        const noChangeFeatures = results
+            .filter(r => r.outcome === CascadeOutcome.NO_CHANGE)
+            .map(r => ({
+                filepath: featuresToVerify.find(f =>
+                    f.platform.name === r.platform && f.feature.name === r.feature
+                )?.platform._filepath,
+                featureName: r.feature
+            })).filter(f => f.filepath);
+
+        // Update Checked date for ALL features that were checked
+        if (allChecked.length > 0) {
+            const checkedResult = batchUpdateCheckedDates(allChecked);
+            console.log(`  Checked dates updated: ${checkedResult.success} success, ${checkedResult.failed} failed`);
+        }
+
+        // Update Verified date ONLY for features with no changes
+        if (noChangeFeatures.length > 0) {
+            const verifiedResult = batchUpdateVerifiedDates(noChangeFeatures);
+            console.log(`  Verified dates updated: ${verifiedResult.success} success, ${verifiedResult.failed} failed`);
+        }
+    }
 
     // Handle outputs (unless dry run)
     if (!options.dryRun) {

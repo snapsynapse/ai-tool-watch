@@ -174,9 +174,38 @@ Creates an **Issue** with:
 
 ### When No Changes
 
-- Updates `Checked` date in feature's Property table
-- Optionally updates `Verified` date if models confirmed accuracy
+- Updates `Checked` date in feature's Property table (auto-committed)
+- Updates `Verified` date in feature's Property table (auto-committed)
 - No PR or Issue created (silent success)
+
+## Date Update Behavior
+
+The verification system automatically manages two date fields per feature:
+
+| Date Field | When Updated | Requires PR? |
+|------------|--------------|--------------|
+| **Checked** | Every time a feature is verified, regardless of outcome | No (auto-committed) |
+| **Verified** | Only when verification confirms NO changes | No (auto-committed) |
+
+### Automatic Updates (No PR)
+
+- **Checked**: Updated to today's date whenever verification runs, even if changes are detected or the result is inconclusive. This tracks "when was this last looked at?"
+- **Verified**: Updated to today's date ONLY when the cascade confirms the stored data is accurate (NO_CHANGE result). This tracks "when was this last confirmed correct?"
+
+### Manual Updates (Via PR)
+
+When changes are **confirmed** (3 models agree on a change):
+- The `Verified` date should be updated as part of the PR that implements the changes
+- This ensures `Verified` only reflects dates when data was known to be accurate
+
+### Example Timeline
+
+```
+Jan 1:  Feature verified, no change → Checked=Jan 1, Verified=Jan 1
+Jan 8:  Feature verified, change detected → Checked=Jan 8, Verified=Jan 1 (unchanged)
+Jan 10: PR merged with fix → Checked=Jan 10, Verified=Jan 10 (updated in PR)
+Jan 15: Feature verified, no change → Checked=Jan 15, Verified=Jan 15
+```
 
 ## Configuration
 
@@ -226,7 +255,7 @@ scripts/
     ├── cascade.js          # Cascade logic and flow control
     ├── ai-clients.js       # API wrappers for each AI model
     ├── parser.js           # Parse markdown data files
-    ├── comparator.js       # Compare stored vs fetched data
+    ├── file-updater.js     # Update dates in markdown files
     └── reporter.js         # Generate PRs, issues, reports
 
 .github/
