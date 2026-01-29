@@ -124,6 +124,36 @@
 <p>2. Include a source link</p>
 <p>3. Submit a PR</p>
 
+<h2>Automated Verification</h2>
+
+<p>This project includes an automated pricing verification system that uses multiple AI models to cross-reference feature data.</p>
+
+<h3>How it works</h3>
+
+<p>1. <strong>Multi-model cascade</strong> — Queries Gemini, Perplexity, Grok (X/Twitter), and Claude</p>
+<p>2. <strong>Bias prevention</strong> — Skips same-provider models (e.g., won't ask Gemini about Google features)</p>
+<p>3. <strong>Consensus required</strong> — Needs 3 models to confirm a change before flagging</p>
+<p>4. <strong>Human review</strong> — Creates issues/PRs for review, never auto-merges</p>
+
+<h3>Running verification</h3>
+
+<pre><code># Verify all features
+<p>node scripts/verify-pricing.js</p>
+
+<h1>Verify a specific platform</h1>
+<p>node scripts/verify-pricing.js --platform claude</p>
+
+<h1>Check only stale features (>30 days since last check)</h1>
+<p>node scripts/verify-pricing.js --stale-only</p>
+
+<h1>Dry run (no issues created)</h1>
+<p>node scripts/verify-pricing.js --dry-run</p>
+<p></code></pre></p>
+
+<p>Requires API keys: <code>GEMINI_API_KEY</code>, <code>PERPLEXITY_API_KEY</code>, <code>XAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code></p>
+
+<p>See <a href="VERIFICATION.md">VERIFICATION.md</a> for full documentation.</p>
+
 <h2>Data Format</h2>
 
 <p>Platform data is stored in simple markdown files. Example:</p>
