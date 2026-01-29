@@ -188,6 +188,27 @@ Creates an **Issue** with:
 - Updates `Verified` date in feature's Property table (auto-committed)
 - No PR or Issue created (silent success)
 
+## Automatic Changelog Updates
+
+When changes are **confirmed** (3 models agree), the system automatically adds entries to each affected feature's `### Changelog` section.
+
+### Changelog Entry Format
+
+```markdown
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-29T12:00Z | [Verified] pricing: Free tier now available; status: Changed from Beta to GA |
+```
+
+### How It Works
+
+1. When the cascade confirms a change, all proposed changes are combined into a single entry
+2. The entry is prefixed with `[Verified]` to distinguish AI-verified changes from manual edits
+3. If no changelog section exists, one is created automatically before the Sources section
+4. New entries are added at the top of the table (most recent first)
+
 ## Date Update Behavior
 
 The verification system automatically manages two date fields per feature:
@@ -261,20 +282,47 @@ Optional `verification.config.json` in repo root:
 ```
 scripts/
 ├── verify-features.js       # Main entry point / orchestrator
+├── check-links.js           # Dead link checker CLI
 └── lib/
     ├── cascade.js          # Cascade logic and flow control
     ├── ai-clients.js       # API wrappers for each AI model
     ├── parser.js           # Parse markdown data files
-    ├── file-updater.js     # Update dates in markdown files
+    ├── file-updater.js     # Update dates and changelogs in markdown files
+    ├── link-checker.js     # URL validation module
     └── reporter.js         # Generate PRs, issues, reports
 
 .github/
 ├── workflows/
-│   └── verify-features.yml  # Scheduled + manual workflow
+│   ├── verify-features.yml  # Scheduled + manual verification workflow
+│   └── check-links.yml      # Scheduled + manual link checking workflow
 └── ISSUE_TEMPLATE/
     ├── verification_conflict.md
     └── verification_inconclusive.md
 ```
+
+## Link Checker
+
+A separate link checking system validates all URLs in the feature data (pricing pages, feature URLs, source links).
+
+### Running Link Checker
+
+```bash
+# Check all links
+node scripts/check-links.js
+
+# Check specific platform
+node scripts/check-links.js --platform claude
+
+# Show only broken links
+node scripts/check-links.js --broken-only
+
+# Verbose output
+node scripts/check-links.js --verbose
+```
+
+### Scheduled Runs
+
+The link checker runs weekly on **Wednesdays at 00:00 UTC** (offset from feature verification on Sundays). If broken links are found, an issue is automatically created with the list of affected URLs.
 
 ## How Grok (X/Twitter) Helps
 

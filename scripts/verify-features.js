@@ -51,7 +51,8 @@ const {
 
 const {
     batchUpdateCheckedDates,
-    batchUpdateVerifiedDates
+    batchUpdateVerifiedDates,
+    batchAddChangelogEntries
 } = require('./lib/file-updater');
 
 // Parse command line arguments
@@ -335,18 +336,48 @@ async function main() {
             }
         }
 
-        // Log confirmed changes (PR creation would require file edits)
+        // Handle confirmed changes - add changelog entries
         const confirmed = results.filter(r => r.outcome === CascadeOutcome.CONFIRMED);
         if (confirmed.length > 0) {
             console.log('\n' + '-'.repeat(40));
-            console.log('CONFIRMED CHANGES - Manual PR required:');
+            console.log('CONFIRMED CHANGES:');
             console.log('-'.repeat(40));
+
+            // Prepare changelog entries
+            const changelogEntries = [];
+
             for (const result of confirmed) {
                 console.log(`\n${result.platform} → ${result.feature}`);
-                for (const change of result.proposedChanges) {
-                    console.log(`  • [${change.type}] ${change.detail}`);
+
+                const platformData = featuresToVerify.find(f =>
+                    f.platform.name === result.platform && f.feature.name === result.feature
+                )?.platform;
+
+                if (platformData?._filepath && result.proposedChanges?.length > 0) {
+                    // Combine all changes into a single changelog entry
+                    const changesSummary = result.proposedChanges
+                        .map(c => `${c.type}: ${c.detail}`)
+                        .join('; ');
+
+                    changelogEntries.push({
+                        filepath: platformData._filepath,
+                        featureName: result.feature,
+                        change: `[Verified] ${changesSummary}`
+                    });
+
+                    for (const change of result.proposedChanges) {
+                        console.log(`  • [${change.type}] ${change.detail}`);
+                    }
                 }
             }
+
+            // Add changelog entries
+            if (changelogEntries.length > 0) {
+                console.log('\nAdding changelog entries...');
+                const changelogResult = batchAddChangelogEntries(changelogEntries);
+                console.log(`  Changelog entries added: ${changelogResult.success} success, ${changelogResult.failed} failed`);
+            }
+
             console.log('\nPlease review the report and create a PR with the necessary updates.');
             console.log(`Report: ${reportPath}`);
         }
