@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * AI Feature Tracker - Automated Pricing Verification
+ * AI Feature Tracker - Automated Feature Verification
  *
- * Multi-model AI cascade for verifying feature pricing, availability, and status.
+ * Multi-model AI cascade for verifying feature data including:
+ * pricing tiers, platform availability, status, gating, regional availability, and URLs.
  *
  * Usage:
- *   node scripts/verify-pricing.js                     # Verify all features
- *   node scripts/verify-pricing.js --platform claude   # Verify specific platform
- *   node scripts/verify-pricing.js --stale-only        # Only check stale features
- *   node scripts/verify-pricing.js --dry-run           # Don't create PRs/issues
+ *   node scripts/verify-features.js                     # Verify all features
+ *   node scripts/verify-features.js --platform claude   # Verify specific platform
+ *   node scripts/verify-features.js --stale-only        # Only check stale features
+ *   node scripts/verify-features.js --dry-run           # Don't create PRs/issues
  *
  * Environment variables:
  *   GEMINI_API_KEY       - Google AI Studio API key
@@ -50,7 +51,8 @@ const {
 
 const {
     batchUpdateCheckedDates,
-    batchUpdateVerifiedDates
+    batchUpdateVerifiedDates,
+    batchAddChangelogEntries
 } = require('./lib/file-updater');
 
 // Parse command line arguments
@@ -108,10 +110,12 @@ function parseArgs() {
 
 function printHelp() {
     console.log(`
-AI Feature Tracker - Automated Pricing Verification
+AI Feature Tracker - Automated Feature Verification
+
+Verifies: pricing tiers, platforms, status, gating, regional availability, URLs
 
 USAGE:
-    node scripts/verify-pricing.js [OPTIONS]
+    node scripts/verify-features.js [OPTIONS]
 
 OPTIONS:
     -p, --platform <name>      Verify only a specific platform (e.g., claude, chatgpt)
@@ -131,19 +135,19 @@ ENVIRONMENT VARIABLES:
 
 EXAMPLES:
     # Verify all features across all platforms
-    node scripts/verify-pricing.js
+    node scripts/verify-features.js
 
     # Verify only Claude features
-    node scripts/verify-pricing.js --platform claude
+    node scripts/verify-features.js --platform claude
 
     # Verify a specific feature
-    node scripts/verify-pricing.js --platform chatgpt --feature "Agent Mode"
+    node scripts/verify-features.js --platform chatgpt --feature "Agent Mode"
 
     # Check only stale features (not checked in 30+ days)
-    node scripts/verify-pricing.js --stale-only
+    node scripts/verify-features.js --stale-only
 
     # Dry run with verbose output
-    node scripts/verify-pricing.js --dry-run --verbose
+    node scripts/verify-features.js --dry-run --verbose
 `);
 }
 
@@ -178,7 +182,7 @@ async function main() {
         process.exit(0);
     }
 
-    console.log('\n🔍 AI Feature Tracker - Pricing Verification\n');
+    console.log('\n🔍 AI Feature Tracker - Feature Verification\n');
 
     // Check API keys
     if (!checkApiKeys()) {
@@ -332,18 +336,48 @@ async function main() {
             }
         }
 
-        // Log confirmed changes (PR creation would require file edits)
+        // Handle confirmed changes - add changelog entries
         const confirmed = results.filter(r => r.outcome === CascadeOutcome.CONFIRMED);
         if (confirmed.length > 0) {
             console.log('\n' + '-'.repeat(40));
-            console.log('CONFIRMED CHANGES - Manual PR required:');
+            console.log('CONFIRMED CHANGES:');
             console.log('-'.repeat(40));
+
+            // Prepare changelog entries
+            const changelogEntries = [];
+
             for (const result of confirmed) {
                 console.log(`\n${result.platform} → ${result.feature}`);
-                for (const change of result.proposedChanges) {
-                    console.log(`  • [${change.type}] ${change.detail}`);
+
+                const platformData = featuresToVerify.find(f =>
+                    f.platform.name === result.platform && f.feature.name === result.feature
+                )?.platform;
+
+                if (platformData?._filepath && result.proposedChanges?.length > 0) {
+                    // Combine all changes into a single changelog entry
+                    const changesSummary = result.proposedChanges
+                        .map(c => `${c.type}: ${c.detail}`)
+                        .join('; ');
+
+                    changelogEntries.push({
+                        filepath: platformData._filepath,
+                        featureName: result.feature,
+                        change: `[Verified] ${changesSummary}`
+                    });
+
+                    for (const change of result.proposedChanges) {
+                        console.log(`  • [${change.type}] ${change.detail}`);
+                    }
                 }
             }
+
+            // Add changelog entries
+            if (changelogEntries.length > 0) {
+                console.log('\nAdding changelog entries...');
+                const changelogResult = batchAddChangelogEntries(changelogEntries);
+                console.log(`  Changelog entries added: ${changelogResult.success} success, ${changelogResult.failed} failed`);
+            }
+
             console.log('\nPlease review the report and create a PR with the necessary updates.');
             console.log(`Report: ${reportPath}`);
         }

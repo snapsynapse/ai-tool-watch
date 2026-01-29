@@ -234,12 +234,162 @@ function batchUpdateVerifiedDates(features, date = null) {
     return { success, failed };
 }
 
+/**
+ * Get today's date/time in ISO 8601 format
+ * @returns {string} DateTime string like "2026-01-29T12:00Z"
+ */
+function getTodayISOWithTime() {
+    const now = new Date();
+    return now.toISOString().replace(/:\d{2}\.\d{3}Z$/, 'Z').replace(/:\d{2}Z$/, ':00Z');
+}
+
+/**
+ * Add a changelog entry to a feature's changelog table
+ * @param {string} filepath - Path to the platform markdown file
+ * @param {string} featureName - Name of the feature
+ * @param {string} changeDescription - Description of the change
+ * @param {string} date - Date to use (defaults to now in ISO format)
+ * @returns {boolean} True if added successfully
+ */
+function addChangelogEntry(filepath, featureName, changeDescription, date = null) {
+    const dateValue = date || getTodayISOWithTime();
+
+    try {
+        let content = fs.readFileSync(filepath, 'utf-8');
+
+        // Find the feature section and its changelog table
+        // Pattern: ## Feature Name ... ### Changelog ... | Date | Change | ... |------|--------| ... (entries)
+        const featureStart = content.indexOf(`## ${featureName}\n`);
+        if (featureStart === -1) {
+            console.error(`Feature "${featureName}" not found in ${filepath}`);
+            return false;
+        }
+
+        // Find the next feature section to limit our search
+        const nextFeatureMatch = content.slice(featureStart + 1).match(/\n## [^#]/);
+        const featureEnd = nextFeatureMatch
+            ? featureStart + 1 + nextFeatureMatch.index
+            : content.length;
+
+        const featureSection = content.slice(featureStart, featureEnd);
+
+        // Find the changelog table header row
+        const changelogMatch = featureSection.match(/### Changelog\s*\n\s*\| Date \| Change \|\s*\n\s*\|[-]+\|[-]+\|/);
+        if (!changelogMatch) {
+            // No changelog section found - add one
+            const insertPoint = featureSection.search(/\n### Sources|\n---|\n## /);
+            if (insertPoint === -1) {
+                console.error(`Could not find insertion point for changelog in ${featureName}`);
+                return false;
+            }
+
+            const newChangelog = `\n### Changelog\n\n| Date | Change |\n|------|--------|\n| ${dateValue} | ${changeDescription} |\n`;
+            const beforeInsert = content.slice(0, featureStart + insertPoint);
+            const afterInsert = content.slice(featureStart + insertPoint);
+            content = beforeInsert + newChangelog + afterInsert;
+
+        } else {
+            // Changelog exists - add entry after header
+            const headerEnd = featureStart + changelogMatch.index + changelogMatch[0].length;
+            const newEntry = `\n| ${dateValue} | ${changeDescription} |`;
+
+            content = content.slice(0, headerEnd) + newEntry + content.slice(headerEnd);
+        }
+
+        fs.writeFileSync(filepath, content);
+        return true;
+    } catch (error) {
+        console.error(`Error adding changelog entry for ${featureName}:`, error.message);
+        return false;
+    }
+}
+
+/**
+ * Batch add changelog entries for multiple features
+ * @param {Array<{filepath: string, featureName: string, change: string}>} entries - Entries to add
+ * @param {string} date - Date to use (defaults to now)
+ * @returns {{success: number, failed: number}} Count of successes and failures
+ */
+function batchAddChangelogEntries(entries, date = null) {
+    const dateValue = date || getTodayISOWithTime();
+    let success = 0;
+    let failed = 0;
+
+    // Group by filepath to minimize file reads/writes
+    const byFile = {};
+    for (const { filepath, featureName, change } of entries) {
+        if (!byFile[filepath]) {
+            byFile[filepath] = [];
+        }
+        byFile[filepath].push({ featureName, change });
+    }
+
+    for (const [filepath, featureEntries] of Object.entries(byFile)) {
+        try {
+            let content = fs.readFileSync(filepath, 'utf-8');
+
+            for (const { featureName, change } of featureEntries) {
+                // Find the feature section
+                const featureStart = content.indexOf(`## ${featureName}\n`);
+                if (featureStart === -1) {
+                    failed++;
+                    continue;
+                }
+
+                // Find the next feature section to limit our search
+                const nextFeatureMatch = content.slice(featureStart + 1).match(/\n## [^#]/);
+                const featureEnd = nextFeatureMatch
+                    ? featureStart + 1 + nextFeatureMatch.index
+                    : content.length;
+
+                const featureSection = content.slice(featureStart, featureEnd);
+
+                // Find the changelog table header row
+                const changelogMatch = featureSection.match(/### Changelog\s*\n\s*\| Date \| Change \|\s*\n\s*\|[-]+\|[-]+\|/);
+
+                if (!changelogMatch) {
+                    // No changelog section found - add one before Sources
+                    const insertPoint = featureSection.search(/\n### Sources|\n---|\n## /);
+                    if (insertPoint === -1) {
+                        failed++;
+                        continue;
+                    }
+
+                    const newChangelog = `\n### Changelog\n\n| Date | Change |\n|------|--------|\n| ${dateValue} | ${change} |\n`;
+                    const beforeInsert = content.slice(0, featureStart + insertPoint);
+                    const afterInsert = content.slice(featureStart + insertPoint);
+                    content = beforeInsert + newChangelog + afterInsert;
+
+                } else {
+                    // Changelog exists - add entry after header
+                    const headerEnd = featureStart + changelogMatch.index + changelogMatch[0].length;
+                    const newEntry = `\n| ${dateValue} | ${change} |`;
+
+                    content = content.slice(0, headerEnd) + newEntry + content.slice(headerEnd);
+                }
+
+                success++;
+            }
+
+            fs.writeFileSync(filepath, content);
+        } catch (error) {
+            console.error(`Error processing ${filepath}:`, error.message);
+            failed += featureEntries.length;
+        }
+    }
+
+    return { success, failed };
+}
+
 module.exports = {
     getTodayISO,
+    getTodayISOWithTime,
     updateFeatureProperty,
     updateCheckedDate,
     updateVerifiedDate,
     updateBothDates,
     batchUpdateCheckedDates,
-    batchUpdateVerifiedDates
+    batchUpdateVerifiedDates,
+    addChangelogEntry,
+    batchAddChangelogEntries
 };

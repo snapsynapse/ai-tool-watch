@@ -1,0 +1,83 @@
+name: Check Links
+
+on:
+  # Weekly schedule - Wednesdays at 00:00 UTC (midweek from feature verification)
+  schedule:
+    - cron: '0 0 * * 3'
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform to check (leave empty for all)'
+        required: false
+        type: string
+
+jobs:
+  check-links:
+    name: Validate URLs
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build check arguments
+        id: args
+        run: |
+          ARGS="--verbose"
+          if [ -n "${{ inputs.platform }}" ]; then
+            ARGS="$ARGS --platform ${{ inputs.platform }}"
+          fi
+          echo "args=$ARGS" >> $GITHUB_OUTPUT
+
+      - name: Run link checker
+        id: check
+        run: |
+          node scripts/check-links.js ${{ steps.args.outputs.args }}
+        continue-on-error: true
+
+      - name: Upload link report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: .link-reports/
+          retention-days: 30
+
+      - name: Create issue for broken links
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the latest report
+          REPORT=$(ls -t .link-reports/*.md | head -1)
+
+          # Extract broken links section
+          BROKEN=$(sed -n '/## ❌ Broken Links/,/## /p' "$REPORT" | head -n -1)
+
+          if [ -n "$BROKEN" ]; then
+            gh issue create \
+              --title "[Automated] Broken links detected" \
+              --body "The weekly link check found broken URLs in the feature data.
+
+          $BROKEN
+
+          ## Action Required
+
+          1. Verify each broken link manually
+          2. Update or remove invalid URLs
+          3. Submit a PR with fixes
+
+          ---
+          *This issue was automatically created by the link checker.*" \
+              --label "broken-links,needs-review"
+          fi
