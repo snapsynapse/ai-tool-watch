@@ -145,6 +145,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Create label if it doesn't exist (ignore errors)
+          gh label create "verification-needed" --color "0e8a16" --description "Feature needs verification" 2>/dev/null || true
+
           gh issue create \
             --title "[Automated] ${{ steps.staleness.outputs.count }} features need verification" \
             --body "The weekly staleness check found ${{ steps.staleness.outputs.count }} features that haven't been verified in over 30 days.

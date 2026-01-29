@@ -266,6 +266,17 @@ function generateInconclusiveIssue(result) {
 }
 
 /**
+ * Label colors for auto-created labels
+ */
+const LABEL_COLORS = {
+    'verification-conflict': 'd73a4a',
+    'verification-inconclusive': 'fbca04',
+    'needs-review': 'fbca04',
+    'broken-links': 'd73a4a',
+    'verification-needed': '0e8a16'
+};
+
+/**
  * Create a GitHub issue using gh CLI
  * @param {string} title - Issue title
  * @param {string} body - Issue body
@@ -274,6 +285,16 @@ function generateInconclusiveIssue(result) {
  */
 function createGitHubIssue(title, body, labels = []) {
     try {
+        // Create labels if they don't exist (ignore errors)
+        for (const label of labels) {
+            const color = LABEL_COLORS[label] || 'ededed';
+            try {
+                execSync(`gh label create "${label}" --color "${color}" 2>/dev/null`, { encoding: 'utf-8' });
+            } catch (e) {
+                // Label already exists, ignore
+            }
+        }
+
         const labelArgs = labels.map(l => `-l "${l}"`).join(' ');
         const cmd = `gh issue create --title "${title}" --body "${body.replace(/"/g, '\\"')}" ${labelArgs}`;
 

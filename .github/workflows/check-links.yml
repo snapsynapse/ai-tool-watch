@@ -65,6 +65,10 @@ jobs:
           BROKEN=$(sed -n '/## ❌ Broken Links/,/## /p' "$REPORT" | head -n -1)
 
           if [ -n "$BROKEN" ]; then
+            # Create labels if they don't exist (ignore errors)
+            gh label create "broken-links" --color "d73a4a" --description "Broken URL detected" 2>/dev/null || true
+            gh label create "needs-review" --color "fbca04" --description "Needs manual review" 2>/dev/null || true
+
             gh issue create \
               --title "[Automated] Broken links detected" \
               --body "The weekly link check found broken URLs in the feature data.
