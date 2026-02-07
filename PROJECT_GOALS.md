@@ -45,23 +45,37 @@ The entire data layer is markdown files. No database, no build dependencies beyo
 
 ## The information model
 
-The project describes AI tools at three levels of abstraction. All three layers are about *the AI tools themselves* — what they can do, how they're packaged, and what people believe about them.
+The project describes AI tools at three levels of abstraction. All three layers are about *the AI tools themselves* — how they perceive, what they can do, and how vendors package access.
 
-### Perceptions (what people believe an AI tool can do)
+### Perceptions (how an AI tool perceives its inputs)
 
-The outermost layer. Common beliefs, misconceptions, and FAQ-shaped questions *about the tools*. "I heard ChatGPT can browse the web now — can it?" or "Is Claude free?" or "Gemini can't handle long documents, right?" Some of these are true, some were true six months ago, and some were never true. This layer meets people where they are — at the level of what they've heard — and routes them to accurate information about what the AI can actually do.
+The foundational layer. AI systems take in information through distinct perceptual modalities — and these work very differently from human perception, in ways that matter for practical use.
+
+**Text** is the native modality for current LLMs. Input is tokenized into subword units and mapped to vector embeddings, then processed through attention mechanisms. This is what the architecture was designed for — the lowest-friction pathway.
+
+**Images** require a separate perceptual engine. A vision encoder (typically a Vision Transformer) splits images into patches, creates embeddings for each patch, and projects them into the same representation space as text. It's architecturally a different pathway. This is an important inversion from human experience: for humans, visual perception is the low-effort, high-bandwidth channel we evolved for. For LLMs, text is native and vision is translated *into* that space.
+
+**Audio** varies by model. Some systems process audio natively with a dedicated encoder. Others transcribe speech-to-text first — meaning the AI's "perception" of your voice is actually a lossy translation step before reasoning even begins.
+
+Why this matters for users: the perceptual mode shapes what the AI does well. An AI that "sees" an image by converting patches to vectors will have different strengths and failure modes than a human looking at the same image. Understanding this helps people work with AI tools more effectively — not by anthropomorphizing them, but by building an accurate mental model of how the tool processes what you give it.
+
+This layer is aspirational. The goal is to describe each platform's perceptual modalities honestly — what input types it handles, through what mechanisms, and with what practical implications.
 
 ### Capabilities (what an AI tool can actually do)
 
-The middle layer. What the tool is genuinely able to do, described in platform-neutral terms. "Analyze uploaded PDFs," "generate images from text prompts," "execute code in a sandbox," "search the web for current information." These are the underlying abilities that exist across platforms under different names. This layer is organized by what the AI can do, not what any vendor calls it.
+The middle layer. Given its perceptual modalities, what can the tool do? "Analyze uploaded PDFs," "generate images from text prompts," "execute code in a sandbox," "search the web for current information." These are underlying abilities that exist across platforms under different names. This layer is organized by what the AI can do, not what any vendor calls it.
+
+A capability like "document analysis" depends on the perceptions layer (can the model perceive PDFs? through OCR, native parsing, or vision?) and feeds into the features layer (which vendor products expose this capability, under what names, on which plans?).
 
 ### Features (how a vendor packages and gates an AI's capabilities)
 
-The innermost layer and the current data model. Named product features — "Artifacts," "Canvas," "Deep Research," "Custom GPTs" — with per-plan availability, platform support, status, and sourced verification dates. This is vendor-specific: it reflects how each company names, bundles, and restricts access to the underlying capabilities.
+The outermost layer and the current data model. Named product features — "Artifacts," "Canvas," "Deep Research," "Custom GPTs" — with per-plan availability, platform support, status, and sourced verification dates. This is vendor-specific: it reflects how each company names, bundles, and restricts access to the underlying capabilities.
 
 ### How they relate
 
-The layers stack: perceptions are often about capabilities, capabilities are delivered through features, and features are what the data tracks today. A single capability like "analyze uploaded documents" might surface as perceptions ("Claude is better at long documents"), map to a capability ("PDF/document analysis"), and be tracked as features across platforms ("Vision" on ChatGPT, "File uploads" on Claude, "Document understanding" on Gemini — each with different plan availability and limits).
+The layers build from inside out: perceptions (how the AI takes in information) enable capabilities (what it can do with that information), which are packaged into features (how vendors name, bundle, and gate access).
+
+A single thread might look like: a model's vision encoder can process image patches (perception) → this enables it to analyze uploaded documents (capability) → which surfaces as "Vision" on ChatGPT, "File uploads" on Claude, "Document understanding" on Gemini (features) — each with different plan availability, limits, and platform support.
 
 The features layer exists today. The capabilities and perceptions layers are aspirational and will likely evolve through experimentation.
 
