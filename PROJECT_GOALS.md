@@ -138,6 +138,25 @@ In practice, this means:
 
 This is the same principle as the verification cascade's skip rules, applied to development instead of fact-checking.
 
+### Current agent roles
+
+| Agent | Role | Scope |
+|---|---|---|
+| **Claude (Anthropic)** | Author | Infrastructure, UI, docs, and feature data for all platforms *except* Anthropic/Claude |
+| **Codex (OpenAI)** | Author | Infrastructure, UI, docs, and feature data for all platforms *except* OpenAI/ChatGPT |
+| **Gemini (Google)** | Reviewer | Asynchronous review of data accuracy, cross-platform consistency, and schema coherence — not on the critical path for authoring |
+
+Gemini's reviewer role extends the pattern already established in the verification cascade, where Gemini is model #1 for web-search-based fact-checking. As a reviewer rather than author, it avoids adding coordination overhead or merge conflicts to time-sensitive work.
+
+**Gemini review scope:**
+
+- **Data accuracy** — "Is this feature still available on this plan?" (overlaps with existing verification cascade)
+- **Cross-platform consistency** — "ChatGPT's Vision entry describes X, but Claude's describes Y for the same underlying capability — is the difference real or a data error?"
+- **Tool Check validation** — "Does this discriminator question still work? The UI may have changed"
+- **Schema coherence** — "The schema says Category values are X, but this file uses Y"
+
+The signal-to-noise contract matters: Gemini review should only surface findings it has high confidence in, similar to the 3-confirmation threshold in the verification cascade. The goal is to reduce the maintainer's review burden, not add to it.
+
 ### Working with this project as an LLM
 
 If you're an AI assistant picking up this project:
