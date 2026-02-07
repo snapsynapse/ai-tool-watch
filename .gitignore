@@ -20,6 +20,10 @@ npm-debug.log*
 # Build artifacts (docs/index.html is committed intentionally)
 # docs/index.html is generated but committed for GitHub Pages
 
+# Generated reports
+.link-reports/
+.verification-reports/
+
 # Environment
 .env
 .env.local
