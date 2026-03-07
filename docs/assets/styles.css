@@ -994,6 +994,151 @@ footer a:hover {
 }
 
 /* ========================================
+   CAPABILITY PAGE
+   ======================================== */
+
+.capability-page {
+    max-width: 1400px;
+}
+
+.capability-hero {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.capability-kicker {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.capability-hero h2 {
+    color: var(--text-heading);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.capability-hero-copy {
+    color: var(--text-primary);
+    max-width: 70ch;
+    margin-bottom: 16px;
+}
+
+.capability-stats {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.capability-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.capability-nav a {
+    text-decoration: none;
+}
+
+.capability-group {
+    margin-bottom: 32px;
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 16px;
+}
+
+.capability-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.capability-summary {
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.capability-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.capability-column h4,
+.capability-impl h4 {
+    color: var(--text-heading);
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+}
+
+.capability-list {
+    padding-left: 18px;
+    color: var(--text-primary);
+}
+
+.capability-list li {
+    margin-bottom: 6px;
+}
+
+.capability-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.capability-implementation-header {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.capability-implementations {
+    display: grid;
+    gap: 10px;
+}
+
+.capability-impl {
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.capability-impl-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.capability-impl-copy {
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.capability-note {
+    margin-top: 10px;
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================
    RESPONSIVE: TABLET (max-width: 900px)
    ======================================== */
 
@@ -1013,6 +1158,11 @@ footer a:hover {
         width: 100%;
         justify-content: flex-start;
     }
+
+    .capability-columns,
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ========================================
@@ -1027,6 +1177,13 @@ footer a:hover {
 
     .features-grid { grid-template-columns: 1fr; }
     .avail-grid { grid-template-columns: repeat(3, 1fr); }
+    .capability-hero {
+        padding: 18px;
+    }
+
+    .capability-hero h2 {
+        font-size: 1.5rem;
+    }
 
     /* Reduced padding for mobile header */
     .container { padding-top: 80px; }

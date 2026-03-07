@@ -1,0 +1,461 @@
+- id: chatgpt-advanced-voice-mode
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Advanced Voice Mode
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: chatgpt-agent-mode
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Agent Mode
+  capabilities:
+    - do-multi-step-research
+    - take-actions-and-run-tools
+    - connect-to-external-systems
+- id: chatgpt-atlas-browser
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Atlas Browser
+  capabilities:
+    - search-the-web
+    - take-actions-and-run-tools
+- id: chatgpt-canvas
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Canvas
+  capabilities:
+    - make-and-edit-documents
+    - write-and-edit-code
+- id: chatgpt-search
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: ChatGPT Search
+  capabilities:
+    - search-the-web
+- id: chatgpt-codex-code-agent
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Codex (Code Agent)
+  capabilities:
+    - write-and-edit-code
+    - take-actions-and-run-tools
+- id: chatgpt-custom-gpts-actions
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Custom GPTs + Actions
+  capabilities:
+    - build-reusable-ai-workflows
+    - connect-to-external-systems
+- id: chatgpt-dall-e-image-generation
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: DALL-E Image Generation
+  capabilities:
+    - generate-images
+- id: chatgpt-deep-research
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Deep Research
+  capabilities:
+    - do-multi-step-research
+    - search-the-web
+- id: chatgpt-memory
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Memory
+  capabilities:
+    - remember-context-over-time
+- id: chatgpt-projects
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Projects
+  capabilities:
+    - organize-work-in-projects
+    - use-files-i-provide
+- id: chatgpt-sora-video-generation
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Sora (Video Generation)
+  capabilities:
+    - generate-video
+- id: claude-artifacts
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Artifacts
+  capabilities:
+    - make-and-edit-documents
+    - write-and-edit-code
+- id: claude-claude-code
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Claude Code
+  capabilities:
+    - write-and-edit-code
+    - take-actions-and-run-tools
+- id: claude-connectors
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Connectors
+  capabilities:
+    - connect-to-external-systems
+- id: claude-cowork-mode
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Cowork Mode
+  capabilities:
+    - do-multi-step-research
+    - take-actions-and-run-tools
+- id: claude-extended-thinking
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Extended Thinking
+  capabilities: []
+  notes: |
+    Transitional model-quality or reasoning-depth record. No stable primary capability mapping yet.
+- id: claude-mcp-model-context-protocol
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: MCP (Model Context Protocol)
+  capabilities:
+    - connect-to-external-systems
+- id: claude-projects
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Projects
+  capabilities:
+    - organize-work-in-projects
+    - use-files-i-provide
+- id: claude-skills
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Skills
+  capabilities:
+    - build-reusable-ai-workflows
+- id: claude-vision-image-understanding
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Vision (Image Understanding)
+  capabilities:
+    - see-images-and-screens
+    - read-text-and-documents
+- id: copilot-agent-builder
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Agent Builder
+  capabilities:
+    - build-reusable-ai-workflows
+- id: copilot-connectors
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Copilot Connectors
+  capabilities:
+    - connect-to-external-systems
+- id: copilot-office-apps
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Copilot in Office Apps
+  capabilities:
+    - make-and-edit-documents
+    - connect-to-external-systems
+- id: copilot-vision
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Copilot Vision
+  capabilities:
+    - see-images-and-screens
+- id: copilot-voice
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Copilot Voice
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: copilot-gpt-4-access
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: GPT-4 Access
+  capabilities: []
+  notes: |
+    Transitional model-access entitlement record. No stable primary capability mapping yet.
+- id: copilot-image-generation-designer
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Image Generation (Designer)
+  capabilities:
+    - generate-images
+- id: gemini-ai-studio
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: AI Studio
+  capabilities:
+    - write-and-edit-code
+    - build-reusable-ai-workflows
+- id: gemini-audio-overview
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Audio Overview
+  capabilities: []
+  notes: |
+    Transitional output-modality record. No stable primary capability mapping yet.
+- id: gemini-canvas
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Canvas
+  capabilities:
+    - make-and-edit-documents
+    - write-and-edit-code
+- id: gemini-deep-research
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Deep Research
+  capabilities:
+    - do-multi-step-research
+    - search-the-web
+- id: gemini-extensions
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Extensions
+  capabilities:
+    - connect-to-external-systems
+- id: gemini-gemini-advanced
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Gemini Advanced
+  capabilities: []
+  notes: |
+    Transitional model-access entitlement record. No stable primary capability mapping yet.
+- id: gemini-workspace
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Gemini in Workspace (Docs, Sheets, etc.)
+  capabilities:
+    - make-and-edit-documents
+    - connect-to-external-systems
+    - use-files-i-provide
+- id: gemini-live-voice-mode
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Gemini Live (Voice Mode)
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: gemini-gems-custom-chatbots
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Gems (Custom Chatbots)
+  capabilities:
+    - build-reusable-ai-workflows
+- id: gemini-imagen
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Imagen
+  capabilities:
+    - generate-images
+- id: gemini-nano-banana-pro
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Nano Banana Pro
+  capabilities:
+    - generate-images
+- id: gemini-notebooklm
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: NotebookLM
+  capabilities:
+    - organize-work-in-projects
+    - use-files-i-provide
+    - do-multi-step-research
+- id: gemini-project-astra
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Project Astra
+  capabilities:
+    - see-images-and-screens
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: gemini-veo-video-generation
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Veo (Video Generation)
+  capabilities:
+    - generate-video
+- id: grok-deepsearch
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: DeepSearch
+  capabilities:
+    - do-multi-step-research
+    - search-the-web
+- id: grok-chat
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Grok Chat
+  capabilities:
+    - write-and-explain
+- id: grok-image-generation-aurora
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Grok Image Generation (Aurora)
+  capabilities:
+    - generate-images
+- id: grok-imagine-video-generation
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Grok Imagine (Video Generation)
+  capabilities:
+    - generate-video
+- id: grok-studio
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Grok Studio
+  capabilities:
+    - make-and-edit-documents
+    - write-and-edit-code
+- id: grok-voice-mode
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Grok Voice Mode
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: grok-real-time-x-twitter-data
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Real-time X/Twitter Data
+  capabilities:
+    - connect-to-external-systems
+- id: grok-think-mode
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Think Mode
+  capabilities: []
+  notes: |
+    Transitional reasoning-depth modifier. No stable primary capability mapping yet.
+- id: perplexity-agent-mode-agentic-actions
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Agent Mode (Agentic Actions)
+  capabilities:
+    - take-actions-and-run-tools
+    - do-multi-step-research
+- id: perplexity-buy-with-pro-shopping
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Buy with Pro (Shopping)
+  capabilities:
+    - take-actions-and-run-tools
+- id: perplexity-collections-spaces
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Collections (Spaces)
+  capabilities:
+    - organize-work-in-projects
+    - use-files-i-provide
+- id: perplexity-comet-browser
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Comet Browser
+  capabilities:
+    - search-the-web
+    - take-actions-and-run-tools
+- id: perplexity-enterprise-app-connectors
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Enterprise App Connectors
+  capabilities:
+    - connect-to-external-systems
+- id: perplexity-focus-modes
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Focus Modes
+  capabilities:
+    - search-the-web
+- id: perplexity-model-selection
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Model Selection
+  capabilities: []
+  notes: |
+    Transitional model-choice record. No stable primary capability mapping yet.
+- id: perplexity-pages
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Pages
+  capabilities:
+    - do-multi-step-research
+    - make-and-edit-documents
+- id: perplexity-pro-search
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Pro Search
+  capabilities:
+    - search-the-web
+    - do-multi-step-research
+- id: perplexity-voice-mode
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Voice Mode
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time

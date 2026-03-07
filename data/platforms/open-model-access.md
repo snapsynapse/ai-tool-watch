@@ -1,10 +1,11 @@
 ---
-name: Local/Open Models
-vendor: Local Models
-logo: https://cdn.simpleicons.org/ollama/white
+name: Open Model Access
+vendor: Open / Self-Hosted
+logo: https://cdn.simpleicons.org/huggingface/white
 status_page: https://huggingface.co/models
-pricing_page: https://ollama.com/library
+pricing_page: https://huggingface.co/models
 last_verified: 2026-02-22
+build_visibility: hidden
 ---
 
 ## Pricing
@@ -160,7 +161,7 @@ No restrictions - runs locally.
 
 ### Talking Point
 
-> "Llama 3.3 is Meta's open-weight model. **Completely free to run locally**—you just need the hardware. The 70B model needs ~40GB VRAM for full precision, but quantized versions run on consumer GPUs."
+> "Llama 3.3 is Meta's open-weight model. **Completely free to run locally**-you just need the hardware. The 70B model needs ~40GB VRAM for full precision, but quantized versions run on consumer GPUs."
 
 ### Sources
 
@@ -213,7 +214,7 @@ Llama 4 Community License (commercial use under 700M MAU).
 
 ### Talking Point
 
-> "Llama 4 is Meta's first natively multimodal model—text and vision built-in. **Scout has a 10 million token context window** and fits on a single H100. Maverick rivals GPT-4o on benchmarks. Free for commercial use under 700M monthly users."
+> "Llama 4 is Meta's first natively multimodal model-text and vision built-in. **Scout has a 10 million token context window** and fits on a single H100. Maverick rivals GPT-4o on benchmarks. Free for commercial use under 700M monthly users."
 
 ### Sources
 
@@ -226,60 +227,6 @@ Llama 4 Community License (commercial use under 700M MAU).
 | Date | Change |
 |------|--------|
 | 2025-04-05T12:00Z | Initial entry |
-
----
-
-## Local Hosting Options
-
-| Property | Value |
-|----------|-------|
-| Category | other |
-| Status | ga |
-| Gating | free |
-| URL | https://ollama.com/ |
-| Launched | 2023-07-01T12:00Z |
-| Verified | 2026-02-22|
-| Checked | 2026-02-22|
-
-### Availability
-
-| Plan | Available | Limits | Notes |
-|------|-----------|--------|-------|
-| Self-hosted | ✅ | Your hardware | Multiple options |
-
-### Platforms
-
-| Platform | Available | Notes |
-|----------|-----------|-------|
-| Windows | ✅ | Ollama, LM Studio, text-generation-webui |
-| macOS | ✅ | Ollama, LM Studio |
-| Linux | ✅ | All options |
-| iOS | ❌ |  |
-| Android | ⚠️ | Limited apps |
-| Chrome | ❌ |  |
-| web | ✅ | Web UIs available |
-| terminal | ✅ | Ollama CLI |
-| API | ✅ | Ollama REST API |
-
-### Regional
-
-No restrictions.
-
-### Talking Point
-
-> "To run models locally, use **Ollama** (easiest CLI), **LM Studio** (nice GUI), or **text-generation-webui** (most features). All are free. Hardware requirements: 8GB RAM minimum, 16GB+ VRAM for larger models."
-
-### Sources
-
-- [Ollama](https://ollama.com/)
-- [LM Studio](https://lmstudio.ai/)
-- [text-generation-webui](https://github.com/oobabooga/text-generation-webui)
-
-### Changelog
-
-| Date | Change |
-|------|--------|
-| 2023-07-01T12:00Z | Initial entry |
 
 ---
 
@@ -321,7 +268,7 @@ No restrictions - runs locally.
 
 ### Talking Point
 
-> "Mistral offers several open models. **Mistral Nemo (12B) runs on consumer hardware**—great for local use. Mistral Large (123B) needs serious GPU power but rivals GPT-4 quality."
+> "Mistral offers several open models. **Mistral Nemo (12B) runs on consumer hardware**-great for local use. Mistral Large (123B) needs serious GPU power but rivals GPT-4 quality."
 
 ### Sources
 
@@ -483,7 +430,7 @@ No restrictions (Apache 2.0 license).
 
 ### Talking Point
 
-> "Qwen 3 is Alibaba's latest open model family with **hybrid thinking modes**—switch between reasoning and fast response with `/think`. Sizes from 0.6B to 235B MoE, supports 119 languages. Fully open under Apache 2.0."
+> "Qwen 3 is Alibaba's latest open model family with **hybrid thinking modes**-switch between reasoning and fast response with `/think`. Sizes from 0.6B to 235B MoE, supports 119 languages. Fully open under Apache 2.0."
 
 ### Sources
 

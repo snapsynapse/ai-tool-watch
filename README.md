@@ -1,8 +1,19 @@
-# AI Feature Tracker
+# AI Capability Reference
 
-**Community-maintained tracker of AI feature availability across subscription tiers.**
+Transition note: this repo is actively being reframed toward an "AI Capability Reference" model while preserving the current feature-first site during migration.
 
-🔗 **[View the Dashboard](https://snapsynapse.github.io/ai-feature-tracker)**
+- Capability taxonomy draft: [CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md)
+- Capability pressure test: [CAPABILITY_PRESSURE_TEST.md](CAPABILITY_PRESSURE_TEST.md)
+- Ontology-first principle: [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md)
+- Ontology draft: [ONTOLOGY.md](ONTOLOGY.md)
+- Model access extension: [MODEL_ACCESS_EXTENSION.md](MODEL_ACCESS_EXTENSION.md)
+- Schema proposal: [SCHEMA_PROPOSAL.md](SCHEMA_PROPOSAL.md)
+- Scope rules: [SCOPE.md](SCOPE.md)
+- Migration strategy: [MIGRATION_STRATEGY.md](MIGRATION_STRATEGY.md)
+
+**Plain-English reference for AI capabilities, plans, constraints, and implementations.**
+
+🔗 **[View the Reference](https://snapsynapse.com/ai-feature-tracker/)**
 
 ---
 
@@ -11,7 +22,7 @@
 A single source of truth for answering questions like:
 - "Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)
 - "Can I use Claude Cowork on Windows?" (Not yet, macOS only)
-- "Which local models can I run on my hardware?" (Depends on VRAM)
+- "Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)
 
 Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.
 
@@ -25,11 +36,12 @@ Built for fellow AI facilitators, educators, designers, and anyone who needs acc
 | **Gemini** | Google | Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live |
 | **Perplexity** | Perplexity AI | Comet, Agent Mode, Pro Search, Focus, Collections, Voice |
 | **Grok** | xAI | Chat, Aurora (images), DeepSearch, Think Mode, Voice |
-| **Local Models** | Various | Llama, Mistral, DeepSeek, Qwen, Codestral |
+| **Open / Self-Hosted** | Various | Open model access plus self-hosted runtimes |
 
 ## Features
 
 - **Plan-by-plan availability** — See exactly which tier unlocks each feature
+- **Capability-first view** — Browse plain-English capabilities in addition to the feature view
 - **Platform support** — Windows, macOS, Linux, iOS, Android, web, terminal, API
 - **Talking points** — Ready-to-use sentences for presentations (click to copy)
 - **Category filtering** — Voice, Coding, Research, Agents, and more
@@ -58,9 +70,10 @@ This site is designed to meet WCAG 2.1 AA standards:
 Found outdated info? Want to add a feature? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Quick version:
-1. Edit the relevant file in `data/platforms/`
-2. Include a source link
-3. Submit a PR
+1. Edit the relevant record in `data/platforms/`, `data/model-access/`, `data/products/`, or `data/implementations/`
+2. Include or preserve the evidence source link
+3. Run `node scripts/validate-ontology.js`
+4. Submit a PR
 
 ## Automated Verification
 
@@ -147,15 +160,20 @@ See [VERIFICATION.md](VERIFICATION.md) for full documentation.
 
 ```bash
 # Clone the repo
-git clone https://github.com/snapsynapse/ai-feature-tracker.git
-cd ai-feature-tracker
+git clone https://github.com/snapsynapse/ai-capability-reference.git
+cd ai-capability-reference
 
 # Build the dashboard
 node scripts/build.js
 
+# Validate ontology records
+node scripts/validate-ontology.js
+
 # Open it
 open docs/index.html
 ```
+
+Archived platform bundles live under `data/archive/platforms/` for historical reference, and `node scripts/build.js` reads only active evidence from `data/platforms/`.
 
 ## Data Format
 
@@ -212,7 +230,7 @@ To enable GitHub Pages on a fork:
 
 1. Go to **Settings → Pages**
 2. Under "Build and deployment", select **GitHub Actions**
-3. The workflow will deploy to `https://<username>.github.io/ai-feature-tracker/`
+3. The workflow will deploy to `https://<username>.github.io/ai-capability-reference/`
 
 ### Manual build
 
@@ -235,4 +253,4 @@ With help from Claude Code, of course.
 
 ---
 
-**Found an error?** [Open an issue](https://github.com/snapsynapse/ai-feature-tracker/issues) or submit a PR!
+**Found an error?** [Open an issue](https://github.com/snapsynapse/ai-capability-reference/issues) or submit a PR!

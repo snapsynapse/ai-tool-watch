@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Capability Reference - Capability Index</title>
+    <meta name="description" content="Capability-first view of the AI Capability Reference, grouped by what a person wants to do rather than vendor feature names.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <h1><a href="capabilities.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
+        <a href="index.html" class="back-btn" onclick="passTheme(this)">← Dashboard</a>
+        <div class="header-meta">
+            <span class="last-updated">Last built: 2026-03-07</span>
+            <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
+            <a href="https://github.com/snapsynapse/ai-capability-reference" class="github-link">Contribute on GitHub</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
+        </div>
+    </header>
+
+    <div class="container capability-page" id="main-content">
+        <section class="capability-hero">
+            <p class="capability-kicker">Ontology-first view</p>
+            <h2>What can this AI do?</h2>
+            <p class="capability-hero-copy">This page groups vendor implementations by plain-English capabilities. Each implementation links back to the current feature record in the dashboard.</p>
+            <div class="capability-stats">
+                <span class="feature-count">Capabilities: <strong>18</strong></span>
+                <span class="feature-count">Mapped implementations: <strong>54</strong></span>
+                <span class="feature-count">Model access records: <strong>9</strong></span>
+            </div>
+        </section>
+
+        <nav class="capability-nav" aria-label="Capability groups">
+            <a href="#group-understand" class="provider-toggle active">Understand</a><a href="#group-respond" class="provider-toggle active">Respond</a><a href="#group-create" class="provider-toggle active">Create</a><a href="#group-work-with-my-stuff" class="provider-toggle active">Work With My Stuff</a><a href="#group-act-for-me" class="provider-toggle active">Act for Me</a><a href="#group-connect" class="provider-toggle active">Connect</a><a href="#group-access-context" class="provider-toggle active">Access Context</a>
+        </nav>
+
+        
+        <section class="capability-group" id="group-understand">
+            <div class="platform-header">
+                <h2>Understand</h2>
+                <div class="platform-meta">
+                    <span>3 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Hear Audio and Speech</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Understand</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can accept spoken or audio input for understanding.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>microphone input in conversation</li><li>understanding spoken prompts</li><li>multimodal listening modes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>text-only chat</li><li>outputting audio without taking spoken input</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Voice input</span><span class="provider-toggle active">Live</span><span class="provider-toggle active">Voice Mode</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>6</strong> implementations across <strong>5</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-advanced-voice-mode" class="feature-link" onclick="passTheme(this)">Advanced Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Advanced Voice Mode enables natural, real-time conversations with GPT-4o. Available on Windows, iOS, Android, and web. macOS desktop voice was retired January 15, 2026—Mac users should use the web version instead.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-voice" class="feature-link" onclick="passTheme(this)">Copilot Voice</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot Voice is available on all tiers including free. You can speak to Copilot on desktop, mobile, and web.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gemini-live-voice-mode" class="feature-link" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini Live enables natural voice conversations with Gemini. Basic voice is free; full Gemini Live with interruption and multi-turn requires AI Pro ($19.99/mo). Currently mobile only.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-project-astra" class="feature-link" onclick="passTheme(this)">Project Astra</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. Now free for everyone on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-voice-mode" class="feature-link" onclick="passTheme(this)">Grok Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok Voice Mode allows natural voice conversations with Grok. Free on iOS for all users; Android requires a paid subscription (Premium $8/mo or higher). Currently mobile only (iOS and Android).</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-voice-mode" class="feature-link" onclick="passTheme(this)">Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity Voice allows hands-free search on mobile. Available on all tiers including free—just tap the microphone in the app.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Read Text and Documents</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Understand</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can interpret text, documents, PDFs, and similar uploaded or pasted materials.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>reading attached documents</li><li>parsing structured textual files</li><li>understanding document content for analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>merely storing a file without interpreting it</li><li>only connecting to a system without reading its contents</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">file analysis</span><span class="provider-toggle active">document understanding</span><span class="provider-toggle active">spreadsheet parsing</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>1</strong> implementation across <strong>1</strong> product
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-vision-image-understanding" class="feature-link" onclick="passTheme(this)">Vision (Image Understanding)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude can analyze images you upload—documents, screenshots, diagrams. Available on all plans including free.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>See Images and Screens</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Understand</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can interpret images, screenshots, camera views, or other visual interface context.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>image understanding</li><li>screenshot interpretation</li><li>live visual context in apps or browsers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>image generation</li><li>text-only reasoning with no visual input</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Vision</span><span class="provider-toggle active">Project Astra</span><span class="provider-toggle active">screen understanding</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>3</strong> implementations across <strong>3</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-vision-image-understanding" class="feature-link" onclick="passTheme(this)">Vision (Image Understanding)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude can analyze images you upload—documents, screenshots, diagrams. Available on all plans including free.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-vision" class="feature-link" onclick="passTheme(this)">Copilot Vision</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot Vision lets Copilot see and discuss the webpage you&#39;re viewing in Edge. Now free for all Edge users in the US with a Microsoft account—no Pro subscription needed. Still in preview and Edge-only.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-preview">Preview</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-project-astra" class="feature-link" onclick="passTheme(this)">Project Astra</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. Now free for everyone on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                    <div class="capability-implementation-header model-access-header">
+                        <strong>1</strong> relevant model access record
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Meta</span>
+                                <h4><a href="index.html#open-model-access-llama-4-meta" class="feature-link" onclick="passTheme(this)">Llama 4</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Meta&#39;s Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">Ollama</span></div>
+                            <p class="capability-note">model size and context claims can exceed ordinary consumer hardware</p>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-respond">
+            <div class="platform-header">
+                <h2>Respond</h2>
+                <div class="platform-meta">
+                    <span>2 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Speak Back in Real Time</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Respond</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can respond with live or near-live speech in a conversational flow.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>back-and-forth spoken conversation</li><li>real-time voice replies</li><li>low-latency live voice modes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>downloadable audio only</li><li>delayed audio generation without conversation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Advanced Voice Mode</span><span class="provider-toggle active">Gemini Live</span><span class="provider-toggle active">Voice Mode</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>6</strong> implementations across <strong>5</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-advanced-voice-mode" class="feature-link" onclick="passTheme(this)">Advanced Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Advanced Voice Mode enables natural, real-time conversations with GPT-4o. Available on Windows, iOS, Android, and web. macOS desktop voice was retired January 15, 2026—Mac users should use the web version instead.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-voice" class="feature-link" onclick="passTheme(this)">Copilot Voice</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot Voice is available on all tiers including free. You can speak to Copilot on desktop, mobile, and web.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gemini-live-voice-mode" class="feature-link" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini Live enables natural voice conversations with Gemini. Basic voice is free; full Gemini Live with interruption and multi-turn requires AI Pro ($19.99/mo). Currently mobile only.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-project-astra" class="feature-link" onclick="passTheme(this)">Project Astra</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. Now free for everyone on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-voice-mode" class="feature-link" onclick="passTheme(this)">Grok Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok Voice Mode allows natural voice conversations with Grok. Free on iOS for all users; Android requires a paid subscription (Premium $8/mo or higher). Currently mobile only (iOS and Android).</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-voice-mode" class="feature-link" onclick="passTheme(this)">Voice Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity Voice allows hands-free search on mobile. Available on all tiers including free—just tap the microphone in the app.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Write and Explain</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Respond</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can produce useful written responses, explanations, summaries, and structured output.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>core chat responses</li><li>explanatory writing</li><li>structured written answers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>model entitlement with no distinct output behavior</li><li>actions or tool use without a written result</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">chat</span><span class="provider-toggle active">explanation</span><span class="provider-toggle active">summary</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>1</strong> implementation across <strong>1</strong> product
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-chat" class="feature-link" onclick="passTheme(this)">Grok Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok is xAI&#39;s chatbot, available through X (Twitter) or via grok.com. No official desktop apps exist—access is via web, iOS, or Android. Free users get very limited access; Premium ($8/mo) unlocks regular use. SuperGrok at $30/mo gets you the highest limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                    <div class="capability-implementation-header model-access-header">
+                        <strong>7</strong> relevant model access records
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">DeepSeek</span>
+                                <h4><a href="index.html#open-model-access-deepseek-v3-deepseek-r1" class="feature-link" onclick="passTheme(this)">DeepSeek V3 / R1</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">DeepSeek&#39;s open model family spanning large general-purpose and reasoning-oriented self-hosted models.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local inference stacks</span></div>
+                            <p class="capability-note">the full flagship models need serious hardware</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Meta</span>
+                                <h4><a href="index.html#open-model-access-llama-3-3-meta" class="feature-link" onclick="passTheme(this)">Llama 3.3</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Meta&#39;s open-weight Llama 3.3 family for self-hosted general-purpose use.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
+                            <p class="capability-note">higher-end variants still need significant VRAM</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Meta</span>
+                                <h4><a href="index.html#open-model-access-llama-4-meta" class="feature-link" onclick="passTheme(this)">Llama 4</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Meta&#39;s Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">Ollama</span></div>
+                            <p class="capability-note">model size and context claims can exceed ordinary consumer hardware</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Mistral</span>
+                                <h4><a href="index.html#open-model-access-mistral-large-mistral-nemo" class="feature-link" onclick="passTheme(this)">Mistral Large / Nemo</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Mistral&#39;s open model family ranges from consumer-friendly Nemo to much larger self-hosted models approaching frontier quality.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
+                            <p class="capability-note">runtime practicality depends heavily on which model size is chosen</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Mistral</span>
+                                <h4><a href="index.html#open-model-access-mistral-small-3" class="feature-link" onclick="passTheme(this)">Mistral Small 3</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Mistral Small 3 is a locally runnable open model line focused on strong general performance at more achievable hardware sizes.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">web UIs over local runtimes</span></div>
+                            <p class="capability-note">consumer use is realistic but still depends on memory and quantization choices</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Alibaba</span>
+                                <h4><a href="index.html#open-model-access-qwen-2-5-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 2.5</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
+                            <p class="capability-note">capability and hardware requirements vary substantially by size</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Alibaba</span>
+                                <h4><a href="index.html#open-model-access-qwen-3-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 3</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 3 family extends local/open model access with a wide size range and hybrid thinking behaviors.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">local web UIs</span></div>
+                            <p class="capability-note">model sizes range from practical local options to very large MoE deployments</p>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-create">
+            <div class="platform-header">
+                <h2>Create</h2>
+                <div class="platform-meta">
+                    <span>4 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Generate Images</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Create</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can create or transform images from prompts, edits, or multimodal instructions.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>text-to-image generation</li><li>image editing or variation</li><li>branded image generation tools</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>only understanding an image</li><li>producing text descriptions without making an image</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">DALL-E</span><span class="provider-toggle active">Imagen</span><span class="provider-toggle active">Designer</span><span class="provider-toggle active">Aurora</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>5</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-dall-e-image-generation" class="feature-link" onclick="passTheme(this)">DALL-E Image Generation</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">DALL-E image generation is available on all plans including free, but free users get very limited generations per day. Plus and Pro have much higher or unlimited limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-image-generation-designer" class="feature-link" onclick="passTheme(this)">Image Generation (Designer)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Image generation with Designer is available on free Copilot with 15 boosts per day. Pro gets 100 boosts and priority generation.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-imagen" class="feature-link" onclick="passTheme(this)">Imagen</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini can generate images using Imagen. Free users have limits; AI Pro gets full access.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-nano-banana-pro" class="feature-link" onclick="passTheme(this)">Nano Banana Pro</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Nano Banana Pro is Gemini&#39;s native image generation and editing model, built on Gemini 3 Pro. It&#39;s distinct from Imagen—optimized for conversational editing, character consistency, and multi-image fusion. Supports 1K-4K resolutions with SynthID watermarks. Now requires a paid plan (AI Pro, $19.99/mo)—free users get Nano Banana 2 as the default model instead. Access Nano Banana Pro via the three-dot model menu.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-image-generation-aurora" class="feature-link" onclick="passTheme(this)">Grok Image Generation (Aurora)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok can generate images using Aurora. Free users get ~10 generations per 2-hour window; paid tiers unlock higher daily limits. SuperGrok gets the most generations per day.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Generate Video</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Create</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can create or transform video outputs from prompts or edits.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>text-to-video generation</li><li>short generated clips</li><li>vendor video generation modes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>static image generation</li><li>ordinary screen recording tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Sora</span><span class="provider-toggle active">Veo</span><span class="provider-toggle active">Imagine</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>3</strong> implementations across <strong>3</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-sora-video-generation" class="feature-link" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Sora generates videos from text prompts—up to 25 seconds at 1080p. Requires Plus ($20/mo) or Pro ($200/mo). Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-veo-video-generation" class="feature-link" onclick="passTheme(this)">Veo (Video Generation)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Veo is Google&#39;s video generation model. Veo 3.1 generates 4K video up to 8 seconds with native audio—including dialogue, sound effects, and ambient noise. Requires AI Pro ($19.99/mo). Available in the Gemini app, Flow, and via API. Supports text-to-video and image-to-video with up to 3 reference images for character consistency.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-imagine-video-generation" class="feature-link" onclick="passTheme(this)">Grok Imagine (Video Generation)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok Imagine generates 6-15 second video clips with synchronized audio in under 20 seconds. Free users get very limited access (~3/day at 480p); paid tiers unlock higher limits (up to 500/day on SuperGrok). Supports text-to-video and image-to-video. &#39;Spicy Mode&#39; requires paid subscription.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Make and Edit Documents</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Create</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can create, revise, or iteratively develop documents, presentations, notes, or other standalone work products.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>writing workspaces</li><li>artifact/document generation</li><li>editing inside office or document environments</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>simple single-message answers without document context</li><li>code-only workflows when no document artifact is involved</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Artifacts</span><span class="provider-toggle active">Canvas</span><span class="provider-toggle active">Office integration</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>7</strong> implementations across <strong>6</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-canvas" class="feature-link" onclick="passTheme(this)">Canvas</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Canvas is ChatGPT&#39;s split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. Available on all plans including free, but currently desktop and web only. Mobile is coming soon.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-artifacts" class="feature-link" onclick="passTheme(this)">Artifacts</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Artifacts are Claude&#39;s way of creating standalone content—code, documents, diagrams—in a separate panel. Available on all plans including free.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-in-office-apps" class="feature-link" onclick="passTheme(this)">Copilot in Office Apps</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot in Word, Excel, PowerPoint requires Copilot Pro ($20/mo) or M365 Copilot ($30/user/mo). Free Copilot doesn&#39;t include Office integration.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-canvas" class="feature-link" onclick="passTheme(this)">Canvas</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini Canvas is an interactive workspace for creating and refining writing and code projects. Available on all plans including free—free users get limited prompts per day, while AI Pro unlocks a 1 million token context window.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gemini-in-workspace-docs-sheets-etc" class="feature-link" onclick="passTheme(this)">Gemini in Workspace (Docs, Sheets, etc.)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini integrates directly into Google Docs, Sheets, and Slides. Basic features are free; full &#39;Help me write/create&#39; requires AI Pro or Workspace add-on.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-studio" class="feature-link" onclick="passTheme(this)">Grok Studio</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok Studio is a split-screen workspace for creating documents, running code, and building games—similar to Canvas or Artifacts. Available on all tiers including free at grok.com. Supports Python, JavaScript, TypeScript, C++, and HTML preview.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-pages" class="feature-link" onclick="passTheme(this)">Pages</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Pages let you turn research into shareable, formatted articles with AI-generated sections and citations. Available on all plans including free. Created pages are public and searchable.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Write and Edit Code</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Create</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can generate, refactor, debug, or execute code-oriented work.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>coding agents</li><li>code editing workspaces</li><li>code generation and review</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>general writing features with no coding support</li><li>model access alone without a coding workflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Claude Code</span><span class="provider-toggle active">Codex</span><span class="provider-toggle active">AI Studio</span><span class="provider-toggle active">Grok Studio</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>7</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-canvas" class="feature-link" onclick="passTheme(this)">Canvas</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Canvas is ChatGPT&#39;s split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. Available on all plans including free, but currently desktop and web only. Mobile is coming soon.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-codex-code-agent" class="feature-link" onclick="passTheme(this)">Codex (Code Agent)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Codex is ChatGPT&#39;s coding agent that can write, run, and debug code autonomously. It requires Plus or higher—it&#39;s not available on Free or the $8 Go plan.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-artifacts" class="feature-link" onclick="passTheme(this)">Artifacts</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Artifacts are Claude&#39;s way of creating standalone content—code, documents, diagrams—in a separate panel. Available on all plans including free.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-claude-code" class="feature-link" onclick="passTheme(this)">Claude Code</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude Code is Anthropic&#39;s agentic coding tool. It requires Pro subscription at minimum—that&#39;s $20/month. Available as a terminal CLI and a native VS Code extension (out of beta), plus Xcode integration via the Claude Agent SDK. No JetBrains plugin yet, but JetBrains AI Assistant integrates Claude models.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-ai-studio" class="feature-link" onclick="passTheme(this)">AI Studio</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">AI Studio is Google&#39;s developer playground for Gemini models—test prompts, get API keys, and prototype before building. Completely free with generous rate limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-canvas" class="feature-link" onclick="passTheme(this)">Canvas</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini Canvas is an interactive workspace for creating and refining writing and code projects. Available on all plans including free—free users get limited prompts per day, while AI Pro unlocks a 1 million token context window.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-grok-studio" class="feature-link" onclick="passTheme(this)">Grok Studio</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok Studio is a split-screen workspace for creating documents, running code, and building games—similar to Canvas or Artifacts. Available on all tiers including free at grok.com. Supports Python, JavaScript, TypeScript, C++, and HTML preview.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                    <div class="capability-implementation-header model-access-header">
+                        <strong>3</strong> relevant model access records
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Mistral</span>
+                                <h4><a href="index.html#open-model-access-codestral-mistral" class="feature-link" onclick="passTheme(this)">Codestral</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Mistral&#39;s code-specialized open model line for self-hosted coding workflows.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span></div>
+                            <p class="capability-note">consumer GPU use is realistic only with enough VRAM or quantization</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Alibaba</span>
+                                <h4><a href="index.html#open-model-access-qwen-2-5-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 2.5</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
+                            <p class="capability-note">capability and hardware requirements vary substantially by size</p>
+                        </article>
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Alibaba</span>
+                                <h4><a href="index.html#open-model-access-qwen-coder" class="feature-link" onclick="passTheme(this)">Qwen-Coder</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Qwen-Coder is Alibaba&#39;s code-focused open model line for self-hosted coding tasks.</p>
+                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
+                            <p class="capability-note">tuned for coding rather than broad multimodal use</p>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-work-with-my-stuff">
+            <div class="platform-header">
+                <h2>Work With My Stuff</h2>
+                <div class="platform-meta">
+                    <span>3 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Organize Work in Projects</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Work With My Stuff</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can keep ongoing work organized in named projects, spaces, collections, or similar containers.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>persistent project workspaces</li><li>reusable folders of context</li><li>grouped research or collaboration spaces</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>one-off chats with no persistent organization</li><li>generic chat history without project structure</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Projects</span><span class="provider-toggle active">Spaces</span><span class="provider-toggle active">Collections</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>4</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-projects" class="feature-link" onclick="passTheme(this)">Projects</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Projects let you group related chats, files, and custom instructions into workspaces. Available on all plans including free—organize your work across topics with project-specific context.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-projects" class="feature-link" onclick="passTheme(this)">Projects</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Projects let you organize conversations and documents into workspaces with persistent context. Now available on all plans including free as of February 2026.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-notebooklm" class="feature-link" onclick="passTheme(this)">NotebookLM</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. Free to use with generous limits; AI Pro increases source limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-collections-spaces" class="feature-link" onclick="passTheme(this)">Collections (Spaces)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Collections let you organize research into projects. Available on all plans, with more features on Pro.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Remember Context Over Time</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Work With My Stuff</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can retain preferences, memory, or persistent context across sessions.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>explicit memory features</li><li>saved preferences reused later</li><li>persistent user context across chats</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>only remembering content inside a single active session</li><li>temporary context windows with no persistence</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Memory</span><span class="provider-toggle active">saved preferences</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>1</strong> implementation across <strong>1</strong> product
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-memory" class="feature-link" onclick="passTheme(this)">Memory</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Memory lets ChatGPT remember your preferences and context across conversations. All plans get saved memories; Plus/Pro also get full chat history reference for richer personalization.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Use Files I Provide</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Work With My Stuff</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can work with files or documents the user uploads or attaches directly.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>uploaded documents</li><li>attached spreadsheets</li><li>local file analysis in chat or project workspaces</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>live app integrations without file upload</li><li>generic chat with no file handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">uploads</span><span class="provider-toggle active">attachments</span><span class="provider-toggle active">file analysis</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>5</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-projects" class="feature-link" onclick="passTheme(this)">Projects</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Projects let you group related chats, files, and custom instructions into workspaces. Available on all plans including free—organize your work across topics with project-specific context.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-projects" class="feature-link" onclick="passTheme(this)">Projects</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Projects let you organize conversations and documents into workspaces with persistent context. Now available on all plans including free as of February 2026.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gemini-in-workspace-docs-sheets-etc" class="feature-link" onclick="passTheme(this)">Gemini in Workspace (Docs, Sheets, etc.)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini integrates directly into Google Docs, Sheets, and Slides. Basic features are free; full &#39;Help me write/create&#39; requires AI Pro or Workspace add-on.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-notebooklm" class="feature-link" onclick="passTheme(this)">NotebookLM</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. Free to use with generous limits; AI Pro increases source limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-collections-spaces" class="feature-link" onclick="passTheme(this)">Collections (Spaces)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Collections let you organize research into projects. Available on all plans, with more features on Pro.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-act-for-me">
+            <div class="platform-header">
+                <h2>Act for Me</h2>
+                <div class="platform-meta">
+                    <span>3 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Do Multi-Step Research</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Act for Me</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can plan, search, synthesize, and return a more developed research output across multiple steps or sources.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>deep research reports</li><li>multi-query synthesis</li><li>cited research workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>a single simple web lookup</li><li>unsupported claims without evidence gathering</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Deep Research</span><span class="provider-toggle active">DeepSearch</span><span class="provider-toggle active">Pro Search</span><span class="provider-toggle active">Pages</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>9</strong> implementations across <strong>5</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-agent-mode" class="feature-link" onclick="passTheme(this)">Agent Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT&#39;s Agent Mode lets it browse the web and take actions on your behalf. It&#39;s available on Plus ($20/mo) and higher—the new $8 Go plan does NOT include it. Plus gives you 40 agent tasks per month; Pro gives you 400. Now available in EEA—basic agent tasks rolled out to Europe in late July 2025; some Connector features remain restricted.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-deep-research" class="feature-link" onclick="passTheme(this)">Deep Research</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Deep Research lets ChatGPT spend minutes researching a topic thoroughly. Now available on all plans including free—free users get 5 lightweight queries/month (powered by o4-mini). Plus gets 10 full + 15 lightweight per month; Pro gets 125 + 125.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-cowork-mode" class="feature-link" onclick="passTheme(this)">Cowork Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Cowork is Claude&#39;s background agent—it launched January 2026 and expanded to all paid plans in February. It&#39;s available on Pro ($20/mo) and above, on macOS and Windows desktop. It&#39;s still a research preview but already useful for delegating multi-step tasks.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-preview">Preview</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-deep-research" class="feature-link" onclick="passTheme(this)">Deep Research</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini&#39;s Deep Research creates comprehensive reports on complex topics. Now available on the free tier (~5 reports/month via Gemini Flash); AI Pro ($19.99/mo) gets full access with Gemini 2.5 Pro for deeper research.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-notebooklm" class="feature-link" onclick="passTheme(this)">NotebookLM</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. Free to use with generous limits; AI Pro increases source limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-deepsearch" class="feature-link" onclick="passTheme(this)">DeepSearch</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">DeepSearch is Grok&#39;s multi-step research mode. Premium+ or SuperGrok recommended for full access; basic Premium has limited DeepSearch.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-agent-mode-agentic-actions" class="feature-link" onclick="passTheme(this)">Agent Mode (Agentic Actions)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity has agentic features built into Comet. Basic actions work on free; Pro at $20/month unlocks more powerful agent capabilities like form filling and multi-step workflows.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-pages" class="feature-link" onclick="passTheme(this)">Pages</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Pages let you turn research into shareable, formatted articles with AI-generated sections and citations. Available on all plans including free. Created pages are public and searchable.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-pro-search" class="feature-link" onclick="passTheme(this)">Pro Search</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Pro Search does deeper research with follow-up questions. Free users get 5-10 Pro searches per day; Pro subscription makes it unlimited.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Search the Web</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Act for Me</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can retrieve current information from the web as part of an interaction.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>built-in web search</li><li>browser-assisted web lookup</li><li>current-information retrieval</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>answers based only on training data</li><li>private system connectors that do not search the open web</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Search</span><span class="provider-toggle active">Browse</span><span class="provider-toggle active">Web lookup</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>8</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-atlas-browser" class="feature-link" onclick="passTheme(this)">Atlas Browser</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Atlas is OpenAI&#39;s AI-native browser. Right now it&#39;s macOS only—Windows is expected in the next couple months. You can use the browser on the free plan, but Agent Mode inside Atlas requires Plus or higher.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-chatgpt-search" class="feature-link" onclick="passTheme(this)">ChatGPT Search</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT Search provides real-time web results with cited sources—news, weather, stocks, and more. Available on all plans including free and even logged-out users. Powered by Bing and partner publishers.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-deep-research" class="feature-link" onclick="passTheme(this)">Deep Research</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Deep Research lets ChatGPT spend minutes researching a topic thoroughly. Now available on all plans including free—free users get 5 lightweight queries/month (powered by o4-mini). Plus gets 10 full + 15 lightweight per month; Pro gets 125 + 125.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-deep-research" class="feature-link" onclick="passTheme(this)">Deep Research</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini&#39;s Deep Research creates comprehensive reports on complex topics. Now available on the free tier (~5 reports/month via Gemini Flash); AI Pro ($19.99/mo) gets full access with Gemini 2.5 Pro for deeper research.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-deepsearch" class="feature-link" onclick="passTheme(this)">DeepSearch</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">DeepSearch is Grok&#39;s multi-step research mode. Premium+ or SuperGrok recommended for full access; basic Premium has limited DeepSearch.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-comet-browser" class="feature-link" onclick="passTheme(this)">Comet Browser</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity&#39;s Comet browser is actually free now—you just need a Perplexity account. It&#39;s available on Mac, Windows, Linux, and Android. No iOS yet; that&#39;s expected later this year.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-focus-modes" class="feature-link" onclick="passTheme(this)">Focus Modes</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Focus modes let you search specific sources—Academic, YouTube, Reddit, etc. Available on all plans including free.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-pro-search" class="feature-link" onclick="passTheme(this)">Pro Search</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Pro Search does deeper research with follow-up questions. Free users get 5-10 Pro searches per day; Pro subscription makes it unlimited.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Take Actions and Run Tools</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Act for Me</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can go beyond plain chat by taking actions, using tools, browsing interfaces, or running task steps on the user&#39;s behalf.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>agentic actions</li><li>tool use</li><li>form filling or workflow execution</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>text suggestions that the user must execute manually</li><li>static answers without tool or action support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Agent Mode</span><span class="provider-toggle active">Comet actions</span><span class="provider-toggle active">Code agents</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>8</strong> implementations across <strong>3</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-agent-mode" class="feature-link" onclick="passTheme(this)">Agent Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT&#39;s Agent Mode lets it browse the web and take actions on your behalf. It&#39;s available on Plus ($20/mo) and higher—the new $8 Go plan does NOT include it. Plus gives you 40 agent tasks per month; Pro gives you 400. Now available in EEA—basic agent tasks rolled out to Europe in late July 2025; some Connector features remain restricted.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-atlas-browser" class="feature-link" onclick="passTheme(this)">Atlas Browser</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Atlas is OpenAI&#39;s AI-native browser. Right now it&#39;s macOS only—Windows is expected in the next couple months. You can use the browser on the free plan, but Agent Mode inside Atlas requires Plus or higher.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-codex-code-agent" class="feature-link" onclick="passTheme(this)">Codex (Code Agent)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Codex is ChatGPT&#39;s coding agent that can write, run, and debug code autonomously. It requires Plus or higher—it&#39;s not available on Free or the $8 Go plan.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-claude-code" class="feature-link" onclick="passTheme(this)">Claude Code</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude Code is Anthropic&#39;s agentic coding tool. It requires Pro subscription at minimum—that&#39;s $20/month. Available as a terminal CLI and a native VS Code extension (out of beta), plus Xcode integration via the Claude Agent SDK. No JetBrains plugin yet, but JetBrains AI Assistant integrates Claude models.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-cowork-mode" class="feature-link" onclick="passTheme(this)">Cowork Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Cowork is Claude&#39;s background agent—it launched January 2026 and expanded to all paid plans in February. It&#39;s available on Pro ($20/mo) and above, on macOS and Windows desktop. It&#39;s still a research preview but already useful for delegating multi-step tasks.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-preview">Preview</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-agent-mode-agentic-actions" class="feature-link" onclick="passTheme(this)">Agent Mode (Agentic Actions)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity has agentic features built into Comet. Basic actions work on free; Pro at $20/month unlocks more powerful agent capabilities like form filling and multi-step workflows.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-buy-with-pro-shopping" class="feature-link" onclick="passTheme(this)">Buy with Pro (Shopping)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Buy with Pro lets you research and purchase products directly in Perplexity—no ads, just AI recommendations. Now available on all plans via PayPal integration. Free shipping on all orders. Currently US only.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-comet-browser" class="feature-link" onclick="passTheme(this)">Comet Browser</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity&#39;s Comet browser is actually free now—you just need a Perplexity account. It&#39;s available on Mac, Windows, Linux, and Android. No iOS yet; that&#39;s expected later this year.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-connect">
+            <div class="platform-header">
+                <h2>Connect</h2>
+                <div class="platform-meta">
+                    <span>2 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Build Reusable AI Workflows</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Connect</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can create reusable assistants, agents, GPTs, gems, skills, or other repeatable AI setups.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>building a named reusable assistant</li><li>packaging instructions or tools for repeated use</li><li>creating no-code or low-code agent workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>one-off prompts in a single chat</li><li>temporary settings that do not create a reusable artifact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Custom GPTs</span><span class="provider-toggle active">Gems</span><span class="provider-toggle active">Skills</span><span class="provider-toggle active">Agent Builder</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>5</strong> implementations across <strong>4</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-custom-gpts-actions" class="feature-link" onclick="passTheme(this)">Custom GPTs + Actions</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Custom GPTs let you create specialized AI assistants with custom instructions, knowledge files, and Actions for external API integrations. Actions replaced the old plugin system in April 2024. Anyone can use public GPTs, but creating your own with Actions requires Plus ($20/mo) or higher.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-skills" class="feature-link" onclick="passTheme(this)">Skills</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. All Skills require a paid plan (Pro and above)—both prebuilt skills from Anthropic and custom skills you create. Free tier has no access to Skills at all.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-agent-builder" class="feature-link" onclick="passTheme(this)">Agent Builder</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Agent Builder lets you create custom AI agents using natural language—no coding required. Requires M365 Copilot ($30/user/mo) for full access. Basic agents work in Copilot Chat for M365 commercial users. Will be rebranded as &#39;Copilot Studio Lite&#39;.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-ai-studio" class="feature-link" onclick="passTheme(this)">AI Studio</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">AI Studio is Google&#39;s developer playground for Gemini models—test prompts, get API keys, and prototype before building. Completely free with generous rate limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gems-custom-chatbots" class="feature-link" onclick="passTheme(this)">Gems (Custom Chatbots)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gems are custom AI experts you create for specific tasks. Now free for all users—create premade or custom Gems at no cost. AI Pro gets higher limits and sharing features.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Connect to External Systems</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Connect</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can connect to external apps, services, APIs, data sources, or tool ecosystems beyond the base chat product.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>connectors to cloud services</li><li>MCP or similar tool connections</li><li>actions that call external systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>uploading a file directly into chat</li><li>reading only the text already present in the conversation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">Connectors</span><span class="provider-toggle active">MCP</span><span class="provider-toggle active">Actions</span><span class="provider-toggle active">Extensions</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>10</strong> implementations across <strong>6</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-agent-mode" class="feature-link" onclick="passTheme(this)">Agent Mode</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT&#39;s Agent Mode lets it browse the web and take actions on your behalf. It&#39;s available on Plus ($20/mo) and higher—the new $8 Go plan does NOT include it. Plus gives you 40 agent tasks per month; Pro gives you 400. Now available in EEA—basic agent tasks rolled out to Europe in late July 2025; some Connector features remain restricted.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="index.html#chatgpt-custom-gpts-actions" class="feature-link" onclick="passTheme(this)">Custom GPTs + Actions</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Custom GPTs let you create specialized AI assistants with custom instructions, knowledge files, and Actions for external API integrations. Actions replaced the old plugin system in April 2024. Anyone can use public GPTs, but creating your own with Actions requires Plus ($20/mo) or higher.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-connectors" class="feature-link" onclick="passTheme(this)">Connectors</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Connectors let Claude access 75+ services—Google Drive, Notion, Slack, Stripe, and more. Pro and above get full access; free users can only use desktop extensions and GitHub. Browse available connectors at claude.ai/directory.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="index.html#claude-mcp-model-context-protocol" class="feature-link" onclick="passTheme(this)">MCP (Model Context Protocol)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">MCP is an open standard for connecting Claude to external tools and data sources—databases, file systems, APIs. Available on all plans including free via the Claude Desktop app.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-connectors" class="feature-link" onclick="passTheme(this)">Copilot Connectors</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. Requires M365 Copilot ($30/user/mo)—not available on free or Pro plans. MCP support was added in November 2025.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="index.html#microsoft-copilot-copilot-in-office-apps" class="feature-link" onclick="passTheme(this)">Copilot in Office Apps</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot in Word, Excel, PowerPoint requires Copilot Pro ($20/mo) or M365 Copilot ($30/user/mo). Free Copilot doesn&#39;t include Office integration.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-extensions" class="feature-link" onclick="passTheme(this)">Extensions</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini Extensions connect to Google services like Gmail, Drive, YouTube, Maps, and more. Available on all plans including free. The Gemini CLI also supports extensions via MCP for developers.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="index.html#gemini-gemini-in-workspace-docs-sheets-etc" class="feature-link" onclick="passTheme(this)">Gemini in Workspace (Docs, Sheets, etc.)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini integrates directly into Google Docs, Sheets, and Slides. Basic features are free; full &#39;Help me write/create&#39; requires AI Pro or Workspace add-on.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="index.html#grok-real-time-x-twitter-data" class="feature-link" onclick="passTheme(this)">Real-time X/Twitter Data</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok has real-time access to X/Twitter posts—its unique advantage over other chatbots. Even free users get some access to this.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="index.html#perplexity-enterprise-app-connectors" class="feature-link" onclick="passTheme(this)">Enterprise App Connectors</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Enterprise App Connectors let you search across company files and connected apps like Google Drive, Confluence, and Slack. Enterprise Pro only ($40/user/mo)—not available on consumer plans.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-01-20</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+
+        <section class="capability-group" id="group-access-context">
+            <div class="platform-header">
+                <h2>Access Context</h2>
+                <div class="platform-meta">
+                    <span>1 capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>Use It on My Surfaces</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">Access Context</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">Can be accessed across the surfaces that matter to the user, such as web, desktop, mobile, terminal, API, or embedded environments.</p>
+                    <div class="capability-columns">
+                        
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                <li>access on distinct user surfaces</li><li>native or embedded interface availability</li><li>API or terminal availability when relevant</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                <li>a capability claim with no actual surface support</li><li>broad branding claims with no surface detail</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-tags">
+                        <span class="provider-toggle active">web</span><span class="provider-toggle active">mobile</span><span class="provider-toggle active">terminal</span><span class="provider-toggle active">API</span>
+                    </div>
+                    <div class="capability-implementation-header">
+                        <strong>0</strong> implementations across <strong>0</strong> products
+                    </div>
+                    <div class="capability-implementations">
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                Capability-first index built from the same verified feature records as the dashboard.
+                <a href="index.html" onclick="passTheme(this)">Back to the feature view</a>.
+            </p>
+        </footer>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function passTheme(link) {
+            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            if (isLight) {
+                const url = new URL(link.href, window.location.href);
+                url.searchParams.set('theme', 'light');
+                link.href = url.pathname.split('/').pop() + url.search + url.hash;
+            }
+        }
+    </script>
+</body>
+</html>

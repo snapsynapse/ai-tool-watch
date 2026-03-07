@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * AI Feature Tracker - Static Site Generator
+ * AI Capability Reference - Static Site Generator
  *
- * Compiles markdown data files into a single HTML dashboard.
+ * Compiles markdown data files into a feature-oriented dashboard and
+ * capability-oriented index.
  * Run with: node scripts/build.js
  */
 
@@ -11,8 +12,74 @@ const fs = require('fs');
 const path = require('path');
 
 // Paths
+const ROOT_DIR = path.join(__dirname, '..');
 const DATA_DIR = path.join(__dirname, '..', 'data', 'platforms');
+const CAPABILITIES_DIR = path.join(__dirname, '..', 'data', 'capabilities');
+const PROVIDERS_DIR = path.join(__dirname, '..', 'data', 'providers');
+const PRODUCTS_DIR = path.join(__dirname, '..', 'data', 'products');
+const MODEL_ACCESS_DIR = path.join(__dirname, '..', 'data', 'model-access');
+const IMPLEMENTATIONS_FILE = path.join(__dirname, '..', 'data', 'implementations', 'index.yml');
 const OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
+const CAPABILITIES_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
+const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
+const REPO_ISSUES_URL = `${REPO_URL}/issues`;
+const REPO_PULLS_URL = `${REPO_URL}/pulls`;
+const SITE_URL = 'https://snapsynapse.com/ai-feature-tracker/';
+const DASHBOARD_TITLE = 'AI Capability Reference';
+const FEATURE_VIEW_TITLE = 'Feature View by Plan';
+const OPEN_SELF_HOSTED_LABEL = 'Open / Self-Hosted';
+const OPEN_MODEL_ACCESS_SOURCE = 'data/platforms/open-model-access.md';
+const SELF_HOSTED_RUNTIMES_SOURCE = 'data/platforms/self-hosted-runtimes.md';
+
+function slugify(value) {
+    return String(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+function featureCardId(platformName, featureName) {
+    return `${slugify(platformName)}-${slugify(featureName)}`;
+}
+
+function escapeHTML(value) {
+    return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function extractSection(body, heading) {
+    const escapedHeading = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const match = body.match(new RegExp(`## ${escapedHeading}\\n\\n([\\s\\S]*?)(?=\\n## |$)`));
+    return match ? match[1].trim() : '';
+}
+
+function parseBulletList(sectionText) {
+    return sectionText
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.startsWith('- '))
+        .map(line => line.slice(2).trim());
+}
+
+function humanizeId(value) {
+    return String(value || '')
+        .split('-')
+        .filter(Boolean)
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+}
+
+function isPublicPlatform(platform) {
+    return !['hidden', 'archive'].includes(platform?.build_visibility);
+}
+
+function findPlatformBySource(platforms, sourceFile) {
+    return platforms.find(platform => platform.source_file === sourceFile) || null;
+}
 
 /**
  * Parse YAML-like frontmatter from markdown content.
@@ -25,17 +92,59 @@ function parseFrontmatter(content) {
     if (!match) return { frontmatter: {}, body: content };
 
     const frontmatter = {};
-    match[1].split('\n').forEach(line => {
-        const [key, ...valueParts] = line.split(':');
-        if (key && valueParts.length) {
-            frontmatter[key.trim()] = valueParts.join(':').trim();
+    const lines = match[1].split('\n');
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const keyMatch = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+        if (!keyMatch) continue;
+
+        const key = keyMatch[1].trim();
+        const rawValue = keyMatch[2];
+
+        if (rawValue) {
+            frontmatter[key] = rawValue.trim();
+            continue;
         }
-    });
+
+        const items = [];
+        let j = i + 1;
+        while (j < lines.length) {
+            const itemMatch = lines[j].match(/^\s*-\s+(.*)$/);
+            if (itemMatch) {
+                items.push(itemMatch[1].trim());
+                j++;
+                continue;
+            }
+            if (lines[j].trim() === '') {
+                j++;
+                continue;
+            }
+            break;
+        }
+
+        frontmatter[key] = items.length ? items : '';
+        i = j - 1;
+    }
 
     return {
         frontmatter,
         body: content.slice(match[0].length).trim()
     };
+}
+
+function listBuildPlatformFiles() {
+    if (!fs.existsSync(DATA_DIR)) return [];
+
+    return fs.readdirSync(DATA_DIR)
+        .filter(file => file.endsWith('.md') && !file.startsWith('_'))
+        .filter(file => {
+            const filepath = path.join(DATA_DIR, file);
+            const content = fs.readFileSync(filepath, 'utf-8');
+            const { frontmatter } = parseFrontmatter(content);
+            return frontmatter.build_visibility !== 'archive';
+        })
+        .sort();
 }
 
 /**
@@ -200,6 +309,136 @@ function parsePlatform(filepath) {
     };
 }
 
+function parseCapability(filepath) {
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const { frontmatter, body } = parseFrontmatter(content);
+
+    return {
+        ...frontmatter,
+        summary: extractSection(body, 'Summary'),
+        what_counts: parseBulletList(extractSection(body, 'What Counts')),
+        what_does_not_count: parseBulletList(extractSection(body, 'What Does Not Count')),
+        related_terms: parseBulletList(extractSection(body, 'Related Terms')),
+        common_constraints: parseBulletList(extractSection(body, 'Common Constraints'))
+    };
+}
+
+function parseProvider(filepath) {
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const { frontmatter, body } = parseFrontmatter(content);
+
+    return {
+        ...frontmatter,
+        products: parseBulletList(extractSection(body, 'Products'))
+    };
+}
+
+function parseProduct(filepath) {
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const { frontmatter, body } = parseFrontmatter(content);
+
+    return {
+        ...frontmatter,
+        summary: extractSection(body, 'Summary')
+    };
+}
+
+function parseModelAccess(filepath) {
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const { frontmatter, body } = parseFrontmatter(content);
+
+    return {
+        ...frontmatter,
+        summary: extractSection(body, 'Summary'),
+        deployment_modes: parseBulletList(extractSection(body, 'Deployment Modes')),
+        common_runtimes: parseBulletList(extractSection(body, 'Common Runtimes')),
+        constraints: parseBulletList(extractSection(body, 'Constraints')),
+        related_capabilities: parseBulletList(extractSection(body, 'Related Capabilities'))
+    };
+}
+
+function parseImplementationIndex(filepath) {
+    if (!fs.existsSync(filepath)) return [];
+
+    const lines = fs.readFileSync(filepath, 'utf-8').split('\n');
+    const entries = [];
+    let current = null;
+    let currentArrayKey = null;
+    let currentBlockKey = null;
+
+    const pushCurrent = () => {
+        if (current) entries.push(current);
+    };
+
+    for (const rawLine of lines) {
+        const line = rawLine.replace(/\r$/, '');
+
+        if (currentBlockKey) {
+            if (line.startsWith('    ')) {
+                current[currentBlockKey] += `${current[currentBlockKey] ? '\n' : ''}${line.slice(4)}`;
+                continue;
+            }
+            if (line === '') {
+                current[currentBlockKey] += '\n';
+                continue;
+            }
+            currentBlockKey = null;
+        }
+
+        if (line.startsWith('- id: ')) {
+            pushCurrent();
+            current = { id: line.slice(6).trim() };
+            currentArrayKey = null;
+            continue;
+        }
+
+        if (!current) continue;
+
+        const blockMatch = line.match(/^  ([a-z_]+): \|$/);
+        if (blockMatch) {
+            currentBlockKey = blockMatch[1];
+            current[currentBlockKey] = '';
+            currentArrayKey = null;
+            continue;
+        }
+
+        const emptyArrayMatch = line.match(/^  ([a-z_]+): \[\]$/);
+        if (emptyArrayMatch) {
+            current[emptyArrayMatch[1]] = [];
+            currentArrayKey = null;
+            continue;
+        }
+
+        const arrayMatch = line.match(/^  ([a-z_]+):$/);
+        if (arrayMatch) {
+            current[arrayMatch[1]] = [];
+            currentArrayKey = arrayMatch[1];
+            continue;
+        }
+
+        if (currentArrayKey && line.startsWith('    - ')) {
+            current[currentArrayKey].push(line.slice(6).trim());
+            continue;
+        }
+
+        const scalarMatch = line.match(/^  ([a-z_]+):\s*(.*)$/);
+        if (scalarMatch) {
+            current[scalarMatch[1]] = scalarMatch[2].trim();
+            currentArrayKey = null;
+            continue;
+        }
+
+        currentArrayKey = null;
+    }
+
+    pushCurrent();
+
+    return entries.map(entry => ({
+        ...entry,
+        notes: entry.notes ? entry.notes.trim() : ''
+    }));
+}
+
 /**
  * Generate HTML badge for feature availability status.
  * @param {string} status - Status value: "ga", "beta", "preview", or "deprecated"
@@ -276,22 +515,327 @@ function tierToSlug(price) {
     return match ? match[1] : price.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+function loadOntologyData(platforms) {
+    const capabilityFiles = fs.existsSync(CAPABILITIES_DIR)
+        ? fs.readdirSync(CAPABILITIES_DIR).filter(f => f.endsWith('.md')).sort()
+        : [];
+    const providerFiles = fs.existsSync(PROVIDERS_DIR)
+        ? fs.readdirSync(PROVIDERS_DIR).filter(f => f.endsWith('.md')).sort()
+        : [];
+    const productFiles = fs.existsSync(PRODUCTS_DIR)
+        ? fs.readdirSync(PRODUCTS_DIR).filter(f => f.endsWith('.md')).sort()
+        : [];
+    const modelAccessFiles = fs.existsSync(MODEL_ACCESS_DIR)
+        ? fs.readdirSync(MODEL_ACCESS_DIR).filter(f => f.endsWith('.md') && f !== 'README.md').sort()
+        : [];
+
+    const capabilities = capabilityFiles.map(f => parseCapability(path.join(CAPABILITIES_DIR, f)));
+    const providers = providerFiles.map(f => parseProvider(path.join(PROVIDERS_DIR, f)));
+    const products = productFiles.map(f => parseProduct(path.join(PRODUCTS_DIR, f)));
+    const modelAccess = modelAccessFiles.map(f => parseModelAccess(path.join(MODEL_ACCESS_DIR, f)));
+    const implementations = parseImplementationIndex(IMPLEMENTATIONS_FILE);
+
+    const providerMap = new Map(providers.map(provider => [provider.id, provider]));
+    const productMap = new Map(products.map(product => [product.id, product]));
+    const featureLookup = new Map();
+
+    platforms.forEach(platform => {
+        platform.features.forEach(feature => {
+            featureLookup.set(`${platform.source_file}::${feature.name}`, {
+                platform,
+                feature,
+                featureId: featureCardId(platform.name, feature.name)
+            });
+        });
+    });
+
+    const enrichedImplementations = implementations.map(implementation => {
+        const lookupKey = `${implementation.source_file}::${implementation.source_heading}`;
+        const source = featureLookup.get(lookupKey);
+        return {
+            ...implementation,
+            capabilities: implementation.capabilities || [],
+            provider_record: providerMap.get(implementation.provider) || null,
+            product_record: productMap.get(implementation.product) || null,
+            source
+        };
+    });
+
+    const enrichedModelAccess = modelAccess.map(record => {
+        const lookupKey = `${record.record_source}::${record.source_heading}`;
+        const source = featureLookup.get(lookupKey);
+        return {
+            ...record,
+            provider_record: providerMap.get(record.provider) || null,
+            source
+        };
+    });
+
+    const enrichedProducts = products.map(product => {
+        const lookupKey = product.record_source && product.source_heading
+            ? `${product.record_source}::${product.source_heading}`
+            : null;
+        return {
+            ...product,
+            provider_record: providerMap.get(product.provider) || null,
+            source: lookupKey ? featureLookup.get(lookupKey) || null : null
+        };
+    });
+
+    const groupOrder = [
+        'understand',
+        'respond',
+        'create',
+        'work-with-my-stuff',
+        'act-for-me',
+        'connect',
+        'access-context'
+    ];
+
+    const capabilitiesWithImplementations = capabilities
+        .map(capability => {
+            const matches = enrichedImplementations.filter(item => item.capabilities.includes(capability.id));
+            const relatedModelAccess = enrichedModelAccess.filter(item => item.related_capabilities.includes(capability.id));
+            const productsForCapability = [...new Set(matches.map(item => item.product))];
+            return {
+                ...capability,
+                implementations: matches,
+                model_access: relatedModelAccess,
+                implementation_count: matches.length,
+                product_count: productsForCapability.length,
+                model_access_count: relatedModelAccess.length
+            };
+        })
+        .sort((a, b) => {
+            const groupDelta = groupOrder.indexOf(a.group) - groupOrder.indexOf(b.group);
+            if (groupDelta !== 0) return groupDelta;
+            return a.name.localeCompare(b.name);
+        });
+
+    return {
+        capabilities: capabilitiesWithImplementations,
+        providers,
+        products: enrichedProducts,
+        implementations: enrichedImplementations,
+        model_access: enrichedModelAccess,
+        runtime_products: enrichedProducts.filter(product => product.product_kind === 'runtime')
+    };
+}
+
+function buildPlanPriceMap(platform) {
+    const map = new Map();
+    (platform.pricing || []).forEach(tier => {
+        map.set(tier.plan, tierToSlug(normalizePrice(tier.price, tier.plan)));
+    });
+    return map;
+}
+
+function availablePriceSlugs(feature, planPriceMap) {
+    return [...new Set((feature.availability || [])
+        .filter(a => a.available.includes('✅') || a.available.includes('⚠️'))
+        .map(a => planPriceMap.get(a.plan))
+        .filter(Boolean))].join('_');
+}
+
+function availableSurfaceSlugs(feature) {
+    return (feature.platforms || [])
+        .filter(pl => pl.available.includes('✅') || pl.available.includes('⚠️'))
+        .map(pl => pl.platform.toLowerCase())
+        .join('_');
+}
+
+function renderFeaturePlatformsRow(feature) {
+    const platformOrder = ['Windows', 'macOS', 'Linux', 'iOS', 'Android', 'Chrome', 'web', 'terminal', 'API'];
+    const platformMap = new Map((feature.platforms || []).map(pl => [pl.platform.toLowerCase(), pl]));
+
+    return platformOrder.map(plat => {
+        const pl = platformMap.get(plat.toLowerCase());
+        if (!pl) return '';
+        let cls = 'no';
+        if (pl.available.includes('✅')) cls = 'yes';
+        else if (pl.available.includes('🔜')) cls = 'soon';
+        else if (pl.available.includes('⚠️')) cls = 'partial';
+        return `<span class="plat-icon ${cls}" title="${plat}">${plat}</span>`;
+    }).filter(Boolean).join('');
+}
+
+function renderSurfaceRow(surfaces) {
+    const surfaceOrder = ['web', 'desktop', 'mobile', 'terminal', 'api', 'browser', 'excel', 'word'];
+    return surfaceOrder
+        .filter(surface => (surfaces || []).includes(surface))
+        .map(surface => `<span class="plat-icon yes" title="${humanizeId(surface)}">${humanizeId(surface)}</span>`)
+        .join('');
+}
+
+function renderFeatureCard(feature, platform, planPriceMap, options = {}) {
+    const featureId = options.id || featureCardId(platform.name, feature.name);
+    const dataCategory = options.dataCategory ?? feature.category ?? '';
+    const availablePrices = options.availablePrices ?? availablePriceSlugs(feature, planPriceMap);
+    const availableSurfaces = options.availableSurfaces ?? availableSurfaceSlugs(feature);
+    const title = options.title || feature.name;
+    const url = options.url || feature.url;
+    const talkingPoint = options.talkingPoint || feature.talking_point;
+    const supplemental = options.supplemental || '';
+    const notes = options.notes || feature.notes;
+    const badges = options.badges || `${availabilityBadge(feature.status)}${gatingBadge(feature.gating)}`;
+
+    return `
+                <div class="feature-card" id="${featureId}" data-category="${escapeHTML(dataCategory)}" data-prices="${escapeHTML(availablePrices)}" data-surfaces="${escapeHTML(availableSurfaces)}">
+                    <div class="feature-header">
+                        <h3>${url ? `<a href="${url}" target="_blank" class="feature-link">${escapeHTML(title)}</a>` : escapeHTML(title)}</h3>
+                        <span class="badges"><button class="permalink-btn" onclick="copyPermalink('${featureId}')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button>${badges}</span>
+                    </div>
+                    <div class="avail-grid">
+                        ${(feature.availability || []).map(a => {
+        const hasTooltip = a.limits || a.notes;
+        const tooltipText = [a.limits, a.notes].filter(Boolean).join(' • ').replace(/"/g, '&quot;');
+        return `
+                        <div class="avail-item">
+                            <span class="plan${hasTooltip ? ' has-tooltip' : ''}"${hasTooltip ? ' tabindex="0"' : ''}>${escapeHTML(a.plan)}${hasTooltip ? `<span class="plan-tooltip">${tooltipText}</span>` : ''}</span>
+                            <span class="status">${availBadge(a.available)}</span>
+                        </div>`;
+    }).join('')}
+                    </div>
+                    <div class="platforms-row">
+                        ${options.platformsRow || renderFeaturePlatformsRow(feature)}
+                    </div>
+                    ${talkingPoint ? `<div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">${talkingPoint.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</div>` : ''}
+                    ${supplemental}
+                    <div class="dates-row">
+                        ${feature.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${featureId}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(feature.launched)}</span></span>` : ''}
+                        ${feature.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(feature.verified)}</span></span>` : ''}
+                        ${notes ? `<span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">${escapeHTML(notes)}</span></span>` : ''}
+                    </div>
+                </div>`;
+}
+
+function renderRuntimeProductCard(product) {
+    const sourceFeature = product.source?.feature;
+    if (!sourceFeature) return '';
+
+    const feature = {
+        ...sourceFeature,
+        name: product.name,
+        url: product.pricing_page || product.url || sourceFeature.url,
+        talking_point: product.summary,
+        notes: sourceFeature.notes || '',
+        verified: product.last_verified || sourceFeature.verified
+    };
+    const defaultSurfaces = Array.isArray(product.default_surfaces) ? product.default_surfaces : [];
+    const platformsRow = renderSurfaceRow(defaultSurfaces);
+    const availableSurfaces = defaultSurfaces.map(surface => slugify(surface)).join('_');
+
+    const supplemental = defaultSurfaces.length
+        ? `<div class="capability-tags">${defaultSurfaces.map(surface => `<span class="provider-toggle active">${escapeHTML(humanizeId(surface))}</span>`).join('')}</div>`
+        : '';
+
+    return renderFeatureCard(feature, { name: 'runtime-products' }, new Map([['Self-hosted', '0']]), {
+        id: `runtime-${product.id}`,
+        title: product.name,
+        dataCategory: '',
+        availablePrices: '0',
+        availableSurfaces,
+        badges: `${availabilityBadge('ga')}<span class="badge gate-free">Runtime</span>`,
+        platformsRow,
+        supplemental
+    });
+}
+
+function renderModelAccessCard(record) {
+    const sourceFeature = record.source?.feature;
+    const sourcePlatform = record.source?.platform;
+    if (!sourceFeature || !sourcePlatform) return '';
+
+    const planPriceMap = buildPlanPriceMap(sourcePlatform);
+    const runtimeTags = (record.common_runtimes || []).map(runtime => `<span class="provider-toggle active">${escapeHTML(runtime)}</span>`).join('');
+    const notesParts = [];
+    if (record.constraints?.length) notesParts.push(record.constraints[0]);
+    if (sourceFeature.notes) notesParts.push(sourceFeature.notes);
+
+    return renderFeatureCard(sourceFeature, sourcePlatform, planPriceMap, {
+        title: record.name,
+        supplemental: runtimeTags ? `<div class="capability-tags">${runtimeTags}</div>` : '',
+        notes: notesParts.join(' ').trim()
+    });
+}
+
+function renderOntologyReplacementSections(ontologyData, replacementSources) {
+    const runtimeSourcePlatform = replacementSources?.runtime_source_platform || null;
+    const modelAccessSourcePlatform = replacementSources?.model_access_source_platform || null;
+    if (!runtimeSourcePlatform && !modelAccessSourcePlatform) return '';
+
+    const runtimeCards = ontologyData.runtime_products.map(renderRuntimeProductCard).filter(Boolean).join('');
+    const modelAccessCards = ontologyData.model_access.map(renderModelAccessCard).filter(Boolean).join('');
+
+    const runtimeSection = runtimeCards && runtimeSourcePlatform ? `
+        <section class="platform-section" data-platform="self-hosted-runtimes" data-vendor="${slugify(OPEN_SELF_HOSTED_LABEL)}">
+            <div class="platform-header">
+                <h2>Self-Hosted Runtimes</h2>
+                <div class="platform-meta">
+                    <span>Ontology-aligned runtime products</span>
+                    <span>·</span>
+                    <span>Verified: ${runtimeSourcePlatform.last_verified}</span>
+                </div>
+            </div>
+            <div class="pricing-bar">
+                <span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>
+            </div>
+            <div class="features-grid">
+${runtimeCards}
+            </div>
+        </section>` : '';
+
+    const modelAccessSection = modelAccessCards && modelAccessSourcePlatform ? `
+        <section class="platform-section" data-platform="open-model-access" data-vendor="${slugify(OPEN_SELF_HOSTED_LABEL)}">
+            <div class="platform-header">
+                <h2><img src="${modelAccessSourcePlatform.logo}" alt="${modelAccessSourcePlatform.vendor}" class="platform-logo">Open Model Access</h2>
+                <div class="platform-meta">
+                    <span>Model families for open / self-hosted use</span>
+                    <span>·</span>
+                    <span>Verified: ${modelAccessSourcePlatform.last_verified}</span>
+                </div>
+            </div>
+            <div class="pricing-bar">
+                ${(modelAccessSourcePlatform.pricing || []).map(tier => `<span class="price-tag"><strong>${tier.plan}</strong>: ${tier.price}</span>`).join('\n                ')}
+            </div>
+            <div class="features-grid">
+${modelAccessCards}
+            </div>
+        </section>` : '';
+
+    return `${runtimeSection}\n${modelAccessSection}`;
+}
+
 /**
  * Generate the complete HTML dashboard from parsed platform data.
  * Produces a single-page app with filters, feature cards, and embedded JavaScript.
  * @param {Array<Object>} platforms - Array of parsed platform objects from parsePlatform()
  * @returns {string} Complete HTML document as a string
  */
-function generateHTML(platforms) {
+function generateHTML(platforms, ontologyData) {
     const now = new Date().toISOString().split('T')[0];
+    const hostedPlatforms = platforms.filter(isPublicPlatform);
+    const replacementSources = {
+        runtime_source_platform: findPlatformBySource(platforms, SELF_HOSTED_RUNTIMES_SOURCE),
+        model_access_source_platform: findPlatformBySource(platforms, OPEN_MODEL_ACCESS_SOURCE)
+    };
+    const changelogPlatforms = platforms.filter(platform => (
+        isPublicPlatform(platform) || platform.source_file === OPEN_MODEL_ACCESS_SOURCE
+    ));
+    const customOntologyCardCount = (ontologyData?.runtime_products?.length || 0) + (ontologyData?.model_access?.length || 0);
+    const totalCards = hostedPlatforms.reduce((sum, p) => sum + p.features.length, 0) + customOntologyCardCount;
+    const vendors = [...new Set([
+        ...hostedPlatforms.map(platform => platform.vendor),
+        ...(customOntologyCardCount ? [OPEN_SELF_HOSTED_LABEL] : [])
+    ])];
 
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Feature Tracker - Feature Availability by Plan</title>
-    <meta name="description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <title>${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}</title>
+    <meta name="description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -300,15 +844,15 @@ function generateHTML(platforms) {
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AI Feature Tracker">
-    <meta property="og:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta property="og:title" content="${DASHBOARD_TITLE}">
+    <meta property="og:description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
     <meta property="og:image" content="assets/og-image.png">
-    <meta property="og:url" content="https://snapsynapse.github.io/ai-feature-tracker/">
+    <meta property="og:url" content="${SITE_URL}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Feature Tracker">
-    <meta name="twitter:description" content="Community-maintained tracker of AI feature availability across ChatGPT, Claude, Perplexity, Gemini, and Copilot plans.">
+    <meta name="twitter:title" content="${DASHBOARD_TITLE}">
+    <meta name="twitter:description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
     <meta name="twitter:image" content="assets/og-image.png">
 
     <link rel="stylesheet" href="assets/styles.css">
@@ -329,15 +873,16 @@ function generateHTML(platforms) {
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container" id="main-content">
         <header>
-            <h1><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</h1>
-            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong> of <strong>${platforms.reduce((sum, p) => sum + p.features.length, 0)}</strong></span>
+            <h1><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> ${DASHBOARD_TITLE}</h1>
+            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>${totalCards}</strong> of <strong>${totalCards}</strong></span>
             <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
                 <span class="hamburger-icon"></span>
             </button>
             <div class="header-meta" id="mobileMenu">
                 <span class="last-updated">Last built: ${now}</span>
+                <a href="capabilities.html" class="about-link" onclick="passTheme(this)">Browse Capabilities</a>
                 <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
-                <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>
+                <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
             </div>
         </header>
@@ -347,19 +892,18 @@ function generateHTML(platforms) {
             <div class="provider-toggles">
                 <label>Providers:</label>
                 ${(() => {
-            // Sort vendors by estimated active users (descending), with "Local Models" last
+            // Sort vendors by estimated active users (descending), with open/self-hosted references last
             const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI'];
-            const vendors = [...new Set(platforms.map(p => p.vendor))];
             vendors.sort((a, b) => {
                 const aIdx = vendorOrder.indexOf(a);
                 const bIdx = vendorOrder.indexOf(b);
-                // If not in order list, put at end (before "Local Models")
-                const aPos = aIdx === -1 ? (a === 'Local Models' ? 999 : 100) : aIdx;
-                const bPos = bIdx === -1 ? (b === 'Local Models' ? 999 : 100) : bIdx;
+                // If not in order list, put at end (before the open/self-hosted references)
+                const aPos = aIdx === -1 ? (a === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : aIdx;
+                const bPos = bIdx === -1 ? (b === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : bIdx;
                 return aPos - bPos;
             });
             return vendors.map(vendor => {
-                const vendorSlug = vendor.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                const vendorSlug = slugify(vendor);
                 return `<span class="provider-toggle active" role="button" tabindex="0" aria-pressed="true" data-vendor="${vendorSlug}" onclick="toggleProvider('${vendorSlug}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProvider('${vendorSlug}')}">${vendor}</span>`;
             }).join('\n                ');
         })()}
@@ -446,20 +990,17 @@ function generateHTML(platforms) {
         ${(() => {
             // Sort platforms by vendor order (same as header toggles)
             const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI'];
-            const sortedPlatforms = [...platforms].sort((a, b) => {
+            const sortedPlatforms = [...hostedPlatforms].sort((a, b) => {
                 const aIdx = vendorOrder.indexOf(a.vendor);
                 const bIdx = vendorOrder.indexOf(b.vendor);
-                const aPos = aIdx === -1 ? (a.vendor === 'Local Models' ? 999 : 100) : aIdx;
-                const bPos = bIdx === -1 ? (b.vendor === 'Local Models' ? 999 : 100) : bIdx;
+                const aPos = aIdx === -1 ? (a.vendor === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : aIdx;
+                const bPos = bIdx === -1 ? (b.vendor === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : bIdx;
                 return aPos - bPos;
             });
             return sortedPlatforms.map(p => {
-                const vendorSlug = p.vendor.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                const vendorSlug = slugify(p.vendor);
                 // Build price lookup for this platform
-                const planPriceMap = new Map();
-                p.pricing.forEach(tier => {
-                    planPriceMap.set(tier.plan, tierToSlug(normalizePrice(tier.price, tier.plan)));
-                });
+                const planPriceMap = buildPlanPriceMap(p);
                 return `
         <section class="platform-section" data-platform="${p.name.toLowerCase()}" data-vendor="${vendorSlug}">
             <div class="platform-header">
@@ -474,74 +1015,23 @@ function generateHTML(platforms) {
                 ${p.pricing.map(tier => `<span class="price-tag"><strong>${tier.plan}</strong>: ${tier.price}</span>`).join('\n                ')}
             </div>
             <div class="features-grid">
-                ${p.features.map(f => {
-                    const availablePrices = [...new Set(f.availability
-                        .filter(a => a.available.includes('✅') || a.available.includes('⚠️'))
-                        .map(a => planPriceMap.get(a.plan))
-                        .filter(Boolean))].join('_');
-                    const availableSurfaces = f.platforms
-                        .filter(pl => pl.available.includes('✅') || pl.available.includes('⚠️'))
-                        .map(pl => pl.platform.toLowerCase())
-                        .join('_');
-                    const featureId = `${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-                    return `
-                <div class="feature-card" id="${featureId}" data-category="${f.category}" data-prices="${availablePrices}" data-surfaces="${availableSurfaces}">
-                    <div class="feature-header">
-                        <h3>${f.url ? `<a href="${f.url}" target="_blank" class="feature-link">${f.name}</a>` : f.name}</h3>
-                        <span class="badges"><button class="permalink-btn" onclick="copyPermalink('${featureId}')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button>${availabilityBadge(f.status)}${gatingBadge(f.gating)}</span>
-                    </div>
-                    <div class="avail-grid">
-                        ${f.availability.map(a => {
-                        const hasTooltip = a.limits || a.notes;
-                        const tooltipText = [a.limits, a.notes].filter(Boolean).join(' • ').replace(/"/g, '&quot;');
-                        return `
-                        <div class="avail-item">
-                            <span class="plan${hasTooltip ? ' has-tooltip' : ''}"${hasTooltip ? ` tabindex="0"` : ''}>${a.plan}${hasTooltip ? `<span class="plan-tooltip">${tooltipText}</span>` : ''}</span>
-                            <span class="status">${availBadge(a.available)}</span>
-                        </div>`;
-                    }).join('')}
-                    </div>
-                    <div class="platforms-row">
-                        ${(() => {
-                            // Standard platform order: Windows, macOS, Linux, iOS, Android, Chrome, web, terminal, API
-                            const platformOrder = ['Windows', 'macOS', 'Linux', 'iOS', 'Android', 'Chrome', 'web', 'terminal', 'API'];
-                            const platformMap = new Map(f.platforms.map(pl => [pl.platform.toLowerCase(), pl]));
-
-                            return platformOrder.map(plat => {
-                                const pl = platformMap.get(plat.toLowerCase());
-                                if (!pl) return '';
-                                let cls = 'no';
-                                if (pl.available.includes('✅')) cls = 'yes';
-                                else if (pl.available.includes('🔜')) cls = 'soon';
-                                else if (pl.available.includes('⚠️')) cls = 'partial';
-                                return `<span class="plat-icon ${cls}" title="${plat}">${plat}</span>`;
-                            }).filter(Boolean).join('');
-                        })()}
-                    </div>
-                    ${f.talking_point ? `<div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">${f.talking_point.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</div>` : ''}
-                    <div class="dates-row">
-                        ${f.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(f.launched)}</span></span>` : ''}
-                        ${f.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(f.verified)}</span></span>` : ''}
-                        ${f.notes ? `<span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">${f.notes.replace(/"/g, '&quot;')}</span></span>` : ''}
-                    </div>
-                </div>`;
-                }).join('')}
+                ${p.features.map(f => renderFeatureCard(f, p, planPriceMap)).join('')}
             </div>
         </section>`;
-            }).join('\n');
+            }).join('\n') + renderOntologyReplacementSections(ontologyData, replacementSources);
         })()}
 
         <footer>
             <p>
                 Community-maintained. Found an error? Got an idea?
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/pulls">submit a PR</a>.
+                <a href="${REPO_ISSUES_URL}">Open an issue</a> or
+                <a href="${REPO_PULLS_URL}">submit a PR</a>.
             </p>
             <p style="margin-top: 8px;">
                 &copy; 2026 | Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
             </p>
             <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
-                <a href="https://github.com/snapsynapse/ai-feature-tracker" class="footer-social" title="Star on GitHub">⭐ Star</a>
+                <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
                 <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
@@ -567,8 +1057,8 @@ function generateHTML(platforms) {
     <!-- Changelog Data -->
     <script>
         const CHANGELOGS = {
-            ${platforms.flatMap(p => p.features.map(f => {
-            const id = `${p.name.toLowerCase()}-${f.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+            ${changelogPlatforms.flatMap(p => p.features.map(f => {
+            const id = featureCardId(p.name, f.name);
             const changes = (f.changelog || []).map(c => `{ date: "${c.date || ''}", change: "${(c.change || '').replace(/"/g, '\\"')}" }`).join(',\n                ');
             return `"${id}": {
                 name: "${f.name}",
@@ -578,12 +1068,24 @@ function generateHTML(platforms) {
                 checked: "${f.checked || ''}",
                 changes: [${changes}]
             }`;
-        })).join(',\n            ')}
+        })).concat((ontologyData?.runtime_products || []).map(product => {
+            const sourceFeature = product.source?.feature;
+            if (!sourceFeature) return null;
+            const changes = (sourceFeature.changelog || []).map(c => `{ date: "${c.date || ''}", change: "${(c.change || '').replace(/"/g, '\\"')}" }`).join(',\n                ');
+            return `"runtime-${product.id}": {
+                name: "${product.name}",
+                platform: "Self-Hosted Runtimes",
+                launched: "${sourceFeature.launched || ''}",
+                verified: "${product.last_verified || sourceFeature.verified || ''}",
+                checked: "${sourceFeature.checked || ''}",
+                changes: [${changes}]
+            }`;
+        }).filter(Boolean)).join(',\n            ')}
         };
     </script>
 
     <script>
-        const TOTAL_FEATURES = ${platforms.reduce((sum, p) => sum + p.features.length, 0)};
+        const TOTAL_FEATURES = ${totalCards};
 
         function copyTalkingPoint(el) {
             const text = el.innerText;
@@ -979,6 +1481,196 @@ function generateHTML(platforms) {
 </html>`;
 }
 
+function generateCapabilitiesHTML(ontologyData) {
+    const now = new Date().toISOString().split('T')[0];
+    const groupLabels = {
+        understand: 'Understand',
+        respond: 'Respond',
+        create: 'Create',
+        'work-with-my-stuff': 'Work With My Stuff',
+        'act-for-me': 'Act for Me',
+        connect: 'Connect',
+        'access-context': 'Access Context'
+    };
+    const groupedCapabilities = ontologyData.capabilities.reduce((acc, capability) => {
+        if (!acc[capability.group]) acc[capability.group] = [];
+        acc[capability.group].push(capability);
+        return acc;
+    }, {});
+    const groupOrder = Object.keys(groupLabels).filter(group => groupedCapabilities[group]?.length);
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Capability Reference - Capability Index</title>
+    <meta name="description" content="Capability-first view of the AI Capability Reference, grouped by what a person wants to do rather than vendor feature names.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <h1><a href="capabilities.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
+        <a href="index.html" class="back-btn" onclick="passTheme(this)">← Dashboard</a>
+        <div class="header-meta">
+            <span class="last-updated">Last built: ${now}</span>
+            <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
+            <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
+        </div>
+    </header>
+
+    <div class="container capability-page" id="main-content">
+        <section class="capability-hero">
+            <p class="capability-kicker">Ontology-first view</p>
+            <h2>What can this AI do?</h2>
+            <p class="capability-hero-copy">This page groups vendor implementations by plain-English capabilities. Each implementation links back to the current feature record in the dashboard.</p>
+            <div class="capability-stats">
+                <span class="feature-count">Capabilities: <strong>${ontologyData.capabilities.length}</strong></span>
+                <span class="feature-count">Mapped implementations: <strong>${ontologyData.implementations.filter(item => item.capabilities.length > 0).length}</strong></span>
+                <span class="feature-count">Model access records: <strong>${ontologyData.model_access.length}</strong></span>
+            </div>
+        </section>
+
+        <nav class="capability-nav" aria-label="Capability groups">
+            ${groupOrder.map(group => `<a href="#group-${group}" class="provider-toggle active">${groupLabels[group]}</a>`).join('')}
+        </nav>
+
+        ${groupOrder.map(group => `
+        <section class="capability-group" id="group-${group}">
+            <div class="platform-header">
+                <h2>${groupLabels[group]}</h2>
+                <div class="platform-meta">
+                    <span>${groupedCapabilities[group].length} capabilities</span>
+                </div>
+            </div>
+            <div class="capability-grid">
+                ${groupedCapabilities[group].map(capability => `
+                <article class="capability-card">
+                    <div class="feature-header">
+                        <h3>${escapeHTML(capability.name)}</h3>
+                        <span class="badges">
+                            <span class="badge gate-free">${escapeHTML(groupLabels[group])}</span>
+                        </span>
+                    </div>
+                    <p class="capability-summary">${escapeHTML(capability.summary)}</p>
+                    <div class="capability-columns">
+                        ${capability.what_counts.length ? `
+                        <div class="capability-column">
+                            <h4>What Counts</h4>
+                            <ul class="capability-list">
+                                ${capability.what_counts.map(item => `<li>${escapeHTML(item)}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                        ${capability.what_does_not_count.length ? `
+                        <div class="capability-column">
+                            <h4>What Does Not Count</h4>
+                            <ul class="capability-list">
+                                ${capability.what_does_not_count.map(item => `<li>${escapeHTML(item)}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                    </div>
+                    ${capability.related_terms.length ? `
+                    <div class="capability-tags">
+                        ${capability.related_terms.map(term => `<span class="provider-toggle active">${escapeHTML(term)}</span>`).join('')}
+                    </div>` : ''}
+                    <div class="capability-implementation-header">
+                        <strong>${capability.implementation_count}</strong> implementation${capability.implementation_count === 1 ? '' : 's'} across <strong>${capability.product_count}</strong> product${capability.product_count === 1 ? '' : 's'}
+                    </div>
+                    <div class="capability-implementations">
+                        ${capability.implementations.map(item => {
+                            const source = item.source;
+                            const sourceFeature = source?.feature;
+                            const sourcePlatform = source?.platform;
+                            const permalink = source ? `index.html#${source.featureId}` : 'index.html';
+                            const snippet = sourceFeature?.talking_point
+                                ? sourceFeature.talking_point.replace(/\*\*([^*]+)\*\*/g, '$1')
+                                : item.notes;
+
+                            return `
+                        <article class="capability-impl">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">${escapeHTML(item.product_record?.name || humanizeId(item.product))}</span>
+                                <h4><a href="${permalink}" class="feature-link" onclick="passTheme(this)">${escapeHTML(item.source_heading)}</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">${escapeHTML(snippet || 'Mapped from the current implementation record.')}</p>
+                            <div class="dates-row">
+                                ${sourceFeature?.status ? availabilityBadge(sourceFeature.status) : ''}
+                                ${sourceFeature?.gating ? gatingBadge(sourceFeature.gating) : ''}
+                                ${sourcePlatform?.last_verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${escapeHTML(sourcePlatform.last_verified)}</span></span>` : ''}
+                            </div>
+                            ${item.notes ? `<p class="capability-note">${escapeHTML(item.notes)}</p>` : ''}
+                        </article>`;
+                        }).join('')}
+                    </div>
+                    ${capability.model_access_count ? `
+                    <div class="capability-implementation-header model-access-header">
+                        <strong>${capability.model_access_count}</strong> relevant model access record${capability.model_access_count === 1 ? '' : 's'}
+                    </div>
+                    <div class="capability-implementations">
+                        ${capability.model_access.map(record => {
+                            const permalink = record.source ? `index.html#${record.source.featureId}` : 'index.html';
+                            const runtimes = record.common_runtimes || [];
+                            return `
+                        <article class="capability-impl capability-impl-model-access">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">${escapeHTML(record.provider_record?.name || humanizeId(record.provider))}</span>
+                                <h4><a href="${permalink}" class="feature-link" onclick="passTheme(this)">${escapeHTML(record.name)}</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">${escapeHTML(record.summary)}</p>
+                            ${runtimes.length ? `<div class="capability-tags">${runtimes.map(runtime => `<span class="provider-toggle active">${escapeHTML(runtime)}</span>`).join('')}</div>` : ''}
+                            ${record.constraints.length ? `<p class="capability-note">${escapeHTML(record.constraints[0])}</p>` : ''}
+                        </article>`;
+                        }).join('')}
+                    </div>` : ''}
+                </article>`).join('')}
+            </div>
+        </section>`).join('\n')}
+
+        <footer>
+            <p>
+                Capability-first index built from the same verified feature records as the dashboard.
+                <a href="index.html" onclick="passTheme(this)">Back to the feature view</a>.
+            </p>
+        </footer>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function passTheme(link) {
+            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            if (isLight) {
+                const url = new URL(link.href, window.location.href);
+                url.searchParams.set('theme', 'light');
+                link.href = url.pathname.split('/').pop() + url.search + url.hash;
+            }
+        }
+    </script>
+</body>
+</html>`;
+}
+
 /**
  * Convert markdown text to simple HTML.
  * Supports headers, bold, italic, links, code, blockquotes, lists, and tables.
@@ -1043,8 +1735,8 @@ function generateAboutHTML() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - AI Feature Tracker</title>
-    <meta name="description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <title>About - ${DASHBOARD_TITLE}</title>
+    <meta name="description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -1053,14 +1745,14 @@ function generateAboutHTML() {
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="About - AI Feature Tracker">
-    <meta property="og:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta property="og:title" content="About - ${DASHBOARD_TITLE}">
+    <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta property="og:image" content="assets/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About - AI Feature Tracker">
-    <meta name="twitter:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta name="twitter:title" content="About - ${DASHBOARD_TITLE}">
+    <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta name="twitter:image" content="assets/og-image.png">
 
     <link rel="stylesheet" href="assets/styles.css">
@@ -1100,10 +1792,11 @@ function generateAboutHTML() {
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="site-header">
-        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</a></h1>
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> ${DASHBOARD_TITLE}</a></h1>
         <a href="index.html" class="back-btn" onclick="passTheme(this)">← Back</a>
         <div class="header-meta">
-            <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>
+            <a href="capabilities.html" class="about-link" onclick="passTheme(this)">Browse Capabilities</a>
+            <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
         </div>
     </header>
@@ -1115,15 +1808,15 @@ function generateAboutHTML() {
         <footer>
             <p>
                 Community-maintained. Found an error? Got an idea?
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/pulls">submit a PR</a>.
+                <a href="${REPO_ISSUES_URL}">Open an issue</a> or
+                <a href="${REPO_PULLS_URL}">submit a PR</a>.
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance" style="margin-left: 8px; vertical-align: middle;"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
             <p style="margin-top: 8px;">
                 &copy; 2026 Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | You're welcome.
             </p>
             <p style="margin-top: 12px;">
-                <a href="https://github.com/snapsynapse/ai-feature-tracker" class="footer-social" title="Star on GitHub">⭐ Star</a>
+                <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
                 <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
@@ -1154,16 +1847,18 @@ function generateAboutHTML() {
  * Parses all platform files, generates HTML, and writes output files.
  */
 function main() {
-    console.log('🔨 Building AI Feature Tracker...\n');
+    console.log(`🔨 Building ${DASHBOARD_TITLE}...\n`);
 
-    // Read all platform files
-    const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.md') && !f.startsWith('_'));
-    console.log(`Found ${files.length} platform files: ${files.join(', ')}`);
+    // Read active and hidden evidence platform files, but skip archived bundles.
+    const files = listBuildPlatformFiles();
+    console.log(`Found ${files.length} active platform files: ${files.join(', ')}`);
 
     const platforms = files.map(f => {
         const filepath = path.join(DATA_DIR, f);
         console.log(`  Parsing ${f}...`);
-        return parsePlatform(filepath);
+        const platform = parsePlatform(filepath);
+        platform.source_file = path.relative(ROOT_DIR, filepath).replace(/\\/g, '/');
+        return platform;
     });
 
     // Count features
@@ -1171,7 +1866,9 @@ function main() {
     console.log(`\nParsed ${totalFeatures} features across ${platforms.length} platforms.`);
 
     // Generate HTML
-    const html = generateHTML(platforms);
+    const ontologyData = loadOntologyData(platforms);
+    const html = generateHTML(platforms, ontologyData);
+    const capabilitiesHTML = generateCapabilitiesHTML(ontologyData);
 
     // Ensure output directory exists
     const outputDir = path.dirname(OUTPUT_FILE);
@@ -1183,6 +1880,10 @@ function main() {
     fs.writeFileSync(OUTPUT_FILE, html);
     console.log(`\n✅ Dashboard written to ${OUTPUT_FILE}`);
     console.log(`   File size: ${(html.length / 1024).toFixed(1)} KB`);
+
+    fs.writeFileSync(CAPABILITIES_OUTPUT_FILE, capabilitiesHTML);
+    console.log(`✅ Capability index written to ${CAPABILITIES_OUTPUT_FILE}`);
+    console.log(`   File size: ${(capabilitiesHTML.length / 1024).toFixed(1)} KB`);
 
     // Generate about page from README
     const aboutHTML = generateAboutHTML();

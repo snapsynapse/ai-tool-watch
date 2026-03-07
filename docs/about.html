@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - AI Feature Tracker</title>
-    <meta name="description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <title>About - AI Capability Reference</title>
+    <meta name="description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -13,14 +13,14 @@
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="About - AI Feature Tracker">
-    <meta property="og:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta property="og:title" content="About - AI Capability Reference">
+    <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta property="og:image" content="assets/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About - AI Feature Tracker">
-    <meta name="twitter:description" content="About the AI Feature Tracker - a community-maintained resource for AI feature availability.">
+    <meta name="twitter:title" content="About - AI Capability Reference">
+    <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta name="twitter:image" content="assets/og-image.png">
 
     <link rel="stylesheet" href="assets/styles.css">
@@ -60,20 +60,32 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="site-header">
-        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Feature Tracker</a></h1>
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
         <a href="index.html" class="back-btn" onclick="passTheme(this)">← Back</a>
         <div class="header-meta">
-            <a href="https://github.com/snapsynapse/ai-feature-tracker" class="github-link">Contribute on GitHub</a>
+            <a href="capabilities.html" class="about-link" onclick="passTheme(this)">Browse Capabilities</a>
+            <a href="https://github.com/snapsynapse/ai-capability-reference" class="github-link">Contribute on GitHub</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
         </div>
     </header>
     <div class="container" id="main-content">
         <div class="about-content">
-            <h1>AI Feature Tracker</h1>
+            <h1>AI Capability Reference</h1>
 
-<strong>Community-maintained tracker of AI feature availability across subscription tiers.</strong>
+<p>Transition note: this repo is actively being reframed toward an "AI Capability Reference" model while preserving the current feature-first site during migration.</p>
 
-<p>🔗 <strong><a href="https://snapsynapse.github.io/ai-feature-tracker">View the Dashboard</a></strong></p>
+<ul><li>Capability taxonomy draft: <a href="CAPABILITY_TAXONOMY.md">CAPABILITY_TAXONOMY.md</a></li>
+<li>Capability pressure test: <a href="CAPABILITY_PRESSURE_TEST.md">CAPABILITY_PRESSURE_TEST.md</a></li>
+<li>Ontology-first principle: <a href="ONTOLOGY_FIRST.md">ONTOLOGY_FIRST.md</a></li>
+<li>Ontology draft: <a href="ONTOLOGY.md">ONTOLOGY.md</a></li>
+<li>Model access extension: <a href="MODEL_ACCESS_EXTENSION.md">MODEL_ACCESS_EXTENSION.md</a></li>
+<li>Schema proposal: <a href="SCHEMA_PROPOSAL.md">SCHEMA_PROPOSAL.md</a></li>
+<li>Scope rules: <a href="SCOPE.md">SCOPE.md</a></li>
+<li>Migration strategy: <a href="MIGRATION_STRATEGY.md">MIGRATION_STRATEGY.md</a></li>
+<p></ul></p>
+<strong>Plain-English reference for AI capabilities, plans, constraints, and implementations.</strong>
+
+<p>🔗 <strong><a href="https://snapsynapse.com/ai-feature-tracker/">View the Reference</a></strong></p>
 
 <hr>
 
@@ -82,16 +94,17 @@
 <p>A single source of truth for answering questions like:</p>
 <ul><li>"Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)</li>
 <li>"Can I use Claude Cowork on Windows?" (Not yet, macOS only)</li>
-<li>"Which local models can I run on my hardware?" (Depends on VRAM)</li>
+<li>"Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)</li>
 <p></ul></p>
 <p>Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.</p>
 
 <h2>Platforms Covered</h2>
 
-<table><thead><tr><th>Platform</th><th>Vendor</th><th>Features Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Local Models</strong></td><td>Various</td><td>Llama, Mistral, DeepSeek, Qwen, Codestral</td></tr></tbody></table>
+<table><thead><tr><th>Platform</th><th>Vendor</th><th>Features Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Open / Self-Hosted</strong></td><td>Various</td><td>Open model access plus self-hosted runtimes</td></tr></tbody></table>
 <h2>Features</h2>
 
 <ul><li><strong>Plan-by-plan availability</strong> — See exactly which tier unlocks each feature</li>
+<li><strong>Capability-first view</strong> — Browse plain-English capabilities in addition to the feature view</li>
 <li><strong>Platform support</strong> — Windows, macOS, Linux, iOS, Android, web, terminal, API</li>
 <li><strong>Talking points</strong> — Ready-to-use sentences for presentations (click to copy)</li>
 <li><strong>Category filtering</strong> — Voice, Coding, Research, Agents, and more</li>
@@ -120,9 +133,10 @@
 <p>Found outdated info? Want to add a feature? See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
 
 <p>Quick version:</p>
-<p>1. Edit the relevant file in <code>data/platforms/</code></p>
-<p>2. Include a source link</p>
-<p>3. Submit a PR</p>
+<p>1. Edit the relevant record in <code>data/platforms/</code>, <code>data/model-access/</code>, <code>data/products/</code>, or <code>data/implementations/</code></p>
+<p>2. Include or preserve the evidence source link</p>
+<p>3. Run <code>node scripts/validate-ontology.js</code></p>
+<p>4. Submit a PR</p>
 
 <h2>Automated Verification</h2>
 
@@ -248,7 +262,7 @@
 
 <p>1. Go to <strong>Settings → Pages</strong></p>
 <p>2. Under "Build and deployment", select <strong>GitHub Actions</strong></p>
-<p>3. The workflow will deploy to <code>https://<username>.github.io/ai-feature-tracker/</code></p>
+<p>3. The workflow will deploy to <code>https://<username>.github.io/ai-capability-reference/</code></p>
 
 <h3>Manual build</h3>
 
@@ -270,22 +284,22 @@
 
 <hr>
 
-<strong>Found an error?</strong> <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or submit a PR!
+<strong>Found an error?</strong> <a href="https://github.com/snapsynapse/ai-capability-reference/issues">Open an issue</a> or submit a PR!
 
         </div>
 
         <footer>
             <p>
                 Community-maintained. Found an error? Got an idea?
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/issues">Open an issue</a> or
-                <a href="https://github.com/snapsynapse/ai-feature-tracker/pulls">submit a PR</a>.
+                <a href="https://github.com/snapsynapse/ai-capability-reference/issues">Open an issue</a> or
+                <a href="https://github.com/snapsynapse/ai-capability-reference/pulls">submit a PR</a>.
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance" style="margin-left: 8px; vertical-align: middle;"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
             <p style="margin-top: 8px;">
                 &copy; 2026 Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | You're welcome.
             </p>
             <p style="margin-top: 12px;">
-                <a href="https://github.com/snapsynapse/ai-feature-tracker" class="footer-social" title="Star on GitHub">⭐ Star</a>
+                <a href="https://github.com/snapsynapse/ai-capability-reference" class="footer-social" title="Star on GitHub">⭐ Star</a>
                 <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
