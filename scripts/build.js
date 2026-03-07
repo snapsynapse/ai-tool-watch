@@ -1714,18 +1714,14 @@ function generateCapabilitiesHTML(ontologyData) {
 
     <div class="container capability-page" id="main-content">
         <a href="${REPO_URL}" class="site-banner-link" title="View on GitHub">
-            <img src="assets/hero-darkmode.png" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-dark" width="1280" height="640">
-            <img src="assets/hero-lightmode.png" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-light" width="1280" height="640" loading="lazy">
+            <img src="assets/hero-darkmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-dark" width="1280" height="640">
+            <img src="assets/hero-lightmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-light" width="1280" height="640" loading="lazy">
         </a>
-        <section class="capability-hero">
-            <h2>What can this AI do?</h2>
-            <p class="capability-hero-copy">A maintained reference for AI capability availability across plans, platforms, and access tiers.</p>
-            <div class="capability-stats">
-                <span class="feature-count">${ontologyData.capabilities.length} capabilities</span>
-                <span class="feature-count">${totalImpls} implementations</span>
-                <span class="feature-count">Last built: ${now}</span>
-            </div>
-        </section>
+        <div class="capability-stats">
+            <span class="feature-count">${ontologyData.capabilities.length} capabilities</span>
+            <span class="feature-count">${totalImpls} implementations</span>
+            <span class="feature-count">Last built: ${now}</span>
+        </div>
 
         <nav class="capability-nav" aria-label="Capability groups">
             ${groupOrder.map(group => `<a href="#group-${group}" class="provider-toggle active">${groupLabels[group]}</a>`).join('')}
@@ -1736,7 +1732,7 @@ function generateCapabilitiesHTML(ontologyData) {
             <div class="platform-header">
                 <h2>${groupLabels[group]}</h2>
                 <div class="platform-meta">
-                    <span>${groupedCapabilities[group].length} capabilities</span>
+                    <span>${groupedCapabilities[group].length} ${groupedCapabilities[group].length === 1 ? 'capability' : 'capabilities'}</span>
                 </div>
             </div>
             <div class="capability-grid">
@@ -1777,6 +1773,7 @@ function generateCapabilitiesHTML(ontologyData) {
                     <div class="capability-tags">
                         ${capability.related_terms.map(term => `<span class="provider-toggle active">${escapeHTML(term)}</span>`).join('')}
                     </div>` : ''}
+                    ${capability.implementation_count > 0 ? `
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
                         <span><strong>${capability.implementation_count}</strong> implementation${capability.implementation_count === 1 ? '' : 's'} across <strong>${capability.product_count}</strong> product${capability.product_count === 1 ? '' : 's'}</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
@@ -1810,7 +1807,7 @@ function generateCapabilitiesHTML(ontologyData) {
                             ${item.notes ? `<p class="capability-note">${escapeHTML(item.notes)}</p>` : ''}
                         </article>`;
                         }).join('')}
-                    </div>
+                    </div>` : ''}
                     ${capability.model_access_count ? `
                     <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
                         <span><strong>${capability.model_access_count}</strong> relevant model access record${capability.model_access_count === 1 ? '' : 's'}</span>
@@ -1890,6 +1887,8 @@ function markdownToHTML(md) {
         // Bold and italic
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        // Images (must come before links so ![alt](src) isn't matched as a link)
+        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;border-radius:8px;">')
         // Links
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
         // Blockquotes
@@ -1932,8 +1931,11 @@ function generateAboutHTML() {
     // Single greedy match avoids false termination on ## headings inside code blocks
     readme = readme.replace(/\n## Automated Verification[\s\S]*(?=\n## License)/, '');
 
-    // Rewrite relative markdown links to absolute GitHub URLs
-    readme = readme.replace(/\[([^\]]+)\]\((?!https?:\/\/|\/|#|mailto:)([^)]+)\)/g,
+    // Rewrite image paths from repo-root-relative (docs/assets/...) to about-page-relative (assets/...)
+    readme = readme.replace(/!\[([^\]]*)\]\(docs\/([^)]+)\)/g, '![$1]($2)');
+
+    // Rewrite relative markdown links to absolute GitHub URLs (skip images — preceded by !)
+    readme = readme.replace(/(?<!!)\[([^\]]+)\]\((?!https?:\/\/|\/|#|mailto:)([^)]+)\)/g,
         (_, text, href) => `[${text}](${REPO_URL}/blob/main/${href})`
     );
 

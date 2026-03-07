@@ -1522,7 +1522,8 @@ footer a:hover {
 
 .site-banner-link {
     display: block;
-    margin-bottom: 2rem;
+    max-width: 640px;
+    margin: 0 auto 2rem;
 }
 
 .site-banner-img {
