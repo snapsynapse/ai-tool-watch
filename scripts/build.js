@@ -1756,7 +1756,6 @@ function generateCapabilitiesHTML(ontologyData) {
                         ${cs.totalCount > 0 ? `<span class="constraint-badge ${cs.freeCount > 0 ? 'cb-free' : 'cb-paid'}">${cs.freeCount} of ${cs.totalCount} free</span>` : ''}
                         ${cs.surfaceBadges.map(badge => `<span class="constraint-badge cb-surface">${escapeHTML(badge)}</span>`).join('')}
                         ${cs.hasRegionLimits ? '<span class="constraint-badge cb-region">Region-limited</span>' : ''}
-                        ${cs.oldestChecked ? `<span class="constraint-badge cb-freshness" title="Oldest checked date across implementations">Checked: ${formatDateForDisplay(cs.oldestChecked)}</span>` : ''}
                     </div>
                     <div class="capability-columns">
                         ${capability.what_counts.length ? `

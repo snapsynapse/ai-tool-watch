@@ -1184,6 +1184,14 @@ footer a:hover {
     line-height: 1.5;
 }
 
+.dates-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
 .capability-note {
     margin-top: 10px;
     font-size: 0.76rem;
