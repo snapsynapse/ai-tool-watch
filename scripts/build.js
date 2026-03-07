@@ -1039,14 +1039,14 @@ function generateHTML(platforms, ontologyData) {
     <meta property="og:type" content="website">
     <meta property="og:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
     <meta property="og:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
-    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:image" content="assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
     <meta name="twitter:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
-    <meta name="twitter:image" content="assets/og-image.png">
+    <meta name="twitter:image" content="assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -1697,13 +1697,13 @@ function generateCapabilitiesHTML(ontologyData) {
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Capability Reference">
     <meta property="og:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
-    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:image" content="assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Capability Reference">
     <meta name="twitter:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
-    <meta name="twitter:image" content="assets/og-image.png">
+    <meta name="twitter:image" content="assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -1713,6 +1713,9 @@ function generateCapabilitiesHTML(ontologyData) {
     ${renderSiteNav('home')}
 
     <div class="container capability-page" id="main-content">
+        <a href="${REPO_URL}" class="site-banner-link" title="View on GitHub">
+            <img src="assets/og-image.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img" width="1280" height="640">
+        </a>
         <section class="capability-hero">
             <h2>What can this AI do?</h2>
             <p class="capability-hero-copy">A maintained reference for AI capability availability across plans, platforms, and access tiers.</p>
@@ -1953,13 +1956,13 @@ function generateAboutHTML() {
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - ${DASHBOARD_TITLE}">
     <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:image" content="assets/og-image.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About - ${DASHBOARD_TITLE}">
     <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta name="twitter:image" content="assets/og-image.png">
+    <meta name="twitter:image" content="assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}

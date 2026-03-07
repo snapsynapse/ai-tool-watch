@@ -1509,6 +1509,23 @@ footer a:hover {
 }
 
 /* ========================================
+   SITE BANNER IMAGE
+   ======================================== */
+
+.site-banner-link {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.site-banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
    SITE NAVIGATION
    ======================================== */
 

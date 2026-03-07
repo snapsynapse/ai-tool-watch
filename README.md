@@ -4,7 +4,7 @@
 
 **Plain-English reference for AI capabilities, plans, constraints, and implementations.**
 
-🔗 **[View the Reference](https://airef.snapsynapse.com/)**
+![AI Capability Reference](docs/assets/og-image.jpg)
 
 ---
 
@@ -33,19 +33,18 @@ The `~1% market share` idea is used here as a practical inclusion heuristic, not
 
 | Platform | Vendor | Features Tracked |
 |----------|--------|------------------|
-| **ChatGPT** | OpenAI | Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex |
-| **Claude** | Anthropic | Code, Cowork, Projects, Artifacts, Extended Thinking, Vision |
-| **Copilot** | Microsoft | Office Integration, Designer, Vision, Voice |
-| **Gemini** | Google | Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live |
-| **Perplexity** | Perplexity AI | Comet, Agent Mode, Pro Search, Focus, Collections, Voice |
+| **ChatGPT** | OpenAI | Agent Mode, Canvas, Voice, Sora, DALL-E, Search, Deep Research, Codex, Custom GPTs |
+| **Claude** | Anthropic | Code, Cowork, MCP, Connectors, Projects, Artifacts, Extended Thinking, Vision |
+| **Copilot** | Microsoft | Office Integration, Designer, Vision, Voice, Agent Builder |
+| **Gemini** | Google | Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Veo, Live, Project Astra |
+| **Perplexity** | Perplexity AI | Comet Browser, Agent Mode, Pro Search, Focus, Collections, Voice |
 | **Grok** | xAI | Chat, Aurora (images), DeepSearch, Think Mode, Voice |
 | **Meta** | Meta | Llama 3.3, Llama 4 |
 | **Mistral** | Mistral | Codestral, Mistral Large/Nemo, Mistral Small 3 |
 | **DeepSeek** | DeepSeek | DeepSeek V3 / R1 |
-| **Alibaba** | Alibaba | Qwen 2.5, Qwen 3, Qwen-Coder |
+| **Alibaba** | Alibaba | Qwen 2.5, Qwen 3, Qwen 3.5, Qwen-Coder |
 | **Ollama** | Ollama | Self-hosted runtime product |
 | **LM Studio** | LM Studio | Self-hosted runtime product |
-| **text-generation-webui** | oobabooga | Self-hosted runtime product |
 
 ## Features
 
@@ -73,6 +72,20 @@ This site is designed to meet WCAG 2.1 AA standards:
 - **Touch targets** — Minimum 44px touch targets on mobile for easier tapping
 - **ARIA attributes** — Live regions announce filter count changes, decorative images marked with `aria-hidden`
 - **Semantic HTML** — Proper heading hierarchy, landmark regions, and button/link semantics
+
+If you're interested in accessibility tooling, check out [skill-a11y-audit](https://github.com/snapsynapse/skill-a11y-audit) — a companion project that automates WCAG audits as a reusable AI skill. If you like what you see here, you'll love that.
+
+## Update Cycle
+
+Data in this reference is kept current through a semi-automated process combining scheduled AI verification with human review.
+
+**How it works:**
+
+Every Sunday, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features — pricing tiers, platform availability, status, gating, and regional restrictions. To prevent provider bias, models are skipped when verifying features from their own platform (e.g. Gemini is not asked about Google features). A change is only flagged when at least three models agree on a discrepancy. Confirmed changes are surfaced as GitHub issues or pull requests for human review — nothing is auto-merged.
+
+Link integrity is checked separately every Wednesday, catching broken or redirected source URLs across all platforms.
+
+Features are also marked with a `Checked` date. Anything not re-verified within 30 days is treated as stale and prioritised in the next run.
 
 ## How to Contribute
 
@@ -191,7 +204,7 @@ Ontology-native evidence records live in `data/evidence/index.json` and are seed
 
 ## Skills
 
-Canonical cross-platform skill sources live under [skills](/Users/snap/Git/ai-capability-reference/skills).
+Canonical cross-platform skill sources live under [skills](skills/).
 
 Build platform exports with:
 
@@ -238,7 +251,7 @@ The site auto-deploys via GitHub Actions when changes are pushed to `main`.
 ### How it works
 
 1. **Build job** (`.github/workflows/build.yml`)
-   - Runs `node scripts/build.js` to regenerate `docs/index.html` and `docs/about.html`
+   - Runs `node scripts/build.js` to regenerate all pages under `docs/`
    - If output changed, commits it back to `main` with `[skip ci]` to prevent loops
    - Runs on both pushes and PRs (PRs only validate the build, no commit)
 
@@ -265,7 +278,10 @@ node scripts/build.js
 ```
 
 Output files:
-- `docs/index.html` — Main dashboard
+- `docs/index.html` — Capability homepage
+- `docs/implementations.html` — Detailed Availability (implementation matrix)
+- `docs/constraints.html` — Access & Limits (constraint view)
+- `docs/capabilities.html` — Redirect stub (backward compat)
 - `docs/about.html` — About page (generated from README.md)
 
 ## License
