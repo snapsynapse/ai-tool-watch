@@ -10,6 +10,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Offset anchor targets so fixed site header doesn't obscure them */
+.capability-group,
+.feature-card,
+.constraint-section {
+    scroll-margin-top: 72px;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;

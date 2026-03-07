@@ -2,23 +2,9 @@
 
 **Previously known as "AI Feature Tracker."** Renamed to "AI Capability Reference" in February 2026 to better reflect the project's ontology-first, capability-centric approach.
 
-Transition note: this repo is actively being reframed toward an "AI Capability Reference" model while preserving the current feature-first site during migration.
-
-- Capability taxonomy draft: [CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md)
-- Capability pressure test: [CAPABILITY_PRESSURE_TEST.md](CAPABILITY_PRESSURE_TEST.md)
-- Ontology-first principle: [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md)
-- Ontology draft: [ONTOLOGY.md](ONTOLOGY.md)
-- Watchlist: [WATCHLIST.md](WATCHLIST.md)
-- Skills: [skills/README.md](skills/README.md)
-- Evidence layer: [data/evidence/README.md](data/evidence/README.md)
-- Model access extension: [MODEL_ACCESS_EXTENSION.md](MODEL_ACCESS_EXTENSION.md)
-- Schema proposal: [SCHEMA_PROPOSAL.md](SCHEMA_PROPOSAL.md)
-- Scope rules: [SCOPE.md](SCOPE.md)
-- Migration strategy: [MIGRATION_STRATEGY.md](MIGRATION_STRATEGY.md)
-
 **Plain-English reference for AI capabilities, plans, constraints, and implementations.**
 
-🔗 **[View the Reference](https://snapsynapse.com/ai-feature-tracker/)**
+🔗 **[View the Reference](https://airef.snapsynapse.com/)**
 
 ---
 
@@ -73,7 +59,7 @@ The `~1% market share` idea is used here as a practical inclusion heuristic, not
 - **Dark/light mode** — Toggle for your preference
 - **Permalinks** — Link directly to any feature with shareable URLs
 - **Shareable URLs** — Filter state preserved in URL parameters
-- **Community maintained** — Submit PRs to keep it current
+- **Maintainer-led** — Managed by SnapSynapse; public issues and PRs welcome
 
 ## Accessibility
 

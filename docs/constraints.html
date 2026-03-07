@@ -6349,9 +6349,8 @@
     </script>
     <script>
         function toggleTheme() {
-            document.body.classList.toggle('light-mode');
             document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
         }
 
@@ -6376,7 +6375,7 @@
         });
 
         function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             if (isLight) {
                 const url = new URL(link.href, window.location.href);
                 url.searchParams.set('theme', 'light');

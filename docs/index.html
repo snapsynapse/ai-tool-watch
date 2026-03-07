@@ -14,7 +14,7 @@
     <meta property="og:title" content="AI Capability Reference">
     <meta property="og:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
     <meta property="og:image" content="assets/og-image.png">
-    <meta property="og:url" content="https://snapsynapse.com/ai-feature-tracker/">
+    <meta property="og:url" content="https://airef.snapsynapse.com/">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Capability Reference">
@@ -2287,7 +2287,7 @@
 
         function implCardClick(event, permalink) {
             if (event.target.closest('a')) return;
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             const url = new URL(permalink, window.location.href);
             if (isLight) url.searchParams.set('theme', 'light');
             window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
@@ -2295,9 +2295,8 @@
     </script>
     <script>
         function toggleTheme() {
-            document.body.classList.toggle('light-mode');
             document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
         }
 
@@ -2322,7 +2321,7 @@
         });
 
         function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             if (isLight) {
                 const url = new URL(link.href, window.location.href);
                 url.searchParams.set('theme', 'light');

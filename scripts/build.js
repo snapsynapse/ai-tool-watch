@@ -27,7 +27,7 @@ const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilit
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
 const REPO_PULLS_URL = `${REPO_URL}/pulls`;
-const SITE_URL = 'https://snapsynapse.com/ai-feature-tracker/';
+const SITE_URL = 'https://airef.snapsynapse.com/';
 const DASHBOARD_TITLE = 'AI Capability Reference';
 const FEATURE_VIEW_TITLE = 'Feature View by Plan';
 
@@ -944,9 +944,8 @@ function renderSharedFooter() {
 function renderThemeScript() {
     return `<script>
         function toggleTheme() {
-            document.body.classList.toggle('light-mode');
             document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
         }
 
@@ -971,7 +970,7 @@ function renderThemeScript() {
         });
 
         function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             if (isLight) {
                 const url = new URL(link.href, window.location.href);
                 url.searchParams.set('theme', 'light');
@@ -1858,7 +1857,7 @@ function generateCapabilitiesHTML(ontologyData) {
 
         function implCardClick(event, permalink) {
             if (event.target.closest('a')) return;
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
             const url = new URL(permalink, window.location.href);
             if (isLight) url.searchParams.set('theme', 'light');
             window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
