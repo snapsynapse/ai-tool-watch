@@ -1250,7 +1250,7 @@
                 <div class="platform-meta">
                     <a href="https://claude.ai/pricing" target="_blank">Pricing</a>
                     <span>·</span>
-                    <span>Verified: 2026-03-04</span>
+                    <span>Verified: 2026-03-07</span>
                 </div>
             </div>
             <div class="pricing-bar">
@@ -1545,7 +1545,7 @@
                     <div class="avail-grid">
                         
                         <div class="avail-item">
-                            <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Limited • Custom not available</span></span>
+                            <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Limited • Prebuilt skills only; custom skills not available</span></span>
                             <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                         </div>
                         <div class="avail-item">
@@ -1572,11 +1572,11 @@
                     <div class="platforms-row">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                     </div>
-                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. <strong>All Skills require a paid plan (Pro and above)</strong>—both prebuilt skills from Anthropic and custom skills you create. Free tier has no access to Skills at all.</div>
+                    <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. <strong>Prebuilt skills are available on all plans including free</strong> (added Feb 2026 with Sonnet 4.6). <strong>Custom skills require Pro and above.</strong></div>
                     
                     <div class="dates-row">
-                        <span class="date-item launched clickable" onclick="showChangelog('claude-skills')"><span class="date-label">Launched</span><span class="date-value">2025-10-16</span></span><span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-02-28</span></span><span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-03-04</span></span>
-                        <span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">Prebuilt vs Custom Skills: • Prebuilt Skills: Created and maintained by Anthropic (Excel, Word, PowerPoint, PDF creation). Activate automatically when relevant. • Custom Skills: User-created skills uploaded as ZIP files. Private to individual accounts; Team/Enterprise can provision org-wide. Both types require Pro, Max, Team, or Enterprise plans. Free accounts cannot use any Skills.</span></span>
+                        <span class="date-item launched clickable" onclick="showChangelog('claude-skills')"><span class="date-label">Launched</span><span class="date-value">2025-10-16</span></span><span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">2026-03-07</span></span><span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">2026-03-07</span></span>
+                        <span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">Prebuilt vs Custom Skills: • Prebuilt Skills: Created and maintained by Anthropic (Excel, Word, PowerPoint, PDF creation). Activate automatically when relevant. Available on all plans including free. • Custom Skills: User-created skills uploaded as ZIP files. Private to individual accounts; Team/Enterprise can provision org-wide. Require Pro, Max, Team, or Enterprise plans.</span></span>
                     </div>
                 </div>
                 <div class="feature-card" id="claude-vision-image-understanding" data-category="vision" data-prices="0_20_100_200" data-surfaces="windows_macos_linux_ios_android_web_api">
@@ -2833,9 +2833,10 @@
                 name: "Skills",
                 platform: "Claude",
                 launched: "2025-10-16T12:00Z",
-                verified: "2026-02-28",
-                checked: "2026-03-04",
-                changes: [{ date: "2025-10-16T12:00Z", change: "Initial entry" }]
+                verified: "2026-03-07",
+                checked: "2026-03-07",
+                changes: [{ date: "2026-03-07T12:00Z", change: "[Verified] Free tier now includes prebuilt skills (confirmed in Sonnet 4.6 announcement); talking point corrected to match availability table" },
+                { date: "2025-10-16T12:00Z", change: "Initial entry" }]
             },
             "claude-vision-image-understanding": {
                 name: "Vision (Image Understanding)",
