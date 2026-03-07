@@ -78,6 +78,9 @@
 <li>Capability pressure test: <a href="CAPABILITY_PRESSURE_TEST.md">CAPABILITY_PRESSURE_TEST.md</a></li>
 <li>Ontology-first principle: <a href="ONTOLOGY_FIRST.md">ONTOLOGY_FIRST.md</a></li>
 <li>Ontology draft: <a href="ONTOLOGY.md">ONTOLOGY.md</a></li>
+<li>Watchlist: <a href="WATCHLIST.md">WATCHLIST.md</a></li>
+<li>Skills: <a href="skills/README.md">skills/README.md</a></li>
+<li>Evidence layer: <a href="data/evidence/README.md">data/evidence/README.md</a></li>
 <li>Model access extension: <a href="MODEL_ACCESS_EXTENSION.md">MODEL_ACCESS_EXTENSION.md</a></li>
 <li>Schema proposal: <a href="SCHEMA_PROPOSAL.md">SCHEMA_PROPOSAL.md</a></li>
 <li>Scope rules: <a href="SCOPE.md">SCOPE.md</a></li>
@@ -98,9 +101,21 @@
 <p></ul></p>
 <p>Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.</p>
 
+<h2>Scope</h2>
+
+<p>This reference covers:</p>
+
+<ul><li>major consumer-facing AI products with meaningful public usage or visibility</li>
+<li>commercially available AI systems that ordinary people can sign up for and use</li>
+<li>important self-hosted/open model families and runtimes that people can realistically run or choose locally</li>
+<p></ul></p>
+<p>This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.</p>
+
+<p>The <code>~1% market share</code> idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.</p>
+
 <h2>Platforms Covered</h2>
 
-<table><thead><tr><th>Platform</th><th>Vendor</th><th>Features Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Open / Self-Hosted</strong></td><td>Various</td><td>Open model access plus self-hosted runtimes</td></tr></tbody></table>
+<table><thead><tr><th>Platform</th><th>Vendor</th><th>Features Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Custom GPTs, Voice, Atlas, DALL-E, Deep Research, Codex</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Meta</strong></td><td>Meta</td><td>Llama 3.3, Llama 4</td></tr><tr><td><strong>Mistral</strong></td><td>Mistral</td><td>Codestral, Mistral Large/Nemo, Mistral Small 3</td></tr><tr><td><strong>DeepSeek</strong></td><td>DeepSeek</td><td>DeepSeek V3 / R1</td></tr><tr><td><strong>Alibaba</strong></td><td>Alibaba</td><td>Qwen 2.5, Qwen 3, Qwen-Coder</td></tr><tr><td><strong>Ollama</strong></td><td>Ollama</td><td>Self-hosted runtime product</td></tr><tr><td><strong>LM Studio</strong></td><td>LM Studio</td><td>Self-hosted runtime product</td></tr><tr><td><strong>text-generation-webui</strong></td><td>oobabooga</td><td>Self-hosted runtime product</td></tr></tbody></table>
 <h2>Features</h2>
 
 <ul><li><strong>Plan-by-plan availability</strong> — See exactly which tier unlocks each feature</li>
@@ -135,8 +150,9 @@
 <p>Quick version:</p>
 <p>1. Edit the relevant record in <code>data/platforms/</code>, <code>data/model-access/</code>, <code>data/products/</code>, or <code>data/implementations/</code></p>
 <p>2. Include or preserve the evidence source link</p>
-<p>3. Run <code>node scripts/validate-ontology.js</code></p>
-<p>4. Submit a PR</p>
+<p>3. Run <code>node scripts/sync-evidence.js</code></p>
+<p>4. Run <code>node scripts/validate-ontology.js</code></p>
+<p>5. Submit a PR</p>
 
 <h2>Automated Verification</h2>
 
@@ -215,6 +231,17 @@
 <p>Requires API keys (verification only): <code>GEMINI_API_KEY</code>, <code>PERPLEXITY_API_KEY</code>, <code>XAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code></p>
 
 <p>See <a href="VERIFICATION.md">VERIFICATION.md</a> for full documentation.</p>
+
+<h2>Skills</h2>
+
+<p>Canonical cross-platform skill sources live under <a href="/Users/snap/Git/ai-capability-reference/skills">skills</a>.</p>
+
+<p>Build platform exports with:</p>
+
+<pre><code>node scripts/build-skill-bundles.js
+<p></code></pre></p>
+
+<p>That generates Perplexity, Claude, and Codex-ready outputs under each skill's local <code>dist/</code> directory without turning the repo itself into a pile of hand-maintained exports.</p>
 
 <h2>Data Format</h2>
 

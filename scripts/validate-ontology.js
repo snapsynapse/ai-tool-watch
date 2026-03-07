@@ -10,7 +10,8 @@ const DIRS = {
     products: path.join(ROOT, 'data', 'products'),
     modelAccess: path.join(ROOT, 'data', 'model-access'),
     platforms: path.join(ROOT, 'data', 'platforms'),
-    implementationsFile: path.join(ROOT, 'data', 'implementations', 'index.yml')
+    implementationsFile: path.join(ROOT, 'data', 'implementations', 'index.yml'),
+    evidenceFile: path.join(ROOT, 'data', 'evidence', 'index.json')
 };
 
 function parseFrontmatter(content) {
@@ -39,6 +40,23 @@ function parseBulletSection(body, heading) {
         .map(line => line.trim())
         .filter(line => line.startsWith('- '))
         .map(line => line.slice(2).trim());
+}
+
+function parseTable(tableText) {
+    const lines = tableText.trim().split('\n').filter(Boolean);
+    if (lines.length < 2) return [];
+
+    const headers = lines[0].split('|').map(h => h.trim()).filter(Boolean);
+    const rows = [];
+    for (let i = 2; i < lines.length; i++) {
+        const cells = lines[i].split('|').map(c => c.trim()).filter(Boolean);
+        const row = {};
+        headers.forEach((header, idx) => {
+            row[header.toLowerCase().replace(/\s+/g, '_')] = cells[idx] || '';
+        });
+        rows.push(row);
+    }
+    return rows;
 }
 
 function listMarkdownFiles(dir, { includeReadme = false } = {}) {
@@ -76,6 +94,46 @@ function loadPlatformRecords(dir) {
             frontmatter
         };
     });
+}
+
+function parseFeature(section) {
+    const trimmed = section.trim();
+    const lines = trimmed.split('\n');
+    const nameMatch = lines[0].match(/^## (.+)/);
+    if (!nameMatch) return null;
+
+    const feature = {
+        name: nameMatch[1],
+        launched: '',
+        verified: '',
+        checked: ''
+    };
+
+    const propTableMatch = trimmed.match(/\| Property \| Value \|[\s\S]*?\n\n/);
+    if (!propTableMatch) return feature;
+
+    parseTable(propTableMatch[0]).forEach(row => {
+        if (row.property === 'Launched') feature.launched = row.value;
+        if (row.property === 'Verified') feature.verified = row.value;
+        if (row.property === 'Checked') feature.checked = row.value;
+    });
+
+    return feature;
+}
+
+function loadSourceFeatureLookup(dir) {
+    const lookup = new Map();
+    listMarkdownFiles(dir).forEach(file => {
+        const fullPath = path.join(dir, file);
+        const content = fs.readFileSync(fullPath, 'utf8');
+        const { body } = parseFrontmatter(content);
+        const sourceFile = path.relative(ROOT, fullPath).replace(/\\/g, '/');
+        const featureSections = body.split(/\n---\n/).slice(1);
+        featureSections.map(parseFeature).filter(Boolean).forEach(feature => {
+            lookup.set(`${sourceFile}::${feature.name}`, feature);
+        });
+    });
+    return lookup;
 }
 
 function parseImplementationIndex(filepath) {
@@ -151,6 +209,15 @@ function parseImplementationIndex(filepath) {
     return entries;
 }
 
+function loadEvidenceIndex(filepath) {
+    if (!fs.existsSync(filepath)) return [];
+    return JSON.parse(fs.readFileSync(filepath, 'utf8'));
+}
+
+function evidenceKey(entityType, entityId) {
+    return `${entityType}:${entityId}`;
+}
+
 function headingExists(sourceFile, heading) {
     const fullPath = path.join(ROOT, sourceFile);
     if (!fs.existsSync(fullPath)) return false;
@@ -170,12 +237,17 @@ function validate() {
     const modelAccess = loadIdRecords(DIRS.modelAccess);
     const platforms = loadPlatformRecords(DIRS.platforms);
     const implementations = parseImplementationIndex(DIRS.implementationsFile);
+    const evidenceRecords = loadEvidenceIndex(DIRS.evidenceFile);
 
     const capabilityIds = new Set(capabilities.map(record => record.id));
     const providerIds = new Set(providers.map(record => record.id));
     const productIds = new Set(products.map(record => record.id));
     const implementationIds = new Set();
     const platformMetaBySource = new Map(platforms.map(record => [record.source_file, record.frontmatter]));
+    const modelAccessIds = new Set(modelAccess.filter(record => record.file !== 'README.md').map(record => record.id));
+    const evidenceKeys = new Set();
+    const productsById = new Map(products.map(record => [record.id, record]));
+    const sourceFeatureLookup = loadSourceFeatureLookup(DIRS.platforms);
 
     capabilities.forEach(record => {
         if (record.id !== record.file.replace(/\.md$/, '')) {
@@ -281,6 +353,98 @@ function validate() {
         }
     });
 
+    evidenceRecords.forEach(record => {
+        const key = evidenceKey(record.entity_type, record.entity_id);
+        if (evidenceKeys.has(key)) {
+            fail(errors, `Duplicate evidence record: ${key}`);
+        }
+        evidenceKeys.add(key);
+
+        if (!['implementation', 'product', 'model_access'].includes(record.entity_type)) {
+            fail(errors, `Evidence ${record.id || key} has invalid entity_type: ${record.entity_type}`);
+        }
+
+        if (!record.entity_id) {
+            fail(errors, `Evidence ${record.id || key} missing entity_id`);
+        }
+
+        if (record.entity_type === 'implementation' && !implementationIds.has(record.entity_id)) {
+            fail(errors, `Evidence ${record.id || key} references missing implementation: ${record.entity_id}`);
+        }
+
+        if (record.entity_type === 'product' && !productIds.has(record.entity_id)) {
+            fail(errors, `Evidence ${record.id || key} references missing product: ${record.entity_id}`);
+        }
+
+        if (record.entity_type === 'model_access' && !modelAccessIds.has(record.entity_id)) {
+            fail(errors, `Evidence ${record.id || key} references missing model access: ${record.entity_id}`);
+        }
+
+        if (!record.source_file || !fs.existsSync(path.join(ROOT, record.source_file))) {
+            fail(errors, `Evidence ${record.id || key} has missing source_file: ${record.source_file}`);
+        }
+
+        if (record.source_file && platformMetaBySource.get(record.source_file)?.build_visibility === 'archive') {
+            fail(errors, `Evidence ${record.id || key} points to archived source_file: ${record.source_file}`);
+        }
+
+        if (record.source_heading && !headingExists(record.source_file, record.source_heading)) {
+            fail(errors, `Evidence ${record.id || key} missing source heading: ${record.source_heading}`);
+        }
+
+        if (!record.verified) {
+            fail(errors, `Evidence ${record.id || key} missing verified date`);
+        }
+
+        if (!record.checked) {
+            fail(errors, `Evidence ${record.id || key} missing checked date`);
+        }
+
+        const sourceFeature = record.source_heading
+            ? sourceFeatureLookup.get(`${record.source_file}::${record.source_heading}`)
+            : null;
+
+        if (sourceFeature) {
+            if (record.launched !== sourceFeature.launched) {
+                fail(errors, `Evidence ${record.id || key} launched date is out of sync with source feature`);
+            }
+            if (record.verified !== sourceFeature.verified) {
+                fail(errors, `Evidence ${record.id || key} verified date is out of sync with source feature`);
+            }
+            if (record.checked !== sourceFeature.checked) {
+                fail(errors, `Evidence ${record.id || key} checked date is out of sync with source feature`);
+            }
+        } else if (record.entity_type === 'product') {
+            const productRecord = productsById.get(record.entity_id);
+            const expectedVerified = productRecord?.frontmatter?.last_verified || '';
+            if (record.verified !== expectedVerified) {
+                fail(errors, `Evidence ${record.id || key} verified date is out of sync with product metadata`);
+            }
+            if (record.checked !== expectedVerified) {
+                fail(errors, `Evidence ${record.id || key} checked date is out of sync with product metadata`);
+            }
+        }
+    });
+
+    implementations.forEach(entry => {
+        if (!evidenceKeys.has(evidenceKey('implementation', entry.id))) {
+            fail(errors, `Implementation ${entry.id} is missing evidence coverage`);
+        }
+    });
+
+    products.forEach(record => {
+        if (!evidenceKeys.has(evidenceKey('product', record.id))) {
+            fail(errors, `Product ${record.id} is missing evidence coverage`);
+        }
+    });
+
+    modelAccess.forEach(record => {
+        if (record.file === 'README.md') return;
+        if (!evidenceKeys.has(evidenceKey('model_access', record.id))) {
+            fail(errors, `Model access ${record.id} is missing evidence coverage`);
+        }
+    });
+
     return {
         errors,
         summary: {
@@ -288,7 +452,8 @@ function validate() {
             providers: providers.length,
             products: products.length,
             model_access_records: modelAccess.filter(record => record.file !== 'README.md').length,
-            implementations: implementations.length
+            implementations: implementations.length,
+            evidence_records: evidenceRecords.length
         }
     };
 }

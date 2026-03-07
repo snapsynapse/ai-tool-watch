@@ -2,7 +2,7 @@
 id: mistral-small-3
 name: Mistral Small 3
 provider: mistral
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/mistral-open-models.md
 source_heading: Mistral Small 3
 last_verified: 2026-02-22
 status: active

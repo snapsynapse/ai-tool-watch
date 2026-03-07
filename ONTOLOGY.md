@@ -226,6 +226,7 @@ Examples:
 Notes:
 
 - Evidence remains critical regardless of how the front end is reframed.
+- The repo now materializes evidence as a first-class layer in [`data/evidence/index.json`](/Users/snap/Git/ai-capability-reference/data/evidence/index.json).
 
 ## Relationship Model
 
@@ -240,6 +241,8 @@ Implementation -> Deployment Mode
 Implementation -> Model Access
 Implementation -> Constraint
 Implementation -> Evidence
+Product -> Evidence
+Model Access -> Evidence
 ```
 
 Important relationship rules:

@@ -2,7 +2,7 @@
 id: qwen-coder
 name: Qwen-Coder
 provider: alibaba
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/alibaba-open-models.md
 source_heading: Qwen-Coder
 last_verified: 2026-02-22
 status: active

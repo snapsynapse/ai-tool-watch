@@ -45,15 +45,15 @@ Adopt a hybrid schema in the next phase.
 
 ### Keep As-Is For Now
 
-Keep the current per-product markdown files in `data/platforms/` as the authoritative implementation/evidence records during the migration period.
+Keep the current per-product markdown files in `data/platforms/` as the authoritative implementation/editorial records during the migration period.
 
-They already hold:
+They still hold:
 
 - product metadata
 - plan pricing
 - implementation details
 - constraints
-- evidence
+- raw evidence inputs used to seed the first-class evidence layer
 
 ### Add As First-Class Records
 
@@ -63,10 +63,12 @@ Make these first-class records next:
 2. `Provider`
 3. `Product`
 4. `Implementation Map`
+5. `Evidence`
 
 Do not make every ontology entity first-class immediately.
 
-In particular, keep `Plan`, `Surface`, `Constraint`, and `Evidence` embedded inside implementation records at first, even though they are ontological entities. That reduces migration cost.
+In particular, keep `Plan`, `Surface`, and `Constraint` embedded inside implementation records at first, even though they are ontological entities. That reduces migration cost.
+`Evidence` is now first-class through [`data/evidence/index.json`](/Users/snap/Git/ai-capability-reference/data/evidence/index.json).
 
 For the open/self-hosted domain, the repo should also introduce first-class `Model Access` records as a parallel extension rather than forcing those entries into the hosted-product implementation map. See [MODEL_ACCESS_EXTENSION.md](/Users/snap/Git/ai-capability-reference/MODEL_ACCESS_EXTENSION.md).
 
@@ -252,10 +254,33 @@ Because it solves several migration problems at once:
 - creates stable implementation IDs
 - supports many-to-many capability mappings
 - avoids immediate content duplication
-- leaves verification/evidence in the current markdown records
+- leaves editorial source maintenance in the current markdown records while materializing evidence as first-class data
 - makes it possible to generate capability-first pages before a full content migration
 
 It also allows the repo to acknowledge unresolved ontology pressure without inventing misleading capability mappings.
+
+### 5. Evidence
+
+Suggested path:
+
+`data/evidence/index.json`
+
+This layer materializes:
+
+- launched
+- verified
+- checked
+- sources
+- changelog
+- evidence notes
+
+for each tracked `implementation`, `product`, and `model_access` record.
+
+Current workflow:
+
+- source markdown remains the editorial input surface
+- `node scripts/sync-evidence.js` materializes ontology-native evidence objects
+- `node scripts/validate-ontology.js` enforces evidence coverage
 
 ## Current Markdown Reinterpreted Under This Proposal
 
@@ -267,7 +292,7 @@ The current product markdown files can be treated as a transitional record type:
 - availability table -> embedded plan constraints on implementation
 - platforms table -> embedded surface constraints on implementation
 - regional / notes -> embedded constraints
-- sources / verified / checked / changelog -> embedded evidence
+- sources / verified / checked / changelog -> source inputs for materialized evidence objects
 
 That means the old structure is still usable. It just becomes explicitly transitional instead of implicitly canonical.
 

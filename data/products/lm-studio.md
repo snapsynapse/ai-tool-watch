@@ -2,13 +2,13 @@
 id: lm-studio
 name: LM Studio
 provider: lm-studio
-record_source: data/platforms/self-hosted-runtimes.md
-source_heading: Self-Hosted Runtimes
+record_source: data/platforms/lm-studio-runtime.md
+source_heading: LM Studio
 pricing_page: https://lmstudio.ai/
 default_surfaces:
   - desktop
   - api
-last_verified: 2026-02-22
+last_verified: 2026-03-07
 status: active
 product_kind: runtime
 ---

@@ -49,7 +49,12 @@ Canonical path:
 
 `data/model-access/*.md`
 
-The evidence source for these records now lives in [`data/platforms/open-model-access.md`](/Users/snap/Git/ai-capability-reference/data/platforms/open-model-access.md).
+The evidence source for these records now lives in provider-specific platform files such as:
+
+- [`data/platforms/meta-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/meta-open-models.md)
+- [`data/platforms/mistral-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/mistral-open-models.md)
+- [`data/platforms/deepseek-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/deepseek-open-models.md)
+- [`data/platforms/alibaba-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/alibaba-open-models.md)
 
 ## What A Model Access Record Is For
 
@@ -71,7 +76,7 @@ It should not pretend the model family is itself a chat product.
 id: llama-4
 name: Llama 4
 provider: meta
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/meta-open-models.md
 source_heading: Llama 4 (Meta)
 last_verified: 2026-02-22
 status: active
@@ -126,7 +131,7 @@ What is still transitional:
 - the legacy [`data/archive/platforms/local-models.md`](/Users/snap/Git/ai-capability-reference/data/archive/platforms/local-models.md) archive file
 - any remaining evidence that still needs to move into first-class provider/product/model-access records
 
-The runtime products now exist as first-class `Product` records and use [`data/platforms/self-hosted-runtimes.md`](/Users/snap/Git/ai-capability-reference/data/platforms/self-hosted-runtimes.md) as their shared evidence source.
+The runtime products now exist as first-class `Product` records and now use provider-specific evidence sources such as [`data/platforms/ollama-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/ollama-runtime.md), [`data/platforms/lm-studio-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/lm-studio-runtime.md), and [`data/platforms/oobabooga-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/oobabooga-runtime.md).
 The static site generator only reads active platform evidence from `data/platforms/`, so the legacy bundle is no longer part of the active build graph.
 
 ## Recommended Next Step

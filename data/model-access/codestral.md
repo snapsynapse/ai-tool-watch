@@ -2,7 +2,7 @@
 id: codestral
 name: Codestral
 provider: mistral
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/mistral-open-models.md
 source_heading: Codestral (Mistral)
 last_verified: 2026-02-22
 status: active

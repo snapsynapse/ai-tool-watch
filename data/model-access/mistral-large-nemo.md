@@ -2,7 +2,7 @@
 id: mistral-large-nemo
 name: Mistral Large / Nemo
 provider: mistral
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/mistral-open-models.md
 source_heading: Mistral Large / Mistral Nemo
 last_verified: 2026-02-22
 status: active

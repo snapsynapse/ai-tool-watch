@@ -2,14 +2,14 @@
 id: ollama
 name: Ollama
 provider: ollama
-record_source: data/platforms/self-hosted-runtimes.md
-source_heading: Self-Hosted Runtimes
+record_source: data/platforms/ollama-runtime.md
+source_heading: Ollama
 pricing_page: https://ollama.com/
 default_surfaces:
   - desktop
   - terminal
   - api
-last_verified: 2026-02-22
+last_verified: 2026-03-07
 status: active
 product_kind: runtime
 ---

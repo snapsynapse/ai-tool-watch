@@ -2,7 +2,7 @@
 id: qwen-3
 name: Qwen 3
 provider: alibaba
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/alibaba-open-models.md
 source_heading: Qwen 3 (Alibaba)
 last_verified: 2026-02-22
 status: active

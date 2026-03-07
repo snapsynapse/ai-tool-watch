@@ -6,6 +6,9 @@ Transition note: this repo is actively being reframed toward an "AI Capability R
 - Capability pressure test: [CAPABILITY_PRESSURE_TEST.md](CAPABILITY_PRESSURE_TEST.md)
 - Ontology-first principle: [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md)
 - Ontology draft: [ONTOLOGY.md](ONTOLOGY.md)
+- Watchlist: [WATCHLIST.md](WATCHLIST.md)
+- Skills: [skills/README.md](skills/README.md)
+- Evidence layer: [data/evidence/README.md](data/evidence/README.md)
 - Model access extension: [MODEL_ACCESS_EXTENSION.md](MODEL_ACCESS_EXTENSION.md)
 - Schema proposal: [SCHEMA_PROPOSAL.md](SCHEMA_PROPOSAL.md)
 - Scope rules: [SCOPE.md](SCOPE.md)
@@ -26,6 +29,18 @@ A single source of truth for answering questions like:
 
 Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.
 
+## Scope
+
+This reference covers:
+
+- major consumer-facing AI products with meaningful public usage or visibility
+- commercially available AI systems that ordinary people can sign up for and use
+- important self-hosted/open model families and runtimes that people can realistically run or choose locally
+
+This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.
+
+The `~1% market share` idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.
+
 ## Platforms Covered
 
 | Platform | Vendor | Features Tracked |
@@ -36,7 +51,13 @@ Built for fellow AI facilitators, educators, designers, and anyone who needs acc
 | **Gemini** | Google | Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Live |
 | **Perplexity** | Perplexity AI | Comet, Agent Mode, Pro Search, Focus, Collections, Voice |
 | **Grok** | xAI | Chat, Aurora (images), DeepSearch, Think Mode, Voice |
-| **Open / Self-Hosted** | Various | Open model access plus self-hosted runtimes |
+| **Meta** | Meta | Llama 3.3, Llama 4 |
+| **Mistral** | Mistral | Codestral, Mistral Large/Nemo, Mistral Small 3 |
+| **DeepSeek** | DeepSeek | DeepSeek V3 / R1 |
+| **Alibaba** | Alibaba | Qwen 2.5, Qwen 3, Qwen-Coder |
+| **Ollama** | Ollama | Self-hosted runtime product |
+| **LM Studio** | LM Studio | Self-hosted runtime product |
+| **text-generation-webui** | oobabooga | Self-hosted runtime product |
 
 ## Features
 
@@ -72,8 +93,9 @@ Found outdated info? Want to add a feature? See [CONTRIBUTING.md](CONTRIBUTING.m
 Quick version:
 1. Edit the relevant record in `data/platforms/`, `data/model-access/`, `data/products/`, or `data/implementations/`
 2. Include or preserve the evidence source link
-3. Run `node scripts/validate-ontology.js`
-4. Submit a PR
+3. Run `node scripts/sync-evidence.js`
+4. Run `node scripts/validate-ontology.js`
+5. Submit a PR
 
 ## Automated Verification
 
@@ -166,6 +188,9 @@ cd ai-capability-reference
 # Build the dashboard
 node scripts/build.js
 
+# Sync ontology-native evidence records
+node scripts/sync-evidence.js
+
 # Validate ontology records
 node scripts/validate-ontology.js
 
@@ -174,6 +199,19 @@ open docs/index.html
 ```
 
 Archived platform bundles live under `data/archive/platforms/` for historical reference, and `node scripts/build.js` reads only active evidence from `data/platforms/`.
+Ontology-native evidence records live in `data/evidence/index.json` and are seeded with `node scripts/sync-evidence.js`.
+
+## Skills
+
+Canonical cross-platform skill sources live under [skills](/Users/snap/Git/ai-capability-reference/skills).
+
+Build platform exports with:
+
+```bash
+node scripts/build-skill-bundles.js
+```
+
+That generates Perplexity, Claude, and Codex-ready outputs under each skill's local `dist/` directory without turning the repo itself into a pile of hand-maintained exports.
 
 ## Data Format
 

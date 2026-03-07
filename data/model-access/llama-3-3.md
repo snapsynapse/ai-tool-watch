@@ -2,7 +2,7 @@
 id: llama-3-3
 name: Llama 3.3
 provider: meta
-record_source: data/platforms/open-model-access.md
+record_source: data/platforms/meta-open-models.md
 source_heading: Llama 3.3 (Meta)
 last_verified: 2026-02-22
 status: active

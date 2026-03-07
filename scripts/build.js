@@ -19,6 +19,7 @@ const PROVIDERS_DIR = path.join(__dirname, '..', 'data', 'providers');
 const PRODUCTS_DIR = path.join(__dirname, '..', 'data', 'products');
 const MODEL_ACCESS_DIR = path.join(__dirname, '..', 'data', 'model-access');
 const IMPLEMENTATIONS_FILE = path.join(__dirname, '..', 'data', 'implementations', 'index.yml');
+const EVIDENCE_FILE = path.join(__dirname, '..', 'data', 'evidence', 'index.json');
 const OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
 const CAPABILITIES_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
@@ -27,9 +28,6 @@ const REPO_PULLS_URL = `${REPO_URL}/pulls`;
 const SITE_URL = 'https://snapsynapse.com/ai-feature-tracker/';
 const DASHBOARD_TITLE = 'AI Capability Reference';
 const FEATURE_VIEW_TITLE = 'Feature View by Plan';
-const OPEN_SELF_HOSTED_LABEL = 'Open / Self-Hosted';
-const OPEN_MODEL_ACCESS_SOURCE = 'data/platforms/open-model-access.md';
-const SELF_HOSTED_RUNTIMES_SOURCE = 'data/platforms/self-hosted-runtimes.md';
 
 function slugify(value) {
     return String(value)
@@ -77,8 +75,12 @@ function isPublicPlatform(platform) {
     return !['hidden', 'archive'].includes(platform?.build_visibility);
 }
 
-function findPlatformBySource(platforms, sourceFile) {
-    return platforms.find(platform => platform.source_file === sourceFile) || null;
+function providerDisplayName(providerRecord, fallbackId) {
+    return providerRecord?.name || humanizeId(fallbackId);
+}
+
+function latestDate(values) {
+    return [...values].filter(Boolean).sort().slice(-1)[0] || '';
 }
 
 /**
@@ -180,6 +182,22 @@ function parseTable(tableText) {
 function formatDateForDisplay(isoDate) {
     if (!isoDate) return '';
     return isoDate.split('T')[0];
+}
+
+function renderDateBadges({ launched = '', verified = '', checked = '', featureId = '' } = {}) {
+    const launchedBadge = launched
+        ? (featureId
+            ? `<span class="date-item launched clickable" onclick="showChangelog('${featureId}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(launched)}</span></span>`
+            : `<span class="date-item launched"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(launched)}</span></span>`)
+        : '';
+    const verifiedBadge = verified
+        ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(verified)}</span></span>`
+        : '';
+    const checkedBadge = checked
+        ? `<span class="date-item checked"><span class="date-label">Checked</span><span class="date-value">${formatDateForDisplay(checked)}</span></span>`
+        : '';
+
+    return `${launchedBadge}${verifiedBadge}${checkedBadge}`;
 }
 
 /**
@@ -439,6 +457,15 @@ function parseImplementationIndex(filepath) {
     }));
 }
 
+function loadEvidenceIndex(filepath) {
+    if (!fs.existsSync(filepath)) return [];
+    return JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+}
+
+function evidenceKey(entityType, entityId) {
+    return `${entityType}:${entityId}`;
+}
+
 /**
  * Generate HTML badge for feature availability status.
  * @param {string} status - Status value: "ga", "beta", "preview", or "deprecated"
@@ -534,10 +561,12 @@ function loadOntologyData(platforms) {
     const products = productFiles.map(f => parseProduct(path.join(PRODUCTS_DIR, f)));
     const modelAccess = modelAccessFiles.map(f => parseModelAccess(path.join(MODEL_ACCESS_DIR, f)));
     const implementations = parseImplementationIndex(IMPLEMENTATIONS_FILE);
+    const evidenceRecords = loadEvidenceIndex(EVIDENCE_FILE);
 
     const providerMap = new Map(providers.map(provider => [provider.id, provider]));
     const productMap = new Map(products.map(product => [product.id, product]));
     const featureLookup = new Map();
+    const evidenceMap = new Map(evidenceRecords.map(record => [evidenceKey(record.entity_type, record.entity_id), record]));
 
     platforms.forEach(platform => {
         platform.features.forEach(feature => {
@@ -557,7 +586,8 @@ function loadOntologyData(platforms) {
             capabilities: implementation.capabilities || [],
             provider_record: providerMap.get(implementation.provider) || null,
             product_record: productMap.get(implementation.product) || null,
-            source
+            source,
+            evidence: evidenceMap.get(evidenceKey('implementation', implementation.id)) || null
         };
     });
 
@@ -567,7 +597,8 @@ function loadOntologyData(platforms) {
         return {
             ...record,
             provider_record: providerMap.get(record.provider) || null,
-            source
+            source,
+            evidence: evidenceMap.get(evidenceKey('model_access', record.id)) || null
         };
     });
 
@@ -578,7 +609,8 @@ function loadOntologyData(platforms) {
         return {
             ...product,
             provider_record: providerMap.get(product.provider) || null,
-            source: lookupKey ? featureLookup.get(lookupKey) || null : null
+            source: lookupKey ? featureLookup.get(lookupKey) || null : null,
+            evidence: evidenceMap.get(evidenceKey('product', product.id)) || null
         };
     });
 
@@ -618,7 +650,8 @@ function loadOntologyData(platforms) {
         products: enrichedProducts,
         implementations: enrichedImplementations,
         model_access: enrichedModelAccess,
-        runtime_products: enrichedProducts.filter(product => product.product_kind === 'runtime')
+        runtime_products: enrichedProducts.filter(product => product.product_kind === 'runtime'),
+        evidence: evidenceRecords
     };
 }
 
@@ -702,8 +735,12 @@ function renderFeatureCard(feature, platform, planPriceMap, options = {}) {
                     ${talkingPoint ? `<div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">${talkingPoint.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</div>` : ''}
                     ${supplemental}
                     <div class="dates-row">
-                        ${feature.launched ? `<span class="date-item launched clickable" onclick="showChangelog('${featureId}')"><span class="date-label">Launched</span><span class="date-value">${formatDateForDisplay(feature.launched)}</span></span>` : ''}
-                        ${feature.verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${formatDateForDisplay(feature.verified)}</span></span>` : ''}
+                        ${renderDateBadges({
+        launched: feature.launched,
+        verified: feature.verified,
+        checked: feature.checked,
+        featureId
+    })}
                         ${notes ? `<span class="notes-tooltip" tabindex="0" role="button" aria-label="Additional notes"><span class="notes-icon">ℹ️</span><span class="notes-content">${escapeHTML(notes)}</span></span>` : ''}
                     </div>
                 </div>`;
@@ -712,6 +749,7 @@ function renderFeatureCard(feature, platform, planPriceMap, options = {}) {
 function renderRuntimeProductCard(product) {
     const sourceFeature = product.source?.feature;
     if (!sourceFeature) return '';
+    const evidence = product.evidence || null;
 
     const feature = {
         ...sourceFeature,
@@ -719,7 +757,9 @@ function renderRuntimeProductCard(product) {
         url: product.pricing_page || product.url || sourceFeature.url,
         talking_point: product.summary,
         notes: sourceFeature.notes || '',
-        verified: product.last_verified || sourceFeature.verified
+        launched: evidence?.launched || sourceFeature.launched,
+        verified: evidence?.verified || product.last_verified || sourceFeature.verified,
+        checked: evidence?.checked || sourceFeature.checked
     };
     const defaultSurfaces = Array.isArray(product.default_surfaces) ? product.default_surfaces : [];
     const platformsRow = renderSurfaceRow(defaultSurfaces);
@@ -745,6 +785,7 @@ function renderModelAccessCard(record) {
     const sourceFeature = record.source?.feature;
     const sourcePlatform = record.source?.platform;
     if (!sourceFeature || !sourcePlatform) return '';
+    const evidence = record.evidence || null;
 
     const planPriceMap = buildPlanPriceMap(sourcePlatform);
     const runtimeTags = (record.common_runtimes || []).map(runtime => `<span class="provider-toggle active">${escapeHTML(runtime)}</span>`).join('');
@@ -752,58 +793,96 @@ function renderModelAccessCard(record) {
     if (record.constraints?.length) notesParts.push(record.constraints[0]);
     if (sourceFeature.notes) notesParts.push(sourceFeature.notes);
 
-    return renderFeatureCard(sourceFeature, sourcePlatform, planPriceMap, {
+    return renderFeatureCard({
+        ...sourceFeature,
+        launched: evidence?.launched || sourceFeature.launched,
+        verified: evidence?.verified || sourceFeature.verified,
+        checked: evidence?.checked || sourceFeature.checked
+    }, sourcePlatform, planPriceMap, {
         title: record.name,
         supplemental: runtimeTags ? `<div class="capability-tags">${runtimeTags}</div>` : '',
         notes: notesParts.join(' ').trim()
     });
 }
 
-function renderOntologyReplacementSections(ontologyData, replacementSources) {
-    const runtimeSourcePlatform = replacementSources?.runtime_source_platform || null;
-    const modelAccessSourcePlatform = replacementSources?.model_access_source_platform || null;
-    if (!runtimeSourcePlatform && !modelAccessSourcePlatform) return '';
+function buildOntologyProviderGroups(ontologyData) {
+    const groups = new Map();
 
-    const runtimeCards = ontologyData.runtime_products.map(renderRuntimeProductCard).filter(Boolean).join('');
-    const modelAccessCards = ontologyData.model_access.map(renderModelAccessCard).filter(Boolean).join('');
+    const ensureGroup = (providerId, providerRecord) => {
+        if (!groups.has(providerId)) {
+            groups.set(providerId, {
+                provider_id: providerId,
+                provider_record: providerRecord || null,
+                runtime_products: [],
+                model_access: []
+            });
+        }
+        return groups.get(providerId);
+    };
 
-    const runtimeSection = runtimeCards && runtimeSourcePlatform ? `
-        <section class="platform-section" data-platform="self-hosted-runtimes" data-vendor="${slugify(OPEN_SELF_HOSTED_LABEL)}">
+    (ontologyData.runtime_products || []).forEach(product => {
+        const group = ensureGroup(product.provider, product.provider_record);
+        group.runtime_products.push(product);
+    });
+
+    (ontologyData.model_access || []).forEach(record => {
+        const group = ensureGroup(record.provider, record.provider_record);
+        group.model_access.push(record);
+    });
+
+    return [...groups.values()];
+}
+
+function renderOntologyProviderSections(ontologyData) {
+    const groups = buildOntologyProviderGroups(ontologyData).sort((a, b) => {
+        const aName = providerDisplayName(a.provider_record, a.provider_id);
+        const bName = providerDisplayName(b.provider_record, b.provider_id);
+        return aName.localeCompare(bName);
+    });
+    if (!groups.length) return '';
+
+    return groups.map(group => {
+        const providerName = providerDisplayName(group.provider_record, group.provider_id);
+        const vendorSlug = slugify(providerName);
+        const runtimeCards = group.runtime_products.map(renderRuntimeProductCard).filter(Boolean).join('');
+        const modelAccessCards = group.model_access.map(renderModelAccessCard).filter(Boolean).join('');
+        const verified = latestDate([
+            ...group.runtime_products.map(product => product.evidence?.verified || product.last_verified || ''),
+            ...group.model_access.map(record => record.evidence?.verified || record.last_verified || '')
+        ]);
+        const metaBits = [];
+        if (group.model_access.length) {
+            metaBits.push(`${group.model_access.length} model access record${group.model_access.length === 1 ? '' : 's'}`);
+        }
+        if (group.runtime_products.length) {
+            metaBits.push(`${group.runtime_products.length} runtime product${group.runtime_products.length === 1 ? '' : 's'}`);
+        }
+        if (verified) {
+            metaBits.push(`Verified: ${verified}`);
+        }
+        const priceBar = group.runtime_products.length && !group.model_access.length
+            ? `<span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>`
+            : `<span class="price-tag"><strong>Self-hosted</strong>: $0 plus your hardware</span>`;
+        const sectionTitle = group.runtime_products.length && !group.model_access.length
+            ? `${providerName} Runtime`
+            : providerName;
+
+        return `
+        <section class="platform-section" data-platform="${vendorSlug}-ontology" data-vendor="${vendorSlug}">
             <div class="platform-header">
-                <h2>Self-Hosted Runtimes</h2>
+                <h2>${escapeHTML(sectionTitle)}</h2>
                 <div class="platform-meta">
-                    <span>Ontology-aligned runtime products</span>
-                    <span>·</span>
-                    <span>Verified: ${runtimeSourcePlatform.last_verified}</span>
+                    <span>${metaBits.join(' · ')}</span>
                 </div>
             </div>
             <div class="pricing-bar">
-                <span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>
+                ${priceBar}
             </div>
             <div class="features-grid">
-${runtimeCards}
+${runtimeCards}${runtimeCards && modelAccessCards ? '\n' : ''}${modelAccessCards}
             </div>
-        </section>` : '';
-
-    const modelAccessSection = modelAccessCards && modelAccessSourcePlatform ? `
-        <section class="platform-section" data-platform="open-model-access" data-vendor="${slugify(OPEN_SELF_HOSTED_LABEL)}">
-            <div class="platform-header">
-                <h2><img src="${modelAccessSourcePlatform.logo}" alt="${modelAccessSourcePlatform.vendor}" class="platform-logo">Open Model Access</h2>
-                <div class="platform-meta">
-                    <span>Model families for open / self-hosted use</span>
-                    <span>·</span>
-                    <span>Verified: ${modelAccessSourcePlatform.last_verified}</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                ${(modelAccessSourcePlatform.pricing || []).map(tier => `<span class="price-tag"><strong>${tier.plan}</strong>: ${tier.price}</span>`).join('\n                ')}
-            </div>
-            <div class="features-grid">
-${modelAccessCards}
-            </div>
-        </section>` : '';
-
-    return `${runtimeSection}\n${modelAccessSection}`;
+        </section>`;
+    }).join('\n');
 }
 
 /**
@@ -815,18 +894,19 @@ ${modelAccessCards}
 function generateHTML(platforms, ontologyData) {
     const now = new Date().toISOString().split('T')[0];
     const hostedPlatforms = platforms.filter(isPublicPlatform);
-    const replacementSources = {
-        runtime_source_platform: findPlatformBySource(platforms, SELF_HOSTED_RUNTIMES_SOURCE),
-        model_access_source_platform: findPlatformBySource(platforms, OPEN_MODEL_ACCESS_SOURCE)
-    };
+    const ontologyProviderGroups = buildOntologyProviderGroups(ontologyData);
+    const ontologySourceFiles = new Set([
+        ...ontologyData.runtime_products.map(product => product.record_source).filter(Boolean),
+        ...ontologyData.model_access.map(record => record.record_source).filter(Boolean)
+    ]);
     const changelogPlatforms = platforms.filter(platform => (
-        isPublicPlatform(platform) || platform.source_file === OPEN_MODEL_ACCESS_SOURCE
+        isPublicPlatform(platform) || ontologySourceFiles.has(platform.source_file)
     ));
     const customOntologyCardCount = (ontologyData?.runtime_products?.length || 0) + (ontologyData?.model_access?.length || 0);
     const totalCards = hostedPlatforms.reduce((sum, p) => sum + p.features.length, 0) + customOntologyCardCount;
     const vendors = [...new Set([
         ...hostedPlatforms.map(platform => platform.vendor),
-        ...(customOntologyCardCount ? [OPEN_SELF_HOSTED_LABEL] : [])
+        ...ontologyProviderGroups.map(group => providerDisplayName(group.provider_record, group.provider_id))
     ])];
 
     return `<!DOCTYPE html>
@@ -892,15 +972,15 @@ function generateHTML(platforms, ontologyData) {
             <div class="provider-toggles">
                 <label>Providers:</label>
                 ${(() => {
-            // Sort vendors by estimated active users (descending), with open/self-hosted references last
-            const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI'];
+            // Sort vendors by estimated active users first, then known provider groups, then alphabetical.
+            const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI', 'Meta', 'Mistral', 'DeepSeek', 'Alibaba', 'Ollama', 'LM Studio', 'Oobabooga'];
             vendors.sort((a, b) => {
                 const aIdx = vendorOrder.indexOf(a);
                 const bIdx = vendorOrder.indexOf(b);
-                // If not in order list, put at end (before the open/self-hosted references)
-                const aPos = aIdx === -1 ? (a === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : aIdx;
-                const bPos = bIdx === -1 ? (b === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : bIdx;
-                return aPos - bPos;
+                if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+                const aPos = aIdx === -1 ? 100 : aIdx;
+                const bPos = bIdx === -1 ? 100 : bIdx;
+                return aPos - bPos || a.localeCompare(b);
             });
             return vendors.map(vendor => {
                 const vendorSlug = slugify(vendor);
@@ -993,8 +1073,8 @@ function generateHTML(platforms, ontologyData) {
             const sortedPlatforms = [...hostedPlatforms].sort((a, b) => {
                 const aIdx = vendorOrder.indexOf(a.vendor);
                 const bIdx = vendorOrder.indexOf(b.vendor);
-                const aPos = aIdx === -1 ? (a.vendor === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : aIdx;
-                const bPos = bIdx === -1 ? (b.vendor === OPEN_SELF_HOSTED_LABEL ? 999 : 100) : bIdx;
+                const aPos = aIdx === -1 ? 100 : aIdx;
+                const bPos = bIdx === -1 ? 100 : bIdx;
                 return aPos - bPos;
             });
             return sortedPlatforms.map(p => {
@@ -1018,7 +1098,7 @@ function generateHTML(platforms, ontologyData) {
                 ${p.features.map(f => renderFeatureCard(f, p, planPriceMap)).join('')}
             </div>
         </section>`;
-            }).join('\n') + renderOntologyReplacementSections(ontologyData, replacementSources);
+            }).join('\n') + renderOntologyProviderSections(ontologyData);
         })()}
 
         <footer>
@@ -1070,14 +1150,16 @@ function generateHTML(platforms, ontologyData) {
             }`;
         })).concat((ontologyData?.runtime_products || []).map(product => {
             const sourceFeature = product.source?.feature;
-            if (!sourceFeature) return null;
-            const changes = (sourceFeature.changelog || []).map(c => `{ date: "${c.date || ''}", change: "${(c.change || '').replace(/"/g, '\\"')}" }`).join(',\n                ');
+            const evidence = product.evidence || null;
+            if (!sourceFeature && !evidence) return null;
+            const changes = ((evidence?.changelog || sourceFeature?.changelog) || []).map(c => `{ date: "${c.date || ''}", change: "${(c.change || '').replace(/"/g, '\\"')}" }`).join(',\n                ');
+            const runtimeLabel = `${providerDisplayName(product.provider_record, product.provider)} Runtime`;
             return `"runtime-${product.id}": {
                 name: "${product.name}",
-                platform: "Self-Hosted Runtimes",
-                launched: "${sourceFeature.launched || ''}",
-                verified: "${product.last_verified || sourceFeature.verified || ''}",
-                checked: "${sourceFeature.checked || ''}",
+                platform: "${runtimeLabel}",
+                launched: "${evidence?.launched || sourceFeature?.launched || ''}",
+                verified: "${evidence?.verified || product.last_verified || sourceFeature?.verified || ''}",
+                checked: "${evidence?.checked || sourceFeature?.checked || ''}",
                 changes: [${changes}]
             }`;
         }).filter(Boolean)).join(',\n            ')}
@@ -1613,7 +1695,11 @@ function generateCapabilitiesHTML(ontologyData) {
                             <div class="dates-row">
                                 ${sourceFeature?.status ? availabilityBadge(sourceFeature.status) : ''}
                                 ${sourceFeature?.gating ? gatingBadge(sourceFeature.gating) : ''}
-                                ${sourcePlatform?.last_verified ? `<span class="date-item verified"><span class="date-label">Verified</span><span class="date-value">${escapeHTML(sourcePlatform.last_verified)}</span></span>` : ''}
+                                ${renderDateBadges({
+                                launched: item.evidence?.launched || sourceFeature?.launched || '',
+                                verified: item.evidence?.verified || sourceFeature?.verified || sourcePlatform?.last_verified || '',
+                                checked: item.evidence?.checked || sourceFeature?.checked || ''
+                            })}
                             </div>
                             ${item.notes ? `<p class="capability-note">${escapeHTML(item.notes)}</p>` : ''}
                         </article>`;
@@ -1634,6 +1720,13 @@ function generateCapabilitiesHTML(ontologyData) {
                                 <h4><a href="${permalink}" class="feature-link" onclick="passTheme(this)">${escapeHTML(record.name)}</a></h4>
                             </div>
                             <p class="capability-impl-copy">${escapeHTML(record.summary)}</p>
+                            <div class="dates-row">
+                                ${renderDateBadges({
+                                launched: record.evidence?.launched || record.source?.feature?.launched || '',
+                                verified: record.evidence?.verified || record.source?.feature?.verified || record.last_verified || '',
+                                checked: record.evidence?.checked || record.source?.feature?.checked || ''
+                            })}
+                            </div>
                             ${runtimes.length ? `<div class="capability-tags">${runtimes.map(runtime => `<span class="provider-toggle active">${escapeHTML(runtime)}</span>`).join('')}</div>` : ''}
                             ${record.constraints.length ? `<p class="capability-note">${escapeHTML(record.constraints[0])}</p>` : ''}
                         </article>`;

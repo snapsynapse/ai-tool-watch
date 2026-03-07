@@ -38,13 +38,13 @@ Maintain a shared canonical data layer and support multiple views over it.
 
 ### Canonical Source Of Truth
 
-Keep implementation and evidence close to the current feature records:
+Keep implementation close to the current feature records while materializing evidence into a first-class layer:
 
 - platform metadata
 - plan pricing
 - feature implementations
 - constraints
-- evidence
+- evidence inputs
 
 ### New Layer To Add
 
@@ -158,7 +158,7 @@ Conclusion: preserve `Category` for backward compatibility, but do not treat it 
 ### Phase 3: Alternative presentation
 
 - Introduce a capability-first entry point or homepage section
-- Reuse the same implementation and evidence data underneath
+- Reuse the same implementation data and ontology-native evidence layer underneath
 - Keep feature-first navigation available
 
 ### Phase 4: Evaluate pressure
