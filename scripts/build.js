@@ -20,8 +20,10 @@ const PRODUCTS_DIR = path.join(__dirname, '..', 'data', 'products');
 const MODEL_ACCESS_DIR = path.join(__dirname, '..', 'data', 'model-access');
 const IMPLEMENTATIONS_FILE = path.join(__dirname, '..', 'data', 'implementations', 'index.yml');
 const EVIDENCE_FILE = path.join(__dirname, '..', 'data', 'evidence', 'index.json');
-const OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
-const CAPABILITIES_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
+const IMPLEMENTATIONS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'implementations.html');
+const HOMEPAGE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
+const CONSTRAINTS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'constraints.html');
+const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
 const REPO_PULLS_URL = `${REPO_URL}/pulls`;
@@ -890,6 +892,110 @@ ${runtimeCards}${runtimeCards && modelAccessCards ? '\n' : ''}${modelAccessCards
 }
 
 /**
+ * Render shared site navigation bar for all pages.
+ * @param {string} activePage - Current page identifier: 'home', 'implementations', 'constraints', 'about'
+ * @returns {string} HTML header element
+ */
+function renderSiteNav(activePage) {
+    const navItems = [
+        { id: 'home', label: 'Capabilities', href: 'index.html' },
+        { id: 'implementations', label: 'Detailed Availability', href: 'implementations.html' },
+        { id: 'constraints', label: 'Access & Limits', href: 'constraints.html' },
+        { id: 'about', label: 'About', href: 'about.html' }
+    ];
+
+    return `<header class="site-header">
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
+        <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+            <span class="hamburger-icon"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+            ${navItems.map(item =>
+                `<a href="${item.href}" class="site-nav-link${item.id === activePage ? ' active' : ''}" onclick="passTheme(this)">${item.label}</a>`
+            ).join('\n            ')}
+        </nav>
+        <div class="header-actions">
+            <a href="${REPO_URL}" class="github-link" title="View on GitHub">GitHub</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓</button>
+        </div>
+    </header>`;
+}
+
+function renderSharedFooter() {
+    return `<footer>
+            <p>
+                Maintained by <a href="https://snapsynapse.com/">SnapSynapse</a>, with public issues and pull requests welcome.
+                <a href="${REPO_ISSUES_URL}">Open an issue</a> or
+                <a href="${REPO_PULLS_URL}">submit a PR</a>.
+            </p>
+            <p style="margin-top: 8px;">
+                &copy; 2026 | Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
+            </p>
+            <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
+                <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
+                <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
+                <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
+                <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
+                <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
+            </p>
+        </footer>`;
+}
+
+function renderThemeScript() {
+    return `<script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function toggleMobileMenu() {
+            const btn = document.querySelector('.hamburger-btn');
+            const menu = document.getElementById('siteNav');
+            const isOpen = menu.classList.toggle('open');
+            btn.classList.toggle('active', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        }
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('siteNav');
+            const btn = document.querySelector('.hamburger-btn');
+            if (menu && btn && menu.classList.contains('open')) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.remove('open');
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        function passTheme(link) {
+            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            if (isLight) {
+                const url = new URL(link.href, window.location.href);
+                url.searchParams.set('theme', 'light');
+                link.href = url.pathname.split('/').pop() + url.search + url.hash;
+            }
+        }
+    </script>`;
+}
+
+function renderThemeInit() {
+    return `<script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>`;
+}
+
+/**
  * Generate the complete HTML dashboard from parsed platform data.
  * Produces a single-page app with filters, feature cards, and embedded JavaScript.
  * @param {Array<Object>} platforms - Array of parsed platform objects from parsePlatform()
@@ -923,7 +1029,7 @@ function generateHTML(platforms, ontologyData) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}</title>
-    <meta name="description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
+    <meta name="description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -932,48 +1038,28 @@ function generateHTML(platforms, ontologyData) {
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="${DASHBOARD_TITLE}">
-    <meta property="og:description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
+    <meta property="og:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
+    <meta property="og:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta property="og:image" content="assets/og-image.png">
     <meta property="og:url" content="${SITE_URL}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${DASHBOARD_TITLE}">
-    <meta name="twitter:description" content="Plain-English reference for AI capabilities, plans, constraints, and implementations, with a feature view by plan.">
+    <meta name="twitter:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
+    <meta name="twitter:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta name="twitter:image" content="assets/og-image.png">
 
     <link rel="stylesheet" href="assets/styles.css">
-    <script>
-        // Initialize theme BEFORE body renders to prevent flash
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var urlTheme = params.get('theme');
-            var storedTheme = localStorage.getItem('theme');
-            if (urlTheme === 'light' || storedTheme === 'light') {
-                document.documentElement.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        })();
-    </script>
+    ${renderThemeInit()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    ${renderSiteNav('implementations')}
     <div class="container" id="main-content">
-        <header>
-            <h1><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> ${DASHBOARD_TITLE}</h1>
+        <div class="page-intro">
             <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>${totalCards}</strong> of <strong>${totalCards}</strong></span>
-            <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span class="hamburger-icon"></span>
-            </button>
-            <div class="header-meta" id="mobileMenu">
-                <span class="last-updated">Last built: ${now}</span>
-                <a href="capabilities.html" class="about-link" onclick="passTheme(this)">Browse Capabilities</a>
-                <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
-                <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
-            </div>
-        </header>
+            <span class="last-updated">Last built: ${now}</span>
+        </div>
 
 
         <div class="filters">
@@ -1111,23 +1197,7 @@ function generateHTML(platforms, ontologyData) {
             }).join('\n') + renderOntologyProviderSections(ontologyData);
         })()}
 
-        <footer>
-            <p>
-                Community-maintained. Found an error? Got an idea?
-                <a href="${REPO_ISSUES_URL}">Open an issue</a> or
-                <a href="${REPO_PULLS_URL}">submit a PR</a>.
-            </p>
-            <p style="margin-top: 8px;">
-                &copy; 2026 | Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
-            </p>
-            <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
-                <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
-                <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
-                <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
-                <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
-                <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
-            </p>
-        </footer>
+        ${renderSharedFooter()}
     </div>
 
     <!-- Changelog Modal -->
@@ -1243,41 +1313,6 @@ function generateHTML(platforms, ontologyData) {
                     card.classList.add('permalink-highlight');
                     setTimeout(() => card.classList.remove('permalink-highlight'), 2000);
                 }, 100);
-            }
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        }
-
-        function toggleMobileMenu() {
-            const btn = document.querySelector('.hamburger-btn');
-            const menu = document.getElementById('mobileMenu');
-            const isOpen = menu.classList.toggle('open');
-            btn.classList.toggle('active', isOpen);
-            btn.setAttribute('aria-expanded', isOpen);
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const menu = document.getElementById('mobileMenu');
-            const btn = document.querySelector('.hamburger-btn');
-            if (menu && btn && menu.classList.contains('open')) {
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.remove('open');
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-
-        function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
-            if (isLight) {
-                link.href = link.href.split('?')[0] + '?theme=light';
             }
         }
 
@@ -1565,6 +1600,7 @@ function generateHTML(platforms, ontologyData) {
             content.style.top = '';
         }, true);
     </script>
+    ${renderThemeScript()}
 </body>
 </html>`;
 }
@@ -1587,52 +1623,104 @@ function generateCapabilitiesHTML(ontologyData) {
     }, {});
     const groupOrder = Object.keys(groupLabels).filter(group => groupedCapabilities[group]?.length);
 
+    // Compute constraint summaries for each capability
+    function capabilityConstraintSummary(capability) {
+        const impls = capability.implementations || [];
+        const freeCount = impls.filter(item => item.source?.feature?.gating === 'free').length;
+        const totalCount = impls.length;
+
+        // Collect all surfaces across implementations
+        const surfaceCounts = {};
+        impls.forEach(item => {
+            const platforms = item.source?.feature?.platforms || [];
+            platforms.forEach(pl => {
+                if (pl.available.includes('✅') || pl.available.includes('⚠️')) {
+                    const name = pl.platform.toLowerCase();
+                    surfaceCounts[name] = (surfaceCounts[name] || 0) + 1;
+                }
+            });
+        });
+
+        // Check for region-limited implementations
+        const hasRegionLimits = impls.some(item => {
+            const regional = item.source?.feature?.regional || '';
+            return regional && !regional.toLowerCase().includes('available globally') && !regional.toLowerCase().includes('no known');
+        });
+
+        // Find oldest checked date across implementations
+        const checkedDates = impls
+            .map(item => item.evidence?.checked || item.source?.feature?.checked || '')
+            .filter(Boolean)
+            .sort();
+        const oldestChecked = checkedDates[0] || '';
+
+        // Build surface badges
+        const surfaceBadges = [];
+        const allSurfaces = ['web', 'windows', 'macos', 'linux', 'ios', 'android', 'terminal', 'api'];
+        const missingSurfaces = allSurfaces.filter(s => !surfaceCounts[s]);
+
+        if (totalCount > 0) {
+            if (!surfaceCounts['terminal']) surfaceBadges.push('No terminal');
+            if (!surfaceCounts['linux']) surfaceBadges.push('No Linux');
+            if (!surfaceCounts['api'] && totalCount >= 3) surfaceBadges.push('No API');
+            if (surfaceCounts['ios'] && surfaceCounts['android'] && !surfaceCounts['web'] && !surfaceCounts['windows'] && !surfaceCounts['macos']) {
+                surfaceBadges.length = 0;
+                surfaceBadges.push('Mobile only');
+            }
+        }
+
+        // Build comparison line for capabilities with 4+ implementations
+        let comparisonLine = '';
+        if (totalCount >= 4) {
+            const parts = [`Available from ${capability.product_count} products`];
+            if (freeCount > 0) parts.push(`${freeCount} free`);
+            else parts.push('none free');
+            comparisonLine = parts.join('. ') + '.';
+        }
+
+        return { freeCount, totalCount, surfaceBadges, hasRegionLimits, oldestChecked, comparisonLine };
+    }
+
+    const totalImpls = ontologyData.implementations.filter(item => item.capabilities.length > 0).length;
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Capability Reference - Capability Index</title>
-    <meta name="description" content="Capability-first view of the AI Capability Reference, grouped by what a person wants to do rather than vendor feature names.">
+    <title>AI Capability Reference</title>
+    <meta name="description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers. Compare ChatGPT, Claude, Gemini, Copilot, and more.">
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Capability Reference">
+    <meta property="og:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="${SITE_URL}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Capability Reference">
+    <meta name="twitter:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
+    <meta name="twitter:image" content="assets/og-image.png">
+
     <link rel="stylesheet" href="assets/styles.css">
-    <script>
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var urlTheme = params.get('theme');
-            var storedTheme = localStorage.getItem('theme');
-            if (urlTheme === 'light' || storedTheme === 'light') {
-                document.documentElement.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        })();
-    </script>
+    ${renderThemeInit()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="site-header">
-        <h1><a href="capabilities.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
-        <a href="index.html" class="back-btn" onclick="passTheme(this)">← Dashboard</a>
-        <div class="header-meta">
-            <span class="last-updated">Last built: ${now}</span>
-            <a href="about.html" class="about-link" onclick="passTheme(this)">What is this for?</a>
-            <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
-            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
-        </div>
-    </header>
+    ${renderSiteNav('home')}
 
     <div class="container capability-page" id="main-content">
         <section class="capability-hero">
-            <p class="capability-kicker">Ontology-first view</p>
             <h2>What can this AI do?</h2>
-            <p class="capability-hero-copy">This page groups vendor implementations by plain-English capabilities. Each implementation links back to the current feature record in the dashboard.</p>
+            <p class="capability-hero-copy">A maintained reference for AI capability availability across plans, platforms, and access tiers.</p>
             <div class="capability-stats">
-                <span class="feature-count">Capabilities: <strong>${ontologyData.capabilities.length}</strong></span>
-                <span class="feature-count">Mapped implementations: <strong>${ontologyData.implementations.filter(item => item.capabilities.length > 0).length}</strong></span>
-                <span class="feature-count">Model access records: <strong>${ontologyData.model_access.length}</strong></span>
+                <span class="feature-count">${ontologyData.capabilities.length} capabilities</span>
+                <span class="feature-count">${totalImpls} implementations</span>
+                <span class="feature-count">Last built: ${now}</span>
             </div>
         </section>
 
@@ -1649,7 +1737,9 @@ function generateCapabilitiesHTML(ontologyData) {
                 </div>
             </div>
             <div class="capability-grid">
-                ${groupedCapabilities[group].map(capability => `
+                ${groupedCapabilities[group].map(capability => {
+                    const cs = capabilityConstraintSummary(capability);
+                    return `
                 <article class="capability-card">
                     <div class="feature-header">
                         <h3>${escapeHTML(capability.name)}</h3>
@@ -1658,6 +1748,13 @@ function generateCapabilitiesHTML(ontologyData) {
                         </span>
                     </div>
                     <p class="capability-summary">${escapeHTML(capability.summary)}</p>
+                    ${cs.comparisonLine ? `<p class="capability-comparison">${escapeHTML(cs.comparisonLine)}</p>` : ''}
+                    <div class="constraint-badges">
+                        ${cs.totalCount > 0 ? `<span class="constraint-badge ${cs.freeCount > 0 ? 'cb-free' : 'cb-paid'}">${cs.freeCount} of ${cs.totalCount} free</span>` : ''}
+                        ${cs.surfaceBadges.map(badge => `<span class="constraint-badge cb-surface">${escapeHTML(badge)}</span>`).join('')}
+                        ${cs.hasRegionLimits ? '<span class="constraint-badge cb-region">Region-limited</span>' : ''}
+                        ${cs.oldestChecked ? `<span class="constraint-badge cb-freshness" title="Oldest checked date across implementations">Checked: ${formatDateForDisplay(cs.oldestChecked)}</span>` : ''}
+                    </div>
                     <div class="capability-columns">
                         ${capability.what_counts.length ? `
                         <div class="capability-column">
@@ -1687,7 +1784,7 @@ function generateCapabilitiesHTML(ontologyData) {
                             const source = item.source;
                             const sourceFeature = source?.feature;
                             const sourcePlatform = source?.platform;
-                            const permalink = source ? `index.html#${source.featureId}` : 'index.html';
+                            const permalink = source ? `implementations.html#${source.featureId}` : 'implementations.html';
                             const snippet = sourceFeature?.talking_point
                                 ? sourceFeature.talking_point.replace(/\*\*([^*]+)\*\*/g, '$1')
                                 : item.notes;
@@ -1719,7 +1816,7 @@ function generateCapabilitiesHTML(ontologyData) {
                     </div>
                     <div class="capability-implementations" hidden>
                         ${capability.model_access.map(record => {
-                            const permalink = record.source ? `index.html#${record.source.featureId}` : 'index.html';
+                            const permalink = record.source ? `implementations.html#${record.source.featureId}` : 'implementations.html';
                             const runtimes = record.common_runtimes || [];
                             return `
                         <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, '${permalink}')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'${permalink}');}">
@@ -1740,34 +1837,14 @@ function generateCapabilitiesHTML(ontologyData) {
                         </article>`;
                         }).join('')}
                     </div>` : ''}
-                </article>`).join('')}
+                </article>`;
+                }).join('')}
             </div>
         </section>`).join('\n')}
 
-        <footer>
-            <p>
-                Capability-first index built from the same verified feature records as the dashboard.
-                <a href="index.html" onclick="passTheme(this)">Back to the feature view</a>.
-            </p>
-        </footer>
+        ${renderSharedFooter()}
     </div>
     <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        }
-
-        function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
-            if (isLight) {
-                const url = new URL(link.href, window.location.href);
-                url.searchParams.set('theme', 'light');
-                link.href = url.pathname.split('/').pop() + url.search + url.hash;
-            }
-        }
-
         function toggleImpls(header) {
             const impls = header.nextElementSibling;
             const willExpand = impls.hidden;
@@ -1787,6 +1864,7 @@ function generateCapabilitiesHTML(ontologyData) {
             window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
         }
     </script>
+    ${renderThemeScript()}
 </body>
 </html>`;
 }
@@ -1885,17 +1963,7 @@ function generateAboutHTML() {
     <meta name="twitter:image" content="assets/og-image.png">
 
     <link rel="stylesheet" href="assets/styles.css">
-    <script>
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var urlTheme = params.get('theme');
-            var storedTheme = localStorage.getItem('theme');
-            if (urlTheme === 'light' || storedTheme === 'light') {
-                document.documentElement.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        })();
-    </script>
+    ${renderThemeInit()}
     <style>
         .about-content {
             max-width: 800px;
@@ -1920,53 +1988,250 @@ function generateAboutHTML() {
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="site-header">
-        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> ${DASHBOARD_TITLE}</a></h1>
-        <a href="index.html" class="back-btn" onclick="passTheme(this)">← Back</a>
-        <div class="header-meta">
-            <a href="capabilities.html" class="about-link" onclick="passTheme(this)">Browse Capabilities</a>
-            <a href="${REPO_URL}" class="github-link">Contribute on GitHub</a>
-            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓 Theme</button>
-        </div>
-    </header>
+    ${renderSiteNav('about')}
     <div class="container" id="main-content">
         <div class="about-content">
             ${content}
         </div>
 
-        <footer>
-            <p>
-                Community-maintained. Found an error? Got an idea?
-                <a href="${REPO_ISSUES_URL}">Open an issue</a> or
-                <a href="${REPO_PULLS_URL}">submit a PR</a>.
-                <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance" style="margin-left: 8px; vertical-align: middle;"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
-            </p>
-            <p style="margin-top: 8px;">
-                &copy; 2026 Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | You're welcome.
-            </p>
-            <p style="margin-top: 12px;">
-                <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
-                <a href="https://signalsandsubtractions.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
-                <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
-                <a href="https://www.testingcatalog.com/tag/release/" class="footer-social" title="Latest News"><img src="https://www.testingcatalog.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Latest News</a>
-            </p>
-        </footer>
+        ${renderSharedFooter()}
+    </div>
+    ${renderThemeScript()}
+</body>
+</html>`;
+}
+
+/**
+ * Generate the constraint-first view page.
+ * Aggregates constraint data across all implementations into filterable sections.
+ */
+function generateConstraintsHTML(ontologyData, platforms) {
+    const now = new Date().toISOString().split('T')[0];
+    const hostedPlatforms = platforms.filter(isPublicPlatform);
+
+    // Build flat list of all features with their constraint data
+    const allFeatures = [];
+    hostedPlatforms.forEach(platform => {
+        const planPriceMap = buildPlanPriceMap(platform);
+        platform.features.forEach(feature => {
+            // Find capability mappings for this feature
+            const featureId = featureCardId(platform.name, feature.name);
+            const impl = ontologyData.implementations.find(item =>
+                item.source_file === platform.source_file && item.source_heading === feature.name
+            );
+            const capabilityNames = (impl?.capabilities || []).map(capId => {
+                const cap = ontologyData.capabilities.find(c => c.id === capId);
+                return cap ? cap.name : humanizeId(capId);
+            });
+
+            // Determine minimum plan tier
+            const availablePlans = (feature.availability || [])
+                .filter(a => a.available.includes('✅'))
+                .map(a => a.plan);
+
+            // Determine available surfaces
+            const availableSurfaces = (feature.platforms || [])
+                .filter(pl => pl.available.includes('✅') || pl.available.includes('⚠️'))
+                .map(pl => pl.platform);
+
+            // Regional constraints
+            const regional = feature.regional || '';
+            const hasRegionLimit = regional && !regional.toLowerCase().includes('available globally') && !regional.toLowerCase().includes('no known');
+
+            allFeatures.push({
+                id: featureId,
+                name: feature.name,
+                platform: platform.name,
+                gating: feature.gating || 'unknown',
+                status: feature.status,
+                availablePlans,
+                availableSurfaces,
+                hasRegionLimit,
+                regional,
+                capabilityNames,
+                checked: feature.checked || '',
+                verified: feature.verified || ''
+            });
+        });
+    });
+
+    // Group by gating
+    const freeFeatures = allFeatures.filter(f => f.gating === 'free');
+    const paidFeatures = allFeatures.filter(f => f.gating === 'paid');
+    const inviteFeatures = allFeatures.filter(f => f.gating === 'invite' || f.gating === 'org-only');
+
+    // Group by surface
+    const surfaceOrder = ['web', 'Windows', 'macOS', 'Linux', 'iOS', 'Android', 'Chrome', 'terminal', 'API'];
+    const bySurface = {};
+    surfaceOrder.forEach(surface => {
+        bySurface[surface] = allFeatures.filter(f =>
+            f.availableSurfaces.some(s => s.toLowerCase() === surface.toLowerCase())
+        );
+    });
+
+    // Region-limited features
+    const regionLimited = allFeatures.filter(f => f.hasRegionLimit);
+
+    function renderConstraintCard(f) {
+        return `<article class="constraint-card" data-gating="${f.gating}" data-surfaces="${f.availableSurfaces.map(s => s.toLowerCase()).join('_')}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">${escapeHTML(f.platform)}</span>
+                            <h4><a href="implementations.html#${f.id}" onclick="passTheme(this)">${escapeHTML(f.name)}</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            ${f.status ? availabilityBadge(f.status) : ''}
+                            ${gatingBadge(f.gating)}
+                            ${f.capabilityNames.map(name => `<span class="constraint-cap-badge">${escapeHTML(name)}</span>`).join('')}
+                        </div>
+                        <div class="constraint-surfaces">
+                            ${surfaceOrder.map(surface => {
+                                const has = f.availableSurfaces.some(s => s.toLowerCase() === surface.toLowerCase());
+                                return `<span class="plat-icon ${has ? 'yes' : 'no'}" title="${surface}">${surface}</span>`;
+                            }).join('')}
+                        </div>
+                        ${f.hasRegionLimit ? `<p class="constraint-regional">${escapeHTML(f.regional)}</p>` : ''}
+                    </article>`;
+    }
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Capability Reference - Access & Limits</title>
+    <meta name="description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    ${renderThemeInit()}
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    ${renderSiteNav('constraints')}
+
+    <div class="container constraint-page" id="main-content">
+        <section class="capability-hero">
+            <h2>Access & Limits</h2>
+            <p class="capability-hero-copy">Find what works for you. Filter AI features by cost, platform, and availability constraints.</p>
+            <div class="capability-stats">
+                <span class="feature-count">${freeFeatures.length} free features</span>
+                <span class="feature-count">${paidFeatures.length} paid features</span>
+                <span class="feature-count">${regionLimited.length} region-limited</span>
+            </div>
+        </section>
+
+        <nav class="capability-nav" aria-label="Constraint sections">
+            <a href="#constraint-gating" class="provider-toggle active">By Access Tier</a>
+            <a href="#constraint-surface" class="provider-toggle active">By Surface</a>
+            <a href="#constraint-region" class="provider-toggle active">Region Limits</a>
+        </nav>
+
+        <div class="constraint-filters">
+            <div class="filter-dropdowns">
+                <div class="filter-group">
+                    <label>Access:</label>
+                    <select id="gatingFilter" onchange="filterConstraints()">
+                        <option value="">All</option>
+                        <option value="free">Free</option>
+                        <option value="paid">Paid</option>
+                        <option value="invite">Invite / Org-only</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Surface:</label>
+                    <select id="surfaceFilterC" onchange="filterConstraints()">
+                        <option value="">All</option>
+                        ${surfaceOrder.map(s => `<option value="${s.toLowerCase()}">${s}</option>`).join('\n                        ')}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <section class="constraint-section" id="constraint-gating">
+            <div class="platform-header">
+                <h2>By Access Tier</h2>
+            </div>
+
+            <h3 class="constraint-group-label">Free (${freeFeatures.length})</h3>
+            <div class="constraint-grid">
+                ${freeFeatures.map(renderConstraintCard).join('\n                    ')}
+            </div>
+
+            <h3 class="constraint-group-label">Paid (${paidFeatures.length})</h3>
+            <div class="constraint-grid">
+                ${paidFeatures.map(renderConstraintCard).join('\n                    ')}
+            </div>
+
+            ${inviteFeatures.length ? `
+            <h3 class="constraint-group-label">Invite / Org-only (${inviteFeatures.length})</h3>
+            <div class="constraint-grid">
+                ${inviteFeatures.map(renderConstraintCard).join('\n                    ')}
+            </div>` : ''}
+        </section>
+
+        <section class="constraint-section" id="constraint-surface">
+            <div class="platform-header">
+                <h2>By Surface</h2>
+            </div>
+            ${surfaceOrder.map(surface => {
+                const features = bySurface[surface] || [];
+                if (!features.length) return '';
+                return `
+            <h3 class="constraint-group-label">${surface} (${features.length})</h3>
+            <div class="constraint-grid">
+                ${features.map(renderConstraintCard).join('\n                    ')}
+            </div>`;
+            }).join('')}
+        </section>
+
+        ${regionLimited.length ? `
+        <section class="constraint-section" id="constraint-region">
+            <div class="platform-header">
+                <h2>Region Limits</h2>
+            </div>
+            <div class="constraint-grid">
+                ${regionLimited.map(renderConstraintCard).join('\n                    ')}
+            </div>
+        </section>` : ''}
+
+        ${renderSharedFooter()}
     </div>
     <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            document.documentElement.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        }
-
-        function passTheme(link) {
-            const isLight = document.body.classList.contains('light-mode');
-            if (isLight) {
-                link.href = link.href.split('?')[0] + '?theme=light';
-            }
+        function filterConstraints() {
+            const gating = document.getElementById('gatingFilter').value;
+            const surface = document.getElementById('surfaceFilterC').value;
+            document.querySelectorAll('.constraint-card').forEach(card => {
+                let show = true;
+                if (gating && card.dataset.gating !== gating) {
+                    if (gating === 'invite' && card.dataset.gating !== 'invite' && card.dataset.gating !== 'org-only') show = false;
+                    else if (gating !== 'invite') show = false;
+                }
+                if (surface) {
+                    const surfaces = card.dataset.surfaces ? card.dataset.surfaces.split('_') : [];
+                    if (!surfaces.includes(surface)) show = false;
+                }
+                card.style.display = show ? '' : 'none';
+            });
         }
     </script>
+    ${renderThemeScript()}
+</body>
+</html>`;
+}
+
+function generateCapabilitiesRedirect() {
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=index.html">
+    <link rel="canonical" href="index.html">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>This page has moved. <a href="index.html">Continue to capabilities</a>.</p>
 </body>
 </html>`;
 }
@@ -1996,23 +2261,32 @@ function main() {
 
     // Generate HTML
     const ontologyData = loadOntologyData(platforms);
-    const html = generateHTML(platforms, ontologyData);
-    const capabilitiesHTML = generateCapabilitiesHTML(ontologyData);
+    const implementationsHTML = generateHTML(platforms, ontologyData);
+    const homepageHTML = generateCapabilitiesHTML(ontologyData);
+    const constraintsHTML = generateConstraintsHTML(ontologyData, platforms);
+    const redirectHTML = generateCapabilitiesRedirect();
 
     // Ensure output directory exists
-    const outputDir = path.dirname(OUTPUT_FILE);
+    const outputDir = path.dirname(IMPLEMENTATIONS_OUTPUT_FILE);
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
 
     // Write output
-    fs.writeFileSync(OUTPUT_FILE, html);
-    console.log(`\n✅ Dashboard written to ${OUTPUT_FILE}`);
-    console.log(`   File size: ${(html.length / 1024).toFixed(1)} KB`);
+    fs.writeFileSync(HOMEPAGE_OUTPUT_FILE, homepageHTML);
+    console.log(`\n✅ Homepage written to ${HOMEPAGE_OUTPUT_FILE}`);
+    console.log(`   File size: ${(homepageHTML.length / 1024).toFixed(1)} KB`);
 
-    fs.writeFileSync(CAPABILITIES_OUTPUT_FILE, capabilitiesHTML);
-    console.log(`✅ Capability index written to ${CAPABILITIES_OUTPUT_FILE}`);
-    console.log(`   File size: ${(capabilitiesHTML.length / 1024).toFixed(1)} KB`);
+    fs.writeFileSync(IMPLEMENTATIONS_OUTPUT_FILE, implementationsHTML);
+    console.log(`✅ Implementation view written to ${IMPLEMENTATIONS_OUTPUT_FILE}`);
+    console.log(`   File size: ${(implementationsHTML.length / 1024).toFixed(1)} KB`);
+
+    fs.writeFileSync(CONSTRAINTS_OUTPUT_FILE, constraintsHTML);
+    console.log(`✅ Constraint view written to ${CONSTRAINTS_OUTPUT_FILE}`);
+    console.log(`   File size: ${(constraintsHTML.length / 1024).toFixed(1)} KB`);
+
+    fs.writeFileSync(CAPABILITIES_REDIRECT_FILE, redirectHTML);
+    console.log(`✅ Capabilities redirect written to ${CAPABILITIES_REDIRECT_FILE}`);
 
     // Generate about page from README
     const aboutHTML = generateAboutHTML();

@@ -1204,6 +1204,17 @@ footer a:hover {
         justify-content: flex-start;
     }
 
+    .site-nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .site-nav-link {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
     .capability-columns,
     .capability-grid {
         grid-template-columns: 1fr;
@@ -1437,4 +1448,307 @@ footer a:hover {
         padding: 8px 10px;
         font-size: 0.8rem;
     }
+
+    /* Site nav mobile */
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: auto;
+        min-width: 220px;
+        background: var(--bg-gradient-start);
+        border: 1px solid var(--card-border);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        padding: 12px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .site-nav.open {
+        display: flex;
+    }
+
+    .site-nav .site-nav-link {
+        display: block;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .header-actions {
+        display: none !important;
+    }
+
+    .site-nav .site-nav-link.active {
+        background: var(--accent-bg);
+    }
+
+    /* Show hamburger for site-header nav */
+    .site-header .hamburger-btn {
+        display: flex;
+    }
+
+    /* Constraint page mobile */
+    .constraint-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .constraint-filters .filter-dropdowns {
+        flex-direction: column;
+    }
+}
+
+/* ========================================
+   SITE NAVIGATION
+   ======================================== */
+
+.site-nav {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.site-nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.site-nav-link:hover {
+    background: var(--accent-bg);
+    color: var(--text-heading);
+}
+
+.site-nav-link.active {
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.site-nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-actions .github-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.header-actions .github-link:hover {
+    background: var(--accent-bg);
+    color: var(--text-heading);
+}
+
+/* Page intro bar (implementations page) */
+.page-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ========================================
+   CONSTRAINT BADGES (capability cards)
+   ======================================== */
+
+.constraint-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.constraint-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.constraint-badge.cb-free {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--status-yes);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.constraint-badge.cb-paid {
+    background: rgba(230, 119, 0, 0.12);
+    color: var(--status-partial);
+    border: 1px solid rgba(230, 119, 0, 0.3);
+}
+
+.constraint-badge.cb-surface {
+    background: var(--badge-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+}
+
+.constraint-badge.cb-region {
+    background: rgba(244, 67, 54, 0.12);
+    color: #e53935;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.constraint-badge.cb-freshness {
+    background: var(--badge-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+    font-size: 0.65rem;
+}
+
+/* Capability comparison line */
+.capability-comparison {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 4px 0 2px;
+    font-style: italic;
+}
+
+/* Light mode overrides for constraint badges */
+:is(html, body).light-mode .constraint-badge.cb-free {
+    background: rgba(27, 125, 27, 0.1);
+    color: #1b7d1b;
+    border-color: rgba(27, 125, 27, 0.3);
+}
+
+:is(html, body).light-mode .constraint-badge.cb-paid {
+    background: rgba(196, 85, 0, 0.08);
+    color: #c45500;
+    border-color: rgba(196, 85, 0, 0.3);
+}
+
+:is(html, body).light-mode .constraint-badge.cb-region {
+    background: rgba(211, 47, 47, 0.08);
+    color: #d32f2f;
+    border-color: rgba(211, 47, 47, 0.3);
+}
+
+/* ========================================
+   CONSTRAINT PAGE
+   ======================================== */
+
+.constraint-page .capability-hero {
+    text-align: center;
+}
+
+.constraint-filters {
+    margin-bottom: 24px;
+}
+
+.constraint-filters .filter-dropdowns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.constraint-section {
+    margin-bottom: 32px;
+}
+
+.constraint-group-label {
+    font-size: 1.1rem;
+    color: var(--text-heading);
+    margin: 20px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.constraint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.constraint-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px;
+    transition: box-shadow 0.15s;
+}
+
+.constraint-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.constraint-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.constraint-card-header h4 {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.constraint-card-header h4 a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.constraint-card-header h4 a:hover {
+    text-decoration: underline;
+}
+
+.constraint-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.constraint-cap-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    background: var(--accent-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    white-space: nowrap;
+}
+
+.constraint-surfaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.constraint-surfaces .plat-icon {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+}
+
+.constraint-regional {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    font-style: italic;
 }
