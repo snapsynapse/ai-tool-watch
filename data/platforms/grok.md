@@ -28,7 +28,7 @@ last_verified: 2026-03-04
 | URL | https://x.ai/blog/grok-deepsearch |
 | Launched | 2025-02-17T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-03-04|
+| Checked | 2026-03-08|
 
 ### Availability
 
@@ -83,7 +83,7 @@ Available globally.
 | URL | https://x.ai/grok |
 | Launched | 2023-11-04T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-03-04|
+| Checked | 2026-03-08|
 
 ### Availability
 

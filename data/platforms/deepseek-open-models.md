@@ -24,7 +24,7 @@ build_visibility: hidden
 | URL | https://github.com/deepseek-ai/DeepSeek-V3 |
 | Launched | 2024-12-27T12:00Z |
 | Verified | 2026-02-22|
-| Checked | 2026-02-22|
+| Checked | 2026-03-08|
 
 ### Availability
 
