@@ -54,19 +54,34 @@
     </header>
 
     <div class="container capability-page" id="main-content">
-        <a href="https://github.com/snapsynapse/ai-capability-reference" class="site-banner-link" title="View on GitHub">
-            <img src="assets/hero-darkmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-dark" width="1280" height="640">
-            <img src="assets/hero-lightmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-light" width="1280" height="640" loading="lazy">
-        </a>
-        <div class="capability-stats">
-            <span class="feature-count">18 capabilities</span>
-            <span class="feature-count">54 implementations</span>
-            <span class="feature-count">Last built: 2026-03-07</span>
+        <div class="hero-onboarding">
+            <h2 class="hero-tagline">What can this AI actually do?</h2>
+            <p class="hero-subtitle">A plain-English reference for AI capabilities, plans, constraints, and implementations.</p>
+            <ol class="hero-steps">
+                <li>
+                    <strong>Pick a capability</strong>
+                    <span>Learn what AI can do today: understand, create, act for me, and more.</span>
+                </li>
+                <li>
+                    <strong>Check your plan</strong>
+                    <span>See which subscription tier unlocks it.</span>
+                </li>
+                <li>
+                    <strong>Get the real answer</strong>
+                    <span>Find the limits, caveats, and platform support you need. Ditch the hype that you don't.</span>
+                </li>
+            </ol>
         </div>
-
-        <nav class="capability-nav" aria-label="Capability groups">
-            <a href="#group-understand" class="provider-toggle active">Understand</a><a href="#group-respond" class="provider-toggle active">Respond</a><a href="#group-create" class="provider-toggle active">Create</a><a href="#group-work-with-my-stuff" class="provider-toggle active">Work With My Stuff</a><a href="#group-act-for-me" class="provider-toggle active">Act for Me</a><a href="#group-connect" class="provider-toggle active">Connect</a><a href="#group-access-context" class="provider-toggle active">Access Context</a>
-        </nav>
+        <div class="filter-bar">
+            <nav class="capability-nav" aria-label="Capability groups">
+                <a href="#group-understand" class="provider-toggle active">Understand</a><a href="#group-respond" class="provider-toggle active">Respond</a><a href="#group-create" class="provider-toggle active">Create</a><a href="#group-work-with-my-stuff" class="provider-toggle active">Work With My Stuff</a><a href="#group-act-for-me" class="provider-toggle active">Act for Me</a><a href="#group-connect" class="provider-toggle active">Connect</a><a href="#group-access-context" class="provider-toggle active">Access Context</a>
+            </nav>
+            <div class="capability-stats">
+                <span class="feature-count">18 capabilities</span>
+                <span class="feature-count">65 implementations</span>
+                <span class="feature-count">Last built: 2026-03-08</span>
+            </div>
+        </div>
 
         
         <section class="capability-group" id="group-understand">
@@ -80,7 +95,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Hear Audio and Speech</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">👂</span> Hear Audio and Speech</h3>
                         <span class="badges">
                             <span class="badge gate-free">Understand</span>
                         </span>
@@ -202,15 +217,15 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Read Text and Documents</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">📄</span> Read Text and Documents</h3>
                         <span class="badges">
                             <span class="badge gate-free">Understand</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can interpret text, documents, PDFs, and similar uploaded or pasted materials.</p>
-                    
+                    <p class="capability-comparison">Available from 5 products. 2 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-paid">0 of 1 free</span>
+                        <span class="constraint-badge cb-free">2 of 6 free</span>
                         <span class="constraint-badge cb-surface">No terminal</span>
                         
                     </div>
@@ -236,11 +251,24 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>1</strong> implementation across <strong>1</strong> product</span>
+                        <span><strong>6</strong> implementations across <strong>5</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
                         
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#chatgpt-projects')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#chatgpt-projects');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="implementations.html#chatgpt-projects" class="feature-link" onclick="passTheme(this)">Projects</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Projects let you group related chats, files, and custom instructions into workspaces. Available on all plans including free—organize your work across topics with project-specific context.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
                         <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-vision-image-understanding')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-vision-image-understanding');}">
                             <div class="capability-impl-header">
                                 <span class="price-tag">Claude</span>
@@ -254,20 +282,72 @@
                             </div>
                             
                         </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#microsoft-copilot-copilot-in-office-apps')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#microsoft-copilot-copilot-in-office-apps');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="implementations.html#microsoft-copilot-copilot-in-office-apps" class="feature-link" onclick="passTheme(this)">Copilot in Office Apps</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot in Word, Excel, PowerPoint requires Copilot Pro ($20/mo) or M365 Copilot ($30/user/mo). Free Copilot doesn&#39;t include Office integration.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-gemini-in-workspace-docs-sheets-etc')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-gemini-in-workspace-docs-sheets-etc');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-gemini-in-workspace-docs-sheets-etc" class="feature-link" onclick="passTheme(this)">Gemini in Workspace (Docs, Sheets, etc.)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini integrates directly into Google Docs, Sheets, and Slides. Basic features are free; full &#39;Help me write/create&#39; requires AI Pro or Workspace add-on.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-notebooklm')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-notebooklm');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-notebooklm" class="feature-link" onclick="passTheme(this)">NotebookLM</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. Free to use with generous limits; AI Pro increases source limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#perplexity-collections-spaces')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#perplexity-collections-spaces');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="implementations.html#perplexity-collections-spaces" class="feature-link" onclick="passTheme(this)">Collections (Spaces)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Collections let you organize research into projects. Available on all plans, with more features on Pro.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-07</span></span>
+                            </div>
+                            
+                        </article>
                     </div>
                     
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>See Images and Screens</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">👁️</span> See Images and Screens</h3>
                         <span class="badges">
                             <span class="badge gate-free">Understand</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can interpret images, screenshots, camera views, or other visual interface context.</p>
-                    
+                    <p class="capability-comparison">Available from 5 products. 3 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-free">2 of 3 free</span>
+                        <span class="constraint-badge cb-free">3 of 5 free</span>
                         <span class="constraint-badge cb-surface">No terminal</span>
                         <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
@@ -293,11 +373,24 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>3</strong> implementations across <strong>3</strong> products</span>
+                        <span><strong>5</strong> implementations across <strong>5</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
                         
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#chatgpt-vision-image-understanding')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#chatgpt-vision-image-understanding');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="implementations.html#chatgpt-vision-image-understanding" class="feature-link" onclick="passTheme(this)">Vision (Image Understanding)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">GPT-4o understands images natively—upload a photo, screenshot, chart, or diagram and ChatGPT will analyze it. Available on all plans including free, subject to your plan&#39;s message quota. Works across web, desktop, iOS, and Android. Also accessible via the OpenAI API using the `gpt-4o` model.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-05-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
                         <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-vision-image-understanding')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-vision-image-understanding');}">
                             <div class="capability-impl-header">
                                 <span class="price-tag">Claude</span>
@@ -337,6 +430,19 @@
                             </div>
                             
                         </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#grok-vision-image-understanding')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#grok-vision-image-understanding');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="implementations.html#grok-vision-image-understanding" class="feature-link" onclick="passTheme(this)">Vision (Image Understanding)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok 2 understands images—upload photos, screenshots, or diagrams and Grok will analyze them. Requires a paid plan (Premium $8/mo or higher). Available on web and mobile.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            <p class="capability-note">Transitional reasoning-depth modifier. No stable primary capability mapping yet.</p>
+                        </article>
                     </div>
                     
                     <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
@@ -373,7 +479,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Speak Back in Real Time</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🗣️</span> Speak Back in Real Time</h3>
                         <span class="badges">
                             <span class="badge gate-free">Respond</span>
                         </span>
@@ -495,17 +601,17 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Write and Explain</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">✍️</span> Write and Explain</h3>
                         <span class="badges">
                             <span class="badge gate-free">Respond</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can produce useful written responses, explanations, summaries, and structured output.</p>
-                    
+                    <p class="capability-comparison">Available from 6 products. 5 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-paid">0 of 1 free</span>
+                        <span class="constraint-badge cb-free">5 of 6 free</span>
                         <span class="constraint-badge cb-surface">No terminal</span>
-                        
+                        <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
                     <div class="capability-columns">
                         
@@ -529,11 +635,63 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>1</strong> implementation across <strong>1</strong> product</span>
+                        <span><strong>6</strong> implementations across <strong>6</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
                         
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#chatgpt-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#chatgpt-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="implementations.html#chatgpt-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT&#39;s core text conversation is available on all plans including free at chatgpt.com, with apps for iOS, Android, Windows, and macOS. Free users get GPT-5.3 Instant with standard rate limits; Plus and higher unlock more capable models and higher quotas.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2022-11-30</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="implementations.html#claude-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude&#39;s core text conversation is available on all plans including free at claude.ai, with apps for macOS, iOS, and Android plus desktop clients. The free tier includes Claude Sonnet 4.6 with usage caps; Pro and higher unlock Opus access and significantly higher limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-07-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#microsoft-copilot-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#microsoft-copilot-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="implementations.html#microsoft-copilot-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Microsoft Copilot&#39;s core text chat is free at copilot.microsoft.com — no account required for basic access. Sign in with a Microsoft account for chat history, longer conversations, and voice. Native apps available on Windows, macOS, iOS, and Android.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-02-07</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini&#39;s core text Q&amp;A is available for free at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses Gemini 2.0 Flash; AI Pro and Ultra unlock Gemini 2.5 Ultra with higher limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
                         <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#grok-grok-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#grok-grok-chat');}">
                             <div class="capability-impl-header">
                                 <span class="price-tag">Grok</span>
@@ -544,6 +702,19 @@
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
                                 <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#perplexity-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#perplexity-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="implementations.html#perplexity-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity&#39;s core search-and-answer experience is free with unlimited basic queries at perplexity.ai, on iOS, Android, the web, a Chrome extension, and via the Comet desktop app. Free users get full access to web-grounded Q&amp;A; Pro unlocks more powerful models and unlimited Pro searches.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2022-12-07</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
                             </div>
                             
                         </article>
@@ -655,7 +826,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Generate Images</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🖼️</span> Generate Images</h3>
                         <span class="badges">
                             <span class="badge gate-free">Create</span>
                         </span>
@@ -764,7 +935,7 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Generate Video</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🎬</span> Generate Video</h3>
                         <span class="badges">
                             <span class="badge gate-free">Create</span>
                         </span>
@@ -847,7 +1018,7 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Make and Edit Documents</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">📝</span> Make and Edit Documents</h3>
                         <span class="badges">
                             <span class="badge gate-free">Create</span>
                         </span>
@@ -982,7 +1153,7 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Write and Edit Code</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">💻</span> Write and Edit Code</h3>
                         <span class="badges">
                             <span class="badge gate-free">Create</span>
                         </span>
@@ -1172,7 +1343,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Organize Work in Projects</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">📂</span> Organize Work in Projects</h3>
                         <span class="badges">
                             <span class="badge gate-free">Work With My Stuff</span>
                         </span>
@@ -1268,17 +1439,17 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Remember Context Over Time</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🧠</span> Remember Context Over Time</h3>
                         <span class="badges">
                             <span class="badge gate-free">Work With My Stuff</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can retain preferences, memory, or persistent context across sessions.</p>
-                    
+                    <p class="capability-comparison">Available from 4 products. 4 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-free">1 of 1 free</span>
-                        <span class="constraint-badge cb-surface">No terminal</span><span class="constraint-badge cb-surface">No Linux</span>
-                        
+                        <span class="constraint-badge cb-free">4 of 4 free</span>
+                        <span class="constraint-badge cb-surface">No terminal</span><span class="constraint-badge cb-surface">No API</span>
+                        <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
                     <div class="capability-columns">
                         
@@ -1302,7 +1473,7 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>1</strong> implementation across <strong>1</strong> product</span>
+                        <span><strong>4</strong> implementations across <strong>4</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
@@ -1320,12 +1491,51 @@
                             </div>
                             
                         </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-memory')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-memory');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="implementations.html#claude-memory" class="feature-link" onclick="passTheme(this)">Memory</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Memory lets Claude remember your preferences and context across conversations—corrections, working style, recurring topics. Free on all plans since March 2026. Enable it in Settings → Capabilities → Memory. You can also import memories from other AI tools using the memory import tool.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-past-chats-memory')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-past-chats-memory');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-past-chats-memory" class="feature-link" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini&#39;s Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings → Personal context. Now free for all users—it rolled out to non-paying accounts in late February 2026. You can control what Gemini remembers via &#39;Instructions for Gemini&#39; in settings.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-02-26</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#grok-memory')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#grok-memory');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="implementations.html#grok-memory" class="feature-link" onclick="passTheme(this)">Memory</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok has persistent memory that carries user preferences and context across conversations. Available on all tiers including free. Memory is selective and automatic—Grok stores key facts it deems important, but users cannot currently inspect or edit what has been saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
                     </div>
                     
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Use Files I Provide</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">📎</span> Use Files I Provide</h3>
                         <span class="badges">
                             <span class="badge gate-free">Work With My Stuff</span>
                         </span>
@@ -1446,7 +1656,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Do Multi-Step Research</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🔭</span> Do Multi-Step Research</h3>
                         <span class="badges">
                             <span class="badge gate-free">Act for Me</span>
                         </span>
@@ -1607,7 +1817,7 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Search the Web</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🔍</span> Search the Web</h3>
                         <span class="badges">
                             <span class="badge gate-free">Act for Me</span>
                         </span>
@@ -1755,15 +1965,15 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Take Actions and Run Tools</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">⚡</span> Take Actions and Run Tools</h3>
                         <span class="badges">
                             <span class="badge gate-free">Act for Me</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can go beyond plain chat by taking actions, using tools, browsing interfaces, or running task steps on the user&#39;s behalf.</p>
-                    <p class="capability-comparison">Available from 3 products. 2 free.</p>
+                    <p class="capability-comparison">Available from 5 products. 3 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-free">2 of 8 free</span>
+                        <span class="constraint-badge cb-free">3 of 10 free</span>
                         
                         <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
@@ -1789,7 +1999,7 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>8</strong> implementations across <strong>3</strong> products</span>
+                        <span><strong>10</strong> implementations across <strong>5</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
@@ -1859,6 +2069,32 @@
                             </div>
                             
                         </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#microsoft-copilot-agent-builder')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#microsoft-copilot-agent-builder');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="implementations.html#microsoft-copilot-agent-builder" class="feature-link" onclick="passTheme(this)">Agent Builder</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Agent Builder lets you create custom AI agents using natural language—no coding required. Requires M365 Copilot ($30/user/mo) for full access. As of March 2026, agents can call other agents as tools (multi-agent coordination), and new agent surfaces include Outlook, OneDrive, and Teams communities.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-agentic-app-actions-android')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-agentic-app-actions-android');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-agentic-app-actions-android" class="feature-link" onclick="passTheme(this)">Agentic App Actions (Android)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini can now take actions inside third-party apps on Android—ordering groceries, completing tasks, filling forms—with minimal user supervision. Rolled out in the March 2026 Pixel Drop, available on Pixel 6 and newer plus Samsung S26 devices. Still in beta, select apps only. No paid plan required.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-beta">Beta</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
                         <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#perplexity-agent-mode-agentic-actions')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#perplexity-agent-mode-agentic-actions');}">
                             <div class="capability-impl-header">
                                 <span class="price-tag">Perplexity</span>
@@ -1915,7 +2151,7 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Build Reusable AI Workflows</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🔧</span> Build Reusable AI Workflows</h3>
                         <span class="badges">
                             <span class="badge gate-free">Connect</span>
                         </span>
@@ -2024,17 +2260,17 @@
                 </article>
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Connect to External Systems</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">🔌</span> Connect to External Systems</h3>
                         <span class="badges">
                             <span class="badge gate-free">Connect</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can connect to external apps, services, APIs, data sources, or tool ecosystems beyond the base chat product.</p>
-                    <p class="capability-comparison">Available from 6 products. 2 free.</p>
+                    <p class="capability-comparison">Available from 6 products. 3 free.</p>
                     <div class="constraint-badges">
-                        <span class="constraint-badge cb-free">2 of 10 free</span>
+                        <span class="constraint-badge cb-free">3 of 11 free</span>
                         
-                        
+                        <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
                     <div class="capability-columns">
                         
@@ -2058,7 +2294,7 @@
                     </div>
                     
                     <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>10</strong> implementations across <strong>6</strong> products</span>
+                        <span><strong>11</strong> implementations across <strong>6</strong> products</span>
                         <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
                     </div>
                     <div class="capability-implementations" hidden>
@@ -2167,6 +2403,19 @@
                             </div>
                             
                         </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-agentic-app-actions-android')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-agentic-app-actions-android');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-agentic-app-actions-android" class="feature-link" onclick="passTheme(this)">Agentic App Actions (Android)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini can now take actions inside third-party apps on Android—ordering groceries, completing tasks, filling forms—with minimal user supervision. Rolled out in the March 2026 Pixel Drop, available on Pixel 6 and newer plus Samsung S26 devices. Still in beta, select apps only. No paid plan required.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-beta">Beta</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
                         <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#grok-real-time-x-twitter-data')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#grok-real-time-x-twitter-data');}">
                             <div class="capability-impl-header">
                                 <span class="price-tag">Grok</span>
@@ -2210,17 +2459,17 @@
                 
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>Use It on My Surfaces</h3>
+                        <h3><span class="capability-emoji" aria-hidden="true">📱</span> Use It on My Surfaces</h3>
                         <span class="badges">
                             <span class="badge gate-free">Access Context</span>
                         </span>
                     </div>
                     <p class="capability-summary">Can be accessed across the surfaces that matter to the user, such as web, desktop, mobile, terminal, API, or embedded environments.</p>
-                    
+                    <p class="capability-comparison">Available from 6 products. 5 free.</p>
                     <div class="constraint-badges">
+                        <span class="constraint-badge cb-free">5 of 9 free</span>
                         
-                        
-                        
+                        <span class="constraint-badge cb-region">Region-limited</span>
                     </div>
                     <div class="capability-columns">
                         
@@ -2243,6 +2492,130 @@
                         <span class="provider-toggle active">web</span><span class="provider-toggle active">mobile</span><span class="provider-toggle active">terminal</span><span class="provider-toggle active">API</span>
                     </div>
                     
+                    <div class="capability-implementation-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
+                        <span><strong>9</strong> implementations across <strong>6</strong> products</span>
+                        <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
+                    </div>
+                    <div class="capability-implementations" hidden>
+                        
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#chatgpt-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#chatgpt-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">ChatGPT</span>
+                                <h4><a href="implementations.html#chatgpt-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">ChatGPT&#39;s core text conversation is available on all plans including free at chatgpt.com, with apps for iOS, Android, Windows, and macOS. Free users get GPT-5.3 Instant with standard rate limits; Plus and higher unlock more capable models and higher quotas.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2022-11-30</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-claude-code')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-claude-code');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="implementations.html#claude-claude-code" class="feature-link" onclick="passTheme(this)">Claude Code</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude Code is Anthropic&#39;s agentic coding tool. It requires Pro subscription at minimum—that&#39;s $20/month. Available as a terminal CLI and a native VS Code extension (out of beta), plus Xcode integration via the Claude Agent SDK. No JetBrains plugin yet, but JetBrains AI Assistant integrates Claude models.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#claude-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#claude-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Claude</span>
+                                <h4><a href="implementations.html#claude-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Claude&#39;s core text conversation is available on all plans including free at claude.ai, with apps for macOS, iOS, and Android plus desktop clients. The free tier includes Claude Sonnet 4.6 with usage caps; Pro and higher unlock Opus access and significantly higher limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-07-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#microsoft-copilot-copilot-in-office-apps')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#microsoft-copilot-copilot-in-office-apps');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="implementations.html#microsoft-copilot-copilot-in-office-apps" class="feature-link" onclick="passTheme(this)">Copilot in Office Apps</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Copilot in Word, Excel, PowerPoint requires Copilot Pro ($20/mo) or M365 Copilot ($30/user/mo). Free Copilot doesn&#39;t include Office integration.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#microsoft-copilot-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#microsoft-copilot-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Microsoft Copilot</span>
+                                <h4><a href="implementations.html#microsoft-copilot-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Microsoft Copilot&#39;s core text chat is free at copilot.microsoft.com — no account required for basic access. Sign in with a Microsoft account for chat history, longer conversations, and voice. Native apps available on Windows, macOS, iOS, and Android.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-02-07</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-gemini-in-workspace-docs-sheets-etc')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-gemini-in-workspace-docs-sheets-etc');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-gemini-in-workspace-docs-sheets-etc" class="feature-link" onclick="passTheme(this)">Gemini in Workspace (Docs, Sheets, etc.)</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini integrates directly into Google Docs, Sheets, and Slides. Basic features are free; full &#39;Help me write/create&#39; requires AI Pro or Workspace add-on.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#gemini-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#gemini-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Gemini</span>
+                                <h4><a href="implementations.html#gemini-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Gemini&#39;s core text Q&amp;A is available for free at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses Gemini 2.0 Flash; AI Pro and Ultra unlock Gemini 2.5 Ultra with higher limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#grok-grok-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#grok-grok-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Grok</span>
+                                <h4><a href="implementations.html#grok-grok-chat" class="feature-link" onclick="passTheme(this)">Grok Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Grok is xAI&#39;s chatbot, available through X (Twitter) or via grok.com. No official desktop apps exist—access is via web, iOS, or Android. Free users get very limited access; Premium ($8/mo) unlocks regular use. SuperGrok at $30/mo gets you the highest limits.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-paid">Paid</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                            </div>
+                            
+                        </article>
+                        <article class="capability-impl" onclick="implCardClick(event, 'implementations.html#perplexity-chat')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#perplexity-chat');}">
+                            <div class="capability-impl-header">
+                                <span class="price-tag">Perplexity</span>
+                                <h4><a href="implementations.html#perplexity-chat" class="feature-link" onclick="passTheme(this)">Chat</a></h4>
+                            </div>
+                            <p class="capability-impl-copy">Perplexity&#39;s core search-and-answer experience is free with unlimited basic queries at perplexity.ai, on iOS, Android, the web, a Chrome extension, and via the Comet desktop app. Free users get full access to web-grounded Q&amp;A; Pro unlocks more powerful models and unlimited Pro searches.</p>
+                            <div class="dates-row">
+                                <span class="badge avail-ga">GA</span>
+                                <span class="badge gate-free">Free</span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2022-12-07</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
+                            </div>
+                            
+                        </article>
+                    </div>
                     
                 </article>
             </div>
@@ -2321,6 +2694,21 @@
                 link.href = url.pathname.split('/').pop() + url.search + url.hash;
             }
         }
+
+        // Back to top button
+        (function() {
+            var btn = document.createElement('button');
+            btn.className = 'back-to-top';
+            btn.setAttribute('aria-label', 'Back to top');
+            btn.textContent = '\u2191';
+            document.body.appendChild(btn);
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
     </script>
 </body>
 </html>

@@ -876,7 +876,7 @@ function renderOntologyProviderSections(ontologyData) {
         return `
         <section class="platform-section" data-platform="${vendorSlug}-ontology" data-vendor="${vendorSlug}">
             <div class="platform-header">
-                <h2>${escapeHTML(sectionTitle)}</h2>
+                <h2>${group.provider_record?.logo ? `<img src="${escapeHTML(group.provider_record.logo)}" alt="${escapeHTML(providerName)}" class="platform-logo">` : ''}${escapeHTML(sectionTitle)}</h2>
                 <div class="platform-meta">
                     <span>${metaBits.join(' · ')}</span>
                 </div>
@@ -977,6 +977,21 @@ function renderThemeScript() {
                 link.href = url.pathname.split('/').pop() + url.search + url.hash;
             }
         }
+
+        // Back to top button
+        (function() {
+            var btn = document.createElement('button');
+            btn.className = 'back-to-top';
+            btn.setAttribute('aria-label', 'Back to top');
+            btn.textContent = '\\u2191';
+            document.body.appendChild(btn);
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
     </script>`;
 }
 
@@ -1615,6 +1630,26 @@ function generateCapabilitiesHTML(ontologyData) {
         connect: 'Connect',
         'access-context': 'Access Context'
     };
+    const capabilityEmojis = {
+        'hear-audio-and-speech': '👂',
+        'see-images-and-screens': '👁️',
+        'read-text-and-documents': '📄',
+        'write-and-explain': '✍️',
+        'speak-back-in-real-time': '🗣️',
+        'make-and-edit-documents': '📝',
+        'write-and-edit-code': '💻',
+        'generate-images': '🖼️',
+        'generate-video': '🎬',
+        'use-files-i-provide': '📎',
+        'organize-work-in-projects': '📂',
+        'search-the-web': '🔍',
+        'do-multi-step-research': '🔭',
+        'take-actions-and-run-tools': '⚡',
+        'build-reusable-ai-workflows': '🔧',
+        'connect-to-external-systems': '🔌',
+        'remember-context-over-time': '🧠',
+        'use-it-on-my-surfaces': '📱'
+    };
     const groupedCapabilities = ontologyData.capabilities.reduce((acc, capability) => {
         if (!acc[capability.group]) acc[capability.group] = [];
         acc[capability.group].push(capability);
@@ -1713,19 +1748,34 @@ function generateCapabilitiesHTML(ontologyData) {
     ${renderSiteNav('home')}
 
     <div class="container capability-page" id="main-content">
-        <a href="${REPO_URL}" class="site-banner-link" title="View on GitHub">
-            <img src="assets/hero-darkmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-dark" width="1280" height="640">
-            <img src="assets/hero-lightmode.jpg" alt="AI Capability Reference — What can this AI do? A maintained reference for AI capabilities, plans, constraints, and implementations." class="site-banner-img site-banner-light" width="1280" height="640" loading="lazy">
-        </a>
-        <div class="capability-stats">
-            <span class="feature-count">${ontologyData.capabilities.length} capabilities</span>
-            <span class="feature-count">${totalImpls} implementations</span>
-            <span class="feature-count">Last built: ${now}</span>
+        <div class="hero-onboarding">
+            <h2 class="hero-tagline">What can this AI actually do?</h2>
+            <p class="hero-subtitle">A plain-English reference for AI capabilities, plans, constraints, and implementations.</p>
+            <ol class="hero-steps">
+                <li>
+                    <strong>Pick a capability</strong>
+                    <span>Learn what AI can do today: understand, create, act for me, and more.</span>
+                </li>
+                <li>
+                    <strong>Check your plan</strong>
+                    <span>See which subscription tier unlocks it.</span>
+                </li>
+                <li>
+                    <strong>Get the real answer</strong>
+                    <span>Find the limits, caveats, and platform support you need. Ditch the hype that you don't.</span>
+                </li>
+            </ol>
         </div>
-
-        <nav class="capability-nav" aria-label="Capability groups">
-            ${groupOrder.map(group => `<a href="#group-${group}" class="provider-toggle active">${groupLabels[group]}</a>`).join('')}
-        </nav>
+        <div class="filter-bar">
+            <nav class="capability-nav" aria-label="Capability groups">
+                ${groupOrder.map(group => `<a href="#group-${group}" class="provider-toggle active">${groupLabels[group]}</a>`).join('')}
+            </nav>
+            <div class="capability-stats">
+                <span class="feature-count">${ontologyData.capabilities.length} capabilities</span>
+                <span class="feature-count">${totalImpls} implementations</span>
+                <span class="feature-count">Last built: ${now}</span>
+            </div>
+        </div>
 
         ${groupOrder.map(group => `
         <section class="capability-group" id="group-${group}">
@@ -1741,7 +1791,7 @@ function generateCapabilitiesHTML(ontologyData) {
                     return `
                 <article class="capability-card">
                     <div class="feature-header">
-                        <h3>${escapeHTML(capability.name)}</h3>
+                        <h3>${capabilityEmojis[capability.id] ? `<span class="capability-emoji" aria-hidden="true">${capabilityEmojis[capability.id]}</span> ` : ''}${escapeHTML(capability.name)}</h3>
                         <span class="badges">
                             <span class="badge gate-free">${escapeHTML(groupLabels[group])}</span>
                         </span>
@@ -1939,7 +1989,20 @@ function generateAboutHTML() {
         (_, text, href) => `[${text}](${REPO_URL}/blob/main/${href})`
     );
 
-    const content = markdownToHTML(readme);
+    let content = markdownToHTML(readme);
+
+    // Replace the static og-image with a clickable, theme-swapped hero pair.
+    // Opposite of the main page: light hero shows in dark mode, dark hero in light mode.
+    content = content.replace(
+        /<img\s[^>]*src="assets\/og-image\.jpg"[^>]*>/,
+        `<a href="${REPO_URL}" class="site-banner-link about-banner-link" target="_blank" rel="noopener noreferrer">` +
+            `<img src="assets/hero-lightmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-dark" width="1280" height="640">` +
+            `<img src="assets/hero-darkmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-light" width="1280" height="640" loading="lazy">` +
+        `</a>`
+    );
+
+    // Remove the <hr> immediately following the banner image
+    content = content.replace(/(<\/a>)\s*<hr\s*\/?>/, '$1');
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -2046,6 +2109,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
                 id: featureId,
                 name: feature.name,
                 platform: platform.name,
+                vendorSlug: slugify(platform.vendor),
                 gating: feature.gating || 'unknown',
                 status: feature.status,
                 availablePlans,
@@ -2077,10 +2141,10 @@ function generateConstraintsHTML(ontologyData, platforms) {
     const regionLimited = allFeatures.filter(f => f.hasRegionLimit);
 
     function renderConstraintCard(f) {
-        return `<article class="constraint-card" data-gating="${f.gating}" data-surfaces="${f.availableSurfaces.map(s => s.toLowerCase()).join('_')}">
+        return `<article class="constraint-card" data-gating="${f.gating}" data-surfaces="${f.availableSurfaces.map(s => s.toLowerCase()).join('_')}" data-provider="${f.vendorSlug}" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">${escapeHTML(f.platform)}</span>
-                            <h4><a href="implementations.html#${f.id}" onclick="passTheme(this)">${escapeHTML(f.name)}</a></h4>
+                            <h4><a href="implementations.html?p=${f.vendorSlug}#${f.id}" onclick="passTheme(this)">${escapeHTML(f.name)}</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             ${f.status ? availabilityBadge(f.status) : ''}
@@ -2203,22 +2267,56 @@ function generateConstraintsHTML(ontologyData, platforms) {
         ${renderSharedFooter()}
     </div>
     <script>
+        function passTheme(link) {
+            const isLight = document.documentElement.classList.contains('light-mode');
+            if (isLight) {
+                const url = new URL(link.href, window.location.href);
+                url.searchParams.set('theme', 'light');
+                link.href = url.pathname.split('/').pop() + url.search + url.hash;
+            }
+        }
+        function implCardClick(event, card) {
+            if (event.target.closest('a')) return;
+            var featureId = card.querySelector('h4 a').getAttribute('href').split('#')[1];
+            var provider = card.dataset.provider;
+            var isLight = document.documentElement.classList.contains('light-mode');
+            var url = new URL('implementations.html#' + featureId, window.location.href);
+            if (provider) url.searchParams.set('p', provider);
+            if (isLight) url.searchParams.set('theme', 'light');
+            window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
+        }
         function filterConstraints() {
-            const gating = document.getElementById('gatingFilter').value;
-            const surface = document.getElementById('surfaceFilterC').value;
-            document.querySelectorAll('.constraint-card').forEach(card => {
-                let show = true;
+            var gating = document.getElementById('gatingFilter').value;
+            var surface = document.getElementById('surfaceFilterC').value;
+            document.querySelectorAll('.constraint-card').forEach(function(card) {
+                var show = true;
                 if (gating && card.dataset.gating !== gating) {
                     if (gating === 'invite' && card.dataset.gating !== 'invite' && card.dataset.gating !== 'org-only') show = false;
                     else if (gating !== 'invite') show = false;
                 }
                 if (surface) {
-                    const surfaces = card.dataset.surfaces ? card.dataset.surfaces.split('_') : [];
+                    var surfaces = card.dataset.surfaces ? card.dataset.surfaces.split('_') : [];
                     if (!surfaces.includes(surface)) show = false;
                 }
                 card.style.display = show ? '' : 'none';
             });
+            // Persist filters in URL
+            var params = new URLSearchParams(window.location.search);
+            if (gating) params.set('access', gating); else params.delete('access');
+            if (surface) params.set('surface', surface); else params.delete('surface');
+            var qs = params.toString();
+            var newUrl = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+            history.replaceState(null, '', newUrl);
         }
+        // Initialize filters from URL on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            var access = params.get('access');
+            var surface = params.get('surface');
+            if (access) document.getElementById('gatingFilter').value = access;
+            if (surface) document.getElementById('surfaceFilterC').value = surface;
+            if (access || surface) filterConstraints();
+        });
     </script>
     ${renderThemeScript()}
 </body>

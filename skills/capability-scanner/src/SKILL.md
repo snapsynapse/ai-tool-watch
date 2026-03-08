@@ -110,3 +110,13 @@ Usually skip:
 If a candidate may belong but does not clearly justify active tracking yet,
 recommend `WATCH` rather than `ADD`. Treat that as a watchlist candidate,
 not a failed evaluation.
+
+## Related Skill
+
+Use the **`capability-audit`** skill instead when:
+- You want to check whether *existing* tracked products are correctly mapped to a capability
+- A capability card looks thin (too few products listed) and you want to know why
+- You've added a new capability definition and want to populate it from existing data
+
+The scanner evaluates *incoming candidates* (one at a time, from outside).
+The capability audit checks *internal completeness* (systematically, across all tracked products for a given capability).

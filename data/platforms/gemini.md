@@ -1,7 +1,7 @@
 ---
 name: Gemini
 vendor: Google
-logo: https://cdn.simpleicons.org/googlegemini/white
+logo: https://cdn.simpleicons.org/googlegemini
 status_page: https://status.cloud.google.com
 pricing_page: https://one.google.com/intl/en/about/google-ai-plans/
 last_verified: 2026-03-07
@@ -840,3 +840,118 @@ Beta available in select regions including the US.
 | Date | Change |
 |------|--------|
 | 2026-03-03T12:00Z | Initial entry — agentic app actions launched via March 2026 Pixel Drop |
+
+---
+
+## Past Chats (Memory)
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://support.google.com/gemini/answer/13695044 |
+| Launched | 2026-02-26T12:00Z |
+| Verified | 2026-03-07 |
+| Checked | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Rolling out to free users since Feb 2026 |
+| Google AI Plus | ✅ | Standard | Full access |
+| Google AI Pro | ✅ | Standard | Full access |
+| Google AI Ultra | ✅ | Standard | Full access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ❌ | No native desktop app; use web |
+| macOS | ❌ | No native desktop app; use web |
+| Linux | ❌ | No native desktop app; use web |
+| iOS | ✅ | Gemini app |
+| Android | ✅ | Gemini app |
+| Chrome | ❌ |  |
+| web | ✅ | gemini.google.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.
+
+### Talking Point
+
+> "Gemini's Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings → Personal context. **Now free for all users**—it rolled out to non-paying accounts in late February 2026. You can control what Gemini remembers via 'Instructions for Gemini' in settings."
+
+### Sources
+
+- [Gemini Past Chats Free (9to5Google)](https://9to5google.com/2026/02/26/gemini-past-chats-free/)
+- [Gemini Past Chats Feature (PhoneArena)](https://www.phonearena.com/news/google-is-making-a-core-gemini-feature-available-to-free-users_id178579)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2026-02-26T12:00Z | Past Chats / Personal context rolled out to free users globally |
+
+---
+
+## Chat
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status   | ga |
+| Gating   | free |
+| URL      | https://gemini.google.com |
+| Launched | 2024-02-08T12:00Z |
+| Verified | 2026-03-07 |
+| Checked  | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Gemini 2.0 Flash; rate-limited |
+| Google AI Plus | ✅ | Higher | Access to advanced models |
+| Google AI Pro | ✅ | Full | Gemini 2.5 Ultra, highest limits |
+| Google AI Ultra | ✅ | Highest | Maximum limits, extended context |
+| Workspace add-on | ✅ | Full | Gemini in G Suite context |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows  | ❌ | No native desktop app; use web |
+| macOS    | ❌ | No native desktop app; use web |
+| Linux    | ❌ | No native desktop app; use web |
+| iOS      | ✅ | Gemini iOS app |
+| Android  | ✅ | Gemini Android app (default assistant) |
+| Chrome   | ❌ | |
+| web      | ✅ | gemini.google.com |
+| terminal | ❌ | |
+| API      | ✅ | Google AI Studio / Gemini API |
+
+### Regional
+
+Available in 230+ countries and territories on web; 150+ countries on mobile. Age and regional restrictions apply in some markets.
+
+### Talking Point
+
+> "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses Gemini 2.0 Flash; AI Pro and Ultra unlock Gemini 2.5 Ultra with higher limits."
+
+### Sources
+
+- [Gemini](https://gemini.google.com)
+- [Google AI Plans](https://one.google.com/intl/en/about/google-ai-plans/)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2024-02-08T12:00Z | Gemini launched (rebranded from Bard) |

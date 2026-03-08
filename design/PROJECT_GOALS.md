@@ -169,13 +169,22 @@ If you're an AI assistant picking up this project:
 
 ## Roadmap thinking
 
-The ROADMAP.md file contains a parking lot of ideas, not a committed plan. The actual near-term priorities are:
+`ROADMAP.md` is now the repo's active phase-based roadmap.
+
+It should be read as the bridge between public direction and internal sequencing:
+
+- it explains the current hybrid state clearly
+- it orders the migration work into explicit phases
+- it keeps deferred UX ideas subordinate to ontology, data-quality, and maintainability work
+
+The governing near-term priorities remain:
 
 1. **Keep the current data accurate** — this is always the top priority
-2. **Explore the perceptions/capabilities/features layering** — this is the most interesting design question
+2. **Stabilize the ontology-backed shared model** — capability-first and feature-first should remain two views over one system
 3. **Reduce maintainer burden** — anything that makes it easier for others to contribute or for automation to stay current
+4. **Prepare agent-readable access cleanly** — machine-readable exports and future MCP-style access should reuse the same canonical source of truth
 
-Everything else is secondary to those three.
+Everything else is secondary to those priorities.
 
 ---
 

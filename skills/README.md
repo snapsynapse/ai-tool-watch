@@ -56,6 +56,12 @@ The current build script emits:
 
 ## Current Skills
 
-- [skills/capability-scanner/src/SKILL.md](/Users/snap/Git/ai-capability-reference/skills/capability-scanner/src/SKILL.md)
-- [skills/capability-scanner/src/references/SCAN_WORKFLOW.md](/Users/snap/Git/ai-capability-reference/skills/capability-scanner/src/references/SCAN_WORKFLOW.md)
-- [skills/capability-scanner/ops/perplexity-computer/OPERATIONS.md](/Users/snap/Git/ai-capability-reference/skills/capability-scanner/ops/perplexity-computer/OPERATIONS.md)
+| Skill | Purpose | When to use |
+|---|---|---|
+| [capability-scanner](capability-scanner/src/SKILL.md) | Evaluate external candidates (new products, releases, announcements) for inclusion | You see a new product or feature announcement |
+| [capability-audit](capability-audit/src/SKILL.md) | Audit a capability's coverage across tracked products; find and fix mapping and data gaps | A capability card looks thin, or after adding a new capability definition |
+| [resolve-issue](../skills/resolve-issue/SKILL.md) | Triage and close GitHub verification issues | The automated pipeline files an issue |
+
+### capability-scanner references
+- [src/references/SCAN_WORKFLOW.md](capability-scanner/src/references/SCAN_WORKFLOW.md)
+- [ops/perplexity-computer/OPERATIONS.md](capability-scanner/ops/perplexity-computer/OPERATIONS.md)

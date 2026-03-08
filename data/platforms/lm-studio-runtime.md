@@ -1,6 +1,7 @@
 ---
 name: LM Studio Runtime
 vendor: LM Studio
+logo: https://lmstudio.ai/favicon.ico
 pricing_page: https://lmstudio.ai/
 last_verified: 2026-03-07
 build_visibility: hidden

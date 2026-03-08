@@ -1,7 +1,7 @@
 ---
 name: Perplexity
 vendor: Perplexity AI
-logo: https://cdn.simpleicons.org/perplexity/white
+logo: https://cdn.simpleicons.org/perplexity
 status_page: https://status.perplexity.ai
 pricing_page: https://www.perplexity.ai/pro
 last_verified: 2026-03-07
@@ -564,3 +564,61 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2024-10-24T12:00Z | Initial entry |
+
+---
+
+## Chat
+
+| Property | Value |
+|----------|-------|
+| Category | research |
+| Status   | ga |
+| Gating   | free |
+| URL      | https://www.perplexity.ai |
+| Launched | 2022-12-07T12:00Z |
+| Verified | 2026-03-07 |
+| Checked  | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Unlimited basic | Unlimited basic queries; 5-10 Pro searches/day |
+| Pro | ✅ | Full | Unlimited Pro searches, multiple model choices |
+| Max | ✅ | Highest | Highest limits, priority access |
+| Enterprise Pro | ✅ | Full | Team features |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows  | ✅ | Comet desktop app (launched 2025-07-09) |
+| macOS    | ✅ | Comet desktop app (launched 2025-07-09) |
+| Linux    | ❌ | No native app |
+| iOS      | ✅ | Perplexity iOS app |
+| Android  | ✅ | Perplexity Android app |
+| Chrome   | ✅ | Browser extension |
+| web      | ✅ | perplexity.ai |
+| terminal | ❌ | |
+| API      | ✅ | Sonar API |
+
+### Regional
+
+Available globally with no country-level blocks on basic text Q&A.
+
+### Talking Point
+
+> "Perplexity's core search-and-answer experience is **free with unlimited basic queries** at perplexity.ai, on iOS, Android, the web, a Chrome extension, and via the Comet desktop app. **Free users get full access to web-grounded Q&A**; Pro unlocks more powerful models and unlimited Pro searches."
+
+### Sources
+
+- [Perplexity AI](https://www.perplexity.ai)
+- [Perplexity Pro](https://www.perplexity.ai/pro)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2025-07-09T12:00Z | Comet desktop app launched |
+| 2022-12-07T12:00Z | Perplexity launched public beta |

@@ -84,6 +84,14 @@
   capabilities:
     - organize-work-in-projects
     - use-files-i-provide
+    - read-text-and-documents
+- id: chatgpt-vision-image-understanding
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Vision (Image Understanding)
+  capabilities:
+    - see-images-and-screens
 - id: chatgpt-sora-video-generation
   product: chatgpt
   provider: openai
@@ -91,6 +99,14 @@
   source_heading: Sora (Video Generation)
   capabilities:
     - generate-video
+- id: chatgpt-chat
+  product: chatgpt
+  provider: openai
+  source_file: data/platforms/chatgpt.md
+  source_heading: Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces
 - id: claude-artifacts
   product: claude
   provider: anthropic
@@ -107,6 +123,7 @@
   capabilities:
     - write-and-edit-code
     - take-actions-and-run-tools
+    - use-it-on-my-surfaces
 - id: claude-connectors
   product: claude
   provider: anthropic
@@ -160,6 +177,21 @@
   capabilities:
     - see-images-and-screens
     - read-text-and-documents
+- id: claude-memory
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Memory
+  capabilities:
+    - remember-context-over-time
+- id: claude-chat
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces
 - id: copilot-agent-builder
   product: copilot
   provider: microsoft
@@ -167,6 +199,7 @@
   source_heading: Agent Builder
   capabilities:
     - build-reusable-ai-workflows
+    - take-actions-and-run-tools
 - id: copilot-connectors
   product: copilot
   provider: microsoft
@@ -181,7 +214,9 @@
   source_heading: Copilot in Office Apps
   capabilities:
     - make-and-edit-documents
+    - read-text-and-documents
     - connect-to-external-systems
+    - use-it-on-my-surfaces
 - id: copilot-vision
   product: copilot
   provider: microsoft
@@ -212,6 +247,14 @@
   source_heading: Image Generation (Designer)
   capabilities:
     - generate-images
+- id: copilot-chat
+  product: copilot
+  provider: microsoft
+  source_file: data/platforms/copilot.md
+  source_heading: Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces
 - id: gemini-ai-studio
   product: gemini
   provider: google
@@ -266,8 +309,10 @@
   source_heading: Gemini in Workspace (Docs, Sheets, etc.)
   capabilities:
     - make-and-edit-documents
+    - read-text-and-documents
     - connect-to-external-systems
     - use-files-i-provide
+    - use-it-on-my-surfaces
 - id: gemini-live-voice-mode
   product: gemini
   provider: google
@@ -305,6 +350,7 @@
   capabilities:
     - organize-work-in-projects
     - use-files-i-provide
+    - read-text-and-documents
     - do-multi-step-research
 - id: gemini-project-astra
   product: gemini
@@ -322,6 +368,29 @@
   source_heading: Veo (Video Generation)
   capabilities:
     - generate-video
+- id: gemini-agentic-app-actions-android
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Agentic App Actions (Android)
+  capabilities:
+    - connect-to-external-systems
+    - take-actions-and-run-tools
+- id: gemini-past-chats-memory
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Past Chats (Memory)
+  capabilities:
+    - remember-context-over-time
+- id: gemini-chat
+  product: gemini
+  provider: google
+  source_file: data/platforms/gemini.md
+  source_heading: Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces
 - id: grok-deepsearch
   product: grok
   provider: xai
@@ -337,6 +406,7 @@
   source_heading: Grok Chat
   capabilities:
     - write-and-explain
+    - use-it-on-my-surfaces
 - id: grok-image-generation-aurora
   product: grok
   provider: xai
@@ -380,6 +450,20 @@
   source_file: data/platforms/grok.md
   source_heading: Think Mode
   capabilities: []
+- id: grok-memory
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Memory
+  capabilities:
+    - remember-context-over-time
+- id: grok-vision-image-understanding
+  product: grok
+  provider: xai
+  source_file: data/platforms/grok.md
+  source_heading: Vision (Image Understanding)
+  capabilities:
+    - see-images-and-screens
   notes: |
     Transitional reasoning-depth modifier. No stable primary capability mapping yet.
 - id: perplexity-agent-mode-agentic-actions
@@ -405,6 +489,7 @@
   capabilities:
     - organize-work-in-projects
     - use-files-i-provide
+    - read-text-and-documents
 - id: perplexity-comet-browser
   product: perplexity
   provider: perplexity
@@ -459,3 +544,11 @@
   capabilities:
     - hear-audio-and-speech
     - speak-back-in-real-time
+- id: perplexity-chat
+  product: perplexity
+  provider: perplexity
+  source_file: data/platforms/perplexity.md
+  source_heading: Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces

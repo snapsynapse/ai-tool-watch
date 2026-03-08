@@ -468,6 +468,14 @@ h1, .site-header h1 { font-size: 1.4rem; color: var(--text-heading); margin: 0; 
     width: 24px;
     height: 24px;
     object-fit: contain;
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+:is(html, body).light-mode .platform-logo {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .platform-meta {
@@ -854,6 +862,12 @@ h1, .site-header h1 { font-size: 1.4rem; color: var(--text-heading); margin: 0; 
     color: var(--status-yes);
 }
 
+/* Persistent highlight when card is the current URL anchor target */
+.feature-card:target {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
 /* Permalink highlight animation */
 .feature-card.permalink-highlight {
     animation: highlightPulse 2s ease-out;
@@ -1036,17 +1050,28 @@ footer a:hover {
     margin-bottom: 16px;
 }
 
+.filter-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
 .capability-stats {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left: auto;
 }
 
 .capability-nav {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .capability-nav a {
@@ -1199,6 +1224,73 @@ footer a:hover {
 }
 
 /* ========================================
+   SITE NAVIGATION
+   ======================================== */
+
+.site-nav {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.site-nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.site-nav-link:hover {
+    background: var(--accent-bg);
+    color: var(--text-heading);
+}
+
+.site-nav-link.active {
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.site-nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-actions .github-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.header-actions .github-link:hover {
+    background: var(--accent-bg);
+    color: var(--text-heading);
+}
+
+/* Page intro bar (implementations page) */
+.page-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ========================================
    RESPONSIVE: TABLET (max-width: 900px)
    ======================================== */
 
@@ -1245,6 +1337,13 @@ footer a:hover {
     body {
         padding: 12px;
     }
+
+    .hero-tagline { font-size: 1.4rem; }
+
+    .filter-bar { flex-wrap: wrap; }
+    .capability-stats { flex-wrap: wrap; }
+    .capability-stats .feature-count { font-size: 0.75rem; padding: 4px 8px; }
+    .capability-nav { flex-wrap: wrap; }
 
     .features-grid { grid-template-columns: 1fr; }
     .avail-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1517,13 +1616,75 @@ footer a:hover {
 }
 
 /* ========================================
-   SITE BANNER IMAGE
+   HERO ONBOARDING (capability home page)
+   ======================================== */
+
+.hero-onboarding {
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.hero-tagline {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+}
+
+.hero-steps {
+    list-style: none;
+    counter-reset: hero-step;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 0.75rem;
+    row-gap: 1rem;
+    align-items: baseline;
+    width: fit-content;
+}
+
+.hero-steps li {
+    display: contents;
+}
+
+.hero-steps li::before {
+    counter-increment: hero-step;
+    content: counter(hero-step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.hero-steps li strong {
+    white-space: nowrap;
+}
+
+.hero-steps li span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   SITE BANNER IMAGE (about page)
    ======================================== */
 
 .site-banner-link {
     display: block;
     max-width: 640px;
-    margin: 0 auto 2rem;
+    margin: 1.5rem auto 2rem;
 }
 
 .site-banner-img {
@@ -1534,79 +1695,12 @@ footer a:hover {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* Show the correct hero for the active colour scheme */
-.site-banner-light { display: none; }
-.site-banner-dark  { display: block; }
+/* About page: opposite theme mapping (light hero in dark mode, dark hero in light) */
+.about-banner-light { display: none; }
+.about-banner-dark  { display: block; }
 
-html.light-mode .site-banner-dark  { display: none; }
-html.light-mode .site-banner-light { display: block; }
-
-/* ========================================
-   SITE NAVIGATION
-   ======================================== */
-
-.site-nav {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.site-nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: background 0.15s, color 0.15s;
-    white-space: nowrap;
-}
-
-.site-nav-link:hover {
-    background: var(--accent-bg);
-    color: var(--text-heading);
-}
-
-.site-nav-link.active {
-    background: var(--accent-bg);
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.site-nav-link:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-}
-
-.header-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.header-actions .github-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-}
-
-.header-actions .github-link:hover {
-    background: var(--accent-bg);
-    color: var(--text-heading);
-}
-
-/* Page intro bar (implementations page) */
-.page-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
+html.light-mode .about-banner-dark  { display: none; }
+html.light-mode .about-banner-light { display: block; }
 
 /* ========================================
    CONSTRAINT BADGES (capability cards)
@@ -1694,6 +1788,15 @@ html.light-mode .site-banner-light { display: block; }
     text-align: center;
 }
 
+.constraint-page .capability-hero .capability-stats {
+    justify-content: center;
+}
+
+.constraint-page .capability-hero-copy {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .constraint-filters {
     margin-bottom: 24px;
 }
@@ -1734,7 +1837,14 @@ html.light-mode .site-banner-light { display: block; }
 
 .constraint-card:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
+
+/* Access tier left-border color cues */
+.constraint-card[data-gating="free"] { border-left: 3px solid var(--status-yes); }
+.constraint-card[data-gating="paid"] { border-left: 3px solid var(--status-partial); }
+.constraint-card[data-gating="invite"],
+.constraint-card[data-gating="org-only"] { border-left: 3px solid #ab47bc; }
 
 .constraint-card-header {
     display: flex;
@@ -1792,3 +1902,37 @@ html.light-mode .site-banner-light { display: block; }
     margin-top: 6px;
     font-style: italic;
 }
+
+/* ========================================
+   BACK TO TOP BUTTON
+   ======================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 0.8;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover { opacity: 1; }
+.back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

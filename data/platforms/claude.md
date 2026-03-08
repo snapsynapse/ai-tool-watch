@@ -1,7 +1,7 @@
 ---
 name: Claude
 vendor: Anthropic
-logo: https://claude.ai/favicon.ico
+logo: https://cdn.simpleicons.org/anthropic
 status_page: https://status.anthropic.com
 pricing_page: https://claude.ai/pricing
 last_verified: 2026-03-07
@@ -546,3 +546,121 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2024-03-04T12:00Z | Initial entry |
+
+---
+
+## Memory
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://support.anthropic.com/en/articles/10166267-how-does-memory-work |
+| Launched | 2025-10-01T12:00Z |
+| Verified | 2026-03-07 |
+| Checked | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Free on all plans since March 2026 |
+| Pro | ✅ | Standard | Full access |
+| Max 5x | ✅ | Standard | Full access |
+| Max 20x | ✅ | Standard | Full access |
+| Team | ✅ | Standard | Full access |
+| Enterprise | ✅ | Custom | Admin controls |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ✅ | Desktop app |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| Chrome | ❌ |  |
+| web | ✅ | claude.ai |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally where Claude is available. May be off by default in some regions (opt-in).
+
+### Talking Point
+
+> "Memory lets Claude remember your preferences and context across conversations—corrections, working style, recurring topics. **Free on all plans** since March 2026. Enable it in Settings → Capabilities → Memory. You can also import memories from other AI tools using the memory import tool."
+
+### Sources
+
+- [Claude Memory Guide](https://aiadopters.club/p/set-up-my-claude-memory)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2026-03-02T12:00Z | Free on all plans; memory import tool launched |
+| 2025-10-01T12:00Z | Memory feature launched (paid plans only) |
+
+---
+
+## Chat
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status   | ga |
+| Gating   | free |
+| URL      | https://claude.ai |
+| Launched | 2023-07-11T12:00Z |
+| Verified | 2026-03-07 |
+| Checked  | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Usage caps | Sonnet 4.6 with daily usage limits |
+| Pro | ✅ | 5× free | Opus access, higher limits |
+| Max 5x | ✅ | Higher | Extended thinking, 20× Pro usage |
+| Max 20x | ✅ | Highest | Unlimited standard, highest limits |
+| Team | ✅ | Full | Pro features + collaboration tools |
+| Enterprise | ✅ | Custom | SSO, advanced security, admin controls |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows  | ✅ | Desktop app |
+| macOS    | ✅ | Desktop app |
+| Linux    | ✅ | Desktop app |
+| iOS      | ✅ | Claude iOS app |
+| Android  | ✅ | Claude Android app |
+| Chrome   | ❌ | |
+| web      | ✅ | claude.ai |
+| terminal | ❌ | |
+| API      | ✅ | Anthropic API |
+
+### Regional
+
+Available globally. Some features may be restricted in certain regions.
+
+### Talking Point
+
+> "Claude's core text conversation is **available on all plans including free** at claude.ai, with apps for macOS, iOS, and Android plus desktop clients. The free tier includes Claude Sonnet 4.6 with usage caps; Pro and higher unlock Opus access and significantly higher limits."
+
+### Sources
+
+- [Claude](https://claude.ai)
+- [Anthropic Pricing](https://www.anthropic.com/pricing)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2023-07-11T12:00Z | Claude 2 and claude.ai public launch |

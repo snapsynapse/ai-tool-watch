@@ -1,7 +1,7 @@
 ---
 name: Ollama Runtime
 vendor: Ollama
-logo: https://cdn.simpleicons.org/ollama/white
+logo: https://cdn.simpleicons.org/ollama
 pricing_page: https://ollama.com/
 last_verified: 2026-03-07
 build_visibility: hidden

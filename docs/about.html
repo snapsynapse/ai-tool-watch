@@ -83,9 +83,7 @@
 
 <strong>Plain-English reference for AI capabilities, plans, constraints, and implementations.</strong>
 
-<img src="assets/og-image.jpg" alt="AI Capability Reference" style="max-width:100%;height:auto;border-radius:8px;">
-
-<hr>
+<a href="https://github.com/snapsynapse/ai-capability-reference" class="site-banner-link about-banner-link" target="_blank" rel="noopener noreferrer"><img src="assets/hero-lightmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-dark" width="1280" height="640"><img src="assets/hero-darkmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-light" width="1280" height="640" loading="lazy"></a>
 
 <h2>What is this?</h2>
 
@@ -95,6 +93,14 @@
 <li>"Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)</li>
 <p></ul></p>
 <p>Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.</p>
+
+<h2>How it's built</h2>
+
+<p>There is no database behind this project. Every piece of data — features, pricing tiers, platform support, talking points — lives in plain markdown files under <code>data/</code>. A single build script (<code>node scripts/build.js</code>) reads those files and renders the entire static site into <code>docs/</code>.</p>
+
+<p>That's the whole stack: markdown files, a Node script, and Git.</p>
+
+<p>This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a <code>.md</code> file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.</p>
 
 <h2>Scope</h2>
 
@@ -107,6 +113,8 @@
 <p>This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.</p>
 
 <p>The <code>~1% market share</code> idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.</p>
+
+<p>All prices are listed in <strong>USD</strong>. Feature availability and pricing reflect the <strong>United States</strong> region by default; availability may differ in other regions.</p>
 
 <h2>Platforms Covered</h2>
 
@@ -231,6 +239,21 @@
                 link.href = url.pathname.split('/').pop() + url.search + url.hash;
             }
         }
+
+        // Back to top button
+        (function() {
+            var btn = document.createElement('button');
+            btn.className = 'back-to-top';
+            btn.setAttribute('aria-label', 'Back to top');
+            btn.textContent = '\u2191';
+            document.body.appendChild(btn);
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
     </script>
 </body>
 </html>

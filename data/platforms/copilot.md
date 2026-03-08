@@ -402,3 +402,60 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2023-03-21T12:00Z | Initial entry |
+
+---
+
+## Chat
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status   | ga |
+| Gating   | free |
+| URL      | https://copilot.microsoft.com |
+| Launched | 2023-02-07T12:00Z |
+| Verified | 2026-03-07 |
+| Checked  | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Basic chat; sign-in unlocks history, longer convos, voice |
+| Copilot Pro | ✅ | Higher | Priority access, longer context |
+| M365 Copilot | ✅ | Full | Included with M365 subscription |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows  | ✅ | Copilot app + Microsoft Edge sidebar |
+| macOS    | ✅ | Copilot app |
+| Linux    | ❌ | No native app |
+| iOS      | ✅ | Copilot iOS app |
+| Android  | ✅ | Copilot Android app |
+| Chrome   | ❌ | |
+| web      | ✅ | copilot.microsoft.com |
+| terminal | ❌ | |
+| API      | ❌ | No consumer API; M365 enterprise API separate |
+
+### Regional
+
+Broadly available globally; some AI features may vary by region or require data-movement consent. See Microsoft's Copilot international availability page for details.
+
+### Talking Point
+
+> "Microsoft Copilot's core text chat is **free at copilot.microsoft.com** — no account required for basic access. Sign in with a Microsoft account for chat history, longer conversations, and voice. Native apps available on Windows, macOS, iOS, and Android."
+
+### Sources
+
+- [Microsoft Copilot](https://copilot.microsoft.com)
+- [What's the difference between the Microsoft Copilot experiences?](https://support.microsoft.com/en-us/topic/what-s-the-difference-between-the-microsoft-copilot-experiences-cfff4791-694a-4d90-9c9c-1eb3fb28e842)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2023-11-15T12:00Z | Bing Chat rebranded to Microsoft Copilot |
+| 2023-02-07T12:00Z | Bing Chat (predecessor) launched |

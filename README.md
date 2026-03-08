@@ -17,6 +17,14 @@ A single source of truth for answering questions like:
 
 Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.
 
+## How it's built
+
+There is no database behind this project. Every piece of data — features, pricing tiers, platform support, talking points — lives in plain markdown files under `data/`. A single build script (`node scripts/build.js`) reads those files and renders the entire static site into `docs/`.
+
+That's the whole stack: markdown files, a Node script, and Git.
+
+This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a `.md` file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.
+
 ## Scope
 
 This reference covers:
@@ -28,6 +36,8 @@ This reference covers:
 This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.
 
 The `~1% market share` idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.
+
+All prices are listed in **USD**. Feature availability and pricing reflect the **United States** region by default; availability may differ in other regions.
 
 ## Platforms Covered
 

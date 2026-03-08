@@ -1,6 +1,7 @@
 ---
 name: Alibaba Open Models
 vendor: Alibaba
+logo: https://www.alibaba.com/favicon.ico
 pricing_page: https://qwenlm.github.io/
 last_verified: 2026-03-07
 build_visibility: hidden

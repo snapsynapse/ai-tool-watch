@@ -1,10 +1,10 @@
 ---
 name: Grok
 vendor: xAI
-logo: https://grok.com/favicon.ico
+logo: https://x.ai/favicon.ico
 status_page: https://status.x.ai
 pricing_page: https://x.ai/grok
-last_verified: 2026-03-04
+last_verified: 2026-03-07
 ---
 
 ## Pricing
@@ -463,3 +463,116 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2025-02-17T12:00Z | Initial entry |
+
+---
+
+## Vision (Image Understanding)
+
+| Property | Value |
+|----------|-------|
+| Category | vision |
+| Status | ga |
+| Gating | paid |
+| URL | https://x.ai/blog/grok-2 |
+| Launched | 2024-08-13T12:00Z |
+| Verified | 2026-03-07|
+| Checked | 2026-03-07|
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ❌ | — | Not available |
+| Premium | ✅ | Standard | Image uploads in chat |
+| Premium+ | ✅ | Standard | Full access |
+| SuperGrok | ✅ | Highest | Priority access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ⚠️ | Web only (no official app) |
+| macOS | ⚠️ | Web only (no official app) |
+| Linux | ⚠️ | Web only (no official app) |
+| iOS | ✅ | X app + standalone |
+| Android | ✅ | X app + standalone |
+| Chrome | ❌ |  |
+| web | ✅ | grok.com |
+| terminal | ❌ |  |
+| API | ✅ | xAI API |
+
+### Regional
+
+Available globally where Grok is available.
+
+### Talking Point
+
+> "Grok 2 understands images—upload photos, screenshots, or diagrams and Grok will analyze them. **Requires a paid plan (Premium $8/mo or higher)**. Available on web and mobile."
+
+### Sources
+
+- [Grok 2 Announcement](https://x.ai/blog/grok-2)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2024-08-13T12:00Z | Grok 2 launched with image understanding |
+
+---
+
+## Memory
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status | ga |
+| Gating | free |
+| URL | https://grok.com |
+| Launched | 2025-02-17T12:00Z |
+| Verified | 2026-03-07 |
+| Checked | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Basic persistent memory |
+| Premium | ✅ | Standard | Full access |
+| Premium+ | ✅ | Enhanced | Larger context retention |
+| SuperGrok | ✅ | Highest | Maximum context and memory |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ⚠️ | Web only (no official app) |
+| macOS | ⚠️ | Web only (no official app) |
+| Linux | ⚠️ | Web only (no official app) |
+| iOS | ✅ | X app + standalone |
+| Android | ✅ | X app + standalone |
+| Chrome | ❌ |  |
+| web | ✅ | grok.com |
+| terminal | ❌ |  |
+| API | ❌ | Not available via API |
+
+### Regional
+
+Available globally where Grok is available. Persistent memory may be restricted in EU/UK due to data protection regulations.
+
+### Talking Point
+
+> "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important, but users cannot currently inspect or edit what has been saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms."
+
+### Sources
+
+- [How Grok Memory Works](https://blog.memoryplugin.com/how-grok-memory-works/)
+- [Grok Memory Feature Status 2026](https://compareclaw.com/blog/post/openclaw-grok-memory-feature-status-2026)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2025-02-17T12:00Z | Persistent memory toggle appeared with Grok 3 launch |

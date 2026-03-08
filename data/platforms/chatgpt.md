@@ -726,3 +726,121 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 | 2026-01-10T12:00Z | Free tier access discontinued |
 | 2025-10-01T12:00Z | API access launched |
 | 2024-12-09T12:00Z | Initial entry
+
+---
+
+## Vision (Image Understanding)
+
+| Property | Value |
+|----------|-------|
+| Category | vision |
+| Status | ga |
+| Gating | free |
+| URL | https://openai.com/index/hello-gpt-4o/ |
+| Launched | 2024-05-13T12:00Z |
+| Verified | 2026-03-07|
+| Checked | 2026-03-07|
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Standard | Subject to message rate limits |
+| Go | ✅ | Standard | Full access |
+| Plus | ✅ | Higher | Priority |
+| Pro | ✅ | Unlimited | Maximum quality |
+| Team | ✅ | Full | Full access |
+| Enterprise | ✅ | Full | Full access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Desktop app |
+| macOS | ✅ | Desktop app |
+| Linux | ❌ | No official app |
+| iOS | ✅ | Mobile app |
+| Android | ✅ | Mobile app |
+| Chrome | ❌ |  |
+| web | ✅ | chatgpt.com |
+| terminal | ❌ |  |
+| API | ✅ | OpenAI API (gpt-4o vision) |
+
+### Regional
+
+Available globally where ChatGPT is available.
+
+### Talking Point
+
+> "GPT-4o understands images natively—upload a photo, screenshot, chart, or diagram and ChatGPT will analyze it. **Available on all plans including free**, subject to your plan's message quota. Works across web, desktop, iOS, and Android. Also accessible via the OpenAI API using the `gpt-4o` model."
+
+### Sources
+
+- [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
+- [ChatGPT Pricing](https://chatgpt.com/pricing)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2024-05-13T12:00Z | GPT-4o launched with native image understanding |
+
+---
+
+## Chat
+
+| Property | Value |
+|----------|-------|
+| Category | other |
+| Status   | ga |
+| Gating   | free |
+| URL      | https://chatgpt.com |
+| Launched | 2022-11-30T12:00Z |
+| Verified | 2026-03-07 |
+| Checked  | 2026-03-07 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Rate-limited | GPT-5.3 Instant; ~10 msgs/5 hrs then fallback |
+| Go | ✅ | Higher | 10× free limits |
+| Plus | ✅ | Higher | GPT-5.2 Thinking; 5× Go limits |
+| Pro | ✅ | Unlimited | GPT-5.2 Pro; no rate caps |
+| Team | ✅ | Full | Plus features + workspace admin |
+| Enterprise | ✅ | Custom | SSO, advanced security |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows  | ✅ | Desktop app (Microsoft Store) |
+| macOS    | ✅ | Desktop app |
+| Linux    | ❌ | No official app; web works in browser |
+| iOS      | ✅ | ChatGPT iOS app |
+| Android  | ✅ | ChatGPT Android app |
+| Chrome   | ❌ | |
+| web      | ✅ | chatgpt.com |
+| terminal | ❌ | |
+| API      | ✅ | OpenAI API (gpt-4o, gpt-4.5, etc.) |
+
+### Regional
+
+Available globally where ChatGPT is permitted. Some advanced features may be US-only.
+
+### Talking Point
+
+> "ChatGPT's core text conversation is **available on all plans including free** at chatgpt.com, with apps for iOS, Android, Windows, and macOS. Free users get GPT-5.3 Instant with standard rate limits; Plus and higher unlock more capable models and higher quotas."
+
+### Sources
+
+- [ChatGPT](https://chatgpt.com)
+- [ChatGPT Pricing](https://chatgpt.com/pricing)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-07T12:00Z | Initial entry |
+| 2022-11-30T12:00Z | ChatGPT launched publicly |
