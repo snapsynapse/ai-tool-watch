@@ -98,7 +98,7 @@
 
 <p>There is no database behind this project. Every piece of data — features, pricing tiers, platform support, talking points — lives in plain markdown files under <code>data/</code>. A single build script (<code>node scripts/build.js</code>) reads those files and renders the entire static site into <code>docs/</code>.</p>
 
-<p>That's the whole stack: markdown files, a Node script, and Git.</p>
+<p>That's the whole stack: markdown files, javascript, and Git.</p>
 
 <p>This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a <code>.md</code> file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.</p>
 
