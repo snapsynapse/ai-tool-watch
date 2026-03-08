@@ -21,7 +21,7 @@ Built for fellow AI facilitators, educators, designers, and anyone who needs acc
 
 There is no database behind this project. Every piece of data — features, pricing tiers, platform support, talking points — lives in plain markdown files under `data/`. A single build script (`node scripts/build.js`) reads those files and renders the entire static site into `docs/`.
 
-That's the whole stack: markdown files, a Node script, and Git.
+That's the whole stack: markdown files, javascript, and Git.
 
 This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a `.md` file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.
 
