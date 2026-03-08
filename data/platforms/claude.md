@@ -26,11 +26,11 @@ last_verified: 2026-03-07
 |----------|-------|
 | Category | local-files |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them |
 | Launched | 2024-06-20T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-03-08|
+| Checked | 2026-03-07|
 
 ### Availability
 
@@ -71,6 +71,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-07T12:00Z | [Verified] Gating corrected from paid to free — free users have full access; data was internally inconsistent |
 | 2024-06-20T12:00Z | Initial entry |
 
 ---

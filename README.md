@@ -189,6 +189,16 @@ Requires API keys (verification only): `GEMINI_API_KEY`, `PERPLEXITY_API_KEY`, `
 
 See [VERIFICATION.md](VERIFICATION.md) for full documentation.
 
+## Secret Scanning
+
+This repo includes a lightweight secret scan for the current tree and full Git history.
+
+```bash
+node scripts/scan-secrets.js
+```
+
+Use `--current-only` or `--history-only` to narrow the scan when needed.
+
 ## Local Development
 
 ```bash

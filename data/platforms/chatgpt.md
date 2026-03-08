@@ -159,7 +159,7 @@ Available globally including EEA. Some Connector-based agent actions remain rest
 | URL | https://openai.com/index/introducing-chatgpt-atlas/ |
 | Launched | 2025-10-21T12:00Z |
 | Verified | 2026-03-01|
-| Checked | 2026-03-08|
+| Checked | 2026-03-07|
 
 ### Availability
 
@@ -174,7 +174,7 @@ Available globally including EEA. Some Connector-based agent actions remain rest
 
 | Platform | Available | Notes |
 |----------|-----------|-------|
-| Windows | 🔜 | Expected late Feb 2026 |
+| Windows | 🔜 | Expected 2026 (not yet released) |
 | macOS | ✅ | Apple Silicon, macOS 12+ |
 | Linux | ❌ |  |
 | iOS | 🔜 | Expected 2026 |
@@ -201,6 +201,7 @@ Available where ChatGPT is available. Same regional restrictions apply.
 
 | Date | Change |
 |------|--------|
+| 2026-03-07T12:00Z | [Verified] Windows note updated from "Expected late Feb 2026" to "Expected 2026 (not yet released)" — both models confirmed still macOS-only |
 | 2025-10-21T12:00Z | Initial entry |
 
 ---
