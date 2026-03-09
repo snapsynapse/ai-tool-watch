@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/snapsynapse/ai-capability-reference/blob/main/LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/snapsynapse/ai-capability-reference)](https://github.com/snapsynapse/ai-capability-reference/releases/latest)
 # AI Capability Reference
 
 **Previously known as "AI Feature Tracker."** Renamed to "AI Capability Reference" in February 2026 to better reflect the project's ontology-first, capability-centric approach.
