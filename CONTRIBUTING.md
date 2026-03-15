@@ -7,33 +7,49 @@ Thank you for helping keep this resource accurate! This guide explains how to co
 ### 1. Update Existing Information
 
 The most common contribution - something changed:
-- A feature became available on a new plan tier
+- An implementation became available on a new plan tier
 - Pricing changed
 - Platform support expanded
-- A feature entered or exited beta
+- An implementation entered or exited beta
 
-### 2. Add a New Feature
+### 2. Add a New Implementation
 
-A platform released something new that should be tracked.
+A product released something new that should be tracked.
 
-### 3. Add a New Platform
+### 3. Add a New Product or Provider
 
-Want to add Grok, DeepSeek, Mistral, or another AI platform? Go for it!
+Want to add a new AI product or provider? Check [design/SCOPE.md](design/SCOPE.md) for inclusion criteria first.
 
 ### 4. Fix Errors
 
 Found incorrect information? Please fix it!
 
+## Project Structure
+
+The project uses an ontology-backed data model. Understanding the key directories helps you find the right file:
+
+| Directory | Purpose |
+|-----------|---------|
+| `data/platforms/` | Editorial source of truth for implementation details, plans, constraints, evidence |
+| `data/capabilities/` | Plain-English capability definitions (18 records) |
+| `data/providers/` | Provider records (13 records) |
+| `data/products/` | Product records (9 records) |
+| `data/model-access/` | Open/self-hosted model family records (9 records) |
+| `data/implementations/index.yml` | Implementation-to-capability mappings (71 records) |
+| `data/evidence/index.json` | Generated evidence records (do not edit directly) |
+
 ## How to Contribute
 
 ### Step 1: Find the Right File
 
-Platform data lives in `data/platforms/`:
+For updating existing implementations, start with the platform file in `data/platforms/`:
 - `chatgpt.md` - OpenAI ChatGPT
 - `claude.md` - Anthropic Claude
 - `perplexity.md` - Perplexity AI
 - `gemini.md` - Google Gemini
 - `copilot.md` - Microsoft Copilot
+- `grok.md` - xAI Grok
+- Runtime and open-model files also live here (e.g., `ollama-runtime.md`, `meta-open-models.md`)
 
 ### Step 2: Make Your Changes
 
@@ -92,17 +108,25 @@ last_verified: 2026-01-25  # Update this!
 ---
 ```
 
-### Step 5: Test Locally
+### Step 5: Sync and Validate
 
 ```bash
+# Sync evidence records from source files
+node scripts/sync-evidence.js
+
+# Validate ontology integrity
+node scripts/validate-ontology.js
+
+# Build the site
 node scripts/build.js
+
+# Check the result
 open docs/index.html
 ```
 
 Verify:
-- Your feature appears correctly
-- Availability badges show right
-- Talking point displays properly
+- Your changes appear correctly on both the capability homepage and the detailed availability view
+- Ontology validation passes with no errors
 - No build errors
 
 ### Step 6: Submit a Pull Request
@@ -118,13 +142,13 @@ Verify:
 ### PR Title Format
 
 ```
-[Platform] Brief description
+[Product] Brief description
 
 Examples:
 [ChatGPT] Update Agent Mode limits
 [Claude] Add Cowork Windows availability
 [Perplexity] Fix Comet iOS status
-[New] Add Grok platform
+[New] Add product/provider
 ```
 
 ### PR Description
@@ -141,17 +165,9 @@ Include:
 3. Once approved, we'll merge
 4. GitHub Actions auto-rebuilds the site
 
-## Adding a New Platform
+## Adding a New Implementation
 
-1. Create `data/platforms/newplatform.md`
-2. Follow the schema format exactly
-3. Include at least the main features
-4. Add the status page URL to the frontmatter
-5. Run `node scripts/build.js` to verify
-
-## Adding a New Feature
-
-1. Find the platform file
+1. Find the product's platform file in `data/platforms/`
 2. Add a new section after the last `---`
 3. Include all required fields:
    - Name (## heading)
@@ -161,6 +177,17 @@ Include:
    - Regional notes
    - Talking point
    - Sources
+4. Add an entry in `data/implementations/index.yml` mapping it to capability IDs
+5. Run `node scripts/sync-evidence.js` and `node scripts/validate-ontology.js`
+
+## Adding a New Product
+
+1. Create the platform evidence file: `data/platforms/newproduct.md`
+2. Create the product record: `data/products/newproduct.md`
+3. Create or reference the provider record in `data/providers/`
+4. Add implementation entries in `data/implementations/index.yml`
+5. Follow the schema format exactly — see existing files for examples
+6. Run sync and validation
 
 ## Code of Conduct
 

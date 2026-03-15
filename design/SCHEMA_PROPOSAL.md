@@ -1,17 +1,13 @@
-# Ontology-Aligned Schema Proposal
+# Ontology-Aligned Schema
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Implemented
+Last updated: 2026-03-15
 
-This document proposes the first concrete schema shape for moving the repo from a feature-first markdown layout toward an ontology-first data model.
-
-It is intentionally incremental.
-
-The goal is not to rewrite the repo all at once. The goal is to introduce the smallest set of first-class records that:
+This document describes the ontology-aligned schema that replaced the feature-first-only markdown layout. The schema was implemented incrementally, introducing the smallest set of first-class records that:
 
 - fit the ontology cleanly
 - preserve current verification/evidence workflows
-- keep the current dashboard working during migration
+- keep the legacy dashboard working alongside the capability-first view
 - make capability-first views possible
 
 ## Governing Inputs
@@ -25,7 +21,7 @@ This proposal follows:
 
 ## Design Goal
 
-The repo should eventually support this conceptual flow:
+The repo supports this conceptual flow:
 
 ```text
 Provider -> Product -> Implementation -> Capability
@@ -37,17 +33,13 @@ Provider -> Product -> Implementation -> Capability
                          -> Evidence
 ```
 
-The schema should make that relationship explicit without immediately deleting the current platform markdown files.
+The schema makes that relationship explicit while preserving the current platform markdown files as editorial source.
 
-## Recommendation
+## Current Schema
 
-Adopt a hybrid schema in the next phase.
+The repo uses a hybrid schema where per-product markdown files in `data/platforms/` remain the authoritative editorial records during the migration period.
 
-### Keep As-Is For Now
-
-Keep the current per-product markdown files in `data/platforms/` as the authoritative implementation/editorial records during the migration period.
-
-They still hold:
+They hold:
 
 - product metadata
 - plan pricing
@@ -55,26 +47,24 @@ They still hold:
 - constraints
 - raw evidence inputs used to seed the first-class evidence layer
 
-### Add As First-Class Records
+### First-Class Records
 
-Make these first-class records next:
+The following are now first-class records:
 
-1. `Capability`
-2. `Provider`
-3. `Product`
-4. `Implementation Map`
-5. `Evidence`
+1. `Capability` — `data/capabilities/*.md` (18 records)
+2. `Provider` — `data/providers/*.md` (13 records)
+3. `Product` — `data/products/*.md` (9 records)
+4. `Implementation Map` — `data/implementations/index.yml` (71 records)
+5. `Evidence` — `data/evidence/index.json` (89 records)
+6. `Model Access` — `data/model-access/*.md` (9 records)
 
-Do not make every ontology entity first-class immediately.
+`Plan`, `Surface`, and `Constraint` remain embedded inside platform markdown and implementation records rather than being separate first-class entities. This keeps migration cost low while the ontology stabilizes.
 
-In particular, keep `Plan`, `Surface`, and `Constraint` embedded inside implementation records at first, even though they are ontological entities. That reduces migration cost.
-`Evidence` is now first-class through [`data/evidence/index.json`](/Users/snap/Git/ai-capability-reference/data/evidence/index.json).
-
-For the open/self-hosted domain, the repo should also introduce first-class `Model Access` records as a parallel extension rather than forcing those entries into the hosted-product implementation map. See [MODEL_ACCESS_EXTENSION.md](MODEL_ACCESS_EXTENSION.md).
+For the open/self-hosted domain, `Model Access` records exist as a parallel extension rather than forcing those entries into the hosted-product implementation map. See [MODEL_ACCESS_EXTENSION.md](MODEL_ACCESS_EXTENSION.md).
 
 ## Why This Shape
 
-This is the minimum viable move that gets the ontology into the repo.
+This was the minimum viable move that got the ontology into the repo.
 
 ### Why `Capability` must be first-class
 
@@ -104,11 +94,9 @@ Rather than splitting all implementation content into separate files immediately
 
 ### 1. Capabilities
 
-Suggested path:
+Path: `data/capabilities/*.md`
 
-`data/capabilities/*.md`
-
-Suggested structure:
+Structure:
 
 ```markdown
 ---
@@ -147,11 +135,9 @@ Can respond with live or near-live speech in a conversational flow.
 
 ### 2. Providers
 
-Suggested path:
+Path: `data/providers/*.md`
 
-`data/providers/*.md`
-
-Suggested structure:
+Structure:
 
 ```markdown
 ---
@@ -168,11 +154,9 @@ status_page: https://status.anthropic.com
 
 ### 3. Products
 
-Suggested path:
+Path: `data/products/*.md`
 
-`data/products/*.md`
-
-Suggested structure:
+Structure:
 
 ```markdown
 ---
@@ -195,15 +179,11 @@ Anthropic's general-purpose AI product for chat, projects, coding, and integrati
 
 ### 4. Implementation Map
 
-Suggested path:
+Path: `data/implementations/index.yml`
 
-`data/implementations/index.yml`
+This is the key migration bridge. It gives stable IDs and ontology-aware relationships to implementations that still physically live in the existing product markdown files.
 
-This is the key migration bridge.
-
-It gives stable IDs and ontology-aware relationships to implementations that still physically live in the existing product markdown files.
-
-Suggested structure:
+Structure:
 
 ```yaml
 - id: claude-projects
@@ -247,9 +227,9 @@ Suggested structure:
 
 Those entries should carry a note explaining why the mapping is deferred.
 
-## Why Use An Implementation Index First
+## Why An Implementation Index
 
-Because it solves several migration problems at once:
+The implementation index solves several migration problems at once:
 
 - creates stable implementation IDs
 - supports many-to-many capability mappings
@@ -261,9 +241,7 @@ It also allows the repo to acknowledge unresolved ontology pressure without inve
 
 ### 5. Evidence
 
-Suggested path:
-
-`data/evidence/index.json`
+Path: `data/evidence/index.json`
 
 This layer materializes:
 
@@ -397,37 +375,32 @@ If Claude supports Excel file upload in chat, model it as:
 
 These should never share the same implementation ID or be treated as the same implementation type.
 
-## Suggested Migration Phases
+## Migration Phases (completed)
 
-### Phase 1: Add first-class records
+### Phase 1: Add first-class records — done
 
-- add `data/capabilities/`
-- add `data/providers/`
-- add `data/products/`
-- add `data/implementations/index.yml`
+- `data/capabilities/` — 18 records
+- `data/providers/` — 13 records
+- `data/products/` — 9 records
+- `data/implementations/index.yml` — 71 records
+- `data/model-access/` — 9 records
+- `data/evidence/index.json` — 89 records
 
-### Phase 2: Add stable IDs to current records
+### Phase 2: Add stable IDs to current records — done
 
-- assign provider IDs
-- assign product IDs
-- assign implementation IDs
-- map each implementation to one or more capability IDs
+- provider, product, implementation, capability, and model-access IDs assigned
+- each implementation mapped to one or more capability IDs (or explicitly deferred with a reason)
 
-### Phase 3: Build from both sources
+### Phase 3: Build from both sources — done
 
-- keep current feature-first build path working
-- add capability-first build path based on capabilities plus implementation map
+- feature-first build path remains working (`docs/implementations.html`)
+- capability-first build path added (`docs/index.html`)
+- both views generated by `scripts/build.js` from the same canonical source
 
-### Phase 4: Decide whether to split implementation content
+### Phase 4: Decide whether to split implementation content — deferred
 
-Once the mapping layer has proven useful, decide whether implementation content should remain embedded in product markdown or move to separate files.
+Implementation content remains embedded in product markdown. The mapping layer has proven sufficient and splitting has not been needed.
 
-## Recommended Immediate Next Move
+## Next Step
 
-The next implementation step should be:
-
-1. create the first `data/capabilities/` records
-2. create `data/providers/` and `data/products/` records for the currently tracked set
-3. create `data/implementations/index.yml` with stable IDs and capability mappings
-
-That is the smallest change that makes the ontology operational inside the repo.
+The schema is stable enough to support Phase 5 of the roadmap: generating canonical JSON exports from the same ontology-backed source used by the site build. See [ROADMAP.md](/ROADMAP.md).

@@ -1,26 +1,26 @@
 # AI Capability Reference Ontology
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Active
+Last updated: 2026-03-15
 
-This document defines the recommended ontology for the project at a level above the current feature schema.
+This document defines the active ontology for the project. All core entity types described here now have first-class records in the repo.
 
 This ontology should be read alongside the governing principle in [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md).
 
-The goal is to stop organizing the project around unstable buckets like `other` or overloaded buckets like `local models`, and instead describe the domain as a small set of entity types and relationships.
+The ontology replaced the earlier approach of organizing around unstable buckets like `other` or overloaded buckets like `local models`, describing the domain instead as a small set of entity types and relationships.
 
 ## Why This Exists
 
-The existing project was built around "platform features."
+The project was originally built around "platform features."
 
-That was a useful starting point, but it creates recurring problems:
+That was a useful starting point, but it created recurring problems:
 
 - vendor features are not a stable conceptual unit
 - one feature often spans several user-facing abilities
 - some entries describe access, some describe tools, some describe products, and some describe model families
 - `other` becomes a dumping ground whenever the schema does not know what kind of thing an item is
 
-The ontology should answer a more basic question first:
+The ontology answers a more basic question first:
 
 What kind of thing is this?
 
@@ -400,31 +400,26 @@ Examples:
 - if it mainly exposes models, those may be `Model Access`
 - if it is not materially user-facing for this audience, it may remain out of scope
 
-## Implications For The Existing Repo
+## How The Repo Implements This Ontology
 
-The current repo can be reinterpreted like this:
+The repo now materializes the ontology through first-class records:
 
-- current platform files mostly represent `Product` plus nested `Implementation` records
-- current feature sections mostly represent `Implementation`
-- current pricing tables mostly represent `Plan`
-- current platforms table is partly `Surface`
-- current gating, limits, notes, and regional sections are `Constraint`
-- current sources and dates are `Evidence`
+- `data/capabilities/*.md` — 18 capability records
+- `data/providers/*.md` — 13 provider records
+- `data/products/*.md` — 9 product records
+- `data/model-access/*.md` — 9 model-access records
+- `data/implementations/index.yml` — 71 implementation records mapped to capabilities
+- `data/evidence/index.json` — 89 evidence records covering implementations, products, and model-access entries
+- `data/platforms/*.md` — editorial source of truth for implementation details, plan constraints, surfaces, changelog, and evidence inputs
 
-That means the existing data is still useful, but the ontology above should govern future schema decisions.
+Platform markdown files are the migration-era editorial source. First-class records above are generated or maintained alongside them and validated by `scripts/validate-ontology.js`.
 
-## Immediate Recommendations
+## Resolved Design Decisions
 
-1. Remove `other` as an accepted conceptual destination.
-2. Stop using "local models" as a top-level peer bucket.
-3. Treat local/open/self-hosted as deployment mode plus model access.
-4. Introduce an explicit distinction between uploaded files, connected systems, and embedded workspaces.
-5. Keep model access in the ontology, but do not let it dominate the main capability navigation.
+These decisions from the original ontology draft are now implemented:
 
-## Next Schema Question
-
-Once this ontology is accepted, the next implementation decision is:
-
-Should the repo add separate first-class records for `Capability`, `Product`, and `Implementation`, or should it continue to store implementation records in platform markdown and layer the ontology over them progressively?
-
-The migration strategy currently recommends the progressive path.
+1. `other` is no longer an accepted conceptual destination — all implementations map to capability IDs or are explicitly deferred with a reason.
+2. "local models" is no longer a top-level peer bucket — open model families are `Model Access` records; runtimes like Ollama and LM Studio are `Product` records.
+3. Local/open/self-hosted is treated as deployment mode plus model access.
+4. Uploaded files, connected systems, and embedded workspaces are distinguished through separate capabilities (`use-files-i-provide`, `connect-to-external-systems`, `use-it-on-my-surfaces`).
+5. Model access is in the ontology but does not dominate capability navigation.

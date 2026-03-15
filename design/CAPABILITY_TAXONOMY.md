@@ -1,9 +1,9 @@
-# Capability Taxonomy Draft
+# Capability Taxonomy
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Active
+Last updated: 2026-03-15
 
-This document defines the first-pass capability taxonomy for evolving this project from a feature tracker into a capability-first reference while keeping the existing feature-first view alive during migration.
+This document defines the active capability taxonomy. All 18 capabilities listed here are implemented as first-class records in `data/capabilities/` and used by the capability-first homepage and implementation mappings.
 
 For the higher-level entity model that sits above this taxonomy, see [ONTOLOGY.md](ONTOLOGY.md).
 
@@ -153,16 +153,15 @@ These examples show why capability mappings must support many-to-many relationsh
 | Perplexity Collections (Spaces) | `organize-work-in-projects`, `use-files-i-provide` |
 | Copilot in Office Apps | `use-files-i-provide`, `connect-to-external-systems`, `make-and-edit-documents` |
 
-## What Counts As A Capability Record Later
+## What A Capability Record Contains
 
-When the repo introduces explicit capability records, each capability should eventually contain:
+Each capability record in `data/capabilities/*.md` includes:
 
-- A plain-language definition
-- A short "what counts" note
-- A short "what does not count" note
+- A plain-language definition (Summary)
+- A "What Counts" section
+- A "What Does Not Count" section
 - Related vendor terms
 - Common constraints that users should expect
-- Linked feature implementations
 
 ## Pressure Points To Watch
 
@@ -174,13 +173,11 @@ If any of the following start happening, call it out before pushing further:
 - We are mixing "interface surface" and "user intent" in the same taxonomy level without being explicit.
 - We are preserving `other` as a permanent sink instead of reducing ambiguity.
 
-## Recommendation For The Next Data Step
+## Current State
 
-Do not replace feature records yet.
+The taxonomy is implemented:
 
-Instead:
-
-1. Keep the existing feature markdown files as the canonical implementation/evidence records.
-2. Add a capability mapping layer on top of them.
-3. Build the first capability-first experience as a new presentation over those mappings.
-4. Retain the existing feature-first dashboard until the capability view proves it can carry the editorial load.
+1. Feature markdown files remain as the canonical implementation/evidence records in `data/platforms/`.
+2. The capability mapping layer exists in `data/implementations/index.yml`.
+3. The capability-first homepage is live at `docs/index.html`.
+4. The feature-first detailed availability view remains at `docs/implementations.html`.

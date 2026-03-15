@@ -1,9 +1,9 @@
 # Capability Pressure Test
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Complete (taxonomy adopted)
+Last updated: 2026-03-15
 
-This document checks whether the draft capability taxonomy can coexist with the current 70-feature dataset without forcing unnatural schema decisions too early.
+This document records the pressure test that validated the capability taxonomy against the feature dataset before adoption. The taxonomy passed and is now active. See [CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md).
 
 ## Current Dataset Snapshot
 

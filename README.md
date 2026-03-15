@@ -21,11 +21,11 @@ Built for fellow AI facilitators, educators, designers, and anyone who needs acc
 
 ## How it's built
 
-There is no database behind this project. Every piece of data — features, pricing tiers, platform support, talking points — lives in plain markdown files under `data/`. A single build script (`node scripts/build.js`) reads those files and renders the entire static site into `docs/`.
+There is no database behind this project. Every piece of data — capabilities, implementations, pricing tiers, platform support, talking points — lives in plain markdown and YAML files under `data/`. A single build script (`node scripts/build.js`) reads those files and renders the entire static site into `docs/`.
 
 That's the whole stack: markdown files, javascript, and Git.
 
-This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a `.md` file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.
+This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a `.md` or `.yml` file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.
 
 ## Scope
 
@@ -41,9 +41,9 @@ The `~1% market share` idea is used here as a practical inclusion heuristic, not
 
 All prices are listed in **USD**. Feature availability and pricing reflect the **United States** region by default; availability may differ in other regions.
 
-## Platforms Covered
+## Products Covered
 
-| Platform | Vendor | Features Tracked |
+| Product | Vendor | What's Tracked |
 |----------|--------|------------------|
 | **ChatGPT** | OpenAI | Agent Mode, Canvas, Voice, Sora, DALL-E, Search, Deep Research, Codex, Custom GPTs |
 | **Claude** | Anthropic | Code, Cowork, MCP, Connectors, Projects, Artifacts, Extended Thinking, Vision |
@@ -60,8 +60,8 @@ All prices are listed in **USD**. Feature availability and pricing reflect the *
 
 ## Features
 
-- **Plan-by-plan availability** — See exactly which tier unlocks each feature
-- **Capability-first view** — Browse plain-English capabilities in addition to the feature view
+- **Plan-by-plan availability** — See exactly which tier unlocks each implementation
+- **Capability-first view** — Browse plain-English capabilities as the primary entry point
 - **Platform support** — Windows, macOS, Linux, iOS, Android, web, terminal, API
 - **Talking points** — Ready-to-use sentences for presentations (click to copy)
 - **Category filtering** — Voice, Coding, Research, Agents, and more
@@ -242,7 +242,9 @@ That generates Perplexity, Claude, and Codex-ready outputs under each skill's lo
 
 ## Data Format
 
-Platform data is stored in simple markdown files. Example:
+The project uses an ontology-backed data model with first-class records for capabilities, providers, products, implementations, model-access entries, and evidence. See [design/SCHEMA_PROPOSAL.md](design/SCHEMA_PROPOSAL.md) for full details.
+
+Platform implementation data is stored in simple markdown files. Example:
 
 ```markdown
 ## Feature Name

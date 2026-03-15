@@ -1,9 +1,9 @@
 # Model Access Extension
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Implemented
+Last updated: 2026-03-15
 
-This document defines how the ontology-first schema should handle open/self-hosted model families that do not fit cleanly into the hosted-product implementation map.
+This document defines how the ontology-first schema handles open/self-hosted model families that do not fit cleanly into the hosted-product implementation map. Nine model-access records now exist in `data/model-access/`.
 
 ## Why This Exists
 
@@ -41,15 +41,13 @@ The current `Local Hosting Options` section is really describing runtime product
 
 That runtime/tooling decomposition has now started through first-class product records for Ollama, LM Studio, and `text-generation-webui`.
 
-## Recommendation
+## Implementation
 
-Add `Model Access` as a first-class record type for this domain.
+`Model Access` is a first-class record type.
 
-Canonical path:
+Path: `data/model-access/*.md` (9 records)
 
-`data/model-access/*.md`
-
-The evidence source for these records now lives in provider-specific platform files such as:
+The evidence source for these records lives in provider-specific platform files:
 
 - [`data/platforms/meta-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/meta-open-models.md)
 - [`data/platforms/mistral-open-models.md`](/Users/snap/Git/ai-capability-reference/data/platforms/mistral-open-models.md)
@@ -119,21 +117,12 @@ Do not:
 - treat "local models" as a single product
 - treat runtime products and model families as the same thing
 
-## Current Transitional Boundary
+## Current State
 
-This repo now has:
+The repo now has:
 
 - hosted SaaS products represented as `Product` plus `Implementation Map`
-- open model families represented progressively as `Model Access`
+- open model families represented as `Model Access` records (9 families)
+- runtime products as first-class `Product` records using provider-specific evidence sources: [`data/platforms/ollama-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/ollama-runtime.md), [`data/platforms/lm-studio-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/lm-studio-runtime.md), and [`data/platforms/oobabooga-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/oobabooga-runtime.md)
 
-What is still transitional:
-
-- the legacy [`data/archive/platforms/local-models.md`](/Users/snap/Git/ai-capability-reference/data/archive/platforms/local-models.md) archive file
-- any remaining evidence that still needs to move into first-class provider/product/model-access records
-
-The runtime products now exist as first-class `Product` records and now use provider-specific evidence sources such as [`data/platforms/ollama-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/ollama-runtime.md), [`data/platforms/lm-studio-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/lm-studio-runtime.md), and [`data/platforms/oobabooga-runtime.md`](/Users/snap/Git/ai-capability-reference/data/platforms/oobabooga-runtime.md).
-The static site generator only reads active platform evidence from `data/platforms/`, so the legacy bundle is no longer part of the active build graph.
-
-## Recommended Next Step
-
-Continue reducing the legacy archive file until it is no longer needed for active editing.
+The legacy [`data/archive/platforms/local-models.md`](/Users/snap/Git/ai-capability-reference/data/archive/platforms/local-models.md) archive file is retained for historical reference only. The static site generator reads only active platform evidence from `data/platforms/`, so the legacy bundle is not part of the active build graph.

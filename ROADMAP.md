@@ -108,18 +108,35 @@ Exit criteria:
 - shared data model is stable enough that new UX work does not invent a second source of truth
 - Tool Check can consume canonical mappings instead of bespoke metadata
 
-## Phase 5: Agent-Readable Data Access
+## Phase 5: Machine-Readable Access and Search Discovery
 
-Primary goal: make the reference easy for agents and external tools to read, query, and cite through machine-readable interfaces.
+Primary goal: make the reference easy for agents, external tools, and search engines to read, query, and cite through machine-readable interfaces and discoverable pages.
 
-Work in this phase:
+This phase has three layers that share infrastructure and should be developed together. See [design/ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) for the full design.
+
+### 5a: SEO Vocabulary
+
+- add `search_terms` to each capability record, mapping the ontology's internal vocabulary to the phrases people actually search for
+- these terms feed on-page content, structured data, JSON exports, and programmatic page generation
+
+### 5b: JSON Export
 
 - generate canonical JSON exports for capabilities, providers, products, implementations, model-access records, constraints, and evidence relationships
 - define one stable public data contract for IDs, cross-links, freshness fields, and source attribution
 - add derived JSON views optimized for common lookups such as capability-to-implementation, product-to-plan entitlements, and implementation-to-evidence
-- expose the data through a lightweight agent-facing interface, starting with static JSON and optionally adding an MCP-compatible read layer later
-- document agent usage patterns, including citation expectations, freshness handling, and how to distinguish canonical records from generated views
+- include `search_terms` and FAQ-ready fields so the same export serves both agents and SEO page generation
 - keep machine-readable exports generated from the same canonical source as the site so there is no parallel data system
+
+### 5c: SEO Bridge Pages and Structured Data
+
+- generate programmatic bridge pages for high-value query patterns: product comparisons, capability checks, and use-case landing pages
+- add schema.org structured data to generated HTML: `SoftwareApplication`, `FAQPage`, `DefinedTerm`, `ItemList`
+- ensure every generated page has substantive content from the canonical data, not just template fill-in
+
+### 5d: MCP Read Layer
+
+- expose the data through a read-only MCP-compatible interface over the generated JSON artifacts
+- document agent usage patterns, including citation expectations, freshness handling, and how to distinguish canonical records from generated views
 
 Exit criteria:
 
@@ -127,6 +144,8 @@ Exit criteria:
 - an agent can answer core repo questions without scraping HTML or relying on markdown heuristics
 - source attribution and freshness metadata survive into machine-readable outputs
 - any MCP or equivalent access layer is read-only, schema-documented, and backed by canonical generated artifacts rather than bespoke logic
+- capability records include search vocabulary that bridges the ontology to search language
+- the site has a clear path to capturing long-tail AI comparison queries through programmatic pages
 
 ## Working Data Contracts
 
@@ -137,8 +156,9 @@ These contracts should guide implementation across all phases:
 - canonical skill sources live under `skills/<name>/src/`; platform-local install folders such as `.claude/skills/` and `.perplexity/skills/` are not source of truth and should not be committed
 - reusable repo skills depend on companion `skill-provenance` for provenance continuity across exported bundles and local installs
 - `scripts/build.js` continues to generate both the capability-first homepage and the feature-first detailed availability view
-- a future export step should generate canonical JSON artifacts from the same ontology-backed source used by the site build
-- any MCP or similar agent interface should sit on top of those generated artifacts, not become a second hand-maintained source of truth
+- `scripts/export-json.js` (or equivalent) should generate canonical JSON artifacts from the same ontology-backed source used by the site build
+- SEO bridge pages should be generated from the same canonical data or JSON export, never maintained by hand
+- any MCP or similar agent interface should sit on top of the generated JSON artifacts, not become a second hand-maintained source of truth
 - `scripts/validate-ontology.js` is the enforcement point for cross-record integrity and should expand as the migration hardens
 
 ## Acceptance Checks
@@ -149,8 +169,9 @@ The roadmap is complete when future implementation can satisfy these checks:
 - data-model integrity: ontology validation passes for capabilities, providers, products, model-access records, implementation mappings, and evidence links
 - migration completeness: all implementation records are either mapped or intentionally deferred with a stated rationale
 - build-output coherence: generated capability and feature pages reflect the same canonical entities and counts
-- machine-readable export readiness: generated JSON includes stable IDs, relationships, freshness fields, and source links for all first-class entities
+- machine-readable export readiness: generated JSON includes stable IDs, relationships, freshness fields, source links, and search vocabulary for all first-class entities
 - agent-access readiness: core questions can be answered from JSON or MCP-style reads without scraping HTML
+- search discovery readiness: capability records include search terms; programmatic bridge pages exist for high-value query patterns
 - regression protection: the legacy feature-first availability view remains usable while capability-first stays the primary framing
 - skill-structure hygiene: canonical skills remain single-source under `skills/<name>/src/` with no tracked surface-local duplicates
 - deferred-initiative gate: Tool Check does not move back to active status until the shared-model prerequisites are complete
@@ -161,4 +182,5 @@ The roadmap is complete when future implementation can satisfy these checks:
 - Tool Check remains in scope, but is intentionally demoted behind ontology and data stabilization
 - agent-readable access should start with generated JSON because it is the lowest-friction, lowest-maintenance interface
 - MCP or similar interfaces should be additive, read-only layers over generated artifacts rather than the first delivery target
+- SEO and agent access share a data contract: `search_terms`, FAQ pairs, and comparison metadata serve both audiences from the same source
 - accuracy, ontology clarity, maintainer burden reduction, and machine-readable reuse remain the governing priorities

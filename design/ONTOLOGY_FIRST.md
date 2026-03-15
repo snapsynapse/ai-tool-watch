@@ -1,9 +1,9 @@
 # Ontology-First Project Principle
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Active
+Last updated: 2026-03-15
 
-This project should be ontology-first.
+This project is ontology-first.
 
 That means the canonical question is not:
 

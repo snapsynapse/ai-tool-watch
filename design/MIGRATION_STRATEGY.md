@@ -1,9 +1,9 @@
 # Capability-First Migration Strategy
 
-Status: Draft 1  
-Last updated: 2026-03-07
+Status: Active (migration underway, Phases 1–3 complete)
+Last updated: 2026-03-15
 
-This document describes how to move toward a capability-first product without breaking or prematurely deleting the current feature-first site.
+This document describes how the project moved toward a capability-first product without breaking the current feature-first site.
 
 The governing principle for future decisions is documented in [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md).
 
@@ -23,14 +23,12 @@ If coexistence starts distorting the schema or taxonomy, that should be called o
 
 ## Current System Summary
 
-Today the repo is optimized around platform feature records:
+The repo now operates in a hybrid model:
 
-- One markdown file per platform in `data/platforms/`
-- One section per vendor feature
-- Per-feature pricing, surfaces, status, gating, sources, and changelog
-- A static site generator in [`scripts/build.js`](/Users/snap/Git/ai-capability-reference/scripts/build.js) that renders the feature-first dashboard
-
-That is a solid foundation for evidence and verification. It is not yet a capability-native model.
+- One markdown file per platform in `data/platforms/` (editorial source of truth)
+- First-class ontology records in `data/capabilities/`, `data/providers/`, `data/products/`, `data/model-access/`, `data/implementations/index.yml`, and `data/evidence/index.json`
+- A static site generator in [`scripts/build.js`](/Users/snap/Git/ai-capability-reference/scripts/build.js) that renders both a capability-first homepage and a feature-first detailed availability view
+- Validation via `scripts/validate-ontology.js` enforcing cross-record integrity
 
 ## Core Architectural Direction
 
@@ -38,7 +36,7 @@ Maintain a shared canonical data layer and support multiple views over it.
 
 ### Canonical Source Of Truth
 
-Keep implementation close to the current feature records while materializing evidence into a first-class layer:
+Platform markdown files remain the editorial input surface for:
 
 - platform metadata
 - plan pricing
@@ -46,30 +44,28 @@ Keep implementation close to the current feature records while materializing evi
 - constraints
 - evidence inputs
 
-### New Layer To Add
+### Capability Mapping Layer
 
-Add an explicit capability mapping layer that can relate one feature to many capabilities.
+An explicit capability mapping layer now relates each implementation to one or more capabilities via `data/implementations/index.yml`.
 
-The capability layer should become the basis for:
+The capability layer is the basis for:
 
-- a future capability-first homepage
-- capability landing pages or grouped sections
+- the capability-first homepage (`docs/index.html`)
+- capability-grouped navigation
 - beginner-facing explanations
 - plan/entitlement guidance phrased in human terms
 
-### Existing View To Preserve
+### Preserved Feature View
 
-Keep the current feature-first dashboard available as long as it remains useful and low-friction to maintain.
+The feature-first detailed availability view (`docs/implementations.html`) remains available and is generated from the same canonical source.
 
-## Minimal Schema Evolution
+## Schema Evolution (implemented)
 
-The safest first move is extension, not replacement.
+The migration followed an extension-not-replacement approach.
 
-### Keep
+### Kept
 
-Keep the current platform markdown feature records intact.
-
-They already store:
+Platform markdown feature records remain intact. They store:
 
 - implementation names
 - plan constraints
@@ -77,49 +73,37 @@ They already store:
 - evidence and freshness metadata
 - sources and changelog
 
-### Add
+### Added
 
-Add a capability mapping layer that the current system does not yet support.
+The capability mapping layer now exists:
 
-Recommended first-pass shape:
+1. **Capability catalog** — `data/capabilities/*.md` (18 records)
+2. **Implementation-to-capability mappings** — `data/implementations/index.yml` (71 records, each mapped to capability IDs)
+3. **Mapping notes** — implementations that cannot yet map cleanly carry a `notes` field explaining the deferral
 
-1. Capability catalog file  
-   A new machine-readable or markdown-backed list of canonical capabilities.
-2. Feature-to-capability mappings  
-   Each feature should link to one or more capability IDs.
-3. Optional mapping notes  
-   Short notes where a feature only partially satisfies a capability.
+### Still avoided
 
-### Avoid For Now
-
-- Replacing `Category` with capability IDs
+- Replacing `Category` with capability IDs in platform markdown (Category remains for backward compatibility)
 - Deleting existing feature records
-- Forcing capability prose into every platform file before the model settles
-- Rewriting the build pipeline around capabilities before the mappings are tested
+- Forcing capability prose into every platform file
 
-## Suggested Data Shape
+## Data Shape
 
-The exact file format is still open, but the model should support this relationship:
+The mapping layer uses this relationship:
 
 ```text
-Capability 1 ---< FeatureCapabilityMap >--- Implementation Feature
+Capability 1 ---< Implementation Map >--- Implementation (in platform markdown)
 ```
 
-At minimum, the mapping layer needs:
+Each implementation record in `data/implementations/index.yml` carries:
 
-- `capability_id`
-- `platform_id`
-- `feature_name` or stable feature slug
-- optional `notes`
-- optional `strength`
-
-`strength` is useful if a feature is:
-
-- a primary implementation
-- a partial implementation
-- adjacent but not complete
-
-That prevents misleading "yes/no" claims in the capability-first view.
+- `id` — stable implementation ID
+- `product` — product ID
+- `provider` — provider ID
+- `source_file` — path to editorial source in `data/platforms/`
+- `source_heading` — heading within the source file
+- `capabilities` — list of capability IDs (or empty array for deferred records)
+- optional `notes` — explains deferred mappings or special modeling decisions
 
 ## Why Not Use Category As The Capability Layer
 
@@ -141,35 +125,29 @@ Evidence of schema pressure:
 
 Conclusion: preserve `Category` for backward compatibility, but do not treat it as the future canonical taxonomy.
 
-## Suggested Migration Phases
+## Migration Phases
 
-### Phase 1: Editorial foundation
+### Phase 1: Editorial foundation — complete
 
-- Draft and agree on the capability taxonomy
-- Create capability definitions and mapping rules
-- Identify ambiguous or multi-capability features
+- Capability taxonomy drafted and agreed ([CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md))
+- Capability definitions and mapping rules created
+- Ambiguous and multi-capability features identified ([CAPABILITY_PRESSURE_TEST.md](CAPABILITY_PRESSURE_TEST.md))
 
-### Phase 2: Data extension
+### Phase 2: Data extension — complete
 
-- Add capability records
-- Add feature mappings
-- Keep existing build and current dashboard working
+- 18 capability records added
+- 71 implementation mappings created with capability IDs
+- Existing build and dashboard remain working
 
-### Phase 3: Alternative presentation
+### Phase 3: Alternative presentation — complete
 
-- Introduce a capability-first entry point or homepage section
-- Reuse the same implementation data and ontology-native evidence layer underneath
-- Keep feature-first navigation available
+- Capability-first homepage live at `docs/index.html`
+- Same canonical data and evidence layer underneath
+- Feature-first view preserved at `docs/implementations.html`
 
-### Phase 4: Evaluate pressure
+### Phase 4: Evaluate pressure — ongoing
 
-Check whether the old and new views still fit naturally over the same model.
-
-If not, decide whether to:
-
-- simplify the old view
-- freeze the old view
-- retire the old view
+The old and new views currently fit naturally over the same model. No retirement decisions needed yet. The legacy `Category` field remains as a compatibility filter but does not drive taxonomy decisions.
 
 ## Maintainer Guidance For Future Models
 
@@ -181,9 +159,6 @@ When making changes in this repo during migration:
 - Flag any case where maintaining the legacy view requires awkward taxonomy decisions.
 - Document new assumptions in-repo so they do not live only in a chat thread.
 
-## Immediate Next Steps
+## Next Steps
 
-1. Pressure-test [`CAPABILITY_TAXONOMY.md`](CAPABILITY_TAXONOMY.md) against all current features.
-2. Choose the first persisted capability data format.
-3. Add a thin mapping layer without disturbing verification workflows.
-4. Prototype a capability-first homepage or landing section before any large schema rewrite.
+The migration strategy has reached steady state. The next major work is Phase 5 of the roadmap: generating canonical JSON exports from the same ontology-backed source. See [ROADMAP.md](/ROADMAP.md).

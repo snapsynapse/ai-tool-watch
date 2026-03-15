@@ -65,19 +65,19 @@ This layer is aspirational. The goal is to describe each platform's perceptual m
 
 The middle layer. Given its perceptual modalities, what can the tool do? "Analyze uploaded PDFs," "generate images from text prompts," "execute code in a sandbox," "search the web for current information." These are underlying abilities that exist across platforms under different names. This layer is organized by what the AI can do, not what any vendor calls it.
 
-A capability like "document analysis" depends on the perceptions layer (can the model perceive PDFs? through OCR, native parsing, or vision?) and feeds into the features layer (which vendor products expose this capability, under what names, on which plans?).
+A capability like "document analysis" depends on the perceptions layer (can the model perceive PDFs? through OCR, native parsing, or vision?) and feeds into the implementations layer (which vendor products expose this capability, under what names, on which plans?).
 
-### Features (how a vendor packages and gates an AI's capabilities)
+### Implementations (how a vendor packages and gates an AI's capabilities)
 
-The outermost layer and the current data model. Named product features — "Artifacts," "Canvas," "Deep Research," "Custom GPTs" — with per-plan availability, platform support, status, and sourced verification dates. This is vendor-specific: it reflects how each company names, bundles, and restricts access to the underlying capabilities.
+The outermost layer. Named product implementations — "Artifacts," "Canvas," "Deep Research," "Custom GPTs" — with per-plan availability, platform support, status, and sourced verification dates. This is vendor-specific: it reflects how each company names, bundles, and restricts access to the underlying capabilities.
 
 ### How they relate
 
-The layers build from inside out: perceptions (how the AI takes in information) enable capabilities (what it can do with that information), which are packaged into features (how vendors name, bundle, and gate access).
+The layers build from inside out: perceptions (how the AI takes in information) enable capabilities (what it can do with that information), which are packaged into implementations (how vendors name, bundle, and gate access).
 
-A single thread might look like: a model's vision encoder can process image patches (perception) → this enables it to analyze uploaded documents (capability) → which surfaces as "Vision" on ChatGPT, "File uploads" on Claude, "Document understanding" on Gemini (features) — each with different plan availability, limits, and platform support.
+A single thread might look like: a model's vision encoder can process image patches (perception) → this enables it to analyze uploaded documents (capability) → which surfaces as "Vision" on ChatGPT, "File uploads" on Claude, "Document understanding" on Gemini (implementations) — each with different plan availability, limits, and platform support.
 
-The features layer exists today. The capabilities and perceptions layers are aspirational and will likely evolve through experimentation.
+The capabilities and implementations layers are now operational. The repo has 18 first-class capability records in `data/capabilities/`, 71 implementation records mapped to capabilities in `data/implementations/index.yml`, and the build generates both a capability-first homepage and an implementation-first detailed availability view from the same canonical source. The perceptions layer remains aspirational.
 
 ## Scope
 
@@ -85,7 +85,7 @@ The features layer exists today. The capabilities and perceptions layers are asp
 
 The initial set of 7 platforms was chosen pragmatically: the tools discussed in the class being taught, plus some open-weight models the maintainer uses. There is no formal inclusion/exclusion rubric yet.
 
-Platforms tracked: ChatGPT (OpenAI), Claude (Anthropic), Copilot (Microsoft), Gemini (Google), Perplexity, Grok (xAI), Local Models (Llama, Mistral, DeepSeek, Qwen, Codestral).
+Products tracked: ChatGPT (OpenAI), Claude (Anthropic), Copilot (Microsoft), Gemini (Google), Perplexity, Grok (xAI), Ollama, LM Studio. Model-access records also cover Llama, Mistral, DeepSeek, and Qwen families.
 
 ### What we track
 
@@ -104,17 +104,15 @@ Consumer-facing AI product capabilities, with emphasis on:
 - Model benchmarks or quality comparisons
 - Developer tools and SDKs (with the exception of tools like Claude Code that blur the line)
 
-## The feature vs. capability tension
+## The implementation vs. capability distinction
 
-This is an acknowledged design challenge. Some tracked items are clearly product features (e.g., "Custom GPTs," "Artifacts"). Others are closer to capabilities (e.g., "Vision," "Voice Mode"). The data schema uses a `Category` field to group features by capability type (vision, voice, coding, agents, etc.), which partially bridges this gap.
+Some tracked items are clearly product implementations (e.g., "Custom GPTs," "Artifacts"). Others are closer to capabilities (e.g., "Vision," "Voice Mode"). The project now resolves this through an explicit ontology:
 
-There is no clean answer yet. The current approach is:
+1. **Capabilities** (`data/capabilities/`) define plain-English things a person wants to do, stable across vendors
+2. **Implementations** (`data/implementations/index.yml`) map vendor-specific features to one or more capabilities
+3. **The legacy `Category` field** remains in platform markdown for backward compatibility but is not the canonical taxonomy
 
-1. Track what vendors name and ship (features), since that's what users encounter
-2. Use categories to group by underlying capability
-3. Move toward a capabilities layer that maps user intent to features across platforms
-
-Contributions that improve the mapping between user intent and vendor features are especially welcome.
+The capability-first homepage and the implementation-first detailed availability view are both generated from the same canonical data. See [ONTOLOGY.md](ONTOLOGY.md) and [CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md) for details.
 
 ## Sustainability
 
