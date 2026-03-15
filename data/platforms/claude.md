@@ -501,10 +501,10 @@ Available globally where Claude is available.
 |----------|-------|
 | Category | vision |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://docs.anthropic.com/en/docs/build-with-claude/vision |
 | Launched | 2024-03-04T12:00Z |
-| Verified | 2026-02-28|
+| Verified | 2026-03-15|
 | Checked | 2026-03-15|
 
 ### Availability
@@ -546,6 +546,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-15T12:00Z | [Verified] Corrected gating from paid to free — availability table and external sources confirm free-tier access |
 | 2024-03-04T12:00Z | Initial entry |
 
 ---

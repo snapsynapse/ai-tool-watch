@@ -332,7 +332,7 @@ Available globally where ChatGPT is available.
 | Gating | paid |
 | URL | https://openai.com/index/introducing-codex/ |
 | Launched | 2025-04-16T12:00Z |
-| Verified | 2026-02-28|
+| Verified | 2026-03-15|
 | Checked | 2026-03-15|
 
 ### Availability
@@ -350,14 +350,14 @@ Available globally where ChatGPT is available.
 
 | Platform | Available | Notes |
 |----------|-----------|-------|
-| Windows | ✅ | Desktop app |
-| macOS | ✅ | Desktop app |
-| Linux | ❌ |  |
+| Windows | ✅ | Desktop app + CLI (experimental, via WSL) |
+| macOS | ✅ | Desktop app + CLI |
+| Linux | ✅ | CLI only (x86_64, arm64) |
 | iOS | ⚠️ | Limited |
 | Android | ⚠️ | Limited |
 | Chrome | ❌ |  |
 | web | ✅ | chatgpt.com/codex |
-| terminal | ❌ |  |
+| terminal | ✅ | Codex CLI (`npm i -g @openai/codex`) |
 | API | ✅ | Codex API |
 
 ### Regional
@@ -366,16 +366,19 @@ Available globally.
 
 ### Talking Point
 
-> "Codex is ChatGPT's coding agent that can write, run, and debug code autonomously. It requires **Plus or higher**—it's not available on Free or the $8 Go plan."
+> "Codex is ChatGPT's coding agent that can write, run, and debug code autonomously. It requires **Plus or higher**—not available on Free or Go. Available via **web, desktop apps, and CLI** (`npm i -g @openai/codex`) on macOS, Linux, and Windows (WSL)."
 
 ### Sources
 
 - [ChatGPT Pricing](https://chatgpt.com/pricing)
+- [Codex CLI GitHub](https://github.com/openai/codex)
+- [Codex CLI Documentation](https://developers.openai.com/codex/cli/)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-03-15T12:00Z | [Verified] Terminal/CLI access added (Codex CLI on macOS/Linux/Windows WSL); Linux support corrected; sources expanded |
 | 2025-04-16T12:00Z | Initial entry |
 
 ---
