@@ -3,6 +3,14 @@ name: resolve-issue
 description: Triage and resolve a verification issue from the AI Capability Reference. Reads the GitHub issue, compares against current data, researches if needed, updates data files, and closes the issue with an audit comment.
 argument-hint: [issue-number or "batch" platform-name]
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, WebFetch, Task
+skill_bundle: resolve-issue
+file_role: skill
+version: 3
+version_date: 2026-03-15
+previous_version: 2
+change_summary: >
+  Added research fallback hierarchy, temporary state change handling,
+  and structured batch assessment format.
 ---
 
 ## Resolve AI Capability Reference Issue

@@ -1,0 +1,36 @@
+bundle: resolve-issue
+bundle_version: 3.0.0
+bundle_date: 2026-03-15
+description: >-
+  Triage and resolve verification issues from the AI Capability Reference.
+  Reads GitHub issues, compares against current data, researches via Perplexity,
+  updates data files, and closes issues with audit comments. Supports single-issue
+  and batch modes with structured assessment documents.
+
+compatibility:
+  designed_for:
+    platform: Claude Code
+    surface: Terminal
+  tested_on:
+    - platform: Claude Code
+      surface: Terminal
+      status: pass
+      date: 2026-03-15
+      notes: Resolved 29 issues across 7 platforms in iterative testing.
+  spec_version: agentskills.io/1.0
+  frontmatter_mode: metadata
+
+files:
+  - path: SKILL.md
+    role: skill
+    version: 3
+    hash: sha256:650a68e48d28917e03efd696bf8a257f5cf0a2cfd5880aac9fc0623286026f66
+    note: Core skill with 7-step workflow, research fallback, batch format, temp state handling
+  - path: CHANGELOG.md
+    role: reference
+    version: 3
+    hash: sha256:d2372235a6604a209eeacaa5f7225159c76c97cdd3d8c2b4bdd64647f2183309
+  - path: MANIFEST.yaml
+    role: reference
+    version: 3
+    hash: self
