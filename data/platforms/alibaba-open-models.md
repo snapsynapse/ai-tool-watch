@@ -77,7 +77,7 @@ No restrictions - runs locally. Note: Qwen is from Alibaba (China); some orgs re
 | Gating | free |
 | URL | https://qwenlm.github.io/blog/qwen3/ |
 | Launched | 2025-04-28T12:00Z |
-| Verified | 2026-03-08|
+| Verified | 2026-03-15|
 | Checked | 2026-03-15|
 
 ### Availability
@@ -131,7 +131,7 @@ No restrictions (Apache 2.0 license).
 | Gating | free |
 | URL | https://qwenlm.github.io/blog/qwen2.5-coder/ |
 | Launched | 2024-09-19T12:00Z |
-| Verified | 2026-02-22|
+| Verified | 2026-03-15|
 | Checked | 2026-03-15|
 
 ### Availability

@@ -272,7 +272,7 @@ Available globally where ChatGPT is available.
 | Gating | free |
 | URL | https://openai.com/index/introducing-chatgpt-search/ |
 | Launched | 2024-10-31T12:00Z |
-| Verified | 2026-03-08|
+| Verified | 2026-03-15|
 | Checked | 2026-03-15|
 
 ### Availability
