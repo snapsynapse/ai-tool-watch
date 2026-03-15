@@ -199,6 +199,14 @@ function generateContradictionIssue(result) {
     body += `**Platform:** ${result.platform}\n`;
     body += `**Feature:** ${result.feature}\n\n`;
 
+    // Include current stored data for context
+    if (result.storedData) {
+        body += `## Current Stored Data\n\n`;
+        body += `<details>\n<summary>What our data file currently says</summary>\n\n`;
+        body += `\`\`\`\n${result.storedData}\n\`\`\`\n\n`;
+        body += `</details>\n\n`;
+    }
+
     body += `## Model Responses\n\n`;
 
     for (const modelResult of result.results) {
@@ -236,6 +244,14 @@ function generateInconclusiveIssue(result) {
     body += `**Platform:** ${result.platform}\n`;
     body += `**Feature:** ${result.feature}\n`;
     body += `**Confirmations:** ${result.confirmations}/${result.requiredConfirmations}\n\n`;
+
+    // Include current stored data for context
+    if (result.storedData) {
+        body += `## Current Stored Data\n\n`;
+        body += `<details>\n<summary>What our data file currently says</summary>\n\n`;
+        body += `\`\`\`\n${result.storedData}\n\`\`\`\n\n`;
+        body += `</details>\n\n`;
+    }
 
     if (result.proposedChanges.length > 0) {
         body += `## Potential Changes\n\n`;

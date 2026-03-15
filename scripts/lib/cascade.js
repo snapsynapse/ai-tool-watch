@@ -53,27 +53,46 @@ function parseResponse(response, storedFeature) {
         responseLower.includes(ind)
     );
 
-    // Check for change indicators
-    const changeIndicators = [
+    // Check for change indicators — split into strong (unambiguous) and weak
+    // (can appear in historical descriptions). Weak indicators only count if
+    // they appear near recency markers like "recently", "now", "just", date
+    // references, etc., to avoid false positives from historical context.
+    const strongChangeIndicators = [
         'now available',
         'recently added',
-        'new feature',
         'has been updated',
         'changed to',
         'no longer available',
         'removed from',
+        'rolled out'
+    ];
+
+    const weakChangeIndicators = [
         'deprecated',
         'announced',
         'launched',
-        'rolled out',
+        'new feature',
         'expanded to',
         'limited to',
         'restricted to'
     ];
 
-    const hasChangeIndicator = changeIndicators.some(ind =>
+    const recencyPatterns = [
+        /(?:recently|just|now|newly|as of|starting|beginning|since)\s+\w*\s*(?:deprecated|announced|launched|expanded|limited|restricted)/i,
+        /(?:in|since|as of)\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)\s+202[5-9]/i,
+        /(?:this|last)\s+(?:week|month)\s+\w*\s*(?:deprecated|announced|launched)/i,
+        /(?:202[5-9])\s*[-:]\s*(?:deprecated|announced|launched)/i
+    ];
+
+    const hasStrongChangeIndicator = strongChangeIndicators.some(ind =>
         responseLower.includes(ind)
     );
+
+    const hasWeakChangeWithRecency = weakChangeIndicators.some(ind =>
+        responseLower.includes(ind)
+    ) && recencyPatterns.some(pat => pat.test(response));
+
+    const hasChangeIndicator = hasStrongChangeIndicator || hasWeakChangeWithRecency;
 
     // Extract specific changes mentioned
     // Look for availability changes
@@ -220,9 +239,12 @@ async function runCascade(platform, feature, options = {}) {
                 log(`  Confidence: ${(parsed.confidence * 100).toFixed(0)}%`);
             }
 
-            // First model says no change - stop cascade
-            if (results.length === 1 && !parsed.hasChange) {
-                log(`\n✓ First model confirms no change. Stopping cascade.`);
+            // Two models agree on no change - stop cascade
+            // (Previously stopped after just 1 model, which meant a single
+            // false negative would kill the entire verification)
+            const noChangeCount = results.filter(r => !r.hasChange && r.type !== ResultType.ERROR).length;
+            if (noChangeCount >= 2 && !parsed.hasChange) {
+                log(`\n✓ ${noChangeCount} models confirm no change. Stopping cascade.`);
                 outcome = CascadeOutcome.NO_CHANGE;
                 break;
             }
