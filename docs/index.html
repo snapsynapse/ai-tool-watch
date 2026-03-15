@@ -44,10 +44,15 @@
         <nav class="site-nav" id="siteNav" aria-label="Main navigation">
             <a href="index.html" class="site-nav-link active" onclick="passTheme(this)">Capabilities</a>
             <a href="implementations.html" class="site-nav-link" onclick="passTheme(this)">Detailed Availability</a>
+            <a href="compare.html" class="site-nav-link" onclick="passTheme(this)">Compare</a>
             <a href="constraints.html" class="site-nav-link" onclick="passTheme(this)">Access & Limits</a>
             <a href="about.html" class="site-nav-link" onclick="passTheme(this)">About</a>
         </nav>
         <div class="header-actions">
+            <div class="site-search" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="searchResults">
+                <input type="search" id="siteSearchInput" class="search-input" placeholder="Search features..." aria-label="Search features" aria-autocomplete="list" aria-controls="searchResults" autocomplete="off">
+                <ul id="searchResults" class="search-results" role="listbox" hidden></ul>
+            </div>
             <a href="https://github.com/snapsynapse/ai-capability-reference" class="github-link" title="View on GitHub">GitHub</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓</button>
         </div>
@@ -143,7 +148,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -156,7 +161,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -169,7 +174,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -182,7 +187,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -265,7 +270,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -278,7 +283,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-03-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-03-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -291,7 +296,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -304,7 +309,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -317,7 +322,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -400,7 +405,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-03-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-03-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -413,7 +418,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-preview">Preview</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -426,7 +431,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -527,7 +532,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -540,7 +545,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -553,7 +558,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -566,7 +571,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -701,7 +706,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -733,7 +738,7 @@
                             </div>
                             <p class="capability-impl-copy">DeepSeek&#39;s open model family spanning large general-purpose and reasoning-oriented self-hosted models.</p>
                             <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local inference stacks</span></div>
                             <p class="capability-note">the full flagship models need serious hardware</p>
@@ -793,7 +798,7 @@
                             </div>
                             <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
                             <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
                             <p class="capability-note">capability and hardware requirements vary substantially by size</p>
@@ -805,7 +810,7 @@
                             </div>
                             <p class="capability-impl-copy">Alibaba&#39;s Qwen 3 family extends local/open model access with a wide size range and hybrid thinking behaviors.</p>
                             <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">local web UIs</span></div>
                             <p class="capability-note">model sizes range from practical local options to very large MoE deployments</p>
@@ -874,7 +879,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-10-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -887,7 +892,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-03-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-03-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -900,7 +905,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -913,7 +918,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -983,7 +988,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-09</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-09</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -996,7 +1001,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-05-14</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-05-14</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -1066,7 +1071,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1079,7 +1084,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-20</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-20</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1092,7 +1097,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1105,7 +1110,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1118,7 +1123,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1201,7 +1206,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1214,7 +1219,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1227,7 +1232,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-20</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-20</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1240,7 +1245,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1253,7 +1258,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1266,7 +1271,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1310,7 +1315,7 @@
                             </div>
                             <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
                             <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
                             <p class="capability-note">capability and hardware requirements vary substantially by size</p>
@@ -1322,7 +1327,7 @@
                             </div>
                             <p class="capability-impl-copy">Qwen-Coder is Alibaba&#39;s code-focused open model line for self-hosted coding tasks.</p>
                             <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
                             <p class="capability-note">tuned for coding rather than broad multimodal use</p>
@@ -1391,7 +1396,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1404,7 +1409,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1417,7 +1422,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -1487,7 +1492,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-05</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-05</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1583,7 +1588,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1596,7 +1601,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1609,7 +1614,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1622,7 +1627,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -1704,7 +1709,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1717,7 +1722,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1730,7 +1735,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-preview">Preview</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-01-12</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-01-12</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1743,7 +1748,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1756,7 +1761,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -1769,7 +1774,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -1782,7 +1787,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-07</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
                             </div>
                             
                         </article>
@@ -1865,7 +1870,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1878,7 +1883,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-31</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-10-31</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1891,7 +1896,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1904,7 +1909,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -1917,7 +1922,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -2013,7 +2018,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2026,7 +2031,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-21</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2039,7 +2044,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2052,7 +2057,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2065,7 +2070,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-preview">Preview</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-01-12</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-01-12</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2078,7 +2083,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2104,7 +2109,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-07</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-07</span></span>
                             </div>
                             
                         </article>
@@ -2199,7 +2204,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-06</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-06</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2212,7 +2217,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-10-16</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2225,7 +2230,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2238,7 +2243,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2251,7 +2256,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2308,7 +2313,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-07-17</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2321,7 +2326,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-06</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-06</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2334,7 +2339,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-05-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-05-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2347,7 +2352,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-11-25</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2360,7 +2365,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2373,7 +2378,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2386,7 +2391,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-free">Free</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2399,7 +2404,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2520,7 +2525,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-02-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2546,7 +2551,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2572,7 +2577,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                             </div>
                             
                         </article>
@@ -2598,7 +2603,7 @@
                             <div class="dates-row">
                                 <span class="badge avail-ga">GA</span>
                                 <span class="badge gate-paid">Paid</span>
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-04</span></span>
+                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2023-11-04</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-08</span></span>
                             </div>
                             
                         </article>
@@ -2659,6 +2664,7 @@
             window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
         }
     </script>
+    <script src="assets/search.js"></script>
     <script>
         function toggleTheme() {
             document.documentElement.classList.toggle('light-mode');

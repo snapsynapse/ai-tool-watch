@@ -24,6 +24,8 @@ const IMPLEMENTATIONS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'implemen
 const HOMEPAGE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
 const CONSTRAINTS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'constraints.html');
 const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
+const COMPARE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'compare.html');
+const DATA_EXPORT_FILE = path.join(__dirname, '..', 'docs', 'assets', 'data.json');
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
 const REPO_PULLS_URL = `${REPO_URL}/pulls`;
@@ -900,6 +902,7 @@ function renderSiteNav(activePage) {
     const navItems = [
         { id: 'home', label: 'Capabilities', href: 'index.html' },
         { id: 'implementations', label: 'Detailed Availability', href: 'implementations.html' },
+        { id: 'compare', label: 'Compare', href: 'compare.html' },
         { id: 'constraints', label: 'Access & Limits', href: 'constraints.html' },
         { id: 'about', label: 'About', href: 'about.html' }
     ];
@@ -915,6 +918,10 @@ function renderSiteNav(activePage) {
             ).join('\n            ')}
         </nav>
         <div class="header-actions">
+            <div class="site-search" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="searchResults">
+                <input type="search" id="siteSearchInput" class="search-input" placeholder="Search features..." aria-label="Search features" aria-autocomplete="list" aria-controls="searchResults" autocomplete="off">
+                <ul id="searchResults" class="search-results" role="listbox" hidden></ul>
+            </div>
             <a href="${REPO_URL}" class="github-link" title="View on GitHub">GitHub</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓</button>
         </div>
@@ -1614,6 +1621,8 @@ function generateHTML(platforms, ontologyData) {
             content.style.top = '';
         }, true);
     </script>
+    <script src="assets/search.js"></script>
+    <script src="assets/export.js"></script>
     ${renderThemeScript()}
 </body>
 </html>`;
@@ -1913,6 +1922,7 @@ function generateCapabilitiesHTML(ontologyData) {
             window.location.href = url.pathname.split('/').pop() + url.search + url.hash;
         }
     </script>
+    <script src="assets/search.js"></script>
     ${renderThemeScript()}
 </body>
 </html>`;
@@ -2063,6 +2073,7 @@ function generateAboutHTML() {
 
         ${renderSharedFooter()}
     </div>
+    <script src="assets/search.js"></script>
     ${renderThemeScript()}
 </body>
 </html>`;
@@ -2318,6 +2329,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
             if (access || surface) filterConstraints();
         });
     </script>
+    <script src="assets/search.js"></script>
     ${renderThemeScript()}
 </body>
 </html>`;
@@ -2334,6 +2346,147 @@ function generateCapabilitiesRedirect() {
 </head>
 <body>
     <p>This page has moved. <a href="index.html">Continue to capabilities</a>.</p>
+</body>
+</html>`;
+}
+
+/**
+ * Build the canonical data export — the intermediate JSON artifact that feeds
+ * client-side search, comparison, export, and (in Phase 5) the public JSON
+ * contract, SEO bridge pages, and MCP read layer.
+ *
+ * This runs before HTML generation so that downstream build steps and runtime
+ * consumers read from the same structured representation.
+ */
+function buildDataExport(ontologyData) {
+    const providers = ontologyData.providers.map(p => ({
+        id: p.id,
+        name: p.name,
+        products: ontologyData.products
+            .filter(prod => prod.provider === p.id)
+            .map(prod => prod.id)
+    }));
+
+    const products = ontologyData.products.map(p => ({
+        id: p.id,
+        name: p.name,
+        provider: p.provider,
+        providerName: p.provider_record ? p.provider_record.name : p.provider,
+        productKind: p.product_kind || 'hosted'
+    }));
+
+    const capabilities = ontologyData.capabilities.map(c => ({
+        id: c.id,
+        name: c.name,
+        group: c.group,
+        summary: c.summary || '',
+        implementationCount: c.implementation_count || 0,
+        productCount: c.product_count || 0
+    }));
+
+    const capabilityMap = new Map(ontologyData.capabilities.map(c => [c.id, c.name]));
+
+    const implementations = ontologyData.implementations
+        .filter(impl => impl.source)
+        .map(impl => {
+            const feature = impl.source.feature;
+            const platform = impl.source.platform;
+            const anchor = impl.source.featureId;
+            const availablePlans = (feature.availability || [])
+                .filter(row => row.available && row.available.includes('✅'))
+                .map(row => row.plan);
+            const surfaceList = (feature.platforms || [])
+                .filter(row => row.available && row.available.includes('✅'))
+                .map(row => slugify(row.platform));
+            const capabilityNames = (impl.capabilities || [])
+                .map(cid => capabilityMap.get(cid) || cid);
+            const evidence = impl.evidence;
+
+            return {
+                id: impl.id,
+                name: feature.name,
+                product: impl.product,
+                provider: impl.provider,
+                productName: platform.name,
+                capabilities: impl.capabilities || [],
+                capabilityNames,
+                category: feature.category || '',
+                gating: feature.gating || '',
+                status: feature.status || '',
+                plans: availablePlans,
+                surfaces: surfaceList,
+                talkingPoint: feature.talking_point || '',
+                launched: feature.launched || '',
+                verified: feature.verified || '',
+                evidenceVerified: evidence ? evidence.verified : null,
+                sourceFile: impl.source_file || null,
+                page: 'implementations',
+                anchor
+            };
+        });
+
+    const hostedProducts = products.filter(p => p.productKind !== 'runtime');
+
+    return {
+        meta: {
+            built: new Date().toISOString(),
+            version: 1,
+            counts: {
+                providers: providers.length,
+                products: hostedProducts.length,
+                capabilities: capabilities.length,
+                implementations: implementations.length
+            }
+        },
+        providers,
+        products,
+        capabilities,
+        implementations
+    };
+}
+
+/**
+ * Generate the comparison page shell HTML.
+ */
+function generateCompareHTML(ontologyData) {
+    const products = ontologyData.products
+        .filter(p => p.product_kind !== 'runtime')
+        .map(p => ({ id: p.id, name: p.name }));
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Products - ${DASHBOARD_TITLE}</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <meta name="description" content="Side-by-side comparison of AI product capabilities">
+    <meta property="og:title" content="Compare Products - ${DASHBOARD_TITLE}">
+    ${renderThemeInit()}
+</head>
+<body>
+    ${renderSiteNav('compare')}
+    <main>
+        <section class="compare-controls">
+            <h2>Compare Products</h2>
+            <p>Select up to 3 products to compare side-by-side.</p>
+            <div class="product-selector" role="group" aria-label="Select products to compare">
+                ${products.map(p => `<label class="product-checkbox"><input type="checkbox" value="${p.id}" onchange="updateComparison()"> ${p.name}</label>`).join('\n                ')}
+            </div>
+        </section>
+        <section id="comparisonResult" class="comparison-result" aria-live="polite"></section>
+        <div class="export-actions" id="compareExport" hidden>
+            <button onclick="exportCSV()" class="export-btn">Export CSV</button>
+            <button onclick="exportJSON()" class="export-btn">Export JSON</button>
+        </div>
+    </main>
+    ${renderSharedFooter()}
+    <script src="assets/search.js"></script>
+    <script src="assets/compare.js"></script>
+    <script src="assets/export.js"></script>
+    ${renderThemeScript()}
 </body>
 </html>`;
 }
@@ -2361,22 +2514,37 @@ function main() {
     const totalFeatures = platforms.reduce((sum, p) => sum + p.features.length, 0);
     console.log(`\nParsed ${totalFeatures} features across ${platforms.length} platforms.`);
 
-    // Generate HTML
+    // Load and enrich ontology data
     const ontologyData = loadOntologyData(platforms);
+
+    // Ensure output directories exist
+    const outputDir = path.dirname(IMPLEMENTATIONS_OUTPUT_FILE);
+    const assetsDir = path.join(outputDir, 'assets');
+    if (!fs.existsSync(assetsDir)) {
+        fs.mkdirSync(assetsDir, { recursive: true });
+    }
+
+    // Phase 1: Build canonical data export (intermediate artifact)
+    // This is the structured representation that feeds search, compare, export,
+    // and will become the Phase 5 public JSON contract.
+    const dataExport = buildDataExport(ontologyData);
+    const dataExportJSON = JSON.stringify(dataExport);
+    fs.writeFileSync(DATA_EXPORT_FILE, dataExportJSON);
+    const counts = dataExport.meta.counts;
+    console.log(`\n✅ Data export written to ${DATA_EXPORT_FILE}`);
+    console.log(`   ${counts.providers} providers, ${counts.products} products, ${counts.capabilities} capabilities, ${counts.implementations} implementations (${(dataExportJSON.length / 1024).toFixed(1)} KB)`);
+
+    // Phase 2: Generate HTML views from ontology data
     const implementationsHTML = generateHTML(platforms, ontologyData);
     const homepageHTML = generateCapabilitiesHTML(ontologyData);
     const constraintsHTML = generateConstraintsHTML(ontologyData, platforms);
+    const compareHTML = generateCompareHTML(ontologyData);
     const redirectHTML = generateCapabilitiesRedirect();
+    const aboutHTML = generateAboutHTML();
 
-    // Ensure output directory exists
-    const outputDir = path.dirname(IMPLEMENTATIONS_OUTPUT_FILE);
-    if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
-    }
-
-    // Write output
+    // Phase 3: Write HTML output
     fs.writeFileSync(HOMEPAGE_OUTPUT_FILE, homepageHTML);
-    console.log(`\n✅ Homepage written to ${HOMEPAGE_OUTPUT_FILE}`);
+    console.log(`✅ Homepage written to ${HOMEPAGE_OUTPUT_FILE}`);
     console.log(`   File size: ${(homepageHTML.length / 1024).toFixed(1)} KB`);
 
     fs.writeFileSync(IMPLEMENTATIONS_OUTPUT_FILE, implementationsHTML);
@@ -2387,11 +2555,13 @@ function main() {
     console.log(`✅ Constraint view written to ${CONSTRAINTS_OUTPUT_FILE}`);
     console.log(`   File size: ${(constraintsHTML.length / 1024).toFixed(1)} KB`);
 
+    fs.writeFileSync(COMPARE_OUTPUT_FILE, compareHTML);
+    console.log(`✅ Compare page written to ${COMPARE_OUTPUT_FILE}`);
+    console.log(`   File size: ${(compareHTML.length / 1024).toFixed(1)} KB`);
+
     fs.writeFileSync(CAPABILITIES_REDIRECT_FILE, redirectHTML);
     console.log(`✅ Capabilities redirect written to ${CAPABILITIES_REDIRECT_FILE}`);
 
-    // Generate about page from README
-    const aboutHTML = generateAboutHTML();
     const aboutFile = path.join(outputDir, 'about.html');
     fs.writeFileSync(aboutFile, aboutHTML);
     console.log(`✅ About page written to ${aboutFile}`);

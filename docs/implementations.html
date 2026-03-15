@@ -47,10 +47,15 @@
         <nav class="site-nav" id="siteNav" aria-label="Main navigation">
             <a href="index.html" class="site-nav-link" onclick="passTheme(this)">Capabilities</a>
             <a href="implementations.html" class="site-nav-link active" onclick="passTheme(this)">Detailed Availability</a>
+            <a href="compare.html" class="site-nav-link" onclick="passTheme(this)">Compare</a>
             <a href="constraints.html" class="site-nav-link" onclick="passTheme(this)">Access & Limits</a>
             <a href="about.html" class="site-nav-link" onclick="passTheme(this)">About</a>
         </nav>
         <div class="header-actions">
+            <div class="site-search" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="searchResults">
+                <input type="search" id="siteSearchInput" class="search-input" placeholder="Search features..." aria-label="Search features" aria-autocomplete="list" aria-controls="searchResults" autocomplete="off">
+                <ul id="searchResults" class="search-results" role="listbox" hidden></ul>
+            </div>
             <a href="https://github.com/snapsynapse/ai-capability-reference" class="github-link" title="View on GitHub">GitHub</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓</button>
         </div>
@@ -2777,7 +2782,7 @@
             <div class="platform-header">
                 <h2><img src="https://www.alibaba.com/favicon.ico" alt="Alibaba" class="platform-logo">Alibaba</h2>
                 <div class="platform-meta">
-                    <span>3 model access records · Verified: 2026-02-22</span>
+                    <span>3 model access records · Verified: 2026-03-15</span>
                 </div>
             </div>
             <div class="pricing-bar">
@@ -2804,7 +2809,7 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-2-5-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-2-5-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                         </div>
                     </div>
                 </div>
@@ -2827,7 +2832,7 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-3-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-3-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                         </div>
                     </div>
                 </div>
@@ -2850,7 +2855,7 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-coder')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-coder')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                         </div>
                     </div>
                 </div>
@@ -2861,7 +2866,7 @@
             <div class="platform-header">
                 <h2><img src="https://deepseek.com/favicon.ico" alt="DeepSeek" class="platform-logo">DeepSeek</h2>
                 <div class="platform-meta">
-                    <span>1 model access record · Verified: 2026-02-22</span>
+                    <span>1 model access record · Verified: 2026-03-15</span>
                 </div>
             </div>
             <div class="pricing-bar">
@@ -2888,7 +2893,7 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('deepseek-open-models-deepseek-v3-deepseek-r1')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-02-22</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('deepseek-open-models-deepseek-v3-deepseek-r1')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-03-15</span></span>
                         </div>
                     </div>
                 </div>
@@ -3908,7 +3913,8 @@
                 launched: "2023-05",
                 verified: "2026-03-07",
                 checked: "2026-03-07",
-                changes: [{ date: "2026-03-07T12:00Z", change: "Launch date aligned to official LM Studio statement that the product launched in May 2023 (month precision only)" },
+                changes: [{ date: "2026-03-07T12:00Z", change: "[Verified] Updated for 0.4.x line: llmster headless daemon, continuous batching, parallel requests, OpenAI/Anthropic API compatibility, LM Link remote access; terminal platform now supported" },
+                { date: "2026-03-07T12:00Z", change: "Launch date aligned to official LM Studio statement that the product launched in May 2023 (month precision only)" },
                 { date: "2023-05", change: "Initial entry" }]
             },
             "runtime-ollama": {
@@ -3923,11 +3929,10 @@
             "runtime-text-generation-webui": {
                 name: "text-generation-webui",
                 platform: "oobabooga Runtime",
-                launched: "2023-02-27T12:00Z",
+                launched: "",
                 verified: "2026-03-07",
                 checked: "2026-03-07",
-                changes: [{ date: "2026-03-07T12:00Z", change: "Launch date aligned to earliest public official repo evidence found (issue activity on February 27, 2023)" },
-                { date: "2023-02-27T12:00Z", change: "Initial entry" }]
+                changes: []
             }
         };
     </script>
@@ -4286,6 +4291,8 @@
             content.style.top = '';
         }, true);
     </script>
+    <script src="assets/search.js"></script>
+    <script src="assets/export.js"></script>
     <script>
         function toggleTheme() {
             document.documentElement.classList.toggle('light-mode');
