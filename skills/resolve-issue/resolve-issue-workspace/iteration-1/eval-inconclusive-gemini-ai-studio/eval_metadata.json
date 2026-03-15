@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "inconclusive-gemini-ai-studio",
+  "prompt": "/resolve-issue 272",
+  "assertions": [
+    "Identifies correct resolution type (no-change close — AI Studio is still GA and free)",
+    "Addresses the 'deprecated status' potential change mentioned in the issue",
+    "The gh issue close command is syntactically valid bash",
+    "Bumps Checked date to today (2026-03-15) in proposed changes",
+    "Does NOT change the status field to deprecated (would be incorrect)"
+  ]
+}

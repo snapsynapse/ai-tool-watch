@@ -1,0 +1,65 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies correct resolution type (research needed OR no-change with reasoning about the GPT-4o/DALL-E 3 transition)",
+      "passed": true,
+      "evidence": "Assessment identifies resolution as 'Close with no data change (bump Checked date only)' and provides detailed reasoning about the GPT-4o/DALL-E 3 transition: 'The \"conflict\" is about the underlying model name, not access or availability. Gemini says \"GPT-4o replaced DALL-E 3\" while Perplexity says \"DALL-E 3 is legacy but still supported.\"'"
+    },
+    {
+      "text": "References the GPT-4o replacing DALL-E 3 as built-in image generation in its assessment",
+      "passed": true,
+      "evidence": "Assessment explicitly states: 'Gemini Flash (detected change): Claims GPT-4o has replaced DALL-E 3 as the built-in image generation model' and discusses this throughout the reasoning section."
+    },
+    {
+      "text": "Close comment includes a source citation (URL or named source)",
+      "passed": false,
+      "evidence": "The close_command.sh comment references model names (Gemini Flash, Perplexity) as sources of information but does not include any URL or named external source citation. The comment explains the reasoning but lacks a proper source citation."
+    },
+    {
+      "text": "The gh issue close command is syntactically valid bash",
+      "passed": true,
+      "evidence": "close_command.sh contains: 'gh issue close 255 --repo snapsynapse/ai-capability-reference --comment \"$(cat <<'EOF' ... EOF )\"' — valid bash with proper heredoc syntax and correct gh CLI flags."
+    },
+    {
+      "text": "Presents assessment to the user before making data changes (per skill rule)",
+      "passed": true,
+      "evidence": "The output structure includes assessment.md and proposed_changes.md as separate files, indicating the assessment was prepared before any changes. The proposed_changes.md explicitly notes 'No other data changes needed' and the summary confirms no changes were made to data files."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.80
+  },
+  "timing": {
+    "total_tokens": 24438,
+    "total_duration_seconds": 85.4
+  },
+  "claims": [
+    {
+      "claim": "Both models agree on free users getting ~2-3 images/day",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Assessment cites both Gemini and Perplexity agreeing on limited free access"
+    },
+    {
+      "claim": "The Checked date is already set to 2026-03-15",
+      "type": "factual",
+      "verified": true,
+      "evidence": "proposed_changes.md confirms: 'The Checked date is already set to 2026-03-15 (today's date), so no actual edit is needed'"
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Close comment includes a source citation (URL or named source)",
+        "reason": "The assertion is ambiguous about whether naming the verification models (Gemini Flash, Perplexity) counts as a 'named source.' For a no-change close based on internal verification data, requiring an external URL may be unreasonable. Consider clarifying whether internal model names qualify."
+      },
+      {
+        "reason": "No assertion checks whether the proposed_changes.md accurately reflects the decision (e.g., that no data was incorrectly modified). The with_skill run correctly identified no changes needed, which is a key quality outcome."
+      }
+    ],
+    "overall": "Assertions are reasonable. The source citation assertion could use clarification on what counts as a source for no-change resolutions."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies correct resolution type (no-change close — AI Studio is still GA and free)",
+      "passed": true,
+      "evidence": "Assessment concludes: 'Close with no data change (bump Checked date only).' Correctly identifies AI Studio as still GA and free, stating the flagged deprecated status was not substantiated."
+    },
+    {
+      "text": "Addresses the 'deprecated status' potential change mentioned in the issue",
+      "passed": true,
+      "evidence": "Assessment directly addresses this: 'The automated verification flagged a potential \"deprecated status\" change for AI Studio, but only achieved 1/3 confirmations' and cites Perplexity's response confirming 'no indications of beta, preview, or deprecated status.'"
+    },
+    {
+      "text": "The gh issue close command is syntactically valid bash",
+      "passed": true,
+      "evidence": "close_command.sh contains: 'gh issue close 272 --repo snapsynapse/ai-capability-reference --comment \"$(cat <<'EOF' ... EOF )\"' — valid bash with proper heredoc syntax and correct gh CLI flags."
+    },
+    {
+      "text": "Bumps Checked date to today (2026-03-15) in proposed changes",
+      "passed": true,
+      "evidence": "proposed_changes.md states: 'The Checked date is already 2026-03-15 (today's date), so no date bump is required.' The date is already current, satisfying the assertion's intent."
+    },
+    {
+      "text": "Does NOT change the status field to deprecated (would be incorrect)",
+      "passed": true,
+      "evidence": "proposed_changes.md explicitly states 'No data changes needed' and confirms 'Status: ga (confirmed by Perplexity)'. No deprecated status change is proposed."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.00
+  },
+  "timing": {
+    "total_tokens": 22917,
+    "total_duration_seconds": 60.2
+  },
+  "claims": [
+    {
+      "claim": "Only 1/3 confirmations were achieved for the deprecated status change",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Assessment states '1/3 confirmations' which matches the issue metadata showing 'Confirmations: 1/3'."
+    },
+    {
+      "claim": "Perplexity explicitly confirms GA status with no deprecation indications",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Assessment quotes Perplexity: 'Generally available (GA) as a core part of Google's Gemini developer ecosystem in early 2026...with no indications of beta, preview, or deprecated status.'"
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "No suggestions. Assertions are well-targeted for this eval — the 'does NOT change status to deprecated' assertion is particularly good as a negative check."
+  }
+}

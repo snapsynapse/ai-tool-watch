@@ -1,0 +1,62 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies correct resolution type (research needed OR no-change with reasoning about the GPT-4o/DALL-E 3 transition)",
+      "passed": false,
+      "evidence": "Assessment identifies resolution as 'Data Update Required' and proposes 5 changes including gating correction (paid->free), adding Team/Enterprise rows, adding model transition note, and changelog entry. While it does reason about the GPT-4o/DALL-E 3 transition, the resolution type of 'data correction' goes beyond what was needed — the core conflict was a terminology issue and the existing data was arguably correct."
+    },
+    {
+      "text": "References the GPT-4o replacing DALL-E 3 as built-in image generation in its assessment",
+      "passed": true,
+      "evidence": "Assessment section 3 states: 'Gemini Flash reports that GPT-4o has replaced DALL-E 3 as the built-in image generation model in ChatGPT. This is a significant factual change.' Also discussed in the conflict explanation."
+    },
+    {
+      "text": "Close comment includes a source citation (URL or named source)",
+      "passed": false,
+      "evidence": "The close_command.sh comment describes changes made but does not include any URL or external source citation. It references 'project convention' but no actual external source."
+    },
+    {
+      "text": "The gh issue close command is syntactically valid bash",
+      "passed": true,
+      "evidence": "close_command.sh contains: 'gh issue close 255 --repo snapsynapse/ai-capability-reference --comment \"$(cat <<'EOF' ... EOF )\"' — valid bash with proper heredoc syntax and correct gh CLI flags."
+    },
+    {
+      "text": "Presents assessment to the user before making data changes (per skill rule)",
+      "passed": true,
+      "evidence": "Output includes separate assessment.md, proposed_changes.md, and summary.md files. The summary notes 'TEST RUN — No changes were committed and no issue was closed. All outputs saved to the evaluation directory.' This indicates the assessment was presented as a proposal, not applied directly."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.60
+  },
+  "timing": {
+    "total_tokens": 33265,
+    "total_duration_seconds": 88.8
+  },
+  "claims": [
+    {
+      "claim": "Gating field should be 'free' based on project convention (Deep Research uses free with warning)",
+      "type": "factual",
+      "verified": false,
+      "evidence": "This claim about project convention may or may not be accurate — without verifying the Deep Research entry, it's unconfirmable from the outputs alone. The with_skill run disagrees, arguing 'paid' gating with warning markers is the correct convention for severely limited free access."
+    },
+    {
+      "claim": "Team and Enterprise rows are missing compared to other ChatGPT features",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Cannot verify from outputs alone whether other ChatGPT features consistently include Team/Enterprise rows."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Identifies correct resolution type (research needed OR no-change with reasoning about the GPT-4o/DALL-E 3 transition)",
+        "reason": "This assertion accepts both 'research needed' and 'no-change' as correct, which is flexible. The without_skill run chose 'data correction' instead, which is a third option. The assertion could be more precise about what makes a resolution 'correct' for this specific conflict scenario."
+      }
+    ],
+    "overall": "The without_skill run over-corrected by proposing unnecessary data changes. The assertions adequately catch this divergence through the resolution type check."
+  }
+}

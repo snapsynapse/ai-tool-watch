@@ -1,0 +1,12 @@
+{
+  "eval_id": 0,
+  "eval_name": "conflict-chatgpt-dalle",
+  "prompt": "/resolve-issue 255",
+  "assertions": [
+    "Identifies correct resolution type (research needed OR no-change with reasoning about the GPT-4o/DALL-E 3 transition)",
+    "References the GPT-4o replacing DALL-E 3 as built-in image generation in its assessment",
+    "Close comment includes a source citation (URL or named source)",
+    "The gh issue close command is syntactically valid bash",
+    "Presents assessment to the user before making data changes (per skill rule)"
+  ]
+}

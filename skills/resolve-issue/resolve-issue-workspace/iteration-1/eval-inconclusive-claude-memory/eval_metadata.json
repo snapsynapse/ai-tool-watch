@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "inconclusive-claude-memory",
+  "prompt": "/resolve-issue 269",
+  "assertions": [
+    "Uses external research (Perplexity API call or URL fetch) rather than relying on own knowledge about Claude",
+    "Explicitly acknowledges the conflict-of-interest rule for Claude/Anthropic data",
+    "Identifies correct resolution type (likely no-change close since Perplexity couldn't confirm changes)",
+    "The gh issue close command is syntactically valid bash",
+    "Bumps Checked date to today (2026-03-15) in proposed changes"
+  ]
+}

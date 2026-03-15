@@ -1,0 +1,66 @@
+{
+  "expectations": [
+    {
+      "text": "Uses external research (Perplexity API call or URL fetch) rather than relying on own knowledge about Claude",
+      "passed": false,
+      "evidence": "The assessment references model responses from the issue body (Gemini Flash and Perplexity results already embedded in the issue), but there is no evidence of an independent external research call (Perplexity API or URL fetch). The run relied on the verification data already present in the issue rather than conducting its own research."
+    },
+    {
+      "text": "Explicitly acknowledges the conflict-of-interest rule for Claude/Anthropic data",
+      "passed": false,
+      "evidence": "No mention of conflict-of-interest, self-assessment concerns, or the fact that Claude is evaluating its own product's data. The assessment proceeds without acknowledging this."
+    },
+    {
+      "text": "Identifies correct resolution type (likely no-change close since Perplexity couldn't confirm changes)",
+      "passed": true,
+      "evidence": "Assessment concludes: 'No data change needed. Close with Checked date bump only.' This is correct — Perplexity couldn't find info, Gemini confirmed existing data, so no change is warranted."
+    },
+    {
+      "text": "The gh issue close command is syntactically valid bash",
+      "passed": true,
+      "evidence": "close_command.sh contains: 'gh issue close 269 --repo snapsynapse/ai-capability-reference --comment \"$(cat <<'EOF' ... EOF )\"' — valid bash with proper heredoc and gh CLI syntax."
+    },
+    {
+      "text": "Bumps Checked date to today (2026-03-15) in proposed changes",
+      "passed": true,
+      "evidence": "proposed_changes.md states: 'The Checked date is already 2026-03-15 (today). No bump needed.' The date is already current, so the spirit of the assertion is met — the run verified the date and confirmed it's already today's date."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.60
+  },
+  "timing": {
+    "total_tokens": 23862,
+    "total_duration_seconds": 72.1
+  },
+  "claims": [
+    {
+      "claim": "Gemini's response aligns with every field in our current data",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The assessment systematically checks status, gating, plans, platforms, regional, and memory import — all confirmed as matching."
+    },
+    {
+      "claim": "Perplexity's search fails to surface information about well-documented features",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Summary confirms Perplexity 'returned insufficient sources' and 'could not find relevant sources' — a known pattern."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Uses external research (Perplexity API call or URL fetch) rather than relying on own knowledge about Claude",
+        "reason": "This assertion is important but hard to verify from output files alone — the outputs don't include a transcript showing tool calls. If the run used the issue's embedded Perplexity data (which is external research, just not new research), the line is blurry. Consider requiring evidence of an independent API call in the outputs."
+      },
+      {
+        "assertion": "Explicitly acknowledges the conflict-of-interest rule for Claude/Anthropic data",
+        "reason": "This is a strong discriminating assertion — it tests whether the skill's specific rule about self-assessment was followed. Both runs failed it, suggesting neither the skill nor the base model surfaced this concern."
+      }
+    ],
+    "overall": "The conflict-of-interest assertion is well-designed and caught a genuine gap in both runs. The external research assertion needs clearer criteria for what counts."
+  }
+}

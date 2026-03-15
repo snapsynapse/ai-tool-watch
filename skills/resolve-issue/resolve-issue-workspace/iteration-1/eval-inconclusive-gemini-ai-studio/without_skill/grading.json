@@ -1,0 +1,61 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies correct resolution type (no-change close — AI Studio is still GA and free)",
+      "passed": true,
+      "evidence": "Assessment concludes: 'Resolution Type: No Data Change Needed' and identifies this as a 'false positive from the automated verification system.' Correctly determines AI Studio is still GA and free."
+    },
+    {
+      "text": "Addresses the 'deprecated status' potential change mentioned in the issue",
+      "passed": true,
+      "evidence": "Assessment directly addresses this in point 2: 'Perplexity research contradicts the suggestion' quoting 'no indications of beta, preview, or deprecated status.' Also point 4: 'No real-world signals of deprecation.'"
+    },
+    {
+      "text": "The gh issue close command is syntactically valid bash",
+      "passed": true,
+      "evidence": "close_command.sh contains: 'gh issue close 272 --repo snapsynapse/ai-capability-reference --reason \"not planned\" --comment \"...\"' — valid bash with proper quoting and correct gh CLI flags. Uses --reason flag which is a valid gh option."
+    },
+    {
+      "text": "Bumps Checked date to today (2026-03-15) in proposed changes",
+      "passed": true,
+      "evidence": "proposed_changes.md notes: 'The only minor update that could be made is bumping the Verified date from 2026-03-08 to 2026-03-15.' It also confirms 'Checked' is already current. The Checked date bump is addressed (already at today's date)."
+    },
+    {
+      "text": "Does NOT change the status field to deprecated (would be incorrect)",
+      "passed": true,
+      "evidence": "proposed_changes.md states 'None required' for data changes and confirms 'Status: ga -- confirmed correct (AI Studio is generally available, not deprecated)'. No deprecated status change is proposed."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.00
+  },
+  "timing": {
+    "total_tokens": 31955,
+    "total_duration_seconds": 61.7
+  },
+  "claims": [
+    {
+      "claim": "Only 1/3 verification models agreed on the deprecated suggestion",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Assessment states '1 out of 3 verification models confirmed this change' matching issue metadata."
+    },
+    {
+      "claim": "Google AI Studio remains a core part of Google's developer tooling",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Supported by the Perplexity quote in the assessment confirming it as 'a core part of Google's Gemini developer ecosystem in early 2026.'"
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Both with_skill and without_skill achieved 5/5 on this eval, meaning the assertions don't discriminate between having the skill and not. This eval may be too easy — the correct answer (no change, not deprecated) is fairly obvious from the issue data. Consider adding assertions that test skill-specific behaviors like following particular heuristics or output formatting."
+      }
+    ],
+    "overall": "Assertions are correct but not discriminating — both runs pass all 5. Consider adding skill-specific behavioral assertions to differentiate."
+  }
+}

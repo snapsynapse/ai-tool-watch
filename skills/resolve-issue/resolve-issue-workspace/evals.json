@@ -1,0 +1,47 @@
+{
+  "skill_name": "resolve-issue",
+  "evals": [
+    {
+      "id": 0,
+      "name": "conflict-chatgpt-dalle",
+      "prompt": "/resolve-issue 255",
+      "expected_output": "Resolves verification conflict for ChatGPT DALL-E Image Generation. Should research the GPT-4o vs DALL-E 3 transition, assess whether data needs updating, and close with appropriate comment.",
+      "files": [],
+      "expectations": [
+        "Identifies correct resolution type (research needed OR no-change with reasoning about the GPT-4o/DALL-E 3 transition)",
+        "References the GPT-4o replacing DALL-E 3 as built-in image generation in its assessment",
+        "Close comment includes a source citation (URL or named source)",
+        "The gh issue close command is syntactically valid bash",
+        "Presents assessment to the user before making data changes (per skill rule)"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "inconclusive-claude-memory",
+      "prompt": "/resolve-issue 269",
+      "expected_output": "Resolves inconclusive verification for Claude Memory. Must NOT rely on its own knowledge (conflict of interest rule). Should use external sources to verify current state and close appropriately.",
+      "files": [],
+      "expectations": [
+        "Uses external research (Perplexity API call or URL fetch) rather than relying on own knowledge about Claude",
+        "Explicitly acknowledges the conflict-of-interest rule for Claude/Anthropic data",
+        "Identifies correct resolution type (likely no-change close since Perplexity couldn't confirm changes)",
+        "The gh issue close command is syntactically valid bash",
+        "Bumps Checked date to today (2026-03-15) in proposed changes"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "inconclusive-gemini-ai-studio",
+      "prompt": "/resolve-issue 272",
+      "expected_output": "Resolves inconclusive verification for Gemini AI Studio. Should verify AI Studio is still GA and free, address the deprecated status claim, and close appropriately.",
+      "files": [],
+      "expectations": [
+        "Identifies correct resolution type (no-change close — AI Studio is still GA and free)",
+        "Addresses the 'deprecated status' potential change mentioned in the issue",
+        "The gh issue close command is syntactically valid bash",
+        "Bumps Checked date to today (2026-03-15) in proposed changes",
+        "Does NOT change the status field to deprecated (would be incorrect)"
+      ]
+    }
+  ]
+}
