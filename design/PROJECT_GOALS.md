@@ -16,14 +16,16 @@ The project started as a personal reference and became a public dashboard after 
 
 ## Who this is for
 
-People trying to use AI tools. Specifically:
+People and agents trying to understand AI tools. Specifically:
 
 - **Educators and facilitators** who need to know what their students/participants can access
 - **Individuals** trying to understand what they're paying for (or what they'd get if they upgraded)
 - **Teams** evaluating which AI tools fit their budget and platform constraints
+- **Developers** building tools, integrations, or agents that need structured data about AI product availability
+- **AI agents** that need to answer questions about what AI tools can do, via the JSON API or MCP server
 - **Anyone** tired of parsing marketing pages to find a straight answer
 
-This is not aimed at developers building on AI APIs (though the data may be useful to them). The primary audience is people who interact with AI through consumer-facing products.
+The project serves both human and machine consumers. The site and bridge pages are the human interface. The JSON API and MCP server are the agent interface. Both are first-class access layers backed by the same canonical data.
 
 ## Core philosophy
 
@@ -102,7 +104,7 @@ Consumer-facing AI product capabilities, with emphasis on:
 - API-only capabilities (unless they have a consumer-facing interface)
 - Enterprise/custom pricing (tracked only as "org-only" gating)
 - Model benchmarks or quality comparisons
-- Developer tools and SDKs (with the exception of tools like Claude Code that blur the line)
+- Pure developer SDKs and libraries (with the exception of tools like Claude Code that serve both developer and consumer audiences)
 
 ## The implementation vs. capability distinction
 
@@ -165,22 +167,13 @@ If you're an AI assistant picking up this project:
 4. Be skeptical of your own knowledge about AI platform features — things change fast. Prefer sourced information over training data
 5. If you're editing feature data for your own vendor, say so explicitly in the commit message or PR description so the human reviewer knows to double-check
 
-## Roadmap thinking
-
-`ROADMAP.md` is now the repo's active phase-based roadmap.
-
-It should be read as the bridge between public direction and internal sequencing:
-
-- it explains the current hybrid state clearly
-- it orders the migration work into explicit phases
-- it keeps deferred UX ideas subordinate to ontology, data-quality, and maintainability work
-
-The governing near-term priorities remain:
+## Priorities
 
 1. **Keep the current data accurate** — this is always the top priority
-2. **Stabilize the ontology-backed shared model** — capability-first and feature-first should remain two views over one system
+2. **Maintain the ontology-backed shared model** — capability-first and feature-first remain two views over one system
 3. **Reduce maintainer burden** — anything that makes it easier for others to contribute or for automation to stay current
-4. **Prepare agent-readable access cleanly** — machine-readable exports and future MCP-style access should reuse the same canonical source of truth
+
+See [ROADMAP.md](ROADMAP.md) for current project status and outstanding work.
 
 Everything else is secondary to those priorities.
 

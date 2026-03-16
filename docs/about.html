@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - AI Capability Reference</title>
     <meta name="description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="https://airef.snapsynapse.com/about.html">
 
-    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - AI Capability Reference">
     <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:image" content="https://airef.snapsynapse.com/assets/og-image.jpg">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About - AI Capability Reference">
     <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta name="twitter:image" content="assets/og-image.jpg">
+    <meta name="twitter:image" content="https://airef.snapsynapse.com/assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     <script>
@@ -85,9 +85,7 @@
 <a href="https://github.com/snapsynapse/ai-capability-reference/releases/latest"><img src="https://img.shields.io/github/v/release/snapsynapse/ai-capability-reference" alt="Latest release" style="max-width:100%;height:auto;border-radius:8px;"></a>
 <h1>AI Capability Reference</h1>
 
-<strong>Previously known as "AI Feature Tracker."</strong> Renamed to "AI Capability Reference" in February 2026 to better reflect the project's ontology-first, capability-centric approach.
-
-<strong>Plain-English reference for AI capabilities, plans, constraints, and implementations.</strong>
+<strong>Plain-English reference for AI capabilities, plans, constraints, and implementations — for humans and agents.</strong>
 
 <a href="https://github.com/snapsynapse/ai-capability-reference" class="site-banner-link about-banner-link" target="_blank" rel="noopener noreferrer"><img src="assets/hero-lightmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-dark" width="1280" height="640"><img src="assets/hero-darkmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-light" width="1280" height="640" loading="lazy"></a>
 
@@ -98,46 +96,48 @@
 <li>"Can I use Claude Cowork on Windows?" (Not yet, macOS only)</li>
 <li>"Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)</li>
 <p></ul></p>
-<p>Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.</p>
+<p>Built for AI facilitators, educators, developers, and AI agents that need accurate, current information about AI tool availability. Browse the site, query the JSON API, or connect an agent via MCP.</p>
 
 <h2>How it's built</h2>
 
-<p>There is no database behind this project. Every piece of data — capabilities, implementations, pricing tiers, platform support, talking points — lives in plain markdown and YAML files under <code>data/</code>. A single build script (<code>node scripts/build.js</code>) reads those files and renders the entire static site into <code>docs/</code>.</p>
+<p>There is no database, no framework, and no dependencies. Every piece of data lives in plain markdown and YAML files under <code>data/</code>. A single zero-dependency Node.js script (<code>scripts/build.js</code>) reads those files and generates the entire site — HTML pages, JSON API, bridge pages, sitemap — into <code>docs/</code>.</p>
 
-<p>That's the whole stack: markdown files, javascript, and Git.</p>
+<p>That's the whole stack: markdown files, one build script, and Git.</p>
 
-<p>This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a <code>.md</code> or <code>.yml</code> file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.</p>
+<p>Contributing doesn't require a dev environment. You edit a <code>.md</code> or <code>.yml</code> file, open a PR, and CI rebuilds the site. If you can read a markdown table, you can read (and fix) the data. See <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/ARCHITECTURE_PATTERNS.md">design/ARCHITECTURE_PATTERNS.md</a> for the full architectural rationale.</p>
 
-<h2>Scope</h2>
+<h2>What's covered</h2>
 
-<p>This reference covers:</p>
+<p>18 capabilities, 72 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.</p>
 
-<ul><li>major consumer-facing AI products with meaningful public usage or visibility</li>
-<li>commercially available AI systems that ordinary people can sign up for and use</li>
-<li>important self-hosted/open model families and runtimes that people can realistically run or choose locally</li>
-<p></ul></p>
-<p>This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.</p>
+<p>All prices are in <strong>USD</strong>. Availability reflects the <strong>United States</strong> region by default.</p>
 
-<p>The <code>~1% market share</code> idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.</p>
+<table><thead><tr><th>Product</th><th>Provider</th><th>Type</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Hosted</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Hosted</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Hosted</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Hosted</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Hosted</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Hosted</td></tr><tr><td><strong>Meta (Llama)</strong></td><td>Meta</td><td>Open model</td></tr><tr><td><strong>Mistral</strong></td><td>Mistral</td><td>Open model</td></tr><tr><td><strong>DeepSeek</strong></td><td>DeepSeek</td><td>Open model</td></tr><tr><td><strong>Alibaba (Qwen)</strong></td><td>Alibaba</td><td>Open model</td></tr><tr><td><strong>Ollama</strong></td><td>Ollama</td><td>Runtime</td></tr><tr><td><strong>LM Studio</strong></td><td>LM Studio</td><td>Runtime</td></tr></tbody></table>
+<p>Scope criteria and watchlist: <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/SCOPE.md">design/SCOPE.md</a>, <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/WATCHLIST.md">design/WATCHLIST.md</a>.</p>
 
-<p>All prices are listed in <strong>USD</strong>. Feature availability and pricing reflect the <strong>United States</strong> region by default; availability may differ in other regions.</p>
-
-<h2>Products Covered</h2>
-
-<table><thead><tr><th>Product</th><th>Vendor</th><th>What's Tracked</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Agent Mode, Canvas, Voice, Sora, DALL-E, Search, Deep Research, Codex, Custom GPTs</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Code, Cowork, MCP, Connectors, Projects, Artifacts, Extended Thinking, Vision</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Office Integration, Designer, Vision, Voice, Agent Builder</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Veo, Live, Project Astra</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Comet Browser, Agent Mode, Pro Search, Focus, Collections, Voice</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Chat, Aurora (images), DeepSearch, Think Mode, Voice</td></tr><tr><td><strong>Meta</strong></td><td>Meta</td><td>Llama 3.3, Llama 4</td></tr><tr><td><strong>Mistral</strong></td><td>Mistral</td><td>Codestral, Mistral Large/Nemo, Mistral Small 3</td></tr><tr><td><strong>DeepSeek</strong></td><td>DeepSeek</td><td>DeepSeek V3 / R1</td></tr><tr><td><strong>Alibaba</strong></td><td>Alibaba</td><td>Qwen 2.5, Qwen 3, Qwen 3.5, Qwen-Coder</td></tr><tr><td><strong>Ollama</strong></td><td>Ollama</td><td>Self-hosted runtime product</td></tr><tr><td><strong>LM Studio</strong></td><td>LM Studio</td><td>Self-hosted runtime product</td></tr></tbody></table>
 <h2>Features</h2>
 
-<ul><li><strong>Plan-by-plan availability</strong> — See exactly which tier unlocks each implementation</li>
-<li><strong>Capability-first view</strong> — Browse plain-English capabilities as the primary entry point</li>
+<h3>Site</h3>
+
+<ul><li><strong>Capability-first view</strong> — Browse plain-English capabilities as the primary entry point</li>
+<li><strong>Plan-by-plan availability</strong> — See exactly which tier unlocks each implementation</li>
 <li><strong>Platform support</strong> — Windows, macOS, Linux, iOS, Android, web, terminal, API</li>
 <li><strong>Talking points</strong> — Ready-to-use sentences for presentations (click to copy)</li>
-<li><strong>Category filtering</strong> — Voice, Coding, Research, Agents, and more</li>
-<li><strong>Price tier filtering</strong> — Find features at your budget</li>
-<li><strong>Provider toggles</strong> — Focus on specific platforms</li>
+<li><strong>Filtering</strong> — By category, price tier, and provider</li>
+<li><strong>Shareable URLs</strong> — Filter state and feature permalinks preserved in URL parameters</li>
 <li><strong>Dark/light mode</strong> — Toggle for your preference</li>
-<li><strong>Permalinks</strong> — Link directly to any feature with shareable URLs</li>
-<li><strong>Shareable URLs</strong> — Filter state preserved in URL parameters</li>
-<li><strong>Maintainer-led</strong> — Managed by SnapSynapse; public issues and PRs welcome</li>
+<li><strong>125 bridge pages</strong> — Programmatic <code>/can/</code>, <code>/compare/</code>, <code>/capability/</code>, and <code>/best-for/</code> pages with schema.org structured data</li>
+<p></ul></p>
+<h3>API and agents</h3>
+
+<ul><li><strong>JSON API</strong> — 10 stable files at <code>docs/api/v1/</code> covering all entity types and derived views (<a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/docs/api/v1/USAGE.md">usage guide</a>)</li>
+<li><strong>MCP server</strong> — 7 read-only tools via <code>scripts/mcp-server.js</code> for agent-queryable access (config: <code>mcp.json</code>)</li>
+<p></ul></p>
+<h3>Automation</h3>
+
+<ul><li><strong>Multi-model verification</strong> — Weekly four-model cascade cross-checks all data with human review gate</li>
+<li><strong>Link integrity</strong> — Weekly URL validation across all evidence sources</li>
+<li><strong>Staleness tracking</strong> — Features not re-verified within 7 days are flagged for the next run</li>
 <p></ul></p>
 <h2>Accessibility</h2>
 
@@ -152,21 +152,17 @@
 <li><strong>ARIA attributes</strong> — Live regions announce filter count changes, decorative images marked with <code>aria-hidden</code></li>
 <li><strong>Semantic HTML</strong> — Proper heading hierarchy, landmark regions, and button/link semantics</li>
 <p></ul></p>
-<p>If you're interested in accessibility tooling, check out <a href="https://github.com/snapsynapse/skill-a11y-audit">skill-a11y-audit</a> — a companion project that automates WCAG audits as a reusable AI skill. If you like what you see here, you'll love that.</p>
+<p>See also: <a href="https://github.com/snapsynapse/skill-a11y-audit">skill-a11y-audit</a>, a companion project that automates WCAG audits as a reusable AI skill.</p>
 
-<h2>Update Cycle</h2>
+<h2>How data stays current</h2>
 
-<p>Data in this reference is kept current through a semi-automated process combining scheduled AI verification with human review.</p>
+<p>Twice a week, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features. Models are skipped when verifying their own vendor's products. A change is only flagged when at least three models agree. Nothing is auto-merged — confirmed changes are surfaced as GitHub issues for human review.</p>
 
-<strong>How it works:</strong>
+<p>Link integrity is checked every Saturday. Features carry a <code>Checked</code> date; anything older than 7 days is prioritized in the next run.</p>
 
-<p>Every Sunday, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features — pricing tiers, platform availability, status, gating, and regional restrictions. To prevent provider bias, models are skipped when verifying features from their own platform (e.g. Gemini is not asked about Google features). A change is only flagged when at least three models agree on a discrepancy. Confirmed changes are surfaced as GitHub issues or pull requests for human review — nothing is auto-merged.</p>
+<p>See <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/VERIFICATION.md">VERIFICATION.md</a> for full documentation, commands, and API key setup.</p>
 
-<p>Link integrity is checked separately every Saturday, catching broken or redirected source URLs across all platforms.</p>
-
-<p>Features are also marked with a <code>Checked</code> date. Anything not re-verified within 7 days is treated as stale and prioritised in the next run.</p>
-
-<h2>How to Contribute</h2>
+<h2>Contributing</h2>
 
 <p>Found outdated info? Want to add a feature? See <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
 
@@ -177,13 +173,77 @@
 <p>4. Run <code>node scripts/validate-ontology.js</code></p>
 <p>5. Submit a PR</p>
 
+<h2>Local development</h2>
+
+<pre><code>git clone https://github.com/snapsynapse/ai-capability-reference.git
+<p>cd ai-capability-reference</p>
+
+<p>node scripts/build.js               # Build the site</p>
+<p>node scripts/sync-evidence.js       # Sync evidence records</p>
+<p>node scripts/validate-ontology.js   # Validate cross-record integrity</p>
+
+<p>open docs/index.html</p>
+<p></code></pre></p>
+
+<p>Build output:</p>
+<ul><li><code>docs/index.html</code> — Capability homepage</li>
+<li><code>docs/implementations.html</code> — Detailed availability matrix</li>
+<li><code>docs/constraints.html</code> — Access & limits</li>
+<li><code>docs/compare.html</code> — Side-by-side product comparison</li>
+<li><code>docs/about.html</code> — About page</li>
+<li><code>docs/api/v1/<em>.json</code> — Machine-readable JSON API (10 files)</li>
+<li><code>docs/can/</em>/</code>, <code>docs/compare/<em>/</code>, <code>docs/capability/</em>/</code>, <code>docs/best-for/*/</code> — 125 bridge pages</li>
+<li><code>docs/sitemap.xml</code> — Dynamic sitemap (131 URLs)</li>
+<p></ul></p>
+<p>Data format: <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/data/_schema.md">data/_schema.md</a>. Ontology schema: <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/SCHEMA_PROPOSAL.md">design/SCHEMA_PROPOSAL.md</a>.</p>
+
+<h2>Deployment</h2>
+
+<p>The site auto-deploys via GitHub Actions on every push to <code>main</code> and on a scheduled rebuild every Monday and Thursday at 6pm Pacific (1am UTC).</p>
+
+<h3>How it works</h3>
+
+<p>1. <strong>Build job</strong> (<code>.github/workflows/build.yml</code>)</p>
+<p>   - Runs <code>node scripts/build.js</code> to regenerate all pages under <code>docs/</code></p>
+<p>   - If output changed, commits it back to <code>main</code> with <code>[skip ci]</code> to prevent loops</p>
+<p>   - Runs on pushes, PRs (validate only, no commit), and the Mon/Thu schedule</p>
+
+<p>2. <strong>Deploy job</strong> (same workflow)</p>
+<p>   - Uploads <code>docs/</code> folder to GitHub Pages</p>
+<p>   - Runs on pushes to <code>main</code> and scheduled builds, not PRs</p>
+
+<p>3. <strong>FTP deploy</strong> (<code>.github/workflows/deploy-ftp.yml</code>)</p>
+<p>   - Parallel deployment to snapsynapse.com via locked ftp</p>
+<p>   - Same Mon/Thu schedule plus push-to-main and manual dispatch</p>
+<p>   - Requires <code>FTP_HOST</code>, <code>FTP_USER</code>, <code>FTP_PASS</code> secrets</p>
+
+<h3>GitHub Pages setup</h3>
+
+<p>To enable GitHub Pages on a fork:</p>
+
+<p>1. Go to <strong>Settings → Pages</strong></p>
+<p>2. Under "Build and deployment", select <strong>GitHub Actions</strong></p>
+<p>3. The workflow will deploy to <code>https://<username>.github.io/ai-capability-reference/</code></p>
+
+<h2>Design documentation</h2>
+
+<p>Architecture, ontology, and project status docs live in <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/">design/</a>:</p>
+
+<ul><li><a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/ARCHITECTURE_PATTERNS.md">ARCHITECTURE_PATTERNS.md</a> — The nine patterns that compose the system</li>
+<li><a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/ONTOLOGY.md">ONTOLOGY.md</a> — Core entity types and relationships</li>
+<li><a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/ACCESS_LAYERS.md">ACCESS_LAYERS.md</a> — SEO, JSON API, and MCP layer design</li>
+<li><a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/ROADMAP.md">ROADMAP.md</a> — Current project status and outstanding work</li>
+<li><a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/design/WHY_THIS_EXISTS.md">WHY_THIS_EXISTS.md</a> — The problem this project was built to solve </li>
+<p></ul></p>
+<p>Skills: <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/skills/">skills/</a> (<a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/skills/README.md">README</a>)</p>
+
 <h2>License</h2>
 
 <p>MIT - see <a href="https://github.com/snapsynapse/ai-capability-reference/blob/main/LICENSE">LICENSE</a></p>
 
 <h2>Credits</h2>
 
-<p>Created by <a href="https://snapsynapse.com">SnapSynapse</a> for the AI training community.</p>
+<p>Created by <a href="https://snapsynapse.com">SnapSynapse</a> for the AI community.</p>
 <p>With help from Claude Code, of course.</p>
 
 <hr>

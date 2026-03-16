@@ -1051,24 +1051,24 @@ function generateHTML(platforms, ontologyData) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}</title>
     <meta name="description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}implementations.html">
 
-    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
     <meta property="og:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
-    <meta property="og:image" content="assets/og-image.jpg">
-    <meta property="og:url" content="${SITE_URL}">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
+    <meta property="og:url" content="${SITE_URL}implementations.html">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
     <meta name="twitter:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
-    <meta name="twitter:image" content="assets/og-image.jpg">
+    <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -1732,7 +1732,10 @@ function generateCapabilitiesHTML(ontologyData) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Capability Reference</title>
     <meta name="description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers. Compare ChatGPT, Claude, Gemini, Copilot, and more.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}">
 
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -1740,13 +1743,13 @@ function generateCapabilitiesHTML(ontologyData) {
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Capability Reference">
     <meta property="og:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
-    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Capability Reference">
     <meta name="twitter:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
-    <meta name="twitter:image" content="assets/og-image.jpg">
+    <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -2019,23 +2022,23 @@ function generateAboutHTML() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - ${DASHBOARD_TITLE}</title>
     <meta name="description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}about.html">
 
-    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - ${DASHBOARD_TITLE}">
     <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About - ${DASHBOARD_TITLE}">
     <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
-    <meta name="twitter:image" content="assets/og-image.jpg">
+    <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -2177,10 +2180,20 @@ function generateConstraintsHTML(ontologyData, platforms) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Capability Reference - Access & Limits</title>
     <meta name="description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}constraints.html">
 
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Capability Reference - Access & Limits">
+    <meta property="og:description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
+    <meta property="og:url" content="${SITE_URL}constraints.html">
+
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
 </head>
@@ -2717,11 +2730,21 @@ function generateCompareHTML(ontologyData) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare Products - ${DASHBOARD_TITLE}</title>
+    <meta name="description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}compare.html">
+
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-    <meta name="description" content="Side-by-side comparison of AI product capabilities">
+
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Compare Products - ${DASHBOARD_TITLE}">
+    <meta property="og:description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
+    <meta property="og:url" content="${SITE_URL}compare.html">
+
     ${renderThemeInit()}
 </head>
 <body>
@@ -2802,8 +2825,10 @@ function renderBridgeShell({ title, canonicalPath, depth, content, structuredDat
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${escapeHTML(title)} - ${DASHBOARD_TITLE}</title>
+    <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${canonicalUrl}">
     <link rel="stylesheet" href="${prefix}assets/styles.css">
+    <link rel="icon" type="image/png" sizes="56x56" href="${prefix}assets/favicon-56.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/apple-touch-icon.png">

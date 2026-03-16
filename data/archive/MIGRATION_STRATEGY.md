@@ -161,4 +161,4 @@ When making changes in this repo during migration:
 
 ## Next Steps
 
-The migration strategy has reached steady state. The next major work is Phase 5 of the roadmap: generating canonical JSON exports from the same ontology-backed source. See [ROADMAP.md](/ROADMAP.md).
+The migration strategy has reached steady state. All five roadmap phases are complete — the project now has a stable ontology, dual-view site, JSON API, SEO bridge pages, and MCP read layer. See [ROADMAP.md](ROADMAP.md) for current status and outstanding work.

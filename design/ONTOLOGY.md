@@ -412,7 +412,7 @@ The repo now materializes the ontology through first-class records:
 - `data/evidence/index.json` — 89 evidence records covering implementations, products, and model-access entries
 - `data/platforms/*.md` — editorial source of truth for implementation details, plan constraints, surfaces, changelog, and evidence inputs
 
-Platform markdown files are the migration-era editorial source. First-class records above are generated or maintained alongside them and validated by `scripts/validate-ontology.js`.
+Platform markdown files are the authoritative editorial source for implementation details. First-class records above are generated or maintained alongside them and validated by `scripts/validate-ontology.js`.
 
 ## Resolved Design Decisions
 

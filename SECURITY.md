@@ -6,7 +6,7 @@ This project is a **static site** served from GitHub Pages. There is no server, 
 
 - The site is generated HTML and CSS from `scripts/build.js`
 - The API (`docs/api/v1/`) is pre-generated JSON files, not a live service
-- The MCP layer (when added) will be a read-only interface over those same JSON files
+- The MCP server (`scripts/mcp-server.js`) is a read-only interface over those same JSON files — 7 tools, zero dependencies, no write access
 - No user input is processed server-side; all filtering and search runs client-side in the browser
 
 ## Attack Surface

@@ -2,9 +2,7 @@
 [![Latest release](https://img.shields.io/github/v/release/snapsynapse/ai-capability-reference)](https://github.com/snapsynapse/ai-capability-reference/releases/latest)
 # AI Capability Reference
 
-**Previously known as "AI Feature Tracker."** Renamed to "AI Capability Reference" in February 2026 to better reflect the project's ontology-first, capability-centric approach.
-
-**Plain-English reference for AI capabilities, plans, constraints, and implementations.**
+**Plain-English reference for AI capabilities, plans, constraints, and implementations — for humans and agents.**
 
 ![AI Capability Reference](docs/assets/og-image.jpg)
 
@@ -17,60 +15,62 @@ A single source of truth for answering questions like:
 - "Can I use Claude Cowork on Windows?" (Not yet, macOS only)
 - "Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)
 
-Built for fellow AI facilitators, educators, designers, and anyone who needs accurate, current information about AI tool availability.
+Built for AI facilitators, educators, developers, and AI agents that need accurate, current information about AI tool availability. Browse the site, query the JSON API, or connect an agent via MCP.
 
 ## How it's built
 
-There is no database behind this project. Every piece of data — capabilities, implementations, pricing tiers, platform support, talking points — lives in plain markdown and YAML files under `data/`. A single build script (`node scripts/build.js`) reads those files and renders the entire static site into `docs/`.
+There is no database, no framework, and no dependencies. Every piece of data lives in plain markdown and YAML files under `data/`. A single zero-dependency Node.js script (`scripts/build.js`) reads those files and generates the entire site — HTML pages, JSON API, bridge pages, sitemap — into `docs/`.
 
-That's the whole stack: markdown files, javascript, and Git.
+That's the whole stack: markdown files, one build script, and Git.
 
-This means contributing doesn't require a dev environment, an ORM, or a running database. You edit a `.md` or `.yml` file, open a PR, and the CI rebuilds the site. Git provides versioning, review, and an audit trail for every change. If you can read a markdown table, you can read (and fix) the data.
+Contributing doesn't require a dev environment. You edit a `.md` or `.yml` file, open a PR, and CI rebuilds the site. If you can read a markdown table, you can read (and fix) the data. See [design/ARCHITECTURE_PATTERNS.md](design/ARCHITECTURE_PATTERNS.md) for the full architectural rationale.
 
-## Scope
+## What's covered
 
-This reference covers:
+18 capabilities, 72 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.
 
-- major consumer-facing AI products with meaningful public usage or visibility
-- commercially available AI systems that ordinary people can sign up for and use
-- important self-hosted/open model families and runtimes that people can realistically run or choose locally
+All prices are in **USD**. Availability reflects the **United States** region by default.
 
-This reference does not aim to catalog every enterprise AI vendor, infrastructure platform, or niche model release.
+| Product | Provider | Type |
+|---|---|---|
+| **ChatGPT** | OpenAI | Hosted |
+| **Claude** | Anthropic | Hosted |
+| **Copilot** | Microsoft | Hosted |
+| **Gemini** | Google | Hosted |
+| **Perplexity** | Perplexity AI | Hosted |
+| **Grok** | xAI | Hosted |
+| **Meta (Llama)** | Meta | Open model |
+| **Mistral** | Mistral | Open model |
+| **DeepSeek** | DeepSeek | Open model |
+| **Alibaba (Qwen)** | Alibaba | Open model |
+| **Ollama** | Ollama | Runtime |
+| **LM Studio** | LM Studio | Runtime |
 
-The `~1% market share` idea is used here as a practical inclusion heuristic, not a strict ontology field, because public usage data is inconsistent and is usually measured at the product level rather than the model level.
-
-All prices are listed in **USD**. Feature availability and pricing reflect the **United States** region by default; availability may differ in other regions.
-
-## Products Covered
-
-| Product | Vendor | What's Tracked |
-|----------|--------|------------------|
-| **ChatGPT** | OpenAI | Agent Mode, Canvas, Voice, Sora, DALL-E, Search, Deep Research, Codex, Custom GPTs |
-| **Claude** | Anthropic | Code, Cowork, MCP, Connectors, Projects, Artifacts, Extended Thinking, Vision |
-| **Copilot** | Microsoft | Office Integration, Designer, Vision, Voice, Agent Builder |
-| **Gemini** | Google | Advanced, NotebookLM, AI Studio, Deep Research, Gems, Workspace, Imagen, Veo, Live, Project Astra |
-| **Perplexity** | Perplexity AI | Comet Browser, Agent Mode, Pro Search, Focus, Collections, Voice |
-| **Grok** | xAI | Chat, Aurora (images), DeepSearch, Think Mode, Voice |
-| **Meta** | Meta | Llama 3.3, Llama 4 |
-| **Mistral** | Mistral | Codestral, Mistral Large/Nemo, Mistral Small 3 |
-| **DeepSeek** | DeepSeek | DeepSeek V3 / R1 |
-| **Alibaba** | Alibaba | Qwen 2.5, Qwen 3, Qwen 3.5, Qwen-Coder |
-| **Ollama** | Ollama | Self-hosted runtime product |
-| **LM Studio** | LM Studio | Self-hosted runtime product |
+Scope criteria and watchlist: [design/SCOPE.md](design/SCOPE.md), [design/WATCHLIST.md](design/WATCHLIST.md).
 
 ## Features
 
-- **Plan-by-plan availability** — See exactly which tier unlocks each implementation
+### Site
+
 - **Capability-first view** — Browse plain-English capabilities as the primary entry point
+- **Plan-by-plan availability** — See exactly which tier unlocks each implementation
 - **Platform support** — Windows, macOS, Linux, iOS, Android, web, terminal, API
 - **Talking points** — Ready-to-use sentences for presentations (click to copy)
-- **Category filtering** — Voice, Coding, Research, Agents, and more
-- **Price tier filtering** — Find features at your budget
-- **Provider toggles** — Focus on specific platforms
+- **Filtering** — By category, price tier, and provider
+- **Shareable URLs** — Filter state and feature permalinks preserved in URL parameters
 - **Dark/light mode** — Toggle for your preference
-- **Permalinks** — Link directly to any feature with shareable URLs
-- **Shareable URLs** — Filter state preserved in URL parameters
-- **Maintainer-led** — Managed by SnapSynapse; public issues and PRs welcome
+- **125 bridge pages** — Programmatic `/can/`, `/compare/`, `/capability/`, and `/best-for/` pages with schema.org structured data
+
+### API and agents
+
+- **JSON API** — 10 stable files at `docs/api/v1/` covering all entity types and derived views ([usage guide](docs/api/v1/USAGE.md))
+- **MCP server** — 7 read-only tools via `scripts/mcp-server.js` for agent-queryable access (config: `mcp.json`)
+
+### Automation
+
+- **Multi-model verification** — Weekly four-model cascade cross-checks all data with human review gate
+- **Link integrity** — Weekly URL validation across all evidence sources
+- **Staleness tracking** — Features not re-verified within 7 days are flagged for the next run
 
 ## Accessibility
 
@@ -85,21 +85,17 @@ This site is designed to meet WCAG 2.1 AA standards:
 - **ARIA attributes** — Live regions announce filter count changes, decorative images marked with `aria-hidden`
 - **Semantic HTML** — Proper heading hierarchy, landmark regions, and button/link semantics
 
-If you're interested in accessibility tooling, check out [skill-a11y-audit](https://github.com/snapsynapse/skill-a11y-audit) — a companion project that automates WCAG audits as a reusable AI skill. If you like what you see here, you'll love that.
+See also: [skill-a11y-audit](https://github.com/snapsynapse/skill-a11y-audit), a companion project that automates WCAG audits as a reusable AI skill.
 
-## Update Cycle
+## How data stays current
 
-Data in this reference is kept current through a semi-automated process combining scheduled AI verification with human review.
+Twice a week, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features. Models are skipped when verifying their own vendor's products. A change is only flagged when at least three models agree. Nothing is auto-merged — confirmed changes are surfaced as GitHub issues for human review.
 
-**How it works:**
+Link integrity is checked every Saturday. Features carry a `Checked` date; anything older than 7 days is prioritized in the next run.
 
-Every Sunday, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features — pricing tiers, platform availability, status, gating, and regional restrictions. To prevent provider bias, models are skipped when verifying features from their own platform (e.g. Gemini is not asked about Google features). A change is only flagged when at least three models agree on a discrepancy. Confirmed changes are surfaced as GitHub issues or pull requests for human review — nothing is auto-merged.
+See [VERIFICATION.md](VERIFICATION.md) for full documentation, commands, and API key setup.
 
-Link integrity is checked separately every Saturday, catching broken or redirected source URLs across all platforms.
-
-Features are also marked with a `Checked` date. Anything not re-verified within 7 days is treated as stale and prioritised in the next run.
-
-## How to Contribute
+## Contributing
 
 Found outdated info? Want to add a feature? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -110,185 +106,49 @@ Quick version:
 4. Run `node scripts/validate-ontology.js`
 5. Submit a PR
 
-## Automated Verification
-
-This project includes an automated feature verification system that uses multiple AI models to cross-reference all feature data.
-
-### What gets verified
-
-- **Pricing tiers** — Which subscription plans have access
-- **Platform availability** — Windows, macOS, Linux, iOS, Android, web, terminal, API
-- **Status** — GA, Beta, Preview, Deprecated
-- **Gating** — Free, Paid, Invite-only, Org-only
-- **Regional availability** — Global vs region-restricted features
-- **URLs** — Feature page links are valid and accessible
-
-### How it works
-
-1. **Multi-model cascade** — Queries Gemini, Perplexity, Grok (X/Twitter), and Claude
-2. **Bias prevention** — Skips same-provider models (e.g., won't ask Gemini about Google features)
-3. **Consensus required** — Needs 3 models to confirm a change before flagging
-4. **Auto-changelog** — Confirmed changes are logged to each feature's changelog
-5. **Human review** — Creates issues/PRs for review, never auto-merges
-
-### Running verification
+## Local development
 
 ```bash
-# Verify all features
-node scripts/verify-features.js
-
-# Verify a specific platform
-node scripts/verify-features.js --platform claude
-
-# Check only stale features (>7 days since last check)
-node scripts/verify-features.js --stale-only
-
-# Dry run (no issues created)
-node scripts/verify-features.js --dry-run
-```
-
-### Link checking
-
-Two link checkers serve different purposes:
-
-**CI checker** (`check-links.js`) — runs in GitHub Actions weekly. Uses canonical categories from the collaboration protocol:
-- `ok`
-- `broken`
-- `soft-blocked` (e.g., persistent 403/bot protection; informational)
-- `rate-limited` (429; informational)
-- `timeout`
-- `needs-manual-review`
-
-The checker fails CI on actionable problems (`broken`, `timeout`) while keeping soft-blocked/rate-limited as non-actionable signals.
-
-```bash
-node scripts/check-links.js              # Check all links
-node scripts/check-links.js --broken-only # Show only broken links
-```
-
-**Browser checker** (`check-links-browser.js`) — runs locally through a real Chrome browser via [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/). Bypasses all bot protection, captures page titles for content verification, and shows redirects. Zero external dependencies.
-
-```bash
-# Terminal 1: Start Chrome with remote debugging
-# (--user-data-dir avoids conflicts with your normal browser session)
-
-# macOS (Chrome)
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
-  --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-link-check
-
-# macOS (Brave, Edge, or any Chromium browser also works)
-
-# Linux
-google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-link-check
-
-# Terminal 2: Run the checker
-node scripts/check-links-browser.js                # All platforms
-node scripts/check-links-browser.js -p claude       # One platform
-node scripts/check-links-browser.js --help          # All options
-```
-
-Requires API keys (verification only): `GEMINI_API_KEY`, `PERPLEXITY_API_KEY`, `XAI_API_KEY`, `ANTHROPIC_API_KEY`
-
-See [VERIFICATION.md](VERIFICATION.md) for full documentation.
-
-## Secret Scanning
-
-This repo includes a lightweight secret scan for the current tree and full Git history.
-
-```bash
-node scripts/scan-secrets.js
-```
-
-Use `--current-only` or `--history-only` to narrow the scan when needed.
-
-## Local Development
-
-```bash
-# Clone the repo
 git clone https://github.com/snapsynapse/ai-capability-reference.git
 cd ai-capability-reference
 
-# Build the dashboard
-node scripts/build.js
+node scripts/build.js               # Build the site
+node scripts/sync-evidence.js       # Sync evidence records
+node scripts/validate-ontology.js   # Validate cross-record integrity
 
-# Sync ontology-native evidence records
-node scripts/sync-evidence.js
-
-# Validate ontology records
-node scripts/validate-ontology.js
-
-# Open it
 open docs/index.html
 ```
 
-Archived platform bundles live under `data/archive/platforms/` for historical reference, and `node scripts/build.js` reads only active evidence from `data/platforms/`.
-Ontology-native evidence records live in `data/evidence/index.json` and are seeded with `node scripts/sync-evidence.js`.
+Build output:
+- `docs/index.html` — Capability homepage
+- `docs/implementations.html` — Detailed availability matrix
+- `docs/constraints.html` — Access & limits
+- `docs/compare.html` — Side-by-side product comparison
+- `docs/about.html` — About page
+- `docs/api/v1/*.json` — Machine-readable JSON API (10 files)
+- `docs/can/*/`, `docs/compare/*/`, `docs/capability/*/`, `docs/best-for/*/` — 125 bridge pages
+- `docs/sitemap.xml` — Dynamic sitemap (131 URLs)
 
-## Skills
-
-Canonical cross-platform skill sources live under [skills](skills/).
-
-All repo skills should use `skills/<name>/src/` as the only canonical source location. Do not commit mirrored skill copies under `.claude/skills/`, `.perplexity/skills/`, or other platform-local folders; those are local install locations, not source of truth.
-
-Repo skills also assume the companion [skill-provenance](https://github.com/snapsynapse/skill-provenance) metaskill is available anywhere the bundles are imported. Treat it as a required dependency for bundle identity, manifest continuity, and cross-surface handoff.
-
-Build platform exports with:
-
-```bash
-node scripts/build-skill-bundles.js
-```
-
-That generates Perplexity, Claude, and Codex-ready outputs under each skill's local `dist/` directory without turning the repo itself into a pile of hand-maintained exports.
-
-## Data Format
-
-The project uses an ontology-backed data model with first-class records for capabilities, providers, products, implementations, model-access entries, and evidence. See [design/SCHEMA_PROPOSAL.md](design/SCHEMA_PROPOSAL.md) for full details.
-
-Platform implementation data is stored in simple markdown files. Example:
-
-```markdown
-## Feature Name
-
-| Property | Value |
-|----------|-------|
-| Category | agent |
-| Status | ga |
-
-### Availability
-
-| Plan | Available | Limits | Notes |
-|------|-----------|--------|-------|
-| Free | ❌ | — | Not available |
-| Plus | ✅ | 40/month | Message limit |
-
-### Talking Point
-
-> "Your presenter-ready sentence with **key details bolded**."
-
-### Sources
-
-- [Official docs](https://example.com)
-```
-
-See [data/_schema.md](data/_schema.md) for the full specification.
+Data format: [data/_schema.md](data/_schema.md). Ontology schema: [design/SCHEMA_PROPOSAL.md](design/SCHEMA_PROPOSAL.md).
 
 ## Deployment
 
-The site auto-deploys via GitHub Actions when changes are pushed to `main`.
+The site auto-deploys via GitHub Actions on every push to `main` and on a scheduled rebuild every Monday and Thursday at 6pm Pacific (1am UTC).
 
 ### How it works
 
 1. **Build job** (`.github/workflows/build.yml`)
    - Runs `node scripts/build.js` to regenerate all pages under `docs/`
    - If output changed, commits it back to `main` with `[skip ci]` to prevent loops
-   - Runs on both pushes and PRs (PRs only validate the build, no commit)
+   - Runs on pushes, PRs (validate only, no commit), and the Mon/Thu schedule
 
 2. **Deploy job** (same workflow)
    - Uploads `docs/` folder to GitHub Pages
-   - Only runs on pushes to `main`, not PRs
+   - Runs on pushes to `main` and scheduled builds, not PRs
 
 3. **FTP deploy** (`.github/workflows/deploy-ftp.yml`)
    - Parallel deployment to snapsynapse.com via locked ftp
+   - Same Mon/Thu schedule plus push-to-main and manual dispatch
    - Requires `FTP_HOST`, `FTP_USER`, `FTP_PASS` secrets
 
 ### GitHub Pages setup
@@ -299,18 +159,17 @@ To enable GitHub Pages on a fork:
 2. Under "Build and deployment", select **GitHub Actions**
 3. The workflow will deploy to `https://<username>.github.io/ai-capability-reference/`
 
-### Manual build
+## Design documentation
 
-```bash
-node scripts/build.js
-```
+Architecture, ontology, and project status docs live in [design/](design/):
 
-Output files:
-- `docs/index.html` — Capability homepage
-- `docs/implementations.html` — Detailed Availability (implementation matrix)
-- `docs/constraints.html` — Access & Limits (constraint view)
-- `docs/capabilities.html` — Redirect stub (backward compat)
-- `docs/about.html` — About page (generated from README.md)
+- [ARCHITECTURE_PATTERNS.md](design/ARCHITECTURE_PATTERNS.md) — The nine patterns that compose the system
+- [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
+- [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design
+- [ROADMAP.md](design/ROADMAP.md) — Current project status and outstanding work
+- [WHY_THIS_EXISTS.md](design/WHY_THIS_EXISTS.md) — The problem this project was built to solve 
+
+Skills: [skills/](skills/) ([README](skills/README.md))
 
 ## License
 
@@ -318,7 +177,7 @@ MIT - see [LICENSE](LICENSE)
 
 ## Credits
 
-Created by [SnapSynapse](https://snapsynapse.com) for the AI training community.
+Created by [SnapSynapse](https://snapsynapse.com) for the AI community.
 With help from Claude Code, of course.
 
 ---

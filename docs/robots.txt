@@ -10,7 +10,3 @@ Allow: /
 Crawl-delay: 1
 
 Sitemap: https://airef.snapsynapse.com/sitemap.xml
-
-# For LLMs and AI agents
-# See https://llmstxt.org for the specification
-LLMs-Txt: https://airef.snapsynapse.com/llms.txt

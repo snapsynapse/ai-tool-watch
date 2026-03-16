@@ -17,7 +17,7 @@ This proposal follows:
 - [ONTOLOGY_FIRST.md](ONTOLOGY_FIRST.md)
 - [ONTOLOGY.md](ONTOLOGY.md)
 - [CAPABILITY_TAXONOMY.md](CAPABILITY_TAXONOMY.md)
-- [MIGRATION_STRATEGY.md](MIGRATION_STRATEGY.md)
+- [MIGRATION_STRATEGY.md](../data/archive/MIGRATION_STRATEGY.md) (archived — migration complete)
 
 ## Design Goal
 
@@ -401,6 +401,12 @@ These should never share the same implementation ID or be treated as the same im
 
 Implementation content remains embedded in product markdown. The mapping layer has proven sufficient and splitting has not been needed.
 
-## Next Step
+## Current Status
 
-The schema is stable enough to support Phase 5 of the roadmap: generating canonical JSON exports from the same ontology-backed source used by the site build. See [ROADMAP.md](/ROADMAP.md).
+Phase 5 of the roadmap is complete. The schema now supports:
+
+- **JSON export** — 10 canonical JSON files at `docs/api/v1/` generated from the same ontology-backed source used by the site build
+- **SEO bridge pages** — 125 programmatic pages generated from canonical data with schema.org structured data
+- **MCP read layer** — 7 read-only tools via `scripts/mcp-server.js` backed by the JSON artifacts
+
+See [ROADMAP.md](ROADMAP.md) for current project status.
