@@ -57,6 +57,24 @@ Start with the index: https://airef.snapsynapse.com/api/v1/index.json
 - https://airef.snapsynapse.com/constraints.html — Access tiers, surfaces, and limits
 - https://airef.snapsynapse.com/about.html — About the project
 
+## Bridge pages (programmatic)
+
+### Capability checks: /can/{product}/{capability}/
+Answers "Can {product} {capability}?" with plan tables, constraints, and evidence.
+Example: https://airef.snapsynapse.com/can/chatgpt/search-the-web/
+
+### Product comparisons: /compare/{product-a}-vs-{product-b}/
+Side-by-side capability overlap between two products.
+Example: https://airef.snapsynapse.com/compare/chatgpt-vs-claude/
+
+### Capability landings: /capability/{slug}/
+All implementations of a capability across products.
+Example: https://airef.snapsynapse.com/capability/search-the-web/
+
+### Use-case pages: /best-for/{use-case}/
+Product coverage grid for a use-case category.
+Example: https://airef.snapsynapse.com/best-for/creative-work/
+
 ## Source
 
 - Repository: https://github.com/snapsynapse/ai-capability-reference

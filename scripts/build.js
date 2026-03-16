@@ -898,17 +898,18 @@ ${runtimeCards}${runtimeCards && modelAccessCards ? '\n' : ''}${modelAccessCards
  * @param {string} activePage - Current page identifier: 'home', 'implementations', 'constraints', 'about'
  * @returns {string} HTML header element
  */
-function renderSiteNav(activePage) {
+function renderSiteNav(activePage, prefix) {
+    prefix = prefix || '';
     const navItems = [
-        { id: 'home', label: 'Capabilities', href: 'index.html' },
-        { id: 'implementations', label: 'Products', href: 'implementations.html' },
-        { id: 'compare', label: 'Compare', href: 'compare.html' },
-        { id: 'constraints', label: 'Limits', href: 'constraints.html' },
-        { id: 'about', label: 'About', href: 'about.html' }
+        { id: 'home', label: 'Capabilities', href: `${prefix}index.html` },
+        { id: 'implementations', label: 'Products', href: `${prefix}implementations.html` },
+        { id: 'compare', label: 'Compare', href: `${prefix}compare.html` },
+        { id: 'constraints', label: 'Limits', href: `${prefix}constraints.html` },
+        { id: 'about', label: 'About', href: `${prefix}about.html` }
     ];
 
     return `<header class="site-header">
-        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
+        <h1><a href="${prefix}index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="${prefix}assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
         <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
             <span class="hamburger-icon"></span>
         </button>
@@ -2751,6 +2752,603 @@ function generateCompareHTML(ontologyData) {
 </html>`;
 }
 
+// ---------------------------------------------------------------------------
+// Phase 5C: SEO Bridge Pages
+// ---------------------------------------------------------------------------
+
+const BRIDGE_OUTPUT_DIR = path.join(__dirname, '..', 'docs');
+
+const GROUP_SLUG_MAP = {
+    'understand': 'understanding-content',
+    'respond': 'conversations',
+    'create': 'creative-work',
+    'work-with-my-stuff': 'working-with-files',
+    'act-for-me': 'getting-things-done',
+    'connect': 'integrations',
+    'access-context': 'multi-device-access'
+};
+
+const GROUP_DISPLAY_MAP = {
+    'understand': 'Understanding Content',
+    'respond': 'Conversations',
+    'create': 'Creative Work',
+    'work-with-my-stuff': 'Working with Files',
+    'act-for-me': 'Getting Things Done',
+    'connect': 'Integrations',
+    'access-context': 'Multi-Device Access'
+};
+
+const GROUP_DESCRIPTION_MAP = {
+    'understand': 'AI products that can process and understand different types of input — audio, text, documents, images, and screens.',
+    'respond': 'AI products that can communicate back through speech and written text.',
+    'create': 'AI products that can generate images, video, documents, and code.',
+    'work-with-my-stuff': 'AI products that can organize projects, remember context, and work with files you provide.',
+    'act-for-me': 'AI products that can research topics, search the web, and take actions using tools.',
+    'connect': 'AI products that can build reusable workflows and connect to external systems.',
+    'access-context': 'AI products available across multiple surfaces — web, desktop, mobile, API, and terminal.'
+};
+
+/**
+ * Shared HTML shell for all bridge pages.
+ */
+function renderBridgeShell({ title, canonicalPath, depth, content, structuredData, description, ogTitle }) {
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+    const jsonLd = structuredData ? `\n    <script type="application/ld+json">${JSON.stringify(structuredData)}</script>` : '';
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${escapeHTML(title)} - ${DASHBOARD_TITLE}</title>
+    <link rel="canonical" href="${canonicalUrl}">
+    <link rel="stylesheet" href="${prefix}assets/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/apple-touch-icon.png">
+    <meta name="description" content="${escapeHTML(description)}">
+    <meta property="og:title" content="${escapeHTML(ogTitle || title)}">
+    <meta property="og:description" content="${escapeHTML(description)}">
+    <meta property="og:url" content="${canonicalUrl}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="${escapeHTML(ogTitle || title)}">
+    <meta name="twitter:description" content="${escapeHTML(description)}">${jsonLd}
+    ${renderThemeInit()}
+</head>
+<body>
+    ${renderSiteNav('none', prefix)}
+    <div class="container" id="main-content">
+        ${content}
+    </div>
+    ${renderSharedFooter()}
+    <script src="${prefix}assets/search.js"></script>
+    ${renderThemeScript()}
+</body>
+</html>`;
+}
+
+/**
+ * Render a plan availability table for an implementation.
+ */
+function renderPlanTable(impl) {
+    if (!impl.plans || impl.plans.length === 0) return '';
+    const rows = impl.plans.map(p => {
+        const icon = p.available ? '✓' : '✗';
+        const cls = p.available ? 'plan-yes' : 'plan-no';
+        return `<tr class="${cls}"><td>${escapeHTML(p.plan)}</td><td>${icon}</td><td>${escapeHTML(p.limits || '')}</td><td>${escapeHTML(p.notes || '')}</td></tr>`;
+    }).join('\n');
+    return `<table class="plan-table">
+<thead><tr><th>Plan</th><th>Available</th><th>Limits</th><th>Notes</th></tr></thead>
+<tbody>${rows}</tbody>
+</table>`;
+}
+
+/**
+ * Render an availability table from raw feature data (source.feature).
+ */
+function renderAvailabilityTable(feat) {
+    const rows = (feat.availability || []);
+    if (rows.length === 0) return '';
+    const tableRows = rows.map(row => {
+        const isAvailable = row.available && (row.available.includes('✅') || row.available.includes('⚠️'));
+        const icon = isAvailable ? '✓' : '✗';
+        const cls = isAvailable ? 'plan-yes' : 'plan-no';
+        const note = row.available ? row.available.replace(/✅|❌|⚠️/g, '').trim() : '';
+        return `<tr class="${cls}"><td>${escapeHTML(row.plan || '')}</td><td>${icon}</td><td>${escapeHTML(note)}</td></tr>`;
+    }).join('\n');
+    return `<table class="plan-table">
+<thead><tr><th>Plan</th><th>Available</th><th>Notes</th></tr></thead>
+<tbody>${tableRows}</tbody>
+</table>`;
+}
+
+/**
+ * Render surface badges for an implementation.
+ */
+function renderSurfaceBadges(surfaces) {
+    if (!surfaces || surfaces.length === 0) return '';
+    return surfaces.map(s => `<span class="surface-badge">${escapeHTML(s)}</span>`).join(' ');
+}
+
+/**
+ * Generate a /can/{product}/{capability}/ page.
+ */
+function generateCanPage(productId, capId, ontologyData) {
+    const product = ontologyData.products.find(p => p.id === productId);
+    const cap = ontologyData.capabilities.find(c => c.id === capId);
+    if (!product || !cap) return null;
+
+    const productName = product.name;
+    const capName = cap.name;
+
+    // Find implementations for this product+capability
+    const matrix = {};
+    for (const impl of ontologyData.implementations) {
+        if (impl.product === productId && impl.capabilities && impl.capabilities.includes(capId)) {
+            if (!matrix[impl.id]) matrix[impl.id] = impl;
+        }
+    }
+    const impls = Object.values(matrix);
+    const available = impls.length > 0;
+    const bestGating = available ? (['free', 'limited', 'paid'].find(g => impls.some(i => i.source?.feature?.gating === g)) || 'paid') : null;
+
+    // Build answer text for FAQ
+    let answerText;
+    if (!available) {
+        answerText = `No. ${productName} does not currently have a feature that implements ${capName.toLowerCase()}.`;
+    } else {
+        const implNames = impls.map(i => i.source?.feature?.name || i.name || humanizeId(i.id));
+        const gatingNote = bestGating === 'free' ? 'available on the free plan' : bestGating === 'limited' ? 'available with limitations on some plans' : 'requires a paid plan';
+        answerText = `Yes. ${productName} supports this through ${implNames.join(', ')}. This is ${gatingNote}.`;
+    }
+
+    // Build content sections
+    let content = `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> › <a href="../../capability/${capId}/">Capability</a> › ${escapeHTML(productName)}</nav>\n`;
+    content += `<h1>Can ${escapeHTML(productName)} ${escapeHTML(capName)}?</h1>\n`;
+
+    if (!available) {
+        content += `<p class="bridge-answer bridge-no">No — ${escapeHTML(productName)} does not currently implement ${escapeHTML(capName.toLowerCase())}.</p>\n`;
+    } else {
+        const gatingLabel = bestGating === 'free' ? 'Yes — available on the free plan' : bestGating === 'limited' ? 'Yes — with limitations' : 'Yes — requires a paid plan';
+        content += `<p class="bridge-answer bridge-yes">${gatingLabel}</p>\n`;
+
+        for (const impl of impls) {
+            const feat = impl.source?.feature || {};
+            content += `<section class="bridge-section">\n`;
+            content += `<h2>${escapeHTML(feat.name || impl.name || humanizeId(impl.id))}</h2>\n`;
+            if (feat.talking_point) content += `<p class="talking-point">${escapeHTML(feat.talking_point)}</p>\n`;
+            content += renderAvailabilityTable(feat);
+            const availSurfaces = (feat.platforms || [])
+                .filter(s => s.available && (s.available.includes('✅') || s.available.includes('⚠️')))
+                .map(s => s.platform);
+            if (availSurfaces.length > 0) {
+                content += `<p class="bridge-surfaces"><strong>Available on:</strong> ${renderSurfaceBadges(availSurfaces)}</p>\n`;
+            }
+            if (feat.verified) {
+                content += `<p class="bridge-verified">Verified: ${formatDateForDisplay(feat.verified)}</p>\n`;
+            }
+            if (impl.evidence && impl.evidence.sources && impl.evidence.sources.length > 0) {
+                const evidenceLinks = impl.evidence.sources.map(s =>
+                    `<a href="${escapeHTML(s.url)}" rel="noopener">${escapeHTML(s.label || s.url)}</a>`
+                );
+                content += `<p class="bridge-evidence"><strong>Sources:</strong> ${evidenceLinks.join(', ')}</p>\n`;
+            }
+            content += `</section>\n`;
+        }
+    }
+
+    content += `<p class="bridge-cta"><a href="../../index.html">← Browse all capabilities</a> · <a href="../../capability/${capId}/">See all products for ${escapeHTML(capName)}</a></p>\n`;
+
+    // FAQ structured data
+    const searchTerm = cap.search_terms?.[0] || capName.toLowerCase();
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [{
+            '@type': 'Question',
+            name: `Can ${productName} ${searchTerm}?`,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: answerText
+            }
+        }]
+    };
+
+    const description = available
+        ? `Can ${productName} ${capName.toLowerCase()}? Yes. ${bestGating === 'free' ? 'Free plan.' : bestGating === 'limited' ? 'Limited availability.' : 'Paid plan required.'} Updated ${formatDateForDisplay(impls[0]?.source?.feature?.verified || '')}.`
+        : `Can ${productName} ${capName.toLowerCase()}? Not currently available.`;
+
+    return renderBridgeShell({
+        title: `Can ${productName} ${capName}?`,
+        canonicalPath: `can/${productId}/${capId}/`,
+        depth: 3,
+        content,
+        structuredData,
+        description
+    });
+}
+
+/**
+ * Generate a /compare/{a}-vs-{b}/ page.
+ */
+function generateCompareBridgePage(comparison, ontologyData) {
+    const [idA, idB] = comparison.products;
+    const productA = ontologyData.products.find(p => p.id === idA);
+    const productB = ontologyData.products.find(p => p.id === idB);
+    if (!productA || !productB) return null;
+
+    const nameA = productA.name;
+    const nameB = productB.name;
+
+    let content = `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../compare.html">Compare</a> › ${escapeHTML(nameA)} vs ${escapeHTML(nameB)}</nav>\n`;
+    content += `<h1>${escapeHTML(nameA)} vs ${escapeHTML(nameB)}</h1>\n`;
+    content += `<p class="bridge-summary">${comparison.shared_count} shared capabilities, ${comparison.only_a_count} unique to ${escapeHTML(nameA)}, ${comparison.only_b_count} unique to ${escapeHTML(nameB)}.</p>\n`;
+
+    // Shared capabilities
+    if (comparison.shared_capabilities.length > 0) {
+        content += `<section class="bridge-section">\n<h2>Shared Capabilities (${comparison.shared_count})</h2>\n`;
+        content += `<table class="plan-table"><thead><tr><th>Capability</th><th>${escapeHTML(nameA)}</th><th>${escapeHTML(nameB)}</th></tr></thead><tbody>\n`;
+        for (const capId of comparison.shared_capabilities) {
+            const cap = ontologyData.capabilities.find(c => c.id === capId);
+            const capName = cap ? cap.name : humanizeId(capId);
+            // Find best gating for each product
+            const gatingA = findBestGating(idA, capId, ontologyData);
+            const gatingB = findBestGating(idB, capId, ontologyData);
+            content += `<tr><td><a href="../../capability/${capId}/">${escapeHTML(capName)}</a></td><td class="gating-${gatingA}">${escapeHTML(gatingA)}</td><td class="gating-${gatingB}">${escapeHTML(gatingB)}</td></tr>\n`;
+        }
+        content += `</tbody></table>\n</section>\n`;
+    }
+
+    // Unique to A
+    if (comparison.only_a.length > 0) {
+        content += `<section class="bridge-section">\n<h2>Only in ${escapeHTML(nameA)} (${comparison.only_a_count})</h2>\n<ul>\n`;
+        for (const capId of comparison.only_a) {
+            const cap = ontologyData.capabilities.find(c => c.id === capId);
+            content += `<li><a href="../../capability/${capId}/">${escapeHTML(cap ? cap.name : humanizeId(capId))}</a></li>\n`;
+        }
+        content += `</ul>\n</section>\n`;
+    }
+
+    // Unique to B
+    if (comparison.only_b.length > 0) {
+        content += `<section class="bridge-section">\n<h2>Only in ${escapeHTML(nameB)} (${comparison.only_b_count})</h2>\n<ul>\n`;
+        for (const capId of comparison.only_b) {
+            const cap = ontologyData.capabilities.find(c => c.id === capId);
+            content += `<li><a href="../../capability/${capId}/">${escapeHTML(cap ? cap.name : humanizeId(capId))}</a></li>\n`;
+        }
+        content += `</ul>\n</section>\n`;
+    }
+
+    // Product details
+    for (const prod of [productA, productB]) {
+        content += `<section class="bridge-section">\n<h2>About ${escapeHTML(prod.name)}</h2>\n`;
+        if (prod.summary) content += `<p>${escapeHTML(prod.summary)}</p>\n`;
+        if (prod.pricing_page) content += `<p><a href="${escapeHTML(prod.pricing_page)}" rel="noopener">View pricing →</a></p>\n`;
+        content += `</section>\n`;
+    }
+
+    content += `<p class="bridge-cta"><a href="../../compare.html">← Compare other products</a></p>\n`;
+
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: `${nameA} vs ${nameB} — AI Capability Comparison`,
+        itemListElement: [
+            { '@type': 'SoftwareApplication', name: nameA, applicationCategory: 'AI Assistant', url: productA.pricing_page || '' },
+            { '@type': 'SoftwareApplication', name: nameB, applicationCategory: 'AI Assistant', url: productB.pricing_page || '' }
+        ]
+    };
+
+    const description = `Compare ${nameA} and ${nameB}: ${comparison.shared_count} shared capabilities, ${comparison.only_a_count} unique to ${nameA}, ${comparison.only_b_count} unique to ${nameB}.`;
+
+    return renderBridgeShell({
+        title: `${nameA} vs ${nameB} — AI Capability Comparison`,
+        canonicalPath: `compare/${idA}-vs-${idB}/`,
+        depth: 2,
+        content,
+        structuredData,
+        description
+    });
+}
+
+/**
+ * Generate a /capability/{slug}/ page.
+ */
+function generateCapabilityPage(cap, ontologyData) {
+    const capName = cap.name;
+
+    let content = `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> › ${escapeHTML(capName)}</nav>\n`;
+    content += `<h1>${escapeHTML(capName)}</h1>\n`;
+    if (cap.summary) content += `<p class="bridge-summary">${escapeHTML(cap.summary)}</p>\n`;
+
+    // Definition section
+    if ((cap.what_counts && cap.what_counts.length > 0) || (cap.what_does_not_count && cap.what_does_not_count.length > 0)) {
+        content += `<section class="bridge-section">\n<h2>Definition</h2>\n`;
+        if (cap.what_counts && cap.what_counts.length > 0) {
+            content += `<h3>What counts</h3>\n<ul>${cap.what_counts.map(w => `<li>${escapeHTML(w)}</li>`).join('')}</ul>\n`;
+        }
+        if (cap.what_does_not_count && cap.what_does_not_count.length > 0) {
+            content += `<h3>What doesn't count</h3>\n<ul>${cap.what_does_not_count.map(w => `<li>${escapeHTML(w)}</li>`).join('')}</ul>\n`;
+        }
+        content += `</section>\n`;
+    }
+
+    // Implementations by product
+    const implsByProduct = {};
+    for (const impl of ontologyData.implementations) {
+        if (impl.capabilities && impl.capabilities.includes(cap.id)) {
+            const pid = impl.product;
+            if (!implsByProduct[pid]) implsByProduct[pid] = [];
+            implsByProduct[pid].push(impl);
+        }
+    }
+
+    const hostedProducts = ontologyData.products.filter(p => p.product_kind !== 'runtime');
+    content += `<section class="bridge-section">\n<h2>Product Availability (${Object.keys(implsByProduct).length} products)</h2>\n`;
+
+    for (const prod of hostedProducts) {
+        const prodImpls = implsByProduct[prod.id];
+        if (!prodImpls || prodImpls.length === 0) continue;
+
+        content += `<h3>${escapeHTML(prod.name)}</h3>\n`;
+        for (const impl of prodImpls) {
+            const feat = impl.source?.feature || {};
+            content += `<div class="bridge-impl">\n`;
+            content += `<h4>${escapeHTML(feat.name || impl.name || humanizeId(impl.id))}</h4>\n`;
+            if (feat.talking_point) content += `<p class="talking-point">${escapeHTML(feat.talking_point)}</p>\n`;
+            content += `<p><strong>Access:</strong> <span class="gating-${feat.gating || 'unknown'}">${escapeHTML(feat.gating || 'unknown')}</span></p>\n`;
+            content += renderAvailabilityTable(feat);
+            const capSurfaces = (feat.platforms || [])
+                .filter(s => s.available && (s.available.includes('✅') || s.available.includes('⚠️')))
+                .map(s => s.platform);
+            if (capSurfaces.length > 0) {
+                content += `<p class="bridge-surfaces"><strong>Surfaces:</strong> ${renderSurfaceBadges(capSurfaces)}</p>\n`;
+            }
+            if (feat.verified) {
+                content += `<p class="bridge-verified">Verified: ${formatDateForDisplay(feat.verified)}</p>\n`;
+            }
+            content += `<p><a href="../../can/${prod.id}/${cap.id}/">Full details →</a></p>\n`;
+            content += `</div>\n`;
+        }
+    }
+    content += `</section>\n`;
+
+    // Search terms
+    if (cap.search_terms && cap.search_terms.length > 0) {
+        content += `<section class="bridge-section">\n<h2>Also Known As</h2>\n`;
+        content += `<p>${cap.search_terms.map(t => escapeHTML(t)).join(', ')}</p>\n</section>\n`;
+    }
+
+    // Constraints
+    if (cap.common_constraints && cap.common_constraints.length > 0) {
+        content += `<section class="bridge-section">\n<h2>Common Constraints</h2>\n`;
+        content += `<ul>${cap.common_constraints.map(c => `<li>${escapeHTML(c)}</li>`).join('')}</ul>\n</section>\n`;
+    }
+
+    content += `<p class="bridge-cta"><a href="../../index.html">← Browse all capabilities</a></p>\n`;
+
+    // Structured data
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTerm',
+        name: capName,
+        description: cap.summary || '',
+        termCode: cap.id,
+        inDefinedTermSet: {
+            '@type': 'DefinedTermSet',
+            name: 'AI Capabilities',
+            url: `${SITE_URL}`
+        }
+    };
+
+    const productCount = Object.keys(implsByProduct).length;
+    const description = `${cap.summary || capName}. Available on ${productCount} products. Compare plans, surfaces, and availability.`;
+
+    return renderBridgeShell({
+        title: `${capName} — Which AI Products Support It?`,
+        canonicalPath: `capability/${cap.id}/`,
+        depth: 2,
+        content,
+        structuredData,
+        description
+    });
+}
+
+/**
+ * Generate a /best-for/{slug}/ page.
+ */
+function generateBestForPage(groupId, groupCaps, ontologyData) {
+    const slug = GROUP_SLUG_MAP[groupId] || slugify(groupId);
+    const displayName = GROUP_DISPLAY_MAP[groupId] || humanizeId(groupId);
+    const groupDesc = GROUP_DESCRIPTION_MAP[groupId] || '';
+
+    const hostedProducts = ontologyData.products.filter(p => p.product_kind !== 'runtime');
+
+    let content = `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> › Best for ${escapeHTML(displayName)}</nav>\n`;
+    content += `<h1>Best AI for ${escapeHTML(displayName)}</h1>\n`;
+    if (groupDesc) content += `<p class="bridge-summary">${escapeHTML(groupDesc)}</p>\n`;
+
+    // Availability grid
+    content += `<section class="bridge-section">\n<h2>Capability Coverage</h2>\n`;
+    content += `<table class="plan-table"><thead><tr><th>Capability</th>`;
+    for (const prod of hostedProducts) {
+        content += `<th>${escapeHTML(prod.name)}</th>`;
+    }
+    content += `</tr></thead><tbody>\n`;
+
+    for (const cap of groupCaps) {
+        content += `<tr><td><a href="../../capability/${cap.id}/">${escapeHTML(cap.name)}</a></td>`;
+        for (const prod of hostedProducts) {
+            const gating = findBestGating(prod.id, cap.id, ontologyData);
+            if (gating) {
+                content += `<td class="gating-${gating}"><a href="../../can/${prod.id}/${cap.id}/">${escapeHTML(gating)}</a></td>`;
+            } else {
+                content += `<td class="gating-none">—</td>`;
+            }
+        }
+        content += `</tr>\n`;
+    }
+    content += `</tbody></table>\n</section>\n`;
+
+    // Per-capability summaries
+    for (const cap of groupCaps) {
+        content += `<section class="bridge-section">\n<h2>${escapeHTML(cap.name)}</h2>\n`;
+        if (cap.summary) content += `<p>${escapeHTML(cap.summary)}</p>\n`;
+        content += `<p><a href="../../capability/${cap.id}/">See full details →</a></p>\n</section>\n`;
+    }
+
+    content += `<p class="bridge-cta"><a href="../../index.html">← Browse all capabilities</a></p>\n`;
+
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: `Best AI for ${displayName}`,
+        itemListElement: groupCaps.map((cap, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: cap.name,
+            url: `${SITE_URL}capability/${cap.id}/`
+        }))
+    };
+
+    const description = `Compare AI products for ${displayName.toLowerCase()}: ${groupCaps.map(c => c.name).join(', ')}. Side-by-side availability across ${hostedProducts.length} products.`;
+
+    return renderBridgeShell({
+        title: `Best AI for ${displayName}`,
+        canonicalPath: `best-for/${slug}/`,
+        depth: 2,
+        content,
+        structuredData,
+        description
+    });
+}
+
+/**
+ * Find the best (most accessible) gating level for a product+capability combo.
+ */
+function findBestGating(productId, capId, ontologyData) {
+    const gatingOrder = ['free', 'limited', 'paid'];
+    let best = null;
+    for (const impl of ontologyData.implementations) {
+        if (impl.product === productId && impl.capabilities && impl.capabilities.includes(capId)) {
+            const g = impl.source?.feature?.gating;
+            if (g && (!best || gatingOrder.indexOf(g) < gatingOrder.indexOf(best))) {
+                best = g;
+            }
+        }
+    }
+    return best;
+}
+
+/**
+ * Generate all bridge pages and return a map of { relativePath: html }.
+ */
+function generateBridgePages(ontologyData) {
+    const pages = {};
+    const hostedProducts = ontologyData.products.filter(p => p.product_kind !== 'runtime');
+
+    // 1. /can/{product}/{capability}/ pages
+    for (const prod of hostedProducts) {
+        for (const cap of ontologyData.capabilities) {
+            // Check if there's any implementation for this combo
+            const hasImpl = ontologyData.implementations.some(
+                i => i.product === prod.id && i.capabilities && i.capabilities.includes(cap.id)
+            );
+            if (hasImpl) {
+                const html = generateCanPage(prod.id, cap.id, ontologyData);
+                if (html) pages[`can/${prod.id}/${cap.id}/index.html`] = html;
+            }
+        }
+    }
+
+    // 2. /compare/{a}-vs-{b}/ pages
+    for (let i = 0; i < hostedProducts.length; i++) {
+        for (let j = i + 1; j < hostedProducts.length; j++) {
+            const idA = hostedProducts[i].id;
+            const idB = hostedProducts[j].id;
+            // Build comparison data
+            const capsA = new Set();
+            const capsB = new Set();
+            for (const impl of ontologyData.implementations) {
+                if (impl.product === idA && impl.capabilities) impl.capabilities.forEach(c => capsA.add(c));
+                if (impl.product === idB && impl.capabilities) impl.capabilities.forEach(c => capsB.add(c));
+            }
+            const shared = [...capsA].filter(c => capsB.has(c));
+            const onlyA = [...capsA].filter(c => !capsB.has(c));
+            const onlyB = [...capsB].filter(c => !capsA.has(c));
+            const comparison = {
+                products: [idA, idB],
+                shared_capabilities: shared,
+                only_a: onlyA,
+                only_b: onlyB,
+                shared_count: shared.length,
+                only_a_count: onlyA.length,
+                only_b_count: onlyB.length
+            };
+            const html = generateCompareBridgePage(comparison, ontologyData);
+            if (html) pages[`compare/${idA}-vs-${idB}/index.html`] = html;
+        }
+    }
+
+    // 3. /capability/{slug}/ pages
+    for (const cap of ontologyData.capabilities) {
+        const html = generateCapabilityPage(cap, ontologyData);
+        if (html) pages[`capability/${cap.id}/index.html`] = html;
+    }
+
+    // 4. /best-for/{slug}/ pages
+    const groups = {};
+    for (const cap of ontologyData.capabilities) {
+        const g = cap.group || 'other';
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(cap);
+    }
+    for (const [groupId, groupCaps] of Object.entries(groups)) {
+        if (GROUP_SLUG_MAP[groupId]) {
+            const html = generateBestForPage(groupId, groupCaps, ontologyData);
+            if (html) pages[`best-for/${GROUP_SLUG_MAP[groupId]}/index.html`] = html;
+        }
+    }
+
+    return pages;
+}
+
+/**
+ * Generate sitemap.xml including all bridge pages.
+ */
+function generateSitemap(bridgePagePaths) {
+    const staticPages = [
+        { path: '', changefreq: 'weekly', priority: '1.0' },
+        { path: 'implementations.html', changefreq: 'weekly', priority: '0.9' },
+        { path: 'compare.html', changefreq: 'weekly', priority: '0.8' },
+        { path: 'constraints.html', changefreq: 'weekly', priority: '0.8' },
+        { path: 'about.html', changefreq: 'monthly', priority: '0.5' },
+        { path: 'api/v1/index.json', changefreq: 'weekly', priority: '0.7' }
+    ];
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+    for (const page of staticPages) {
+        xml += `  <url>\n    <loc>${SITE_URL}${page.path}</loc>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+    }
+
+    // Bridge pages — grouped by type for priority
+    for (const pagePath of bridgePagePaths.sort()) {
+        const urlPath = pagePath.replace(/index\.html$/, '');
+        let priority = '0.6';
+        if (urlPath.startsWith('compare/')) priority = '0.7';
+        else if (urlPath.startsWith('capability/')) priority = '0.7';
+        else if (urlPath.startsWith('can/')) priority = '0.6';
+        else if (urlPath.startsWith('best-for/')) priority = '0.7';
+        xml += `  <url>\n    <loc>${SITE_URL}${urlPath}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
+    }
+
+    xml += `</urlset>\n`;
+    return xml;
+}
+
 /**
  * Main build entry point.
  * Parses all platform files, generates HTML, and writes output files.
@@ -2840,6 +3438,25 @@ function main() {
     fs.writeFileSync(aboutFile, aboutHTML);
     console.log(`✅ About page written to ${aboutFile}`);
     console.log(`   File size: ${(aboutHTML.length / 1024).toFixed(1)} KB`);
+
+    // Phase 5C: Generate bridge pages
+    const bridgePages = generateBridgePages(ontologyData);
+    let bridgeCount = 0;
+    let bridgeTotalSize = 0;
+    for (const [relPath, html] of Object.entries(bridgePages)) {
+        const fullPath = path.join(BRIDGE_OUTPUT_DIR, relPath);
+        const dir = path.dirname(fullPath);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        fs.writeFileSync(fullPath, html);
+        bridgeCount++;
+        bridgeTotalSize += html.length;
+    }
+    console.log(`✅ Bridge pages written: ${bridgeCount} pages (${(bridgeTotalSize / 1024).toFixed(1)} KB total)`);
+
+    // Generate sitemap with bridge pages
+    const sitemapXml = generateSitemap(Object.keys(bridgePages));
+    fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), sitemapXml);
+    console.log(`✅ Sitemap written with ${6 + bridgeCount} URLs`);
 }
 
 main();
