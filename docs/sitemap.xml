@@ -26,6 +26,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://airef.snapsynapse.com/pattern.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://airef.snapsynapse.com/api/v1/index.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

@@ -56,6 +56,7 @@ Start with the index: https://airef.snapsynapse.com/api/v1/index.json
 - https://airef.snapsynapse.com/compare.html — Side-by-side product comparison
 - https://airef.snapsynapse.com/constraints.html — Access tiers, surfaces, and limits
 - https://airef.snapsynapse.com/about.html — About the project
+- https://airef.snapsynapse.com/pattern.html — Knowledge as Code: the development pattern behind this project
 
 ## Bridge pages (programmatic)
 

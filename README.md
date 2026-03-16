@@ -163,6 +163,7 @@ To enable GitHub Pages on a fork:
 
 Architecture, ontology, and project status docs live in [design/](design/):
 
+- [Knowledge as Code](https://airef.snapsynapse.com/pattern.html) — The development pattern behind this project ([research](design/PATTERN_RESEARCH.md))
 - [ARCHITECTURE_PATTERNS.md](design/ARCHITECTURE_PATTERNS.md) — The nine patterns that compose the system
 - [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
 - [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design

@@ -3350,6 +3350,7 @@ function generateSitemap(bridgePagePaths) {
         { path: 'compare.html', changefreq: 'weekly', priority: '0.8' },
         { path: 'constraints.html', changefreq: 'weekly', priority: '0.8' },
         { path: 'about.html', changefreq: 'monthly', priority: '0.5' },
+        { path: 'pattern.html', changefreq: 'monthly', priority: '0.6' },
         { path: 'api/v1/index.json', changefreq: 'weekly', priority: '0.7' }
     ];
 
