@@ -106,7 +106,7 @@ Relevant files:
 
 ### Scanner created a duplicate issue
 
-The task searches open issues before creating, but keyword matching can miss near-duplicates. Close the duplicate on GitHub and refine the task definition if a pattern emerges.
+The task now uses the GitHub Search API and serial issue creation (one at a time, with a search before each) to prevent duplicates from the same scan run. If duplicates still appear, check whether the candidate names differ slightly between issues — the search matches on the exact candidate name in the title. Close the duplicate on GitHub.
 
 ### Issues seem misaligned with current repo direction
 

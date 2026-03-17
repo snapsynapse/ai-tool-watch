@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-03-16T20:37:36.939Z",
+    "generated": "2026-03-17T23:25:46.134Z",
     "version": "1.0",
-    "count": 9
+    "count": 10
   },
   "model_access": [
     {
@@ -62,6 +62,39 @@
       "source_heading": "DeepSeek-V3 / DeepSeek-R1",
       "evidence_id": "model-access-deepseek-v3-r1",
       "evidence_verified": "2026-03-15"
+    },
+    {
+      "id": "leanstral",
+      "name": "Leanstral",
+      "provider": "mistral",
+      "status": "active",
+      "last_verified": "2026-03-17",
+      "summary": "Mistral's open-source code agent specialized for Lean 4 proof engineering. Apache 2.0 weights with MCP tool-use training. Also available via the Mistral Labs API endpoint `labs-leanstral-2603` and agent mode in Mistral Vibe.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-api",
+        "cloud-api (Mistral Labs endpoint)",
+        "web (Mistral Vibe)"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "local API wrappers",
+        "Mistral Vibe (agent mode)",
+        "Mistral Labs API"
+      ],
+      "constraints": [
+        "specialized for Lean 4 formal verification, not general-purpose coding",
+        "Labs API endpoint may be time-limited",
+        "consumer GPU use depends on model size and quantization"
+      ],
+      "related_capabilities": [
+        "write-and-edit-code",
+        "take-actions-and-run-tools"
+      ],
+      "source_file": "data/platforms/mistral-open-models.md",
+      "source_heading": "Leanstral (Mistral)",
+      "evidence_id": null,
+      "evidence_verified": null
     },
     {
       "id": "llama-3-3",

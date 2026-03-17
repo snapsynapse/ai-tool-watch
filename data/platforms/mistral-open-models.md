@@ -174,3 +174,58 @@ No restrictions (Apache 2.0 license).
 | 2025-06-01T12:00Z | Mistral Small 3.2 with improved function calling |
 | 2025-03-01T12:00Z | Mistral Small 3.1 with vision, 128K context |
 | 2025-01-30T12:00Z | Initial entry |
+
+---
+
+## Leanstral (Mistral)
+
+| Property | Value |
+|----------|-------|
+| Category | coding |
+| Status | ga |
+| Gating | free |
+| URL | https://mistral.ai/news/leanstral |
+| Launched | 2026-03-16T12:00Z |
+| Verified | 2026-03-17|
+| Checked | 2026-03-17|
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Self-hosted | ✅ | Your hardware | Apache 2.0 weights |
+| Mistral Labs API | ✅ | Time-limited | Endpoint: labs-leanstral-2603 |
+| Mistral Vibe | ✅ | Agent mode | Web-based access |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Via Ollama |
+| macOS | ✅ | Via Ollama |
+| Linux | ✅ | Native support |
+| iOS | ❌ | Not practical |
+| Android | ❌ | Not practical |
+| Chrome | ❌ |  |
+| web | ✅ | Mistral Vibe agent mode |
+| terminal | ✅ | Ollama CLI |
+| API | ✅ | Mistral Labs API + local API |
+
+### Regional
+
+No restrictions (Apache 2.0 license).
+
+### Talking Point
+
+> "Leanstral is Mistral's open-source code agent built for Lean 4 formal verification. **Apache 2.0 weights** with MCP tool-use training. Available self-hosted, via the Labs API, or in Mistral Vibe's agent mode."
+
+### Sources
+
+- [Leanstral Announcement](https://mistral.ai/news/leanstral)
+- [Mistral Docs Changelog](https://docs.mistral.ai/getting-started/changelog)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-03-16T12:00Z | Initial entry |

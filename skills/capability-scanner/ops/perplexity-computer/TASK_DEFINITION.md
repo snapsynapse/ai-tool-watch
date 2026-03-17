@@ -68,28 +68,40 @@ When ontology placement is unclear or a candidate seems borderline, consult
 GOVERNANCE.md for entity types, scope heuristic, and inclusion/exclusion
 guidance.
 
-## Step 4: Create GitHub issues
+## Step 4: Create GitHub issues (one at a time)
 
 For each candidate with recommendation ADD, UPDATE, or WATCH, create a GitHub
-issue using the fine-grained PAT:
+issue using the fine-grained PAT. Process candidates ONE AT A TIME to prevent
+duplicates.
 
 TOKEN=$(cat /home/user/workspace/cron_tracking/capability-scanner/github-token.txt)
 
-Before creating, check for existing open issues:
-curl -s -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" \
-  "https://api.github.com/repos/snapsynapse/ai-capability-reference/issues?state=open"
+For EACH candidate, in sequence:
 
-To create an issue:
+4a. Search for an existing open issue with the same candidate name:
+curl -s -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" \
+  "https://api.github.com/search/issues?q=repo:snapsynapse/ai-capability-reference+is:open+in:title+%22CANDIDATE_NAME%22"
+
+Replace CANDIDATE_NAME with the URL-encoded candidate name (e.g., "Gemini Embedding 2").
+If total_count > 0, SKIP this candidate — an issue already exists.
+
+4b. If no existing issue was found, create one:
 curl -s -X POST \
   -H "Authorization: Bearer $TOKEN" \
   -H "Accept: application/vnd.github+json" \
   "https://api.github.com/repos/snapsynapse/ai-capability-reference/issues" \
   -d '{"title": "[Scanner] Recommendation: Name", "body": "...", "labels": ["scanner"]}'
 
+4c. Wait for the API response and confirm the issue was created (HTTP 201)
+before proceeding to the next candidate.
+
 Title format:
 - ADD: [Scanner] Add: [Name]
 - UPDATE: [Scanner] Update: [Name] — [What changed]
 - WATCH: [Scanner] Watch: [Name]
+
+IMPORTANT: Do NOT batch issue creation. Complete 4a-4c for one candidate before
+starting 4a for the next. This prevents duplicate issues from the same scan run.
 
 If the token file is missing or the API returns 401/403, save findings to
 /home/user/workspace/cron_tracking/capability-scanner/findings.md and send a
