@@ -25,8 +25,8 @@ build_visibility: hidden
 | Gating | free |
 | URL | https://ai.meta.com/llama/ |
 | Launched | 2024-12-06T12:00Z |
-| Verified | 2026-02-22|
-| Checked | 2026-02-22|
+| Verified | 2026-03-19|
+| Checked | 2026-03-19|
 
 ### Availability
 
@@ -79,7 +79,7 @@ No restrictions - runs locally.
 | URL | https://www.llama.com/models/llama-4/ |
 | Launched | 2025-04-05T12:00Z |
 | Verified | 2026-02-22|
-| Checked | 2026-02-22|
+| Checked | 2026-03-19|
 
 ### Availability
 
