@@ -131,8 +131,8 @@ No restrictions - runs locally.
 | Gating | free |
 | URL | https://mistral.ai/news/mistral-small-3 |
 | Launched | 2025-01-30T12:00Z |
-| Verified | 2026-02-22|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -160,7 +160,7 @@ No restrictions (Apache 2.0 license).
 
 ### Talking Point
 
-> "Mistral Small 3 is a 24B model that matches 70B performance while being **3x faster**. Fits on a single RTX 4090 or a MacBook with 32GB RAM. 81%+ on MMLU, 128K context in v3.1+. Fully open under Apache 2.0."
+> "Mistral Small 3 is a 24B dense model that matches 70B performance while being **3x faster**. Fits on a single RTX 4090 or a MacBook with 32GB RAM. 81%+ on MMLU, 128K context in v3.1+. Fully open under Apache 2.0. **Succeeded by Mistral Small 4** (119B MoE, March 2026) for hosted platforms, but Small 3 remains excellent for consumer hardware."
 
 ### Sources
 
@@ -172,6 +172,7 @@ No restrictions (Apache 2.0 license).
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Mistral Small 4 (119B MoE) released as successor for hosted platforms; Small 3.x line remains fully available for self-hosted consumer hardware; open weights unchanged (Apache 2.0) |
 | 2025-06-01T12:00Z | Mistral Small 3.2 with improved function calling |
 | 2025-03-01T12:00Z | Mistral Small 3.1 with vision, 128K context |
 | 2025-01-30T12:00Z | Initial entry |

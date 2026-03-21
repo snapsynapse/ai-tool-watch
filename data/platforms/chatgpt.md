@@ -26,17 +26,17 @@ last_verified: 2026-03-21
 |----------|-------|
 | Category | voice |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://help.openai.com/en/articles/8400625-voice-mode |
 | Launched | 2024-09-24T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | Limited | Basic voice only, not Advanced Voice |
+| Free | ✅ | 2 hrs/day | Advanced Voice via GPT-4o mini |
 | Go | ✅ | Standard | Full Advanced Voice |
 | Plus | ✅ | Higher | Priority access |
 | Pro | ✅ | Unlimited | Maximum quality |
@@ -63,7 +63,7 @@ Available globally.
 
 ### Talking Point
 
-> "Advanced Voice Mode enables natural, real-time conversations with GPT-4o. Available on **Windows, iOS, Android, and web**. **macOS desktop voice was retired January 15, 2026**—Mac users should use the web version instead."
+> "Advanced Voice Mode enables natural, real-time conversations. **Now available on all plans including free**—free users get 2 hours/day via GPT-4o mini; Plus/Pro get near-unlimited via GPT-4o. Available on **Windows, iOS, Android, and web**. **macOS desktop voice was retired January 15, 2026**—Mac users should use the web version instead."
 
 ### Notes
 
@@ -86,6 +86,7 @@ OpenAI has indicated this may be temporary, with voice potentially returning to 
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Gating changed from paid to free; free users now get Advanced Voice Mode (2 hrs/day via GPT-4o mini); Standard Voice Mode sunset reversed after user feedback |
 | 2026-03-15T12:00Z | [Verified] Added Team and Enterprise rows to availability table |
 | 2026-01-15T12:00Z | macOS desktop voice retired |
 | 2024-09-24T12:00Z | Initial entry |
@@ -218,8 +219,8 @@ Available where ChatGPT is available. Same regional restrictions apply.
 | Gating | free |
 | URL | https://openai.com/index/introducing-canvas/ |
 | Launched | 2024-10-03T12:00Z |
-| Verified | 2026-03-19|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -262,6 +263,7 @@ Available globally where ChatGPT is available.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] No major changes; iOS shows partial viewing support but full mobile editing still coming soon |
 | 2024-10-03T12:00Z | Initial entry |
 
 ---
@@ -335,8 +337,8 @@ Available globally where ChatGPT is available.
 | Gating | paid |
 | URL | https://openai.com/index/introducing-codex/ |
 | Launched | 2025-04-16T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -381,6 +383,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Codex app launched on Windows (March 4); GPT-5.3-Codex model available; @Codex in Slack; JetBrains IDE integration; temporary Free/Go promotional access continues |
 | 2026-03-15T18:00Z | [Verified] Temporary Free/Go promotional access; paid plan rate limits doubled |
 | 2026-03-15T12:00Z | [Verified] Terminal/CLI access added (Codex CLI on macOS/Linux/Windows WSL); Linux support corrected; sources expanded |
 | 2025-04-16T12:00Z | Initial entry |
@@ -396,8 +399,8 @@ Available globally.
 | Gating | paid |
 | URL | https://openai.com/index/codex-security-now-in-research-preview/ |
 | Launched | 2026-03-06T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -443,6 +446,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Now powered by GPT-5.4; scanned 1.2M+ commits; false positive rates down 50%+; free ChatGPT Pro access for open-source maintainers includes selective Codex Security access |
 | 2026-03-14T12:00Z | Initial entry |
 | 2026-03-06T12:00Z | Research preview launched for Pro/Enterprise/Business/Edu |
 
@@ -457,8 +461,8 @@ Available globally.
 | Gating | paid |
 | URL | https://chatgpt.com/gpts |
 | Launched | 2023-11-06T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -503,6 +507,7 @@ Available globally where ChatGPT is available.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Write actions added for Google/Microsoft apps (Outlook, Docs, Sheets, Calendar); GPTs transitioned to GPT-5.2 (Jan 2026), then GPT-5.4; GPT-5.1 models retired March 11 |
 | 2024-04-09T12:00Z | Plugins deprecated, replaced by Actions |
 | 2023-11-06T12:00Z | Initial entry |
 
@@ -514,20 +519,22 @@ Available globally where ChatGPT is available.
 |----------|-------|
 | Category | image-gen |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://openai.com/index/dall-e-3/ |
 | Launched | 2023-10-01T12:00Z |
-| Verified | 2026-03-19|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | ~2/day | Very limited |
-| Go | ✅ | 10x free | Standard access |
-| Plus | ✅ | 50x free | Priority |
+| Free | ⚠️ | 2–3/day | DALL-E 3 and GPT Image 1.5 share quota |
+| Go | ✅ | Higher | Standard access |
+| Plus | ✅ | ~50/3 hrs | ~200/day soft cap |
 | Pro | ✅ | Unlimited | No limits |
+| Team | ✅ | Higher | Full access |
+| Enterprise | ✅ | Custom | Full access |
 
 ### Platforms
 
@@ -549,7 +556,7 @@ Available globally.
 
 ### Talking Point
 
-> "DALL-E image generation is available on **all plans including free**, but free users get very limited generations per day. Plus and Pro have much higher or unlimited limits."
+> "DALL-E image generation is available on **all plans including free**—free users get 2–3 images/day (DALL-E 3 or GPT Image 1.5, shared quota). Plus gets ~50 per 3 hours; Pro is unlimited. **Team and Enterprise** also have full access."
 
 ### Sources
 
@@ -559,6 +566,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Gating changed from paid to free; Team/Enterprise rows added; GPT Image 1.5 model available alongside DALL-E 3; Plus limit clarified to ~50/3hrs (~200/day); free quota shared across models |
 | 2023-10-01T12:00Z | Initial entry |
 
 ---
@@ -630,8 +638,8 @@ Available globally.
 | Gating | free |
 | URL | https://openai.com/index/memory-and-new-controls-for-chatgpt/ |
 | Launched | 2024-09-05T12:00Z |
-| Verified | 2026-03-19|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -675,6 +683,7 @@ Available globally; off by default in EEA/UK/Switzerland (must enable manually).
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] No major changes; project-only memory available on Business plans; ads personalization now uses memory data (opt-out available) |
 | 2025-06-03T12:00Z | Memory improvements for free users |
 | 2025-04-10T12:00Z | Enhanced memory for Plus/Pro |
 | 2024-09-05T12:00Z | Initial entry |
@@ -747,8 +756,8 @@ Available globally where ChatGPT is available.
 | Gating | paid |
 | URL | https://openai.com/index/sora-is-here/ |
 | Launched | 2024-12-09T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -781,7 +790,7 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 
 ### Talking Point
 
-> "Sora generates videos from text prompts—up to 25 seconds at 1080p. **Requires Plus ($20/mo) or Pro ($200/mo)**. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe."
+> "Sora generates videos from text prompts—up to 25 seconds at 1080p. **Requires Plus ($20/mo) or Pro ($200/mo)**. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. **Sora 1 sunset March 13, 2026—Sora 2 is now the only version.** OpenAI plans to integrate Sora directly into ChatGPT. Not available in Europe."
 
 ### Sources
 
@@ -792,6 +801,7 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] Sora 1 sunset March 13, 2026 (US); Sora 2 now the only version; ChatGPT integration planned but not yet live; Plus limited to 480p/10sec clips |
 | 2026-01-10T12:00Z | Free tier access discontinued |
 | 2025-10-01T12:00Z | API access launched |
 | 2024-12-09T12:00Z | Initial entry
@@ -807,8 +817,8 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 | Gating | free |
 | URL | https://openai.com/index/hello-gpt-4o/ |
 | Launched | 2024-05-13T12:00Z |
-| Verified | 2026-03-19|
-| Checked | 2026-03-20|
+| Verified | 2026-03-21|
+| Checked | 2026-03-21|
 
 ### Availability
 
@@ -852,6 +862,7 @@ Available globally where ChatGPT is available.
 
 | Date | Change |
 |------|--------|
+| 2026-03-21T12:00Z | [Verified] GPT-5.4 significantly improves vision/computer-use (75% on OSWorld-Verified vs 47.3% for GPT-5.2); native computer-use capabilities added; no availability changes |
 | 2026-03-07T12:00Z | Initial entry |
 | 2024-05-13T12:00Z | GPT-4o launched with native image understanding |
 
