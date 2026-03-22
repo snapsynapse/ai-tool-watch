@@ -1070,6 +1070,33 @@ function generateHTML(platforms, ontologyData) {
     <meta name="twitter:description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://snapsynapse.com/#organization",
+          "name": "SnapSynapse",
+          "url": "https://snapsynapse.com/"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "${SITE_URL}implementations.html#webpage",
+          "url": "${SITE_URL}implementations.html",
+          "name": "${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}",
+          "description": "Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.",
+          "isPartOf": { "@id": "${SITE_URL}#website" },
+          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "about": {
+            "@type": "Thing",
+            "name": "AI feature availability by subscription plan"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
 </head>
@@ -1751,6 +1778,40 @@ function generateCapabilitiesHTML(ontologyData) {
     <meta name="twitter:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
     <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://snapsynapse.com/#organization",
+          "name": "SnapSynapse",
+          "url": "https://snapsynapse.com/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "${SITE_URL}#website",
+          "url": "${SITE_URL}",
+          "name": "AI Capability Reference",
+          "description": "A maintained reference for AI capability availability across plans, platforms, and access tiers.",
+          "publisher": { "@id": "https://snapsynapse.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "${SITE_URL}#webpage",
+          "url": "${SITE_URL}",
+          "name": "AI Capability Reference",
+          "description": "A maintained reference for AI capability availability across plans, platforms, and access tiers. Compare ChatGPT, Claude, Gemini, Copilot, and more.",
+          "isPartOf": { "@id": "${SITE_URL}#website" },
+          "about": {
+            "@type": "Thing",
+            "name": "AI product capabilities and plan availability"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
 </head>
@@ -2040,6 +2101,30 @@ function generateAboutHTML() {
     <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://snapsynapse.com/#organization",
+          "name": "SnapSynapse",
+          "url": "https://snapsynapse.com/"
+        },
+        {
+          "@type": "AboutPage",
+          "@id": "${SITE_URL}about.html#webpage",
+          "url": "${SITE_URL}about.html",
+          "name": "About - ${DASHBOARD_TITLE}",
+          "description": "About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.",
+          "isPartOf": { "@id": "${SITE_URL}#website" },
+          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "about": { "@id": "https://snapsynapse.com/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
     <style>
@@ -2193,6 +2278,33 @@ function generateConstraintsHTML(ontologyData, platforms) {
     <meta property="og:description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
     <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}constraints.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://snapsynapse.com/#organization",
+          "name": "SnapSynapse",
+          "url": "https://snapsynapse.com/"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "${SITE_URL}constraints.html#webpage",
+          "url": "${SITE_URL}constraints.html",
+          "name": "AI Capability Reference - Access & Limits",
+          "description": "Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.",
+          "isPartOf": { "@id": "${SITE_URL}#website" },
+          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "about": {
+            "@type": "Thing",
+            "name": "AI feature access tiers, platform support, and regional availability"
+          }
+        }
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
@@ -2759,6 +2871,33 @@ function generateCompareHTML(ontologyData) {
     <meta property="og:description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.">
     <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}compare.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://snapsynapse.com/#organization",
+          "name": "SnapSynapse",
+          "url": "https://snapsynapse.com/"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "${SITE_URL}compare.html#webpage",
+          "url": "${SITE_URL}compare.html",
+          "name": "Compare Products - ${DASHBOARD_TITLE}",
+          "description": "Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.",
+          "isPartOf": { "@id": "${SITE_URL}#website" },
+          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "about": {
+            "@type": "Thing",
+            "name": "AI product capability comparison"
+          }
+        }
+      ]
+    }
+    </script>
 
     ${renderThemeInit()}
 </head>
