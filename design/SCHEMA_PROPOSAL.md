@@ -407,6 +407,6 @@ Phase 5 of the roadmap is complete. The schema now supports:
 
 - **JSON export** — 10 canonical JSON files at `docs/api/v1/` generated from the same ontology-backed source used by the site build
 - **SEO bridge pages** — 125 programmatic pages generated from canonical data with schema.org structured data
-- **MCP read layer** — 7 read-only tools via `scripts/mcp-server.js` backed by the JSON artifacts
+- **MCP read layer** — 15 read-only tools via `scripts/mcp-server.js` backed by the JSON artifacts
 
 See [ROADMAP.md](ROADMAP.md) for current project status.

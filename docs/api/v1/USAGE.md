@@ -46,6 +46,41 @@ Every JSON file includes a `meta.generated` timestamp showing when it was built.
 - If a breaking change is needed, it will ship under `/api/v2/` with `v1` preserved for a transition period.
 - IDs (capability IDs, product IDs, implementation IDs) are stable and safe to use as foreign keys.
 
+## MCP Server
+
+The MCP server (`scripts/mcp-server.js`) exposes 15 read-only tools over stdio JSON-RPC. Configure it via `mcp.json` in the project root.
+
+### Tools
+
+| Tool | Description |
+|---|---|
+| `list_capabilities` | List all capabilities with IDs, names, and groups |
+| `get_capability` | Full details for a capability by ID |
+| `list_products` | List products, optionally filter by kind (hosted/runtime) |
+| `get_product` | Full details for a product including plan names |
+| `compare_products` | Pairwise capability overlap between two hosted products |
+| `check_availability` | Whether a product implements a capability, with gating and plan details |
+| `search` | Keyword search across capabilities, products, implementations, and open models |
+| `get_plan` | Capabilities and implementations included in a specific product plan (now with pricing) |
+| `list_providers` | All providers with websites, status pages, and product lists |
+| `get_provider` | Full details for a provider by ID |
+| `find_products_by_capabilities` | Find products that support ALL of the specified capabilities |
+| `get_evidence` | Verification sources, changelog, and freshness dates for an implementation |
+| `list_model_access` | All open/self-hostable models with deployment modes and related capabilities |
+| `get_model_access` | Full details for an open model by ID |
+| `get_staleness_report` | Evidence records whose verified date exceeds a threshold (default 30 days) |
+
+### Error handling
+
+Error responses follow the [Graceful Boundaries](https://github.com/snapsynapse/graceful-boundaries) pattern. Every error includes four fields:
+
+- `error` — machine-parseable category (e.g. `not_found`, `invalid_input`)
+- `detail` — human-readable explanation
+- `why` — reason the constraint exists
+- `guidance` — constructive next step: which tool to call, `did_you_mean` suggestions, or valid IDs
+
+This means an agent that passes an incorrect ID will receive a suggestion of the correct ID and a pointer to the list tool, rather than a bare error string.
+
 ## For Agents and MCP Consumers
 
 If you are building an agent or tool that reads this data:

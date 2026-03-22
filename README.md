@@ -64,7 +64,7 @@ Scope criteria and watchlist: [design/SCOPE.md](design/SCOPE.md), [design/WATCHL
 ### API and agents
 
 - **JSON API** — 10 stable files at `docs/api/v1/` covering all entity types and derived views ([usage guide](docs/api/v1/USAGE.md))
-- **MCP server** — 7 read-only tools via `scripts/mcp-server.js` for agent-queryable access (config: `mcp.json`)
+- **MCP server** — 15 read-only tools via `scripts/mcp-server.js` for agent-queryable access (config: `mcp.json`). Error responses follow the [Graceful Boundaries](https://github.com/snapsynapse/graceful-boundaries) pattern with structured refusal and constructive guidance.
 
 ### Automation
 
@@ -168,7 +168,8 @@ Architecture, ontology, and project status docs live in [design/](design/):
 - [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
 - [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design
 - [ROADMAP.md](design/ROADMAP.md) — Current project status and outstanding work
-- [WHY_THIS_EXISTS.md](design/WHY_THIS_EXISTS.md) — The problem this project was built to solve 
+- [WHY_THIS_EXISTS.md](design/WHY_THIS_EXISTS.md) — The problem this project was built to solve
+- [Graceful Boundaries](https://github.com/snapsynapse/graceful-boundaries) — Specification for structured refusal and constructive guidance, applied to the MCP server's error responses
 
 Skills: [skills/](skills/) ([README](skills/README.md))
 

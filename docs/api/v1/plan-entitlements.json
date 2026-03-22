@@ -1,12 +1,13 @@
 {
   "meta": {
-    "generated": "2026-03-20T04:47:23.657Z",
+    "generated": "2026-03-22T15:49:31.953Z",
     "version": "1.0"
   },
   "products": {
     "chatgpt": {
       "plans": {
         "Go": {
+          "price": "$8/mo",
           "implementations": [
             "chatgpt-advanced-voice-mode",
             "chatgpt-atlas-browser",
@@ -38,6 +39,7 @@
           "capability_count": 14
         },
         "Plus": {
+          "price": "$20/mo",
           "implementations": [
             "chatgpt-advanced-voice-mode",
             "chatgpt-agent-mode",
@@ -78,6 +80,7 @@
           "capability_count": 18
         },
         "Pro": {
+          "price": "$200/mo",
           "implementations": [
             "chatgpt-advanced-voice-mode",
             "chatgpt-agent-mode",
@@ -119,6 +122,7 @@
           "capability_count": 18
         },
         "Team": {
+          "price": "$25-30/user/mo",
           "implementations": [
             "chatgpt-advanced-voice-mode",
             "chatgpt-agent-mode",
@@ -154,6 +158,7 @@
           "capability_count": 16
         },
         "Enterprise": {
+          "price": "Custom",
           "implementations": [
             "chatgpt-advanced-voice-mode",
             "chatgpt-agent-mode",
@@ -190,6 +195,7 @@
           "capability_count": 16
         },
         "Free": {
+          "price": "$0",
           "implementations": [
             "chatgpt-atlas-browser",
             "chatgpt-canvas",
@@ -214,6 +220,7 @@
           "capability_count": 10
         },
         "Business": {
+          "price": null,
           "implementations": [
             "chatgpt-codex-security"
           ],
@@ -226,6 +233,7 @@
           "capability_count": 3
         },
         "Edu": {
+          "price": null,
           "implementations": [
             "chatgpt-codex-security"
           ],
@@ -242,6 +250,7 @@
     "claude": {
       "plans": {
         "Free": {
+          "price": "$0",
           "implementations": [
             "claude-artifacts",
             "claude-mcp-model-context-protocol",
@@ -266,6 +275,7 @@
           "capability_count": 10
         },
         "Pro": {
+          "price": "$20/mo",
           "implementations": [
             "claude-artifacts",
             "claude-claude-code",
@@ -297,6 +307,7 @@
           "capability_count": 13
         },
         "Max 5x": {
+          "price": "$100/mo",
           "implementations": [
             "claude-artifacts",
             "claude-claude-code",
@@ -329,6 +340,7 @@
           "capability_count": 13
         },
         "Max 20x": {
+          "price": "$200/mo",
           "implementations": [
             "claude-artifacts",
             "claude-claude-code",
@@ -361,6 +373,7 @@
           "capability_count": 13
         },
         "Team": {
+          "price": "$25/user/mo",
           "implementations": [
             "claude-claude-code",
             "claude-connectors",
@@ -387,6 +400,7 @@
           "capability_count": 10
         },
         "Enterprise": {
+          "price": "Custom",
           "implementations": [
             "claude-claude-code",
             "claude-connectors",
@@ -414,6 +428,7 @@
     "copilot": {
       "plans": {
         "M365 Copilot": {
+          "price": null,
           "implementations": [
             "copilot-agent-builder",
             "copilot-connectors",
@@ -433,6 +448,7 @@
           "capability_count": 7
         },
         "Copilot Pro": {
+          "price": "$20/mo",
           "implementations": [
             "copilot-office-apps",
             "copilot-vision",
@@ -456,6 +472,7 @@
           "capability_count": 9
         },
         "Free": {
+          "price": "$0",
           "implementations": [
             "copilot-vision",
             "copilot-voice",
@@ -478,6 +495,7 @@
     "gemini": {
       "plans": {
         "Free": {
+          "price": "$0",
           "implementations": [
             "gemini-ai-studio",
             "gemini-audio-overview",
@@ -511,6 +529,7 @@
           "capability_count": 15
         },
         "AI Pro": {
+          "price": null,
           "implementations": [
             "gemini-ai-studio",
             "gemini-audio-overview",
@@ -550,6 +569,7 @@
           "capability_count": 16
         },
         "AI Plus": {
+          "price": null,
           "implementations": [
             "gemini-gemini-advanced"
           ],
@@ -558,6 +578,7 @@
           "capability_count": 0
         },
         "AI Ultra": {
+          "price": null,
           "implementations": [
             "gemini-workspace"
           ],
@@ -572,6 +593,7 @@
           "capability_count": 5
         },
         "Workspace add-on": {
+          "price": "$20/user/mo",
           "implementations": [
             "gemini-workspace",
             "gemini-chat"
@@ -588,6 +610,7 @@
           "capability_count": 6
         },
         "Google AI Plus": {
+          "price": "$7.99/mo",
           "implementations": [
             "gemini-past-chats-memory",
             "gemini-chat"
@@ -601,6 +624,7 @@
           "capability_count": 3
         },
         "Google AI Pro": {
+          "price": "$19.99/mo",
           "implementations": [
             "gemini-past-chats-memory",
             "gemini-chat"
@@ -614,6 +638,7 @@
           "capability_count": 3
         },
         "Google AI Ultra": {
+          "price": "$249.99/mo",
           "implementations": [
             "gemini-past-chats-memory",
             "gemini-chat"
@@ -631,6 +656,7 @@
     "grok": {
       "plans": {
         "Premium+": {
+          "price": "$16/mo",
           "implementations": [
             "grok-deepsearch",
             "grok-chat",
@@ -662,6 +688,7 @@
           "capability_count": 13
         },
         "SuperGrok": {
+          "price": "$30/mo",
           "implementations": [
             "grok-deepsearch",
             "grok-chat",
@@ -693,6 +720,7 @@
           "capability_count": 13
         },
         "Premium": {
+          "price": "$8/mo",
           "implementations": [
             "grok-chat",
             "grok-image-generation-aurora",
@@ -721,6 +749,7 @@
           "capability_count": 11
         },
         "Free": {
+          "price": "$0",
           "implementations": [
             "grok-studio",
             "grok-memory"
@@ -738,6 +767,7 @@
     "perplexity": {
       "plans": {
         "Pro": {
+          "price": "$20/mo",
           "implementations": [
             "perplexity-agent-mode-agentic-actions",
             "perplexity-buy-with-pro-shopping",
@@ -768,6 +798,7 @@
           "capability_count": 12
         },
         "Max": {
+          "price": "$200/mo",
           "implementations": [
             "perplexity-agent-mode-agentic-actions",
             "perplexity-buy-with-pro-shopping",
@@ -795,6 +826,7 @@
           "capability_count": 10
         },
         "Enterprise Pro": {
+          "price": "$40/user/mo",
           "implementations": [
             "perplexity-agent-mode-agentic-actions",
             "perplexity-comet-browser",
@@ -816,6 +848,7 @@
           "capability_count": 8
         },
         "Free": {
+          "price": "$0",
           "implementations": [
             "perplexity-buy-with-pro-shopping",
             "perplexity-collections-spaces",

@@ -2463,7 +2463,7 @@ function buildDataExport(ontologyData) {
 
 const API_OUTPUT_DIR = path.join(__dirname, '..', 'docs', 'api', 'v1');
 
-function buildAPIExport(ontologyData) {
+function buildAPIExport(ontologyData, platforms) {
     const timestamp = new Date().toISOString();
 
     const capabilities = ontologyData.capabilities.map(c => ({
@@ -2660,8 +2660,22 @@ function buildAPIExport(ontologyData) {
     };
 
     // Derived view: plan entitlements
+    // Build a pricing lookup: product record_source → { planName: priceString }
+    const platformPricingMap = new Map();
+    (platforms || []).forEach(platform => {
+        const priceMap = {};
+        (platform.pricing || []).forEach(tier => {
+            priceMap[tier.plan] = tier.price || null;
+        });
+        platformPricingMap.set(platform.source_file, priceMap);
+    });
+
     const planEntitlements = { meta: { generated: timestamp, version: '1.0' }, products: {} };
     hostedProducts.forEach(prod => {
+        // Find the original ontology product to get record_source
+        const ontologyProduct = ontologyData.products.find(p => p.id === prod.id);
+        const priceMap = ontologyProduct?.record_source ? (platformPricingMap.get(ontologyProduct.record_source) || {}) : {};
+
         const prodImpls = implementations.filter(i => i.product === prod.id);
         const planMap = {};
         prodImpls.forEach(impl => {
@@ -2675,6 +2689,7 @@ function buildAPIExport(ontologyData) {
         const plans = {};
         Object.keys(planMap).forEach(plan => {
             plans[plan] = {
+                price: priceMap[plan] || null,
                 implementations: planMap[plan].implementations,
                 capabilities: [...planMap[plan].capabilities],
                 implementation_count: planMap[plan].implementations.length,
@@ -3061,8 +3076,8 @@ function generateCompareBridgePage(comparison, ontologyData) {
         '@type': 'ItemList',
         name: `${nameA} vs ${nameB} — AI Capability Comparison`,
         itemListElement: [
-            { '@type': 'SoftwareApplication', name: nameA, applicationCategory: 'AI Assistant', url: productA.pricing_page || '' },
-            { '@type': 'SoftwareApplication', name: nameB, applicationCategory: 'AI Assistant', url: productB.pricing_page || '' }
+            { '@type': 'SoftwareApplication', name: nameA, applicationCategory: 'AI Assistant', url: productA.pricing_page || '', isSimilarTo: { '@type': 'SoftwareApplication', name: nameB } },
+            { '@type': 'SoftwareApplication', name: nameB, applicationCategory: 'AI Assistant', url: productB.pricing_page || '', isSimilarTo: { '@type': 'SoftwareApplication', name: nameA } }
         ]
     };
 
@@ -3422,7 +3437,7 @@ function main() {
     if (!fs.existsSync(API_OUTPUT_DIR)) {
         fs.mkdirSync(API_OUTPUT_DIR, { recursive: true });
     }
-    const apiExport = buildAPIExport(ontologyData);
+    const apiExport = buildAPIExport(ontologyData, platforms);
     let apiTotalSize = 0;
     for (const [filename, data] of Object.entries(apiExport)) {
         const content = JSON.stringify(data, null, 2);

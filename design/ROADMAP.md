@@ -10,7 +10,7 @@ The original five-phase roadmap is complete. The project now has:
 - **Dual-view site** — capability-first homepage and feature-first detailed availability, both generated from the same canonical source
 - **Machine-readable API** — 10 JSON files at `docs/api/v1/` with stable IDs, cross-links, and freshness metadata
 - **SEO bridge pages** — 125 programmatic pages (`/can/`, `/compare/`, `/capability/`, `/best-for/`) with schema.org structured data
-- **MCP read layer** — 7 read-only tools via `scripts/mcp-server.js` (zero dependencies, stdio transport)
+- **MCP read layer** — 15 read-only tools via `scripts/mcp-server.js` (zero dependencies, stdio transport)
 - **Verification cascade** — weekly multi-model cross-check with human review gate
 
 ## Outstanding work

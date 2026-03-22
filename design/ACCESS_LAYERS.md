@@ -230,7 +230,7 @@ These fields should be present in capability records and survive into all access
 | Phase 5a: SEO Vocabulary | `search_terms` in all 18 capability records | Done |
 | Phase 5b: JSON Export | 10 files at `docs/api/v1/` | Done |
 | Phase 5c: SEO Bridge Pages | 125 pages with schema.org structured data | Done |
-| Phase 5d: MCP Read Layer | 7 tools via `scripts/mcp-server.js` | Done |
+| Phase 5d: MCP Read Layer | 15 tools via `scripts/mcp-server.js` | Done |
 
 ## Security and Usage Considerations
 
