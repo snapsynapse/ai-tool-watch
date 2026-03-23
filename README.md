@@ -12,7 +12,7 @@
 
 A single source of truth for answering questions like:
 - "Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)
-- "Can I use Claude Cowork on Windows?" (Not yet, macOS only)
+- "Can I use Claude Cowork on Windows?" (Yes, macOS and Windows x64)
 - "Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)
 
 Built for AI facilitators, educators, developers, and AI agents that need accurate, current information about AI tool availability. Browse the site, query the JSON API, or connect an agent via MCP.
@@ -27,7 +27,7 @@ Contributing doesn't require a dev environment. You edit a `.md` or `.yml` file,
 
 ## What's covered
 
-18 capabilities, 72 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.
+18 capabilities, 87 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.
 
 All prices are in **USD**. Availability reflects the **United States** region by default.
 
@@ -68,7 +68,7 @@ Scope criteria and watchlist: [design/SCOPE.md](design/SCOPE.md), [design/WATCHL
 
 ### Automation
 
-- **Multi-model verification** — Weekly four-model cascade cross-checks all data with human review gate
+- **Multi-model verification** — Twice-weekly four-model cascade cross-checks all data with human review gate
 - **Link integrity** — Weekly URL validation across all evidence sources
 - **Staleness tracking** — Features not re-verified within 7 days are flagged for the next run
 
@@ -127,7 +127,7 @@ Build output:
 - `docs/about.html` — About page
 - `docs/api/v1/*.json` — Machine-readable JSON API (10 files)
 - `docs/can/*/`, `docs/compare/*/`, `docs/capability/*/`, `docs/best-for/*/` — 125 bridge pages
-- `docs/sitemap.xml` — Dynamic sitemap (131 URLs)
+- `docs/sitemap.xml` — Dynamic sitemap (132 URLs)
 
 Data format: [data/_schema.md](data/_schema.md). Ontology schema: [design/SCHEMA_PROPOSAL.md](design/SCHEMA_PROPOSAL.md).
 

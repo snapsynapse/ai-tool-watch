@@ -49,7 +49,7 @@ Lighthouse scores are consistently in the 90+ range, but some small tweaks could
 
 ### Ongoing
 
-- Keep data accurate through the weekly verification cascade
+- Keep data accurate through the twice-weekly verification cascade
 - Expand implementation coverage as products ship new capabilities
 - Admit new products from the [watchlist](design/WATCHLIST.md) when they meet scope criteria
 

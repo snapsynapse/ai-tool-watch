@@ -16,7 +16,7 @@ Start at [`index.json`](https://airef.snapsynapse.com/api/v1/index.json) for a m
 |---|---|
 | `capabilities.json` | 18 capabilities with search terms, definitions, what-counts/what-doesn't, and cross-links to implementations |
 | `products.json` | 9 products (hosted and runtime) with provider links, pricing pages, and implementation lists |
-| `implementations.json` | 72 implementations with full plan/surface availability, gating, and evidence cross-links |
+| `implementations.json` | 87 implementations with full plan/surface availability, gating, and evidence cross-links |
 | `providers.json` | 13 providers with logo, website, and status page URLs |
 | `model-access.json` | 9 open-model records with deployment modes, constraints, and runtime information |
 | `evidence.json` | 90 evidence records with sources, changelog, and verification dates |

@@ -144,7 +144,7 @@ node scripts/verify-features.js --dry-run
 ### Scheduled (GitHub Actions)
 
 The workflow runs automatically:
-- **Weekly** (Sundays at 00:00 UTC) - Full verification of all features
+- **Twice weekly** (Monday and Thursday at 6pm Pacific / 01:00 UTC) - Full verification of all features, most-stale first
 - **Manual** - Trigger via GitHub Actions "Run workflow" button
 
 ### Staleness Check
@@ -257,9 +257,9 @@ Optional `scripts/verification.config.json`:
 ```json
 {
   "schedule": {
-    "full_verification": "weekly",
-    "staleness_check": "daily",
-    "staleness_threshold_days": 30
+    "full_verification": "twice-weekly (Mon/Thu 6pm Pacific)",
+    "staleness_check": "twice-weekly (Mon/Thu 6pm Pacific)",
+    "staleness_threshold_days": 7
   },
   "cascade": {
     "required_confirmations": 3,
@@ -333,7 +333,7 @@ Current category model used by `check-links.js`:
 
 ### Scheduled Runs
 
-The link checker runs weekly on **Saturdays at 00:00 UTC** (the day before feature verification on Sundays). If actionable problems are found (broken links/timeouts), an issue is automatically created with the affected URLs.
+The link checker runs weekly on **Saturdays at 00:00 UTC**. If actionable problems are found (broken links/timeouts), an issue is automatically created with the affected URLs.
 
 ## How Grok (X/Twitter) Helps
 

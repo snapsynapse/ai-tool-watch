@@ -3,7 +3,7 @@
 Status: Published draft
 Last updated: 2026-03-15
 
-This document explains the problem this project was built to solve and why nothing else solves it. It's written for developers who might want to build something similar in their own domain, or who want to understand why a structured knowledge base with no database, no framework, and a weekly AI verification cascade exists at all.
+This document explains the problem this project was built to solve and why nothing else solves it. It's written for developers who might want to build something similar in their own domain, or who want to understand why a structured knowledge base with no database, no framework, and a twice-weekly AI verification cascade exists at all.
 
 ---
 
