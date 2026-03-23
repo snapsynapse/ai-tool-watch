@@ -234,9 +234,15 @@ async function main() {
         console.log(`Verifying ${featuresToVerify.length} features across all platforms`);
     }
 
-    // Apply max limit
+    // Apply max limit — prioritize most-stale features so nothing gets permanently skipped
     if (featuresToVerify.length > options.maxFeatures) {
-        console.log(`Limiting to ${options.maxFeatures} features (use --max to change)`);
+        const now = new Date();
+        featuresToVerify.sort((a, b) => {
+            const aDate = a.feature.checked ? new Date(a.feature.checked) : new Date(0);
+            const bDate = b.feature.checked ? new Date(b.feature.checked) : new Date(0);
+            return aDate - bDate; // oldest Checked date first
+        });
+        console.log(`Limiting to ${options.maxFeatures} of ${featuresToVerify.length} features (most stale first)`);
         featuresToVerify = featuresToVerify.slice(0, options.maxFeatures);
     }
 
