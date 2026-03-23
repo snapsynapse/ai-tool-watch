@@ -1,9 +1,9 @@
 name: Verify Features
 
 on:
-  # Weekly schedule - Sundays at 00:00 UTC
+  # Twice weekly - Monday and Thursday at 6pm Pacific (Tue/Fri 01:00 UTC)
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 1 * * 2,5'
 
   # Manual trigger with options
   workflow_dispatch:
@@ -167,7 +167,7 @@ jobs:
 
           gh issue create \
             --title "[Automated] ${{ steps.staleness.outputs.count }} features need verification" \
-            --body "The weekly staleness check found ${{ steps.staleness.outputs.count }} features that haven't been verified in over 7 days.
+            --body "The twice-weekly staleness check found ${{ steps.staleness.outputs.count }} features that haven't been verified in over 7 days.
 
           Please run the full verification workflow or manually review these features.
 

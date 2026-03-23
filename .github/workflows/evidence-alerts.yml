@@ -2,7 +2,7 @@ name: Evidence Age Alerts
 
 on:
   schedule:
-    - cron: '23 17 * * 0'  # Sundays at ~10:23am Pacific
+    - cron: '23 1 * * 2,5'  # Monday and Thursday ~6pm Pacific (Tue/Fri 01:23 UTC)
   workflow_dispatch:
 
 permissions:

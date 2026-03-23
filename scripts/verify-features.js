@@ -62,7 +62,7 @@ function parseArgs() {
         platform: null,
         feature: null,
         staleOnly: false,
-        staleThreshold: 30,
+        staleThreshold: 7,
         dryRun: false,
         verbose: false,
         maxFeatures: 100,
@@ -121,7 +121,7 @@ OPTIONS:
     -p, --platform <name>      Verify only a specific platform (e.g., claude, chatgpt)
     -f, --feature <name>       Verify only a specific feature (requires --platform)
     -s, --stale-only           Only check features with Checked date > threshold
-        --stale-threshold <n>  Days threshold for staleness (default: 30)
+        --stale-threshold <n>  Days threshold for staleness (default: 7)
     -d, --dry-run              Don't create PRs or issues, just report
     -v, --verbose              Show detailed output during verification
     -m, --max <n>              Maximum features to verify (default: 100)
