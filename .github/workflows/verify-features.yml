@@ -97,6 +97,51 @@ jobs:
             git push
           fi
 
+      - name: Count open issues needing resolution
+        id: issues
+        if: inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COUNT=$(gh issue list --state open \
+            --label "needs-review" \
+            --json number --jq 'length')
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "Found $COUNT open issues needing resolution"
+
+      - name: Auto-resolve verification issues
+        if: inputs.dry_run != true && steps.issues.outputs.count > 0
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are resolving verification issues for the AI Capability Reference.
+            There are ${{ steps.issues.outputs.count }} open issues with the "needs-review" label.
+
+            For each platform with open issues, run `/resolve-issue batch <platform>`.
+            Process all platforms that have open issues. Work through them systematically.
+
+            Start by listing all open issues:
+            gh issue list --repo ${{ github.repository }} --state open --label "needs-review" --json number,title
+
+            Then resolve them by platform. Be thorough but efficient — use batch mode.
+          allowed_tools: "Bash,Read,Edit,Write,Grep,Glob,WebFetch"
+          claude_args: "--model claude-sonnet-4-6 --max-turns 30"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+
+      - name: Commit any data updates from resolution
+        if: inputs.dry_run != true && steps.issues.outputs.count > 0
+        run: |
+          if git diff --quiet data/platforms/; then
+            echo "No additional changes from issue resolution"
+          else
+            git add data/platforms/
+            git commit -m "Auto-resolve verification issues [skip ci]"
+            git push
+          fi
+
       - name: Upload verification report
         uses: actions/upload-artifact@v4
         with:
