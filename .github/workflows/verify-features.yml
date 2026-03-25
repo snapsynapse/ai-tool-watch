@@ -94,6 +94,7 @@ jobs:
           else
             git add data/platforms/
             git commit -m "Update Checked/Verified dates [skip ci]"
+            git pull --rebase
             git push
           fi
 
@@ -139,6 +140,7 @@ jobs:
           else
             git add data/platforms/
             git commit -m "Auto-resolve verification issues [skip ci]"
+            git pull --rebase
             git push
           fi
 
