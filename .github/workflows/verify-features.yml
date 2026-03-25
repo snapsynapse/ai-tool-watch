@@ -88,14 +88,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Check if there are changes to commit
           if git diff --quiet data/platforms/; then
-            echo "No changes to commit"
+            echo "No date changes to commit"
           else
             git add data/platforms/
             git commit -m "Update Checked/Verified dates [skip ci]"
-            git pull --rebase
-            git push
           fi
 
       - name: Count open issues needing resolution
@@ -132,7 +129,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
 
-      - name: Commit any data updates from resolution
+      - name: Commit resolution updates
         if: inputs.dry_run != true && steps.issues.outputs.count > 0
         run: |
           if git diff --quiet data/platforms/; then
@@ -140,8 +137,17 @@ jobs:
           else
             git add data/platforms/
             git commit -m "Auto-resolve verification issues [skip ci]"
+          fi
+
+      - name: Push all commits
+        if: inputs.dry_run != true
+        run: |
+          # Single push at the end — pull first to handle any concurrent updates
+          if [ "$(git rev-list --count @{u}..HEAD 2>/dev/null)" -gt 0 ]; then
             git pull --rebase
             git push
+          else
+            echo "No local commits to push"
           fi
 
       - name: Upload verification report
