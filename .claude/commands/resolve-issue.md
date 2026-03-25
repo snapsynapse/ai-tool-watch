@@ -5,12 +5,13 @@ argument-hint: [issue-number or "batch" platform-name]
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, WebFetch, Task
 skill_bundle: resolve-issue
 file_role: skill
-version: 3
-version_date: 2026-03-15
-previous_version: 2
+version: 4
+version_date: 2026-03-25
+previous_version: 3
 change_summary: >
-  Added research fallback hierarchy, temporary state change handling,
-  and structured batch assessment format.
+  Added empty-response fast-path heuristic, batch grouping optimization,
+  data-inconsistency issue type. Pipeline now detects boilerplate responses
+  and requires minimum evidence — most inconclusive issues should no longer be created.
 ---
 
 ## Resolve AI Capability Reference Issue
@@ -25,6 +26,7 @@ This project tracks AI product features across platforms (ChatGPT, Claude, Gemin
 **Issue types:**
 - `verification-inconclusive` — models couldn't reach 3/3 consensus
 - `verification-conflict` — models actively disagreed
+- `data-inconsistency` — automated consistency check found contradictions in data fields (e.g., gating vs availability table)
 - `broken-links` — URL validation failures
 
 ### Arguments
@@ -76,6 +78,14 @@ gh issue list --repo snapsynapse/ai-capability-reference --state open --search "
 
 Present this document to the user before applying any changes. For no-change closes and duplicates, you can proceed after presenting without waiting for explicit per-issue approval.
 
+**Batch efficiency:** When resolving multiple issues for the same platform:
+1. Read the `data/platforms/<platform>.md` file ONCE at the start.
+2. For EACH feature with an open issue, run the internal consistency check from Step 2.
+3. Identify empty-response issues (see Step 3 fast-path) and mark them for immediate close.
+4. For remaining issues that need research, do a SINGLE Perplexity search covering all features for that platform in one query. Frame it as: "What is the current state of [feature1], [feature2], [feature3] on [platform] as of [month] [year]?"
+5. Apply findings across all issues, then present the batch assessment.
+This avoids redundant file reads and API calls.
+
 ### Step 2: Read current data and check internal consistency
 
 Read the relevant `data/platforms/<platform>.md` file. Identify the feature section that matches the issue.
@@ -87,6 +97,9 @@ Before assessing the issue itself, scan the feature's data for internal contradi
 - Do the **source URLs** still work? A 404 is worth noting even if it's not the issue being resolved.
 
 ### Step 3: Assess — apply these heuristics IN ORDER
+
+**Close immediately with no data change if ALL model responses are empty/boilerplate:**
+- If every model response in the issue body is just "Okay, I will check..." or similar with no actual analysis (typically <200 characters of substance), this is a pipeline failure, not a real finding. Run the internal consistency check from Step 2; if clean, close immediately. If the consistency check finds issues, research those specific inconsistencies instead of the original issue. These issues should now be rare due to pipeline improvements (empty response detection + minimum evidence threshold added March 2026).
 
 **Close immediately as duplicate if:**
 - An older `verification-inconclusive` issue exists for the same feature AND a newer `verification-conflict` issue also exists. Close the older one with comment: "Superseded by #[newer]. Consolidating to the newer issue."

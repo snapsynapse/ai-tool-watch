@@ -28,7 +28,7 @@ last_verified: 2026-03-19
 | URL | https://www.perplexity.ai/hub/blog/everything-is-computer |
 | Launched | 2024-11-01T12:00Z |
 | Verified | 2026-03-21|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -87,7 +87,7 @@ Available globally via Comet browser and web. Personal Computer limited to initi
 | URL | https://www.perplexity.ai/hub/blog/shop-like-a-pro |
 | Launched | 2024-11-18T12:00Z |
 | Verified | 2026-02-07|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -140,11 +140,11 @@ US only. International users redirected to merchant sites.
 |----------|-------|
 | Category | local-files |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://www.perplexity.ai/hub/blog/introducing-spaces |
 | Launched | 2024-10-17T12:00Z |
-| Verified | 2026-02-07|
-| Checked | 2026-03-24|
+| Verified | 2026-03-25|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -184,6 +184,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-25T12:00Z | [Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited) |
 | 2024-10-17T12:00Z | Initial entry |
 
 ---
@@ -194,11 +195,11 @@ Available globally.
 |----------|-------|
 | Category | browser |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://www.perplexity.ai/comet |
 | Launched | 2025-07-09T12:00Z |
-| Verified | 2026-03-19|
-| Checked | 2026-03-24|
+| Verified | 2026-03-25|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -243,6 +244,7 @@ Available globally.
 | Date | Change |
 |------|--------|
 | 2026-03-19T12:00Z | [Verified] Comet Enterprise launched (Mar 2026): managed browser with admin controls, MDM deployment, audit logs, CrowdStrike Falcon integration; iOS now available (Comet for iPhone); Enterprise Pro row added |
+| 2026-03-25T12:00Z | [Verified] Gating corrected from paid to free — availability table shows Free tier has full browser access |
 | 2025-07-09T12:00Z | Initial entry |
 
 ---
@@ -257,7 +259,7 @@ Available globally.
 | URL | https://www.perplexity.ai/enterprise/app-connectors |
 | Launched | 2024-09-01T12:00Z |
 | Verified | 2026-02-07|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -308,11 +310,11 @@ Available globally where Perplexity Enterprise is available.
 |----------|-------|
 | Category | search |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://www.perplexity.ai/ |
 | Launched | 2024-01-01T12:00Z |
-| Verified | 2026-01-29|
-| Checked | 2026-03-24|
+| Verified | 2026-03-25|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -352,6 +354,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-03-25T12:00Z | [Verified] Gating corrected from paid to free — availability table shows Free tier has full access to all focus modes |
 | 2024-01-01T12:00Z | Initial entry |
 
 ---
@@ -366,7 +369,7 @@ Available globally.
 | URL | https://www.perplexity.ai/pro |
 | Launched | 2024-01-01T12:00Z |
 | Verified | 2026-01-29|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -420,7 +423,7 @@ Available globally.
 | URL | https://www.perplexity.ai/hub/blog/perplexity-pages |
 | Launched | 2024-05-30T12:00Z |
 | Verified | 2026-01-29|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -476,7 +479,7 @@ Available globally.
 | URL | https://www.perplexity.ai/pro |
 | Launched | 2024-07-02T12:00Z |
 | Verified | 2026-02-07|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -530,7 +533,7 @@ Available globally.
 | URL | https://www.perplexity.ai/ |
 | Launched | 2024-10-24T12:00Z |
 | Verified | 2026-01-29|
-| Checked | 2026-03-24|
+| Checked | 2026-03-25 |
 
 ### Availability
 
@@ -583,7 +586,7 @@ Available globally.
 | URL      | https://www.perplexity.ai |
 | Launched | 2022-12-07T12:00Z |
 | Verified | 2026-03-07 |
-| Checked  | 2026-03-07 |
+| Checked | 2026-03-25 |
 
 ### Availability
 

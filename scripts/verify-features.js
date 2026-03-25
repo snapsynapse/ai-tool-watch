@@ -44,10 +44,13 @@ const {
     generatePRBody,
     generateContradictionIssue,
     generateInconclusiveIssue,
+    generateConsistencyIssue,
     generateStalenessReport,
     printResults,
     createGitHubIssue
 } = require('./lib/reporter');
+
+const { checkConsistency } = require('./lib/consistency');
 
 const {
     batchUpdateCheckedDates,
@@ -244,6 +247,51 @@ async function main() {
         });
         console.log(`Limiting to ${options.maxFeatures} of ${featuresToVerify.length} features (most stale first)`);
         featuresToVerify = featuresToVerify.slice(0, options.maxFeatures);
+    }
+
+    // Pre-cascade: check internal consistency of all features
+    const consistencyErrors = [];
+    for (const { platform, feature } of featuresToVerify) {
+        const result = checkConsistency(feature);
+        if (result.hasErrors) {
+            consistencyErrors.push({ platform, feature, issues: result.issues });
+            console.log(`⚠ Consistency error: ${platform.name} → ${feature.name}`);
+            for (const issue of result.issues.filter(i => i.severity === 'error')) {
+                console.log(`  🔴 ${issue.message}`);
+            }
+        } else if (result.hasWarnings && options.verbose) {
+            for (const issue of result.issues.filter(i => i.severity === 'warning')) {
+                console.log(`  🟡 ${platform.name} → ${feature.name}: ${issue.message}`);
+            }
+        }
+    }
+
+    if (consistencyErrors.length > 0) {
+        console.log(`\n${consistencyErrors.length} feature(s) with consistency errors (removed from cascade)`);
+
+        if (!options.dryRun) {
+            for (const { platform, feature, issues } of consistencyErrors) {
+                const title = `[Data Inconsistency] ${platform.name} - ${feature.name}`;
+                const body = generateConsistencyIssue({
+                    platform: platform.name,
+                    feature: feature.name,
+                    issues
+                });
+                console.log(`Creating consistency issue: ${platform.name} → ${feature.name}`);
+                const issueUrl = createGitHubIssue(title, body, ['data-inconsistency', 'needs-review']);
+                if (issueUrl) {
+                    console.log(`  Issue created: ${issueUrl}`);
+                }
+            }
+        }
+
+        // Remove features with consistency errors from cascade
+        const errorKeys = new Set(consistencyErrors.map(e =>
+            `${e.platform.name}:${e.feature.name}`
+        ));
+        featuresToVerify = featuresToVerify.filter(f =>
+            !errorKeys.has(`${f.platform.name}:${f.feature.name}`)
+        );
     }
 
     if (options.dryRun) {

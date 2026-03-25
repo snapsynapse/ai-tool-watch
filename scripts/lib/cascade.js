@@ -37,6 +37,28 @@ function parseResponse(response, storedFeature) {
     const changes = [];
     const responseLower = response.toLowerCase();
 
+    // Detect empty or boilerplate responses that contain no actual analysis
+    const BOILERPLATE_PREFIXES = [
+        'okay, i will check',
+        'okay, i will verify',
+        'okay, let me check',
+        'okay, let me verify',
+        'i will check',
+        'i will verify',
+        'let me check',
+        'let me verify',
+        'sure, i will',
+        'sure, let me'
+    ];
+
+    const isBoilerplate = response.trim().length < 200 ||
+        (BOILERPLATE_PREFIXES.some(prefix => responseLower.startsWith(prefix)) &&
+         response.trim().length < 500);
+
+    if (isBoilerplate) {
+        return { hasChange: false, changes: [], confidence: 0, isEmpty: true };
+    }
+
     // Check for explicit "no change" indicators
     const noChangeIndicators = [
         'no changes',
@@ -220,6 +242,23 @@ async function runCascade(platform, feature, options = {}) {
             // Parse the response for changes
             const parsed = parseResponse(response.response, storedData);
 
+            // Treat empty/boilerplate responses as errors — don't count them
+            if (parsed.isEmpty) {
+                log(`  Empty/boilerplate response (${response.response.length} chars). Treating as ERROR.`);
+                results.push({
+                    model: client.displayName,
+                    modelName: client.name,
+                    response: response.response,
+                    type: ResultType.ERROR,
+                    error: 'Empty or boilerplate response',
+                    isEmpty: true
+                });
+                if (results.length < clients.length) {
+                    await new Promise(resolve => setTimeout(resolve, delayBetweenQueries));
+                }
+                continue;
+            }
+
             const result = {
                 model: client.displayName,
                 modelName: client.name,
@@ -286,6 +325,17 @@ async function runCascade(platform, feature, options = {}) {
                 error: error.message
             });
         }
+    }
+
+    // Minimum evidence threshold: require at least 2 substantive results
+    // to create an issue. Otherwise downgrade INCONCLUSIVE to NO_CHANGE.
+    const substantiveResults = results.filter(r =>
+        r.type !== ResultType.ERROR && r.type !== ResultType.SKIPPED
+    );
+    if (substantiveResults.length < 2 && outcome === CascadeOutcome.INCONCLUSIVE) {
+        log(`\n⚠ Only ${substantiveResults.length} substantive result(s). ` +
+            `Downgrading INCONCLUSIVE to NO_CHANGE (insufficient evidence).`);
+        outcome = CascadeOutcome.NO_CHANGE;
     }
 
     // Check if all models errored
