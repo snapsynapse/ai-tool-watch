@@ -25,6 +25,7 @@ const HOMEPAGE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
 const CONSTRAINTS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'constraints.html');
 const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
 const COMPARE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'compare.html');
+const TIMELINE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'timeline.html');
 const DATA_EXPORT_FILE = path.join(__dirname, '..', 'docs', 'assets', 'data.json');
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
@@ -905,6 +906,7 @@ function renderSiteNav(activePage, prefix) {
         { id: 'implementations', label: 'Products', href: `${prefix}implementations.html` },
         { id: 'compare', label: 'Compare', href: `${prefix}compare.html` },
         { id: 'constraints', label: 'Limits', href: `${prefix}constraints.html` },
+        { id: 'timeline', label: 'Timeline', href: `${prefix}timeline.html` },
         { id: 'about', label: 'About', href: `${prefix}about.html` }
     ];
 
@@ -2155,6 +2157,144 @@ function generateAboutHTML() {
     <div class="container" id="main-content">
         <div class="about-content">
             ${content}
+        </div>
+
+        ${renderSharedFooter()}
+    </div>
+    <script src="assets/search.js"></script>
+    ${renderThemeScript()}
+</body>
+</html>`;
+}
+
+/**
+ * Generate the timeline page.
+ * Collects all launch dates and changelog entries into a chronological view.
+ */
+function generateTimelineHTML(platforms, ontologyData) {
+    const today = new Date().toISOString().split('T')[0];
+    const hostedPlatforms = platforms.filter(isPublicPlatform);
+
+    // Collect all timeline events from platform features
+    const events = [];
+    const seen = new Set(); // de-duplicate by date+platform+feature
+
+    for (const platform of hostedPlatforms) {
+        for (const feature of platform.features) {
+            const featureId = featureCardId(platform.name, feature.name);
+            const launchedDate = formatDateForDisplay(feature.launched);
+
+            // Add launch event
+            if (launchedDate) {
+                const key = `${launchedDate}|${featureId}|launch`;
+                if (!seen.has(key)) {
+                    seen.add(key);
+                    events.push({
+                        date: launchedDate,
+                        product: platform.name,
+                        feature: feature.name,
+                        event: `${feature.name} launched`,
+                        category: feature.category || '',
+                        featureId
+                    });
+                }
+            }
+
+            // Add changelog events (skip entries that match the launch date)
+            for (const entry of (feature.changelog || [])) {
+                const entryDate = formatDateForDisplay(entry.date);
+                if (!entryDate) continue;
+                const key = `${entryDate}|${featureId}|${entry.change || ''}`;
+                if (seen.has(key)) continue;
+                // Skip if this is just the launch entry
+                if (entryDate === launchedDate && /launch/i.test(entry.change || '')) continue;
+                seen.add(key);
+                events.push({
+                    date: entryDate,
+                    product: platform.name,
+                    feature: feature.name,
+                    event: entry.change || `${feature.name} updated`,
+                    category: feature.category || '',
+                    featureId
+                });
+            }
+        }
+    }
+
+    events.sort((a, b) => b.date.localeCompare(a.date));
+
+    // Group by year
+    const byYear = {};
+    for (const ev of events) {
+        const year = ev.date.slice(0, 4);
+        if (!byYear[year]) byYear[year] = [];
+        byYear[year].push(ev);
+    }
+
+    const timelineHtml = Object.keys(byYear).sort().reverse().map(year => {
+        const yearEvents = byYear[year].map(ev => {
+            const isPast = ev.date <= today;
+            const cls = isPast ? 'past' : 'future';
+            const categoryTag = ev.category
+                ? `<span class="timeline-category">${escapeHTML(ev.category)}</span>`
+                : '';
+            return `<div class="timeline-entry ${cls}">
+                <div class="timeline-date">${escapeHTML(ev.date)}</div>
+                <div class="timeline-content">
+                    <a href="implementations.html#impl-${ev.featureId}" onclick="passTheme(this)" class="timeline-product">${escapeHTML(ev.product)}</a>
+                    <span class="timeline-event">${escapeHTML(ev.event)}</span>
+                    ${categoryTag}
+                </div>
+            </div>`;
+        }).join('\n');
+
+        return `<div class="timeline-year">${year}</div>\n${yearEvents}`;
+    }).join('\n');
+
+    const eventCount = events.length;
+    const desc = 'Chronological view of AI feature launches and changes across all tracked products.';
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline - ${DASHBOARD_TITLE}</title>
+    <meta name="description" content="${desc}">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="${SITE_URL}timeline.html">
+
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Timeline - ${DASHBOARD_TITLE}">
+    <meta property="og:description" content="${desc}">
+    <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Timeline - ${DASHBOARD_TITLE}">
+    <meta name="twitter:description" content="${desc}">
+    <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
+
+    <link rel="stylesheet" href="assets/styles.css">
+    ${renderThemeInit()}
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    ${renderSiteNav('timeline')}
+    <div class="container" id="main-content">
+        <div style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+            <h2 style="margin-top: 0.5rem;">Timeline</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                ${eventCount} events across all tracked AI products. Solid dots are past; hollow dots are future.
+            </p>
+
+            <div class="timeline">
+                ${timelineHtml}
+            </div>
         </div>
 
         ${renderSharedFooter()}
@@ -3503,6 +3643,7 @@ function generateSitemap(bridgePagePaths) {
         { path: 'implementations.html', changefreq: 'weekly', priority: '0.9' },
         { path: 'compare.html', changefreq: 'weekly', priority: '0.8' },
         { path: 'constraints.html', changefreq: 'weekly', priority: '0.8' },
+        { path: 'timeline.html', changefreq: 'weekly', priority: '0.7' },
         { path: 'about.html', changefreq: 'monthly', priority: '0.5' },
         { path: 'pattern.html', changefreq: 'monthly', priority: '0.6' },
         { path: 'api/v1/index.json', changefreq: 'weekly', priority: '0.7' }
@@ -3591,6 +3732,7 @@ function main() {
     const homepageHTML = generateCapabilitiesHTML(ontologyData);
     const constraintsHTML = generateConstraintsHTML(ontologyData, platforms);
     const compareHTML = generateCompareHTML(ontologyData);
+    const timelineHTML = generateTimelineHTML(platforms, ontologyData);
     const redirectHTML = generateCapabilitiesRedirect();
     const aboutHTML = generateAboutHTML();
 
@@ -3610,6 +3752,10 @@ function main() {
     fs.writeFileSync(COMPARE_OUTPUT_FILE, compareHTML);
     console.log(`✅ Compare page written to ${COMPARE_OUTPUT_FILE}`);
     console.log(`   File size: ${(compareHTML.length / 1024).toFixed(1)} KB`);
+
+    fs.writeFileSync(TIMELINE_OUTPUT_FILE, timelineHTML);
+    console.log(`✅ Timeline written to ${TIMELINE_OUTPUT_FILE}`);
+    console.log(`   File size: ${(timelineHTML.length / 1024).toFixed(1)} KB`);
 
     fs.writeFileSync(CAPABILITIES_REDIRECT_FILE, redirectHTML);
     console.log(`✅ Capabilities redirect written to ${CAPABILITIES_REDIRECT_FILE}`);

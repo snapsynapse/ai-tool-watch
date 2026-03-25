@@ -2307,6 +2307,98 @@ html.light-mode .about-banner-light { display: block; }
 .light-mode .gating-limited { color: #d97706; }
 .light-mode .gating-paid { color: #2563eb; }
 
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline {
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--card-border);
+}
+
+.timeline-year {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin: 1.5rem 0 0.5rem;
+    padding-left: 48px;
+}
+
+.timeline-entry {
+    position: relative;
+    padding: 12px 12px 12px 48px;
+    margin: 4px 0;
+}
+
+.timeline-entry::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--card-border);
+    background: var(--bg-gradient-start);
+}
+
+.timeline-entry.past::before {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.timeline-entry.future::before {
+    background: transparent;
+    border-color: var(--accent);
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+.timeline-content {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.timeline-product {
+    font-weight: 600;
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
+.timeline-product:hover {
+    color: var(--accent);
+}
+
+.timeline-event {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.timeline-category {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: var(--badge-bg);
+    color: var(--text-secondary);
+}
+
 /* ===== Mobile adjustments for search ===== */
 
 @media (max-width: 768px) {
