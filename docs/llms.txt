@@ -10,7 +10,7 @@ Maintained by SnapSynapse. Updated weekly via multi-model verification cascade.
 
 - 18 capabilities (e.g., Search the Web, Generate Images, Write and Edit Code)
 - 72 implementations across 6 subscription AI products
-- 9 open-model access records (Llama, Qwen, DeepSeek, Mistral, Codestral)
+- 11 open-model access records (Llama, Qwen, DeepSeek, Mistral, Codestral)
 - Plan-level availability (which subscription tier unlocks what)
 - Surface availability (web, desktop, mobile, terminal, API)
 - Gating (free, paid, limited)
@@ -24,15 +24,15 @@ Start with the index: https://airef.snapsynapse.com/api/v1/index.json
 
 ### Available files
 
-- capabilities.json — all capabilities with search terms, definitions, and cross-links
-- products.json — all products with provider links and implementation lists
-- implementations.json — all implementations with capability mappings and evidence
-- providers.json — all providers with product lists
-- model-access.json — model access records with deployment and constraint details
-- evidence.json — evidence records with sources and changelog
-- capability-matrix.json — capability x product availability grid
-- product-comparisons.json — pairwise product capability overlap
-- plan-entitlements.json — what each plan tier unlocks per product
+- [capabilities.json](https://airef.snapsynapse.com/api/v1/capabilities.json): All capabilities with search terms, definitions, and cross-links
+- [products.json](https://airef.snapsynapse.com/api/v1/products.json): All products with provider links and implementation lists
+- [implementations.json](https://airef.snapsynapse.com/api/v1/implementations.json): All implementations with capability mappings and evidence
+- [providers.json](https://airef.snapsynapse.com/api/v1/providers.json): All providers with product lists
+- [model-access.json](https://airef.snapsynapse.com/api/v1/model-access.json): Model access records with deployment and constraint details
+- [evidence.json](https://airef.snapsynapse.com/api/v1/evidence.json): Evidence records with sources and changelog
+- [capability-matrix.json](https://airef.snapsynapse.com/api/v1/capability-matrix.json): Capability x product availability grid
+- [product-comparisons.json](https://airef.snapsynapse.com/api/v1/product-comparisons.json): Pairwise product capability overlap
+- [plan-entitlements.json](https://airef.snapsynapse.com/api/v1/plan-entitlements.json): What each plan tier unlocks per product
 
 ### Data contract
 
@@ -49,14 +49,21 @@ Start with the index: https://airef.snapsynapse.com/api/v1/index.json
 - Cache for up to 24 hours; don't poll more than once per hour
 - Attribution appreciated: "Data from AI Capability Reference (https://airef.snapsynapse.com/) by SnapSynapse"
 
+## Agent access
+
+- [agents.json](https://airef.snapsynapse.com/agents.json): Agent capability manifest describing API endpoints and MCP tools
+- [MCP server](https://github.com/snapsynapse/ai-capability-reference/blob/main/scripts/mcp-server.js): 15 read-only tools over stdio JSON-RPC
+- [RSS feed](https://airef.snapsynapse.com/index.xml): Recent feature changes as RSS 2.0
+
 ## Site pages
 
-- https://airef.snapsynapse.com/ — Capability-first homepage (what can AI do?)
-- https://airef.snapsynapse.com/implementations.html — Product-first detailed availability
-- https://airef.snapsynapse.com/compare.html — Side-by-side product comparison
-- https://airef.snapsynapse.com/constraints.html — Access tiers, surfaces, and limits
-- https://airef.snapsynapse.com/about.html — About the project
-- https://airef.snapsynapse.com/pattern.html — Knowledge as Code: the development pattern behind this project
+- [Capabilities](https://airef.snapsynapse.com/): Capability-first homepage (what can AI do?)
+- [Products](https://airef.snapsynapse.com/implementations.html): Product-first detailed availability
+- [Compare](https://airef.snapsynapse.com/compare.html): Side-by-side product comparison
+- [Limits](https://airef.snapsynapse.com/constraints.html): Access tiers, surfaces, and limits
+- [Timeline](https://airef.snapsynapse.com/timeline.html): Chronological view of feature launches and changes
+- [About](https://airef.snapsynapse.com/about.html): About the project
+- [Pattern](https://airef.snapsynapse.com/pattern.html): Knowledge as Code: the development pattern behind this project
 
 ## Bridge pages (programmatic)
 
@@ -78,6 +85,6 @@ Example: https://airef.snapsynapse.com/best-for/creative-work/
 
 ## Source
 
-- Repository: https://github.com/snapsynapse/ai-capability-reference
+- [Repository](https://github.com/snapsynapse/ai-capability-reference): GitHub
 - License: MIT
-- Contact: https://github.com/snapsynapse/ai-capability-reference/issues
+- [Contact](https://github.com/snapsynapse/ai-capability-reference/issues): GitHub Issues
