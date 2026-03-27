@@ -186,7 +186,7 @@ No restrictions - runs locally.
 | URL | https://huggingface.co/Qwen/Qwen3-Coder-Next |
 | Launched | 2026-02-03T12:00Z |
 | Verified | 2026-03-23|
-| Checked | 2026-03-23|
+| Checked | 2026-03-27|
 
 ### Availability
 
