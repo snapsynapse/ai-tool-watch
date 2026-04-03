@@ -525,12 +525,17 @@ function availBadge(avail) {
  */
 function normalizePrice(price, planName) {
     const p = price.trim().toLowerCase();
-    if (p === '$0' || p === 'free') return '$0/mo';
+    if (p === '$0' || p === 'free' || p === '$0/mo') return 'Free';
     if (p.includes('custom') || p.includes('contact')) return 'Enterprise';
     if (p.includes('/user/mo')) return 'Team';
     if (planName && planName.toLowerCase().includes('team')) return 'Team';
-    if (price.includes('/mo')) return price.trim();
-    if (price.match(/^\$\d+$/)) return price + '/mo';
+    // Extract numeric value and round to nearest dollar (coalesces $7.99 → $8, $19.99 → $20)
+    const numMatch = price.match(/\$([\d.]+)/);
+    if (numMatch) {
+        const rounded = Math.round(parseFloat(numMatch[1]));
+        if (rounded === 0) return 'Free';
+        return `$${rounded}/mo`;
+    }
     return price.trim();
 }
 
@@ -540,7 +545,7 @@ function normalizePrice(price, planName) {
  * @returns {string} URL-safe slug (e.g., "20", "team", "enterprise")
  */
 function tierToSlug(price) {
-    if (price === '$0/mo') return '0';
+    if (price === 'Free') return '0';
     if (price === 'Team') return 'team';
     if (price === 'Enterprise') return 'enterprise';
     const match = price.match(/\$(\d+)/);
@@ -903,7 +908,7 @@ function renderSiteNav(activePage, prefix) {
     prefix = prefix || '';
     const navItems = [
         { id: 'home', label: 'Capabilities', href: `${prefix}index.html` },
-        { id: 'implementations', label: 'Products', href: `${prefix}implementations.html` },
+        { id: 'implementations', label: 'Features', href: `${prefix}implementations.html` },
         { id: 'compare', label: 'Compare', href: `${prefix}compare.html` },
         { id: 'constraints', label: 'Limits', href: `${prefix}constraints.html` },
         { id: 'timeline', label: 'Timeline', href: `${prefix}timeline.html` },
@@ -1060,6 +1065,7 @@ function generateHTML(platforms, ontologyData) {
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}">
@@ -1180,7 +1186,7 @@ function generateHTML(platforms, ontologyData) {
 
             // Sort prices: $0 first, then by numeric value, Team/Enterprise last
             const priceOrder = (p) => {
-                if (p === '$0/mo') return 0;
+                if (p === 'Free') return 0;
                 if (p === 'Team') return 9998;
                 if (p === 'Enterprise') return 9999;
                 // Extract first numeric value for sorting
@@ -1768,6 +1774,7 @@ function generateCapabilitiesHTML(ontologyData) {
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Tool Watch">
@@ -2092,6 +2099,7 @@ function generateAboutHTML() {
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - ${DASHBOARD_TITLE}">
@@ -2200,14 +2208,17 @@ function generateTimelineHTML(platforms, ontologyData) {
                 }
             }
 
-            // Add changelog events (skip entries that match the launch date)
+            // Add changelog events (skip launch duplicates and [Verified] audit entries)
             for (const entry of (feature.changelog || [])) {
                 const entryDate = formatDateForDisplay(entry.date);
                 if (!entryDate) continue;
-                const key = `${entryDate}|${featureId}|${entry.change || ''}`;
+                const changeText = entry.change || '';
+                // Skip [Verified] audit entries — these are verification notes, not feature changes
+                if (/^\[Verified\]/i.test(changeText)) continue;
+                const key = `${entryDate}|${featureId}|${changeText}`;
                 if (seen.has(key)) continue;
                 // Skip if this is just the launch entry
-                if (entryDate === launchedDate && /launch/i.test(entry.change || '')) continue;
+                if (entryDate === launchedDate && /launch/i.test(changeText)) continue;
                 seen.add(key);
                 events.push({
                     date: entryDate,
@@ -2284,6 +2295,7 @@ function generateTimelineHTML(platforms, ontologyData) {
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Timeline - ${DASHBOARD_TITLE}">
@@ -2428,6 +2440,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Tool Watch - Access & Limits">
@@ -3142,6 +3155,7 @@ function renderBridgeShell({ title, canonicalPath, depth, content, structuredDat
     <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="${DASHBOARD_TITLE}" href="${SITE_URL}index.xml">
     <meta name="description" content="${escapeHTML(description)}">
     <meta property="og:title" content="${escapeHTML(ogTitle || title)}">
     <meta property="og:description" content="${escapeHTML(description)}">
@@ -3793,6 +3807,7 @@ function generateAgentsJson(ontologyData) {
     const prodCount = ontologyData.products.filter(p => p.product_kind !== 'runtime').length;
 
     const manifest = {
+        $schema: `${SITE_URL}schemas/agents-schema.json`,
         schema_version: '1.0',
         name: 'ai-tool-watch',
         display_name: DASHBOARD_TITLE,

@@ -1,4 +1,4 @@
-# Contributing to AI Capability Reference
+# Contributing to AI Tool Watch
 
 Thank you for helping keep this resource accurate! This guide explains how to contribute.
 

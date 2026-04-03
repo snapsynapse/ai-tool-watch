@@ -14,12 +14,14 @@ Start at [`index.json`](https://aitool.watch/api/v1/index.json) for a manifest o
 
 | File | Description |
 |---|---|
-| `capabilities.json` | 18 capabilities with search terms, definitions, what-counts/what-doesn't, and cross-links to implementations |
-| `products.json` | 9 products (hosted and runtime) with provider links, pricing pages, and implementation lists |
-| `implementations.json` | 87 implementations with full plan/surface availability, gating, and evidence cross-links |
-| `providers.json` | 13 providers with logo, website, and status page URLs |
-| `model-access.json` | 9 open-model records with deployment modes, constraints, and runtime information |
-| `evidence.json` | 90 evidence records with sources, changelog, and verification dates |
+| `capabilities.json` | Capabilities with search terms, definitions, what-counts/what-doesn't, and cross-links to implementations |
+| `products.json` | Products (hosted and runtime) with provider links, pricing pages, and implementation lists |
+| `implementations.json` | Implementations with full plan/surface availability, gating, and evidence cross-links |
+| `providers.json` | Providers with logo, website, and status page URLs |
+| `model-access.json` | Open-model records with deployment modes, constraints, and runtime information |
+| `evidence.json` | Evidence records with sources, changelog, and verification dates |
+
+Check [`index.json`](https://aitool.watch/api/v1/index.json) for live counts — these change with each verification cycle.
 
 ### Derived views
 
@@ -49,6 +51,8 @@ Every JSON file includes a `meta.generated` timestamp showing when it was built.
 ## MCP Server
 
 The MCP server (`scripts/mcp-server.js`) exposes 15 read-only tools over stdio JSON-RPC. Configure it via `mcp.json` in the project root.
+
+> **Note:** The MCP server was renamed from `ai-capability-reference` to `ai-tool-watch` in v4.0.0. Update your `mcp.json` configuration if upgrading.
 
 ### Tools
 

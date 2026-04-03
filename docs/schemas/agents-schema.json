@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aitool.watch/schemas/agents-schema.json",
+  "title": "AI Tool Watch Agent Manifest",
+  "description": "Schema for the agents.json capability manifest describing API endpoints and MCP tools.",
+  "type": "object",
+  "required": ["schema_version", "name", "display_name", "description", "url", "api"],
+  "properties": {
+    "$schema": { "type": "string", "format": "uri" },
+    "schema_version": { "type": "string" },
+    "name": { "type": "string", "description": "Machine-readable identifier" },
+    "display_name": { "type": "string", "description": "Human-readable title" },
+    "description": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "repository": { "type": "string", "format": "uri" },
+    "license": { "type": "string" },
+    "maintainer": { "type": "string" },
+    "generated": { "type": "string", "format": "date-time" },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "read": { "type": "boolean" },
+        "write": { "type": "boolean" },
+        "search": { "type": "boolean" },
+        "compare": { "type": "boolean" },
+        "description": { "type": "string" }
+      }
+    },
+    "data_freshness": {
+      "type": "object",
+      "properties": {
+        "update_frequency": { "type": "string" },
+        "verification_method": { "type": "string" },
+        "freshness_fields": { "type": "array", "items": { "type": "string" } },
+        "cache_ttl_hours": { "type": "integer" }
+      }
+    },
+    "api": {
+      "type": "object",
+      "required": ["base_url", "format", "endpoints"],
+      "properties": {
+        "base_url": { "type": "string", "format": "uri" },
+        "format": { "type": "string" },
+        "authentication": { "type": "string" },
+        "rate_limit": { "type": "string" },
+        "stability": { "type": "string" },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "description"],
+            "properties": {
+              "path": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "mcp": {
+      "type": "object",
+      "properties": {
+        "transport": { "type": "string" },
+        "server_script": { "type": "string" },
+        "tools_count": { "type": "integer" },
+        "description": { "type": "string" },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "properties": {
+        "llms_txt": { "type": "string", "format": "uri" },
+        "robots_txt": { "type": "string", "format": "uri" },
+        "sitemap": { "type": "string", "format": "uri" },
+        "rss_feed": { "type": "string", "format": "uri" },
+        "agents_json": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}
