@@ -1,4 +1,5 @@
 {
+  "$schema": "https://aitool.watch/schemas/agents-schema.json",
   "schema_version": "1.0",
   "name": "ai-tool-watch",
   "display_name": "AI Tool Watch",
@@ -7,7 +8,7 @@
   "repository": "https://github.com/snapsynapse/ai-tool-watch",
   "license": "MIT",
   "maintainer": "PAICE.work",
-  "generated": "2026-04-03T18:42:33.993Z",
+  "generated": "2026-04-03T19:03:50.011Z",
   "capabilities": {
     "read": true,
     "write": false,
