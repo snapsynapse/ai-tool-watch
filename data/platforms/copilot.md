@@ -198,7 +198,7 @@ Available globally.
 | URL | https://support.microsoft.com/en-us/topic/using-copilot-vision-with-microsoft-copilot-3c67686f-fa97-40f6-8a3e-0e45265d425f |
 | Launched | 2024-10-01T12:00Z |
 | Verified | 2026-03-15|
-| Checked | 2026-03-27|
+| Checked | 2026-04-03|
 
 ### Availability
 
@@ -256,7 +256,7 @@ Available in the United States. Broader rollout planned.
 | URL | https://www.microsoft.com/en-us/microsoft-copilot |
 | Launched | 2024-10-01T12:00Z |
 | Verified | 2026-03-22|
-| Checked | 2026-03-27|
+| Checked | 2026-04-03|
 
 ### Availability
 
@@ -309,7 +309,7 @@ Available globally.
 | URL | https://copilot.microsoft.com/ |
 | Launched | 2023-02-07T12:00Z |
 | Verified | 2026-03-22|
-| Checked | 2026-03-27|
+| Checked | 2026-04-03|
 
 ### Availability
 
@@ -362,7 +362,7 @@ Available globally.
 | URL | https://designer.microsoft.com/ |
 | Launched | 2023-03-21T12:00Z |
 | Verified | 2026-03-23|
-| Checked | 2026-03-27|
+| Checked | 2026-04-03|
 
 ### Availability
 
