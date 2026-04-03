@@ -1,5 +1,5 @@
 /**
- * Parser module for AI Capability Reference verification system
+ * Parser module for AI Tool Watch verification system
  * Extracts structured data from platform markdown files
  */
 

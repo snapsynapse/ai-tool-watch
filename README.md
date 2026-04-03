@@ -1,10 +1,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/snapsynapse/ai-capability-reference/blob/main/LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/snapsynapse/ai-capability-reference)](https://github.com/snapsynapse/ai-capability-reference/releases/latest)
-# AI Capability Reference
+# AI Tool Watch
 
 **Plain-English reference for AI capabilities, plans, constraints, and implementations — for humans and agents.**
 
-![AI Capability Reference](docs/assets/og-image.jpg)
+![AI Tool Watch](docs/assets/og-image.jpg)
 
 ---
 
@@ -147,7 +147,7 @@ The site auto-deploys via GitHub Actions on every push to `main` and on a schedu
    - Runs on pushes to `main` and scheduled builds, not PRs
 
 3. **FTP deploy** (`.github/workflows/deploy-ftp.yml`)
-   - Parallel deployment to snapsynapse.com via locked ftp
+   - Parallel deployment to aitool.watch via locked FTP
    - Same Mon/Thu schedule plus push-to-main and manual dispatch
    - Requires `FTP_HOST`, `FTP_USER`, `FTP_PASS` secrets
 
@@ -163,7 +163,7 @@ To enable GitHub Pages on a fork:
 
 Architecture, ontology, and project status docs live in [design/](design/):
 
-- [Knowledge as Code](https://airef.snapsynapse.com/pattern.html) — The development pattern behind this project ([research](design/PATTERN_RESEARCH.md))
+- [Knowledge as Code](https://aitool.watch/pattern.html) — The development pattern behind this project ([research](design/PATTERN_RESEARCH.md))
 - [ARCHITECTURE_PATTERNS.md](design/ARCHITECTURE_PATTERNS.md) — The nine patterns that compose the system
 - [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
 - [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design
@@ -179,7 +179,7 @@ MIT - see [LICENSE](LICENSE)
 
 ## Credits
 
-Created by [SnapSynapse](https://snapsynapse.com) for the AI community.
+Created by [PAICE.work](https://paice.work) for the AI community.
 With help from Claude Code, of course.
 
 ---

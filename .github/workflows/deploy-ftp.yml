@@ -1,4 +1,4 @@
-name: Deploy to SnapSynapse
+name: Deploy to PAICE.work
 
 on:
   push:

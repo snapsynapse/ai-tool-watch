@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * AI Capability Reference - Automated Feature Verification
+ * AI Tool Watch - Automated Feature Verification
  *
  * Multi-model AI cascade for verifying feature data including:
  * pricing tiers, platform availability, status, gating, regional availability, and URLs.
@@ -113,7 +113,7 @@ function parseArgs() {
 
 function printHelp() {
     console.log(`
-AI Capability Reference - Automated Feature Verification
+AI Tool Watch - Automated Feature Verification
 
 Verifies: pricing tiers, platforms, status, gating, regional availability, URLs
 
@@ -185,7 +185,7 @@ async function main() {
         process.exit(0);
     }
 
-    console.log('\n🔍 AI Capability Reference - Feature Verification\n');
+    console.log('\n🔍 AI Tool Watch - Feature Verification\n');
 
     // Check API keys
     if (!checkApiKeys()) {

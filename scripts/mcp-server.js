@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * MCP (Model Context Protocol) server for AI Capability Reference.
+ * MCP (Model Context Protocol) server for AI Tool Watch.
  * Zero dependencies — uses only Node.js built-ins.
  * Reads pre-generated JSON files from docs/api/v1/ and exposes 15 read-only tools.
  *
@@ -728,4 +728,4 @@ process.on('uncaughtException', err => {
     console.error('[mcp-server] Uncaught exception:', err.message);
 });
 
-console.error(`[mcp-server] AI Capability Reference MCP server started (${data.index?.meta?.generated || 'unknown'} data)`);
+console.error(`[mcp-server] AI Tool Watch MCP server started (${data.index?.meta?.generated || 'unknown'} data)`);

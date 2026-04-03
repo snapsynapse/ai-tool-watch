@@ -2,11 +2,11 @@
 
 ## Overview
 
-The AI Capability Reference API is a set of static JSON files generated from the same canonical data as the site. There is no authentication, no rate limiting, and no registration required.
+The AI Tool Watch API is a set of static JSON files generated from the same canonical data as the site. There is no authentication, no rate limiting, and no registration required.
 
-Base URL: `https://airef.snapsynapse.com/api/v1/`
+Base URL: `https://aitool.watch/api/v1/`
 
-Start at [`index.json`](https://airef.snapsynapse.com/api/v1/index.json) for a manifest of all available files.
+Start at [`index.json`](https://aitool.watch/api/v1/index.json) for a manifest of all available files.
 
 ## Files
 
@@ -99,7 +99,7 @@ If you are building an agent or tool that reads this data:
 
 This data is published under the MIT license. You may use it freely, but we appreciate attribution:
 
-> Data from [AI Capability Reference](https://airef.snapsynapse.com/) by SnapSynapse.
+> Data from [AI Tool Watch](https://aitool.watch/) by PAICE.work.
 
 ## Bandwidth
 

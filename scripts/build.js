@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * AI Capability Reference - Static Site Generator
+ * AI Tool Watch - Static Site Generator
  *
  * Compiles markdown data files into a feature-oriented dashboard and
  * capability-oriented index.
@@ -30,8 +30,8 @@ const DATA_EXPORT_FILE = path.join(__dirname, '..', 'docs', 'assets', 'data.json
 const REPO_URL = 'https://github.com/snapsynapse/ai-capability-reference';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
 const REPO_PULLS_URL = `${REPO_URL}/pulls`;
-const SITE_URL = 'https://airef.snapsynapse.com/';
-const DASHBOARD_TITLE = 'AI Capability Reference';
+const SITE_URL = 'https://aitool.watch/';
+const DASHBOARD_TITLE = 'AI Tool Watch';
 const FEATURE_VIEW_TITLE = 'Feature View by Plan';
 
 function slugify(value) {
@@ -911,7 +911,7 @@ function renderSiteNav(activePage, prefix) {
     ];
 
     return `<header class="site-header">
-        <h1><a href="${prefix}index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="${prefix}assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Capability Reference</a></h1>
+        <h1><a href="${prefix}index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="${prefix}assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Tool Watch</a></h1>
         <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
             <span class="hamburger-icon"></span>
         </button>
@@ -933,12 +933,12 @@ function renderSiteNav(activePage, prefix) {
 function renderSharedFooter() {
     return `<footer>
             <p>
-                Maintained by <a href="https://snapsynapse.com/">SnapSynapse</a>, with public issues and pull requests welcome.
+                Maintained by <a href="https://paice.work/">PAICE.work</a>, with public issues and pull requests welcome.
                 <a href="${REPO_ISSUES_URL}">Open an issue</a> or
                 <a href="${REPO_PULLS_URL}">submit a PR</a>.
             </p>
             <p style="margin-top: 8px;">
-                &copy; 2026 | Made by <a href="https://snapsynapse.com/">Snap Synapse</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
+                &copy; 2026 | Made by <a href="https://paice.work/">PAICE.work</a> via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
             </p>
             <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
                 <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
@@ -1078,9 +1078,9 @@ function generateHTML(platforms, ontologyData) {
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://snapsynapse.com/#organization",
-          "name": "SnapSynapse",
-          "url": "https://snapsynapse.com/"
+          "@id": "https://paice.work/#organization",
+          "name": "PAICE.work",
+          "url": "https://paice.work/"
         },
         {
           "@type": "WebPage",
@@ -1089,7 +1089,7 @@ function generateHTML(platforms, ontologyData) {
           "name": "${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}",
           "description": "Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
-          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "publisher": { "@id": "https://paice.work/#organization" },
           "about": {
             "@type": "Thing",
             "name": "AI feature availability by subscription plan"
@@ -1759,7 +1759,7 @@ function generateCapabilitiesHTML(ontologyData) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Capability Reference</title>
+    <title>AI Tool Watch</title>
     <meta name="description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers. Compare ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${SITE_URL}">
@@ -1770,13 +1770,13 @@ function generateCapabilitiesHTML(ontologyData) {
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AI Capability Reference">
+    <meta property="og:title" content="AI Tool Watch">
     <meta property="og:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
     <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Capability Reference">
+    <meta name="twitter:title" content="AI Tool Watch">
     <meta name="twitter:description" content="A maintained reference for AI capability availability across plans, platforms, and access tiers.">
     <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
@@ -1786,23 +1786,23 @@ function generateCapabilitiesHTML(ontologyData) {
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://snapsynapse.com/#organization",
-          "name": "SnapSynapse",
-          "url": "https://snapsynapse.com/"
+          "@id": "https://paice.work/#organization",
+          "name": "PAICE.work",
+          "url": "https://paice.work/"
         },
         {
           "@type": "WebSite",
           "@id": "${SITE_URL}#website",
           "url": "${SITE_URL}",
-          "name": "AI Capability Reference",
+          "name": "AI Tool Watch",
           "description": "A maintained reference for AI capability availability across plans, platforms, and access tiers.",
-          "publisher": { "@id": "https://snapsynapse.com/#organization" }
+          "publisher": { "@id": "https://paice.work/#organization" }
         },
         {
           "@type": "WebPage",
           "@id": "${SITE_URL}#webpage",
           "url": "${SITE_URL}",
-          "name": "AI Capability Reference",
+          "name": "AI Tool Watch",
           "description": "A maintained reference for AI capability availability across plans, platforms, and access tiers. Compare ChatGPT, Claude, Gemini, Copilot, and more.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
           "about": {
@@ -2070,8 +2070,8 @@ function generateAboutHTML() {
     content = content.replace(
         /<img\s[^>]*src="assets\/og-image\.jpg"[^>]*>/,
         `<a href="${REPO_URL}" class="site-banner-link about-banner-link" target="_blank" rel="noopener noreferrer">` +
-            `<img src="assets/hero-lightmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-dark" width="1280" height="640">` +
-            `<img src="assets/hero-darkmode.jpg" alt="AI Capability Reference" class="site-banner-img about-banner-light" width="1280" height="640" loading="lazy">` +
+            `<img src="assets/hero-lightmode.jpg" alt="AI Tool Watch" class="site-banner-img about-banner-dark" width="1280" height="640">` +
+            `<img src="assets/hero-darkmode.jpg" alt="AI Tool Watch" class="site-banner-img about-banner-light" width="1280" height="640" loading="lazy">` +
         `</a>`
     );
 
@@ -2084,7 +2084,7 @@ function generateAboutHTML() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - ${DASHBOARD_TITLE}</title>
-    <meta name="description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
+    <meta name="description" content="About the AI Tool Watch - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${SITE_URL}about.html">
 
@@ -2095,12 +2095,12 @@ function generateAboutHTML() {
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - ${DASHBOARD_TITLE}">
-    <meta property="og:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
+    <meta property="og:description" content="About the AI Tool Watch - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About - ${DASHBOARD_TITLE}">
-    <meta name="twitter:description" content="About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
+    <meta name="twitter:description" content="About the AI Tool Watch - a plain-English resource for AI capabilities, plans, constraints, and implementations.">
     <meta name="twitter:image" content="${SITE_URL}assets/og-image.jpg">
 
     <script type="application/ld+json">
@@ -2109,19 +2109,19 @@ function generateAboutHTML() {
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://snapsynapse.com/#organization",
-          "name": "SnapSynapse",
-          "url": "https://snapsynapse.com/"
+          "@id": "https://paice.work/#organization",
+          "name": "PAICE.work",
+          "url": "https://paice.work/"
         },
         {
           "@type": "AboutPage",
           "@id": "${SITE_URL}about.html#webpage",
           "url": "${SITE_URL}about.html",
           "name": "About - ${DASHBOARD_TITLE}",
-          "description": "About the AI Capability Reference - a plain-English resource for AI capabilities, plans, constraints, and implementations.",
+          "description": "About the AI Tool Watch - a plain-English resource for AI capabilities, plans, constraints, and implementations.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
-          "publisher": { "@id": "https://snapsynapse.com/#organization" },
-          "about": { "@id": "https://snapsynapse.com/#organization" }
+          "publisher": { "@id": "https://paice.work/#organization" },
+          "about": { "@id": "https://paice.work/#organization" }
         }
       ]
     }
@@ -2403,7 +2403,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Capability Reference - Access & Limits</title>
+    <title>AI Tool Watch - Access & Limits</title>
     <meta name="description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${SITE_URL}constraints.html">
@@ -2414,7 +2414,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AI Capability Reference - Access & Limits">
+    <meta property="og:title" content="AI Tool Watch - Access & Limits">
     <meta property="og:description" content="Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.">
     <meta property="og:image" content="${SITE_URL}assets/og-image.jpg">
     <meta property="og:url" content="${SITE_URL}constraints.html">
@@ -2425,18 +2425,18 @@ function generateConstraintsHTML(ontologyData, platforms) {
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://snapsynapse.com/#organization",
-          "name": "SnapSynapse",
-          "url": "https://snapsynapse.com/"
+          "@id": "https://paice.work/#organization",
+          "name": "PAICE.work",
+          "url": "https://paice.work/"
         },
         {
           "@type": "WebPage",
           "@id": "${SITE_URL}constraints.html#webpage",
           "url": "${SITE_URL}constraints.html",
-          "name": "AI Capability Reference - Access & Limits",
+          "name": "AI Tool Watch - Access & Limits",
           "description": "Find AI features by access tier, platform support, and regional availability. Filter by free, paid, surface, and more.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
-          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "publisher": { "@id": "https://paice.work/#organization" },
           "about": {
             "@type": "Thing",
             "name": "AI feature access tiers, platform support, and regional availability"
@@ -2954,7 +2954,7 @@ function buildAPIExport(ontologyData, platforms) {
     // Index manifest
     const index = {
         meta: { generated: timestamp, version: '1.0' },
-        description: 'AI Capability Reference — Machine-readable API',
+        description: 'AI Tool Watch — Machine-readable API',
         documentation: 'https://github.com/snapsynapse/ai-capability-reference',
         files: {
             capabilities: { path: 'capabilities.json', description: 'All capabilities with search terms, definitions, and cross-links', count: capabilities.length },
@@ -3018,9 +3018,9 @@ function generateCompareHTML(ontologyData) {
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://snapsynapse.com/#organization",
-          "name": "SnapSynapse",
-          "url": "https://snapsynapse.com/"
+          "@id": "https://paice.work/#organization",
+          "name": "PAICE.work",
+          "url": "https://paice.work/"
         },
         {
           "@type": "WebPage",
@@ -3029,7 +3029,7 @@ function generateCompareHTML(ontologyData) {
           "name": "Compare Products - ${DASHBOARD_TITLE}",
           "description": "Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
-          "publisher": { "@id": "https://snapsynapse.com/#organization" },
+          "publisher": { "@id": "https://paice.work/#organization" },
           "about": {
             "@type": "Thing",
             "name": "AI product capability comparison"
@@ -3679,7 +3679,7 @@ function generateLlmsTxt(ontologyData) {
 
 A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
 
-Maintained by SnapSynapse. Updated weekly via multi-model verification cascade.
+Maintained by PAICE.work. Updated weekly via multi-model verification cascade.
 
 ## What this site covers
 
@@ -3722,7 +3722,7 @@ Start with the index: ${SITE_URL}api/v1/index.json
 - Respect gating and constraints — "available" does not mean "available to everyone"
 - Don't strip caveats from talking points — they contain important context about restrictions
 - Cache for up to 24 hours; don't poll more than once per hour
-- Attribution appreciated: "Data from AI Capability Reference (${SITE_URL}) by SnapSynapse"
+- Attribution appreciated: "Data from AI Tool Watch (${SITE_URL}) by PAICE.work"
 
 ## Agent access
 
@@ -3784,7 +3784,7 @@ function generateAgentsJson(ontologyData) {
         url: SITE_URL,
         repository: REPO_URL,
         license: 'MIT',
-        maintainer: 'SnapSynapse',
+        maintainer: 'PAICE.work',
         generated: timestamp,
         capabilities: {
             read: true,
