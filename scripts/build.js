@@ -24,6 +24,7 @@ const IMPLEMENTATIONS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'implemen
 const HOMEPAGE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'index.html');
 const CONSTRAINTS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'constraints.html');
 const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
+const NOT_FOUND_OUTPUT_FILE = path.join(__dirname, '..', 'docs', '404.html');
 const COMPARE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'compare.html');
 const TIMELINE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'timeline.html');
 const DATA_EXPORT_FILE = path.join(__dirname, '..', 'docs', 'assets', 'data.json');
@@ -2632,12 +2633,69 @@ function generateCapabilitiesRedirect() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=index.html">
-    <link rel="canonical" href="index.html">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0;url=${SITE_URL}">
+    <link rel="canonical" href="${SITE_URL}">
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>This page has moved. <a href="index.html">Continue to capabilities</a>.</p>
+    <p>This page has moved. <a href="${SITE_URL}">Continue to AI Tool Watch</a>.</p>
+</body>
+</html>`;
+}
+
+function generate404HTML() {
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page Not Found - ${DASHBOARD_TITLE}</title>
+    <meta name="theme-color" content="#1a1a2e">
+
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="assets/styles.css">
+    ${renderThemeInit()}
+    <style>
+        .not-found-content {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .not-found-content h2 { font-size: 5rem; margin: 0; opacity: 0.15; line-height: 1; }
+        .not-found-content h3 { font-size: 1.5rem; margin: 0.5rem 0 1rem; }
+        .not-found-content p { margin-bottom: 1.5rem; color: var(--text-secondary, #888); }
+        .not-found-links { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 2rem; }
+        .not-found-links a { padding: 0.5rem 1.25rem; border: 1px solid var(--card-border); border-radius: 6px; text-decoration: none; color: var(--accent); }
+        .not-found-links a:hover { background: var(--card-bg); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    ${renderSiteNav('')}
+    <div class="container" id="main-content">
+        <div class="not-found-content">
+            <h2>404</h2>
+            <h3>Page not found</h3>
+            <p>The page you're looking for doesn't exist or has moved.</p>
+            <div class="not-found-links">
+                <a href="${SITE_URL}">Capabilities</a>
+                <a href="${SITE_URL}implementations.html">Features</a>
+                <a href="${SITE_URL}compare.html">Compare</a>
+                <a href="${SITE_URL}constraints.html">Limits</a>
+                <a href="${SITE_URL}timeline.html">Timeline</a>
+            </div>
+        </div>
+        ${renderSharedFooter()}
+    </div>
+    <script src="assets/search.js"></script>
+    ${renderThemeScript()}
 </body>
 </html>`;
 }
@@ -4088,6 +4146,10 @@ function main() {
 
     fs.writeFileSync(CAPABILITIES_REDIRECT_FILE, redirectHTML);
     console.log(`✅ Capabilities redirect written to ${CAPABILITIES_REDIRECT_FILE}`);
+
+    const notFoundHTML = generate404HTML();
+    fs.writeFileSync(NOT_FOUND_OUTPUT_FILE, notFoundHTML);
+    console.log(`✅ 404 page written to ${NOT_FOUND_OUTPUT_FILE}`);
 
     const aboutFile = path.join(outputDir, 'about.html');
     fs.writeFileSync(aboutFile, aboutHTML);
