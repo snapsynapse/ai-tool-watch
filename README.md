@@ -173,6 +173,10 @@ Architecture, ontology, and project status docs live in [design/](design/):
 
 Skills: [skills/](skills/) ([README](skills/README.md))
 
+## Sponsor
+
+AI Tool Watch is free and open. If you rely on this reference, consider [sponsoring its upkeep](https://github.com/sponsors/snapsynapse) to keep the verification pipeline running. See [SPONSORS.md](SPONSORS.md).
+
 ## License
 
 MIT - see [LICENSE](LICENSE)
