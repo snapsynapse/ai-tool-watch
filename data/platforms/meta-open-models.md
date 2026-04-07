@@ -78,8 +78,8 @@ No restrictions - runs locally.
 | Gating | free |
 | URL | https://www.llama.com/models/llama-4/ |
 | Launched | 2025-04-05T12:00Z |
-| Verified | 2026-04-03|
-| Checked | 2026-04-03|
+| Verified | 2026-04-07|
+| Checked | 2026-04-07|
 
 ### Availability
 
