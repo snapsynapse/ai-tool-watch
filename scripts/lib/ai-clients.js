@@ -326,7 +326,7 @@ class ClaudeClient {
                 model: 'claude-sonnet-4-20250514',
                 max_tokens: 2048,
                 tools: [{
-                    type: 'web_search',
+                    type: 'web_search_20250305',
                     name: 'web_search'
                 }],
                 messages: [
