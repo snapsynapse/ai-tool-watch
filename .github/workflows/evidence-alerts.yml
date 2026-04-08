@@ -57,6 +57,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TITLE="Stale evidence: records older than 30 days"
+          gh label create "staleness" --color "FBCA04" --description "Evidence records older than freshness threshold" 2>/dev/null || true
           EXISTING=$(gh issue list --state open --search "$TITLE" --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             gh issue comment "$EXISTING" --body-file staleness-body.md
