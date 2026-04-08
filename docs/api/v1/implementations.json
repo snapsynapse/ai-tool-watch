@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-06T23:17:48.781Z",
+    "generated": "2026-04-08T05:14:42.122Z",
     "version": "1.0",
     "count": 72
   },
@@ -446,7 +446,7 @@
       ],
       "talking_point": "Canvas is ChatGPT's split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. **Available on all plans including free**, but currently desktop and web only. Mobile is coming soon.",
       "launched": "2024-10-03T12:00Z",
-      "verified": "2026-03-19",
+      "verified": "2026-04-07",
       "evidence_id": "implementation-chatgpt-canvas",
       "evidence_verified": "2026-03-08"
     },
@@ -1799,7 +1799,7 @@
       ],
       "talking_point": "Artifacts are Claude's way of creating standalone content—code, documents, diagrams—in a separate panel. **Available on all plans including free.**",
       "launched": "2024-06-20T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-04-06",
       "evidence_id": "implementation-claude-artifacts",
       "evidence_verified": "2026-02-28"
     },
@@ -2141,7 +2141,7 @@
       ],
       "talking_point": "Cowork is Claude's background agent—**it launched January 2026 and expanded to all paid plans in February**. It's available on Pro ($20/mo) and above, on macOS and Windows desktop. It's still a research preview but already useful for delegating multi-step tasks.",
       "launched": "2026-01-12T12:00Z",
-      "verified": "2026-04-03",
+      "verified": "2026-04-07",
       "evidence_id": "implementation-claude-cowork-mode",
       "evidence_verified": "2026-02-28"
     },
@@ -2240,7 +2240,7 @@
       ],
       "talking_point": "Extended Thinking lets Claude reason through complex problems step-by-step. With Opus 4.6, **adaptive thinking** is now the recommended mode—Claude decides when deeper reasoning is needed, with four effort levels (low/medium/high/max). Manual thinking mode is deprecated on Opus 4.6. **Max plan gets full access**; Pro has limited access. Not available on free.",
       "launched": "2025-02-24T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-04-06",
       "evidence_id": "implementation-claude-extended-thinking",
       "evidence_verified": "2026-03-15"
     },
