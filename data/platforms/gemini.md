@@ -4,7 +4,7 @@ vendor: Google
 logo: https://cdn.simpleicons.org/googlegemini
 status_page: https://status.cloud.google.com
 pricing_page: https://one.google.com/intl/en/about/google-ai-plans/
-last_verified: 2026-03-21
+last_verified: 2026-04-07
 ---
 
 ## Pricing
@@ -192,8 +192,8 @@ Available globally where Gemini is available.
 | Gating | free |
 | URL | https://blog.google/products/gemini/google-gemini-deep-research/ |
 | Launched | 2024-12-11T12:00Z |
-| Verified | 2026-03-23|
-| Checked | 2026-04-07|
+| Verified | 2026-04-07 |
+| Checked | 2026-04-07 |
 
 ### Availability
 
@@ -214,7 +214,7 @@ Available globally where Gemini is available.
 | Chrome | ❌ |  |
 | web | ✅ |  |
 | terminal | ❌ |  |
-| API | ✅ | Gemini API |
+| API | ❌ | Consumer feature only; no dedicated API |
 
 ### Regional
 
@@ -232,6 +232,7 @@ Available globally where Gemini Advanced is available.
 
 | Date | Change |
 |------|--------|
+| 2026-04-07T12:00Z | [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access |
 | 2026-03-23T12:00Z | [Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro for AI Pro tier |
 | 2026-03-04T12:00Z | [Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash |
 | 2024-12-11T12:00Z | Initial entry |
@@ -304,16 +305,16 @@ Available globally where Gemini is available.
 | Gating | paid |
 | URL | https://gemini.google.com/ |
 | Launched | 2024-02-08T12:00Z |
-| Verified | 2026-03-23|
-| Checked | 2026-04-07|
+| Verified | 2026-04-07 |
+| Checked | 2026-04-07 |
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Standard Gemini only |
-| AI Plus | ✅ | Standard | Gemini Advanced access |
 | AI Pro | ✅ | Full | Gemini 3.0 Pro access + 2TB storage |
+| AI Ultra | ✅ | Highest | Maximum limits + 30TB storage |
 
 ### Platforms
 
@@ -335,7 +336,7 @@ Available in most countries; some features limited in EU.
 
 ### Talking Point
 
-> "Gemini Advanced gives you access to Google's most capable models. **Google AI Pro ($19.99/mo)** includes Gemini Advanced plus 2TB storage. The new **Google AI Plus ($7.99/mo)** also includes Gemini Advanced access at a lower price point. Google AI Ultra ($249.99/mo) adds the highest limits and 30TB storage."
+> "Gemini Advanced gives you access to Google's most capable models. **Google AI Pro ($19.99/mo)** includes Gemini Advanced plus 2TB storage. **Google AI Ultra ($249.99/mo)** adds the highest limits and 30TB storage. Free users get standard Gemini only."
 
 ### Sources
 
@@ -345,6 +346,7 @@ Available in most countries; some features limited in EU.
 
 | Date | Change |
 |------|--------|
+| 2026-04-07T12:00Z | [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point |
 | 2026-03-23T12:00Z | [Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro |
 | 2026-03-04T12:00Z | [Verified] Google One AI Premium renamed to Google AI Pro ($19.99/mo); Google AI Plus ($7.99/mo) and AI Ultra ($249.99/mo) added; AI Plus also includes Gemini Advanced |
 | 2024-02-08T12:00Z | Initial entry |
@@ -522,18 +524,18 @@ Available globally.
 |----------|-------|
 | Category | image-gen |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/ |
 | Launched | 2024-08-01T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-04-07|
+| Verified | 2026-04-07 |
+| Checked | 2026-04-07 |
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | Limited | Basic generation |
-| AI Pro | ✅ | Full | Imagen 3 access |
+| Free | ✅ | ~10-20/day | Imagen 4 access |
+| AI Pro | ✅ | ~100-150/day | Imagen 4, higher limits |
 
 ### Platforms
 
@@ -555,7 +557,7 @@ Limited in some regions due to content policies.
 
 ### Talking Point
 
-> "Gemini can generate images using Imagen. **Free users have limits; AI Pro gets full access.**"
+> "Gemini can generate images using **Imagen 4**. **Now free for all users**—free tier gets ~10-20 images/day; AI Pro gets ~100-150/day. Also available via the Gemini API."
 
 ### Sources
 
@@ -565,6 +567,7 @@ Limited in some regions due to content policies.
 
 | Date | Change |
 |------|--------|
+| 2026-04-07T12:00Z | [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4 |
 | 2024-08-01T12:00Z | Initial entry |
 
 ---
