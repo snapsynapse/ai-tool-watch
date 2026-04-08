@@ -51,7 +51,7 @@ function parseResponse(response, storedFeature) {
         'sure, let me'
     ];
 
-    const isBoilerplate = response.trim().length < 200 ||
+    const isBoilerplate = response.trim().length < 30 ||
         (BOILERPLATE_PREFIXES.some(prefix => responseLower.startsWith(prefix)) &&
          response.trim().length < 500);
 

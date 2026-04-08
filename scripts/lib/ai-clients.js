@@ -124,44 +124,58 @@ class GeminiClient {
 
         const prompt = buildVerificationPrompt(platform, feature);
 
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.apiKey}`,
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{ text: prompt }]
-                    }],
-                    generationConfig: {
-                        temperature: 0.1,
-                        maxOutputTokens: 2048
-                    },
-                    // Enable search grounding for web results
-                    tools: [{
-                        google_search: {}
-                    }]
-                })
+        const maxRetries = 3;
+        let lastError;
+        for (let attempt = 0; attempt < maxRetries; attempt++) {
+            const response = await fetch(
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.apiKey}`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{ text: prompt }]
+                        }],
+                        generationConfig: {
+                            temperature: 0.1,
+                            maxOutputTokens: 2048
+                        },
+                        // Enable search grounding for web results
+                        tools: [{
+                            google_search: {}
+                        }]
+                    })
+                }
+            );
+
+            if (response.status === 429 && attempt < maxRetries - 1) {
+                const delay = (attempt + 1) * 5000; // 5s, 10s backoff
+                await new Promise(resolve => setTimeout(resolve, delay));
+                continue;
             }
-        );
 
-        if (!response.ok) {
-            const error = await response.text();
-            throw new Error(`Gemini API error: ${response.status} - ${error}`);
+            if (!response.ok) {
+                lastError = await response.text();
+                if (response.status !== 429) {
+                    throw new Error(`Gemini API error: ${response.status} - ${lastError}`);
+                }
+                continue;
+            }
+
+            const data = await response.json();
+            const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+            // Extract grounding sources if available
+            const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
+
+            return {
+                model: this.displayName,
+                response: text,
+                sources,
+                raw: data
+            };
         }
-
-        const data = await response.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-
-        // Extract grounding sources if available
-        const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
-
-        return {
-            model: this.displayName,
-            response: text,
-            sources,
-            raw: data
-        };
+        throw new Error(`Gemini API error: 429 - rate limited after ${maxRetries} retries`);
     }
 }
 
