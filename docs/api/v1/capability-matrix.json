@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-08T05:33:09.526Z",
+    "generated": "2026-04-08T05:55:44.918Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -273,7 +273,7 @@
           "gemini-imagen",
           "gemini-nano-banana-pro"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "grok": {
         "available": true,

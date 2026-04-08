@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-08T05:33:09.526Z",
+    "generated": "2026-04-08T05:55:44.918Z",
     "version": "1.0",
     "count": 72
   },
@@ -4006,13 +4006,13 @@
         {
           "surface": "api",
           "name": "API",
-          "available": true,
-          "notes": "Gemini API"
+          "available": false,
+          "notes": "Consumer feature only; no dedicated API"
         }
       ],
       "talking_point": "Gemini's Deep Research creates comprehensive reports on complex topics. **Now available on the free tier (~5 reports/month via Gemini Flash)**; AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research.",
       "launched": "2024-12-11T12:00Z",
-      "verified": "2026-03-23",
+      "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-deep-research",
       "evidence_verified": "2026-03-04"
     },
@@ -4124,16 +4124,16 @@
           "notes": "Standard Gemini only"
         },
         {
-          "plan": "AI Plus",
-          "available": true,
-          "limits": "Standard",
-          "notes": "Gemini Advanced access"
-        },
-        {
           "plan": "AI Pro",
           "available": true,
           "limits": "Full",
           "notes": "Gemini 3.0 Pro access + 2TB storage"
+        },
+        {
+          "plan": "AI Ultra",
+          "available": true,
+          "limits": "Highest",
+          "notes": "Maximum limits + 30TB storage"
         }
       ],
       "surfaces": [
@@ -4192,9 +4192,9 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini Advanced gives you access to Google's most capable models. **Google AI Pro ($19.99/mo)** includes Gemini Advanced plus 2TB storage. The new **Google AI Plus ($7.99/mo)** also includes Gemini Advanced access at a lower price point. Google AI Ultra ($249.99/mo) adds the highest limits and 30TB storage.",
+      "talking_point": "Gemini Advanced gives you access to Google's most capable models. **Google AI Pro ($19.99/mo)** includes Gemini Advanced plus 2TB storage. **Google AI Ultra ($249.99/mo)** adds the highest limits and 30TB storage. Free users get standard Gemini only.",
       "launched": "2024-02-08T12:00Z",
-      "verified": "2026-03-23",
+      "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-gemini-advanced",
       "evidence_verified": "2026-03-04"
     },
@@ -4493,20 +4493,20 @@
         "generate-images"
       ],
       "category": "image-gen",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
-          "available": false,
-          "limits": "Limited",
-          "notes": "Basic generation"
+          "available": true,
+          "limits": "~10-20/day",
+          "notes": "Imagen 4 access"
         },
         {
           "plan": "AI Pro",
           "available": true,
-          "limits": "Full",
-          "notes": "Imagen 3 access"
+          "limits": "~100-150/day",
+          "notes": "Imagen 4, higher limits"
         }
       ],
       "surfaces": [
@@ -4565,9 +4565,9 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini can generate images using Imagen. **Free users have limits; AI Pro gets full access.**",
+      "talking_point": "Gemini can generate images using **Imagen 4**. **Now free for all users**—free tier gets ~10-20 images/day; AI Pro gets ~100-150/day. Also available via the Gemini API.",
       "launched": "2024-08-01T12:00Z",
-      "verified": "2026-03-15",
+      "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-imagen",
       "evidence_verified": "2026-03-15"
     },

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-08T05:33:09.526Z",
+    "generated": "2026-04-08T05:55:44.918Z",
     "version": "1.0"
   },
   "products": {
@@ -505,6 +505,7 @@
             "gemini-canvas",
             "gemini-extensions",
             "gemini-gems-custom-chatbots",
+            "gemini-imagen",
             "gemini-notebooklm",
             "gemini-project-astra",
             "gemini-agentic-app-actions-android",
@@ -516,6 +517,7 @@
             "build-reusable-ai-workflows",
             "make-and-edit-documents",
             "connect-to-external-systems",
+            "generate-images",
             "organize-work-in-projects",
             "use-files-i-provide",
             "read-text-and-documents",
@@ -528,8 +530,8 @@
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 10,
-          "capability_count": 15
+          "implementation_count": 11,
+          "capability_count": 16
         },
         "AI Pro": {
           "price": null,
@@ -571,18 +573,10 @@
           "implementation_count": 15,
           "capability_count": 16
         },
-        "AI Plus": {
-          "price": null,
-          "implementations": [
-            "gemini-gemini-advanced"
-          ],
-          "capabilities": [],
-          "implementation_count": 1,
-          "capability_count": 0
-        },
         "AI Ultra": {
           "price": null,
           "implementations": [
+            "gemini-gemini-advanced",
             "gemini-workspace"
           ],
           "capabilities": [
@@ -592,7 +586,7 @@
             "use-files-i-provide",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 1,
+          "implementation_count": 2,
           "capability_count": 5
         },
         "Workspace add-on": {

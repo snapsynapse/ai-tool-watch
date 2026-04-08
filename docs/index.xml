@@ -5,8 +5,29 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2026 05:33:09 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 05:55:44 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Gemini — [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-04-07</guid>
+        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-advanced</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-04-07</guid>
+        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-imagen</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-imagen?d=2026-04-07</guid>
+        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4</description>
+    </item>
     <item>
         <title>Perplexity — [Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited)</title>
         <link>https://aitool.watch/implementations.html#impl-perplexity-collections-spaces</link>
@@ -335,27 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-03-04</guid>
         <pubDate>Wed, 04 Mar 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Google One AI Premium renamed to Google AI Pro ($19.99/mo); Google AI Plus ($7.99/mo) and AI Ultra ($249.99/mo) added; AI Plus also includes Gemini Advanced</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro?d=2026-03-04</guid>
-        <pubDate>Wed, 04 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro</description>
-    </item>
-    <item>
-        <title>Gemini — Agentic App Actions (Android) launched</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-03-03</guid>
-        <pubDate>Tue, 03 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: Agentic App Actions (Android) launched</description>
-    </item>
-    <item>
-        <title>Claude — Free on all plans; memory import tool launched</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-memory?d=2026-03-02</guid>
-        <pubDate>Mon, 02 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Claude: Free on all plans; memory import tool launched</description>
     </item>
 </channel>
 </rss>
