@@ -5,7 +5,7 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2026 22:40:14 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:31:11 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
     <item>
         <title>ChatGPT — [Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated</title>
@@ -13,6 +13,20 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation?d=2026-04-08</guid>
         <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Gating changed from paid to free — Free plan now has full remote MCP connector access (not just desktop extensions + GitHub)</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-connectors</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-04-08</guid>
+        <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Gating changed from paid to free — Free plan now has full remote MCP connector access (not just desktop extensions + GitHub)</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Gating changed from paid to free — Free plan now has limited Extended Thinking access; Pro upgraded from limited to full access</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-extended-thinking</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-extended-thinking?d=2026-04-08</guid>
+        <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Gating changed from paid to free — Free plan now has limited Extended Thinking access; Pro upgraded from limited to full access</description>
     </item>
     <item>
         <title>Gemini — [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access</title>
@@ -342,20 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-03-04</guid>
         <pubDate>Wed, 04 Mar 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Fixed broken URL: support.claude.com → support.anthropic.com</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-03-04</guid>
-        <pubDate>Wed, 04 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Fixed broken URL (removed ?hl=en parameter)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-extensions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-extensions?d=2026-03-04</guid>
-        <pubDate>Wed, 04 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Fixed broken URL (removed ?hl=en parameter)</description>
     </item>
 </channel>
 </rss>

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-08T22:40:14.401Z",
+    "generated": "2026-04-09T00:31:11.173Z",
     "version": "1.0"
   },
   "products": {
@@ -253,6 +253,7 @@
           "price": "$0",
           "implementations": [
             "claude-artifacts",
+            "claude-connectors",
             "claude-mcp-model-context-protocol",
             "claude-projects",
             "claude-vision-image-understanding",
@@ -271,7 +272,7 @@
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 6,
+          "implementation_count": 7,
           "capability_count": 10
         },
         "Pro": {
@@ -281,6 +282,7 @@
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
+            "claude-extended-thinking",
             "claude-mcp-model-context-protocol",
             "claude-projects",
             "claude-skills",
@@ -303,7 +305,7 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 10,
+          "implementation_count": 11,
           "capability_count": 13
         },
         "Max 5x": {
@@ -808,6 +810,7 @@
             "perplexity-model-selection",
             "perplexity-pages",
             "perplexity-pro-search",
+            "perplexity-voice-mode",
             "perplexity-chat"
           ],
           "capabilities": [
@@ -819,11 +822,13 @@
             "read-text-and-documents",
             "search-the-web",
             "make-and-edit-documents",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 9,
-          "capability_count": 10
+          "implementation_count": 10,
+          "capability_count": 12
         },
         "Enterprise Pro": {
           "price": "$40/user/mo",
