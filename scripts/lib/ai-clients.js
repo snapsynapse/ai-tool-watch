@@ -128,7 +128,7 @@ class GeminiClient {
         let lastError;
         for (let attempt = 0; attempt < maxRetries; attempt++) {
             const response = await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${this.apiKey}`,
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.apiKey}`,
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -332,7 +332,7 @@ class ClaudeClient {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'claude-haiku-4-5-latest',
+                model: 'claude-haiku-4-5',
                 max_tokens: 2048,
                 tools: [{
                     type: 'web_search_20250305',
