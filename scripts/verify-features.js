@@ -327,10 +327,23 @@ async function main() {
         if (queriesUsed === 0) continue;
         const errorRate = stats.errors / queriesUsed;
         const pct = (errorRate * 100).toFixed(0);
-        const status = errorRate > 0.8 ? '✗' : errorRate > 0 ? '~' : '✓';
-        console.log(`  ${status} ${name}: ${stats.errors}/${queriesUsed} errors (${pct}%)`);
-        if (errorRate > 0.8) {
+        const noSearch = stats.noSearchEvidence || 0;
+        const noSearchPct = queriesUsed > 0 ? ((noSearch / queriesUsed) * 100).toFixed(0) : '0';
+        const status = errorRate > 0.5 ? '✗' : errorRate > 0 ? '~' : '✓';
+        let line = `  ${status} ${name}: ${stats.errors}/${queriesUsed} errors (${pct}%)`;
+        if (noSearch > 0) {
+            line += `, ${noSearch}/${queriesUsed} no search evidence (${noSearchPct}%)`;
+        }
+        console.log(line);
+        if (errorRate > 0.5) {
             degradedProviders.push(name);
+        }
+        // Also flag providers that frequently don't search
+        if (noSearch > 0 && (noSearch / queriesUsed) > 0.5) {
+            console.log(`    ⚠ ${name} is not searching in >50% of queries — check API configuration`);
+            if (!degradedProviders.includes(name)) {
+                degradedProviders.push(name);
+            }
         }
     }
 
@@ -371,15 +384,12 @@ async function main() {
             featureName: r.feature
         })).filter(f => f.filepath);
 
-        // Collect features with no changes (for Verified date update)
-        const noChangeFeatures = results
-            .filter(r => r.outcome === CascadeOutcome.NO_CHANGE)
-            .map(r => ({
-                filepath: featuresToVerify.find(f =>
-                    f.platform.name === r.platform && f.feature.name === r.feature
-                )?.platform._filepath,
-                featureName: r.feature
-            })).filter(f => f.filepath);
+        // Verified dates are NOT auto-bumped by the pipeline.
+        // A "no change" cascade outcome means the models didn't detect changes,
+        // but that's not the same as human-verified accuracy. Verified dates
+        // should only be updated by manual review (resolve-issue skill) or
+        // high-confidence confirmed changes.
+        const noChangeFeatures = []; // intentionally empty — no auto-Verified bumps
 
         // Update Checked date for ALL features that were checked
         if (allChecked.length > 0) {

@@ -267,23 +267,42 @@ async function runCascade(platform, feature, options = {}) {
                 hasChange: parsed.hasChange,
                 changes: parsed.changes,
                 confidence: parsed.confidence,
+                hasSearchEvidence: !!response.hasSearchEvidence,
                 type: parsed.hasChange ? ResultType.POSITIVE : ResultType.NEGATIVE
             };
 
             results.push(result);
 
             log(`  Result: ${result.type.toUpperCase()}`);
+            log(`  Search evidence: ${result.hasSearchEvidence ? 'YES' : 'NO ⚠'}`);
+            log(`  Confidence: ${(parsed.confidence * 100).toFixed(0)}%`);
             if (parsed.hasChange) {
                 log(`  Changes detected: ${parsed.changes.length}`);
-                log(`  Confidence: ${(parsed.confidence * 100).toFixed(0)}%`);
             }
 
-            // Two models agree on no change - stop cascade
-            // (Previously stopped after just 1 model, which meant a single
-            // false negative would kill the entire verification)
-            const noChangeCount = results.filter(r => !r.hasChange && r.type !== ResultType.ERROR).length;
-            if (noChangeCount >= 2 && !parsed.hasChange) {
-                log(`\n✓ ${noChangeCount} models confirm no change. Stopping cascade.`);
+            // A "no change" vote only counts if the model actually searched
+            // AND has reasonable confidence. Without search evidence, the model
+            // is guessing from training data — that's not verification.
+            const qualifiedNoChange = results.filter(r =>
+                !r.hasChange &&
+                r.type !== ResultType.ERROR &&
+                r.hasSearchEvidence &&
+                r.confidence >= 0.5
+            ).length;
+
+            // Count models that said "no change" without searching — these are failures
+            const unsearchedNoChange = results.filter(r =>
+                !r.hasChange &&
+                r.type !== ResultType.ERROR &&
+                !r.hasSearchEvidence
+            );
+            if (!parsed.hasChange && !response.hasSearchEvidence) {
+                log(`  ⚠ ${client.displayName} said "no change" without search evidence — vote not counted`);
+            }
+
+            // Two QUALIFIED models agree on no change - stop cascade
+            if (qualifiedNoChange >= 2 && !parsed.hasChange && response.hasSearchEvidence) {
+                log(`\n✓ ${qualifiedNoChange} models confirm no change (with search evidence). Stopping cascade.`);
                 outcome = CascadeOutcome.NO_CHANGE;
                 break;
             }
@@ -335,6 +354,17 @@ async function runCascade(platform, feature, options = {}) {
         log(`\n⚠ Only ${substantiveResults.length} substantive result(s). ` +
             `Downgrading INCONCLUSIVE to NO_CHANGE (insufficient evidence).`);
         outcome = CascadeOutcome.NO_CHANGE;
+    }
+
+    // If we reached NO_CHANGE but no models had search evidence, escalate to
+    // INCONCLUSIVE — we can't confirm "no change" without actually searching.
+    if (outcome === CascadeOutcome.NO_CHANGE) {
+        const searchedResults = substantiveResults.filter(r => r.hasSearchEvidence);
+        if (searchedResults.length === 0 && substantiveResults.length > 0) {
+            log(`\n⚠ NO models provided search evidence. ` +
+                `Escalating NO_CHANGE to INCONCLUSIVE — verification was not web-grounded.`);
+            outcome = CascadeOutcome.INCONCLUSIVE;
+        }
     }
 
     // Check if all models errored
@@ -403,7 +433,7 @@ async function runBatchCascade(features, options = {}, onProgress = null) {
         for (const modelResult of result.results) {
             const provider = modelResult.modelName || modelResult.model;
             if (!providerHealth[provider]) {
-                providerHealth[provider] = { total: 0, errors: 0, skipped: 0, lastError: null };
+                providerHealth[provider] = { total: 0, errors: 0, skipped: 0, noSearchEvidence: 0, lastError: null };
             }
             providerHealth[provider].total++;
             if (modelResult.type === ResultType.ERROR) {
@@ -411,6 +441,8 @@ async function runBatchCascade(features, options = {}, onProgress = null) {
                 providerHealth[provider].lastError = modelResult.error;
             } else if (modelResult.type === ResultType.SKIPPED) {
                 providerHealth[provider].skipped++;
+            } else if (!modelResult.hasSearchEvidence) {
+                providerHealth[provider].noSearchEvidence++;
             }
         }
 

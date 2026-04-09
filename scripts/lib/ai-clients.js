@@ -128,7 +128,7 @@ class GeminiClient {
         let lastError;
         for (let attempt = 0; attempt < maxRetries; attempt++) {
             const response = await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.apiKey}`,
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${this.apiKey}`,
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -167,11 +167,14 @@ class GeminiClient {
 
             // Extract grounding sources if available
             const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
+            const hasSearchEvidence = sources.length > 0 ||
+                !!data.candidates?.[0]?.groundingMetadata?.groundingChunks?.length;
 
             return {
                 model: this.displayName,
                 response: text,
                 sources,
+                hasSearchEvidence,
                 raw: data
             };
         }
@@ -228,11 +231,13 @@ class PerplexityClient {
         const data = await response.json();
         const text = data.choices?.[0]?.message?.content || '';
         const citations = data.citations || [];
+        const hasSearchEvidence = citations.length > 0;
 
         return {
             model: this.displayName,
             response: text,
             sources: citations,
+            hasSearchEvidence,
             raw: data
         };
     }
@@ -288,10 +293,14 @@ class GrokClient {
         const data = await response.json();
         const text = data.choices?.[0]?.message?.content || '';
 
+        // Grok searches X/Twitter by design — if it returned content, it searched
+        const hasSearchEvidence = text.length > 100;
+
         return {
             model: this.displayName,
             response: text,
             sources: [], // Grok doesn't provide structured citations
+            hasSearchEvidence,
             raw: data
         };
     }
@@ -323,7 +332,7 @@ class ClaudeClient {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'claude-haiku-4-5-20251001',
+                model: 'claude-haiku-4-5-latest',
                 max_tokens: 2048,
                 tools: [{
                     type: 'web_search_20250305',
@@ -348,6 +357,7 @@ class ClaudeClient {
         // Extract text from content blocks
         let text = '';
         const sources = [];
+        let hasSearchEvidence = false;
 
         for (const block of data.content || []) {
             if (block.type === 'text') {
@@ -356,12 +366,20 @@ class ClaudeClient {
             if (block.type === 'tool_result' && block.citations) {
                 sources.push(...block.citations);
             }
+            // web_search tool use or result indicates search happened
+            if (block.type === 'tool_use' && block.name === 'web_search') {
+                hasSearchEvidence = true;
+            }
+            if (block.type === 'tool_result') {
+                hasSearchEvidence = true;
+            }
         }
 
         return {
             model: this.displayName,
             response: text,
             sources,
+            hasSearchEvidence,
             raw: data
         };
     }
