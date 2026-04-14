@@ -2432,18 +2432,17 @@ html.light-mode .about-banner-light { display: block; }
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: var(--card-bg, #1e1e2e);
-    border: 1px solid var(--border, #333);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 8px;
-    color: var(--text-primary, #e0e0e0);
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 0.9rem;
     transition: border-color 0.2s, background 0.2s;
 }
 
 .discovery-hub-link:hover {
-    border-color: var(--accent, #6c9bff);
-    background: var(--card-hover-bg, #252538);
+    border-color: var(--accent);
 }
 
 .discovery-hub-icon {
@@ -2458,12 +2457,12 @@ html.light-mode .about-banner-light { display: block; }
 
 .page-framing {
     font-size: 0.95rem;
-    color: var(--text-secondary, #aaa);
+    color: var(--text-secondary);
     font-style: italic;
-    border-left: 3px solid var(--accent, #6c9bff);
+    border-left: 3px solid var(--accent);
     padding: 0.75rem 1rem;
     margin: 1rem 0 1.5rem;
-    background: var(--card-bg, #1e1e2e);
+    background: var(--card-bg);
     border-radius: 0 6px 6px 0;
 }
 
@@ -2479,17 +2478,18 @@ html.light-mode .about-banner-light { display: block; }
 
 .changes-date-group h3 {
     font-size: 0.95rem;
-    color: var(--text-secondary, #aaa);
-    border-bottom: 1px solid var(--border, #333);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 0.4rem;
     margin-bottom: 0.75rem;
 }
 
 .change-entry {
     display: flex;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-light, #2a2a3a);
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--card-border);
     align-items: baseline;
 }
 
@@ -2502,42 +2502,60 @@ html.light-mode .about-banner-light { display: block; }
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 2px 8px;
+    letter-spacing: 0.03em;
+    padding: 3px 8px;
     border-radius: 4px;
-    background: var(--accent, #6c9bff);
-    color: #fff;
+    background: rgba(79, 195, 247, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(79, 195, 247, 0.3);
     white-space: nowrap;
     text-decoration: none;
 }
 
+.change-product-badge a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .change-product-badge:hover {
-    opacity: 0.85;
+    background: rgba(79, 195, 247, 0.25);
 }
 
 .change-feature {
     font-weight: 500;
-    color: var(--text-primary, #e0e0e0);
+    color: var(--text-primary);
     min-width: 120px;
 }
 
-.change-description {
-    color: var(--text-secondary, #aaa);
+.change-text {
+    color: var(--text-secondary);
     flex: 1;
 }
 
-.change-affects {
+.change-caps {
     font-size: 0.85rem;
-    color: var(--text-secondary, #aaa);
+    color: var(--text-secondary);
     margin-top: 0.25rem;
 }
 
-.change-affects a {
-    color: var(--accent, #6c9bff);
+.change-caps a {
+    color: var(--accent);
     text-decoration: none;
 }
 
-.change-affects a:hover {
+.change-caps a:hover {
     text-decoration: underline;
+}
+
+/* Light mode overrides for changes */
+:is(html, body).light-mode .change-product-badge {
+    background: rgba(0, 85, 170, 0.1);
+    color: #0055aa;
+    border-color: rgba(0, 85, 170, 0.25);
+}
+
+:is(html, body).light-mode .change-product-badge:hover {
+    background: rgba(0, 85, 170, 0.18);
 }
 
 /* ===== Coverage Matrix ===== */
@@ -2553,13 +2571,13 @@ html.light-mode .about-banner-light { display: block; }
 .coverage-matrix td {
     padding: 8px 12px;
     text-align: center;
-    border-bottom: 1px solid var(--border, #333);
+    border-bottom: 1px solid var(--border);
 }
 
 .coverage-matrix th {
     font-weight: 600;
-    color: var(--text-primary, #e0e0e0);
-    background: var(--card-bg, #1e1e2e);
+    color: var(--text-primary);
+    background: var(--card-bg);
     position: sticky;
     top: 0;
 }
@@ -2570,7 +2588,7 @@ html.light-mode .about-banner-light { display: block; }
 }
 
 .coverage-matrix td:first-child a {
-    color: var(--accent, #6c9bff);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -2579,32 +2597,38 @@ html.light-mode .about-banner-light { display: block; }
 }
 
 .coverage-free {
-    color: #4caf50;
+    color: #22c55e;
 }
 
 .coverage-limited {
-    color: #ff9800;
+    color: #f59e0b;
 }
 
 .coverage-paid {
-    color: #9e9e9e;
+    color: var(--text-secondary);
 }
 
 .coverage-unavailable {
-    color: #555;
+    color: var(--text-secondary);
+    opacity: 0.4;
 }
+
+/* Light mode overrides for coverage */
+:is(html, body).light-mode .coverage-free { color: #16a34a; }
+:is(html, body).light-mode .coverage-limited { color: #d97706; }
+:is(html, body).light-mode .coverage-paid { color: #6b7280; }
 
 /* ===== See Also Section ===== */
 
 .see-also {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--border, #333);
+    border-top: 1px solid var(--border);
 }
 
 .see-also h3 {
     font-size: 0.9rem;
-    color: var(--text-secondary, #aaa);
+    color: var(--text-secondary);
     margin-bottom: 0.75rem;
 }
 
@@ -2617,16 +2641,16 @@ html.light-mode .about-banner-light { display: block; }
 .see-also-links a {
     display: inline-block;
     padding: 0.35rem 0.75rem;
-    background: var(--card-bg, #1e1e2e);
-    border: 1px solid var(--border, #333);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 6px;
-    color: var(--accent, #6c9bff);
+    color: var(--accent);
     text-decoration: none;
     font-size: 0.85rem;
 }
 
 .see-also-links a:hover {
-    border-color: var(--accent, #6c9bff);
+    border-color: var(--accent);
 }
 
 /* ===== Changes Product Nav ===== */
@@ -2640,23 +2664,23 @@ html.light-mode .about-banner-light { display: block; }
 
 .changes-product-nav a {
     padding: 0.4rem 0.8rem;
-    background: var(--card-bg, #1e1e2e);
-    border: 1px solid var(--border, #333);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 6px;
-    color: var(--text-primary, #e0e0e0);
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 0.85rem;
 }
 
 .changes-product-nav a:hover {
-    border-color: var(--accent, #6c9bff);
+    border-color: var(--accent);
 }
 
 /* ===== Coverage Legend ===== */
 
 .coverage-legend {
     font-size: 0.85rem;
-    color: var(--text-secondary, #aaa);
+    color: var(--text-secondary);
     margin: 1rem 0;
 }
 
