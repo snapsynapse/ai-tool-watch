@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-13T04:19:57.777Z",
+    "generated": "2026-04-14T00:28:47.490Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -237,7 +237,7 @@
         "implementations": [
           "grok-chat"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,
@@ -280,7 +280,7 @@
         "implementations": [
           "grok-image-generation-aurora"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": false,
@@ -428,7 +428,7 @@
         "implementations": [
           "claude-projects"
         ],
-        "best_gating": "free"
+        "best_gating": "paid"
       },
       "copilot": {
         "available": false,
@@ -508,7 +508,7 @@
         "implementations": [
           "claude-projects"
         ],
-        "best_gating": "free"
+        "best_gating": "paid"
       },
       "copilot": {
         "available": false,
@@ -571,7 +571,7 @@
         "implementations": [
           "grok-deepsearch"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,
@@ -616,7 +616,7 @@
         "implementations": [
           "grok-deepsearch"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,
@@ -805,7 +805,7 @@
         "implementations": [
           "grok-chat"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,

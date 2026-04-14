@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-13T04:19:57.777Z",
+    "generated": "2026-04-14T00:28:47.490Z",
     "version": "1.0",
     "count": 72
   },
@@ -232,7 +232,7 @@
       "launched": "2025-07-17T12:00Z",
       "verified": "2026-03-20",
       "evidence_id": "implementation-chatgpt-agent-mode",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "chatgpt-atlas-browser",
@@ -272,6 +272,18 @@
           "available": true,
           "limits": "400/month",
           "notes": "Full agent capabilities"
+        },
+        {
+          "plan": "Team",
+          "available": true,
+          "limits": "40/month",
+          "notes": "Agent Mode in Atlas"
+        },
+        {
+          "plan": "Enterprise",
+          "available": true,
+          "limits": "Custom",
+          "notes": "Agent Mode in Atlas"
         }
       ],
       "surfaces": [
@@ -334,7 +346,7 @@
       "launched": "2025-10-21T12:00Z",
       "verified": "2026-03-27",
       "evidence_id": "implementation-chatgpt-atlas-browser",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-27"
     },
     {
       "id": "chatgpt-canvas",
@@ -410,14 +422,14 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
-          "notes": "Coming soon"
+          "available": true,
+          "notes": "Mobile app"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
-          "notes": "Coming soon"
+          "available": true,
+          "notes": "Mobile app"
         },
         {
           "surface": "chrome",
@@ -444,11 +456,11 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Canvas is ChatGPT's split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. **Available on all plans including free**, but currently desktop and web only. Mobile is coming soon.",
+      "talking_point": "Canvas is ChatGPT's split-screen workspace for writing and coding projects—edit inline, get suggestions, and refine together. **Available on all plans including free**, across desktop, web, and mobile.",
       "launched": "2024-10-03T12:00Z",
       "verified": "2026-04-07",
       "evidence_id": "implementation-chatgpt-canvas",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-04-07"
     },
     {
       "id": "chatgpt-search",
@@ -561,7 +573,7 @@
       "launched": "2024-10-31T12:00Z",
       "verified": "2026-03-20",
       "evidence_id": "implementation-chatgpt-search",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "chatgpt-codex-code-agent",
@@ -1017,7 +1029,7 @@
       "launched": "2023-10-01T12:00Z",
       "verified": "2026-04-08",
       "evidence_id": "implementation-chatgpt-dall-e-image-generation",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-04-08"
     },
     {
       "id": "chatgpt-deep-research",
@@ -1131,7 +1143,7 @@
       "launched": "2025-02-03T12:00Z",
       "verified": "2026-03-20",
       "evidence_id": "implementation-chatgpt-deep-research",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "chatgpt-memory",
@@ -1244,7 +1256,7 @@
       "launched": "2024-09-05T12:00Z",
       "verified": "2026-03-19",
       "evidence_id": "implementation-chatgpt-memory",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-19"
     },
     {
       "id": "chatgpt-projects",
@@ -1359,7 +1371,7 @@
       "launched": "2024-12-13T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-chatgpt-projects",
-      "evidence_verified": "2026-03-01"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "chatgpt-vision-image-understanding",
@@ -1472,7 +1484,7 @@
       "launched": "2024-05-13T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-chatgpt-vision-image-understanding",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "chatgpt-sora-video-generation",
@@ -1486,7 +1498,7 @@
       ],
       "category": "video-gen",
       "gating": "paid",
-      "status": "ga",
+      "status": "deprecated",
       "plans": [
         {
           "plan": "Free",
@@ -1502,21 +1514,21 @@
         },
         {
           "plan": "Plus",
-          "available": true,
-          "limits": "1000 credits/mo",
-          "notes": "~50 videos at 480p"
+          "available": false,
+          "limits": "—",
+          "notes": "Discontinued April 26, 2026"
         },
         {
           "plan": "Pro",
-          "available": true,
-          "limits": "10000 credits/mo",
-          "notes": "Unlimited relaxed mode"
+          "available": false,
+          "limits": "—",
+          "notes": "Discontinued April 26, 2026"
         },
         {
           "plan": "Team",
           "available": false,
-          "limits": "Limited",
-          "notes": "Consumer ToS applies"
+          "limits": "—",
+          "notes": "Discontinued April 26, 2026"
         },
         {
           "plan": "Enterprise",
@@ -1581,11 +1593,11 @@
           "notes": "Async processing"
         }
       ],
-      "talking_point": "Sora generates videos from text prompts—up to 25 seconds at 1080p. **Requires Plus ($20/mo) or Pro ($200/mo)**. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe.",
+      "talking_point": "Sora video generation has been **discontinued**. Web and app access ends **April 26, 2026**; API access ends **September 24, 2026**. Previously required Plus ($20/mo) or Pro ($200/mo).",
       "launched": "2024-12-09T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-04-13",
       "evidence_id": "implementation-chatgpt-sora-video-generation",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-13"
     },
     {
       "id": "chatgpt-chat",
@@ -1699,7 +1711,7 @@
       "launched": "2022-11-30T12:00Z",
       "verified": "2026-03-21",
       "evidence_id": "implementation-chatgpt-chat",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "claude-artifacts",
@@ -1801,7 +1813,7 @@
       "launched": "2024-06-20T12:00Z",
       "verified": "2026-04-06",
       "evidence_id": "implementation-claude-artifacts",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-04-06"
     },
     {
       "id": "claude-claude-code",
@@ -1916,7 +1928,7 @@
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-claude-claude-code",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "claude-connectors",
@@ -2029,7 +2041,7 @@
       "launched": "2025-05-01T12:00Z",
       "verified": "2026-04-08",
       "evidence_id": "implementation-claude-connectors",
-      "evidence_verified": "2026-03-04"
+      "evidence_verified": "2026-04-08"
     },
     {
       "id": "claude-cowork-mode",
@@ -2044,7 +2056,7 @@
       ],
       "category": "agents",
       "gating": "paid",
-      "status": "preview",
+      "status": "ga",
       "plans": [
         {
           "plan": "Free",
@@ -2056,31 +2068,31 @@
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Research preview"
+          "notes": "Full access"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Subject to Max limits",
-          "notes": "Research preview"
+          "notes": "Full access"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Subject to Max limits",
-          "notes": "Research preview"
+          "notes": "Full access"
         },
         {
           "plan": "Team",
           "available": true,
           "limits": "Standard",
-          "notes": "Research preview"
+          "notes": "Full access"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": "Research preview"
+          "notes": "Full access"
         }
       ],
       "surfaces": [
@@ -2139,11 +2151,11 @@
           "notes": "Desktop feature only"
         }
       ],
-      "talking_point": "Cowork is Claude's background agent—**it launched January 2026 and expanded to all paid plans in February**. It's available on Pro ($20/mo) and above, on macOS and Windows desktop. It's still a research preview but already useful for delegating multi-step tasks.",
+      "talking_point": "Cowork is Claude's background agent—**it launched January 2026 and reached GA in April 2026**. It's available on Pro ($20/mo) and above, on macOS and Windows desktop. Useful for delegating multi-step tasks while you work on other things.",
       "launched": "2026-01-12T12:00Z",
-      "verified": "2026-04-07",
+      "verified": "2026-04-13",
       "evidence_id": "implementation-claude-cowork-mode",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-04-13"
     },
     {
       "id": "claude-extended-thinking",
@@ -2242,7 +2254,7 @@
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-04-08",
       "evidence_id": "implementation-claude-extended-thinking",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-08"
     },
     {
       "id": "claude-mcp-model-context-protocol",
@@ -2355,7 +2367,7 @@
       "launched": "2024-11-25T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-claude-mcp-model-context-protocol",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "claude-projects",
@@ -2369,14 +2381,14 @@
         "use-files-i-provide"
       ],
       "category": "local-files",
-      "gating": "free",
+      "gating": "paid",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
-          "available": true,
-          "limits": "Standard",
-          "notes": "Full access (added Feb 2026)"
+          "available": false,
+          "limits": "—",
+          "notes": "Not available"
         },
         {
           "plan": "Pro",
@@ -2465,11 +2477,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Projects let you organize conversations and documents into workspaces with persistent context. **Now available on all plans including free** as of February 2026.",
+      "talking_point": "Projects let you organize conversations and documents into workspaces with persistent context. **Available on Pro and above.** Team plans get shared projects; Enterprise adds SSO and admin controls.",
       "launched": "2024-06-25T12:00Z",
-      "verified": "2026-03-23",
+      "verified": "2026-04-13",
       "evidence_id": "implementation-claude-projects",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-13"
     },
     {
       "id": "claude-skills",
@@ -2582,7 +2594,7 @@
       "launched": "2025-10-16T12:00Z",
       "verified": "2026-04-03",
       "evidence_id": "implementation-claude-skills",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-04-03"
     },
     {
       "id": "claude-vision-image-understanding",
@@ -2684,7 +2696,7 @@
       "launched": "2024-03-04T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-claude-vision-image-understanding",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "claude-memory",
@@ -2797,7 +2809,7 @@
       "launched": "2025-10-01T12:00Z",
       "verified": "2026-03-19",
       "evidence_id": "implementation-claude-memory",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-03-19"
     },
     {
       "id": "claude-chat",
@@ -2911,7 +2923,7 @@
       "launched": "2023-07-11T12:00Z",
       "verified": "2026-03-20",
       "evidence_id": "implementation-claude-chat",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "copilot-agent-builder",
@@ -3013,7 +3025,7 @@
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-agent-builder",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "copilot-connectors",
@@ -3108,7 +3120,7 @@
       "launched": "2023-11-01T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-connectors",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "copilot-office-apps",
@@ -3206,7 +3218,7 @@
       "launched": "2023-11-01T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-office-apps",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "copilot-vision",
@@ -3220,7 +3232,7 @@
       ],
       "category": "browser",
       "gating": "free",
-      "status": "preview",
+      "status": "ga",
       "plans": [
         {
           "plan": "Free",
@@ -3257,14 +3269,14 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Copilot app"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Copilot app"
         },
         {
           "surface": "chrome",
@@ -3291,11 +3303,11 @@
           "notes": "No consumer API"
         }
       ],
-      "talking_point": "Copilot Vision lets Copilot see and discuss the webpage you're viewing in Edge. **Now free for all Edge users** in the US with a Microsoft account—no Pro subscription needed. Still in preview and Edge-only.",
+      "talking_point": "Copilot Vision lets Copilot see and discuss the webpage you're viewing in Edge. **Now free for all Edge users** in the US with a Microsoft account—no Pro subscription needed. Now GA and available via the Copilot app on iOS and Android as well as Edge",
       "launched": "2024-10-01T12:00Z",
-      "verified": "2026-03-15",
+      "verified": "2026-04-13",
       "evidence_id": "implementation-copilot-vision",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-13"
     },
     {
       "id": "copilot-voice",
@@ -3385,7 +3397,7 @@
       "launched": "2024-10-01T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-voice",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "copilot-gpt-4-access",
@@ -3403,13 +3415,13 @@
           "plan": "Free",
           "available": false,
           "limits": "Limited",
-          "notes": "Falls back to faster models at peak"
+          "notes": "GPT-4o/GPT-4.1 with fallback at peak; GPT-5 preview available"
         },
         {
           "plan": "Copilot Pro",
           "available": true,
           "limits": "Priority",
-          "notes": "Consistent GPT-4 access"
+          "notes": "Priority GPT-4o/GPT-4.1/GPT-5 access"
         }
       ],
       "surfaces": [
@@ -3472,7 +3484,7 @@
       "launched": "2023-02-07T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-gpt-4-access",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "copilot-image-generation-designer",
@@ -3561,7 +3573,7 @@
       "launched": "2023-03-21T12:00Z",
       "verified": "2026-03-23",
       "evidence_id": "implementation-copilot-image-generation-designer",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-23"
     },
     {
       "id": "copilot-chat",
@@ -3657,7 +3669,7 @@
       "launched": "2023-02-07T12:00Z",
       "verified": "2026-03-22",
       "evidence_id": "implementation-copilot-chat",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "gemini-ai-studio",
@@ -4014,7 +4026,7 @@
       "launched": "2024-12-11T12:00Z",
       "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-deep-research",
-      "evidence_verified": "2026-03-04"
+      "evidence_verified": "2026-04-07"
     },
     {
       "id": "gemini-extensions",
@@ -4127,7 +4139,7 @@
           "plan": "AI Pro",
           "available": true,
           "limits": "Full",
-          "notes": "Gemini 3.0 Pro access + 2TB storage"
+          "notes": "Gemini 3.1 Pro access + 2TB storage"
         },
         {
           "plan": "AI Ultra",
@@ -4196,7 +4208,7 @@
       "launched": "2024-02-08T12:00Z",
       "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-gemini-advanced",
-      "evidence_verified": "2026-03-04"
+      "evidence_verified": "2026-04-07"
     },
     {
       "id": "gemini-workspace",
@@ -4297,7 +4309,7 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. **March 2026 beta rollout** adds 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. **Requires AI Pro ($19.99/mo), AI Ultra ($249.99/mo), or Workspace add-on.** Drive features are US-only for now; full deck generation in Slides is coming soon.",
+      "talking_point": "Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. **The base Workspace integration is GA**, but the **March 2026 enhancements are in beta rollout**: 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. **Requires AI Pro ($19.99/mo), AI Ultra ($249.99/mo), or Workspace add-on.** Drive features are US-only for now; full deck generation in Slides is coming soon.",
       "launched": "2024-06-24T12:00Z",
       "verified": "2026-03-15",
       "evidence_id": "implementation-gemini-workspace",
@@ -4569,7 +4581,7 @@
       "launched": "2024-08-01T12:00Z",
       "verified": "2026-04-07",
       "evidence_id": "implementation-gemini-imagen",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-07"
     },
     {
       "id": "gemini-nano-banana-pro",
@@ -4592,10 +4604,22 @@
           "notes": "Nano Banana 2 (default) only"
         },
         {
+          "plan": "Google AI Plus",
+          "available": true,
+          "limits": "50/day",
+          "notes": "Nano Banana Pro access"
+        },
+        {
           "plan": "AI Pro",
           "available": true,
           "limits": "Full",
           "notes": "Nano Banana Pro via three-dot menu"
+        },
+        {
+          "plan": "Google AI Ultra",
+          "available": true,
+          "limits": "1000/day",
+          "notes": "Highest daily limit"
         }
       ],
       "surfaces": [
@@ -4864,10 +4888,22 @@
           "notes": "Not available"
         },
         {
+          "plan": "Google AI Plus",
+          "available": true,
+          "limits": "2-3/day",
+          "notes": "Veo 3.1 Fast"
+        },
+        {
           "plan": "AI Pro",
           "available": true,
           "limits": "Full",
           "notes": "Veo 3.1 via Gemini app and Flow"
+        },
+        {
+          "plan": "Google AI Ultra",
+          "available": true,
+          "limits": "Highest",
+          "notes": "Full Veo 3.1 with audio"
         },
         {
           "plan": "Workspace add-on",
@@ -5026,7 +5062,7 @@
       "launched": "2026-03-03T12:00Z",
       "verified": "2026-03-21",
       "evidence_id": "implementation-gemini-agentic-app-actions-android",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "gemini-past-chats-memory",
@@ -5235,7 +5271,7 @@
       "launched": "2024-02-08T12:00Z",
       "verified": "2026-03-21",
       "evidence_id": "implementation-gemini-chat",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "grok-deepsearch",
@@ -5249,14 +5285,14 @@
         "search-the-web"
       ],
       "category": "research",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
           "available": false,
-          "limits": "—",
-          "notes": "Not available"
+          "limits": "Limited",
+          "notes": "Basic access with daily caps"
         },
         {
           "plan": "Premium",
@@ -5333,11 +5369,11 @@
           "notes": "xAI API"
         }
       ],
-      "talking_point": "DeepSearch is Grok's multi-step research mode. **Premium+ or SuperGrok recommended** for full access; basic Premium has limited DeepSearch.",
+      "talking_point": "DeepSearch is Grok's multi-step research mode. **Free users get limited access with daily caps**; Premium+ or SuperGrok recommended for full access.",
       "launched": "2025-02-17T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-deepsearch",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "grok-chat",
@@ -5351,7 +5387,7 @@
         "use-it-on-my-surfaces"
       ],
       "category": "other",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
@@ -5439,7 +5475,7 @@
       "launched": "2023-11-04T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-chat",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "grok-image-generation-aurora",
@@ -5452,7 +5488,7 @@
         "generate-images"
       ],
       "category": "image-gen",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
@@ -5540,7 +5576,7 @@
       "launched": "2024-12-09T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-image-generation-aurora",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "grok-imagine-video-generation",
@@ -5559,26 +5595,26 @@
         {
           "plan": "Free",
           "available": false,
-          "limits": "Very limited",
-          "notes": "~3/day, 480p previews"
+          "limits": "—",
+          "notes": "Removed March 2026"
         },
         {
           "plan": "Premium",
           "available": true,
-          "limits": "50/day",
-          "notes": "Basic video generation"
+          "limits": "~10/8hrs",
+          "notes": "Basic video generation, 720p"
         },
         {
           "plan": "Premium+",
           "available": true,
-          "limits": "100/day",
-          "notes": "More generations"
+          "limits": "Higher",
+          "notes": "Enhanced generation, 720p"
         },
         {
           "plan": "SuperGrok",
           "available": true,
-          "limits": "500/day",
-          "notes": "Priority + most generations"
+          "limits": "Highest",
+          "notes": "Priority + most generations, 720p"
         }
       ],
       "surfaces": [
@@ -5637,11 +5673,11 @@
           "notes": "xAI API"
         }
       ],
-      "talking_point": "Grok Imagine generates 6-15 second video clips with synchronized audio in under 20 seconds. **Free users get very limited access (~3/day at 480p)**; paid tiers unlock higher limits (up to 500/day on SuperGrok). Supports text-to-video and image-to-video. 'Spicy Mode' requires paid subscription.",
+      "talking_point": "Grok Imagine generates 6-15 second video clips with synchronized audio. **Free access was removed in March 2026**—now requires Premium ($8/mo) or higher. Resolution upgraded to 720p. Supports text-to-video and image-to-video.",
       "launched": "2025-08-04T12:00Z",
-      "verified": "2026-03-24",
+      "verified": "2026-04-13",
       "evidence_id": "implementation-grok-imagine-video-generation",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-04-13"
     },
     {
       "id": "grok-studio",
@@ -5743,7 +5779,7 @@
       "launched": "2025-04-16T12:00Z",
       "verified": "2026-03-20",
       "evidence_id": "implementation-grok-studio",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "grok-voice-mode",
@@ -5845,7 +5881,7 @@
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-03-21",
       "evidence_id": "implementation-grok-voice-mode",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "grok-real-time-x-twitter-data",
@@ -5946,7 +5982,7 @@
       "launched": "2023-11-04T12:00Z",
       "verified": "2026-03-19",
       "evidence_id": "implementation-grok-real-time-x-twitter-data",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-03-19"
     },
     {
       "id": "grok-think-mode",
@@ -6045,7 +6081,7 @@
       "launched": "2025-02-17T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-think-mode",
-      "evidence_verified": "2026-03-01"
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "grok-memory",
@@ -6247,7 +6283,7 @@
       "launched": "2024-08-13T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-vision-image-understanding",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "perplexity-agent-mode-agentic-actions",
@@ -6352,7 +6388,7 @@
       "launched": "2024-11-01T12:00Z",
       "verified": "2026-03-21",
       "evidence_id": "implementation-perplexity-agent-mode-agentic-actions",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "perplexity-buy-with-pro-shopping",
@@ -6544,7 +6580,7 @@
       "launched": "2024-10-17T12:00Z",
       "verified": "2026-03-25",
       "evidence_id": "implementation-perplexity-collections-spaces",
-      "evidence_verified": "2026-02-07"
+      "evidence_verified": "2026-03-25"
     },
     {
       "id": "perplexity-comet-browser",
@@ -6646,7 +6682,7 @@
       "launched": "2025-07-09T12:00Z",
       "verified": "2026-03-31",
       "evidence_id": "implementation-perplexity-comet-browser",
-      "evidence_verified": "2026-02-07"
+      "evidence_verified": "2026-03-31"
     },
     {
       "id": "perplexity-enterprise-app-connectors",
@@ -6747,7 +6783,7 @@
       "launched": "2024-09-01T12:00Z",
       "verified": "2026-03-31",
       "evidence_id": "implementation-perplexity-enterprise-app-connectors",
-      "evidence_verified": "2026-02-07"
+      "evidence_verified": "2026-03-31"
     },
     {
       "id": "perplexity-focus-modes",
@@ -6842,7 +6878,7 @@
       "launched": "2024-01-01T12:00Z",
       "verified": "2026-03-25",
       "evidence_id": "implementation-perplexity-focus-modes",
-      "evidence_verified": "2026-01-29"
+      "evidence_verified": "2026-03-25"
     },
     {
       "id": "perplexity-model-selection",
@@ -7229,7 +7265,7 @@
       "launched": "2024-10-24T12:00Z",
       "verified": "2026-04-08",
       "evidence_id": "implementation-perplexity-voice-mode",
-      "evidence_verified": "2026-01-29"
+      "evidence_verified": "2026-04-08"
     },
     {
       "id": "perplexity-chat",

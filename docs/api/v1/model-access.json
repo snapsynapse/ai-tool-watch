@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-13T04:19:57.777Z",
+    "generated": "2026-04-14T00:28:47.490Z",
     "version": "1.0",
     "count": 11
   },
@@ -32,7 +32,7 @@
       "source_file": "data/platforms/mistral-open-models.md",
       "source_heading": "Codestral (Mistral)",
       "evidence_id": "model-access-codestral",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "deepseek-v3-r1",
@@ -60,8 +60,8 @@
       ],
       "source_file": "data/platforms/deepseek-open-models.md",
       "source_heading": "DeepSeek-V3 / DeepSeek-R1",
-      "evidence_id": "model-access-deepseek-v3-r1",
-      "evidence_verified": "2026-03-15"
+      "evidence_id": null,
+      "evidence_verified": null
     },
     {
       "id": "leanstral",
@@ -93,8 +93,8 @@
       ],
       "source_file": "data/platforms/mistral-open-models.md",
       "source_heading": "Leanstral (Mistral)",
-      "evidence_id": null,
-      "evidence_verified": null
+      "evidence_id": "model-access-leanstral",
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "llama-3-3",
@@ -123,7 +123,7 @@
       "source_file": "data/platforms/meta-open-models.md",
       "source_heading": "Llama 3.3 (Meta)",
       "evidence_id": "model-access-llama-3-3",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-03-20"
     },
     {
       "id": "llama-4",
@@ -154,7 +154,7 @@
       "source_file": "data/platforms/meta-open-models.md",
       "source_heading": "Llama 4 (Meta)",
       "evidence_id": "model-access-llama-4",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-04-07"
     },
     {
       "id": "mistral-large-nemo",
@@ -183,7 +183,7 @@
       "source_file": "data/platforms/mistral-open-models.md",
       "source_heading": "Mistral Large / Mistral Nemo",
       "evidence_id": "model-access-mistral-large-nemo",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-03-21"
     },
     {
       "id": "mistral-small-3",
@@ -213,7 +213,7 @@
       "source_file": "data/platforms/mistral-open-models.md",
       "source_heading": "Mistral Small 3",
       "evidence_id": "model-access-mistral-small-3",
-      "evidence_verified": "2026-02-22"
+      "evidence_verified": "2026-04-06"
     },
     {
       "id": "mistral-small-4",
@@ -248,8 +248,8 @@
       ],
       "source_file": "data/platforms/mistral-open-models.md",
       "source_heading": "Mistral Small 4",
-      "evidence_id": null,
-      "evidence_verified": null
+      "evidence_id": "model-access-mistral-small-4",
+      "evidence_verified": "2026-03-24"
     },
     {
       "id": "qwen-2-5",
@@ -279,7 +279,7 @@
       "source_file": "data/platforms/alibaba-open-models.md",
       "source_heading": "Qwen 2.5 (Alibaba)",
       "evidence_id": "model-access-qwen-2-5",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-03-22"
     },
     {
       "id": "qwen-3",
@@ -309,7 +309,7 @@
       "source_file": "data/platforms/alibaba-open-models.md",
       "source_heading": "Qwen 3 (Alibaba)",
       "evidence_id": "model-access-qwen-3",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-04-06"
     },
     {
       "id": "qwen-coder",
@@ -337,8 +337,8 @@
       ],
       "source_file": "data/platforms/alibaba-open-models.md",
       "source_heading": "Qwen-Coder",
-      "evidence_id": "model-access-qwen-coder",
-      "evidence_verified": "2026-03-15"
+      "evidence_id": null,
+      "evidence_verified": null
     }
   ]
 }
