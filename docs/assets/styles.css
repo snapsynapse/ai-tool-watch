@@ -2443,6 +2443,18 @@ html.light-mode .about-banner-light { display: block; }
 
 .discovery-hub-link:hover {
     border-color: var(--accent);
+    color: var(--accent);
+}
+
+:is(html, body).light-mode .discovery-hub-link {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+:is(html, body).light-mode .discovery-hub-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .discovery-hub-icon {

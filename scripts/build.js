@@ -2040,27 +2040,27 @@ function generateCapabilitiesHTML(ontologyData) {
         <!-- Discovery hub: quick links to high-value pages -->
         <nav class="discovery-hub" aria-label="Quick access to key pages">
             <div class="discovery-hub-row">
-                <a href="compare/chatgpt-vs-claude/" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="compare/chatgpt-vs-claude/" class="discovery-hub-link">
                     <span class="discovery-hub-icon">⚖️</span>
                     <span class="discovery-hub-label">ChatGPT vs Claude</span>
                 </a>
-                <a href="compare/chatgpt-vs-gemini/" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="compare/chatgpt-vs-gemini/" class="discovery-hub-link">
                     <span class="discovery-hub-icon">⚖️</span>
                     <span class="discovery-hub-label">ChatGPT vs Gemini</span>
                 </a>
-                <a href="coverage/free-tools/" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="coverage/free-tools/" class="discovery-hub-link">
                     <span class="discovery-hub-icon">🆓</span>
                     <span class="discovery-hub-label">Free AI Tools</span>
                 </a>
-                <a href="coverage/coding-tools/" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="coverage/coding-tools/" class="discovery-hub-link">
                     <span class="discovery-hub-icon">💻</span>
                     <span class="discovery-hub-label">AI Coding Tools</span>
                 </a>
-                <a href="changes/" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="changes/" class="discovery-hub-link">
                     <span class="discovery-hub-icon">📋</span>
                     <span class="discovery-hub-label">Recent Changes</span>
                 </a>
-                <a href="compare.html" class="discovery-hub-link" onclick="passTheme(this)">
+                <a href="compare.html" class="discovery-hub-link">
                     <span class="discovery-hub-icon">🔀</span>
                     <span class="discovery-hub-label">Compare All</span>
                 </a>
