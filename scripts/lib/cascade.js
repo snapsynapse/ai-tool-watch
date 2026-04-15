@@ -27,180 +27,264 @@ const CascadeOutcome = {
     ERROR: 'error'                     // All models failed
 };
 
+// Material sections — changes here can affect our data. Non-material sections
+// (regional phrasing, URL casing, recent-change commentary) should not alone
+// trigger an issue.
+const MATERIAL_SECTIONS = new Set(['pricing', 'platform', 'status', 'gating']);
+
+// Section labels the verification prompt asks the models to answer in order.
+// Index matches the numbered list in buildVerificationPrompt.
+const PROMPT_SECTIONS = [
+    { idx: 1, key: 'pricing',  label: 'Pricing tier availability' },
+    { idx: 2, key: 'platform', label: 'Platform/surface availability' },
+    { idx: 3, key: 'status',   label: 'Current status' },
+    { idx: 4, key: 'gating',   label: 'Access gating' },
+    { idx: 5, key: 'regional', label: 'Regional availability' },
+    { idx: 6, key: 'url',      label: 'Official URL' },
+    { idx: 7, key: 'recent',   label: 'Recent changes' }
+];
+
+// Phrases that indicate the model is abstaining rather than asserting a change.
+const ABSTAIN_PHRASES = [
+    'insufficient sources',
+    'insufficient data',
+    'insufficient information',
+    'unable to verify',
+    'unable to confirm',
+    'could not find',
+    "couldn't find",
+    'cannot confirm',
+    "can't confirm",
+    'no direct info',
+    'no direct information',
+    'no specific mention',
+    'no specific information',
+    'no confirmation',
+    'no information available',
+    'no specific recent',
+    'unconfirmed',
+    'unknown (insufficient',
+    'inferred',
+    'not in search results',
+    'not found in',
+    'lack data',
+    'lacks data',
+    'no data on'
+];
+
 /**
- * Parse AI response to determine if change was detected
- * @param {string} response - AI model response text
- * @param {Object} storedFeature - Current stored feature data
- * @returns {{hasChange: boolean, changes: Array<Object>, confidence: number}}
+ * Split a response into the seven numbered sections defined by the prompt.
+ * Returns a map keyed by section `key` → section body text.
+ */
+function splitSections(response) {
+    const sections = {};
+    // Match "1. Pricing...", "### 1. Pricing...", "1) Pricing..." etc.
+    // Start is the position of the header itself (we want the verdict words
+    // that models usually put on the header line to be part of the body).
+    const headerRegex = /(?:^|\n)[\s#*_>-]*(\d)[\.\)]\s+/g;
+    const matches = [];
+    let m;
+    while ((m = headerRegex.exec(response)) !== null) {
+        const idx = parseInt(m[1], 10);
+        if (idx >= 1 && idx <= 7) {
+            // Start = just after the leading whitespace/punctuation, so the
+            // section body includes everything from "Pricing..." onward up
+            // to the next header.
+            const start = m.index + m[0].length - (m[0].match(/\d[\.\)]\s+$/)?.[0].length || 0);
+            matches.push({ idx, start });
+        }
+    }
+    for (let i = 0; i < matches.length; i++) {
+        const { idx, start } = matches[i];
+        const end = i + 1 < matches.length ? matches[i + 1].start : response.length;
+        const section = PROMPT_SECTIONS.find(s => s.idx === idx);
+        if (section) {
+            // Last occurrence of an index wins — handles models that repeat
+            // the numbered list (e.g. summary tables).
+            sections[section.key] = response.slice(start, end);
+        }
+    }
+    return sections;
+}
+
+/**
+ * Classify a section body into one of: correct, incorrect, abstain, unknown.
+ */
+function classifySection(body) {
+    if (!body) return 'unknown';
+    const lower = body.toLowerCase();
+
+    // Abstain check first — a model saying "insufficient sources" is not a
+    // vote for "incorrect" even if the word "incorrect" appears elsewhere.
+    if (ABSTAIN_PHRASES.some(p => lower.includes(p))) {
+        return 'abstain';
+    }
+
+    // Explicit verdict keywords — require word boundaries to avoid matching
+    // "incorrectly" or substrings inside unrelated words.
+    const incorrect = /\b(incorrect|outdated|stale|inaccurate|mismatch(?:es|ed)?|does not match|doesn'?t match|has changed|no longer accurate)\b/i.test(body);
+    const correct   = /\b(correct|accurate|matches?|still accurate|unchanged|no change(?:s)? detected|confirmed)\b/i.test(body);
+
+    if (incorrect && !correct) return 'incorrect';
+    if (correct && !incorrect) return 'correct';
+    if (correct && incorrect) {
+        // Both present — defer to whichever appears first (models usually
+        // lead with the verdict).
+        const iPos = body.search(/\bincorrect\b/i);
+        const cPos = body.search(/\bcorrect\b/i);
+        return iPos >= 0 && (cPos < 0 || iPos < cPos) ? 'incorrect' : 'correct';
+    }
+    return 'unknown';
+}
+
+/**
+ * Parse AI response to determine if a MATERIAL change was detected.
+ *
+ * The old parser scanned the whole response for keyword indicators, which
+ * produced a lot of false positives (any mention of "now available" or
+ * "deprecated" in historical context flipped the verdict). This version
+ * parses the numbered sections the prompt asks for, classifies each, and
+ * only flags a change when a MATERIAL section is marked incorrect with a
+ * concrete change description.
+ *
+ * @param {string} response
+ * @param {Object} storedFeature
+ * @returns {{hasChange: boolean, changes: Array<Object>, confidence: number, sectionVerdicts?: Object, isEmpty?: boolean, abstainCount?: number}}
  */
 function parseResponse(response, storedFeature) {
-    const changes = [];
     const responseLower = response.toLowerCase();
 
     // Detect empty or boilerplate responses that contain no actual analysis
     const BOILERPLATE_PREFIXES = [
-        'okay, i will check',
-        'okay, i will verify',
-        'okay, let me check',
-        'okay, let me verify',
-        'i will check',
-        'i will verify',
-        'let me check',
-        'let me verify',
-        'sure, i will',
-        'sure, let me'
+        'okay, i will check', 'okay, i will verify',
+        'okay, let me check', 'okay, let me verify',
+        'i will check', 'i will verify',
+        'let me check', 'let me verify',
+        'sure, i will', 'sure, let me'
     ];
-
     const isBoilerplate = response.trim().length < 30 ||
-        (BOILERPLATE_PREFIXES.some(prefix => responseLower.startsWith(prefix)) &&
+        (BOILERPLATE_PREFIXES.some(p => responseLower.startsWith(p)) &&
          response.trim().length < 500);
-
     if (isBoilerplate) {
         return { hasChange: false, changes: [], confidence: 0, isEmpty: true };
     }
 
-    // Check for explicit "no change" indicators
-    const noChangeIndicators = [
-        'no changes',
-        'no recent changes',
-        'remains the same',
-        'unchanged',
-        'still available',
-        'as before',
-        'no updates',
-        'nothing has changed'
-    ];
+    // Per-section classification.
+    const sections = splitSections(response);
+    const sectionVerdicts = {};
+    for (const s of PROMPT_SECTIONS) {
+        sectionVerdicts[s.key] = classifySection(sections[s.key]);
+    }
 
-    const hasNoChangeIndicator = noChangeIndicators.some(ind =>
-        responseLower.includes(ind)
-    );
+    const incorrectMaterial = PROMPT_SECTIONS
+        .filter(s => MATERIAL_SECTIONS.has(s.key) && sectionVerdicts[s.key] === 'incorrect');
 
-    // Check for change indicators — split into strong (unambiguous) and weak
-    // (can appear in historical descriptions). Weak indicators only count if
-    // they appear near recency markers like "recently", "now", "just", date
-    // references, etc., to avoid false positives from historical context.
-    const strongChangeIndicators = [
-        'now available',
-        'recently added',
-        'has been updated',
-        'changed to',
-        'no longer available',
-        'removed from',
-        'rolled out'
-    ];
+    const abstainCount = Object.values(sectionVerdicts).filter(v => v === 'abstain').length;
 
-    const weakChangeIndicators = [
-        'deprecated',
-        'announced',
-        'launched',
-        'new feature',
-        'expanded to',
-        'limited to',
-        'restricted to'
-    ];
+    // Extract concrete change details from incorrect material sections only.
+    // A section marked "incorrect" without a concrete change description is
+    // insufficient — the model has to tell us what actually changed.
+    const changes = [];
 
-    const recencyPatterns = [
-        /(?:recently|just|now|newly|as of|starting|beginning|since)\s+\w*\s*(?:deprecated|announced|launched|expanded|limited|restricted)/i,
-        /(?:in|since|as of)\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)\s+202[5-9]/i,
-        /(?:this|last)\s+(?:week|month)\s+\w*\s*(?:deprecated|announced|launched)/i,
-        /(?:202[5-9])\s*[-:]\s*(?:deprecated|announced|launched)/i
-    ];
-
-    const hasStrongChangeIndicator = strongChangeIndicators.some(ind =>
-        responseLower.includes(ind)
-    );
-
-    const hasWeakChangeWithRecency = weakChangeIndicators.some(ind =>
-        responseLower.includes(ind)
-    ) && recencyPatterns.some(pat => pat.test(response));
-
-    const hasChangeIndicator = hasStrongChangeIndicator || hasWeakChangeWithRecency;
-
-    // Extract specific changes mentioned
-    // Look for availability changes
-    const availPatterns = [
-        /(?:now|no longer) available (?:on|for) (free|plus|pro|team|enterprise)/gi,
-        /(free|plus|pro|team|enterprise) (?:tier|plan|users?) (?:now )?(?:have|has|get|can) access/gi,
-        /(free|plus|pro|team|enterprise) (?:tier|plan) (?:no longer|cannot|can't) access/gi
-    ];
-
-    for (const pattern of availPatterns) {
-        let match;
-        while ((match = pattern.exec(response)) !== null) {
-            changes.push({
-                type: 'availability',
-                detail: match[0],
-                plan: match[1]
-            });
+    if (incorrectMaterial.some(s => s.key === 'pricing') || incorrectMaterial.some(s => s.key === 'gating')) {
+        const availPatterns = [
+            /(?:now|no longer) available (?:on|for) (free|plus|go|pro|max|team|enterprise|premium|supergrok)/gi,
+            /(free|plus|go|pro|max|team|enterprise|premium|supergrok) (?:tier|plan|users?) (?:now )?(?:have|has|get|can) access/gi,
+            /(free|plus|go|pro|max|team|enterprise|premium|supergrok) (?:tier|plan) (?:no longer|cannot|can't) access/gi
+        ];
+        for (const pattern of availPatterns) {
+            let m;
+            while ((m = pattern.exec(response)) !== null) {
+                changes.push({ type: 'availability', detail: m[0], plan: m[1] });
+            }
         }
     }
 
-    // Look for platform changes
-    const platformPatterns = [
-        /(?:now|no longer) available on (windows|macos|linux|ios|android|web|api|terminal)/gi,
-        /(windows|macos|linux|ios|android|web|api|terminal) (?:support|app|version) (?:added|removed|launched)/gi
-    ];
-
-    for (const pattern of platformPatterns) {
-        let match;
-        while ((match = pattern.exec(response)) !== null) {
-            changes.push({
-                type: 'platform',
-                detail: match[0],
-                platform: match[1]
-            });
+    if (incorrectMaterial.some(s => s.key === 'platform')) {
+        const platformPatterns = [
+            /(?:now|no longer) available on (windows|macos|linux|ios|android|web|api|terminal)/gi,
+            /(windows|macos|linux|ios|android|web|api|terminal) (?:support|app|version) (?:added|removed|launched)/gi
+        ];
+        for (const pattern of platformPatterns) {
+            let m;
+            while ((m = pattern.exec(response)) !== null) {
+                changes.push({ type: 'platform', detail: m[0], platform: m[1] });
+            }
         }
     }
 
-    // Look for status changes
-    const statusPatterns = [
-        /(?:moved to|now in|entered|exited) (ga|beta|preview|deprecated)/gi,
-        /(?:generally available|ga|beta|preview|deprecated) (?:status|release)/gi
-    ];
-
-    for (const pattern of statusPatterns) {
-        let match;
-        while ((match = pattern.exec(response)) !== null) {
-            changes.push({
-                type: 'status',
-                detail: match[0]
-            });
+    if (incorrectMaterial.some(s => s.key === 'status')) {
+        const statusPatterns = [
+            /(?:moved to|now in|entered|exited) (ga|beta|preview|deprecated)/gi,
+            /status (?:changed|moved|updated) (?:to|from) (ga|beta|preview|deprecated)/gi
+        ];
+        for (const pattern of statusPatterns) {
+            let m;
+            while ((m = pattern.exec(response)) !== null) {
+                changes.push({ type: 'status', detail: m[0] });
+            }
         }
     }
 
-    // Calculate confidence based on specificity
-    let confidence = 0.5; // Default medium confidence
-
-    if (changes.length > 0) {
-        confidence = Math.min(0.9, 0.5 + (changes.length * 0.1));
+    // Deduplicate
+    const uniqueChanges = [];
+    const seen = new Set();
+    for (const c of changes) {
+        const key = `${c.type}:${c.detail.toLowerCase()}`;
+        if (!seen.has(key)) { seen.add(key); uniqueChanges.push(c); }
     }
 
-    if (hasNoChangeIndicator && !hasChangeIndicator && changes.length === 0) {
-        return { hasChange: false, changes: [], confidence: 0.8 };
-    }
+    // hasChange requires BOTH: (a) at least one material section marked
+    // incorrect, AND (b) concrete change details extracted. Either alone
+    // is insufficient — "incorrect" without specifics is noise; specifics
+    // without a material verdict (e.g. in section 7 commentary) is history.
+    const hasChange = incorrectMaterial.length > 0 && uniqueChanges.length > 0;
 
-    if (hasChangeIndicator || changes.length > 0) {
-        return { hasChange: true, changes, confidence };
-    }
+    const confidence = hasChange
+        ? Math.min(0.9, 0.5 + (uniqueChanges.length * 0.1))
+        : (abstainCount >= 3 ? 0.3 : 0.7);
 
-    // Ambiguous - consider it as no change with low confidence
-    return { hasChange: false, changes: [], confidence: 0.3 };
+    return {
+        hasChange,
+        changes: uniqueChanges,
+        confidence,
+        sectionVerdicts,
+        abstainCount
+    };
 }
 
 /**
- * Compare two parsed responses for contradiction
- * @param {Object} result1 - First model result
- * @param {Object} result2 - Second model result
- * @returns {boolean} True if results contradict each other
+ * Compare two parsed responses for contradiction.
+ *
+ * A single model flipping to hasChange=true is NOT a contradiction — it's one
+ * vote against the default. True contradiction requires BOTH results to have
+ * concrete change details AND for the details to disagree (e.g. one says
+ * "now free" and the other says "still paid"). A lone positive vote should
+ * flow through as INCONCLUSIVE and be resolved by cascade continuation.
  */
 function detectContradiction(result1, result2) {
-    // If one says change and other says no change, it's a contradiction
-    if (result1.hasChange !== result2.hasChange) {
-        return true;
-    }
+    // Both must have material change details for a contradiction to matter.
+    // A "no change" result vs a "maybe changed" result is not a contradiction —
+    // it's a weak signal that needs more votes.
+    const r1HasDetails = result1.hasChange && (result1.changes || []).length > 0;
+    const r2HasDetails = result2.hasChange && (result2.changes || []).length > 0;
+    if (!r1HasDetails || !r2HasDetails) return false;
 
-    // If both say change but report different changes, might be contradiction
-    // For now, we'll allow different changes as complementary info
+    // Both claim material change. Consider it a contradiction only if they
+    // target overlapping change types with incompatible details.
+    const types1 = new Set(result1.changes.map(c => c.type));
+    const types2 = new Set(result2.changes.map(c => c.type));
+    const overlap = [...types1].some(t => types2.has(t));
+    if (!overlap) return false;
+
+    // Same type, compare detail strings loosely.
+    for (const type of types1) {
+        if (!types2.has(type)) continue;
+        const d1 = result1.changes.filter(c => c.type === type).map(c => c.detail.toLowerCase());
+        const d2 = result2.changes.filter(c => c.type === type).map(c => c.detail.toLowerCase());
+        const shareDetail = d1.some(x => d2.some(y => x === y || x.includes(y) || y.includes(x)));
+        if (!shareDetail) return true;
+    }
     return false;
 }
 
@@ -353,6 +437,19 @@ async function runCascade(platform, feature, options = {}) {
     if (substantiveResults.length < 2 && outcome === CascadeOutcome.INCONCLUSIVE) {
         log(`\n⚠ Only ${substantiveResults.length} substantive result(s). ` +
             `Downgrading INCONCLUSIVE to NO_CHANGE (insufficient evidence).`);
+        outcome = CascadeOutcome.NO_CHANGE;
+    }
+
+    // Require 2/3 material agreement before surfacing an issue.
+    // A single model flagging a change against N other "no change" votes is
+    // noise, not signal — downgrade to NO_CHANGE so we don't spam issues.
+    const positiveResults = substantiveResults.filter(r => r.hasChange && (r.changes || []).length > 0);
+    const negativeResults = substantiveResults.filter(r => !r.hasChange);
+    if (outcome === CascadeOutcome.INCONCLUSIVE &&
+        positiveResults.length < 2 &&
+        negativeResults.length >= positiveResults.length) {
+        log(`\n⚠ Only ${positiveResults.length} model(s) flagged a material change against ` +
+            `${negativeResults.length} no-change vote(s). Downgrading to NO_CHANGE.`);
         outcome = CascadeOutcome.NO_CHANGE;
     }
 
