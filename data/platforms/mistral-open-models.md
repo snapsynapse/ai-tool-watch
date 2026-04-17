@@ -188,7 +188,7 @@ No restrictions (Apache 2.0 license).
 | URL | https://mistral.ai/news/mistral-small-4 |
 | Launched | 2026-03-16T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-04-07|
+| Checked | 2026-04-17|
 
 ### Availability
 
@@ -244,7 +244,7 @@ No restrictions (Apache 2.0 license). Mistral API availability may vary.
 | URL | https://mistral.ai/news/leanstral |
 | Launched | 2026-03-16T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-04-07|
+| Checked | 2026-04-17|
 
 ### Availability
 
