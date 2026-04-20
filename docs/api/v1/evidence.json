@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-04-16T04:14:31.670Z",
+    "generated": "2026-04-20T04:19:39.216Z",
     "version": "1.0",
     "count": 90
   },
@@ -13,7 +13,7 @@
       "source_heading": "Advanced Voice Mode",
       "launched": "2024-09-24T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-08",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Voice Mode Help",
@@ -48,7 +48,7 @@
       "source_heading": "Agent Mode",
       "launched": "2025-07-17T12:00Z",
       "verified": "2026-03-20",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "ChatGPT Agent Help",
@@ -83,7 +83,7 @@
       "source_heading": "Atlas Browser",
       "launched": "2025-10-21T12:00Z",
       "verified": "2026-03-27",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Introducing ChatGPT Atlas",
@@ -114,7 +114,7 @@
       "source_heading": "Canvas",
       "launched": "2024-10-03T12:00Z",
       "verified": "2026-04-07",
-      "checked": "2026-04-08",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Introducing Canvas",
@@ -188,7 +188,7 @@
       "source_heading": "Codex (Code Agent)",
       "launched": "2025-04-16T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-14",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "ChatGPT Pricing",
@@ -227,7 +227,7 @@
       "source_heading": "Codex Security",
       "launched": "2026-03-06T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-06",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Codex Security: now in research preview",
@@ -258,7 +258,7 @@
       "source_heading": "Custom GPTs + Actions",
       "launched": "2023-11-06T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-14",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Creating a GPT",
@@ -324,7 +324,7 @@
       "source_heading": "Deep Research",
       "launched": "2025-02-03T12:00Z",
       "verified": "2026-03-20",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Deep Research Help",
@@ -351,7 +351,7 @@
       "source_heading": "Memory",
       "launched": "2024-09-05T12:00Z",
       "verified": "2026-03-19",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Memory and new controls for ChatGPT",
@@ -409,7 +409,7 @@
       "source_heading": "ChatGPT Search",
       "launched": "2024-10-31T12:00Z",
       "verified": "2026-03-20",
-      "checked": "2026-04-06",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Introducing ChatGPT Search",
@@ -444,7 +444,7 @@
       "source_heading": "Sora (Video Generation)",
       "launched": "2024-12-09T12:00Z",
       "verified": "2026-03-22",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Sora is here",
@@ -479,7 +479,7 @@
       "source_heading": "Vision (Image Understanding)",
       "launched": "2024-05-13T12:00Z",
       "verified": "2026-03-22",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Hello GPT-4o",
@@ -654,7 +654,7 @@
       "source_heading": "Cowork Mode",
       "launched": "2026-01-12T12:00Z",
       "verified": "2026-04-07",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Getting Started with Cowork",
@@ -685,7 +685,7 @@
       "source_heading": "Extended Thinking",
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-04-08",
-      "checked": "2026-04-08",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Extended Thinking Documentation",
@@ -747,7 +747,7 @@
       "source_heading": "Memory",
       "launched": "2025-10-01T12:00Z",
       "verified": "2026-03-19",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Claude Memory Guide",
@@ -786,7 +786,7 @@
       "source_heading": "Projects",
       "launched": "2024-06-25T12:00Z",
       "verified": "2026-03-23",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Projects Documentation",
@@ -817,7 +817,7 @@
       "source_heading": "Skills",
       "launched": "2025-10-16T12:00Z",
       "verified": "2026-04-03",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Introducing Skills",
@@ -992,7 +992,7 @@
       "source_heading": "GPT-4 Access",
       "launched": "2023-02-07T12:00Z",
       "verified": "2026-03-22",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Copilot Pro Features",
@@ -1015,7 +1015,7 @@
       "source_heading": "Image Generation (Designer)",
       "launched": "2023-03-21T12:00Z",
       "verified": "2026-03-23",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Microsoft Designer",
@@ -1073,7 +1073,7 @@
       "source_heading": "Copilot Vision",
       "launched": "2024-10-01T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Using Copilot Vision",
@@ -1116,7 +1116,7 @@
       "source_heading": "Copilot Voice",
       "launched": "2024-10-01T12:00Z",
       "verified": "2026-03-22",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Microsoft Copilot",
@@ -1170,7 +1170,7 @@
       "source_heading": "AI Studio",
       "launched": "2023-12-13T12:00Z",
       "verified": "2026-03-08",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Google AI Studio",
@@ -1232,7 +1232,7 @@
       "source_heading": "Canvas",
       "launched": "2025-03-18T12:00Z",
       "verified": "2026-03-01",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini Canvas",
@@ -1333,7 +1333,7 @@
       "source_heading": "Extensions",
       "launched": "2023-09-19T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini Extensions",
@@ -1372,7 +1372,7 @@
       "source_heading": "Gemini Advanced",
       "launched": "2024-02-08T12:00Z",
       "verified": "2026-04-07",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Google AI Plans",
@@ -1407,7 +1407,7 @@
       "source_heading": "Gems (Custom Chatbots)",
       "launched": "2024-08-01T12:00Z",
       "verified": "2026-03-08",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Introducing Gems",
@@ -1461,7 +1461,7 @@
       "source_heading": "Gemini Live (Voice Mode)",
       "launched": "2024-08-13T12:00Z",
       "verified": "2026-02-28",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini Live",
@@ -1484,7 +1484,7 @@
       "source_heading": "Nano Banana Pro",
       "launched": "2025-08-01T12:00Z",
       "verified": "2026-03-04",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini Image Generation",
@@ -1550,7 +1550,7 @@
       "source_heading": "Past Chats (Memory)",
       "launched": "2026-02-26T12:00Z",
       "verified": "2026-03-07",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini Past Chats Free (9to5Google)",
@@ -1581,7 +1581,7 @@
       "source_heading": "Project Astra",
       "launched": "2024-12-11T12:00Z",
       "verified": "2026-02-28",
-      "checked": "2026-04-08",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Project Astra",
@@ -1616,7 +1616,7 @@
       "source_heading": "Veo (Video Generation)",
       "launched": "2024-05-14T12:00Z",
       "verified": "2026-02-22",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Veo - Google DeepMind",
@@ -1667,7 +1667,7 @@
       "source_heading": "Gemini in Workspace (Docs, Sheets, etc.)",
       "launched": "2024-06-24T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Gemini for Google Workspace",
@@ -1702,7 +1702,7 @@
       "source_heading": "Grok Chat",
       "launched": "2023-11-04T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok Official",
@@ -1729,7 +1729,7 @@
       "source_heading": "DeepSearch",
       "launched": "2025-02-17T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok DeepSearch",
@@ -1752,7 +1752,7 @@
       "source_heading": "Grok Image Generation (Aurora)",
       "launched": "2024-12-09T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok Image Generation",
@@ -1779,7 +1779,7 @@
       "source_heading": "Grok Imagine (Video Generation)",
       "launched": "2025-08-04T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok Imagine - TechCrunch",
@@ -1899,7 +1899,7 @@
       "source_heading": "Think Mode",
       "launched": "2025-02-17T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok Think Mode",
@@ -1922,7 +1922,7 @@
       "source_heading": "Vision (Image Understanding)",
       "launched": "2024-08-13T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Grok 2 Announcement",
@@ -2332,7 +2332,7 @@
       "source_heading": "Leanstral (Mistral)",
       "launched": "2026-03-16T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Leanstral Announcement",
@@ -2359,7 +2359,7 @@
       "source_heading": "Llama 3.3 (Meta)",
       "launched": "2024-12-06T12:00Z",
       "verified": "2026-03-20",
-      "checked": "2026-04-06",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Llama 3.3 Release",
@@ -2487,7 +2487,7 @@
       "source_heading": "Mistral Small 4",
       "launched": "2026-03-16T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-07",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Mistral Small 4 Announcement",
@@ -2518,7 +2518,7 @@
       "source_heading": "Qwen 2.5 (Alibaba)",
       "launched": "2024-09-19T12:00Z",
       "verified": "2026-03-22",
-      "checked": "2026-04-14",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Qwen 2.5",
@@ -2545,7 +2545,7 @@
       "source_heading": "Qwen 3 (Alibaba)",
       "launched": "2025-04-28T12:00Z",
       "verified": "2026-04-06",
-      "checked": "2026-04-14",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Qwen 3 Blog",
@@ -2666,7 +2666,7 @@
       "source_heading": "LM Studio",
       "launched": "2023-05",
       "verified": "2026-03-24",
-      "checked": "2026-04-13",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "LM Studio",
@@ -2701,7 +2701,7 @@
       "source_heading": "Ollama",
       "launched": "2023-08-01T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-04-13",
+      "checked": "2026-04-17",
       "sources": [
         {
           "title": "Ollama",
