@@ -32,3 +32,9 @@ skills/*/dist/
 # Environment
 .env
 .env.local
+
+# --- baseline additions (automated audit 2026-04-21) ---
+__pycache__/
+*.pyc
+.venv/
+venv/
