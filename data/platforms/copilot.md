@@ -27,7 +27,7 @@ last_verified: 2026-04-14
 | URL | https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder |
 | Launched | 2025-02-24T12:00Z |
 | Verified | 2026-03-22|
-| Checked | 2026-04-24|
+| Checked | 2026-04-14|
 
 ### Availability
 
@@ -64,7 +64,6 @@ Available in 17 regions including US, Europe, Asia Pacific.
 
 - [Agent Builder Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder)
 - [Build Agents Guide](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents)
-- [What's New in M365 Copilot Feb 2026](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--february-2026/4496489)
 
 ### Changelog
 
@@ -86,7 +85,7 @@ Available in 17 regions including US, Europe, Asia Pacific.
 | URL | https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector |
 | Launched | 2023-11-01T12:00Z |
 | Verified | 2026-03-22|
-| Checked | 2026-04-24|
+| Checked | 2026-04-14|
 
 ### Availability
 
@@ -122,7 +121,6 @@ Available globally where M365 Copilot is available.
 
 - [Copilot Connectors Overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector)
 - [Copilot Connectors Gallery](https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery)
-- [What's New in M365 Copilot Feb 2026](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--february-2026/4496489)
 
 ### Changelog
 

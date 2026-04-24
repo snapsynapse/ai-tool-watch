@@ -188,7 +188,7 @@ No restrictions (Apache 2.0 license).
 | URL | https://mistral.ai/news/mistral-small-4 |
 | Launched | 2026-03-16T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-04-17|
+| Checked | 2026-04-23|
 
 ### Availability
 
@@ -223,7 +223,6 @@ No restrictions (Apache 2.0 license). Mistral API availability may vary.
 ### Sources
 
 - [Mistral Small 4 Announcement](https://mistral.ai/news/mistral-small-4)
-- [Mistral Small 4 Docs](https://docs.mistral.ai/models/mistral-small-4-0-26-03)
 - [HuggingFace Model Card](https://huggingface.co/mistralai/Mistral-Small-4-119B-2603)
 
 ### Changelog
