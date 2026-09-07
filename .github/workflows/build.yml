@@ -34,7 +34,7 @@ jobs:
         run: node scripts/validate-ontology.js
 
       - name: Test publication and freshness contracts
-        run: node --test tests/*.test.js
+        run: node scripts/test-offline.js
 
       # The scheduled trial passed all 88 claims on 2026-09-07.
       - name: Validate talking-point claims

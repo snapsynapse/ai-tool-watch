@@ -10,14 +10,13 @@
  *
  * Structured-vs-structured drift is validate-ontology.js territory; this
  * script covers the prose those checks cannot see. See
- * scripts/lib/claims.js for the check catalog and
- * handoffs/2026-08-16-managed-claim-markers.md for the rationale.
+ * scripts/lib/claims.js for the check catalog.
  *
  * Usage:
  *   node scripts/validate-claims.js             # report; exit 1 on errors
  *   node scripts/validate-claims.js --warnings  # exit 1 on warnings too
  *
- * Not yet wired into CI — landing non-blocking for a cycle first.
+ * Errors block CI and canonical publication preparation; warnings remain advisory.
  */
 
 'use strict';
