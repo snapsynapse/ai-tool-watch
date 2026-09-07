@@ -21,5 +21,15 @@ test('dependent deploy jobs verify the same fresh downloaded artifact', () => {
     assert.match(pagesDeploy, /permissions:[\s\S]*contents: read[\s\S]*pages: write/);
     assert.match(pagesDeploy, /actions\/upload-pages-artifact@v3[\s\S]*path: publication/);
     assert.match(ftpDeploy, /local-dir: \.\/publication\//);
+    assert.match(ftpDeploy, /permissions:\n\s+contents: read/);
     assert.doesNotMatch(ftpDeploy, /node scripts\/build\.js/);
+});
+
+test('only preparation can write, and it stages canonical evidence with its docs artifact', () => {
+    const prepare = build.slice(build.indexOf('  prepare-publication:\n'), build.indexOf('  deploy:\n'));
+    assert.match(build, /^permissions:\n\s+contents: read/m);
+    assert.match(prepare, /permissions:\n\s+contents: write/);
+    assert.match(prepare, /node scripts\/prepare-publication\.js/);
+    assert.match(prepare, /git status --porcelain -- data\/platforms\/ data\/watchlist\/ data\/evidence\/index\.json docs\//);
+    assert.match(prepare, /git add data\/platforms\/ data\/watchlist\/ data\/evidence\/index\.json docs\//);
 });
