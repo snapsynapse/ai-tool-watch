@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execSync, execFileSync } = require('child_process');
 const { CascadeOutcome } = require('./cascade');
 
 const REPORTS_DIR = path.join(__dirname, '..', '..', '.verification-reports');
@@ -36,8 +36,8 @@ function generateMarkdownReport(results, summary) {
     report += `| Metric | Count |\n`;
     report += `|--------|-------|\n`;
     report += `| Total features checked | ${summary.total} |\n`;
-    report += `| No change (verified current) | ${summary.noChange} |\n`;
-    report += `| Confirmed changes | ${summary.confirmed} |\n`;
+    report += `| Adequate no-change observations | ${summary.noChange} |\n`;
+    report += `| Model-consensus candidates (pending review) | ${summary.confirmed} |\n`;
     report += `| Contradictions (needs review) | ${summary.contradiction} |\n`;
     report += `| Inconclusive | ${summary.inconclusive} |\n`;
     report += `| Errors | ${summary.error} |\n\n`;
@@ -57,7 +57,7 @@ function generateMarkdownReport(results, summary) {
     // Confirmed changes
     const confirmed = results.filter(r => r.outcome === CascadeOutcome.CONFIRMED);
     if (confirmed.length > 0) {
-        report += `## Confirmed Changes\n\n`;
+        report += `## Change Proposals (Pending Human Review)\n\n`;
         for (const result of confirmed) {
             report += `### ${result.platform} - ${result.feature}\n\n`;
             report += `**Confirmations:** ${result.confirmations}/${result.requiredConfirmations}\n\n`;
@@ -99,6 +99,18 @@ function generateMarkdownReport(results, summary) {
                 report += `${modelResult.response}\n\n`;
                 report += `</details>\n\n`;
             }
+        }
+    }
+
+    // Incomplete evidence remains visible even when it has no positive vote.
+    const incomplete = results.filter(r => r.outcome === CascadeOutcome.INCONCLUSIVE);
+    if (incomplete.length) {
+        report += '## Incomplete Observations\n\n';
+        for (const result of incomplete) {
+            report += `### ${result.platform} - ${result.feature}\n\n`;
+            report += 'Evidence was insufficient to establish the current state. This finding remains open.\n\n';
+            for (const vote of result.results) report += `- ${vote.model || vote.modelName}: ${vote.type}; ${vote.error || vote.response || vote.reason || 'no evidence'}\n`;
+            report += '\n';
         }
     }
 
@@ -240,7 +252,9 @@ function generateContradictionIssue(result) {
  */
 function generateInconclusiveIssue(result) {
     let body = `## Unconfirmed Change\n\n`;
-    body += `Automated verification found a potential change but couldn't reach consensus:\n\n`;
+    body += result.outcome === CascadeOutcome.CONFIRMED
+        ? 'Models agree on a proposed change. Human source review and acceptance are still required.\n\n'
+        : 'Automated checks found a potential change with incomplete or conflicting evidence.\n\n';
     body += `**Platform:** ${result.platform}\n`;
     body += `**Feature:** ${result.feature}\n`;
     body += `**Confirmations:** ${result.confirmations}/${result.requiredConfirmations}\n\n`;
@@ -331,18 +345,11 @@ const LABEL_COLORS = {
  * @returns {Object|null} {number, title, url, updatedAt} or null if not found
  */
 function findExistingIssueDetails(title) {
-    try {
-        const searchTitle = title.replace(/"/g, '\\"');
-        const result = execSync(
-            `gh issue list --state open --search "${searchTitle}" --json number,title,url,updatedAt --limit 20`,
-            { encoding: 'utf-8' }
-        );
-        const issues = JSON.parse(result);
-        return issues.find(i => i.title === title) || null;
-    } catch (error) {
-        // If search fails, allow creation to proceed
-        return null;
-    }
+    const result = execFileSync('gh', ['issue', 'list', '--state', 'open', '--search', title,
+        '--json', 'number,title,url,updatedAt', '--limit', '100'], { encoding: 'utf-8' });
+    const issues = JSON.parse(result);
+    if (!Array.isArray(issues)) throw new Error('Invalid GitHub issue lookup result');
+    return issues.find(issue => issue.title === title) || null;
 }
 
 /**
@@ -388,44 +395,26 @@ function closeGitHubIssue(issueRef, comment) {
  * @returns {string|null} Issue URL (new or existing) or null if failed
  */
 function createGitHubIssue(title, body, labels = []) {
+    let directory;
     try {
-        // Check for existing open issue with the same title
+        // A failed lookup must not open duplicates or imply successful delivery.
         const existingUrl = findExistingIssue(title);
-        if (existingUrl) {
-            console.log(`  Skipped (duplicate): ${existingUrl}`);
-            return existingUrl;
-        }
-
-        // Create labels if they don't exist (ignore errors)
+        if (existingUrl) return existingUrl;
         for (const label of labels) {
-            const color = LABEL_COLORS[label] || 'ededed';
-            try {
-                execSync(`gh label create "${label}" --color "${color}" 2>/dev/null`, { encoding: 'utf-8' });
-            } catch (e) {
-                // Label already exists, ignore
-            }
+            try { execFileSync('gh', ['label', 'create', label, '--color', LABEL_COLORS[label] || 'ededed'], { stdio: 'pipe' }); }
+            catch { /* Existing labels are resolved by the subsequent create. */ }
         }
-
-        // Write body to a temp file to avoid shell escaping issues
-        // (backticks in markdown code fences get interpreted as command
-        // substitution when passed via shell string interpolation)
-        const os = require('os');
-        const tmpFile = path.join(os.tmpdir(), `gh-issue-body-${Date.now()}.md`);
-        fs.writeFileSync(tmpFile, body, 'utf-8');
-
-        try {
-            const labelArgs = labels.map(l => `-l "${l}"`).join(' ');
-            const cmd = `gh issue create --title "${title.replace(/"/g, '\\"')}" --body-file "${tmpFile}" ${labelArgs}`;
-
-            const result = execSync(cmd, { encoding: 'utf-8' });
-            return result.trim();
-        } finally {
-            // Clean up temp file
-            try { fs.unlinkSync(tmpFile); } catch (e) { /* ignore */ }
-        }
-    } catch (error) {
-        console.error('Failed to create GitHub issue:', error.message);
+        directory = fs.mkdtempSync(path.join(require('os').tmpdir(), 'aitw-review-'));
+        const bodyFile = path.join(directory, 'body.md');
+        fs.writeFileSync(bodyFile, body, { mode: 0o600 });
+        const args = ['issue', 'create', '--title', title, '--body-file', bodyFile];
+        for (const label of labels) args.push('--label', label);
+        return execFileSync('gh', args, { encoding: 'utf-8' }).trim();
+    } catch {
+        console.error('Failed to create or locate GitHub review issue');
         return null;
+    } finally {
+        if (directory) fs.rmSync(directory, { recursive: true, force: true });
     }
 }
 
@@ -569,7 +558,7 @@ function printResults(results, summary) {
     console.log('='.repeat(60));
 
     console.log(`\nTotal features checked: ${summary.total}`);
-    console.log(`  ✓ No change (verified): ${summary.noChange}`);
+    console.log(`  ✓ Adequate no-change observations: ${summary.noChange}`);
     console.log(`  ✓ Confirmed changes: ${summary.confirmed}`);
     console.log(`  ⚠ Contradictions: ${summary.contradiction}`);
     console.log(`  ? Inconclusive: ${summary.inconclusive}`);
@@ -593,7 +582,7 @@ function printResults(results, summary) {
     const confirmed = results.filter(r => r.outcome === CascadeOutcome.CONFIRMED);
     if (confirmed.length > 0) {
         console.log('\n' + '-'.repeat(40));
-        console.log('CONFIRMED CHANGES:');
+        console.log('CHANGE PROPOSALS (PENDING REVIEW):');
         for (const result of confirmed) {
             console.log(`  • ${result.platform} → ${result.feature}`);
             for (const change of result.proposedChanges) {
