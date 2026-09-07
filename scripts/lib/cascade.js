@@ -3,8 +3,9 @@
  * Implements the consensus-based verification flow
  */
 
-const { getCascadeClients } = require('./ai-clients');
+const { getCascadeClients, PROVIDER_MODEL_MAP } = require('./ai-clients');
 const { serializeFeature } = require('./parser');
+const { isAdequatelyChecked } = require('./verification-health');
 
 /**
  * Result types from verification
@@ -256,13 +257,17 @@ function parseResponse(response, storedFeature) {
 /**
  * Compare two parsed responses for contradiction.
  *
- * A single model flipping to hasChange=true is NOT a contradiction — it's one
- * vote against the default. True contradiction requires BOTH results to have
- * concrete change details AND for the details to disagree (e.g. one says
- * "now free" and the other says "still paid"). A lone positive vote should
- * flow through as INCONCLUSIVE and be resolved by cascade continuation.
+ * A substantive positive and a substantive negative are conflicting
+ * evidence. The cascade must retain that conflict for review instead of
+ * treating the positive as an outvoted signal.
  */
 function detectContradiction(result1, result2) {
+    const types = new Set([ResultType.POSITIVE, ResultType.NEGATIVE]);
+    if (types.has(result1?.type) && types.has(result2?.type) &&
+        result1.type !== result2.type && typeof result1.response === 'string' &&
+        typeof result2.response === 'string') {
+        return true;
+    }
     // Both must have material change details for a contradiction to matter.
     // A "no change" result vs a "maybe changed" result is not a contradiction —
     // it's a weak signal that needs more votes.
@@ -299,10 +304,17 @@ async function runCascade(platform, feature, options = {}) {
     const {
         requiredConfirmations = 3,
         delayBetweenQueries = 1000,
-        verbose = false
+        verbose = false,
+        beforeProviderRequest = null,
+        afterProviderRequest = null
     } = options;
 
-    const clients = getCascadeClients(platform.vendor);
+    const candidates = options.clients ||
+        (typeof options.getClients === 'function' ? options.getClients(platform.vendor) : getCascadeClients(platform.vendor));
+    const excludedProvider = PROVIDER_MODEL_MAP[platform.vendor];
+    // Keep the vendor exclusion even when tests or callers inject clients.
+    const clients = (Array.isArray(candidates) ? candidates : [])
+        .filter(client => client?.name !== excludedProvider);
     const storedData = serializeFeature(feature);
 
     const results = [];
@@ -332,9 +344,19 @@ async function runCascade(platform, feature, options = {}) {
             log(`  (Targeted follow-up on claim: ${activeClaim.substring(0, 120)})`);
         }
 
+        let response = null;
+        let attemptRecorded = false;
+        // Reserve before a full provider verify call. A refusal propagates as
+        // a run failure instead of being converted into an error vote.
+        if (beforeProviderRequest) await beforeProviderRequest({ client, platform, feature, claim: activeClaim });
         try {
             // Query the model
-            const response = await client.verify(platform, feature, activeClaim ? { claim: activeClaim } : {});
+            response = await client.verify(platform, feature, activeClaim ? { claim: activeClaim } : {});
+            if (afterProviderRequest) {
+                attemptRecorded = true;
+                try { await afterProviderRequest({ client, platform, feature, succeeded: true, response }); }
+                catch (error) { error.fatalPersistenceFailure = true; throw error; }
+            }
 
             // Parse the response for changes
             const parsed = parseResponse(response.response, storedData);
@@ -346,6 +368,8 @@ async function runCascade(platform, feature, options = {}) {
                     model: client.displayName,
                     modelName: client.name,
                     response: response.response,
+                    raw: response.raw ?? null,
+                    usageReceipt: response.usageReceipt ?? null,
                     type: ResultType.ERROR,
                     error: 'Empty or boilerplate response',
                     isEmpty: true
@@ -361,6 +385,8 @@ async function runCascade(platform, feature, options = {}) {
                 modelName: client.name,
                 response: response.response,
                 sources: response.sources,
+                raw: response.raw ?? null,
+                usageReceipt: response.usageReceipt ?? null,
                 hasChange: parsed.hasChange,
                 changes: parsed.changes,
                 confidence: parsed.confidence,
@@ -377,60 +403,31 @@ async function runCascade(platform, feature, options = {}) {
                 log(`  Changes detected: ${parsed.changes.length}`);
             }
 
-            // A "no change" vote only counts if the model actually searched
-            // AND has reasonable confidence. Without search evidence, the model
-            // is guessing from training data — that's not verification.
-            const qualifiedNoChange = results.filter(r =>
-                !r.hasChange &&
-                r.type !== ResultType.ERROR &&
-                r.hasSearchEvidence &&
-                r.confidence >= 0.5
-            ).length;
-
-            // Count models that said "no change" without searching — these are failures
-            const unsearchedNoChange = results.filter(r =>
-                !r.hasChange &&
-                r.type !== ResultType.ERROR &&
-                !r.hasSearchEvidence
-            );
             if (!parsed.hasChange && !response.hasSearchEvidence) {
                 log(`  ⚠ ${client.displayName} said "no change" without search evidence — vote not counted`);
             }
 
-            // Two QUALIFIED models agree on no change - stop cascade.
-            // BUT never early-stop while a positive vote is on the table:
-            // the positive must be adjudicated by the remaining models, and
-            // the post-loop consensus rules decide the final outcome.
-            const positiveVotes = results.filter(r => r.type === ResultType.POSITIVE).length;
-            if (qualifiedNoChange >= 2 && !parsed.hasChange && response.hasSearchEvidence && positiveVotes === 0) {
-                log(`\n✓ ${qualifiedNoChange} models confirm no change (with search evidence). Stopping cascade.`);
-                outcome = CascadeOutcome.NO_CHANGE;
+            if (parsed.hasChange) proposedChanges.push(...parsed.changes);
+            const positiveVotes = results.filter(vote => vote.type === ResultType.POSITIVE);
+            const negativeVotes = results.filter(vote => vote.type === ResultType.NEGATIVE);
+            confirmations = new Set(positiveVotes.map(vote => vote.modelName || vote.model)).size;
+
+            // Any substantive positive and negative evidence is a review
+            // contradiction. Do not downgrade a positive once it is present.
+            if (positiveVotes.length && negativeVotes.length) {
+                outcome = CascadeOutcome.CONTRADICTION;
+                log(`\n⚠ Conflicting positive and negative evidence; retaining contradiction for review.`);
                 break;
             }
-            if (qualifiedNoChange >= 2 && positiveVotes > 0) {
-                log(`  (${qualifiedNoChange} no-change votes, but ${positiveVotes} positive vote(s) pending — continuing cascade)`);
+            if (isAdequatelyChecked({ outcome: CascadeOutcome.NO_CHANGE, results })) {
+                outcome = CascadeOutcome.NO_CHANGE;
+                log(`\n✓ Two distinct cited, search-grounded providers found no change.`);
+                break;
             }
-
-            // Check for contradictions with previous non-error results
-            const prevSubstantive = results.slice(0, -1).filter(r => r.type !== ResultType.ERROR && r.type !== ResultType.SKIPPED).pop();
-            if (prevSubstantive) {
-                if (detectContradiction(prevSubstantive, result)) {
-                    log(`\n⚠ Contradiction detected between ${prevSubstantive.model} and ${result.model}`);
-                    outcome = CascadeOutcome.CONTRADICTION;
-                    break;
-                }
-            }
-
-            // Count confirmations
-            if (parsed.hasChange) {
-                confirmations++;
-                proposedChanges.push(...parsed.changes);
-
-                if (confirmations >= requiredConfirmations) {
-                    log(`\n✓ ${confirmations} models confirm change. Consensus reached.`);
-                    outcome = CascadeOutcome.CONFIRMED;
-                    break;
-                }
+            if (isAdequatelyChecked({ outcome: CascadeOutcome.CONFIRMED, results, requiredConfirmations })) {
+                outcome = CascadeOutcome.CONFIRMED;
+                log(`\n✓ ${confirmations} providers agree on a change candidate for review.`);
+                break;
             }
 
             // Delay between queries to avoid rate limits
@@ -439,60 +436,28 @@ async function runCascade(platform, feature, options = {}) {
             }
 
         } catch (error) {
+            if (error.fatalPersistenceFailure) throw error;
+            if (afterProviderRequest && !attemptRecorded) {
+                attemptRecorded = true;
+                try { await afterProviderRequest({ client, platform, feature, succeeded: false, error }); }
+                catch (persistenceError) { persistenceError.fatalPersistenceFailure = true; throw persistenceError; }
+            }
             log(`  Error: ${error.message}`);
             results.push({
                 model: client.displayName,
                 modelName: client.name,
                 type: ResultType.ERROR,
-                error: error.message
+                error: error.message,
+                raw: error.raw ?? response?.raw ?? null,
+                usageReceipt: error.usageReceipt ?? response?.usageReceipt ?? null
             });
         }
     }
 
-    // Minimum evidence threshold: require at least 2 substantive results
-    // to create an issue. Otherwise downgrade INCONCLUSIVE to NO_CHANGE.
-    const substantiveResults = results.filter(r =>
-        r.type !== ResultType.ERROR && r.type !== ResultType.SKIPPED
-    );
-    if (substantiveResults.length < 2 && outcome === CascadeOutcome.INCONCLUSIVE) {
-        log(`\n⚠ Only ${substantiveResults.length} substantive result(s). ` +
-            `Downgrading INCONCLUSIVE to NO_CHANGE (insufficient evidence).`);
-        outcome = CascadeOutcome.NO_CHANGE;
-    }
-
-    // Require 2/3 material agreement before surfacing an issue.
-    // A single model flagging a change against N other "no change" votes is
-    // noise, not signal — downgrade to NO_CHANGE so we don't spam issues.
-    const positiveResults = substantiveResults.filter(r => r.hasChange && (r.changes || []).length > 0);
-    const negativeResults = substantiveResults.filter(r => !r.hasChange);
-    if (outcome === CascadeOutcome.INCONCLUSIVE &&
-        positiveResults.length < 2 &&
-        negativeResults.length >= positiveResults.length &&
-        positiveResults.length > 0) {
-        log(`\n⚠ Only ${positiveResults.length} model(s) flagged a material change against ` +
-            `${negativeResults.length} no-change vote(s). Downgrading to NO_CHANGE ` +
-            `(signal recorded for digest).`);
-        outcome = CascadeOutcome.NO_CHANGE;
-    } else if (outcome === CascadeOutcome.INCONCLUSIVE && positiveResults.length === 0 &&
-        negativeResults.length >= 2) {
-        // All substantive votes were no-change but the cascade ran to
-        // exhaustion (e.g. mixed search evidence) — that's a no-change result.
-        outcome = CascadeOutcome.NO_CHANGE;
-    }
-
-    // If we reached NO_CHANGE but no models had search evidence, escalate to
-    // INCONCLUSIVE — we can't confirm "no change" without actually searching.
-    if (outcome === CascadeOutcome.NO_CHANGE) {
-        const searchedResults = substantiveResults.filter(r => r.hasSearchEvidence);
-        if (searchedResults.length === 0 && substantiveResults.length > 0) {
-            log(`\n⚠ NO models provided search evidence. ` +
-                `Escalating NO_CHANGE to INCONCLUSIVE — verification was not web-grounded.`);
-            outcome = CascadeOutcome.INCONCLUSIVE;
-        }
-    }
-
-    // Check if all models errored
-    if (results.every(r => r.type === ResultType.ERROR)) {
+    // No substantive provider result is an error; one result or unqualified
+    // evidence remains inconclusive. Neither case may be reported as no change.
+    const substantiveResults = results.filter(r => r.type === ResultType.POSITIVE || r.type === ResultType.NEGATIVE);
+    if (substantiveResults.length === 0) {
         outcome = CascadeOutcome.ERROR;
     }
 
@@ -507,20 +472,6 @@ async function runCascade(platform, feature, options = {}) {
         }
     }
 
-    // Positive votes that lost the consensus vote. These are NOT surfaced as
-    // issues, but they must not vanish silently — the caller rolls them into
-    // a weekly "unconfirmed signals" digest.
-    const discardedPositives = outcome === CascadeOutcome.NO_CHANGE
-        ? results
-            .filter(r => r.type === ResultType.POSITIVE && (r.changes || []).length > 0)
-            .map(r => ({
-                model: r.model,
-                confidence: r.confidence,
-                hasSearchEvidence: r.hasSearchEvidence,
-                changes: r.changes
-            }))
-        : [];
-
     return {
         platform: platform.name,
         feature: feature.name,
@@ -530,7 +481,6 @@ async function runCascade(platform, feature, options = {}) {
         requiredConfirmations,
         results,
         proposedChanges: uniqueChanges,
-        discardedPositives,
         storedData,
         timestamp: new Date().toISOString()
     };
@@ -551,7 +501,7 @@ async function runBatchCascade(features, options = {}, onProgress = null) {
 
     const toVerify = features.slice(0, maxFeatures);
     const results = [];
-    const providerHealth = {};
+    const providerHealth = Object.create(null);
 
     for (let i = 0; i < toVerify.length; i++) {
         const { platform, feature } = toVerify[i];
@@ -567,10 +517,15 @@ async function runBatchCascade(features, options = {}, onProgress = null) {
 
         const result = await runCascade(platform, feature, options);
         results.push(result);
+        if (options.onResult) await options.onResult(result);
 
         // Track per-provider health from individual model results
-        for (const modelResult of result.results) {
-            const provider = modelResult.modelName || modelResult.model;
+        const modelResults = Array.isArray(result?.results) ? result.results : [];
+        for (const modelResult of modelResults) {
+            if (!modelResult || typeof modelResult !== 'object') continue;
+            const provider = typeof modelResult.modelName === 'string' && modelResult.modelName.trim() ?
+                modelResult.modelName : typeof modelResult.model === 'string' && modelResult.model.trim() ?
+                    modelResult.model : 'unknown';
             if (!providerHealth[provider]) {
                 providerHealth[provider] = { total: 0, errors: 0, skipped: 0, noSearchEvidence: 0, lastError: null };
             }
@@ -600,39 +555,49 @@ async function runBatchCascade(features, options = {}, onProgress = null) {
  * @returns {Object} Summary statistics
  */
 function summarizeResults(results) {
+    const resultList = Array.isArray(results) ? results : [];
     const summary = {
-        total: results.length,
+        total: resultList.length,
         noChange: 0,
         confirmed: 0,
         contradiction: 0,
         inconclusive: 0,
         error: 0,
-        positivesDiscarded: 0,
-        byPlatform: {}
+        byPlatform: Object.create(null)
     };
 
-    for (const result of results) {
-        summary.positivesDiscarded += (result.discardedPositives || []).length;
+    for (const result of resultList) {
+        if (!result || typeof result !== 'object') continue;
+        let summaryKey;
         switch (result.outcome) {
             case CascadeOutcome.NO_CHANGE:
+                summaryKey = 'noChange';
                 summary.noChange++;
                 break;
             case CascadeOutcome.CONFIRMED:
+                summaryKey = 'confirmed';
                 summary.confirmed++;
                 break;
             case CascadeOutcome.CONTRADICTION:
+                summaryKey = 'contradiction';
                 summary.contradiction++;
                 break;
             case CascadeOutcome.INCONCLUSIVE:
+                summaryKey = 'inconclusive';
                 summary.inconclusive++;
                 break;
             case CascadeOutcome.ERROR:
+                summaryKey = 'error';
                 summary.error++;
                 break;
+            default:
+                continue;
         }
 
-        if (!summary.byPlatform[result.platform]) {
-            summary.byPlatform[result.platform] = {
+        const platform = typeof result.platform === 'string' && result.platform.trim() ?
+            result.platform : 'unknown';
+        if (!summary.byPlatform[platform]) {
+            summary.byPlatform[platform] = {
                 total: 0,
                 noChange: 0,
                 confirmed: 0,
@@ -642,8 +607,8 @@ function summarizeResults(results) {
             };
         }
 
-        summary.byPlatform[result.platform].total++;
-        summary.byPlatform[result.platform][result.outcome]++;
+        summary.byPlatform[platform].total++;
+        summary.byPlatform[platform][summaryKey]++;
     }
 
     return summary;

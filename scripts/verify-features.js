@@ -1,562 +1,322 @@
 #!/usr/bin/env node
+'use strict';
 
-/**
- * AI Tool Watch - Automated Feature Verification
- *
- * Multi-model AI cascade for verifying feature data including:
- * pricing tiers, platform availability, status, gating, regional availability, and URLs.
- *
- * Usage:
- *   node scripts/verify-features.js                     # Verify all features
- *   node scripts/verify-features.js --platform claude   # Verify specific platform
- *   node scripts/verify-features.js --stale-only        # Only check stale features
- *   node scripts/verify-features.js --dry-run           # Don't create PRs/issues
- *
- * Environment variables:
- *   GEMINI_API_KEY       - Google AI Studio API key
- *   PERPLEXITY_API_KEY   - Perplexity API key
- *   XAI_API_KEY          - xAI API key for Grok
- *   ANTHROPIC_API_KEY    - Anthropic API key
- */
-
-const path = require('path');
-const fs = require('fs');
-
-// Load modules
-const {
-    loadAllPlatforms,
-    getPlatform,
-    getFeature,
-    getAllFeatures,
-    findStaleFeatures
-} = require('./lib/parser');
-
-const {
-    runCascade,
-    runBatchCascade,
-    summarizeResults,
-    CascadeOutcome
-} = require('./lib/cascade');
-
-const {
-    generateMarkdownReport,
-    saveReport,
-    generatePRBody,
-    generateContradictionIssue,
-    generateInconclusiveIssue,
-    generateConsistencyIssue,
-    generateStalenessReport,
-    printResults,
-    createGitHubIssue,
-    commentOnGitHubIssue,
-    closeGitHubIssue,
-    findExistingIssue,
-    findExistingIssueDetails,
-    generateSignalsDigestBody,
-    generateSignalsDigestCloseComment,
-    generateCascadeHealthIssue
-} = require('./lib/reporter');
-
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const parser = require('./lib/parser');
+const cascade = require('./lib/cascade');
+const reporter = require('./lib/reporter');
+const updater = require('./lib/file-updater');
 const { checkConsistency } = require('./lib/consistency');
+const { buildRunHealth, healthExitCode, isAdequatelyChecked } = require('./lib/verification-health');
+const freshnessReview = require('./lib/freshness-review');
+const freshnessContract = require('./lib/freshness-contract');
 
-const {
-    batchUpdateCheckedDates,
-    batchUpdateVerifiedDates,
-    batchAddChangelogEntries
-} = require('./lib/file-updater');
+function validateOptions(options) {
+    for (const key of ['maxFeatures', 'staleThreshold']) {
+        if (!Number.isSafeInteger(options[key]) || options[key] <= 0) throw new Error(`${key} must be a positive integer`);
+    }
+    for (const key of ['platform', 'feature']) {
+        if (options[key] !== null && (typeof options[key] !== 'string' || !options[key].trim() || options[key].length > 200 || /[\x00-\x1f]/.test(options[key]))) throw new Error(`Invalid ${key}`);
+    }
+    if (options.feature && !options.platform) throw new Error('--feature requires --platform');
+}
 
-// Days the unconfirmed-signals digest may sit without a new signal before the
-// pipeline auto-closes it.
-//
-// Sizing: 88 features at --max 50 needs two SUCCESSFUL runs for full coverage.
-// Nominally that is ~4 days on the Mon/Thu schedule, but scheduled runs do fail
-// (4 of the 15 runs to 2026-07-28), and back-to-back failures on 07-17 and 07-21
-// stretched one cohort's coverage gap to 14 days. 28 days keeps a real 2+ pass
-// margin against that observed failure rate rather than assuming the happy path.
-// Override with SIGNALS_DIGEST_QUIET_DAYS.
-const SIGNALS_DIGEST_QUIET_DAYS = parseInt(process.env.SIGNALS_DIGEST_QUIET_DAYS, 10) || 28;
-
-// Parse command line arguments
-function parseArgs() {
-    const args = process.argv.slice(2);
-    const options = {
-        platform: null,
-        feature: null,
-        staleOnly: false,
-        staleThreshold: 7,
-        dryRun: false,
-        verbose: false,
-        maxFeatures: 100,
-        help: false
-    };
-
+function parseArgs(args = process.argv.slice(2)) {
+    const options = { platform: null, feature: null, staleOnly: false, staleThreshold: 7,
+        dryRun: false, verbose: false, maxFeatures: 100, help: false };
+    function number(value, name) {
+        if (!/^[0-9]+$/.test(value || '')) throw new Error(`${name} must be a positive decimal integer`);
+        return Number(value);
+    }
     for (let i = 0; i < args.length; i++) {
         switch (args[i]) {
-            case '--platform':
-            case '-p':
-                options.platform = args[++i];
-                break;
-            case '--feature':
-            case '-f':
-                options.feature = args[++i];
-                break;
-            case '--stale-only':
-            case '-s':
-                options.staleOnly = true;
-                break;
-            case '--stale-threshold':
-                options.staleThreshold = parseInt(args[++i], 10);
-                break;
-            case '--dry-run':
-            case '-d':
-                options.dryRun = true;
-                break;
-            case '--verbose':
-            case '-v':
-                options.verbose = true;
-                break;
-            case '--max':
-            case '-m':
-                options.maxFeatures = parseInt(args[++i], 10);
-                break;
-            case '--help':
-            case '-h':
-                options.help = true;
-                break;
+            case '--platform': case '-p': options.platform = args[++i]; break;
+            case '--feature': case '-f': options.feature = args[++i]; break;
+            case '--stale-only': case '-s': options.staleOnly = true; break;
+            case '--stale-threshold': options.staleThreshold = number(args[++i], '--stale-threshold'); break;
+            case '--dry-run': case '-d': options.dryRun = true; break;
+            case '--verbose': case '-v': options.verbose = true; break;
+            case '--max': case '-m': options.maxFeatures = number(args[++i], '--max'); break;
+            case '--help': case '-h': options.help = true; break;
+            default: throw new Error(`Unknown argument: ${args[i]}`);
         }
     }
-
+    validateOptions(options);
     return options;
 }
 
-function printHelp() {
-    console.log(`
-AI Tool Watch - Automated Feature Verification
-
-Verifies: pricing tiers, platforms, status, gating, regional availability, URLs
-
-USAGE:
-    node scripts/verify-features.js [OPTIONS]
-
-OPTIONS:
-    -p, --platform <name>      Verify only a specific platform (e.g., claude, chatgpt)
-    -f, --feature <name>       Verify only a specific feature (requires --platform)
-    -s, --stale-only           Only check features with Checked date > threshold
-        --stale-threshold <n>  Days threshold for staleness (default: 7)
-    -d, --dry-run              Don't create PRs or issues, just report
-    -v, --verbose              Show detailed output during verification
-    -m, --max <n>              Maximum features to verify (default: 100)
-    -h, --help                 Show this help message
-
-ENVIRONMENT VARIABLES:
-    GEMINI_API_KEY       Google AI Studio API key (required)
-    PERPLEXITY_API_KEY   Perplexity API key (required)
-    XAI_API_KEY          xAI API key for Grok (required)
-    ANTHROPIC_API_KEY    Anthropic API key (required)
-
-EXAMPLES:
-    # Verify all features across all platforms
-    node scripts/verify-features.js
-
-    # Verify only Claude features
-    node scripts/verify-features.js --platform claude
-
-    # Verify a specific feature
-    node scripts/verify-features.js --platform chatgpt --feature "Agent Mode"
-
-    # Check only stale features (not checked in 7+ days)
-    node scripts/verify-features.js --stale-only
-
-    # Dry run with verbose output
-    node scripts/verify-features.js --dry-run --verbose
-`);
+function checkApiKeys() {
+    // The cascade applies the same-vendor exclusion per feature. Missing clients
+    // remain explicit error votes instead of being mistaken for negative evidence.
+    const keys = ['GEMINI_API_KEY', 'PERPLEXITY_API_KEY', 'XAI_API_KEY', 'ANTHROPIC_API_KEY'];
+    if (keys.filter(key => process.env[key]?.trim()).length < 2) throw new Error('At least two configured provider keys are required');
 }
 
-function checkApiKeys() {
-    const required = [
-        'GEMINI_API_KEY',
-        'PERPLEXITY_API_KEY',
-        'XAI_API_KEY',
-        'ANTHROPIC_API_KEY'
-    ];
+function key(item) { return `${item.platform._filepath}::${item.feature.name}`; }
+function resultKey(result) { return `${result?.platform}\u0000${result?.feature}`; }
+function itemResultKey(item) { return `${item.platform.name}\u0000${item.feature.name}`; }
+function checkedTime(item) {
+    const value = item.feature.checked;
+    const time = typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) ? Date.parse(`${value}T00:00:00Z`) : NaN;
+    return Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === value && time <= Date.now() ? time : 0;
+}
 
-    const missing = required.filter(key => !process.env[key]);
+function votes(result) { return Array.isArray(result?.results) ? result.results : []; }
+function configuredPaidBudget(env = process.env, initialBudget = null, onBudget = null) {
+    const ceiling = Number(env.FRESHNESS_MAX_SPEND_USD);
+    const upperBound = Number(env.FRESHNESS_MAX_PROVIDER_CALL_USD);
+    if (!env.FRESHNESS_MAX_SPEND_USD || !env.FRESHNESS_MAX_PROVIDER_CALL_USD || !Number.isFinite(ceiling) || ceiling <= 0 || !Number.isFinite(upperBound) || upperBound <= 0) {
+        throw new Error('Paid provider calls are disabled until FRESHNESS_MAX_SPEND_USD and FRESHNESS_MAX_PROVIDER_CALL_USD are finite positive USD bounds');
+    }
+    const configured = freshnessContract.createRunBudget({ maxRequests: 200, spendCeiling: ceiling, currency: 'USD', maxFailuresPerCircuit: 1 });
+    if (initialBudget && (initialBudget.spendCeiling !== configured.spendCeiling || initialBudget.maxRequests !== configured.maxRequests)) throw new Error('Resumed run budget configuration changed; preserve bounds until the checkpoint expires');
+    let budget = initialBudget || configured;
+    return {
+        beforeProviderRequest: async ({ client }) => { budget = freshnessContract.reserveSpend(budget, { upperBound, paid: true }); if (onBudget) await onBudget(budget); },
+        afterProviderRequest: async ({ client, succeeded }) => { budget = freshnessContract.recordAttempt(budget, { circuitKey: client.name, succeeded, costKnown: false }); if (onBudget) await onBudget(budget); },
+        snapshot: () => budget
+    };
+}
 
-    if (missing.length > 0) {
-        console.error('\n⚠️  Missing required API keys:');
-        for (const key of missing) {
-            console.error(`   - ${key}`);
+function pendingFinding(result, index) {
+    return { index, platform: result.platform, feature: result.feature, status: 'pending_review',
+        outcome: result.outcome, proposedChanges: result.proposedChanges || [],
+        consistencyIssues: result.consistencyIssues || [], evidence: result.results || [] };
+}
+
+// Tests inject every transport and mutation. No provider call occurs at import.
+async function runVerification(options, dependencies = {}) {
+    const deps = { ...parser, ...cascade, ...reporter, ...updater, checkConsistency, checkApiKeys,
+        ...freshnessReview, reportsDir: reporter.REPORTS_DIR, stateFilename: freshnessReview.STATE_PATH, ...dependencies };
+    const runId = `${process.env.GITHUB_RUN_ID || 'local'}-${crypto.randomUUID()}`;
+    const startedAt = new Date().toISOString();
+    let inventoryCount = 0, dueCount = 0;
+    let selected = [], results = [], providerHealth = {};
+    let rawBatchResult = null, selectionValid = false;
+    let fatalError = options.inputError || null;
+    const reviewIssues = [];
+    let durableFindings = [];
+    let reviewQueue = null;
+    const providerRuntime = [];
+
+    function persist(finished = false) {
+        const health = buildRunHealth({ runId, startedAt, finishedAt: finished ? new Date().toISOString() : null,
+            inventoryCount, dueCount, selectedCount: selected.length, results, selectionValid, fatalError });
+        health.assessedStatus = health.status;
+        health.scope = { platform: options.platform, feature: options.feature, staleOnly: options.staleOnly, dryRun: options.dryRun };
+        health.reviewIssues = reviewIssues;
+        health.reviewIssueDelivery = reviewIssues.some(issue => issue.status === 'failed') ? 'failed'
+            : reviewIssues.some(issue => issue.status === 'pending') ? 'pending'
+            : reviewIssues.length ? 'accepted' : 'not_attempted';
+        health.providerHealth = providerHealth;
+        const findings = durableFindings.length ? durableFindings : results.filter(result => result && (result.outcome !== 'no_change' || votes(result).some(vote => vote?.type === 'positive')))
+            .map((result) => pendingFinding(result, results.indexOf(result)));
+        health.pendingReviewCount = findings.length;
+        health.reviewQueue = reviewQueue || { status: findings.length ? 'unknown' : 'ready', pending: findings.length, owner: null, capacity: null };
+        if (!finished) { health.status = 'running'; health.alert = null; }
+        const summary = `Status: ${health.status}\nRun: ${runId}\n` +
+            `Coverage: ${health.counts.adequate}/${selected.length} selected features adequately observed\n` +
+            `Due: ${dueCount}; unselected backlog: ${Math.max(0, dueCount - selected.length)}\n` +
+            `Pending review: ${findings.length}\nReview issue delivery: ${health.reviewIssueDelivery}\n` +
+            `Email notification: not_configured; human receipt: unconfirmed\n` + (fatalError ? `Failure: ${fatalError}\n` : '');
+        fs.mkdirSync(deps.reportsDir, { recursive: true });
+        function write(name, value) {
+            const filename = path.join(deps.reportsDir, name);
+            fs.writeFileSync(`${filename}.tmp`, value + '\n');
+            fs.renameSync(`${filename}.tmp`, filename);
         }
-        console.error('\nSet these environment variables before running verification.');
-        console.error('See VERIFICATION.md for details.\n');
-        return false;
+        // Machine evidence precedes report formatting and all editorial writes.
+        for (const [name, value] of Object.entries({ 'health.json': health, 'results.json': results,
+            'pending-findings.json': findings, 'invalid-batch-result.json': rawBatchResult, 'provider-runtime.json': providerRuntime, 'alert.json': health.alert ?? null })) write(name, JSON.stringify(value, null, 2));
+        write('summary.txt', summary);
+        const valid = results.filter(result => result && Array.isArray(result.results) && Array.isArray(result.proposedChanges));
+        write('report.md', '# Feature verification health\n\n' + summary + '\n' + deps.generateMarkdownReport(valid, deps.summarizeResults(valid)));
+        return health;
     }
 
-    return true;
+    persist();
+    try {
+        if (fatalError) throw new Error(fatalError);
+        validateOptions(options);
+        const inventory = deps.getAllFeatures();
+        inventoryCount = inventory.length;
+        if (!inventoryCount) throw new Error('Invalid empty inventory');
+        const known = new Set(inventory.map(key));
+        if (known.size !== inventory.length || new Set(inventory.map(itemResultKey)).size !== inventory.length) throw new Error('Invalid duplicate inventory');
+        const inScope = inventory.filter(item => (!options.platform || item.platform.name.toLowerCase() === options.platform.toLowerCase() || path.basename(item.platform._filepath, '.md') === options.platform.toLowerCase())
+            && (!options.feature || item.feature.name.toLowerCase() === options.feature.toLowerCase()));
+        if (!inScope.length) throw new Error('No matching platform or feature');
+        const scopeKeys = new Set(inScope.map(key));
+        let due = options.staleOnly ? deps.findStaleFeatures(options.staleThreshold) : inScope;
+        if (due.some(item => !known.has(key(item)))) throw new Error('Invalid due item');
+        due = due.filter(item => scopeKeys.has(key(item)));
+        if (new Set(due.map(key)).size !== due.length) throw new Error('Duplicate due item');
+        dueCount = due.length;
+        // Keep the existing oldest-Checked-first policy, including scoped runs.
+        selected = [...due].sort((a, b) => checkedTime(a) - checkedTime(b) || key(a).localeCompare(key(b))).slice(0, options.maxFeatures);
+        selectionValid = true;
+        persist();
+        let runnable = [];
+        for (const item of selected) {
+            const consistency = deps.checkConsistency(item.feature);
+            if (consistency.hasErrors) results.push({ platform: item.platform.name, feature: item.feature.name,
+                outcome: 'inconclusive', results: [], proposedChanges: [], consistencyIssues: consistency.issues });
+            else runnable.push(item);
+        }
+        const order = new Map(selected.map((item, index) => [itemResultKey(item), index]));
+        const sortResults = () => results.sort((a, b) => order.get(resultKey(a)) - order.get(resultKey(b)));
+        sortResults(); persist();
+        let checkpointState = null;
+        let checkpointRun = null;
+        if (!options.dryRun && selected.length) {
+            checkpointState = await deps.loadReviewState(deps.stateFilename);
+            const selectionKeys = selected.map(itemResultKey);
+            const inputFingerprint = crypto.createHash('sha256').update(JSON.stringify({ selection: selected.map(item => ({ key: itemResultKey(item), claim: item.feature, vendor: item.platform.vendor })), providerPolicy: { requiredConfirmations: 3, sameVendorExcluded: true, models: ['GEMINI_MODEL', 'PERPLEXITY_MODEL', 'GROK_MODEL', 'CLAUDE_MODEL'].map(name => process.env[name] || null), implementation: ['cascade.js', 'ai-clients.js'].map(file => fs.readFileSync(path.join(__dirname, 'lib', file), 'utf8')) } })).digest('hex');
+            const begin = freshnessContract.beginRun(checkpointState, { id: runId, selectionKeys, inputFingerprint }, { now: new Date(), maxResumeAgeMs: 86400000 });
+            checkpointRun = begin.run;
+            for (const result of results) freshnessContract.checkpointResult(checkpointState, checkpointRun.id, resultKey(result), result, { now: new Date() });
+            checkpointState = await deps.saveReviewState(deps.stateFilename, checkpointState, { expectedRevision: checkpointState.revision });
+            checkpointRun = checkpointState.runs[checkpointRun.id];
+            for (const stored of Object.values(checkpointRun.results)) if (!results.some(result => resultKey(result) === resultKey(stored))) results.push(stored);
+            runnable = runnable.filter(item => checkpointRun.results[itemResultKey(item)] === undefined);
+            if (runnable.length && deps.runBatchCascade === cascade.runBatchCascade && !checkpointRun.budget) {
+                freshnessContract.checkpointRunBudget(checkpointState, checkpointRun.id, configuredPaidBudget().snapshot(), { now: new Date() });
+                checkpointState = await deps.saveReviewState(deps.stateFilename, checkpointState, { expectedRevision: checkpointState.revision });
+                checkpointRun = checkpointState.runs[checkpointRun.id];
+            }
+            sortResults(); persist();
+        }
+        if (runnable.length) {
+            deps.checkApiKeys();
+            const saveBudget = checkpointState ? async budget => { freshnessContract.checkpointRunBudget(checkpointState, checkpointRun.id, budget, { now: new Date() }); checkpointState = await deps.saveReviewState(deps.stateFilename, checkpointState, { expectedRevision: checkpointState.revision }); checkpointRun = checkpointState.runs[checkpointRun.id]; } : null;
+            const budget = deps.runBatchCascade === cascade.runBatchCascade ? configuredPaidBudget(process.env, checkpointRun?.budget || null, saveBudget) : null;
+            const completedKeys = new Set();
+            const batchOptions = { maxFeatures: options.maxFeatures,
+                verbose: options.verbose, delayBetweenFeatures: 2000, delayBetweenQueries: 1000, requiredConfirmations: 3,
+                onResult: async result => {
+                    results.push(result);
+                    const resultId = resultKey(result);
+                    if (!runnable.some(item => itemResultKey(item) === resultId) || completedKeys.has(resultId)) throw new Error('Invalid callback result identity');
+                    completedKeys.add(resultId); sortResults();
+                    if (checkpointState) {
+                        freshnessContract.checkpointResult(checkpointState, checkpointRun.id, resultId, result, { now: new Date() });
+                        checkpointState = await deps.saveReviewState(deps.stateFilename, checkpointState, { expectedRevision: checkpointState.revision });
+                        checkpointRun = checkpointState.runs[checkpointRun.id];
+                    }
+                    persist();
+                }
+            };
+            if (budget) {
+                batchOptions.beforeProviderRequest = budget.beforeProviderRequest;
+            }
+            batchOptions.afterProviderRequest = async event => {
+                const payload = event.response || event.error || {};
+                providerRuntime.push({ platform: event.platform?.name || null, feature: event.feature?.name || null,
+                    provider: event.client?.name || null, succeeded: event.succeeded === true, response: payload.response || null,
+                    raw: payload.raw ?? null, usageReceipt: payload.usageReceipt ?? null, error: event.error?.message || null });
+                // Preserve the actual provider artifact before accounting can
+                // refuse the next request or a state save can fail.
+                persist();
+                if (budget) await budget.afterProviderRequest(event);
+            };
+            const batch = await deps.runBatchCascade(runnable, batchOptions, progress => { if (options.verbose) console.log(`[${progress.current}/${progress.total}] ${progress.platform}: ${progress.feature}`); });
+            rawBatchResult = batch;
+            if (!batch || !Array.isArray(batch.results)) throw new Error('Invalid batch result');
+            if (batch.results.some((result, index) => !runnable[index] || resultKey(result) !== itemResultKey(runnable[index]))) throw new Error('Invalid batch result identity or ordering');
+            // A returned batch cannot erase, replace or contradict a receipt
+            // already persisted by the completed-result callback.
+            for (const result of batch.results) {
+                const received = results.find(prior => resultKey(prior) === resultKey(result));
+                if (received && JSON.stringify(received) !== JSON.stringify(result)) throw new Error('Batch result conflicts with retained callback evidence');
+                if (!received) results.push(result);
+            }
+            sortResults();
+            if (batch.results.length !== runnable.length) throw new Error('Incomplete batch result');
+            providerHealth = batch.providerHealth || {};
+            rawBatchResult = null;
+            sortResults();
+        }
+        if (checkpointState) {
+            for (const result of results) {
+                if (checkpointRun.results[resultKey(result)] !== undefined) continue;
+                freshnessContract.checkpointResult(checkpointState, checkpointRun.id, resultKey(result), result, { now: new Date() });
+            }
+            checkpointState = await deps.saveReviewState(deps.stateFilename, checkpointState, { expectedRevision: checkpointState.revision });
+            checkpointRun = checkpointState.runs[checkpointRun.id];
+        }
+        const health = persist();
+        if (!options.dryRun) {
+            let state = await deps.loadReviewState(deps.stateFilename);
+            const ingested = deps.ingestResults(state, results, { now: new Date() });
+            state = ingested.state;
+            durableFindings = deps.findingsForReport(state);
+            reviewQueue = deps.reviewQueueState(state);
+            // The queue is committed before any issue lookup or creation so a
+            // crash cannot lose a candidate that was already observed.
+            state = await deps.saveReviewState(deps.stateFilename, state, { expectedRevision: state.revision });
+            durableFindings = deps.findingsForReport(state);
+            reviewQueue = deps.reviewQueueState(state);
+            persist();
+            for (const entry of ingested.records) {
+                let finding = state.findings[entry.finding.id];
+                if (finding.status !== 'pending' || finding.issueReceipt?.status === 'accepted') continue;
+                const title = deps.issueTitle(entry.result);
+                const receipt = { platform: entry.result.platform, feature: entry.result.feature, status: 'pending', url: null };
+                reviewIssues.push(receipt); persist();
+                try {
+                    const existing = await deps.findExistingIssueDetails(title);
+                    const body = 'Pending human source review. Model agreement does not accept a change or verify current data.\n\n' +
+                        (entry.result.consistencyIssues?.length ? deps.generateConsistencyIssue({ platform: entry.result.platform, feature: entry.result.feature, issues: entry.result.consistencyIssues })
+                            : entry.result.outcome === 'contradiction' ? deps.generateContradictionIssue(entry.result) : deps.generateInconclusiveIssue(entry.result));
+                    const url = existing?.url || await deps.createGitHubIssue(title, body, ['needs-review', entry.result.consistencyIssues?.length ? 'data-inconsistency' : entry.result.outcome === 'contradiction' ? 'verification-conflict' : 'verification-inconclusive']);
+                    if (!url) throw new Error('No GitHub issue receipt returned');
+                    receipt.status = 'accepted'; receipt.url = url;
+                    ({ state } = deps.linkIssue(state, finding.id, { status: 'accepted', url, createdAt: existing?.createdAt, linkedAt: new Date().toISOString() }));
+                } catch (error) {
+                    receipt.status = 'failed'; receipt.error = error.message;
+                    ({ state } = deps.linkIssue(state, finding.id, { status: 'failed', url: null, error: error.message }));
+                    state = await deps.saveReviewState(deps.stateFilename, state, { expectedRevision: state.revision });
+                    durableFindings = deps.findingsForReport(state); reviewQueue = deps.reviewQueueState(state); persist();
+                    throw new Error(`Review issue delivery failed: ${error.message}`);
+                }
+                state = await deps.saveReviewState(deps.stateFilename, state, { expectedRevision: state.revision });
+                durableFindings = deps.findingsForReport(state); reviewQueue = deps.reviewQueueState(state); persist();
+            }
+            // A change candidate is never an editorial acceptance. Inadequate
+            // coverage cannot refresh the schedule through Checked dates.
+            if (['healthy', 'review_required'].includes(health.assessedStatus)) {
+                const targets = results.filter(result => result.outcome === 'no_change' && isAdequatelyChecked(result)).map(result => {
+                    const item = selected[order.get(resultKey(result))];
+                    return { filepath: item.platform._filepath, featureName: item.feature.name };
+                });
+                if (targets.length) {
+                    const updated = deps.batchUpdateCheckedDates(targets);
+                    if (updated.failed || updated.success !== targets.length) throw new Error('Checked date update failed');
+                }
+            }
+            if (checkpointRun) {
+                freshnessContract.finishRun(state, checkpointRun.id, { now: new Date() });
+                await deps.saveReviewState(deps.stateFilename, state, { expectedRevision: state.revision });
+            }
+        }
+    } catch (error) { fatalError = error.message; }
+    const health = persist(true);
+    console.log(fs.readFileSync(path.join(deps.reportsDir, 'summary.txt'), 'utf8'));
+    return health;
 }
 
 async function main() {
-    const options = parseArgs();
-
+    let options;
+    try { options = parseArgs(); }
+    catch (error) { options = { ...parseArgs([]), dryRun: true, inputError: error.message }; }
     if (options.help) {
-        printHelp();
-        process.exit(0);
+        console.log('Usage: node scripts/verify-features.js [--platform name] [--feature name] [--stale-only] [--stale-threshold days] [--max n] [--dry-run] [--verbose]');
+        console.log('Dry run still queries paid providers; it suppresses issue and data writes. Exit 0: healthy/idle; 1: review required; 2: failed/degraded.');
+        return;
     }
-
-    console.log('\n🔍 AI Tool Watch - Feature Verification\n');
-
-    // Check API keys
-    if (!checkApiKeys()) {
-        process.exit(1);
-    }
-
-    // Determine what to verify
-    let featuresToVerify = [];
-
-    if (options.platform && options.feature) {
-        // Single feature
-        const result = getFeature(options.platform, options.feature);
-        if (!result) {
-            console.error(`Feature "${options.feature}" not found in platform "${options.platform}"`);
-            process.exit(1);
-        }
-        featuresToVerify = [result];
-        console.log(`Verifying: ${result.platform.name} → ${result.feature.name}`);
-
-    } else if (options.platform) {
-        // All features for a platform
-        const platform = getPlatform(options.platform);
-        if (!platform) {
-            console.error(`Platform "${options.platform}" not found`);
-            process.exit(1);
-        }
-        featuresToVerify = platform.features.map(feature => ({ platform, feature }));
-        console.log(`Verifying ${featuresToVerify.length} features for ${platform.name}`);
-
-    } else if (options.staleOnly) {
-        // Only stale features
-        const stale = findStaleFeatures(options.staleThreshold);
-        featuresToVerify = stale.map(({ platform, feature }) => ({ platform, feature }));
-        console.log(`Found ${featuresToVerify.length} stale features (>${options.staleThreshold} days)`);
-
-        if (featuresToVerify.length === 0) {
-            console.log('\n✓ No stale features found. All features are up to date!\n');
-            process.exit(0);
-        }
-
-        // Generate staleness report
-        const staleReport = generateStalenessReport(stale);
-        const reportPath = saveReport(staleReport, 'staleness');
-        console.log(`Staleness report saved to: ${reportPath}`);
-
-    } else {
-        // All features
-        featuresToVerify = getAllFeatures();
-        console.log(`Verifying ${featuresToVerify.length} features across all platforms`);
-    }
-
-    // Apply max limit — prioritize most-stale features so nothing gets permanently skipped
-    if (featuresToVerify.length > options.maxFeatures) {
-        const now = new Date();
-        featuresToVerify.sort((a, b) => {
-            const aDate = a.feature.checked ? new Date(a.feature.checked) : new Date(0);
-            const bDate = b.feature.checked ? new Date(b.feature.checked) : new Date(0);
-            return aDate - bDate; // oldest Checked date first
-        });
-        console.log(`Limiting to ${options.maxFeatures} of ${featuresToVerify.length} features (most stale first)`);
-        featuresToVerify = featuresToVerify.slice(0, options.maxFeatures);
-    }
-
-    // Pre-cascade: check internal consistency of all features
-    const consistencyErrors = [];
-    for (const { platform, feature } of featuresToVerify) {
-        const result = checkConsistency(feature);
-        if (result.hasErrors) {
-            consistencyErrors.push({ platform, feature, issues: result.issues });
-            console.log(`⚠ Consistency error: ${platform.name} → ${feature.name}`);
-            for (const issue of result.issues.filter(i => i.severity === 'error')) {
-                console.log(`  🔴 ${issue.message}`);
-            }
-        } else if (result.hasWarnings && options.verbose) {
-            for (const issue of result.issues.filter(i => i.severity === 'warning')) {
-                console.log(`  🟡 ${platform.name} → ${feature.name}: ${issue.message}`);
-            }
-        }
-    }
-
-    if (consistencyErrors.length > 0) {
-        console.log(`\n${consistencyErrors.length} feature(s) with consistency errors (removed from cascade)`);
-
-        if (!options.dryRun) {
-            for (const { platform, feature, issues } of consistencyErrors) {
-                const title = `[Data Inconsistency] ${platform.name} - ${feature.name}`;
-                const body = generateConsistencyIssue({
-                    platform: platform.name,
-                    feature: feature.name,
-                    issues
-                });
-                console.log(`Creating consistency issue: ${platform.name} → ${feature.name}`);
-                const issueUrl = createGitHubIssue(title, body, ['data-inconsistency', 'needs-review']);
-                if (issueUrl) {
-                    console.log(`  Issue created: ${issueUrl}`);
-                }
-            }
-        }
-
-        // Remove features with consistency errors from cascade
-        const errorKeys = new Set(consistencyErrors.map(e =>
-            `${e.platform.name}:${e.feature.name}`
-        ));
-        featuresToVerify = featuresToVerify.filter(f =>
-            !errorKeys.has(`${f.platform.name}:${f.feature.name}`)
-        );
-    }
-
-    if (options.dryRun) {
-        console.log('\n📋 DRY RUN MODE - No PRs or issues will be created\n');
-    }
-
-    // Run verification
-    console.log('\nStarting verification cascade...\n');
-
-    const { results, providerHealth } = await runBatchCascade(
-        featuresToVerify,
-        {
-            verbose: options.verbose,
-            maxFeatures: options.maxFeatures,
-            delayBetweenFeatures: 2000,
-            delayBetweenQueries: 1000,
-            requiredConfirmations: 3
-        },
-        (progress) => {
-            const pct = Math.round((progress.current / progress.total) * 100);
-            process.stdout.write(`\r[${pct}%] ${progress.current}/${progress.total}: ${progress.platform} → ${progress.feature}     `);
-        }
-    );
-
-    console.log('\n');
-
-    // Check provider health and alert on degraded providers
-    const degradedProviders = [];
-    console.log('\nProvider health:');
-    for (const [name, stats] of Object.entries(providerHealth)) {
-        const queriesUsed = stats.total - stats.skipped;
-        if (queriesUsed === 0) continue;
-        const errorRate = stats.errors / queriesUsed;
-        const pct = (errorRate * 100).toFixed(0);
-        const noSearch = stats.noSearchEvidence || 0;
-        const noSearchPct = queriesUsed > 0 ? ((noSearch / queriesUsed) * 100).toFixed(0) : '0';
-        const status = errorRate > 0.5 ? '✗' : errorRate > 0 ? '~' : '✓';
-        let line = `  ${status} ${name}: ${stats.errors}/${queriesUsed} errors (${pct}%)`;
-        if (noSearch > 0) {
-            line += `, ${noSearch}/${queriesUsed} no search evidence (${noSearchPct}%)`;
-        }
-        console.log(line);
-        if (errorRate > 0.5) {
-            degradedProviders.push(name);
-        }
-        // Also flag providers that frequently don't search
-        if (noSearch > 0 && (noSearch / queriesUsed) > 0.5) {
-            console.log(`    ⚠ ${name} is not searching in >50% of queries — check API configuration`);
-            if (!degradedProviders.includes(name)) {
-                degradedProviders.push(name);
-            }
-        }
-    }
-
-    if (degradedProviders.length > 0) {
-        const names = degradedProviders.join(', ');
-        console.log(`\n⚠ DEGRADED PROVIDERS: ${names}`);
-        // Emit GitHub Actions warning annotation
-        console.log(`::warning::Cascade health degraded — providers failing at >80%: ${names}`);
-
-        if (!options.dryRun) {
-            const title = `[Cascade Health] Degraded providers: ${names}`;
-            const body = generateCascadeHealthIssue(providerHealth, results.length);
-            const issueUrl = createGitHubIssue(title, body, ['cascade-health']);
-            if (issueUrl) {
-                console.log(`  Health issue: ${issueUrl}`);
-            }
-        }
-    }
-
-    // Summarize results
-    const summary = summarizeResults(results);
-    printResults(results, summary);
-
-    // Generate full report
-    const report = generateMarkdownReport(results, summary);
-    const reportPath = saveReport(report);
-    console.log(`\nFull report saved to: ${reportPath}`);
-
-    // Update dates in markdown files (unless dry run)
-    if (!options.dryRun) {
-        console.log('\nUpdating dates in data files...');
-
-        // Collect all features that were checked (for Checked date update)
-        const allChecked = results.map(r => ({
-            filepath: featuresToVerify.find(f =>
-                f.platform.name === r.platform && f.feature.name === r.feature
-            )?.platform._filepath,
-            featureName: r.feature
-        })).filter(f => f.filepath);
-
-        // Verified dates are NOT auto-bumped by the pipeline.
-        // A "no change" cascade outcome means the models didn't detect changes,
-        // but that's not the same as human-verified accuracy. Verified dates
-        // should only be updated by manual review (resolve-issue skill) or
-        // high-confidence confirmed changes.
-        const noChangeFeatures = []; // intentionally empty — no auto-Verified bumps
-
-        // Update Checked date for ALL features that were checked
-        if (allChecked.length > 0) {
-            const checkedResult = batchUpdateCheckedDates(allChecked);
-            console.log(`  Checked dates updated: ${checkedResult.success} success, ${checkedResult.failed} failed`);
-        }
-
-        // Update Verified date ONLY for features with no changes
-        if (noChangeFeatures.length > 0) {
-            const verifiedResult = batchUpdateVerifiedDates(noChangeFeatures);
-            console.log(`  Verified dates updated: ${verifiedResult.success} success, ${verifiedResult.failed} failed`);
-        }
-    }
-
-    // Handle outputs (unless dry run)
-    if (!options.dryRun) {
-        // Create issues for contradictions
-        const contradictions = results.filter(r => r.outcome === CascadeOutcome.CONTRADICTION);
-        for (const result of contradictions) {
-            const title = `[Verification Conflict] ${result.platform} - ${result.feature}`;
-            const body = generateContradictionIssue(result);
-
-            console.log(`\nCreating issue for contradiction: ${result.platform} → ${result.feature}`);
-            const issueUrl = createGitHubIssue(title, body, ['verification-conflict', 'needs-review']);
-            if (issueUrl) {
-                console.log(`  Issue created: ${issueUrl}`);
-            }
-        }
-
-        // Create issues for inconclusive results
-        const inconclusive = results.filter(r => r.outcome === CascadeOutcome.INCONCLUSIVE);
-        for (const result of inconclusive) {
-            const title = `[Unconfirmed Change] ${result.platform} - ${result.feature}`;
-            const body = generateInconclusiveIssue(result);
-
-            console.log(`\nCreating issue for inconclusive: ${result.platform} → ${result.feature}`);
-            const issueUrl = createGitHubIssue(title, body, ['verification-inconclusive', 'needs-review']);
-            if (issueUrl) {
-                console.log(`  Issue created: ${issueUrl}`);
-            }
-        }
-
-        // Roll discarded positive signals into a rolling digest issue.
-        // A single outvoted positive isn't worth its own issue, but dropping
-        // it silently is how the pipeline went dark — keep one digest issue
-        // open and append each run's signals as a comment.
-        const withSignals = results.filter(r => (r.discardedPositives || []).length > 0);
-        const digestTitle = '[Signals] Unconfirmed change signals digest';
-
-        if (withSignals.length > 0) {
-            const digestBody = generateSignalsDigestBody(withSignals);
-
-            const existingDigest = findExistingIssue(digestTitle);
-            if (existingDigest) {
-                console.log(`\nAppending ${withSignals.length} feature signal(s) to digest: ${existingDigest}`);
-                commentOnGitHubIssue(existingDigest, digestBody);
-            } else {
-                console.log(`\nCreating signals digest issue (${withSignals.length} feature(s) with discarded signals)`);
-                const issueUrl = createGitHubIssue(digestTitle, digestBody, ['unconfirmed-signals']);
-                if (issueUrl) {
-                    console.log(`  Digest issue: ${issueUrl}`);
-                }
-            }
-        } else {
-            // No signals this run — consider auto-closing a digest that has gone quiet.
-            //
-            // Deliberately keyed off the digest's own quiet period, NOT this run's
-            // scope. Scheduled runs are partial (--max 50, most-stale-first), so
-            // "no signals this run" never implies "no signals anywhere". Over the
-            // quiet threshold the rotation covers the whole corpus several times,
-            // so a signal that never resurfaces is noise.
-            //
-            // updatedAt (not just bot comments) is the clock on purpose: a human
-            // actively discussing the digest should defer the auto-close.
-            const existing = findExistingIssueDetails(digestTitle);
-            if (existing) {
-                const quietDays = Math.floor(
-                    (Date.now() - new Date(existing.updatedAt).getTime()) / 86400000
-                );
-                if (quietDays >= SIGNALS_DIGEST_QUIET_DAYS) {
-                    console.log(`\nSignals digest quiet for ${quietDays} day(s) — auto-closing ${existing.url}`);
-                    closeGitHubIssue(
-                        existing.number,
-                        generateSignalsDigestCloseComment(quietDays, SIGNALS_DIGEST_QUIET_DAYS)
-                    );
-                } else {
-                    console.log(
-                        `\nSignals digest open and quiet for ${quietDays}/${SIGNALS_DIGEST_QUIET_DAYS} day(s) — leaving open`
-                    );
-                }
-            }
-        }
-
-        // Handle confirmed changes - add changelog entries
-        const confirmed = results.filter(r => r.outcome === CascadeOutcome.CONFIRMED);
-        if (confirmed.length > 0) {
-            console.log('\n' + '-'.repeat(40));
-            console.log('CONFIRMED CHANGES:');
-            console.log('-'.repeat(40));
-
-            // Prepare changelog entries
-            const changelogEntries = [];
-
-            for (const result of confirmed) {
-                console.log(`\n${result.platform} → ${result.feature}`);
-
-                const platformData = featuresToVerify.find(f =>
-                    f.platform.name === result.platform && f.feature.name === result.feature
-                )?.platform;
-
-                if (platformData?._filepath && result.proposedChanges?.length > 0) {
-                    // Combine all changes into a single changelog entry
-                    const changesSummary = result.proposedChanges
-                        .map(c => `${c.type}: ${c.detail}`)
-                        .join('; ');
-
-                    changelogEntries.push({
-                        filepath: platformData._filepath,
-                        featureName: result.feature,
-                        change: `[Verified] ${changesSummary}`
-                    });
-
-                    for (const change of result.proposedChanges) {
-                        console.log(`  • [${change.type}] ${change.detail}`);
-                    }
-                }
-            }
-
-            // Add changelog entries
-            if (changelogEntries.length > 0) {
-                console.log('\nAdding changelog entries...');
-                const changelogResult = batchAddChangelogEntries(changelogEntries);
-                console.log(`  Changelog entries added: ${changelogResult.success} success, ${changelogResult.failed} failed`);
-            }
-
-            console.log('\nPlease review the report and create a PR with the necessary updates.');
-            console.log(`Report: ${reportPath}`);
-        }
-    }
-
-    // Exit with appropriate code
-    const hasIssues = summary.confirmed > 0 || summary.contradiction > 0;
-    process.exit(hasIssues ? 1 : 0);
+    process.exitCode = healthExitCode(await runVerification(options));
 }
-
-// Run main
-main().catch(error => {
-    console.error('\n❌ Verification failed:', error.message);
-    if (process.env.DEBUG) {
-        console.error(error.stack);
-    }
-    process.exit(1);
-});
+if (require.main === module) main().catch(error => { console.error('Unable to retain verification evidence:', error.message); process.exitCode = 2; });
+module.exports = { parseArgs, runVerification, checkApiKeys, checkedTime, main };

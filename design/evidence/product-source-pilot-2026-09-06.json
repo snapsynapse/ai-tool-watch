@@ -1,0 +1,370 @@
+{
+  "id": "product-monitor-9816ede4-aaef-45d6-9eae-8dfde3576648",
+  "startedAt": "2026-09-07T04:45:25.705Z",
+  "status": "degraded",
+  "requests": 6,
+  "maxRequests": 6,
+  "paidProviderCalls": 0,
+  "sources": [
+    {
+      "product": "copilot",
+      "id": "product-monitor:copilot-changes",
+      "kind": "release_notes",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+      "status": "covered",
+      "expectedClaims": 1,
+      "provenClaims": 1,
+      "assessedClaims": [
+        {
+          "field": "copilot.chat.free.availability",
+          "value": "\u2705",
+          "baseline": "\u2705",
+          "target": {
+            "file": "data/platforms/copilot.md",
+            "feature": "Chat",
+            "section": "Availability",
+            "row": "Free",
+            "column": "Available"
+          },
+          "locator": "free-chat"
+        }
+      ],
+      "unprovenFields": [],
+      "observationId": "obs_14127a5f2cf0c1a294d35d6a9c14562e6b7400e0357594ee090752968eb5f3e6",
+      "rawContentHash": "6b5e71dff3582d21e2b84ca4f017e378ab51247f64fd3bed11d97f6b86848ee5"
+    },
+    {
+      "product": "copilot",
+      "id": "product-monitor:copilot-pricing",
+      "kind": "pricing",
+      "url": "https://microsoft.com/en-us/microsoft-copilot",
+      "status": "unavailable",
+      "expectedClaims": 2,
+      "provenClaims": 0,
+      "assessedClaims": [],
+      "unprovenFields": [
+        "copilot.pricing.microsoft_365_premium.price",
+        "copilot.pricing.copilot_pro.status"
+      ],
+      "observationId": "obs_5e21bf35001eaa120654906c1de52f0c8ee972e66e9d64a6d77ac2c1df0c413a",
+      "rawContentHash": "46d6793234c3bb4c93e747bb6700f1a82685c6592bdf45f28bc1093841f72fb5",
+      "reason": "Recognized Microsoft pricing page, but no configured plan claim was stated."
+    },
+    {
+      "product": "copilot",
+      "id": "product-monitor:copilot-entitlements",
+      "kind": "support",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "status": "partial",
+      "expectedClaims": 3,
+      "provenClaims": 1,
+      "assessedClaims": [
+        {
+          "field": "copilot.chat.free.availability",
+          "value": "\u2705",
+          "baseline": "\u2705",
+          "target": {
+            "file": "data/platforms/copilot.md",
+            "feature": "Chat",
+            "section": "Availability",
+            "row": "Free",
+            "column": "Available"
+          },
+          "locator": "free-chat"
+        }
+      ],
+      "unprovenFields": [
+        "copilot.vision.gating",
+        "copilot.vision.region"
+      ],
+      "observationId": "obs_97f95a2ad0aec9f26312218c600ae881b20e46b07e9fc5d1aa561261afdd256f",
+      "rawContentHash": "ffdb3f9e82343cf583c6f583f79991b729b982aeb8f0f99f44081152fdbafa90",
+      "reason": "Configured claims are missing or ambiguous"
+    },
+    {
+      "product": "gemini",
+      "id": "product-monitor:release-notes",
+      "kind": "release_notes",
+      "url": "https://gemini.google/release-notes/?hl=en",
+      "status": "covered",
+      "expectedClaims": 1,
+      "provenClaims": 1,
+      "assessedClaims": [
+        {
+          "field": "chat.platforms.macOS.launch_month",
+          "value": "2026-04",
+          "baseline": "2026-04",
+          "target": {
+            "file": "data/platforms/gemini.md",
+            "feature": "Chat",
+            "section": "Platforms",
+            "row": "macOS",
+            "column": "Notes"
+          },
+          "locator": "historical-release-entry"
+        }
+      ],
+      "unprovenFields": [],
+      "observationId": "obs_83f1b662d5ee16dda596f1650c996a40f2b762a72a22d2e6cd67c095b3b3e82a",
+      "rawContentHash": "5b403b9744a629bb093f9516928c19c322a89f3b3bc466d7b540dabeccd919fd"
+    },
+    {
+      "product": "gemini",
+      "id": "product-monitor:pricing",
+      "kind": "pricing",
+      "url": "https://one.google.com/intl/en/about/google-ai-plans/",
+      "status": "unavailable",
+      "expectedClaims": 1,
+      "provenClaims": 0,
+      "assessedClaims": [],
+      "unprovenFields": [
+        "chat.pricing.google_ai_pro.usd_monthly"
+      ],
+      "observationId": "obs_f236bd180d6165c0581788b2d08060081d0c4aa9a957c9b9716e73d634341946",
+      "rawContentHash": "84fe791b56eba30311079e3104f340d56c464fd882b3537be38845f01c418340",
+      "reason": "no-qualified-usd-monthly-price"
+    },
+    {
+      "product": "gemini",
+      "id": "product-monitor:mac-support",
+      "kind": "support",
+      "url": "https://support.google.com/gemini/answer/17011627?hl=en",
+      "status": "covered",
+      "expectedClaims": 2,
+      "provenClaims": 2,
+      "assessedClaims": [
+        {
+          "field": "chat.platforms.macOS.available",
+          "value": "\u2705",
+          "baseline": "\u2705",
+          "target": {
+            "file": "data/platforms/gemini.md",
+            "feature": "Chat",
+            "section": "Platforms",
+            "row": "macOS",
+            "column": "Available"
+          },
+          "locator": "macos-current-availability"
+        },
+        {
+          "field": "chat.platforms.macOS.minimum_version",
+          "value": 15,
+          "baseline": 15,
+          "target": {
+            "file": "data/platforms/gemini.md",
+            "feature": "Chat",
+            "section": "Platforms",
+            "row": "macOS",
+            "column": "Notes"
+          },
+          "locator": "macos-minimum-version"
+        }
+      ],
+      "unprovenFields": [],
+      "observationId": "obs_9ede2a8e84dbab33d57f37ba0837eed8a4bbdc4d20c463b816ed10a7c1d29f27",
+      "rawContentHash": "c67059c054632499968ea15ac5700a8187587012627a838bb4be12456a5da899"
+    }
+  ],
+  "proposals": [],
+  "reviewOwner": "Sam Rogers",
+  "scope": "Two products, three fixed source families each; explicit configured claims only.",
+  "configuration": [
+    {
+      "id": "copilot",
+      "label": "Microsoft Copilot",
+      "sources": [
+        {
+          "id": "copilot-changes",
+          "kind": "release_notes",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+          "expectedHost": "support.microsoft.com",
+          "claims": [
+            {
+              "field": "copilot.chat.free.availability",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "feature": "Chat",
+                "section": "Availability",
+                "row": "Free",
+                "column": "Available"
+              },
+              "baseline": "\u2705"
+            }
+          ]
+        },
+        {
+          "id": "copilot-pricing",
+          "kind": "pricing",
+          "url": "https://microsoft.com/en-us/microsoft-copilot",
+          "expectedHost": "microsoft.com",
+          "claims": [
+            {
+              "field": "copilot.pricing.microsoft_365_premium.price",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "section": "Pricing",
+                "row": "Microsoft 365 Premium",
+                "column": "Price"
+              },
+              "baseline": "$19.99/mo"
+            },
+            {
+              "field": "copilot.pricing.copilot_pro.status",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "section": "Pricing",
+                "row": "Copilot Pro",
+                "column": "status"
+              },
+              "baseline": "retired"
+            }
+          ]
+        },
+        {
+          "id": "copilot-entitlements",
+          "kind": "support",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+          "expectedHost": "support.microsoft.com",
+          "claims": [
+            {
+              "field": "copilot.chat.free.availability",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "feature": "Chat",
+                "section": "Availability",
+                "row": "Free",
+                "column": "Available"
+              },
+              "baseline": "\u2705"
+            },
+            {
+              "field": "copilot.vision.gating",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "feature": "Copilot Vision",
+                "section": "Property",
+                "row": "Gating",
+                "column": "Value"
+              },
+              "baseline": "paid"
+            },
+            {
+              "field": "copilot.vision.region",
+              "target": {
+                "file": "data/platforms/copilot.md",
+                "feature": "Copilot Vision",
+                "section": "Regional",
+                "row": null,
+                "column": "text"
+              },
+              "baseline": {
+                "scope": "all-supported-regions",
+                "rollout": "variable"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "label": "Gemini",
+      "sources": [
+        {
+          "id": "release-notes",
+          "kind": "release_notes",
+          "url": "https://gemini.google/release-notes/?hl=en",
+          "expectedHost": "gemini.google",
+          "claims": [
+            {
+              "field": "chat.platforms.macOS.launch_month",
+              "target": {
+                "file": "data/platforms/gemini.md",
+                "feature": "Chat",
+                "section": "Platforms",
+                "row": "macOS",
+                "column": "Notes"
+              },
+              "baseline": "2026-04"
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "kind": "pricing",
+          "url": "https://one.google.com/intl/en/about/google-ai-plans/",
+          "expectedHost": "one.google.com",
+          "claims": [
+            {
+              "field": "chat.pricing.google_ai_pro.usd_monthly",
+              "target": {
+                "file": "data/platforms/gemini.md",
+                "section": "Pricing",
+                "row": "Google AI Pro",
+                "column": "Price"
+              },
+              "baseline": "$19.99/mo"
+            }
+          ]
+        },
+        {
+          "id": "mac-support",
+          "kind": "support",
+          "url": "https://support.google.com/gemini/answer/17011627?hl=en",
+          "expectedHost": "support.google.com",
+          "claims": [
+            {
+              "field": "chat.platforms.macOS.available",
+              "target": {
+                "file": "data/platforms/gemini.md",
+                "feature": "Chat",
+                "section": "Platforms",
+                "row": "macOS",
+                "column": "Available"
+              },
+              "baseline": "\u2705"
+            },
+            {
+              "field": "chat.platforms.macOS.minimum_version",
+              "target": {
+                "file": "data/platforms/gemini.md",
+                "feature": "Chat",
+                "section": "Platforms",
+                "row": "macOS",
+                "column": "Notes"
+              },
+              "baseline": 15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reviewQueue": {
+    "status": "ready",
+    "pending": 0,
+    "owner": "Sam Rogers",
+    "capacityMinutesPerWeek": null,
+    "scope": "six-repo-portfolio"
+  },
+  "execution": {
+    "mode": "offline-replay",
+    "networkCalls": 0,
+    "originalCollectorFetchAttempts": 6,
+    "originalRunId": "product-monitor-e3edf6f7-e6bf-4a5f-b2ab-b3baa6623cf8",
+    "rawEvidenceDirectory": ".verification-reports/t08-pilot-2026-09-06",
+    "replayedAt": "2026-09-07T04:49:14.413Z"
+  },
+  "fullEvidenceReport": ".verification-reports/t08-corrected-replay-2026-09-06/report.json",
+  "validation": {
+    "offlineTests": 277,
+    "productMonitorTests": 39,
+    "ontology": "passed",
+    "claims": "passed",
+    "structuredData": "passed"
+  },
+  "initialOutputInvalidation": {
+    "reason": "Spark feature announcement and bundled benefit price were falsely mapped in the initial parser pass; fixed before publication and covered by regression fixtures.",
+    "receipt": ".verification-reports/t08-pilot-2026-09-06/invalid-output-notice.json"
+  }
+}

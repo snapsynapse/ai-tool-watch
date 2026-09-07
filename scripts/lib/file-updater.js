@@ -23,18 +23,17 @@ function getTodayISO() {
  * @returns {string|null} Updated content, or null if feature/property not found
  */
 function updateFeatureProperty(content, featureName, property, newValue) {
-    // Find the feature section
-    const featureRegex = new RegExp(
-        `(## ${escapeRegex(featureName)}\\n[\\s\\S]*?\\|\\s*${property}\\s*\\|\\s*)([^|\\n]*?)(\\s*\\|)`,
-        'i'
-    );
-
-    const match = content.match(featureRegex);
-    if (!match) {
-        return null;
-    }
-
-    return content.replace(featureRegex, `$1${newValue}$3`);
+    const headings = [...content.matchAll(/^## (.+)\r?$/gm)];
+    const matches = headings.filter(match => match[1].trim().toLowerCase() === featureName.toLowerCase());
+    if (matches.length !== 1) return null;
+    const start = matches[0].index;
+    const next = headings.find(match => match.index > start);
+    const end = next ? next.index : content.length;
+    const section = content.slice(start, end);
+    const row = new RegExp(`^(\\|\\s*${escapeRegex(property)}\\s*\\|\\s*)([^|\\r\\n]*?)(\\s*\\|[ \t]*\\r?)$`, 'gmi');
+    if ([...section.matchAll(row)].length !== 1) return null;
+    const updated = section.replace(row, (_, prefix, old, suffix) => `${prefix}${newValue}${suffix}`);
+    return content.slice(0, start) + updated + content.slice(end);
 }
 
 /**

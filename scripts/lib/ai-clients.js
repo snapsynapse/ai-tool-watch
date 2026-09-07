@@ -14,6 +14,103 @@ const PROVIDER_MODEL_MAP = {
 };
 
 /**
+ * A successful HTTP response that could not be interpreted as a completion.
+ * Keep the provider payload and receipt enumerable so cascade/report layers
+ * can retain them when they classify the provider attempt as an error.
+ */
+class ProviderResponseError extends Error {
+    constructor(provider, message, { raw = null, usageReceipt = null, status = 200 } = {}) {
+        super(message);
+        this.name = 'ProviderResponseError';
+        this.provider = provider;
+        this.status = status;
+        this.raw = raw;
+        this.usageReceipt = usageReceipt;
+    }
+}
+
+/**
+ * Return the provider usage fields without inventing values for fields that
+ * the provider did not send. The receipt is intentionally a small, stable
+ * record that can be retained independently from the provider response.
+ *
+ * @param {Object|null|undefined} data - Parsed provider response
+ * @param {string} [usageField='usage'] - Provider field containing usage
+ * @returns {{id: *, model: *, created: *, usage: *}}
+ */
+function createUsageReceipt(data, usageField = 'usage') {
+    return {
+        id: data?.id ?? null,
+        model: data?.model ?? null,
+        created: data?.created ?? null,
+        usage: data?.[usageField] ?? null
+    };
+}
+
+/**
+ * Parse a successful JSON response and emit its usage receipt before any
+ * provider-specific shape extraction. The logger receives one JSON line so
+ * the default logger writes an immediately consumable stdout record while
+ * tests and callers can inject a collector.
+ *
+ * @param {Response} response - Fetch response
+ * @param {Function} logger - Receipt logger
+ * @param {string} provider - Provider display name for parse errors
+ * @param {string} [usageField='usage'] - Provider field containing usage
+ * @returns {Promise<{data: Object, usageReceipt: Object}>}
+ */
+async function parseSuccessfulResponse(response, logger, provider, usageField = 'usage') {
+    let data;
+    try {
+        data = await response.json();
+    } catch (cause) {
+        const error = new ProviderResponseError(provider, `${provider} API returned invalid JSON`, {
+            raw: null,
+            usageReceipt: createUsageReceipt(null)
+        });
+        error.cause = cause;
+        throw error;
+    }
+
+    const usageReceipt = createUsageReceipt(data, usageField);
+    logger(JSON.stringify(usageReceipt));
+
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+        throw malformedResponseError(provider, data, usageReceipt);
+    }
+
+    return { data, usageReceipt };
+}
+
+/**
+ * Preserve the parsed response and receipt when a successful response cannot
+ * be interpreted as a provider completion.
+ *
+ * @param {string} provider - Provider display name
+ * @param {Object} raw - Parsed provider response
+ * @param {Object} usageReceipt - Parsed usage receipt
+ * @returns {Error}
+ */
+function malformedResponseError(provider, raw, usageReceipt) {
+    return new ProviderResponseError(
+        provider,
+        `${provider} API returned a malformed completion`,
+        { raw, usageReceipt }
+    );
+}
+
+/**
+ * @param {Object} options - Optional injectable dependencies
+ * @returns {{fetch: Function, logger: Function}}
+ */
+function resolveClientOptions(options = {}) {
+    return {
+        fetch: options.fetch || globalThis.fetch,
+        logger: options.logger || (line => console.log(line))
+    };
+}
+
+/**
  * Build the verification prompt for a feature
  * @param {Object} platform - Platform object
  * @param {Object} feature - Feature object
@@ -125,11 +222,12 @@ verdict on it explicitly.` : ''}`;
  * Gemini Flash client using Google AI Studio API
  */
 class GeminiClient {
-    constructor(apiKey) {
+    constructor(apiKey, options = {}) {
         this.apiKey = apiKey || process.env.GEMINI_API_KEY;
         this.name = 'gemini';
         this.displayName = 'Gemini Flash';
         this.provider = 'Google';
+        ({ fetch: this.fetch, logger: this.logger } = resolveClientOptions(options));
     }
 
     async verify(platform, feature, context = {}) {
@@ -142,7 +240,7 @@ class GeminiClient {
         const maxRetries = 3;
         let lastError;
         for (let attempt = 0; attempt < maxRetries; attempt++) {
-            const response = await fetch(
+            const response = await this.fetch(
                 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.apiKey}`,
                 {
                     method: 'POST',
@@ -177,8 +275,17 @@ class GeminiClient {
                 continue;
             }
 
-            const data = await response.json();
+            const { data, usageReceipt } = await parseSuccessfulResponse(
+                response,
+                this.logger,
+                this.displayName,
+                'usageMetadata'
+            );
             const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+            if (typeof text !== 'string' || !text) {
+                throw malformedResponseError(this.displayName, data, usageReceipt);
+            }
 
             // Extract grounding sources if available
             const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
@@ -190,7 +297,8 @@ class GeminiClient {
                 response: text,
                 sources,
                 hasSearchEvidence,
-                raw: data
+                raw: data,
+                usageReceipt
             };
         }
         throw new Error(`Gemini API error: 429 - rate limited after ${maxRetries} retries`);
@@ -201,11 +309,12 @@ class GeminiClient {
  * Perplexity client using Sonar API
  */
 class PerplexityClient {
-    constructor(apiKey) {
+    constructor(apiKey, options = {}) {
         this.apiKey = apiKey || process.env.PERPLEXITY_API_KEY;
         this.name = 'perplexity';
         this.displayName = 'Perplexity';
         this.provider = 'Perplexity AI';
+        ({ fetch: this.fetch, logger: this.logger } = resolveClientOptions(options));
     }
 
     async verify(platform, feature, context = {}) {
@@ -215,7 +324,7 @@ class PerplexityClient {
 
         const prompt = buildVerificationPrompt(platform, feature, context.claim);
 
-        const response = await fetch('https://api.perplexity.ai/chat/completions', {
+        const response = await this.fetch('https://api.perplexity.ai/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.apiKey}`,
@@ -243,8 +352,16 @@ class PerplexityClient {
             throw new Error(`Perplexity API error: ${response.status} - ${error}`);
         }
 
-        const data = await response.json();
+        const { data, usageReceipt } = await parseSuccessfulResponse(
+            response,
+            this.logger,
+            this.displayName
+        );
         const text = data.choices?.[0]?.message?.content || '';
+
+        if (typeof text !== 'string' || !text) {
+            throw malformedResponseError(this.displayName, data, usageReceipt);
+        }
         const citations = data.citations || [];
         const hasSearchEvidence = citations.length > 0;
 
@@ -253,7 +370,8 @@ class PerplexityClient {
             response: text,
             sources: citations,
             hasSearchEvidence,
-            raw: data
+            raw: data,
+            usageReceipt
         };
     }
 }
@@ -262,11 +380,12 @@ class PerplexityClient {
  * Grok client using xAI API (X/Twitter search)
  */
 class GrokClient {
-    constructor(apiKey) {
+    constructor(apiKey, options = {}) {
         this.apiKey = apiKey || process.env.XAI_API_KEY;
         this.name = 'grok';
         this.displayName = 'Grok (X/Twitter)';
         this.provider = 'xAI';
+        ({ fetch: this.fetch, logger: this.logger } = resolveClientOptions(options));
     }
 
     async verify(platform, feature, context = {}) {
@@ -277,7 +396,7 @@ class GrokClient {
         // Use X/Twitter-specific prompt for Grok
         const prompt = buildGrokPrompt(platform, feature, context.claim);
 
-        const response = await fetch('https://api.x.ai/v1/chat/completions', {
+        const response = await this.fetch('https://api.x.ai/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.apiKey}`,
@@ -305,8 +424,16 @@ class GrokClient {
             throw new Error(`Grok API error: ${response.status} - ${error}`);
         }
 
-        const data = await response.json();
+        const { data, usageReceipt } = await parseSuccessfulResponse(
+            response,
+            this.logger,
+            this.displayName
+        );
         const text = data.choices?.[0]?.message?.content || '';
+
+        if (typeof text !== 'string' || !text) {
+            throw malformedResponseError(this.displayName, data, usageReceipt);
+        }
 
         // Grok searches X/Twitter by design — if it returned content, it searched
         const hasSearchEvidence = text.length > 100;
@@ -316,7 +443,8 @@ class GrokClient {
             response: text,
             sources: [], // Grok doesn't provide structured citations
             hasSearchEvidence,
-            raw: data
+            raw: data,
+            usageReceipt
         };
     }
 }
@@ -325,11 +453,12 @@ class GrokClient {
  * Claude client using Anthropic API with web search
  */
 class ClaudeClient {
-    constructor(apiKey) {
+    constructor(apiKey, options = {}) {
         this.apiKey = apiKey || process.env.ANTHROPIC_API_KEY;
         this.name = 'claude';
         this.displayName = 'Claude';
         this.provider = 'Anthropic';
+        ({ fetch: this.fetch, logger: this.logger } = resolveClientOptions(options));
     }
 
     async verify(platform, feature, context = {}) {
@@ -339,7 +468,7 @@ class ClaudeClient {
 
         const prompt = buildVerificationPrompt(platform, feature, context.claim);
 
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const response = await this.fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST',
             headers: {
                 'x-api-key': this.apiKey,
@@ -367,7 +496,11 @@ class ClaudeClient {
             throw new Error(`Claude API error: ${response.status} - ${error}`);
         }
 
-        const data = await response.json();
+        const { data, usageReceipt } = await parseSuccessfulResponse(
+            response,
+            this.logger,
+            this.displayName
+        );
 
         // Extract text from content blocks
         let text = '';
@@ -392,12 +525,17 @@ class ClaudeClient {
             }
         }
 
+        if (typeof text !== 'string' || !text) {
+            throw malformedResponseError(this.displayName, data, usageReceipt);
+        }
+
         return {
             model: this.displayName,
             response: text,
             sources,
             hasSearchEvidence,
-            raw: data
+            raw: data,
+            usageReceipt
         };
     }
 }
@@ -440,5 +578,7 @@ module.exports = {
     getCascadeClients,
     buildVerificationPrompt,
     buildGrokPrompt,
-    PROVIDER_MODEL_MAP
+    PROVIDER_MODEL_MAP,
+    createUsageReceipt,
+    ProviderResponseError
 };

@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "revision": 14,
+  "reviewPolicy": {
+    "owner": "Sam Rogers",
+    "capacityMinutesPerWeek": null,
+    "scope": "six-repo-portfolio"
+  },
+  "sources": {
+    "product-monitor:copilot-changes": {
+      "id": "product-monitor:copilot-changes",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "copilot"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "covered",
+      "lastSuccessfulObservationAt": "2026-09-07T04:45:25.705Z",
+      "dueAt": "2026-09-14T04:45:25.705Z"
+    },
+    "product-monitor:copilot-pricing": {
+      "id": "product-monitor:copilot-pricing",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://microsoft.com/en-us/microsoft-copilot",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "copilot"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "degraded"
+    },
+    "product-monitor:copilot-entitlements": {
+      "id": "product-monitor:copilot-entitlements",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "copilot"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "degraded"
+    },
+    "product-monitor:release-notes": {
+      "id": "product-monitor:release-notes",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://gemini.google/release-notes/?hl=en",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "gemini"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "covered",
+      "lastSuccessfulObservationAt": "2026-09-07T04:45:25.705Z",
+      "dueAt": "2026-09-14T04:45:25.705Z"
+    },
+    "product-monitor:pricing": {
+      "id": "product-monitor:pricing",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://one.google.com/intl/en/about/google-ai-plans/",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "gemini"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "degraded"
+    },
+    "product-monitor:mac-support": {
+      "id": "product-monitor:mac-support",
+      "owner": "ai-tool-watch",
+      "authoritativeUrl": "https://support.google.com/gemini/answer/17011627?hl=en",
+      "sourceType": "official_primary",
+      "subjectIds": [
+        "gemini"
+      ],
+      "cadenceDays": 7,
+      "criticality": "standard",
+      "parserVersion": "product-monitor-v1",
+      "contentValidation": "required",
+      "collectionMode": "automated",
+      "coverageState": "covered",
+      "lastSuccessfulObservationAt": "2026-09-07T04:45:25.705Z",
+      "dueAt": "2026-09-14T04:45:25.705Z"
+    }
+  },
+  "observations": {
+    "obs_14127a5f2cf0c1a294d35d6a9c14562e6b7400e0357594ee090752968eb5f3e6": {
+      "sourceId": "product-monitor:copilot-changes",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": true,
+      "evidenceLinks": [
+        "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app"
+      ],
+      "rawContentHash": "6b5e71dff3582d21e2b84ca4f017e378ab51247f64fd3bed11d97f6b86848ee5",
+      "normalizedContentHash": "80c416c2fe051d5f2b30a2b3afca731ecbaea299838081f817c151115b9847d6",
+      "excerpt": "Updates to Copilot and the Microsoft Copilot app | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows more ... Devices Surface PC Accessories",
+      "locator": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+      "retrievedUrl": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+      "contentValidation": "valid",
+      "id": "obs_14127a5f2cf0c1a294d35d6a9c14562e6b7400e0357594ee090752968eb5f3e6"
+    },
+    "obs_5e21bf35001eaa120654906c1de52f0c8ee972e66e9d64a6d77ac2c1df0c413a": {
+      "sourceId": "product-monitor:copilot-pricing",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": false,
+      "evidenceLinks": [
+        "https://microsoft.com/en-us/microsoft-copilot"
+      ],
+      "rawContentHash": "46d6793234c3bb4c93e747bb6700f1a82685c6592bdf45f28bc1093841f72fb5",
+      "normalizedContentHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "excerpt": "Microsoft Copilot | AI Tools for Organizations This is the Trace Id: 6fbb8bcc4ae55f8900e188bd0ba19b0f Skip to main content Copilot Microsoft 365 Copilot Download Microsoft 365 Copilot app Microsoft Copilot Studio Microsoft Security Copilot Microsoft Copilot in Azure GitHub Copilo",
+      "locator": "https://microsoft.com/en-us/microsoft-copilot",
+      "failureReason": "Recognized Microsoft pricing page, but no configured plan claim was stated.",
+      "retrievedUrl": "https://www.microsoft.com/en-us/microsoft-copilot/organizations",
+      "contentValidation": "invalid",
+      "id": "obs_5e21bf35001eaa120654906c1de52f0c8ee972e66e9d64a6d77ac2c1df0c413a"
+    },
+    "obs_97f95a2ad0aec9f26312218c600ae881b20e46b07e9fc5d1aa561261afdd256f": {
+      "sourceId": "product-monitor:copilot-entitlements",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": false,
+      "evidenceLinks": [
+        "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365"
+      ],
+      "rawContentHash": "ffdb3f9e82343cf583c6f583f79991b729b982aeb8f0f99f44081152fdbafa90",
+      "normalizedContentHash": "80c416c2fe051d5f2b30a2b3afca731ecbaea299838081f817c151115b9847d6",
+      "excerpt": "What&#x27;s the difference between Microsoft Copilot (free) and Copilot in Microsoft 365 | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows",
+      "locator": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "failureReason": "Configured claims are missing or ambiguous",
+      "retrievedUrl": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "contentValidation": "invalid",
+      "id": "obs_97f95a2ad0aec9f26312218c600ae881b20e46b07e9fc5d1aa561261afdd256f"
+    },
+    "obs_83f1b662d5ee16dda596f1650c996a40f2b762a72a22d2e6cd67c095b3b3e82a": {
+      "sourceId": "product-monitor:release-notes",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": true,
+      "evidenceLinks": [
+        "https://gemini.google/release-notes/?hl=en"
+      ],
+      "rawContentHash": "5b403b9744a629bb093f9516928c19c322a89f3b3bc466d7b540dabeccd919fd",
+      "normalizedContentHash": "587b880598ad5ed04c34e7a13b60f3663c8e2bd0244e743f6dcb41c9acc47823",
+      "excerpt": "‎Gemini Apps’ release updates &amp; improvements Skip to main content For Students Features Gemini Live Image Generation Video Generation Music Generation Deep Research Gemini Spark Personal Intelligence Daily Brief Canvas Gemini in Chrome Explore Subscriptions What's New Gemini",
+      "locator": "https://gemini.google/release-notes/?hl=en",
+      "retrievedUrl": "https://gemini.google/us/release-notes/?hl=en",
+      "contentValidation": "valid",
+      "id": "obs_83f1b662d5ee16dda596f1650c996a40f2b762a72a22d2e6cd67c095b3b3e82a"
+    },
+    "obs_f236bd180d6165c0581788b2d08060081d0c4aa9a957c9b9716e73d634341946": {
+      "sourceId": "product-monitor:pricing",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": false,
+      "evidenceLinks": [
+        "https://one.google.com/intl/en/about/google-ai-plans/"
+      ],
+      "rawContentHash": "84fe791b56eba30311079e3104f340d56c464fd882b3537be38845f01c418340",
+      "normalizedContentHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "excerpt": "Google AI plans with Cloud Storage - Google One Students get Google AI Pro free for 1 year. Study smarter with higher access to Gemini, a 24/7 personal AI agent, and 5 TB of storage. See offers Close Skip to main content One Overview Google AI Plans &amp; Pricing Sign up One Over",
+      "locator": "https://one.google.com/intl/en/about/google-ai-plans/",
+      "failureReason": "no-qualified-usd-monthly-price",
+      "retrievedUrl": "https://one.google.com/intl/en/about/google-ai-plans/",
+      "contentValidation": "invalid",
+      "id": "obs_f236bd180d6165c0581788b2d08060081d0c4aa9a957c9b9716e73d634341946"
+    },
+    "obs_9ede2a8e84dbab33d57f37ba0837eed8a4bbdc4d20c463b816ed10a7c1d29f27": {
+      "sourceId": "product-monitor:mac-support",
+      "retrievedAt": "2026-09-07T04:45:25.705Z",
+      "retrievalStatus": "succeeded",
+      "assessmentKind": "primary_retrieval",
+      "parserVersion": "product-monitor-v1",
+      "coverageQualified": true,
+      "evidenceLinks": [
+        "https://support.google.com/gemini/answer/17011627?hl=en"
+      ],
+      "rawContentHash": "c67059c054632499968ea15ac5700a8187587012627a838bb4be12456a5da899",
+      "normalizedContentHash": "30bc2b13f1e2ee7393521c4ccfedcf094593f9e5990fdce747b452ba57a3dcda",
+      "excerpt": "Use the Gemini app on Mac - Gemini Apps Help Skip to main content Gemini Apps Help Sign in Google Help Help Center Community Gemini Apps Privacy Policy Terms of Service Submit feedback Send feedback on... This help content &amp; information General Help Center experience Close Ne",
+      "locator": "https://support.google.com/gemini/answer/17011627?hl=en",
+      "retrievedUrl": "https://support.google.com/gemini/answer/17011627?hl=en",
+      "contentValidation": "valid",
+      "id": "obs_9ede2a8e84dbab33d57f37ba0837eed8a4bbdc4d20c463b816ed10a7c1d29f27"
+    }
+  },
+  "findings": {},
+  "runs": {}
+}
