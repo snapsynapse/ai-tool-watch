@@ -208,3 +208,26 @@ test('CLI requires live authorization and writes a terminal receipt for a state-
     await fs.rm(root, { recursive: true, force: true });
   }
 });
+
+
+test('v2 source registration preserves immutable v1 definitions and observations', async () => {
+  const prior = state();
+  const legacyId = 'product-monitor:alpha-pricing';
+  core.registerSource(prior, {
+    id: legacyId, owner: 'ai-tool-watch', authoritativeUrl: 'https://alpha.example.test/legacy-pricing',
+    sourceType: 'official_primary', subjectIds: ['alpha'], cadenceDays: 7, criticality: 'standard',
+    parserVersion: 'product-monitor-v1', contentValidation: 'required', collectionMode: 'automated'
+  }, { now: NOW });
+  core.recordObservation(prior, legacyId, {
+    retrievedAt: NOW, retrievalStatus: 'error', assessmentKind: 'primary_retrieval', coverageQualified: false,
+    contentValidation: 'invalid', failureReason: 'Retained historical failure', locator: 'https://alpha.example.test/legacy-pricing'
+  }, { now: NOW });
+  const oldDefinition = JSON.stringify(prior.sources[legacyId]);
+  const oldObservations = JSON.stringify(prior.observations);
+  const { state: next, report } = await run({ state: prior });
+  assert.equal(report.requests, 6);
+  assert.equal(JSON.stringify(next.sources[legacyId]), oldDefinition);
+  assert.ok(next.sources['product-monitor-v2:alpha-pricing']);
+  const preservedIds = Object.keys(JSON.parse(oldObservations));
+  for (const id of preservedIds) assert.deepEqual(next.observations[id], JSON.parse(oldObservations)[id]);
+});

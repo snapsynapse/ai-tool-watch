@@ -1,0 +1,163 @@
+{
+  "verified_at": "2026-09-07T17:36:20.949035+00:00",
+  "artifact_sha256": "44887a3e39984b9e36ff3c4af300ccf03fdf03173ea0d66058c95168df62ba0b",
+  "reviewed_input_sha256": "a036735d1916cf96cf5849505a68ae67919512193c83e795fcd56c05c9286bee",
+  "source_revision": "1c00111599031a82c05276086841bfa6b731bc0a",
+  "artifact_file_count": 181,
+  "live_manifest_matches": true,
+  "routes": [
+    {
+      "path": "index.html",
+      "url": "https://aitool.watch/",
+      "final_url": "https://aitool.watch/",
+      "status": 200,
+      "sha256": "1ef0e197a094ac7d93a4cffef31528d19d4f6f7d1f0786a20063bdd6516b75c2",
+      "expected_sha256": "1ef0e197a094ac7d93a4cffef31528d19d4f6f7d1f0786a20063bdd6516b75c2",
+      "matches": true,
+      "bytes": 303004
+    },
+    {
+      "path": "implementations.html",
+      "url": "https://aitool.watch/implementations.html",
+      "final_url": "https://aitool.watch/implementations.html",
+      "status": 200,
+      "sha256": "f4433040e6cad8c370a3bb24b87d641675304331d7f531b154598718b6ebdf1f",
+      "expected_sha256": "f4433040e6cad8c370a3bb24b87d641675304331d7f531b154598718b6ebdf1f",
+      "matches": true,
+      "bytes": 456268
+    },
+    {
+      "path": "about.html",
+      "url": "https://aitool.watch/about.html",
+      "final_url": "https://aitool.watch/about.html",
+      "status": 200,
+      "sha256": "df0b4efcdaff7d03a40f4830213a5e64f5504f1863fd3470c18ca4f1d3deebb5",
+      "expected_sha256": "df0b4efcdaff7d03a40f4830213a5e64f5504f1863fd3470c18ca4f1d3deebb5",
+      "matches": true,
+      "bytes": 25679
+    },
+    {
+      "path": "api/v1/index.json",
+      "url": "https://aitool.watch/api/v1/index.json",
+      "final_url": "https://aitool.watch/api/v1/index.json",
+      "status": 200,
+      "sha256": "2a03d87a56fb7a4dcc785604dda78d6057c04d22160f259666f567235d4d0825",
+      "expected_sha256": "2a03d87a56fb7a4dcc785604dda78d6057c04d22160f259666f567235d4d0825",
+      "matches": true,
+      "bytes": 1576
+    },
+    {
+      "path": "api/v1/implementations.json",
+      "url": "https://aitool.watch/api/v1/implementations.json",
+      "final_url": "https://aitool.watch/api/v1/implementations.json",
+      "status": 200,
+      "sha256": "c7a23882c41334b4590b6ba4adf8b56bdc3104af47f699d505f7154ed2a24907",
+      "expected_sha256": "c7a23882c41334b4590b6ba4adf8b56bdc3104af47f699d505f7154ed2a24907",
+      "matches": true,
+      "bytes": 207627
+    },
+    {
+      "path": "api/v1/evidence.json",
+      "url": "https://aitool.watch/api/v1/evidence.json",
+      "final_url": "https://aitool.watch/api/v1/evidence.json",
+      "status": 200,
+      "sha256": "c65ed71211741a9a346b28678c5986c8b3d70e904499fe20190af9e3ff127bdc",
+      "expected_sha256": "c65ed71211741a9a346b28678c5986c8b3d70e904499fe20190af9e3ff127bdc",
+      "matches": true,
+      "bytes": 99894
+    },
+    {
+      "path": "api/v1/plan-entitlements.json",
+      "url": "https://aitool.watch/api/v1/plan-entitlements.json",
+      "final_url": "https://aitool.watch/api/v1/plan-entitlements.json",
+      "status": 200,
+      "sha256": "da1f7e46f195f271d76211a14a06119497e75a7f880b2da104d5802374956df3",
+      "expected_sha256": "da1f7e46f195f271d76211a14a06119497e75a7f880b2da104d5802374956df3",
+      "matches": true,
+      "bytes": 30684
+    },
+    {
+      "path": "agents.json",
+      "url": "https://aitool.watch/agents.json",
+      "final_url": "https://aitool.watch/agents.json",
+      "status": 200,
+      "sha256": "6e6ab54d9a0ba79bc5554ad5c4e759b94018466780be17a5029beda410f6c1d1",
+      "expected_sha256": "6e6ab54d9a0ba79bc5554ad5c4e759b94018466780be17a5029beda410f6c1d1",
+      "matches": true,
+      "bytes": 5304
+    },
+    {
+      "path": "llms.txt",
+      "url": "https://aitool.watch/llms.txt",
+      "final_url": "https://aitool.watch/llms.txt",
+      "status": 200,
+      "sha256": "983bb68cdb680449d43d1df99dd3f2c598d351bcf06a4dd0b014528c0d1dc40f",
+      "expected_sha256": "983bb68cdb680449d43d1df99dd3f2c598d351bcf06a4dd0b014528c0d1dc40f",
+      "matches": true,
+      "bytes": 4675
+    },
+    {
+      "path": "sitemap.xml",
+      "url": "https://aitool.watch/sitemap.xml",
+      "final_url": "https://aitool.watch/sitemap.xml",
+      "status": 200,
+      "sha256": "b0da62c4972596fdd111795a2323f3d784ebe2cd3d4c01ec78cc6d439ce0aaff",
+      "expected_sha256": "b0da62c4972596fdd111795a2323f3d784ebe2cd3d4c01ec78cc6d439ce0aaff",
+      "matches": true,
+      "bytes": 3610
+    },
+    {
+      "path": "robots.txt",
+      "url": "https://aitool.watch/robots.txt",
+      "final_url": "https://aitool.watch/robots.txt",
+      "status": 200,
+      "sha256": "4aca104465f32f4209118d0eebabcf2035d02d3e6f4ca8b46720426ba9c69bdc",
+      "expected_sha256": "4aca104465f32f4209118d0eebabcf2035d02d3e6f4ca8b46720426ba9c69bdc",
+      "matches": true,
+      "bytes": 538
+    },
+    {
+      "path": ".well-known/security.txt",
+      "url": "https://aitool.watch/.well-known/security.txt",
+      "final_url": "https://aitool.watch/.well-known/security.txt",
+      "status": 200,
+      "sha256": "d8445ab09ae6869d0d6eec1f3e73540b1f7a4479c270903bdbbfd15860bc1c5c",
+      "expected_sha256": "d8445ab09ae6869d0d6eec1f3e73540b1f7a4479c270903bdbbfd15860bc1c5c",
+      "matches": true,
+      "bytes": 282
+    }
+  ],
+  "passed": true,
+  "scope": "T12 hosted publication acceptance; no source freshness or notification acceptance implied",
+  "pr": "https://github.com/snapsynapse/ai-tool-watch/pull/626",
+  "reviewed_pr_head": "747793d68473481f570e364939a1cb160991ef99",
+  "pr_checks_run": "https://github.com/snapsynapse/ai-tool-watch/actions/runs/34147969707",
+  "production_run": "https://github.com/snapsynapse/ai-tool-watch/actions/runs/34148067413",
+  "source_commit": "1a255ce8864272fec95b8d9ea73599261e83b260",
+  "source_tree": "0c34c7bb99f213214f021ccd7662b4601e27cfb3",
+  "committed_manifest_matches_download": true,
+  "uploaded_artifact": {
+    "id": 10028374969,
+    "name": "reviewed-publication",
+    "archive_sha256": "af1c34cffdd58165aa60d70c21b8f0c35f93698fc40a09433e5892a82677aba0"
+  },
+  "targets": {
+    "pages": {
+      "deployment": "success",
+      "verified_artifact_sha256": "44887a3e39984b9e36ff3c4af300ccf03fdf03173ea0d66058c95168df62ba0b"
+    },
+    "ftp": {
+      "deployment": "success",
+      "verified_artifact_sha256": "44887a3e39984b9e36ff3c4af300ccf03fdf03173ea0d66058c95168df62ba0b"
+    }
+  },
+  "local_gate": {
+    "offline_tests": 286,
+    "claim_validations": 88
+  },
+  "limitations": [
+    "Canonical live HTTP acceptance does not establish a separately addressable FTP origin.",
+    "Independent missed-run monitoring and the 14-day observation window remain unaccepted.",
+    "This receipt predates the subsequently approved Copilot source correction."
+  ]
+}

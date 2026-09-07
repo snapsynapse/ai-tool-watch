@@ -3,7 +3,7 @@ id: copilot
 name: Microsoft Copilot
 provider: microsoft
 record_source: data/platforms/copilot.md
-pricing_page: https://www.microsoft.com/en-us/microsoft-copilot
+pricing_page: https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals
 default_surfaces:
   - web
   - desktop

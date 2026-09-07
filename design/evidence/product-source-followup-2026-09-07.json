@@ -1,0 +1,93 @@
+{
+  "mode": "hash_verified_offline_replay",
+  "network_requests": 0,
+  "retained_fetch_receipts": 6,
+  "original_live_report": "product-monitor-ddf4e5ad-8d22-4eea-8dc9-6cc088b772d8",
+  "replay_id": "product-monitor-1eb0f46d-64b5-4fb3-80b8-b2946894e309",
+  "status": "degraded",
+  "proposals": 0,
+  "sources": [
+    {
+      "id": "product-monitor-v2:copilot-changes",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app",
+      "status": "covered",
+      "provenClaims": 1,
+      "expectedClaims": 1,
+      "unprovenFields": [],
+      "rawContentHash": "65538d0d99eeb5f18b4e697173770aebd4d398d7600814adba143c3041399404"
+    },
+    {
+      "id": "product-monitor-v2:copilot-pricing",
+      "url": "https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals",
+      "status": "unavailable",
+      "provenClaims": 0,
+      "expectedClaims": 2,
+      "unprovenFields": [
+        "copilot.pricing.microsoft_365_premium.price",
+        "copilot.pricing.copilot_pro.lifecycle"
+      ],
+      "reason": "Copilot Pro lifecycle is unassessed; ceased new sales or a missing offer does not establish existing-subscription or support-end status.",
+      "rawContentHash": "b3304353150cdf547119f2ad0bce033896751b635ce0c2fcd0636e0c168a36a4"
+    },
+    {
+      "id": "product-monitor-v2:copilot-entitlements",
+      "url": "https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot",
+      "status": "covered",
+      "provenClaims": 2,
+      "expectedClaims": 2,
+      "unprovenFields": [],
+      "rawContentHash": "b4ee26bb99ce878384c93caad22f5aa4a562fb0fa9738926451c3f378b71ec8c"
+    },
+    {
+      "id": "product-monitor-v2:release-notes",
+      "url": "https://gemini.google/release-notes/?hl=en",
+      "status": "covered",
+      "provenClaims": 1,
+      "expectedClaims": 1,
+      "unprovenFields": [],
+      "rawContentHash": "5a1957fbe2ad4efb04a9477fc459307843d6d05011e2554cfa088aa1b73d88c8"
+    },
+    {
+      "id": "product-monitor-v2:pricing",
+      "url": "https://one.google.com/intl/en/about/google-ai-plans/",
+      "status": "unavailable",
+      "provenClaims": 0,
+      "expectedClaims": 1,
+      "unprovenFields": [
+        "chat.pricing.google_ai_pro.usd_monthly"
+      ],
+      "reason": "no-qualified-usd-monthly-price",
+      "rawContentHash": "532f255d1ae47b67d4766012316cf39940a0cdb9c9d7be3f7c14d621bc655b6c"
+    },
+    {
+      "id": "product-monitor-v2:mac-support",
+      "url": "https://support.google.com/gemini/answer/17011627?hl=en",
+      "status": "covered",
+      "provenClaims": 2,
+      "expectedClaims": 2,
+      "unprovenFields": [],
+      "rawContentHash": "9cf77f167e9885dd15ad53f5aeb7ea8750fdcad0806a84efac1cc4b72ec21e58"
+    }
+  ],
+  "date": "2026-09-07",
+  "human_content_acceptance": "Sam Rogers explicitly approved the five-claim correction packet in this session.",
+  "live_fetch_attempts": 6,
+  "paid_provider_calls": 0,
+  "initial_v2_live_coverage": {
+    "proven": 5,
+    "configured": 9
+  },
+  "corrected_replay_coverage": {
+    "proven": 6,
+    "configured": 9
+  },
+  "prior_definitions_observations_findings_preserved": true,
+  "checked_verified_dates_changed": false,
+  "local_raw_evidence_directory": ".verification-reports/t08-followup-2026-09-07/",
+  "pre_fetch_failure": "Initial run rejected incompatible immutable source definitions before any fetch; v2 namespacing corrected this without rewriting prior state.",
+  "remaining_gaps": [
+    "Microsoft monthly price exists only in a hidden inactive tab in the retained response; visible annual price is not monthly evidence.",
+    "Copilot Pro lifecycle requires multiple sources; closed new sales does not establish ended support.",
+    "Google monthly price remains client-rendered in the configured source."
+  ]
+}

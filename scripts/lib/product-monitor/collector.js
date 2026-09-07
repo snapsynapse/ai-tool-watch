@@ -6,7 +6,7 @@ const core = require('../freshness-contract');
 const { visibleText } = require('./text');
 const { fetchPage } = require('./fetch');
 const ROOT = path.resolve(__dirname, '../../..');
-const VERSION = 'product-monitor-v1';
+const VERSION = 'product-monitor-v2';
 const canonical = v => Array.isArray(v) ? v.map(canonical) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canonical(v[k])])) : v;
 const hash = v => crypto.createHash('sha256').update(JSON.stringify(canonical(v))).digest('hex');
 const compact = s => String(s).replace(/\s+/g, ' ').trim();
@@ -48,7 +48,9 @@ async function collect({ products, state = core.emptyState({ reviewPolicy: { own
     core.validateState(state, { now });
     const report = { id:`product-monitor-${crypto.randomUUID()}`, startedAt:now, status:'running', requests:0, maxRequests, paidProviderCalls:0, sources:[], proposals:[], reviewOwner:state.reviewPolicy.owner, scope:'Two products, three fixed source families each; explicit configured claims only.', configuration:products.map(p => p.config) };
     for (const product of products) for (const source of product.config.sources) {
-        const id = `product-monitor:${source.id}`;
+        // Source definitions are immutable. A parser/source revision gets a new
+        // namespace so old observations and pending findings remain intact.
+        const id = `${VERSION}:${source.id}`;
         core.registerSource(state, { id, owner:'ai-tool-watch', authoritativeUrl:source.url, sourceType:'official_primary', subjectIds:[product.config.id], cadenceDays:7, criticality:'standard', parserVersion:VERSION, contentValidation:'required', collectionMode:'automated' }, { now });
         const summary = { product:product.config.id, id, kind:source.kind, url:source.url, status:'running', expectedClaims:source.claims.length, provenClaims:0 };
         report.sources.push(summary);
