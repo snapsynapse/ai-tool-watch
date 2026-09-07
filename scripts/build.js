@@ -4511,7 +4511,7 @@ function generateLlmsTxt(ontologyData) {
 
 A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
 
-Maintained by PAICE.work. Updated weekly via multi-model verification cascade.
+Maintained by PAICE.work. Updated twice weekly via multi-model verification cascade.
 
 ## What this site covers
 
@@ -4613,7 +4613,7 @@ function generateAgentsJson(ontologyData) {
         schema_version: '1.0',
         name: 'ai-tool-watch',
         display_name: DASHBOARD_TITLE,
-        description: `A structured, version-controlled reference tracking ${capCount} AI capabilities across ${prodCount} products with ${implCount} implementations. Updated weekly via multi-model verification cascade.`,
+        description: `A structured, version-controlled reference tracking ${capCount} AI capabilities across ${prodCount} products with ${implCount} implementations. Updated twice weekly via multi-model verification cascade.`,
         url: SITE_URL,
         repository: REPO_URL,
         license: 'MIT',
@@ -4627,7 +4627,7 @@ function generateAgentsJson(ontologyData) {
             description: 'Read-only access to AI capability, product, and implementation data with search and comparison support.'
         },
         data_freshness: {
-            update_frequency: 'weekly',
+            update_frequency: 'twice_weekly',
             verification_method: 'Multi-model cascade (Gemini, Perplexity, Grok, Claude)',
             freshness_fields: ['verified', 'checked', 'launched'],
             cache_ttl_hours: 24

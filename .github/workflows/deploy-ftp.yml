@@ -1,17 +1,19 @@
 name: Deploy to PAICE.work
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: '0 1 * * 1,4'  # 6pm Pacific (Mon & Thu)
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      artifact-name:
+        required: true
+        type: string
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Checkout
+      - name: Checkout verifier
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -19,8 +21,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build dashboard
-        run: node scripts/build.js
+      - name: Download reviewed publication artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: publication
+
+      - name: Verify downloaded publication artifact
+        run: node scripts/verify-publication-manifest.js publication
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -28,5 +36,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: ./docs/
+          local-dir: ./publication/
           server-dir: /

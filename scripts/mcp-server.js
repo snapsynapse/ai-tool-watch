@@ -21,7 +21,9 @@ const path = require('path');
 // Data loading
 // ---------------------------------------------------------------------------
 
-const DATA_DIR = path.join(__dirname, '..', 'docs', 'api', 'v1');
+// A validator can point this read-only server at the exact staged artifact.
+// Production keeps the generated docs API as its default input.
+const DATA_DIR = process.env.AI_TOOL_WATCH_DATA_DIR || path.join(__dirname, '..', 'docs', 'api', 'v1');
 
 function loadData() {
     const data = {};

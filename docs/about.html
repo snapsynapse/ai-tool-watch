@@ -240,23 +240,26 @@
 
 <h2>Deployment</h2>
 
-<p>The site auto-deploys via GitHub Actions on every push to <code>main</code> and on a scheduled rebuild every Monday and Thursday at 6pm Pacific (1am UTC).</p>
+<p>The site prepares and deploys one reviewed artifact on every push to <code>main</code> and on its Monday/Thursday scheduled run. Pull requests validate the source tree and prepare the artifact but do not deploy it.</p>
 
 <h3>How it works</h3>
 
-<p>1. <strong>Build job</strong> (<code>.github/workflows/build.yml</code>)</p>
-<p>   - Runs <code>node scripts/build.js</code> to regenerate all pages under <code>docs/</code></p>
-<p>   - If output changed, commits it back to <code>main</code> with <code>[skip ci]</code> to prevent loops</p>
-<p>   - Runs on pushes, PRs (validate only, no commit), and the Mon/Thu schedule</p>
+<p>1. <strong>Validate and prepare jobs</strong> (<code>.github/workflows/build.yml</code>)</p>
+<p>   - Validates the committed source/evidence tree, then runs <code>node scripts/prepare-publication.js</code></p>
+<p>   - Synchronizes canonical evidence, generates <code>docs/</code>, validates the generated site and a human/API/MCP fixture, and writes <code>docs/publication-manifest.json</code></p>
+<p>   - If the scheduled or push run changes canonical inputs or generated output, commits the scoped source and <code>docs/</code> paths with <code>[skip ci]</code></p>
+<p>   - Uploads the resulting <code>reviewed-publication</code> artifact, including hidden files</p>
 
 <p>2. <strong>Deploy job</strong> (same workflow)</p>
-<p>   - Uploads <code>docs/</code> folder to GitHub Pages</p>
+<p>   - Downloads and verifies the reviewed artifact in a fresh directory before uploading it to GitHub Pages</p>
 <p>   - Runs on pushes to <code>main</code> and scheduled builds, not PRs</p>
 
 <p>3. <strong>FTP deploy</strong> (<code>.github/workflows/deploy-ftp.yml</code>)</p>
-<p>   - Parallel deployment to aitool.watch via locked FTP</p>
-<p>   - Same Mon/Thu schedule plus push-to-main and manual dispatch</p>
+<p>   - Reuses the same reviewed artifact, verifies it in a fresh directory, then deploys it to https://aitool.watch/ via FTP</p>
+<p>   - Runs in parallel with the GitHub Pages deployment on push-to-main and scheduled runs</p>
 <p>   - Requires <code>FTP_HOST</code>, <code>FTP_USER</code>, <code>FTP_PASS</code> secrets</p>
+
+<p>The artifact boundary is local and CI evidence only. It does not establish a hosted deployment, direct-email delivery, or independent missed-run monitoring.</p>
 
 <h3>GitHub Pages setup</h3>
 

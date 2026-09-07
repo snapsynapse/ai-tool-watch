@@ -113,7 +113,7 @@ This project solves it with an ontology: 18 vendor-neutral capabilities ("speak 
 
 ### The staleness problem
 
-A hand-maintained comparison table is accurate on the day it's published and progressively less accurate every day after. The only sustainable approach for a fast-moving domain is automated verification. This project runs a weekly multi-model AI cascade that checks every tracked feature against external reality, flags discrepancies, and creates work items for human review. The data doesn't just sit there — it actively resists its own decay.
+A hand-maintained comparison table is accurate on the day it's published and progressively less accurate every day after. The only sustainable approach for a fast-moving domain is automated verification. This project runs a twice-weekly multi-model AI cascade that checks every tracked feature against external reality, flags discrepancies, and creates work items for human review. The data doesn't just sit there — it actively resists its own decay.
 
 ### The trust problem
 

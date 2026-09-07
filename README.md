@@ -145,23 +145,26 @@ Data format: [data/_schema.md](data/_schema.md). Ontology schema: [design/SCHEMA
 
 ## Deployment
 
-The site auto-deploys via GitHub Actions on every push to `main` and on a scheduled rebuild every Monday and Thursday at 6pm Pacific (1am UTC).
+The site prepares and deploys one reviewed artifact on every push to `main` and on its Monday/Thursday scheduled run. Pull requests validate the source tree and prepare the artifact but do not deploy it.
 
 ### How it works
 
-1. **Build job** (`.github/workflows/build.yml`)
-   - Runs `node scripts/build.js` to regenerate all pages under `docs/`
-   - If output changed, commits it back to `main` with `[skip ci]` to prevent loops
-   - Runs on pushes, PRs (validate only, no commit), and the Mon/Thu schedule
+1. **Validate and prepare jobs** (`.github/workflows/build.yml`)
+   - Validates the committed source/evidence tree, then runs `node scripts/prepare-publication.js`
+   - Synchronizes canonical evidence, generates `docs/`, validates the generated site and a human/API/MCP fixture, and writes `docs/publication-manifest.json`
+   - If the scheduled or push run changes canonical inputs or generated output, commits the scoped source and `docs/` paths with `[skip ci]`
+   - Uploads the resulting `reviewed-publication` artifact, including hidden files
 
 2. **Deploy job** (same workflow)
-   - Uploads `docs/` folder to GitHub Pages
+   - Downloads and verifies the reviewed artifact in a fresh directory before uploading it to GitHub Pages
    - Runs on pushes to `main` and scheduled builds, not PRs
 
 3. **FTP deploy** (`.github/workflows/deploy-ftp.yml`)
-   - Parallel deployment to aitool.watch via locked FTP
-   - Same Mon/Thu schedule plus push-to-main and manual dispatch
+   - Reuses the same reviewed artifact, verifies it in a fresh directory, then deploys it to https://aitool.watch/ via FTP
+   - Runs in parallel with the GitHub Pages deployment on push-to-main and scheduled runs
    - Requires `FTP_HOST`, `FTP_USER`, `FTP_PASS` secrets
+
+The artifact boundary is local and CI evidence only. It does not establish a hosted deployment, direct-email delivery, or independent missed-run monitoring.
 
 ### GitHub Pages setup
 

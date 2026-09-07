@@ -13,8 +13,7 @@
  * directly beside it, plus time-bound wording ("temporary", "promotional")
  * that has outlived its verification date.
  *
- * Origin: handoffs/2026-08-16-managed-claim-markers.md (design 1,
- * cross-check). Pattern adapted from obligation-first's staleClaims().
+ * Pattern adapted from obligation-first's staleClaims().
  */
 
 'use strict';

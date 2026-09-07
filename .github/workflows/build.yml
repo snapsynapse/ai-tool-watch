@@ -1,7 +1,7 @@
 name: Build and Deploy
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   push:
@@ -33,15 +33,18 @@ jobs:
       - name: Validate ontology
         run: node scripts/validate-ontology.js
 
-      # Non-blocking for its first cycle (handoff 2026-08-16); drop
-      # continue-on-error once it has run clean on a scheduled rebuild.
+      - name: Test publication and freshness contracts
+        run: node scripts/test-offline.js
+
+      # The scheduled trial passed all 88 claims on 2026-09-07.
       - name: Validate talking-point claims
         run: node scripts/validate-claims.js
-        continue-on-error: true
 
-  build:
+  prepare-publication:
     needs: validate
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -54,19 +57,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Sync evidence records
-        run: node scripts/sync-evidence.js
-
-      - name: Build dashboard
-        run: node scripts/build.js
-
-      - name: Validate structured data
-        run: node scripts/validate-structured-data.js
+      - name: Prepare reviewed publication artifact
+        run: node scripts/prepare-publication.js
 
       - name: Check for changes
         id: changes
         run: |
-          if [[ -n $(git status docs/ --porcelain) ]]; then
+          if [[ -n $(git status --porcelain -- data/platforms/ data/watchlist/ data/evidence/index.json docs/) ]]; then
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
@@ -75,16 +72,31 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/
+          git add data/platforms/ data/watchlist/ data/evidence/index.json docs/
           git commit -m "Rebuild dashboard [skip ci]"
           git push origin HEAD:${{ github.ref_name }}
 
+      - name: Upload reviewed publication artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-publication
+          path: docs/
+          include-hidden-files: true
+          if-no-files-found: error
+
+      - name: Record source and artifact receipt
+        run: |
+          echo "source_commit=$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo "source_tree=$(git rev-parse HEAD^{tree})" >> "$GITHUB_STEP_SUMMARY"
+          node -e "const m=require('./docs/publication-manifest.json'); console.log('reviewed_input_sha256=' + m.reviewed_input_sha256); console.log('artifact_sha256=' + m.artifact_sha256)" >> "$GITHUB_STEP_SUMMARY"
+
   deploy:
-    needs: build
+    needs: prepare-publication
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pages: write
       id-token: write
 
@@ -93,10 +105,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
+      - name: Checkout verifier
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ref: main
+          node-version: '20'
+
+      - name: Download reviewed publication artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: reviewed-publication
+          path: publication
+
+      - name: Verify downloaded publication artifact
+        run: node scripts/verify-publication-manifest.js publication
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -104,8 +128,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: publication
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-ftp:
+    needs: prepare-publication
+    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/deploy-ftp.yml
+    with:
+      artifact-name: reviewed-publication
+    secrets: inherit
