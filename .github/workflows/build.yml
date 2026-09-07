@@ -33,11 +33,12 @@ jobs:
       - name: Validate ontology
         run: node scripts/validate-ontology.js
 
-      # Non-blocking for its first cycle (handoff 2026-08-16); drop
-      # continue-on-error once it has run clean on a scheduled rebuild.
+      - name: Test publication and freshness contracts
+        run: node --test tests/*.test.js
+
+      # The scheduled trial passed all 88 claims on 2026-09-07.
       - name: Validate talking-point claims
         run: node scripts/validate-claims.js
-        continue-on-error: true
 
   prepare-publication:
     needs: validate
@@ -87,7 +88,7 @@ jobs:
         run: |
           echo "source_commit=$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
           echo "source_tree=$(git rev-parse HEAD^{tree})" >> "$GITHUB_STEP_SUMMARY"
-          node -e "const m=require('./docs/publication-manifest.json'); console.log('artifact_sha256=' + m.artifact_sha256)" >> "$GITHUB_STEP_SUMMARY"
+          node -e "const m=require('./docs/publication-manifest.json'); console.log('reviewed_input_sha256=' + m.reviewed_input_sha256); console.log('artifact_sha256=' + m.artifact_sha256)" >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
     needs: prepare-publication

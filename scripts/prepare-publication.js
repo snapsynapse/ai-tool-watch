@@ -14,6 +14,7 @@ const DOCS = path.join(ROOT, 'docs');
 const steps = [
     ['Sync canonical evidence', 'scripts/sync-evidence.js'],
     ['Validate changed source and evidence tree', 'scripts/validate-ontology.js'],
+    ['Validate talking-point claims', 'scripts/validate-claims.js'],
     ['Generate publication artifact', 'scripts/build.js'],
     ['Validate generated structured data', 'scripts/validate-structured-data.js'],
     ['Validate human, API, and MCP publication coherence', 'scripts/validate-publication.js']
@@ -24,22 +25,33 @@ function run(label, script) {
     if (result.status !== 0) throw new Error(`${label} failed`);
 }
 
+function isDesktopMetadata(name) {
+    return name === '.DS_Store' || name === 'Thumbs.db' || name.startsWith('._');
+}
+
 function files(dir) {
     return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
         const full = path.join(dir, entry.name);
+        if (entry.isSymbolicLink()) throw new Error(`publication input contains symlink ${full}`);
         return entry.isDirectory() ? files(full) : [full];
     });
 }
 
-function sourceCandidate() {
+function sourceCandidate(root = ROOT) {
     // All canonical data and generator code that the reviewed build consumes.
     // Operational run receipts are intentionally outside this digest.
-    const paths = [path.join(ROOT, 'data'), path.join(ROOT, 'scripts'), path.join(ROOT, 'README.md')];
-    const entries = paths.flatMap(item => (fs.statSync(item).isDirectory() ? files(item) : [item]).map(file => ({
-        path: path.relative(ROOT, file).replace(/\\/g, '/'),
+    const paths = [path.join(root, 'data'), path.join(root, 'scripts'), path.join(root, 'README.md')];
+    const entries = paths.flatMap(item => (fs.statSync(item).isDirectory() ? files(item) : [item]).filter(file => !isDesktopMetadata(path.basename(file))).map(file => ({
+        path: path.relative(root, file).replace(/\\/g, '/'),
         sha256: crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
     }))).sort((a, b) => a.path.localeCompare(b.path));
     return crypto.createHash('sha256').update(JSON.stringify(entries)).digest('hex');
+}
+
+function removePublicationMetadata(docs = DOCS) {
+    for (const file of files(docs)) {
+        if (isDesktopMetadata(path.basename(file))) fs.unlinkSync(file);
+    }
 }
 
 function manifest() {
@@ -60,11 +72,17 @@ function manifest() {
     console.log(`Prepared reviewed publication artifact ${artifactSha256} (${entries.length} files).`);
 }
 
-try {
-    steps.forEach(([label, script]) => run(label, script));
-    manifest();
-    run('Validate publication artifact manifest', 'scripts/verify-publication-manifest.js');
-} catch (error) {
-    console.error(`Publication preparation failed: ${error.message}`);
-    process.exitCode = 1;
+function main() {
+    try {
+        steps.forEach(([label, script]) => run(label, script));
+        removePublicationMetadata();
+        manifest();
+        run('Validate publication artifact manifest', 'scripts/verify-publication-manifest.js');
+    } catch (error) {
+        console.error(`Publication preparation failed: ${error.message}`);
+        process.exitCode = 1;
+    }
 }
+
+if (require.main === module) main();
+module.exports = { sourceCandidate, removePublicationMetadata };

@@ -44,3 +44,27 @@ test('reviewed publication verifier rejects an unmanifested artifact file', () =
         fs.rmSync(fixture, { recursive: true, force: true });
     }
 });
+
+test('desktop metadata cannot enter publication or change its reviewed-input identity', () => {
+    const { sourceCandidate, removePublicationMetadata } = require('../scripts/prepare-publication');
+    const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'ai-tool-watch-metadata-'));
+    try {
+        for (const dir of ['data', 'scripts', 'docs/assets', 'docs/.well-known']) fs.mkdirSync(path.join(fixture, dir), { recursive: true });
+        fs.writeFileSync(path.join(fixture, 'README.md'), 'reviewed source');
+        fs.writeFileSync(path.join(fixture, 'data/claim.md'), 'accepted claim');
+        const baseline = sourceCandidate(fixture);
+        fs.writeFileSync(path.join(fixture, 'data/.DS_Store'), 'local metadata');
+        assert.equal(sourceCandidate(fixture), baseline);
+        for (const file of ['.DS_Store', 'assets/._logo.png', 'assets/Thumbs.db', '.nojekyll', '.well-known/security.txt']) {
+            fs.writeFileSync(path.join(fixture, 'docs', file), file);
+        }
+        removePublicationMetadata(path.join(fixture, 'docs'));
+        for (const file of ['.DS_Store', 'assets/._logo.png', 'assets/Thumbs.db']) assert.equal(fs.existsSync(path.join(fixture, 'docs', file)), false);
+        for (const file of ['.nojekyll', '.well-known/security.txt']) assert.equal(fs.existsSync(path.join(fixture, 'docs', file)), true);
+        assert.equal(fs.existsSync(path.join(fixture, 'data/.DS_Store')), true);
+        fs.writeFileSync(path.join(fixture, 'data/claim.md'), 'changed claim');
+        assert.notEqual(sourceCandidate(fixture), baseline);
+    } finally {
+        fs.rmSync(fixture, { recursive: true, force: true });
+    }
+});

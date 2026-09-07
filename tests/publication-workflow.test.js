@@ -33,3 +33,11 @@ test('only preparation can write, and it stages canonical evidence with its docs
     assert.match(prepare, /git status --porcelain -- data\/platforms\/ data\/watchlist\/ data\/evidence\/index\.json docs\//);
     assert.match(prepare, /git add data\/platforms\/ data\/watchlist\/ data\/evidence\/index\.json docs\//);
 });
+
+test('claim validation blocks preparation and deployment after the scheduled trial', () => {
+    const validate = build.slice(build.indexOf('  validate:\n'), build.indexOf('  prepare-publication:\n'));
+    assert.match(validate, /node scripts\/validate-claims\.js/);
+    assert.doesNotMatch(validate, /continue-on-error/);
+    assert.match(build, /prepare-publication:\n\s+needs: validate/);
+    assert.match(build, /reviewed_input_sha256=/);
+});
