@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "revision": 0,
+  "reviewPolicy": { "owner": null, "capacityMinutesPerWeek": null, "scope": "six-repo-portfolio" },
+  "sources": {},
+  "observations": {},
+  "findings": {},
+  "runs": {}
+}

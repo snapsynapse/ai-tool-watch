@@ -115,6 +115,8 @@ function buildInput(env = process.env) {
         cliHealthStatus: typeof healthDocument.value?.status === 'string' ? healthDocument.value.status : 'missing',
         downstreamOutcomes: {
             args: env.ARGS_OUTCOME,
+            stateCommit: env.STATE_COMMIT_OUTCOME,
+            statePush: env.STATE_PUSH_OUTCOME,
             syncEvidence: env.SYNC_EVIDENCE_OUTCOME,
             validateOntology: env.VALIDATE_ONTOLOGY_OUTCOME,
             validateStructuredData: env.VALIDATE_STRUCTURED_DATA_OUTCOME,
@@ -142,6 +144,8 @@ function finalize(env = process.env) {
         steps: {
             initialize: outcome(input.initializeOutcome),
             args: outcome(input.downstreamOutcomes.args),
+            stateCommit: outcome(input.downstreamOutcomes.stateCommit),
+            statePush: outcome(input.downstreamOutcomes.statePush),
             syncEvidence: outcome(input.downstreamOutcomes.syncEvidence),
             validateOntology: outcome(input.downstreamOutcomes.validateOntology),
             validateStructuredData: outcome(input.downstreamOutcomes.validateStructuredData),

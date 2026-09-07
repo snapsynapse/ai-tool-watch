@@ -115,3 +115,29 @@ test('workflow preserves schedule, uses safe array argv, and uploads evidence be
     assert.match(workflow, /if: always\(\)\n\s*uses: actions\/upload-artifact@v4/);
     assert.ok(workflow.indexOf('name: Upload verification report') < workflow.indexOf('name: Enforce terminal verification status'));
 });
+
+test('state retention runs after failed verification, stages only state, and reaches finalization', () => {
+    const stateCommit = workflow.match(/- name: Commit durable review state[\s\S]*?(?=\n\s*- name: Push durable review state)/);
+    const statePush = workflow.match(/- name: Push durable review state[\s\S]*?(?=\n\s*# Exit code)/);
+    assert.ok(stateCommit, 'missing durable state commit step');
+    assert.ok(statePush, 'missing durable state push step');
+    assert.ok(workflow.indexOf('name: Run feature verification') < workflow.indexOf('name: Commit durable review state'));
+    assert.ok(workflow.indexOf('name: Push durable review state') < workflow.indexOf('name: Sync derived evidence'));
+    assert.match(stateCommit[0], /if: always\(\) && steps\.args\.outcome == 'success' && steps\.args\.outputs\.dry_run == 'false'/);
+    assert.match(stateCommit[0], /if \[ ! -f "\$state_file" \]/);
+    assert.match(stateCommit[0], /validateState/);
+    assert.match(stateCommit[0], /git add -- "\$state_file"/);
+    assert.match(stateCommit[0], /Refusing to commit anything except \$state_file/);
+    assert.doesNotMatch(stateCommit[0], /git add data\/platforms\/ data\/watchlist/);
+    assert.match(statePush[0], /if: always\(\) && steps\.state_commit\.outputs\.committed == 'true'/);
+    assert.match(statePush[0], /git push/);
+    assert.match(workflow, /STATE_COMMIT_OUTCOME: \$\{\{ steps\.state_commit\.outcome \}\}/);
+    assert.match(workflow, /STATE_PUSH_OUTCOME: \$\{\{ steps\.state_push\.outcome \}\}/);
+    for (const variable of ['FRESHNESS_MAX_SPEND_USD', 'FRESHNESS_MAX_PROVIDER_CALL_USD', 'FRESHNESS_REVIEW_MINUTES_PER_WEEK']) {
+        assert.match(workflow, new RegExp(`${variable}: \\$\\{\\{ vars\\.${variable} \\}\\}`));
+    }
+    const downstreamOutcomes = { ...input().downstreamOutcomes, stateCommit: 'success', statePush: 'failure' };
+    const result = finalizer.finalStatus(input({ downstreamOutcomes }));
+    assert.equal(result.terminalStatus, 'failed');
+    assert.match(result.reasons.join(' '), /statePush_outcome:failure/);
+});

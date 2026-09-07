@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://everyailaw.com/schemas/freshness/finding/v1",
+  "title": "Freshness finding v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "subjectIds", "claim", "evidence", "affectedRecords", "status", "firstSeenAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "subjectIds": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }, "claim": { "type": "string", "minLength": 1 },
+    "evidence": { "type": "object", "required": ["sourceId", "normalizedContentHash"], "properties": { "sourceId": { "type": "string" }, "normalizedContentHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "locator": { "type": ["string", "null"] } } },
+    "affectedRecords": { "type": "array", "items": { "type": "string" } }, "oldValue": {}, "newValue": {}, "status": { "enum": ["pending", "accepted", "rejected", "deferred"] }, "firstSeenAt": { "type": "string", "format": "date-time" }, "reviewDueAt": { "type": "string", "format": "date-time" }, "reviewOwner": { "type": ["string", "null"] }, "reviewReason": { "type": "string", "minLength": 1 }, "reviewedBy": { "type": "string", "minLength": 1 }, "reviewedAt": { "type": "string", "format": "date-time" },
+    "issueReceipt": { "type": "object", "additionalProperties": false, "required": ["status", "url"], "properties": { "status": { "enum": ["pending", "accepted", "failed"] }, "url": { "type": ["string", "null"], "format": "uri" }, "attemptedAt": { "type": "string", "format": "date-time" }, "linkedAt": { "type": "string", "format": "date-time" }, "createdAt": { "type": "string", "format": "date-time" }, "error": { "type": "string", "minLength": 1 } } }
+  }
+}

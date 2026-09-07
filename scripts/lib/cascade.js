@@ -304,7 +304,9 @@ async function runCascade(platform, feature, options = {}) {
     const {
         requiredConfirmations = 3,
         delayBetweenQueries = 1000,
-        verbose = false
+        verbose = false,
+        beforeProviderRequest = null,
+        afterProviderRequest = null
     } = options;
 
     const candidates = options.clients ||
@@ -343,9 +345,18 @@ async function runCascade(platform, feature, options = {}) {
         }
 
         let response = null;
+        let attemptRecorded = false;
+        // Reserve before a full provider verify call. A refusal propagates as
+        // a run failure instead of being converted into an error vote.
+        if (beforeProviderRequest) await beforeProviderRequest({ client, platform, feature, claim: activeClaim });
         try {
             // Query the model
             response = await client.verify(platform, feature, activeClaim ? { claim: activeClaim } : {});
+            if (afterProviderRequest) {
+                attemptRecorded = true;
+                try { await afterProviderRequest({ client, platform, feature, succeeded: true, response }); }
+                catch (error) { error.fatalPersistenceFailure = true; throw error; }
+            }
 
             // Parse the response for changes
             const parsed = parseResponse(response.response, storedData);
@@ -425,6 +436,12 @@ async function runCascade(platform, feature, options = {}) {
             }
 
         } catch (error) {
+            if (error.fatalPersistenceFailure) throw error;
+            if (afterProviderRequest && !attemptRecorded) {
+                attemptRecorded = true;
+                try { await afterProviderRequest({ client, platform, feature, succeeded: false, error }); }
+                catch (persistenceError) { persistenceError.fatalPersistenceFailure = true; throw persistenceError; }
+            }
             log(`  Error: ${error.message}`);
             results.push({
                 model: client.displayName,

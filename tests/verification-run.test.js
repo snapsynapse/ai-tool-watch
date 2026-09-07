@@ -22,18 +22,21 @@ const record = (item, outcome = 'no_change', votes = [vote('a'), vote('b')]) => 
 });
 function scenario({ items = inventory(1), stale = items, options = {}, batch, issue, consistency } = {}) {
     const reportsDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aitw-run-'));
+    const stateFilename = path.join(reportsDir, 'state.json');
     const calls = { selected: [], checked: [], issues: [], keys: 0 };
     const deps = { reportsDir, getAllFeatures: () => items, findStaleFeatures: () => stale,
         checkApiKeys: () => { calls.keys++; },
         checkConsistency: consistency || (() => ({ hasErrors: false })),
         runBatchCascade: async (selected, config) => { calls.selected = selected; return batch ? batch(selected, config) : { results: selected.map(i => record(i)), providerHealth: {} }; },
+        findExistingIssueDetails: async () => null,
         createGitHubIssue: async (...args) => { calls.issues.push(args); return issue ? issue(...args) : 'https://github.com/example/repo/issues/1'; },
         batchUpdateCheckedDates: entries => { calls.checked.push(entries); return { success: entries.length, failed: 0 }; },
         batchUpdateVerifiedDates: () => { throw new Error('Forbidden Verified update'); },
+        stateFilename,
         batchAddChangelogEntries: () => { throw new Error('Forbidden changelog update'); },
         closeGitHubIssue: () => { throw new Error('Forbidden auto-close'); }
     };
-    return { calls, reportsDir, run: () => runVerification({ ...parseArgs([]), ...options }, deps),
+    return { calls, reportsDir, stateFilename, run: () => runVerification({ ...parseArgs([]), ...options }, deps),
         read: filename => JSON.parse(fs.readFileSync(path.join(reportsDir, filename), 'utf8')),
         cleanup: () => fs.rmSync(reportsDir, { recursive: true, force: true }) };
 }
@@ -68,7 +71,7 @@ test('model-confirmed change is a pending proposal, with review exit and no chan
     const s = scenario({ batch: selected => ({ results: selected.map(item => record(item, 'confirmed', ['a','b','c'].map(name => vote(name, 'positive')))), providerHealth: {} }) });
     try { const health = await s.run(); assert.equal(health.status, 'review_required'); assert.equal(healthExitCode(health), 1);
         assert.equal(s.calls.checked.length, 0); assert.equal(s.calls.issues.length, 1);
-        assert.equal(s.read('pending-findings.json')[0].status, 'pending_review');
+        assert.equal(s.read('pending-findings.json')[0].status, 'pending');
         assert.equal(s.read('health.json').reviewIssues[0].status, 'accepted');
         assert.match(s.calls.issues[0][1], /Pending human source review/);
         assert.doesNotMatch(s.calls.issues[0][1], /\[Verified\]/);
@@ -91,6 +94,22 @@ test('partial batch failure preserves completed callback evidence and does not r
     try { const health = await s.run(); assert.equal(healthExitCode(health), 2); assert.equal(s.read('results.json').length, 1); assert.equal(s.calls.checked.length, 0); } finally { s.cleanup(); }
 });
 
+test('an interrupted run resumes only its unfinished selected feature within the same UTC day', async () => {
+    const items = inventory(2); let attempt = 0; const selected = [];
+    const s = scenario({ items, batch: async (batch, options) => {
+        selected.push(batch.map(item => item.feature.name));
+        if (attempt++ === 0) { await options.onResult(record(batch[0])); throw new Error('interrupted after checkpoint'); }
+        return { results: batch.map(item => record(item)), providerHealth: {} };
+    }});
+    try {
+        assert.equal(healthExitCode(await s.run()), 2);
+        assert.equal(healthExitCode(await s.run()), 0);
+        assert.deepEqual(selected[1], [items[1].feature.name]);
+        const state = JSON.parse(fs.readFileSync(s.stateFilename, 'utf8'));
+        assert.equal(Object.values(state.runs)[0].status, 'completed');
+    } finally { s.cleanup(); }
+});
+
 test('malformed returned batch is retained and cannot become idle or healthy', async () => {
     const s = scenario({ batch: () => ({ result: 'bad contract' }) });
     try { const health = await s.run(); assert.equal(healthExitCode(health), 2); assert.deepEqual(s.read('invalid-batch-result.json'), { result: 'bad contract' }); assert.equal(s.calls.checked.length, 0); } finally { s.cleanup(); }
@@ -107,6 +126,16 @@ test('dry run retains proposals but calls no editorial or issue mutations', asyn
     try { assert.equal(healthExitCode(await s.run()), 1); assert.equal(s.calls.issues.length, 0); assert.equal(s.calls.checked.length, 0); assert.equal(s.read('pending-findings.json').length, 1); } finally { s.cleanup(); }
 });
 
+test('a restarted run reuses the persisted accepted receipt without another issue mutation', async () => {
+    const s = scenario({ batch: selected => ({ results: selected.map(item => record(item, 'confirmed', ['a','b','c'].map(n => vote(n, 'positive')))), providerHealth: {} }) });
+    try {
+        assert.equal(healthExitCode(await s.run()), 1);
+        assert.equal(healthExitCode(await s.run()), 1);
+        assert.equal(s.calls.issues.length, 1);
+        assert.equal(s.read('pending-findings.json')[0].issueReceipt.status, 'accepted');
+    } finally { s.cleanup(); }
+});
+
 test('oldest-first selection remains intact and reports unselected backlog', async () => {
     const items = inventory(3); items[2].feature.checked = '2025-01-01';
     const s = scenario({ items, options: { maxFeatures: 1 } });
@@ -116,7 +145,7 @@ test('oldest-first selection remains intact and reports unselected backlog', asy
 
 test('consistency-blocked selected features remain in the coverage denominator', async () => {
     const s = scenario({ consistency: () => ({ hasErrors: true, issues: [{ severity: 'error', message: 'Mismatch' }] }) });
-    try { assert.equal(healthExitCode(await s.run()), 2); assert.equal(s.calls.keys, 0); assert.equal(s.read('pending-findings.json')[0].consistencyIssues.length, 1); assert.equal(s.calls.checked.length, 0); } finally { s.cleanup(); }
+    try { assert.equal(healthExitCode(await s.run()), 2); assert.equal(s.calls.keys, 0); assert.equal(s.read('pending-findings.json')[0].status, 'pending'); assert.equal(s.calls.checked.length, 0); } finally { s.cleanup(); }
 });
 
 test('argument validation rejects invalid scopes and truncated or zero numeric values', () => {

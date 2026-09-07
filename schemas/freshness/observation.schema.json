@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://everyailaw.com/schemas/freshness/observation/v1",
+  "title": "Freshness observation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "sourceId", "retrievedAt", "retrievalStatus", "assessmentKind", "parserVersion", "contentValidation", "coverageQualified", "evidenceLinks"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "sourceId": { "type": "string", "minLength": 1 }, "retrievedAt": { "type": "string", "format": "date-time" },
+    "retrievalStatus": { "enum": ["succeeded", "blocked", "empty", "error"] }, "assessmentKind": { "enum": ["primary_retrieval", "machine_assessment"] },
+    "parserVersion": { "type": "string", "minLength": 1 }, "contentValidation": { "enum": ["valid", "invalid"] }, "coverageQualified": { "type": "boolean" },
+    "rawContentHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "normalizedContentHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "excerpt": { "type": "string", "minLength": 1 }, "locator": { "type": "string", "minLength": 1 }, "retrievedUrl": { "type": "string", "format": "uri" }, "failureReason": { "type": "string", "minLength": 1 },
+    "evidenceLinks": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

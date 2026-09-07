@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://everyailaw.com/schemas/freshness/source/v1",
+  "title": "Freshness source v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "owner", "authoritativeUrl", "sourceType", "subjectIds", "cadenceDays", "criticality", "parserVersion", "contentValidation", "collectionMode", "coverageState"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "owner": { "type": "string", "minLength": 1 },
+    "authoritativeUrl": { "type": "string", "format": "uri" }, "sourceType": { "enum": ["official_primary", "official_secondary", "model_assessment"] },
+    "subjectIds": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "cadenceDays": { "type": "integer", "minimum": 1 }, "criticality": { "enum": ["critical", "standard"] },
+    "parserVersion": { "type": "string", "minLength": 1 }, "contentValidation": { "enum": ["required", "none"] }, "collectionMode": { "enum": ["automated", "manual", "deferred", "out_of_scope"] },
+    "coverageState": { "enum": ["unknown", "covered", "degraded"] }, "lastSuccessfulObservationAt": { "type": "string", "format": "date-time" }, "dueAt": { "type": "string", "format": "date-time" }
+  }
+}

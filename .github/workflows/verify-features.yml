@@ -135,6 +135,9 @@ jobs:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FRESHNESS_MAX_SPEND_USD: ${{ vars.FRESHNESS_MAX_SPEND_USD }}
+          FRESHNESS_MAX_PROVIDER_CALL_USD: ${{ vars.FRESHNESS_MAX_PROVIDER_CALL_USD }}
+          FRESHNESS_REVIEW_MINUTES_PER_WEEK: ${{ vars.FRESHNESS_REVIEW_MINUTES_PER_WEEK }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PLATFORM_INPUT: ${{ steps.args.outputs.platform }}
           STALE_ONLY_INPUT: ${{ steps.args.outputs.stale_only }}
@@ -157,6 +160,33 @@ jobs:
           exit_code=$?
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
           exit "$exit_code"
+
+      - name: Commit durable review state
+        id: state_commit
+        if: always() && steps.args.outcome == 'success' && steps.args.outputs.dry_run == 'false'
+        run: |
+          set -euo pipefail
+          state_file='data/maintenance/state.json'
+          if [ ! -f "$state_file" ]; then
+            echo 'committed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          node -e 'const fs=require("fs"); const {validateState}=require("./scripts/lib/freshness-contract"); validateState(JSON.parse(fs.readFileSync(process.argv[1], "utf8")));' "$state_file"
+          git add -- "$state_file"
+          staged=$(git diff --cached --name-only)
+          if [ -z "$staged" ]; then echo 'committed=false' >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "$staged" != "$state_file" ]; then echo "::error::Refusing to commit anything except $state_file."; exit 1; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Retain verification review state'
+          echo 'committed=true' >> "$GITHUB_OUTPUT"
+
+      - name: Push durable review state
+        id: state_push
+        if: always() && steps.state_commit.outputs.committed == 'true'
+        run: |
+          set -euo pipefail
+          git push
 
       # Exit code 1 means that evidence was delivered for human review. It is a
       # successful execution state, but never permits source changes or a push.
@@ -231,6 +261,8 @@ jobs:
           CLI_OUTCOME: ${{ steps.verify.outcome }}
           INITIALIZE_OUTCOME: ${{ steps.initialize.outcome }}
           ARGS_OUTCOME: ${{ steps.args.outcome }}
+          STATE_COMMIT_OUTCOME: ${{ steps.state_commit.outcome }}
+          STATE_PUSH_OUTCOME: ${{ steps.state_push.outcome }}
           SYNC_EVIDENCE_OUTCOME: ${{ steps.sync_evidence.outcome }}
           VALIDATE_ONTOLOGY_OUTCOME: ${{ steps.validate_ontology.outcome }}
           VALIDATE_STRUCTURED_DATA_OUTCOME: ${{ steps.validate_structured_data.outcome }}

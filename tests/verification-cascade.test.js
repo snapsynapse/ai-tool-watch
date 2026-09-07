@@ -104,6 +104,38 @@ test('onResult errors propagate instead of becoming provider errors', async () =
     }), /persistence failed/);
 });
 
+test('a pre-request budget refusal prevents provider transport and propagates', async () => {
+    let calls = 0;
+    await assert.rejects(runCascade(platform, feature, {
+        clients: [{ name: 'provider-a', displayName: 'provider-a', verify: async () => { calls++; return response(noChange); } }],
+        delayBetweenQueries: 0,
+        beforeProviderRequest: async () => { throw new Error('spend ceiling exhausted'); }
+    }), /spend ceiling exhausted/);
+    assert.equal(calls, 0);
+});
+
+test('a checkpoint callback failure stops before another provider and records once', async () => {
+    let firstCalls = 0; let secondCalls = 0; let receipts = 0;
+    await assert.rejects(runCascade(platform, feature, { clients: [
+        { name: 'provider-a', displayName: 'provider-a', verify: async () => { firstCalls++; return response(noChange); } },
+        { name: 'provider-b', displayName: 'provider-b', verify: async () => { secondCalls++; return response(noChange); } }
+    ], delayBetweenQueries: 0, afterProviderRequest: async () => { receipts++; throw new Error('checkpoint failed'); } }), /checkpoint failed/);
+    assert.equal(firstCalls, 1); assert.equal(secondCalls, 0); assert.equal(receipts, 1);
+});
+
+test('a later spend refusal leaves the earlier provider response available to the runtime sink', async () => {
+    let reservations = 0; const runtime = [];
+    await assert.rejects(runCascade(platform, feature, { clients: [
+        client('provider-a', response(noChange, { raw: { id: 'raw-1' }, usageReceipt: { id: 'usage-1' } })),
+        client('provider-b', response(noChange))
+    ], delayBetweenQueries: 0,
+    beforeProviderRequest: async () => { if (reservations++) throw new Error('spend ceiling exhausted'); },
+    afterProviderRequest: async event => runtime.push(event) }), /spend ceiling exhausted/);
+    assert.equal(runtime.length, 1);
+    assert.equal(runtime[0].response.raw.id, 'raw-1');
+    assert.equal(runtime[0].response.usageReceipt.id, 'usage-1');
+});
+
 test('summary uses contract field names and ignores malformed outcomes', () => {
     const summary = summarizeResults([
         { platform: 'Example', outcome: CascadeOutcome.NO_CHANGE },

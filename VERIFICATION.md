@@ -20,7 +20,7 @@ The twice-weekly workflow runs Tuesday and Friday at 01:00 UTC, with a default m
 
 Same-provider exclusion remains in force for Google, Anthropic, Perplexity and xAI features. The existing adapters and prompts are in `scripts/lib/ai-clients.js`. At least two configured provider keys are needed before the runner starts; the cascade must still establish adequate independent evidence after same-vendor exclusions. A missing or unsuccessful provider is an error, not a negative vote. T04 does not establish live provider availability or introduce EveryAILaw's separate request-budget implementation.
 
-A dry run still makes potentially billable provider requests. It suppresses issue and data writes. No live canary is part of the offline T04 validation.
+A dry run still makes potentially billable provider requests. It suppresses issue and data writes. Paid calls are disabled unless both `FRESHNESS_MAX_SPEND_USD` and `FRESHNESS_MAX_PROVIDER_CALL_USD` are finite positive USD bounds. The runner reserves the per-call bound before each complete provider request, including client-owned retries; an exhausted budget fails the run before transport and is not recorded as provider evidence. No live canary is part of the offline T04 validation.
 
 ## Running the collector
 
@@ -44,9 +44,19 @@ The runner writes `.verification-reports/health.json`, `results.json`, `pending-
 
 Malformed returned batches are retained in `invalid-batch-result.json`. A later failure does not erase prior results. Final workflow status is recorded separately in `workflow-health.json`, so useful observations and a failed build or push can both be represented. Artifacts upload even on failure.
 
-Positive signals create or reuse pending review issues. A model-confirmed change uses the same review boundary as an unconfirmed signal; neither writes `[Verified]` changelog entries. Consistency defects and incomplete results remain visible in the report and coverage denominator. Existing review issues and signals digests are not auto-closed merely because a later run is quiet, partial, or failed. The former optional auto-resolve publication path has been removed from this collection workflow.
+`provider-runtime.json` records each provider transport receipt as it arrives, including raw response and usage data when available. It is written before later budget accounting can stop the feature, so a cap reached between providers does not discard earlier evidence. Such a mid-feature interruption may retry the incomplete feature within its retained reservation; completed feature checkpoints still prevent repaying completed work.
+
+For non-dry runs, completed feature results are checkpointed in the review state before the next provider call. A restart may resume only an incomplete run with the same selected stored claims and provider policy, and only for up to 24 hours. Completed runs are never resumed; a changed selection or policy starts a new run. Dry runs retain proposal artifacts only and never write a checkpoint.
+
+Positive signals are stored in `data/maintenance/state.json` before issue delivery, then their receipts are recorded after delivery. Repeated evidence retains the same finding ID and first-seen time; prior pending findings survive quiet, partial, and failed runs. An exact-title existing issue is linked with its original creation time, while an accepted, rejected, or deferred finding is never reopened automatically. A model-confirmed change uses the same review boundary as an unconfirmed signal; neither writes `[Verified]` changelog entries. Consistency defects and incomplete results remain visible in the report and coverage denominator.
+
+The workflow uploads run artifacts and retains `data/maintenance/state.json` in a separate state-only commit/push, including partial and failed verifier paths. Sam explicitly approved this CI behavior. Rejected pushes remain workflow failures. Hosted retention still requires a deployed workflow run; local tests do not establish it.
 
 A maintainer accepts a finding by checking official evidence and making the appropriate reviewed data change. Verified dates and changelog assertions belong to that editorial action. An issue receipt means the review item exists; it is not editorial acceptance or proof that the maintainer received an alert.
+
+Review metadata is explicit and human-only. Inspect the queue with `node scripts/review-freshness.js`; record a decision with `--finding`, `--status accepted|rejected|deferred`, `--actor`, and `--reason`. The command changes review metadata only. It does not change feature data, verification dates, or notifications.
+
+Set `FRESHNESS_REVIEW_MINUTES_PER_WEEK` to a non-negative whole-minute capacity when configuring a human review queue. Until it is configured, queue capacity remains unknown and is reported separately from provider coverage.
 
 ## Dates and publication
 
