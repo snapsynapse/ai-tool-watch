@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-07T17:33:29.860Z",
+    "generated": "2026-09-07T17:49:22.804Z",
     "version": "1.0",
     "count": 9
   },
@@ -73,7 +73,7 @@
       "name": "Microsoft Copilot",
       "provider": "microsoft",
       "product_kind": "hosted",
-      "pricing_page": "https://www.microsoft.com/en-us/microsoft-copilot",
+      "pricing_page": "https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals",
       "default_surfaces": [
         "web",
         "desktop",

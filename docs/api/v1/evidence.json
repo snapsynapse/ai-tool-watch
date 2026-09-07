@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-07T17:33:29.860Z",
+    "generated": "2026-09-07T17:49:22.804Z",
     "version": "1.0",
     "count": 92
   },
@@ -1017,6 +1017,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Microsoft Copilot",
           "url": "https://copilot.microsoft.com"
         },
@@ -1030,6 +1038,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans after Copilot Pro's retirement; free tier confirmed as no-sign-in basic chat with sign-in unlocking history, longer conversations, image creation and voice. Noted that paid plans buy usage rather than a different model, and that Premium adds the Analyst and Researcher agents. Refreshed the redirected support source."
@@ -1099,6 +1111,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Microsoft Designer",
           "url": "https://designer.microsoft.com/"
         },
@@ -1108,6 +1128,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro retired and replaced by Microsoft 365 Premium. Per-plan credits re-cut from Microsoft's AI credits support page: 60 credits/mo on Personal and Family, usage beyond the standard limit on Premium. Free-tier allowance corrected to \"not published\" — the previous 15 credits/mo figure described legacy Classic Microsoft 365, not free Copilot."
@@ -1138,6 +1162,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Microsoft Copilot free vs Copilot in Microsoft 365",
           "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365"
         },
@@ -1147,6 +1179,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "Renamed from \"GPT-4 Access\" to \"Model Access\". Microsoft no longer sells a named model tier, so the old name described a product that stopped existing; the record covers model access and the entitlements attached to it. Implementation id changed from copilot-gpt-4-access to copilot-model-access, which changes the record's permalink anchor."
@@ -1173,6 +1209,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Microsoft Copilot free vs Copilot in Microsoft 365",
           "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365"
         },
@@ -1182,6 +1226,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro retired and replaced by Microsoft 365 Premium; Office app integration confirmed as included in Microsoft 365 Personal, Family and Premium, limited to the subscription owner and metered by AI credits. Replaced the dead Copilot Pro store source with Microsoft's free-vs-subscription and AI credits support pages."
@@ -1204,6 +1252,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Using Copilot Vision",
           "url": "https://support.microsoft.com/en-us/topic/using-copilot-vision-with-microsoft-copilot-3c67686f-fa97-40f6-8a3e-0e45265d425f"
         },
@@ -1217,6 +1273,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Gating reverted from free to paid: Microsoft now requires a Microsoft 365 Personal, Family, or Premium subscription for Copilot Vision. Status moved from preview to ga. Added per-plan daily limits (10 min Personal/Family, 15 min Premium) and commercial Entra ID access. Platforms expanded well beyond Edge: iOS and Android now supported, Windows shares any app, macOS is a native app. Regional widened from US-only to all supported Copilot regions and languages."
@@ -1251,6 +1311,14 @@
       "checked": "2026-09-05",
       "sources": [
         {
+          "title": "Copilot Pro new-sales change",
+          "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+        },
+        {
+          "title": "Continuing Copilot Pro subscriptions",
+          "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+        },
+        {
           "title": "Microsoft Copilot",
           "url": "https://www.microsoft.com/en-us/microsoft-copilot"
         },
@@ -1268,6 +1336,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-07",
+          "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro retired (off sale October 2025, support ended 2026-08-01) and replaced by Microsoft 365 Premium; availability rows re-cut to Free / M365 Personal / Family / Premium. Free tier corrected from \"Standard\" limits to free-subject-to-capacity, sign-in required. Added Microsoft's published daily voice allowances (30 min/day Personal and Family, 60 min/day Premium). Added language and government-cloud caveats to regional note. Status remains ga; platform flags unchanged."
@@ -2850,7 +2922,7 @@
       "sources": [
         {
           "title": "Microsoft Copilot pricing",
-          "url": "https://www.microsoft.com/en-us/microsoft-copilot"
+          "url": "https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals"
         }
       ],
       "changelog": [],

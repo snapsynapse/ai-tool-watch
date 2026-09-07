@@ -150,7 +150,7 @@ function parsePlatform(filepath) {
     const { frontmatter, body } = parseFrontmatter(content);
 
     // Parse pricing table
-    const pricingMatch = body.match(/## Pricing\n\n([\s\S]*?)(?=\n---)/);
+    const pricingMatch = body.match(/## Pricing\n\n((?:\|[^\n]*(?:\n|$))+)/);
     const pricing = pricingMatch ? parseTable(pricingMatch[1]) : [];
 
     // Parse features (split by ---)

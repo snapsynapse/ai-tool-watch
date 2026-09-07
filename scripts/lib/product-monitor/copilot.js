@@ -16,27 +16,27 @@ const config = {
                 baselineExcerpt: '| Free | ✅ | Standard | No sign-in for basic chat; sign in for history, longer conversations, image creation, voice |'
             }
         ]),
-        source('copilot-pricing', 'pricing', 'https://microsoft.com/en-us/microsoft-copilot', 'microsoft.com', [
+        source('copilot-pricing', 'pricing', 'https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals', 'microsoft.com', [
             {
                 field: 'copilot.pricing.microsoft_365_premium.price',
                 target: { file: 'data/platforms/copilot.md', section: 'Pricing', row: 'Microsoft 365 Premium', column: 'Price' },
                 baseline: '$19.99/mo',
-                baselineExcerpt: '| Microsoft 365 Premium | $19.99/mo | Top consumer tier; replaced Copilot Pro. Adds Analyst and Researcher agents and extended limits |'
+                baselineExcerpt: '| Microsoft 365 Premium | $19.99/mo | U.S. consumer price in USD; monthly billing. Top consumer tier; adds Analyst and Researcher agents and extended limits |'
             },
             {
-                field: 'copilot.pricing.copilot_pro.status',
-                target: { file: 'data/platforms/copilot.md', section: 'Pricing', row: 'Copilot Pro', column: 'status' },
-                baseline: 'retired',
-                baselineExcerpt: 'Copilot Pro is retired. Microsoft stopped selling it in October 2025 and support for remaining subscribers ended 2026-08-01; its consumer features moved to Microsoft 365 Premium.'
+                field: 'copilot.pricing.copilot_pro.lifecycle',
+                target: { file: 'data/platforms/copilot.md', section: 'Pricing', row: null, column: 'text' },
+                baseline: {
+                    new_sales: 'closed',
+                    existing_subscriptions: 'continue',
+                    support_end: { value: null, evidence: 'unproven' }
+                },
+                baselineExcerpt: 'Microsoft stopped selling Copilot Pro to new customers in October 2025. Existing subscribers can keep their subscriptions or switch to Microsoft 365 Premium. A support-end date for existing subscriptions has not been established by the sources reviewed here.',
+                assessment: 'unassessed',
+                assessmentReason: 'Requires multi-source evidence that keeps new sales, existing subscriptions, and support end separate.'
             }
         ]),
-        source('copilot-entitlements', 'support', 'https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365', 'support.microsoft.com', [
-            {
-                field: 'copilot.chat.free.availability',
-                target: { file: 'data/platforms/copilot.md', feature: 'Chat', section: 'Availability', row: 'Free', column: 'Available' },
-                baseline: '✅',
-                baselineExcerpt: '| Free | ✅ | Standard | No sign-in for basic chat; sign in for history, longer conversations, image creation, voice |'
-            },
+        source('copilot-entitlements', 'support', 'https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot', 'support.microsoft.com', [
             {
                 field: 'copilot.vision.gating',
                 target: { file: 'data/platforms/copilot.md', feature: 'Copilot Vision', section: 'Property', row: 'Gating', column: 'Value' },
@@ -123,22 +123,12 @@ function parse(body, { source: sourceConfig, url, now = new Date().toISOString()
             }
         }
 
-        // Retirement is supported only by an affirmative, dated statement. A missing
-        // Copilot Pro offer can reflect a different page variant, region, or navigation.
-        const retirement = quoteMatching(text, /copilot pro.{0,180}(?:retired|no longer (?:available|offered|sold)|support (?:has )?ended|ended support|discontinued).{0,180}(?:20\d{2}|january|february|march|april|may|june|july|august|september|october|november|december)/i, 420);
-        const currentYear = new Date(now).getUTCFullYear();
-        const citedYears = retirement ? [...retirement.matchAll(/\b(20\d{2})\b/g)].map(match => Number(match[1])) : [];
-        const negatedOrFuture = retirement && (
-            /copilot pro.{0,120}(?:is not|isn't|not|never).{0,80}(?:retired|no longer|ended|discontinued)/i.test(retirement) ||
-            /copilot pro.{0,120}(?:will|planned|plan|scheduled|expected).{0,80}(?:retire|retired|end|discontinu)/i.test(retirement) ||
-            citedYears.some(year => Number.isFinite(currentYear) && year > currentYear)
-        );
-        if (retirement && !negatedOrFuture) {
-            claims.push(claim('copilot.pricing.copilot_pro.status', 'retired', retirement, 'copilot-pro-retirement'));
-        }
-
-        if (!claims.length && /copilot pro/i.test(text) && /(?:retired|no longer|ended|discontinued)/i.test(text)) {
-            return { supported: false, claims: [], reason: 'Copilot Pro retirement wording lacks a dated support context.' };
+        // Copilot Pro lifecycle needs multiple source families. A pricing page can
+        // establish that new sales stopped, but absence from sale cannot establish
+        // whether existing subscriptions continue or when support ends. Keep this
+        // configured field unproven until those dimensions can be assessed together.
+        if (!claims.length && /copilot pro/i.test(text)) {
+            return { supported: false, claims: [], reason: 'Copilot Pro lifecycle is unassessed; ceased new sales or a missing offer does not establish existing-subscription or support-end status.' };
         }
         return claims.length
             ? { supported: true, claims }
@@ -146,21 +136,18 @@ function parse(body, { source: sourceConfig, url, now = new Date().toISOString()
     }
 
     if (sourceId === 'copilot-entitlements') {
-        const recognizesPage = /(?:microsoft copilot free|copilot in microsoft 365|microsoft copilot)/i.test(text);
+        const recognizesPage = /(?:using copilot vision with microsoft copilot|copilot vision)/i.test(text);
         if (!recognizesPage) {
-            return { supported: false, claims: [], reason: 'Page does not identify the Microsoft Copilot entitlement guidance.' };
+            return { supported: false, claims: [], reason: 'Page does not identify the Microsoft Copilot Vision guidance.' };
         }
 
         const claims = [];
-        const free = quoteMatching(text, /(?:microsoft copilot\s*\(free\).{0,180}available free of cost|microsoft copilot is available at no cost|(?:free (?:version of )?(?:microsoft )?copilot|microsoft copilot (?:is )?free).{0,160}(?:chat|sign in|history|conversation))/i);
-        if (free) {
-            claims.push(claim('copilot.chat.free.availability', '✅', free, 'free-chat'));
-        }
-        const vision = quoteMatching(text, /(?:copilot vision).{0,220}(?:subscription|required|microsoft 365|personal|family|premium)/i);
-        if (vision && /(?:does not require|doesn't require|is not required|isn't required|no subscription required)/i.test(vision)) {
-            claims.push(claim('copilot.vision.gating', 'free', vision, 'vision-subscription'));
-        } else if (vision && /(?:requires|required|microsoft 365 (?:personal|family|premium) subscription)/i.test(vision)) {
-            claims.push(claim('copilot.vision.gating', 'paid', vision, 'vision-subscription'));
+        const freeVision = quoteMatching(text, /(?:copilot vision).{0,220}(?:does not require|doesn't require|is not required|isn't required|no subscription required).{0,120}(?:microsoft 365|subscription)/i);
+        const paidVision = quoteMatching(text, /(?:you must subscribe to microsoft 365 personal, family, or premium to access copilot vision|copilot vision requires (?:a )?microsoft 365 (?:personal, family, or premium )?subscription)/i);
+        if (freeVision && !paidVision) {
+            claims.push(claim('copilot.vision.gating', 'free', freeVision, 'vision-subscription'));
+        } else if (paidVision && !freeVision) {
+            claims.push(claim('copilot.vision.gating', 'paid', paidVision, 'vision-subscription'));
         }
         const region = quoteMatching(text, /(?:copilot vision).{0,260}(?:available.{0,120}(?:region|language|country|united states|\bUS\b)|(?:region|language|country).{0,120}available)/i);
         if (region && /all supported.{0,80}(?:regions?|languages?)/i.test(region) && /(?:vary|rollout)/i.test(region)) {
@@ -170,7 +157,7 @@ function parse(body, { source: sourceConfig, url, now = new Date().toISOString()
         }
         return claims.length
             ? { supported: true, claims }
-            : { supported: false, claims: [], reason: 'Recognized entitlement guidance, but no configured plan, Vision, or regional claim was stated.' };
+            : { supported: false, claims: [], reason: 'Recognized Vision guidance, but no configured gating or regional claim was stated.' };
     }
 
     return { supported: false, claims: [], reason: `Unsupported Copilot source: ${sourceId}.` };
