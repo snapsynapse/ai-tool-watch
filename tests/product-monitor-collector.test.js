@@ -19,7 +19,7 @@ function state() {
   return core.emptyState({ reviewPolicy: { owner: 'Sam Rogers', capacityMinutesPerWeek: null, scope: 'six-repo-portfolio' } });
 }
 
-function products({ values = {}, duplicate = false, invalid = new Set() } = {}) {
+function products({ values = {}, duplicate = false, invalid = new Set(), assessments = {} } = {}) {
   return ['alpha', 'beta'].map(id => ({
     config: {
       id,
@@ -33,6 +33,10 @@ function products({ values = {}, duplicate = false, invalid = new Set() } = {}) 
           target: { file: `data/platforms/${id}.md`, feature: kind },
           baseline: BASELINES[kind],
           baselineExcerpt: `Baseline ${kind}`,
+          ...(assessments[`${id}-${kind}`] ? {
+            assessment: assessments[`${id}-${kind}`],
+            assessmentReason: `Assessment is intentionally ${assessments[`${id}-${kind}`]}`,
+          } : {}),
         }],
       })),
     },
@@ -64,7 +68,7 @@ async function run(options = {}) {
   const output = await collect({
     products: products(options),
     state: options.state || state(),
-    now: NOW,
+    now: options.now || NOW,
     fetcher: async url => {
       if (options.outage === url) {
         const error = new Error('official source unavailable');
@@ -134,6 +138,34 @@ test('rejects invalid or ambiguous claim evidence without creating a finding', a
   assert.equal(Object.values(resultingState.findings).some(item => item.subjectIds.includes('alpha:plan.pro.price')), false);
 });
 
+test('an unassessed configured claim cannot renew coverage or create a proposal when a parser emits it', async () => {
+  const previous = await run({ now: '2026-09-05T12:00:00.000Z' });
+  const previousSource = previous.state.sources['product-monitor-v2:alpha-pricing'];
+  const previousSuccessfulAt = previousSource.lastSuccessfulObservationAt;
+  const previousDueAt = previousSource.dueAt;
+  const { report, state: resultingState } = await run({
+    state: previous.state,
+    values: { 'alpha-pricing': '$25/mo' },
+    assessments: { 'alpha-pricing': 'unassessed' },
+  });
+  const source = report.sources.find(item => item.product === 'alpha' && item.kind === 'pricing');
+  const registered = resultingState.sources['product-monitor-v2:alpha-pricing'];
+  const observation = resultingState.observations[source.observationId];
+
+  assert.equal(report.status, 'degraded');
+  assert.equal(source.status, 'unavailable');
+  assert.equal(source.provenClaims, 0);
+  assert.deepEqual(source.unprovenFields, ['plan.pro.price']);
+  assert.match(source.reason, /unassessed.*plan\.pro\.price/i);
+  assert.equal(observation.coverageQualified, false);
+  assert.equal(observation.contentValidation, 'invalid');
+  assert.equal(registered.lastSuccessfulObservationAt, previousSuccessfulAt);
+  assert.equal(registered.dueAt, previousDueAt);
+  assert.equal(report.proposals.some(item => item.product === 'alpha' && item.field === 'plan.pro.price'), false);
+  assert.equal(Object.values(resultingState.findings).some(item => item.subjectIds.includes('alpha:plan.pro.price')), false);
+  assert.equal(report.configuration[0].sources[1].claims[0].assessment, 'unassessed');
+});
+
 test('does not treat hidden, template, aria-hidden, or inline-hidden claim text as source evidence', async () => {
   const url = 'https://alpha.example.test/pricing';
   const hiddenOnly = `<main><p>Current plan information.</p></main>
@@ -168,6 +200,8 @@ test('enforces two-product source and fetch-budget guards, and propagates persis
   const wrongTarget = products();
   wrongTarget[0].config.sources[0].claims[0].target.file = 'data/platforms/beta.md';
   assert.throws(() => validateProducts(wrongTarget), /explicit baseline and owning record/);
+  const unknownAssessment = products({ assessments: { 'alpha-pricing': 'reviewed' } });
+  assert.throws(() => validateProducts(unknownAssessment), /assessment marker/);
   await assert.rejects(collect({ products: products(), state: state(), now: NOW, maxRequests: 7 }), /budget must be 1\.\.6/);
   await assert.rejects(run({ persist: async () => { throw new Error('evidence persistence failed'); } }), /evidence persistence failed/);
 });

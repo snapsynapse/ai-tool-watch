@@ -6,6 +6,15 @@ on:
       artifact-name:
         required: true
         type: string
+      expected-source-revision:
+        required: true
+        type: string
+      expected-reviewed-input-sha256:
+        required: true
+        type: string
+      expected-artifact-sha256:
+        required: true
+        type: string
 
 jobs:
   deploy:
@@ -28,7 +37,15 @@ jobs:
           path: publication
 
       - name: Verify downloaded publication artifact
-        run: node scripts/verify-publication-manifest.js publication
+        env:
+          EXPECTED_SOURCE_REVISION: ${{ inputs.expected-source-revision }}
+          EXPECTED_REVIEWED_INPUT_SHA256: ${{ inputs.expected-reviewed-input-sha256 }}
+          EXPECTED_ARTIFACT_SHA256: ${{ inputs.expected-artifact-sha256 }}
+        run: |
+          node scripts/verify-publication-manifest.js publication \
+            --expected-source-revision "$EXPECTED_SOURCE_REVISION" \
+            --expected-reviewed-input-sha256 "$EXPECTED_REVIEWED_INPUT_SHA256" \
+            --expected-artifact-sha256 "$EXPECTED_ARTIFACT_SHA256"
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

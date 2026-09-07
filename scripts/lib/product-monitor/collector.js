@@ -20,7 +20,11 @@ function validateProducts(products) {
             if (!source.id || sourceIds.has(source.id)) throw new Error('Source IDs must be unique'); sourceIds.add(source.id);
             if (!['release_notes','pricing','support'].includes(source.kind) || url.protocol !== 'https:' || url.hostname !== source.expectedHost || url.port || url.username || url.password) throw new Error('Invalid official source definition');
             if (!Array.isArray(source.claims) || !source.claims.length || new Set(source.claims.map(c => c.field)).size !== source.claims.length) throw new Error('Each source needs distinct scoped fields');
-            for (const claim of source.claims) if (!claim.field || !claim.target || claim.target.file !== `data/platforms/${config.id}.md` || !claim.baselineExcerpt || claim.baseline === undefined) throw new Error('Every field needs an explicit baseline and owning record');
+            for (const claim of source.claims) {
+                if (!claim.field || !claim.target || claim.target.file !== `data/platforms/${config.id}.md` || !claim.baselineExcerpt || claim.baseline === undefined) throw new Error('Every field needs an explicit baseline and owning record');
+                if (claim.assessment !== undefined && claim.assessment !== 'unassessed') throw new Error(`Unsupported claim assessment marker: ${claim.assessment}`);
+                if (claim.assessment === 'unassessed' && !claim.assessmentReason) throw new Error(`Unassessed claim needs an assessment reason: ${claim.field}`);
+            }
         }
     }
 }
@@ -74,12 +78,15 @@ async function collect({ products, state = core.emptyState({ reviewPolicy: { own
             if (terminal.hostname !== source.expectedHost || terminal.protocol !== 'https:' || terminal.port || terminal.username || terminal.password) throw new Error('Unexpected terminal official-source URL');
             parsed = product.parse(response.body, { source, url:terminal.href, now });
         } catch (error) { parsed = { supported:false, claims:[], reason:`Parser failure: ${error.message}` }; }
-        const proven = [], missing = [], seen = new Set();
+        const proven = [], missing = source.claims
+            .filter(definition => definition.assessment === 'unassessed')
+            .map(definition => `Unassessed claim: ${definition.field}`), seen = new Set();
         const text = compact(visibleText(response.body));
         const counts = new Map();
         for (const c of Array.isArray(parsed.claims) ? parsed.claims : []) counts.set(c.field, (counts.get(c.field) || 0) + 1);
         for (const claim of parsed.supported && Array.isArray(parsed.claims) ? parsed.claims : []) {
             const definition = source.claims.find(c => c.field === claim.field);
+            if (definition && definition.assessment === 'unassessed') continue;
             if (!definition || counts.get(claim.field) !== 1 || seen.has(claim.field) || claim.value === undefined || !claim.quote || !text.includes(compact(claim.quote))) { missing.push('Unsupported, duplicate or uncited claim'); continue; }
             seen.add(claim.field);
             if (!checkBaseline(definition)) { missing.push(`Baseline drift: ${claim.field}`); continue; }

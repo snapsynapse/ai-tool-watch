@@ -42,6 +42,10 @@ jobs:
 
   prepare-publication:
     needs: validate
+    outputs:
+      source_revision: ${{ steps.receipt.outputs.source_revision }}
+      reviewed_input_sha256: ${{ steps.receipt.outputs.reviewed_input_sha256 }}
+      artifact_sha256: ${{ steps.receipt.outputs.artifact_sha256 }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -85,7 +89,9 @@ jobs:
           if-no-files-found: error
 
       - name: Record source and artifact receipt
+        id: receipt
         run: |
+          node -e "const fs=require('fs'),m=require('./docs/publication-manifest.json'); for(const k of ['source_revision','reviewed_input_sha256','artifact_sha256']) fs.appendFileSync(process.env.GITHUB_OUTPUT,k+'='+m[k]+'\n')"
           echo "source_commit=$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
           echo "source_tree=$(git rev-parse HEAD^{tree})" >> "$GITHUB_STEP_SUMMARY"
           node -e "const m=require('./docs/publication-manifest.json'); console.log('reviewed_input_sha256=' + m.reviewed_input_sha256); console.log('artifact_sha256=' + m.artifact_sha256)" >> "$GITHUB_STEP_SUMMARY"
@@ -120,7 +126,15 @@ jobs:
           path: publication
 
       - name: Verify downloaded publication artifact
-        run: node scripts/verify-publication-manifest.js publication
+        env:
+          EXPECTED_SOURCE_REVISION: ${{ needs.prepare-publication.outputs.source_revision }}
+          EXPECTED_REVIEWED_INPUT_SHA256: ${{ needs.prepare-publication.outputs.reviewed_input_sha256 }}
+          EXPECTED_ARTIFACT_SHA256: ${{ needs.prepare-publication.outputs.artifact_sha256 }}
+        run: |
+          node scripts/verify-publication-manifest.js publication \
+            --expected-source-revision "$EXPECTED_SOURCE_REVISION" \
+            --expected-reviewed-input-sha256 "$EXPECTED_REVIEWED_INPUT_SHA256" \
+            --expected-artifact-sha256 "$EXPECTED_ARTIFACT_SHA256"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -140,4 +154,7 @@ jobs:
     uses: ./.github/workflows/deploy-ftp.yml
     with:
       artifact-name: reviewed-publication
+      expected-source-revision: ${{ needs.prepare-publication.outputs.source_revision }}
+      expected-reviewed-input-sha256: ${{ needs.prepare-publication.outputs.reviewed_input_sha256 }}
+      expected-artifact-sha256: ${{ needs.prepare-publication.outputs.artifact_sha256 }}
     secrets: inherit

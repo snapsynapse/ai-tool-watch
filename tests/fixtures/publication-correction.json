@@ -1,0 +1,58 @@
+{
+  "implementation_id": "copilot-publication-correction-fixture",
+  "product": "copilot",
+  "provider": "microsoft",
+  "source_file": "data/platforms/copilot.md",
+  "source_heading": "Publication Correction Fixture",
+  "feature_url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/",
+  "capabilities": [
+    "write-and-explain"
+  ],
+  "dates": {
+    "launched": "2025-10-01T12:00Z",
+    "verified": "2026-09-05",
+    "checked": "2026-09-05"
+  },
+  "base_talking_point": "This synthetic Copilot capability remains available through the unrelated current-plan entitlements listed here.",
+  "coverage_note": "This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review.",
+  "plans": {
+    "unrelated": [
+      {
+        "plan": "Free",
+        "available": "✅",
+        "limits": "Fixture standard allowance",
+        "notes": "Fixture free entitlement remains unchanged"
+      },
+      {
+        "plan": "Microsoft 365 Premium",
+        "available": "✅",
+        "limits": "Fixture subscriber allowance",
+        "notes": "Fixture paid entitlement remains unchanged"
+      }
+    ],
+    "erroneous_legacy": {
+      "plan": "Copilot Pro",
+      "available": "❌",
+      "limits": "—",
+      "notes": "Fixture universal retirement claim; support ended 2026-08-01"
+    }
+  },
+  "sources": [
+    {
+      "title": "Copilot Pro new-sales change",
+      "url": "https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/"
+    },
+    {
+      "title": "Continuing Copilot Pro subscriptions",
+      "url": "https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium"
+    }
+  ],
+  "historical_entry": {
+    "date": "2026-09-05",
+    "change": "[Verified] Fixture asserted that Copilot Pro was retired and unavailable after support ended 2026-08-01."
+  },
+  "correction": {
+    "date": "2026-09-07",
+    "change": "[Correction] The fixture's prior universal Copilot Pro retirement and support-end assertions were unsupported. Removed the legacy unavailability row; continuing-subscriber feature entitlements require separate review. Checked/Verified dates are unchanged."
+  }
+}
