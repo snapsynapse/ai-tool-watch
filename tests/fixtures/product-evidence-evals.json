@@ -1,0 +1,63 @@
+{
+  "baseBodies": {
+    "copilot-changes": "<main><h1>Updates to Copilot</h1><p>You can continue to chat with Copilot, create images, and upload files for free, subject to available capacity and limits.</p></main>",
+    "copilot-pricing": "<main><h1>Microsoft 365 plans for individuals</h1><p>United States</p><h2>Microsoft 365 Premium</h2><p>US$19.99 per month</p></main>",
+    "copilot-entitlements": "<main><h1>Using Copilot Vision with Microsoft Copilot</h1><p>Copilot Vision availability might vary during rollout. Vision is available in all supported regions and languages. You must subscribe to Microsoft 365 Personal, Family, or Premium to access Copilot Vision.</p></main>",
+    "release-notes": "<main><h1>Release Notes</h1><h2>2026.04.15</h2><h3>Meet your new desktop assistant: Gemini for Mac</h3><p>We are introducing the Gemini app for Mac as a native desktop experience.</p></main>",
+    "pricing": "<main><h1>Google AI plans</h1><p>United States</p><h2>Google AI Pro</h2><p>US$19.99/month</p></main>",
+    "mac-support": "<main><h1>Use the Gemini app on Mac</h1><p>You can interact with Gemini directly from your Mac desktop.</p><h2>What you need to use the Gemini app on Mac</h2><p>A Mac running macOS Sequoia (15.0) or later with Apple Silicon.</p><h2>Download and install the Gemini app on Mac</h2><p>Click Download for Mac to download the app installer.</p></main>"
+  },
+  "acceptedBaseline": [
+    ["chat.platforms.macOS.available", "✅"],
+    ["chat.platforms.macOS.launch_month", "2026-04"],
+    ["chat.platforms.macOS.minimum_version", 15],
+    ["chat.pricing.google_ai_pro.usd_monthly", "$19.99/mo"],
+    ["copilot.chat.free.availability", "✅"],
+    ["copilot.pricing.microsoft_365_premium.price", "$19.99/mo"],
+    ["copilot.vision.gating", "paid"],
+    ["copilot.vision.region", { "scope": "all-supported-regions", "rollout": "variable" }]
+  ],
+  "cases": [
+    {
+      "id": "accepted-evidence",
+      "overrides": {},
+      "excludedFields": [],
+      "unresolvedFields": ["copilot.pricing.copilot_pro.lifecycle"]
+    },
+    {
+      "id": "contradictory-vision-gating",
+      "overrides": {
+        "copilot-entitlements": "<main><h1>Using Copilot Vision with Microsoft Copilot</h1><p>Copilot Vision does not require a Microsoft 365 subscription.</p><p>You must subscribe to Microsoft 365 Personal, Family, or Premium to access Copilot Vision.</p><p>Copilot Vision is available in all supported regions and languages. Availability may vary during rollout.</p></main>"
+      },
+      "excludedFields": ["copilot.vision.gating"],
+      "unresolvedFields": ["copilot.pricing.copilot_pro.lifecycle", "copilot.vision.gating"]
+    },
+    {
+      "id": "hidden-prices",
+      "overrides": {
+        "copilot-pricing": "<main><h1>Microsoft 365 plans for individuals</h1><p>United States</p><p>Choose a consumer plan.</p><div hidden><h2>Microsoft 365 Premium</h2><p>US$19.99 per month</p></div></main>",
+        "pricing": "<main><h1>Google AI plans</h1><p>United States</p><p>Choose a plan.</p><div hidden><h2>Google AI Pro</h2><p>US$19.99/month</p></div></main>"
+      },
+      "excludedFields": ["chat.pricing.google_ai_pro.usd_monthly", "copilot.pricing.microsoft_365_premium.price"],
+      "unresolvedFields": ["chat.pricing.google_ai_pro.usd_monthly", "copilot.pricing.copilot_pro.lifecycle", "copilot.pricing.microsoft_365_premium.price"]
+    },
+    {
+      "id": "wrong-billing-period",
+      "overrides": {
+        "copilot-pricing": "<main><h1>Microsoft 365 plans for individuals</h1><p>United States</p><h2>Microsoft 365 Premium</h2><p>US$199.99 per year</p></main>",
+        "pricing": "<main><h1>Google AI plans</h1><p>United States</p><h2>Google AI Pro</h2><p>US$199.99/year</p></main>"
+      },
+      "excludedFields": ["chat.pricing.google_ai_pro.usd_monthly", "copilot.pricing.microsoft_365_premium.price"],
+      "unresolvedFields": ["chat.pricing.google_ai_pro.usd_monthly", "copilot.pricing.copilot_pro.lifecycle", "copilot.pricing.microsoft_365_premium.price"]
+    },
+    {
+      "id": "required-abstention",
+      "overrides": {
+        "copilot-changes": "<main><h1>Changes to the Microsoft Copilot app</h1><p>The navigation colors were updated.</p></main>",
+        "mac-support": "<main><h1>Use the Gemini app on Mac</h1><p>Read tips about using Gemini on a desktop computer.</p></main>"
+      },
+      "excludedFields": ["chat.platforms.macOS.available", "chat.platforms.macOS.minimum_version", "copilot.chat.free.availability"],
+      "unresolvedFields": ["chat.platforms.macOS.available", "chat.platforms.macOS.minimum_version", "copilot.chat.free.availability", "copilot.pricing.copilot_pro.lifecycle"]
+    }
+  ]
+}

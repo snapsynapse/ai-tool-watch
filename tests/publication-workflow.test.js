@@ -41,3 +41,15 @@ test('claim validation blocks preparation and deployment after the scheduled tri
     assert.match(build, /prepare-publication:\n\s+needs: validate/);
     assert.match(build, /reviewed_input_sha256=/);
 });
+
+test('both deployments bind downloads to independent producer identity', () => {
+    for (const key of ['source_revision', 'reviewed_input_sha256', 'artifact_sha256']) {
+        assert.ok(build.includes(`${key}: \${{ steps.receipt.outputs.${key} }}`));
+        assert.ok(build.includes(`expected-${key.replaceAll('_', '-')}: \${{ needs.prepare-publication.outputs.${key} }}`));
+        assert.ok(ftp.includes(`expected-${key.replaceAll('_', '-')}:\n        required: true\n        type: string`));
+        for (const workflow of [pagesDeploy, ftpDeploy]) {
+            assert.ok(workflow.includes(`--expected-${key.replaceAll('_', '-')} "$EXPECTED_${key.toUpperCase()}"`));
+        }
+    }
+    assert.match(build, /id: receipt[\s\S]*GITHUB_OUTPUT/);
+});
