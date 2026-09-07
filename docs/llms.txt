@@ -4,7 +4,7 @@
 
 A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
 
-Maintained by PAICE.work. Updated weekly via multi-model verification cascade.
+Maintained by PAICE.work. Updated twice weekly via multi-model verification cascade.
 
 ## What this site covers
 

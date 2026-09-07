@@ -1,6 +1,6 @@
 {
   "schedule": {
-    "full_verification": "weekly",
+    "full_verification": "twice_weekly",
     "staleness_check": "daily",
     "staleness_threshold_days": 30
   },

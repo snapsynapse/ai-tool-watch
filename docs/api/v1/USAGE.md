@@ -97,7 +97,7 @@ If you are building an agent or tool that reads this data:
 
 4. **Don't strip caveats.** Implementation records include `talking_point` fields that contain important context (regional restrictions, plan requirements, deprecation notices). Omitting these can mislead users.
 
-5. **Cache responsibly.** The data updates roughly weekly. Caching for 24 hours is reasonable. Caching for months defeats the purpose of freshness tracking.
+5. **Cache responsibly.** Scheduled verification runs twice weekly, and accepted updates can publish between those runs. Caching for 24 hours is reasonable. Caching for months defeats the purpose of freshness tracking.
 
 ## Attribution
 

@@ -1,7 +1,7 @@
 # Architecture Patterns: A Plain-Text Knowledge Base with an Immune System
 
 Status: Published draft
-Last updated: 2026-03-15
+Last updated: 2026-09-07
 
 This document describes the architectural patterns at work in this project and how they combine into something that doesn't have a standard name yet. It's written for developers who look at the repo and think "this isn't the normal way to do things" — because it isn't, and that's the point.
 
@@ -9,7 +9,7 @@ This document describes the architectural patterns at work in this project and h
 
 ## The short version
 
-This project is a knowledge base built entirely from markdown files, compiled by a single zero-dependency Node.js script, verified weekly by a cascade of competing AI models, maintained through GitHub's native issue lifecycle, and served as both a static site and a machine-readable JSON API.
+This project is a knowledge base built entirely from markdown files, compiled by a single zero-dependency Node.js script, verified twice weekly by a cascade of competing AI models, maintained through GitHub's native issue lifecycle, and served as both a static site and a machine-readable JSON API.
 
 No framework. No database. No node_modules. The whole thing is plain text that happens to keep itself accurate.
 
@@ -91,7 +91,7 @@ This makes the generator easy to extend. Adding 125 bridge pages with four diffe
 
 **How it shows up here:**
 
-- Push to main and scheduled builds (Mon/Thu at 6pm Pacific) trigger `build.yml`, which regenerates the site and commits the result
+- Push to main and scheduled runs trigger `build.yml`, which validates source, prepares one reviewed artifact, and commits scoped canonical/generated changes when needed
 - The generated `docs/` directory is checked into the repo (not built on deploy) so that the dashboard is always inspectable in git history
 - Verification updates are committed by `github-actions[bot]` with full audit trail
 - Issues are created and closed through the GitHub API, linking back to the commits that resolved them

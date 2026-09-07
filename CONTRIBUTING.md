@@ -110,6 +110,8 @@ last_verified: 2026-01-25  # Update this!
 
 ### Step 5: Sync and Validate
 
+For an accepted source or evidence update, finish with `node scripts/prepare-publication.js`. It runs the canonical sync, validation, build, generated-structure, human/API/MCP coherence, and artifact-manifest checks used by CI. The individual commands below remain useful while developing and diagnosing a change.
+
 ```bash
 # Sync evidence records from source files
 node scripts/sync-evidence.js

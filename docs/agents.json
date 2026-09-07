@@ -3,12 +3,12 @@
   "schema_version": "1.0",
   "name": "ai-tool-watch",
   "display_name": "AI Tool Watch",
-  "description": "A structured, version-controlled reference tracking 18 AI capabilities across 6 products with 72 implementations. Updated weekly via multi-model verification cascade.",
+  "description": "A structured, version-controlled reference tracking 18 AI capabilities across 6 products with 72 implementations. Updated twice weekly via multi-model verification cascade.",
   "url": "https://aitool.watch/",
   "repository": "https://github.com/snapsynapse/ai-tool-watch",
   "license": "MIT",
   "maintainer": "Snap Synapse LLC",
-  "generated": "2026-09-07T06:13:35.971Z",
+  "generated": "2026-09-07T06:43:06.202Z",
   "capabilities": {
     "read": true,
     "write": false,
@@ -17,7 +17,7 @@
     "description": "Read-only access to AI capability, product, and implementation data with search and comparison support."
   },
   "data_freshness": {
-    "update_frequency": "weekly",
+    "update_frequency": "twice_weekly",
     "verification_method": "Multi-model cascade (Gemini, Perplexity, Grok, Claude)",
     "freshness_fields": [
       "verified",
