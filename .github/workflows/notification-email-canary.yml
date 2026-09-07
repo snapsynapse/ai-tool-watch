@@ -1,0 +1,35 @@
+name: Notification email canary
+run-name: '[TEST ONLY] Notification email canary - ${{ inputs.result }}'
+
+on:
+  workflow_dispatch:
+    inputs:
+      result:
+        description: 'Intentional result; failure tests GitHub Actions email'
+        required: true
+        default: failure
+        type: choice
+        options:
+          - failure
+          - success
+
+permissions: {}
+
+jobs:
+  notification-canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Produce the selected synthetic result
+        env:
+          TEST_RESULT: ${{ inputs.result }}
+        run: |
+          set -euo pipefail
+          echo 'TEST ONLY: no providers, corpus changes, or production incident.' >> "$GITHUB_STEP_SUMMARY"
+          echo "Evidence ID: $GITHUB_REPOSITORY/$GITHUB_RUN_ID/$GITHUB_RUN_ATTEMPT" >> "$GITHUB_STEP_SUMMARY"
+          echo 'GitHub account email settings control notification. A successful canary is not a repository-managed recovery email.' >> "$GITHUB_STEP_SUMMARY"
+          case "$TEST_RESULT" in
+            failure) echo 'Intentional notification test failure'; exit 1 ;;
+            success) echo 'Intentional notification test success' ;;
+            *) echo 'Invalid test result'; exit 2 ;;
+          esac
