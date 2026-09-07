@@ -109,7 +109,8 @@ function inspectContent({ body, httpStatus, contentType = '' } = {}) {
     const normalizedContentHash = normalized ? crypto.createHash('sha256').update(normalized).digest('hex') : undefined;
     if (httpStatus < 200 || httpStatus >= 300) return { retrievalStatus: 'error', contentValidation: 'invalid', coverageQualified: false, failureReason: `http_${httpStatus}`, rawContentHash, normalizedContentHash, excerpt: normalized.slice(0, 280) || undefined };
     if (!normalized) return { retrievalStatus: 'empty', contentValidation: 'invalid', coverageQualified: false, failureReason: 'empty_content', rawContentHash, excerpt: undefined };
-    if (/(?:captcha|recaptcha|hcaptcha|verify you are human|attention required|access denied|enable javascript and cookies|\bsign[ -]?in\b|\blog[ -]?in\b)/.test(lower)) return { retrievalStatus: 'blocked', contentValidation: 'invalid', coverageQualified: false, failureReason: 'blocked_html', rawContentHash, normalizedContentHash, excerpt: normalized.slice(0, 280) };
+    const loginWall = /^(?:sign[ -]?in|log[ -]?in)(?:\s|$)/.test(lower) || /(?:please|must|required to)\s+(?:sign[ -]?in|log[ -]?in)\b/.test(lower) || /<input\b[^>]*\btype\s*=\s*["']?password\b/i.test(body);
+    if (loginWall || /(?:captcha|recaptcha|hcaptcha|verify you are human|attention required|access denied|enable javascript and cookies)/.test(lower)) return { retrievalStatus: 'blocked', contentValidation: 'invalid', coverageQualified: false, failureReason: 'blocked_html', rawContentHash, normalizedContentHash, excerpt: normalized.slice(0, 280) };
     return { retrievalStatus: 'succeeded', contentValidation: 'valid', coverageQualified: true, rawContentHash, normalizedContentHash, excerpt: normalized.slice(0, 280) };
 }
 function observeContent(source, { body, httpStatus, contentType, ...input } = {}) {
