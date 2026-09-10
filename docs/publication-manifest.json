@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "7ce22f2b4f2a84d6b5e7e2b15ac22e123bcb30b2",
-  "reviewed_input_sha256": "3896786e74174f6b52d806d65d3ce862d82382610260da44a20c937585b8ed4a",
-  "artifact_sha256": "ab79db40deef3944d9c9e8862a99f329612df2708a4ed3418282c81b9900d5b9",
+  "source_revision": "ad97d1eb95d393ab0ea74e511bf3b27702c67b8f",
+  "reviewed_input_sha256": "083e1c33945a911dda487ae864082d4fceb41dd870cddea447acdf2588ebe70d",
+  "artifact_sha256": "5a7e6b4841bbad5b532fa463fc3ce0409fe710852af254f5171ea5876dd99287",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "7c618e736ca0873feebb4df8d98cd1361709c408d2169aa3114879308582db3c"
+      "sha256": "428ec7a2b8628ce12d14377a63b91445d829a52b84ff0f5c2a62a242f5f5ca96"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "5b95a306245c087fad21afbc166614926d666d6e0ee3e642f724e58606380e9a"
+      "sha256": "48ddb0a53935577f03e56ab5cc8420e519a673a6beae48b6e10a37c8682bfc6f"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "b4ae9b201be8fbcc627b001751c39ae437baafe65ca04632ce94472fdd3a0827"
+      "sha256": "a10a4fd72eb059f38e8cc50b50d31f5cad1d21843f4c534e5e89dbcce005b979"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "dad3250f671349b3b66ed091ef584f612e4f2511b92a88afbb057a8d1ce3d738"
+      "sha256": "6ab081b77f87d2162664927d6e4c9741ccdc253b34a80958fa8f55913b66b146"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "22a4e67fa1979d0826c6f237d74c268dd0ea3eef541e6ef37abc2df61f878d9a"
+      "sha256": "2308dcc0e671c72d841a51345d37f80d269bbc0077012b1ee553270cff5ded10"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "bd5a9e23c93ddcb4c62b39b002b2e0e15c0098ca74ff1812e0207381e2a5d091"
+      "sha256": "7f105c7f5f209e25a1ed7fc0454b7f015172f599a4bea2fd306b854b7a320b13"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "2495585ccc97db80b11289104c043f417d3baffe7326be814214655ae39cc4b6"
+      "sha256": "33204645db343e3c26ade2abe8eab12e9f26225be95a1f87a4b20c62fe0dca49"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "1ff62b8a27253d27415368a2ddc157c796322b3ec140db22cb8c34db87fc3edd"
+      "sha256": "59047208d0a9f7db0f424930bdc13729e003d0fc581dcd8f62bb019e6cd6fd41"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "4752a60c77e1a4c9eff9650e491d60d8c304a897847ce95c230cd2f649980da5"
+      "sha256": "fce581f444f532d59b9feab216d173c1986cec10cfecaca6f5d6cf5a4e922a5d"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "fba60d6cf0db7d05bc007bdde336afd45b7e9d9b586119bb04d247510c093a30"
+      "sha256": "7255efa88f5bc095bf7c0598c95c890e593d062d6e015a0b8c06993f78e20dd3"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "9fd53b80d6a6e1c9a7136154f94bc08867d6e7940bf9d137f56cde913c80fc63"
+      "sha256": "1b92f93236c806844046435345cf0f2005fcdc8def686051f0253537fb0368d2"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "7b1554330af1362e44f6ccd6b028772db26dd0b74a3a87283b3cc51059911997"
+      "sha256": "1eeb7ec0bd8cc9b9128a677793ba312bba2efb9f344962e375f373306629f931"
     },
     {
       "path": "assets/export.js",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "a5408eaf10675623470ed1fa60173a8e5bcb5a6e0568b0fe5c63f8127ad5e2c3"
+      "sha256": "75cceeea80fd079ee88d63d424be3f9e602a3c7856fdf61fad25656cf169b41a"
     },
     {
       "path": "index.html",
-      "sha256": "138af7cd856e0f3441b3caf22a57e6b5e0950bb1a23ea31e20190ade279bf10b"
+      "sha256": "8591c6c39443750c2393ae661ef60bee4f118ee60c3a89038c4aef882bcbcb11"
     },
     {
       "path": "index.xml",
-      "sha256": "cd2a8106035761004c8320217f7f78af16edf0397e6b6d0eef266ccb59987a15"
+      "sha256": "63bd3ccbe21b7ee2706f24d11fc4d372bcd04d9c4bdbc67ca9a930aa9295cf2f"
     },
     {
       "path": "llms.txt",
@@ -722,7 +722,7 @@
     },
     {
       "path": "sitemap.xml",
-      "sha256": "cf3af9444f98cfd965abdcba07b559d284c5bdde015b9da1b082d5c4e8bc15c3"
+      "sha256": "8316e399c3898041ccceced08558ea7961e23b70470e93a296cb48949ac62de3"
     },
     {
       "path": "timeline.html",
