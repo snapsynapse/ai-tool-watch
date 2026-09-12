@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T04:36:43.522Z",
+    "generated": "2026-09-12T04:41:26.716Z",
     "version": "1.0",
     "count": 92
   },
@@ -1359,7 +1359,7 @@
       "source_heading": "Agentic App Actions (Android)",
       "launched": "2026-03-03T12:00Z",
       "verified": "2026-03-21",
-      "checked": "2026-09-04",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "March 2026 Pixel Drop",
@@ -1367,6 +1367,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
+        },
         {
           "date": "2026-03-21T12:00Z",
           "change": "[Verified] Device support corrected to Pixel 10 series and Samsung Galaxy S26 series; regional availability updated to US and South Korea; supported apps listed"
@@ -1390,7 +1394,7 @@
       "source_heading": "AI Studio",
       "launched": "2023-12-13T12:00Z",
       "verified": "2026-03-08",
-      "checked": "2026-09-04",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Google AI Studio",
@@ -1402,6 +1406,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
+        },
         {
           "date": "2023-12-13T12:00Z",
           "change": "Initial entry"
@@ -1416,8 +1424,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Audio Overview",
       "launched": "2024-09-11T12:00Z",
-      "verified": "2026-02-22",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "NotebookLM Audio Overviews",
@@ -1429,6 +1437,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro"
+        },
         {
           "date": "2025-04-01T12:00Z",
           "change": "50+ languages supported"
@@ -1451,8 +1463,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Canvas",
       "launched": "2025-03-18T12:00Z",
-      "verified": "2026-03-01",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini Canvas",
@@ -1464,6 +1476,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card"
+        },
         {
           "date": "2025-03-18T12:00Z",
           "change": "Initial entry"
@@ -1479,7 +1495,7 @@
       "source_heading": "Chat",
       "launched": "2024-02-08T12:00Z",
       "verified": "2026-08-31",
-      "checked": "2026-09-01",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini",
@@ -1499,6 +1515,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change"
+        },
         {
           "date": "2026-08-31T12:00Z",
           "change": "[Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026)"
@@ -1525,8 +1545,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Deep Research",
       "launched": "2024-12-11T12:00Z",
-      "verified": "2026-04-07",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini Deep Research",
@@ -1534,6 +1554,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card"
+        },
         {
           "date": "2026-04-07T12:00Z",
           "change": "[Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access"
@@ -1561,7 +1585,7 @@
       "source_heading": "Extensions",
       "launched": "2023-09-19T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-09-04",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini Extensions",
@@ -1573,6 +1597,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
+        },
         {
           "date": "2026-03-14T12:00Z",
           "change": "[Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404)"
@@ -1599,8 +1627,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Gemini Advanced",
       "launched": "2024-02-08T12:00Z",
-      "verified": "2026-04-07",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Google AI Plans",
@@ -1608,6 +1636,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google's subscriptions page (gemini.google/subscriptions/) (\"Varying access to 3.1 Pro\"). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision"
+        },
         {
           "date": "2026-04-07T12:00Z",
           "change": "[Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point"
@@ -1634,8 +1666,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Gems (Custom Chatbots)",
       "launched": "2024-08-01T12:00Z",
-      "verified": "2026-03-08",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Introducing Gems",
@@ -1643,6 +1675,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card"
+        },
         {
           "date": "2026-02-28T12:00Z",
           "change": "[Verified] Gating changed from paid to free; Gems available to all users since March 2025; URL updated (old blog URL broken)"
@@ -1661,8 +1697,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Imagen",
       "launched": "2024-08-01T12:00Z",
-      "verified": "2026-04-07",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Imagen on Gemini",
@@ -1670,6 +1706,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card"
+        },
         {
           "date": "2026-04-07T12:00Z",
           "change": "[Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4"
@@ -1727,8 +1767,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Nano Banana Pro",
       "launched": "2025-08-01T12:00Z",
-      "verified": "2026-03-04",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini Image Generation",
@@ -1744,6 +1784,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Free row ❌ → ⚠️: Google's subscriptions page (gemini.google/subscriptions/) lists \"limited access to Nano Banana Pro\" via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro"
+        },
         {
           "date": "2026-03-04T12:00Z",
           "change": "[Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro"
@@ -1766,8 +1810,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "NotebookLM",
       "launched": "2023-12-01T12:00Z",
-      "verified": "2026-02-28",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "NotebookLM",
@@ -1779,6 +1823,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/), which now calls the product \"Gemini Notebook\" (record title kept; implementations/index.yml binds to the heading)"
+        },
         {
           "date": "2023-12-01T12:00Z",
           "change": "Initial entry"
@@ -1825,7 +1873,7 @@
       "source_heading": "Project Astra",
       "launched": "2024-12-11T12:00Z",
       "verified": "2026-02-28",
-      "checked": "2026-09-04",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Project Astra",
@@ -1837,6 +1885,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
+        },
         {
           "date": "2025-05-20T12:00Z",
           "change": "Free for all users"
@@ -1859,8 +1911,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Veo (Video Generation)",
       "launched": "2024-05-14T12:00Z",
-      "verified": "2026-08-15",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Veo - Google DeepMind",
@@ -1880,6 +1932,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus row — video generation is included at Plus per Google's subscriptions page (gemini.google/subscriptions/); Limits now carry Google's published Flow credit allocations; talking point prices corrected"
+        },
         {
           "date": "2026-08-15T12:00Z",
           "change": "[Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired)"
@@ -1914,8 +1970,8 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Gemini in Workspace (Docs, Sheets, etc.)",
       "launched": "2024-06-24T12:00Z",
-      "verified": "2026-03-15",
-      "checked": "2026-09-04",
+      "verified": "2026-09-11",
+      "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini for Google Workspace",
@@ -1931,6 +1987,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google's subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99"
+        },
         {
           "date": "2026-03-14T12:00Z",
           "change": "[Verified] March 2026 beta rollout: Help me create (Docs), Fill with Gemini (Sheets), new slide creation (Slides), AI Overviews + Ask Gemini (Drive); AI Ultra tier added; Drive features US-only initially; English-only; full Slides deck gen coming soon"
@@ -2955,7 +3015,7 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": null,
       "launched": null,
-      "verified": "2026-02-22",
+      "verified": "2026-02-28",
       "checked": "2026-09-01",
       "sources": [
         {

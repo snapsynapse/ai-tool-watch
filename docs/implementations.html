@@ -139,6 +139,7 @@
                     <select id="tierFilter" onchange="filterFeatures()">
                         <option value="">All</option>
                         <option value="0">Free</option>
+                        <option value="5">$5/mo</option>
                         <option value="8">$8/mo</option>
                         <option value="10">$10/mo</option>
                         <option value="13">$13/mo</option>
@@ -147,7 +148,6 @@
                         <option value="30">$30/mo</option>
                         <option value="100">$100/mo</option>
                         <option value="200">$200/mo</option>
-                        <option value="250">$250/mo</option>
                         <option value="300">$300/mo</option>
                         <option value="team">Team</option>
                         <option value="enterprise">Enterprise</option>
@@ -1148,14 +1148,14 @@
             </div>
             <div class="pricing-bar">
                 <span class="price-tag"><strong>Free</strong>: $0</span>
-                <span class="price-tag"><strong>Google AI Plus</strong>: $7.99/mo</span>
+                <span class="price-tag"><strong>Google AI Plus</strong>: $4.99/mo</span>
                 <span class="price-tag"><strong>Google AI Pro</strong>: $19.99/mo</span>
-                <span class="price-tag"><strong>Google AI Ultra</strong>: $249.99/mo</span>
+                <span class="price-tag"><strong>Google AI Ultra</strong>: From $99.99/mo</span>
                 <span class="price-tag"><strong>Workspace add-on</strong>: $20/user/mo</span>
             </div>
             <div class="features-grid">
                 
-                <div class="feature-card" id="gemini-ai-studio" data-category="coding" data-prices="0" data-surfaces="windows_macos_web_api">
+                <div class="feature-card" id="gemini-ai-studio" data-category="coding" data-prices="0_20" data-surfaces="windows_macos_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://aistudio.google.com/" target="_blank" class="feature-link">AI Studio</a></h3>
@@ -1168,7 +1168,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Higher limits • Same tool</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Higher limits • Same tool</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
@@ -1178,11 +1178,11 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-ai-studio')"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-ai-studio')"><span class="date-emoji">🚀</span><span class="date-value">2023-12-13</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-audio-overview" data-category="other" data-prices="0" data-surfaces="windows_macos_ios_android_web">
+                <div class="feature-card" id="gemini-audio-overview" data-category="other" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://blog.google/technology/ai/notebooklm-audio-overviews/" target="_blank" class="feature-link">Audio Overview</a></h3>
@@ -1195,21 +1195,29 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">20/day • Higher limits</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">More than Free • &quot;More Audio Overviews&quot; per Google's subscriptions page</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">20/day • Higher limits</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">Highest • &quot;Highest limits&quot; per Google's subscriptions page</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Audio Overview transforms your content into AI-generated podcast-style discussions. <strong>Free users get 3 per day</strong>; AI Pro gets 20. Originally from NotebookLM, now integrated into Gemini.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Audio Overview transforms your content into AI-generated podcast-style discussions. <strong>Free users get 3 per day</strong>; Google AI Plus gets more, Google AI Pro gets 20, and Google AI Ultra has the highest limits. Originally from NotebookLM, now integrated into Gemini.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-audio-overview')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-22</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-audio-overview')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-canvas" data-category="coding" data-prices="0" data-surfaces="windows_macos_ios_android_web">
+                <div class="feature-card" id="gemini-canvas" data-category="coding" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://gemini.google/overview/canvas/" target="_blank" class="feature-link">Canvas</a></h3>
@@ -1222,21 +1230,29 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">100-500/day • 1M context window</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">2x Free • &quot;2x higher usage limits than Free&quot; per Google's subscriptions page</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">100-500/day • 1M context window</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">5x–20x Pro • Highest usage limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Canvas is an interactive workspace for creating and refining writing and code projects. <strong>Available on all plans including free</strong>—free users get limited prompts per day, while AI Pro unlocks a 1 million token context window.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Canvas is an interactive workspace for creating and refining writing and code projects. <strong>Available on all plans including free</strong>—free users get limited prompts per day, Google AI Plus doubles free usage, and Google AI Pro unlocks a 1 million token context window.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-canvas')"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-01</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-canvas')"><span class="date-emoji">🚀</span><span class="date-value">2025-03-18</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-deep-research" data-category="research" data-prices="0" data-surfaces="windows_macos_ios_android_web">
+                <div class="feature-card" id="gemini-deep-research" data-category="research" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://blog.google/products/gemini/google-gemini-deep-research/" target="_blank" class="feature-link">Deep Research</a></h3>
@@ -1249,21 +1265,29 @@
                                 <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Full Gemini 3.0 Pro research</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">2x Free • &quot;2x higher usage limits than Free&quot;; model tier not stated by Google</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Full Gemini 3.0 Pro research</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">5x–20x Pro • Highest usage limits; first access to Deep Think</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini's Deep Research creates comprehensive reports on complex topics. <strong>Now available on the free tier (~5 reports/month via Gemini Flash)</strong>; AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini's Deep Research creates comprehensive reports on complex topics. <strong>Now available on the free tier (~5 reports/month via Gemini Flash)</strong>; Google AI Plus ($4.99/mo) doubles free usage; Google AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-deep-research')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-deep-research')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-extensions" data-category="integrations" data-prices="0" data-surfaces="windows_macos_ios_android_web_terminal_api">
+                <div class="feature-card" id="gemini-extensions" data-category="integrations" data-prices="0_20" data-surfaces="windows_macos_ios_android_web_terminal_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://gemini.google.com/extensions" target="_blank" class="feature-link">Extensions</a></h3>
@@ -1276,7 +1300,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • All extensions</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • All extensions</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
@@ -1286,42 +1310,42 @@
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-extensions')"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-extensions')"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-gemini-advanced" data-category="other" data-prices="" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-gemini-advanced" data-category="other" data-prices="0_20_100" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://gemini.google.com/" target="_blank" class="feature-link">Gemini Advanced</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('gemini-gemini-advanced')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-paid">Paid</span></span>
+                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('gemini-gemini-advanced')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-deprecated">Deprecated</span><span class="badge gate-paid">Paid</span></span>
                         </div>
                         <div class="avail-grid">
                             
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">— • Standard Gemini only</span></span>
-                                <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Varying • Google's $0 plan card: &quot;Varying access to 3.1 Pro&quot;</span></span>
+                                <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Gemini 3.0 Pro access + 2TB storage</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Gemini 3.1 Pro, 4x Free usage limits, 5 TB storage</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Ultra<span class="plan-tooltip">Highest • Maximum limits + 30TB storage</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">Highest • 5x–20x Pro limits, Deep Think, 20 TB+ storage</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Advanced gives you access to Google's most capable models. <strong>Google AI Pro ($19.99/mo)</strong> includes Gemini Advanced plus 2TB storage. <strong>Google AI Ultra ($249.99/mo)</strong> adds the highest limits and 30TB storage. Free users get standard Gemini only.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Advanced was Google's name for premium model access; Google's plans pages no longer use it and its help article is gone. <strong>Google AI Pro ($19.99/mo) unlocks Gemini 3.1 Pro with 4x free usage limits; Google AI Ultra (from $99.99/mo) adds the highest limits and Deep Think.</strong> Free users now get varying access to 3.1 Pro rather than none. Marked deprecated — see the Chat record for current model access.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gemini-advanced')"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gemini-advanced')"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-gemini-in-workspace-docs-sheets-etc" data-category="cloud-files" data-prices="0_team" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-gemini-in-workspace-docs-sheets-etc" data-category="cloud-files" data-prices="0_5_20_100_team" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://workspace.google.com/solutions/ai/" target="_blank" class="feature-link">Gemini in Workspace (Docs, Sheets, etc.)</a></h3>
@@ -1334,11 +1358,15 @@
                                 <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Personal Workspace; Help me create, Fill with Gemini</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">Partial • &quot;Gemini in Gmail, Vids, and more&quot; per Google's subscriptions page — Docs not listed at this tier</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Ultra<span class="plan-tooltip">Full • Highest limits</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Personal Workspace; Help me create, Fill with Gemini</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">Full • Highest limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
@@ -1346,17 +1374,17 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. <strong>March 2026 beta rollout</strong> adds 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. <strong>Requires AI Pro ($19.99/mo), AI Ultra ($249.99/mo), or Workspace add-on.</strong> Drive features are US-only for now; full deck generation in Slides is coming soon.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. <strong>March 2026 beta rollout</strong> adds 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. <strong>Google AI Plus ($4.99/mo) covers Gmail and Vids; Google AI Pro ($19.99/mo) adds Docs; Google AI Ultra (from $99.99/mo) has the highest limits; or the Workspace add-on for business accounts.</strong> Drive features are US-only for now; full deck generation in Slides is coming soon.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gemini-in-workspace-docs-sheets-etc')"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gemini-in-workspace-docs-sheets-etc')"><span class="date-emoji">🚀</span><span class="date-value">2024-06-24</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-gemini-live-voice-mode" data-category="voice" data-prices="0_8_20_250" data-surfaces="ios_android_api">
+                <div class="feature-card" id="gemini-gemini-live-voice-mode" data-category="voice" data-prices="0_5_20_100" data-surfaces="ios_android_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://blog.google/products/gemini/gemini-live-audio-updates/" target="_blank" class="feature-link">Gemini Live (Voice Mode)</a></h3>
@@ -1391,7 +1419,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-gems-custom-chatbots" data-category="agents" data-prices="0" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-gems-custom-chatbots" data-category="agents" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://blog.google/products-and-platforms/products/gemini/google-gemini-update-august-2024/" target="_blank" class="feature-link">Gems (Custom Chatbots)</a></h3>
@@ -1404,21 +1432,29 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Higher limits, sharing features</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">2x Free • &quot;2x higher usage limits than Free&quot; per Google's subscriptions page</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Higher limits, sharing features</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">5x–20x Pro • Highest usage limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gems are custom AI experts you create for specific tasks. <strong>Now free for all users</strong>—create premade or custom Gems at no cost. AI Pro gets higher limits and sharing features.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gems are custom AI experts you create for specific tasks. <strong>Now free for all users</strong>—create premade or custom Gems at no cost. Google AI Plus doubles free usage; Google AI Pro gets higher limits and sharing features.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gems-custom-chatbots')"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-08</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-gems-custom-chatbots')"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-imagen" data-category="image-gen" data-prices="0" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-imagen" data-category="image-gen" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/" target="_blank" class="feature-link">Imagen</a></h3>
@@ -1431,21 +1467,29 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">~100-150/day • Imagen 4, higher limits</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">2x Free • &quot;2x higher usage limits than Free&quot; per Google's subscriptions page</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">~100-150/day • Imagen 4, higher limits</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">5x–20x Pro • Highest usage limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini can generate images using <strong>Imagen 4</strong>. <strong>Now free for all users</strong>—free tier gets ~10-20 images/day; AI Pro gets ~100-150/day. Also available via the Gemini API.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini can generate images using <strong>Imagen 4</strong>. <strong>Now free for all users</strong>—free tier gets ~10-20 images/day, Google AI Plus doubles that, and Google AI Pro gets ~100-150/day. Also available via the Gemini API.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-imagen')"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-imagen')"><span class="date-emoji">🚀</span><span class="date-value">2024-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-nano-banana-pro" data-category="image-gen" data-prices="" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-nano-banana-pro" data-category="image-gen" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://gemini.google/overview/image-generation/" target="_blank" class="feature-link">Nano Banana Pro</a></h3>
@@ -1454,25 +1498,33 @@
                         <div class="avail-grid">
                             
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">— • Nano Banana 2 (default) only</span></span>
-                                <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Limited • Nano Banana 2 is the default in the Gemini app; Google's $0 plan card lists &quot;limited access to Nano Banana Pro&quot; via Google Flow only</span></span>
+                                <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Nano Banana Pro via three-dot menu</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">Limited • As Free (&quot;Everything in Free and…&quot;); full Nano Banana Pro in the Gemini app starts at Google AI Pro</span></span>
+                                <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Nano Banana Pro via three-dot menu</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">Highest • Everything in Pro with the highest usage limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Nano Banana Pro is Gemini's native image generation and editing model, built on Gemini 3 Pro. It's <strong>distinct from Imagen</strong>—optimized for conversational editing, character consistency, and multi-image fusion. Supports 1K-4K resolutions with SynthID watermarks. <strong>Now requires a paid plan (AI Pro, $19.99/mo)</strong>—free users get Nano Banana 2 as the default model instead. Access Nano Banana Pro via the three-dot model menu.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Nano Banana Pro is Gemini's native image generation and editing model, built on Gemini 3 Pro. It's <strong>distinct from Imagen</strong>—optimized for conversational editing, character consistency, and multi-image fusion. Supports 1K-4K resolutions with SynthID watermarks. <strong>Full access requires Google AI Pro ($19.99/mo)</strong>—free and Google AI Plus users get Nano Banana 2 as the default in the Gemini app, with only limited Nano Banana Pro access through Google Flow. Access Nano Banana Pro via the three-dot model menu.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-nano-banana-pro')"><span class="date-emoji">🚀</span><span class="date-value">2025-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-04</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-nano-banana-pro')"><span class="date-emoji">🚀</span><span class="date-value">2025-08-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-notebooklm" data-category="research" data-prices="0" data-surfaces="windows_macos_ios_android_web_api">
+                <div class="feature-card" id="gemini-notebooklm" data-category="research" data-prices="0_5_20_100" data-surfaces="windows_macos_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://notebooklm.google.com/" target="_blank" class="feature-link">NotebookLM</a></h3>
@@ -1485,21 +1537,29 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">300 sources/notebook • Higher limits</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">More than Free • &quot;More Audio Overviews, notebooks, and more&quot; per Google's subscriptions page</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">300 sources/notebook • Higher limits; Google says &quot;5x more Audio Overviews, notebooks&quot;</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">Highest • &quot;Highest limits and best model capabilities&quot;</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. <strong>Free to use</strong> with generous limits; AI Pro increases source limits.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. <strong>Free to use</strong> with generous limits; Google AI Plus adds more notebooks and Audio Overviews, Google AI Pro raises source limits, and Google AI Ultra has the highest. Google's plans page now lists it as </div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-notebooklm')"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-notebooklm')"><span class="date-emoji">🚀</span><span class="date-value">2023-12-01</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-project-astra" data-category="vision" data-prices="0" data-surfaces="ios_android">
+                <div class="feature-card" id="gemini-project-astra" data-category="vision" data-prices="0_20" data-surfaces="ios_android">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://deepmind.google/models/project-astra/" target="_blank" class="feature-link">Project Astra</a></h3>
@@ -1512,7 +1572,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Early access to new features</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Full • Early access to new features</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
@@ -1522,11 +1582,11 @@
                     <div class="surface-column">
                         <span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-project-astra')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-project-astra')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-11</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-02-28</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-veo-video-generation" data-category="video-gen" data-prices="team" data-surfaces="windows_macos_linux_ios_android_web_api">
+                <div class="feature-card" id="gemini-veo-video-generation" data-category="video-gen" data-prices="5_20_100_team" data-surfaces="windows_macos_linux_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://deepmind.google/models/veo/" target="_blank" class="feature-link">Veo (Video Generation)</a></h3>
@@ -1539,11 +1599,15 @@
                                 <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Full • Veo 3.1 via Gemini app and Flow</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Plus<span class="plan-tooltip">200 Flow credits • &quot;Access to more features like video generation&quot; per Google's subscriptions page</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Ultra<span class="plan-tooltip">Highest • Full Veo 3.1 access, largest Flow credit pool</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">1,000 Flow credits • Veo 3.1 via Gemini app and Flow</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Google AI Ultra<span class="plan-tooltip">10,000–25,000 Flow credits • Full Veo 3.1 access, largest Flow credit pool</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
@@ -1551,17 +1615,17 @@
                                 <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Veo is Google's video generation model. <strong>Veo 3.1 generates 4K video up to 8 seconds with native audio</strong>—including dialogue, sound effects, and ambient noise. Requires <strong>AI Pro ($19.99/mo)</strong> or <strong>AI Ultra ($249.99/mo)</strong> for the highest limits. Available in the Gemini app, Flow, and via API. Supports text-to-video and image-to-video with up to 3 reference images—though <strong>image-to-video is blocked in the EEA, UK, and Switzerland</strong>.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Veo is Google's video generation model. <strong>Veo 3.1 generates 4K video up to 8 seconds with native audio</strong>—including dialogue, sound effects, and ambient noise. Starts at <strong>Google AI Plus ($4.99/mo, 200 Flow credits)</strong>; <strong>Google AI Pro ($19.99/mo, 1,000 credits)</strong> and <strong>Google AI Ultra (from $99.99/mo, 10,000–25,000 credits)</strong> for the highest limits. Available in the Gemini app, Flow, and via API. Supports text-to-video and image-to-video with up to 3 reference images—though <strong>image-to-video is blocked in the EEA, UK, and Switzerland</strong>.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-veo-video-generation')"><span class="date-emoji">🚀</span><span class="date-value">2024-05-14</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-08-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-veo-video-generation')"><span class="date-emoji">🚀</span><span class="date-value">2024-05-14</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-09-11</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-agentic-app-actions-android" data-category="agents" data-prices="0" data-surfaces="android">
+                <div class="feature-card" id="gemini-agentic-app-actions-android" data-category="agents" data-prices="0_20" data-surfaces="android">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438" target="_blank" class="feature-link">Agentic App Actions (Android)</a></h3>
@@ -1574,7 +1638,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">AI Pro<span class="plan-tooltip">Beta • Select apps and devices</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Google AI Pro<span class="plan-tooltip">Beta • Select apps and devices</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
@@ -1584,11 +1648,11 @@
                     <div class="surface-column">
                         <span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-agentic-app-actions-android')"><span class="date-emoji">🚀</span><span class="date-value">2026-03-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-agentic-app-actions-android')"><span class="date-emoji">🚀</span><span class="date-value">2026-03-03</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-past-chats-memory" data-category="other" data-prices="0_8_20_250" data-surfaces="ios_android_web">
+                <div class="feature-card" id="gemini-past-chats-memory" data-category="other" data-prices="0_5_20_100" data-surfaces="ios_android_web">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://support.google.com/gemini/answer/14901455" target="_blank" class="feature-link">Past Chats (Memory)</a></h3>
@@ -1623,7 +1687,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-chat" data-category="other" data-prices="0_8_20_250_team" data-surfaces="macos_ios_android_chrome_web_api">
+                <div class="feature-card" id="gemini-chat" data-category="other" data-prices="0_5_20_100_team" data-surfaces="macos_ios_android_chrome_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://gemini.google.com" target="_blank" class="feature-link">Chat</a></h3>
@@ -1652,13 +1716,13 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini's core text Q&A is <strong>available for free</strong> at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses <strong>Gemini 3.6 Flash</strong>; AI Pro and Ultra unlock <strong>Gemini 3.1 Pro</strong> with higher limits. <strong>Gemini side panel now available in Chrome</strong> (Jan 2026) with Auto Browse for AI Pro/Ultra subscribers. A <strong>native Gemini app for Mac</strong> launched April 2026 (gemini.google/mac).</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini's core text Q&A is <strong>available for free</strong> at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses <strong>Gemini 3.6 Flash</strong>; Google AI Pro and Ultra unlock <strong>Gemini 3.1 Pro</strong> with higher limits. <strong>Gemini side panel now available in Chrome</strong> (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A <strong>native Gemini app for Mac</strong> launched April 2026 (gemini.google/mac).</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-chat')"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-08-31</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-chat')"><span class="date-emoji">🚀</span><span class="date-value">2024-02-08</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-08-31</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
                         </div>
                     </div>
                 </div>
@@ -3749,16 +3813,18 @@
                 platform: "Gemini",
                 launched: "2023-12-13T12:00Z",
                 verified: "2026-03-08",
-                checked: "2026-09-04",
-                changes: [{ date: "2023-12-13T12:00Z", change: "Initial entry" }]
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature" },
+                { date: "2023-12-13T12:00Z", change: "Initial entry" }]
             },
             "gemini-audio-overview": {
                 name: "Audio Overview",
                 platform: "Gemini",
                 launched: "2024-09-11T12:00Z",
-                verified: "2026-02-22",
-                checked: "2026-09-04",
-                changes: [{ date: "2025-04-01T12:00Z", change: "50+ languages supported" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro" },
+                { date: "2025-04-01T12:00Z", change: "50+ languages supported" },
                 { date: "2025-03-18T12:00Z", change: "Integrated into Gemini app" },
                 { date: "2024-09-11T12:00Z", change: "Initial entry (NotebookLM)" }]
             },
@@ -3766,17 +3832,19 @@
                 name: "Canvas",
                 platform: "Gemini",
                 launched: "2025-03-18T12:00Z",
-                verified: "2026-03-01",
-                checked: "2026-09-04",
-                changes: [{ date: "2025-03-18T12:00Z", change: "Initial entry" }]
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card" },
+                { date: "2025-03-18T12:00Z", change: "Initial entry" }]
             },
             "gemini-deep-research": {
                 name: "Deep Research",
                 platform: "Gemini",
                 launched: "2024-12-11T12:00Z",
-                verified: "2026-04-07",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-04-07T12:00Z", change: "[Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card" },
+                { date: "2026-04-07T12:00Z", change: "[Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access" },
                 { date: "2026-03-23T12:00Z", change: "[Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro for AI Pro tier" },
                 { date: "2026-03-04T12:00Z", change: "[Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash" },
                 { date: "2024-12-11T12:00Z", change: "Initial entry" }]
@@ -3786,8 +3854,9 @@
                 platform: "Gemini",
                 launched: "2023-09-19T12:00Z",
                 verified: "2026-03-15",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-14T12:00Z", change: "[Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404)" },
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature" },
+                { date: "2026-03-14T12:00Z", change: "[Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404)" },
                 { date: "2026-03-04T12:00Z", change: "[Verified] Fixed broken URL (removed ?hl=en parameter)" },
                 { date: "2025-10-01T12:00Z", change: "Gemini CLI Extensions added with MCP support" },
                 { date: "2023-09-19T12:00Z", change: "Initial entry" }]
@@ -3796,9 +3865,10 @@
                 name: "Gemini Advanced",
                 platform: "Gemini",
                 launched: "2024-02-08T12:00Z",
-                verified: "2026-04-07",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-04-07T12:00Z", change: "[Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google's subscriptions page (gemini.google/subscriptions/) (\"Varying access to 3.1 Pro\"). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision" },
+                { date: "2026-04-07T12:00Z", change: "[Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point" },
                 { date: "2026-03-23T12:00Z", change: "[Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro" },
                 { date: "2026-03-04T12:00Z", change: "[Verified] Google One AI Premium renamed to Google AI Pro ($19.99/mo); Google AI Plus ($7.99/mo) and AI Ultra ($249.99/mo) added; AI Plus also includes Gemini Advanced" },
                 { date: "2024-02-08T12:00Z", change: "Initial entry" }]
@@ -3807,9 +3877,10 @@
                 name: "Gemini in Workspace (Docs, Sheets, etc.)",
                 platform: "Gemini",
                 launched: "2024-06-24T12:00Z",
-                verified: "2026-03-15",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-14T12:00Z", change: "[Verified] March 2026 beta rollout: Help me create (Docs), Fill with Gemini (Sheets), new slide creation (Slides), AI Overviews + Ask Gemini (Drive); AI Ultra tier added; Drive features US-only initially; English-only; full Slides deck gen coming soon" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google's subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99" },
+                { date: "2026-03-14T12:00Z", change: "[Verified] March 2026 beta rollout: Help me create (Docs), Fill with Gemini (Sheets), new slide creation (Slides), AI Overviews + Ask Gemini (Drive); AI Ultra tier added; Drive features US-only initially; English-only; full Slides deck gen coming soon" },
                 { date: "2024-06-24T12:00Z", change: "Initial entry" }]
             },
             "gemini-gemini-live-voice-mode": {
@@ -3825,27 +3896,30 @@
                 name: "Gems (Custom Chatbots)",
                 platform: "Gemini",
                 launched: "2024-08-01T12:00Z",
-                verified: "2026-03-08",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-02-28T12:00Z", change: "[Verified] Gating changed from paid to free; Gems available to all users since March 2025; URL updated (old blog URL broken)" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card" },
+                { date: "2026-02-28T12:00Z", change: "[Verified] Gating changed from paid to free; Gems available to all users since March 2025; URL updated (old blog URL broken)" },
                 { date: "2024-08-01T12:00Z", change: "Initial entry" }]
             },
             "gemini-imagen": {
                 name: "Imagen",
                 platform: "Gemini",
                 launched: "2024-08-01T12:00Z",
-                verified: "2026-04-07",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-04-07T12:00Z", change: "[Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card" },
+                { date: "2026-04-07T12:00Z", change: "[Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4" },
                 { date: "2024-08-01T12:00Z", change: "Initial entry" }]
             },
             "gemini-nano-banana-pro": {
                 name: "Nano Banana Pro",
                 platform: "Gemini",
                 launched: "2025-08-01T12:00Z",
-                verified: "2026-03-04",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-04T12:00Z", change: "[Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Free row ❌ → ⚠️: Google's subscriptions page (gemini.google/subscriptions/) lists \"limited access to Nano Banana Pro\" via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro" },
+                { date: "2026-03-04T12:00Z", change: "[Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro" },
                 { date: "2025-11-20T12:00Z", change: "Nano Banana Pro launched (Gemini 3 Pro Image)" },
                 { date: "2025-08-01T12:00Z", change: "Initial Nano Banana launched (Gemini 2.5 Flash Image)" }]
             },
@@ -3853,17 +3927,19 @@
                 name: "NotebookLM",
                 platform: "Gemini",
                 launched: "2023-12-01T12:00Z",
-                verified: "2026-02-28",
-                checked: "2026-09-04",
-                changes: [{ date: "2023-12-01T12:00Z", change: "Initial entry" }]
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/), which now calls the product \"Gemini Notebook\" (record title kept; implementations/index.yml binds to the heading)" },
+                { date: "2023-12-01T12:00Z", change: "Initial entry" }]
             },
             "gemini-project-astra": {
                 name: "Project Astra",
                 platform: "Gemini",
                 launched: "2024-12-11T12:00Z",
                 verified: "2026-02-28",
-                checked: "2026-09-04",
-                changes: [{ date: "2025-05-20T12:00Z", change: "Free for all users" },
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature" },
+                { date: "2025-05-20T12:00Z", change: "Free for all users" },
                 { date: "2025-04-07T12:00Z", change: "Expanded to Pixel 9 and Galaxy S25" },
                 { date: "2024-12-11T12:00Z", change: "Initial entry" }]
             },
@@ -3871,9 +3947,10 @@
                 name: "Veo (Video Generation)",
                 platform: "Gemini",
                 launched: "2024-05-14T12:00Z",
-                verified: "2026-08-15",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-08-15T12:00Z", change: "[Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired)" },
+                verified: "2026-09-11",
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Added Google AI Plus row — video generation is included at Plus per Google's subscriptions page (gemini.google/subscriptions/); Limits now carry Google's published Flow credit allocations; talking point prices corrected" },
+                { date: "2026-08-15T12:00Z", change: "[Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired)" },
                 { date: "2026-01-13T12:00Z", change: "Veo 3.1 4K resolution and vertical video support" },
                 { date: "2025-10-01T12:00Z", change: "Veo 3.1 released in Gemini API" },
                 { date: "2025-05-01T12:00Z", change: "Veo 3 released with native audio generation" },
@@ -3885,8 +3962,9 @@
                 platform: "Gemini",
                 launched: "2026-03-03T12:00Z",
                 verified: "2026-03-21",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-21T12:00Z", change: "[Verified] Device support corrected to Pixel 10 series and Samsung Galaxy S26 series; regional availability updated to US and South Korea; supported apps listed" },
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature" },
+                { date: "2026-03-21T12:00Z", change: "[Verified] Device support corrected to Pixel 10 series and Samsung Galaxy S26 series; regional availability updated to US and South Korea; supported apps listed" },
                 { date: "2026-03-12T12:00Z", change: "Expanded to Samsung Galaxy S26 series" },
                 { date: "2026-03-03T12:00Z", change: "Initial entry — agentic app actions launched via March 2026 Pixel Drop" }]
             },
@@ -3904,8 +3982,9 @@
                 platform: "Gemini",
                 launched: "2024-02-08T12:00Z",
                 verified: "2026-08-31",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-08-31T12:00Z", change: "[Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026)" },
+                checked: "2026-09-11",
+                changes: [{ date: "2026-09-11T12:00Z", change: "[Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change" },
+                { date: "2026-08-31T12:00Z", change: "[Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026)" },
                 { date: "2026-03-21T12:00Z", change: "[Verified] Chrome side panel added (Jan 2026); model names updated to Gemini 3 Flash (free) and Gemini 3.1 Pro (paid)" },
                 { date: "2026-03-07T12:00Z", change: "Initial entry" },
                 { date: "2024-02-08T12:00Z", change: "Gemini launched (rebranded from Bard)" }]

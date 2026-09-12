@@ -5,14 +5,119 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Sep 2026 04:36:43 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 04:41:26 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-ai-studio</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-ai-studio?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-audio-overview</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-audio-overview?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-canvas</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-canvas?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-extensions</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-extensions?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google&apos;s subscriptions page (gemini.google/subscriptions/) (&quot;Varying access to 3.1 Pro&quot;). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-advanced</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google&apos;s subscriptions page (gemini.google/subscriptions/) (&quot;Varying access to 3.1 Pro&quot;). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google&apos;s subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-in-workspace-docs-sheets-etc</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-in-workspace-docs-sheets-etc?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google&apos;s subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99</description>
+    </item>
     <item>
         <title>Gemini — [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</title>
         <link>https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode</link>
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode?d=2026-09-11</guid>
         <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-gems-custom-chatbots</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gems-custom-chatbots?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-imagen</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-imagen?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Free row ❌ → ⚠️: Google&apos;s subscriptions page (gemini.google/subscriptions/) lists &quot;limited access to Nano Banana Pro&quot; via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Free row ❌ → ⚠️: Google&apos;s subscriptions page (gemini.google/subscriptions/) lists &quot;limited access to Nano Banana Pro&quot; via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/), which now calls the product &quot;Gemini Notebook&quot; (record title kept; implementations/index.yml binds to the heading)</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-notebooklm</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-notebooklm?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/), which now calls the product &quot;Gemini Notebook&quot; (record title kept; implementations/index.yml binds to the heading)</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-project-astra</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Added Google AI Plus row — video generation is included at Plus per Google&apos;s subscriptions page (gemini.google/subscriptions/); Limits now carry Google&apos;s published Flow credit allocations; talking point prices corrected</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-veo-video-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-veo-video-generation?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Added Google AI Plus row — video generation is included at Plus per Google&apos;s subscriptions page (gemini.google/subscriptions/); Limits now carry Google&apos;s published Flow credit allocations; talking point prices corrected</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-chat</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-chat?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change</description>
     </item>
     <item>
         <title>Grok — Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</title>
@@ -251,111 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-08-15</guid>
         <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-vision-image-understanding</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-vision-image-understanding?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-chat?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-veo-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-veo-video-generation?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Free tier gained advanced voice (GPT-Live-1 mini); gating paid → mixed; macOS desktop voice returned Jul 23 2026 for paid plans; GPT-Live replaces Advanced Voice Mode as the default experience</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-advanced-voice-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-advanced-voice-mode?d=2026-07-25</guid>
-        <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Free tier gained advanced voice (GPT-Live-1 mini); gating paid → mixed; macOS desktop voice returned Jul 23 2026 for paid plans; GPT-Live replaces Advanced Voice Mode as the default experience</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Status ga → deprecated. Canvas removed from GPT-5.5 Instant/Thinking (replaced by inline writing/code blocks); still default in GPT-4o for all users; paid legacy-model access sunsets 2026-08-26. Availability notes updated; talking point rewritten.</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-canvas</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-canvas?d=2026-07-22</guid>
-        <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Status ga → deprecated. Canvas removed from GPT-5.5 Instant/Thinking (replaced by inline writing/code blocks); still default in GPT-4o for all users; paid legacy-model access sunsets 2026-08-26. Availability notes updated; talking point rewritten.</description>
-    </item>
-    <item>
-        <title>Grok — [Verified] Gating corrected paid→free (free tier has real-time access, ~10 msgs / 2h); SuperGrok Lite ($10/mo) and SuperGrok Heavy ($300/mo) added; terminal flipped to ✅ for Grok Build CLI (SuperGrok beta); Tesla platform added; URL normalized to grok.com</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-real-time-x-twitter-data</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-real-time-x-twitter-data?d=2026-06-18</guid>
-        <pubDate>Thu, 18 Jun 2026 12:00:00 GMT</pubDate>
-        <description>Grok: [Verified] Gating corrected paid→free (free tier has real-time access, ~10 msgs / 2h); SuperGrok Lite ($10/mo) and SuperGrok Heavy ($300/mo) added; terminal flipped to ✅ for Grok Build CLI (SuperGrok beta); Tesla platform added; URL normalized to grok.com</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation?d=2026-04-08</guid>
-        <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated</description>
-    </item>
-    <item>
-        <title>Claude — [Verified] Gating changed from paid to free — Free plan now has full remote MCP connector access (not just desktop extensions + GitHub)</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-connectors</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-04-08</guid>
-        <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
-        <description>Claude: [Verified] Gating changed from paid to free — Free plan now has full remote MCP connector access (not just desktop extensions + GitHub)</description>
-    </item>
-    <item>
-        <title>Claude — [Verified] Gating changed from paid to free — Free plan now has limited Extended Thinking access; Pro upgraded from limited to full access</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-extended-thinking</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-extended-thinking?d=2026-04-08</guid>
-        <pubDate>Wed, 08 Apr 2026 12:00:00 GMT</pubDate>
-        <description>Claude: [Verified] Gating changed from paid to free — Free plan now has limited Extended Thinking access; Pro upgraded from limited to full access</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-04-07</guid>
-        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-advanced</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-04-07</guid>
-        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-imagen</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-imagen?d=2026-04-07</guid>
-        <pubDate>Tue, 07 Apr 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4</description>
-    </item>
-    <item>
-        <title>Perplexity — [Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited)</title>
-        <link>https://aitool.watch/implementations.html#impl-perplexity-collections-spaces</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-collections-spaces?d=2026-03-25</guid>
-        <pubDate>Wed, 25 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Perplexity: [Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited)</description>
-    </item>
-    <item>
-        <title>Perplexity — [Verified] Gating corrected from paid to free — availability table shows Free tier has full browser access</title>
-        <link>https://aitool.watch/implementations.html#impl-perplexity-comet-browser</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-comet-browser?d=2026-03-25</guid>
-        <pubDate>Wed, 25 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Perplexity: [Verified] Gating corrected from paid to free — availability table shows Free tier has full browser access</description>
-    </item>
-    <item>
-        <title>Perplexity — [Verified] Gating corrected from paid to free — availability table shows Free tier has full access to all focus modes</title>
-        <link>https://aitool.watch/implementations.html#impl-perplexity-focus-modes</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-focus-modes?d=2026-03-25</guid>
-        <pubDate>Wed, 25 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Perplexity: [Verified] Gating corrected from paid to free — availability table shows Free tier has full access to all focus modes</description>
     </item>
 </channel>
 </rss>
