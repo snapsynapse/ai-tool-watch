@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T04:01:41.169Z",
+    "generated": "2026-09-12T04:16:12.881Z",
     "version": "1.0",
     "count": 92
   },
@@ -1688,15 +1688,31 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Gemini Live (Voice Mode)",
       "launched": "2024-08-13T12:00Z",
-      "verified": "2026-02-28",
+      "verified": "2026-09-11",
       "checked": "2026-09-11",
       "sources": [
         {
           "title": "Gemini Live",
           "url": "https://blog.google/products/gemini/gemini-live-audio-updates/"
+        },
+        {
+          "title": "Talk naturally with Gemini Live — Gemini Apps Help",
+          "url": "https://support.google.com/gemini/answer/15274899"
+        },
+        {
+          "title": "Google AI plans — Gemini subscriptions",
+          "url": "https://gemini.google/subscriptions/"
+        },
+        {
+          "title": "Get more done with Gemini Live — Google blog, 2026-08-26",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/productivity-features-gemini-live/"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-11T12:00Z",
+          "change": "[Verified] Gating corrected paid → free: Google's subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google's 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record"
+        },
         {
           "date": "2024-08-13T12:00Z",
           "change": "Initial entry"

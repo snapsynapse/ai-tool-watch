@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "ef83c88d625886cb3ce9068b5a55a36f88a01dac",
-  "reviewed_input_sha256": "66e608a480e4e4e6512f3786fe86ad9ace584f6db1edd321f40ecda79935dc4e",
-  "artifact_sha256": "d9a9b17fc60fc1aead26a1f35351bc0d32d86cdb462a5ae8fe27cba6f40e9c39",
+  "source_revision": "9e89e6009c13f64cd29b88a5adc1dea90a43fd4b",
+  "reviewed_input_sha256": "52b20fb98e250186635247d58c896e84274d5b184579d62028a7993779904211",
+  "artifact_sha256": "eda71ab75ee01af7132bea32dfdbcbc92e44ac1a51c48c4c8f529cbaab22e3da",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "3b02028bf9f313f6c027127cf52ead573d7ce068807dc21468d24649efbb0561"
+      "sha256": "5f6a68208a33940967acc0663f946f507f8bfce16f65d8eb4cd227213c76fba9"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "5c7cc250625fefa52bafe0804ce27b3190045967289eeb085538998968bdec65"
+      "sha256": "f3323aea244e6063a8eb2f024b90182914c7ce1e4c07f4f73140f6f8ea4633ed"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "45ef821d3f535d2a943402a5cc7997cb008657e8a1f47b3cf60ee8e38206f307"
+      "sha256": "753b02e13b776e8494e4d6be7b4321a99755755da76faac1f2bdee8960543c05"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "924c6d32b74bc1a77967de045826aad745fc8ed97f082dea84eeda202201970a"
+      "sha256": "11ec0bee26e3287ca9f5cd5cfb3d3c649feccf7ab008d66a72d2342a7d5ef1d4"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "686167050f34a0adb4ff1236d847cecabf46e3a0584de223e1543f17d95aebe7"
+      "sha256": "e3da2fa63674ad451910d0346020c02c4ae2253d1fcbb73da1a515e67f3cf5d7"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "bc3110fb8ab4c2a7674a0eb17f2d954f83ea228831c1360b0e47e5f5da0b5222"
+      "sha256": "28685522746344215bd2cbd499fc4d27c9bbbb94d1f5c6ec284547877560820f"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "3fc3114c77bae1b5f3b2a375adf0394863ace253308d9dbc0f31a2a77daa949b"
+      "sha256": "1ad58d17d2cf180187b74a64d4a16ca301cff8decc4f2e2e6a52320973f08430"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "c9ee161acaa2f9bf64cf7e70db3d0c19c437576c5e1b4764580fa33b6a9e137a"
+      "sha256": "cb2e777848583c6b4d855897504c1702189304f5c80cb152583da2a4e35eb177"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "e2c8d079d9a13b30faa27123f449add803673b5ac054d2e49b073b5b92393d84"
+      "sha256": "80ecd4b99937ab8e0967abf3729f4834c46f8de674e6e272f041487bf75e99dc"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "3ecc720e55be3aabe70cf1853d068e69f014b7e3389a1e4ac60ffe9b3d60a13c"
+      "sha256": "0941e83f18afce70a3bb4e576daad95551c1d9e575db69a7f3a2853dac536891"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "34f14bb99695735f5264685dde6d5fc22efdcc325d7e3784ec5117df45e3d1e5"
+      "sha256": "6109c2f60ba98927be3819151250a49d2be4687facd0e80a2fca3860ce6d7856"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "4eb87f6e46eecea4a0013d6b9495d66c0d8d4da0f8ca4e6fbdae4274b19dbce9"
+      "sha256": "0b01bb76bedc011fb03cdfc90cf7e6716af17f050e36eb170d12e5cfa1539fdd"
     },
     {
       "path": "assets/export.js",
@@ -334,7 +334,7 @@
     },
     {
       "path": "can/gemini/hear-audio-and-speech/index.html",
-      "sha256": "3d6685c13fa8d61135fa1477c2d8cfc3b769674380ca1cac0ef3f743f3e9980b"
+      "sha256": "28c1fe73394e40860043be1f0e8e9342cdb6c68f29edf664c3c0755f6d65b778"
     },
     {
       "path": "can/gemini/make-and-edit-documents/index.html",
@@ -362,7 +362,7 @@
     },
     {
       "path": "can/gemini/speak-back-in-real-time/index.html",
-      "sha256": "3c21c41f14442611c7e382a06a39174e97bbf5fed8062d945de01b675029be6a"
+      "sha256": "e6d644ea3f7f68a0661132b98d58803d763762c3328cf53c6d164e0e6e058ad4"
     },
     {
       "path": "can/gemini/take-actions-and-run-tools/index.html",
@@ -510,7 +510,7 @@
     },
     {
       "path": "capability/hear-audio-and-speech/index.html",
-      "sha256": "14d8a58ec5ce87c44c6eb0b95e8f5a86da3bc66852c63c43ab25789d52163224"
+      "sha256": "e1709a3a01a7b4f721296447970d7874df1ac687c27f1e37c75560ae0dd6211e"
     },
     {
       "path": "capability/make-and-edit-documents/index.html",
@@ -538,7 +538,7 @@
     },
     {
       "path": "capability/speak-back-in-real-time/index.html",
-      "sha256": "6fdcaa605cb5d6c1b63a53a8a1a378491e4761c94ee818e39d537d9b38b02873"
+      "sha256": "0b46f2981daf5a89b263ea746a6c1a1968376480c8e4791feb2314c5930cecdc"
     },
     {
       "path": "capability/take-actions-and-run-tools/index.html",
@@ -574,7 +574,7 @@
     },
     {
       "path": "changes/gemini/index.html",
-      "sha256": "5699f58e10e9a88de72b8a0ada2c674de5de3e5928e2fc0a454ce9e8af5ac3bb"
+      "sha256": "78dddce9c7522badb390fcd1ef4857412228c96e33cf58e6a0803a47ea27a430"
     },
     {
       "path": "changes/grok/index.html",
@@ -582,7 +582,7 @@
     },
     {
       "path": "changes/index.html",
-      "sha256": "42c9cf2aab7c6a15f9a54c85e3fa048a8919be4152fddcd7d55f7783f1fe8836"
+      "sha256": "585f174c32bf6062e1850a274ca979aaeede4607709743697c80b4f701186ec9"
     },
     {
       "path": "changes/perplexity/index.html",
@@ -658,7 +658,7 @@
     },
     {
       "path": "constraints.html",
-      "sha256": "5d91d48a1360cabf0898086b1dd8a5c2a0a97a257584aedf48687f4b01dc6ad9"
+      "sha256": "53907b368dbf939b480fe7a19d78b6abf3683763233ee518a0fa0a81a387504b"
     },
     {
       "path": "coverage/agent-tools/index.html",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "50f6ab4a9a48e54384660b26742da8bd37068691be78d1faeb5b73e8bb046faf"
+      "sha256": "b80448feda270e041014bcca96135d2c35267f6616f95d75a8e3e7076177967f"
     },
     {
       "path": "index.html",
-      "sha256": "fa7bd90c66624fcfd3226b3b78501e2c52c3967bad98b612cdf9b22e8af164fa"
+      "sha256": "5b138063b971955e7120939c7c9bcd639a32e41e8b2aea365129163a54f5525f"
     },
     {
       "path": "index.xml",
-      "sha256": "d42b9137ff7d761b5d36a46b1f97b12d2c45a44e671c44d90b274407ddcba2df"
+      "sha256": "35319b75c919a2c658d52794fa0255fda1a6a244e9f1b790d0a8ab82278942e1"
     },
     {
       "path": "llms.txt",

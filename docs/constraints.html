@@ -90,8 +90,8 @@
             <h2>Access & Limits</h2>
             <p class="capability-hero-copy">Find what works for you. Filter AI features by cost, platform, and availability constraints.</p>
             <div class="capability-stats">
-                <span class="feature-count">43 free features</span>
-                <span class="feature-count">27 paid features</span>
+                <span class="feature-count">44 free features</span>
+                <span class="feature-count">26 paid features</span>
                 <span class="feature-count">12 region-limited</span>
             </div>
         </section>
@@ -136,7 +136,7 @@
                 <h2>By Access Tier</h2>
             </div>
 
-            <h3 class="constraint-group-label">Free (43)</h3>
+            <h3 class="constraint-group-label">Free (44)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="free" data-surfaces="macos" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -513,6 +513,21 @@
                         </div>
                         
                     </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Gemini</span>
+                            <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-free">Free</span>
+                            <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        <p class="constraint-regional">Available in supported regions.</p>
+                    </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_ios_android_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
@@ -785,7 +800,7 @@
                     </article>
             </div>
 
-            <h3 class="constraint-group-label">Paid (27)</h3>
+            <h3 class="constraint-group-label">Paid (26)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -996,21 +1011,6 @@
                             <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
-                    </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
-                        <div class="constraint-card-header">
-                            <span class="price-tag">Gemini</span>
-                            <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
-                        </div>
-                        <div class="constraint-card-meta">
-                            <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
-                            <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
-                        </div>
-                        <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        </div>
-                        <p class="constraint-regional">Available in supported regions.</p>
                     </article>
                     <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -5101,14 +5101,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -6034,14 +6034,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -7123,14 +7123,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -7567,14 +7567,14 @@
                         </div>
                         <p class="constraint-regional">Available in most countries; some features limited in EU.</p>
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-gemini-live-voice-mode" onclick="passTheme(this)">Gemini Live (Voice Mode)</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Hear Audio and Speech</span><span class="constraint-cap-badge">Speak Back in Real Time</span>
                         </div>
                         <div class="constraint-surfaces">
