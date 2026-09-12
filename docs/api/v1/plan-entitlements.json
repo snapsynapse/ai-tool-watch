@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T04:01:41.169Z",
+    "generated": "2026-09-12T04:16:12.881Z",
     "version": "1.0"
   },
   "products": {
@@ -563,6 +563,7 @@
             "gemini-audio-overview",
             "gemini-canvas",
             "gemini-extensions",
+            "gemini-live-voice-mode",
             "gemini-gems-custom-chatbots",
             "gemini-imagen",
             "gemini-notebooklm",
@@ -576,20 +577,20 @@
             "build-reusable-ai-workflows",
             "make-and-edit-documents",
             "connect-to-external-systems",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "generate-images",
             "organize-work-in-projects",
             "use-files-i-provide",
             "read-text-and-documents",
             "do-multi-step-research",
             "see-images-and-screens",
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "remember-context-over-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 11,
+          "implementation_count": 12,
           "capability_count": 16
         },
         "AI Pro": {
@@ -602,7 +603,6 @@
             "gemini-extensions",
             "gemini-gemini-advanced",
             "gemini-workspace",
-            "gemini-live-voice-mode",
             "gemini-gems-custom-chatbots",
             "gemini-imagen",
             "gemini-nano-banana-pro",
@@ -621,15 +621,15 @@
             "read-text-and-documents",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
             "generate-images",
             "organize-work-in-projects",
             "see-images-and-screens",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "generate-video",
             "take-actions-and-run-tools"
           ],
-          "implementation_count": 15,
+          "implementation_count": 14,
           "capability_count": 16
         },
         "AI Ultra": {
@@ -670,44 +670,53 @@
         "Google AI Plus": {
           "price": "$7.99/mo",
           "implementations": [
+            "gemini-live-voice-mode",
             "gemini-past-chats-memory",
             "gemini-chat"
           ],
           "capabilities": [
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "remember-context-over-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 2,
-          "capability_count": 3
+          "implementation_count": 3,
+          "capability_count": 5
         },
         "Google AI Pro": {
           "price": "$19.99/mo",
           "implementations": [
+            "gemini-live-voice-mode",
             "gemini-past-chats-memory",
             "gemini-chat"
           ],
           "capabilities": [
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "remember-context-over-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 2,
-          "capability_count": 3
+          "implementation_count": 3,
+          "capability_count": 5
         },
         "Google AI Ultra": {
           "price": "$249.99/mo",
           "implementations": [
+            "gemini-live-voice-mode",
             "gemini-past-chats-memory",
             "gemini-chat"
           ],
           "capabilities": [
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "remember-context-over-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 2,
-          "capability_count": 3
+          "implementation_count": 3,
+          "capability_count": 5
         }
       }
     },

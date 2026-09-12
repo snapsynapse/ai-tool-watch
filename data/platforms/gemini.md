@@ -4,7 +4,7 @@ vendor: Google
 logo: https://cdn.simpleicons.org/googlegemini
 status_page: https://status.cloud.google.com
 pricing_page: https://one.google.com/intl/en/about/google-ai-plans/
-last_verified: 2026-08-31
+last_verified: 2026-09-11
 ---
 
 ## Pricing
@@ -417,30 +417,32 @@ Docs, Sheets, Slides features available globally in English. Drive AI features (
 |----------|-------|
 | Category | voice |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://blog.google/products/gemini/gemini-live-audio-updates/ |
 | Launched | 2024-08-13T12:00Z |
-| Verified | 2026-02-28|
+| Verified | 2026-09-11|
 | Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | Limited | Basic voice available |
-| AI Pro | ✅ | Full | Full Gemini Live features |
+| Free | ✅ | Standard | Listed in the $0 plan on Google's subscriptions page; usage limits apply |
+| Google AI Plus | ✅ | 2x Free | $4.99/mo; adds Daily Brief inside Live |
+| Google AI Pro | ✅ | 4x Free | $19.99/mo; adds Gemini Spark inside Live |
+| Google AI Ultra | ✅ | 5x–20x Pro | From $99.99/mo; first access to Deep Think and Spark features |
 
 ### Platforms
 
 | Platform | Available | Notes |
 |----------|-----------|-------|
-| Windows | ❌ | Mobile only |
-| macOS | ❌ | Mobile only |
+| Windows | ❌ | Gemini for desktop app exists, but Live is not among its listed capabilities |
+| macOS | ❌ | Gemini for desktop app exists, but Live is not among its listed capabilities |
 | Linux | ❌ |  |
 | iOS | ✅ | Gemini app |
 | Android | ✅ | Gemini app, best integration |
 | Chrome | ❌ |  |
-| web | ❌ | Mobile only |
+| web | ❌ | Google help: "isn't available in the Gemini web app" |
 | terminal | ❌ |  |
 | API | ✅ | Gemini API |
 
@@ -450,16 +452,20 @@ Available in supported regions.
 
 ### Talking Point
 
-> "Gemini Live enables natural voice conversations with Gemini. **Basic voice is free; full Gemini Live with interruption and multi-turn requires AI Pro ($19.99/mo).** Currently mobile only."
+> "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** Android and iOS only — Google's help pages say it isn't available in the Gemini web app."
 
 ### Sources
 
 - [Gemini Live](https://blog.google/products/gemini/gemini-live-audio-updates/)
+- [Talk naturally with Gemini Live — Gemini Apps Help](https://support.google.com/gemini/answer/15274899)
+- [Google AI plans — Gemini subscriptions](https://gemini.google/subscriptions/)
+- [Get more done with Gemini Live — Google blog, 2026-08-26](https://blog.google/innovation-and-ai/products/gemini-app/productivity-features-gemini-live/)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Gating corrected paid → free: Google's subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google's 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record |
 | 2024-08-13T12:00Z | Initial entry |
 
 ---

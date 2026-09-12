@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T04:01:41.169Z",
+    "generated": "2026-09-12T04:16:12.881Z",
     "version": "1.0",
     "count": 72
   },
@@ -4387,20 +4387,32 @@
         "speak-back-in-real-time"
       ],
       "category": "voice",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
-          "available": false,
-          "limits": "Limited",
-          "notes": "Basic voice available"
+          "available": true,
+          "limits": "Standard",
+          "notes": "Listed in the $0 plan on Google's subscriptions page; usage limits apply"
         },
         {
-          "plan": "AI Pro",
+          "plan": "Google AI Plus",
           "available": true,
-          "limits": "Full",
-          "notes": "Full Gemini Live features"
+          "limits": "2x Free",
+          "notes": "$4.99/mo; adds Daily Brief inside Live"
+        },
+        {
+          "plan": "Google AI Pro",
+          "available": true,
+          "limits": "4x Free",
+          "notes": "$19.99/mo; adds Gemini Spark inside Live"
+        },
+        {
+          "plan": "Google AI Ultra",
+          "available": true,
+          "limits": "5x–20x Pro",
+          "notes": "From $99.99/mo; first access to Deep Think and Spark features"
         }
       ],
       "surfaces": [
@@ -4408,13 +4420,13 @@
           "surface": "windows",
           "name": "Windows",
           "available": false,
-          "notes": "Mobile only"
+          "notes": "Gemini for desktop app exists, but Live is not among its listed capabilities"
         },
         {
           "surface": "macos",
           "name": "macOS",
           "available": false,
-          "notes": "Mobile only"
+          "notes": "Gemini for desktop app exists, but Live is not among its listed capabilities"
         },
         {
           "surface": "linux",
@@ -4444,7 +4456,7 @@
           "surface": "web",
           "name": "web",
           "available": false,
-          "notes": "Mobile only"
+          "notes": "Google help: \"isn't available in the Gemini web app\""
         },
         {
           "surface": "terminal",
@@ -4459,11 +4471,11 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini Live enables natural voice conversations with Gemini. **Basic voice is free; full Gemini Live with interruption and multi-turn requires AI Pro ($19.99/mo).** Currently mobile only.",
+      "talking_point": "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** Android and iOS only — Google's help pages say it isn't available in the Gemini web app.",
       "launched": "2024-08-13T12:00Z",
-      "verified": "2026-02-28",
+      "verified": "2026-09-11",
       "evidence_id": "implementation-gemini-live-voice-mode",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-09-11"
     },
     {
       "id": "gemini-gems-custom-chatbots",

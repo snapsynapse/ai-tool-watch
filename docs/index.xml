@@ -5,8 +5,15 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Sep 2026 04:01:41 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 04:16:12 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Gemini — [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode?d=2026-09-11</guid>
+        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</description>
+    </item>
     <item>
         <title>Grok — Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</title>
         <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
@@ -349,13 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-focus-modes?d=2026-03-25</guid>
         <pubDate>Wed, 25 Mar 2026 12:00:00 GMT</pubDate>
         <description>Perplexity: [Verified] Gating corrected from paid to free — availability table shows Free tier has full access to all focus modes</description>
-    </item>
-    <item>
-        <title>Claude — [Verified] Added missing Enterprise row to availability table (SSO, admin controls, custom limits)</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-projects</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-projects?d=2026-03-23</guid>
-        <pubDate>Mon, 23 Mar 2026 12:00:00 GMT</pubDate>
-        <description>Claude: [Verified] Added missing Enterprise row to availability table (SSO, admin controls, custom limits)</description>
     </item>
 </channel>
 </rss>
