@@ -421,7 +421,7 @@ Docs, Sheets, Slides features available globally in English. Drive AI features (
 | URL | https://blog.google/products/gemini/gemini-live-audio-updates/ |
 | Launched | 2024-08-13T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-09-04|
+| Checked | 2026-09-11|
 
 ### Availability
 
