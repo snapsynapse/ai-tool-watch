@@ -4,7 +4,7 @@ vendor: xAI
 logo: https://x.ai/favicon.ico
 status_page: https://status.x.ai
 pricing_page: https://grok.com/
-last_verified: 2026-08-25
+last_verified: 2026-09-11
 ---
 
 ## Pricing
@@ -197,7 +197,7 @@ Available globally.
 | URL | https://x.ai/blog/grok-imagine |
 | Launched | 2025-08-04T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Checked | 2026-09-11|
 
 ### Availability
 
@@ -240,6 +240,7 @@ Available globally where X is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped |
 | 2026-08-25T12:00Z | [Verified] Source swap — unofficial supergrok.online (CI link-check timeout) replaced with official xAI Imagine and video-generation docs |
 | 2026-02-28T12:00Z | [Verified] Free tier access confirmed (very limited, ~3/day at 480p); paid tier daily limits updated |
 | 2025-11-01T12:00Z | Text-to-video generation added |
@@ -541,8 +542,8 @@ Available globally where Grok is available.
 | Gating | free |
 | URL | https://grok.com |
 | Launched | 2025-02-17T12:00Z |
-| Verified | 2026-03-07 |
-| Checked | 2026-09-01|
+| Verified | 2026-09-11 |
+| Checked | 2026-09-11|
 
 ### Availability
 
@@ -573,16 +574,17 @@ Available globally where Grok is available. Persistent memory may be restricted 
 
 ### Talking Point
 
-> "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important, but users cannot currently inspect or edit what has been saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms."
+> "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important. Users can turn memory off under Settings → Data Controls and ask Grok to forget specific items in chat, but there is no itemized memory manager listing everything saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms."
 
 ### Sources
 
 - [How Grok Memory Works](https://blog.memoryplugin.com/how-grok-memory-works/)
-- [Grok Memory Feature Status 2026](https://compareclaw.com/blog/post/openclaw-grok-memory-feature-status-2026)
+- [Designing Grok Bot — xAI](https://x.ai/news/designing-grok-bot)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline) and replaced with official x.ai/news/designing-grok-bot; talking point corrected — memory can be disabled under Settings → Data Controls and individual items forgotten on request, though no itemized memory manager exists |
 | 2026-03-07T12:00Z | Initial entry |
 | 2025-02-17T12:00Z | Persistent memory toggle appeared with Grok 3 launch |

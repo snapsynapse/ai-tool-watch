@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-10T05:39:12.523Z",
+    "generated": "2026-09-12T03:18:13.297Z",
     "version": "1.0",
     "count": 72
   },
@@ -6238,11 +6238,11 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important, but users cannot currently inspect or edit what has been saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms.",
+      "talking_point": "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important. Users can turn memory off under Settings → Data Controls and ask Grok to forget specific items in chat, but there is no itemized memory manager listing everything saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms.",
       "launched": "2025-02-17T12:00Z",
-      "verified": "2026-03-07",
+      "verified": "2026-09-11",
       "evidence_id": "implementation-grok-memory",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-09-11"
     },
     {
       "id": "grok-vision-image-understanding",
