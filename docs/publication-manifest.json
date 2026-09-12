@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "9ac91cba69ce5994f5bc9697f7c3a4ebed4ec4ef",
-  "reviewed_input_sha256": "52b20fb98e250186635247d58c896e84274d5b184579d62028a7993779904211",
-  "artifact_sha256": "e894507130eb5a790a056e499eaf6444813d405661f33565d50a5b88addc5138",
+  "source_revision": "d7e706086daea733822824465cb65f72b5ad1ba5",
+  "reviewed_input_sha256": "2e153d9527afe59048769ab20bddc1eb13b3cb2f70b99d0456d6324f66dfc902",
+  "artifact_sha256": "14c9edccbeb6c23d8832ada8e7cc491c351a10a34732fb3daf4b5d7eef233933",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "63d7e7f1accfa10ebc693511b22da591c7d577ae4c76e640940673b0f643dc5f"
+      "sha256": "14f556b13103e9956a05d010064e50adab3496ff3c0e2da398b294b5d0c1dc56"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "429bb75a20cbcf394f1bc49c481186b6cd09c0ec16bfff97e2d0a780205128ec"
+      "sha256": "584a7f1168bbcbd3ebef9e1ea79a6217cf44c27c97d4ca5ccbfe8ba618ca06c5"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "f62ccb40cb5436747c04fe0690ffbe49221b17a1ec1960081726fe6641a08e6c"
+      "sha256": "085fcb9fa81b3beeccf6602e6267cd5c2fe084fb3294e4640923aaf69a5e51e9"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "c6591f0d75bff009849714a01f24d1cf82864498fc6f94931026ec069d9f3451"
+      "sha256": "fa0b6d9992bcde040c134be892aee7cfec7b1b1c82b3e7f04e75add97e568342"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "1102332b1ce25badbc340e00a13cb8e0eec22e0767ba7bb90c602e2141ac0f96"
+      "sha256": "76c8d430ac4b6a1a11a044a7e83fd0668a4c8c92d9ea083e6b1101f5f9efa931"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "99d0d34aebaef83920b8ecd0dcf164a4e585e270319c8d6e4fcf15b97ef601ce"
+      "sha256": "c3b900cfda3b1c185d00e03aa40eb19a12fea7cda26a36137c08ca9eae4a6ce5"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "62ebed0a4a47f2cfc5ac66c2998f65277a8cdb97f4b0181674f593682d789b07"
+      "sha256": "b6a8715c6fefa9f64e8e7237c57a5be8857231c6f1c2b7f17f31fec65fa8c2cc"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "ee9983d9af0594b0a1000703c3cf35487c8c6794bff015176cdc1766e5ed063c"
+      "sha256": "6c9983f1451d9d8be8f9bc7956a1be015934dc3244ff7480a644b57aa6ad8720"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "f2db0b2e84c6e7f24d302c9f24995f8ab312f50001fdee78940d399096557153"
+      "sha256": "ed6276241e3237922626add4ef8a30f1752f90c23f4642dd7a37cc865b8d8c1c"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "7de4b08b6fb070b664b7868bf58b74e08a7a3d6680dea88c962644538c0f8500"
+      "sha256": "4038506fb15fa2e84d7db54724ec0905dd8a68e20877cb49d29165db519f310e"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "5943f8c0b3fdc294441dcf4dd77c1e87fdd2ab735492b6006b86b1d327f8383d"
+      "sha256": "852251b2e56e7cc53e4a6075299776afedc211548bbde2a48da7d4af26af4cab"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "185779280dbeae419b124d1f46c8e583e9e145515db9e3e371916fd2e9774b77"
+      "sha256": "803e5f188dc4f40abab4ebb06f9ea15edeb3be0b409b4ecd76be9f64f99410a8"
     },
     {
       "path": "assets/export.js",
@@ -314,39 +314,39 @@
     },
     {
       "path": "can/gemini/build-reusable-ai-workflows/index.html",
-      "sha256": "8da07fc8e461c62694a6c1ae4292b9e9f9a052c61ed8eeffa0adcc78f39a0b7b"
+      "sha256": "9f83443bdd6999d2d310463beb2ba6ba59a7bbb60961e21703e7dd4ed90dd45f"
     },
     {
       "path": "can/gemini/connect-to-external-systems/index.html",
-      "sha256": "1675ae50547910a6926256545d29a3fe42668f2720a578f9ed590f0e67420174"
+      "sha256": "38a4f217135373ee4517ed42db9bf6b0567c5083153e72845a5efbef7216350f"
     },
     {
       "path": "can/gemini/do-multi-step-research/index.html",
-      "sha256": "607de7c4807193f7711ad23e29852d132c7e1a1426c9c7d2f3ad89f79e99eb7e"
+      "sha256": "2f2d07f66d858f52fed37c6fc350031effb67d4d8785eabf70dce2350553010c"
     },
     {
       "path": "can/gemini/generate-images/index.html",
-      "sha256": "5701acd3f068ab8350ff457db8646dfc1e0939c83f269edafa85636a4e4a6f61"
+      "sha256": "a53a926eab30be1ed4f500d5631e0bbbf767aaa450d30bfe4bb617213c93d8e9"
     },
     {
       "path": "can/gemini/generate-video/index.html",
-      "sha256": "3a6d082bb40db90e9da9370372e524a4b8d31b7ed9d940bc5dc351b4e690441e"
+      "sha256": "4863893fec2373af3cca5ff052a5cc85f0296674f9fa5e5887a891103fa26b57"
     },
     {
       "path": "can/gemini/hear-audio-and-speech/index.html",
-      "sha256": "28c1fe73394e40860043be1f0e8e9342cdb6c68f29edf664c3c0755f6d65b778"
+      "sha256": "1ea92229efb687f155d4679bc1f3cae4fbc794626155a0dc26ee85ad6691f65b"
     },
     {
       "path": "can/gemini/make-and-edit-documents/index.html",
-      "sha256": "caa02c6e647540577a1616520301b4e89ac728713ed415c65406529c4f406af2"
+      "sha256": "2766df6688bc0b931d0495344e346cfc2b0e855f30a3ff84ec49ab2b0b33d4f5"
     },
     {
       "path": "can/gemini/organize-work-in-projects/index.html",
-      "sha256": "7231fdece76c6aa2e0241840ad6c1745211eff8152deef77a3981a34c87423d8"
+      "sha256": "7b24cb7c0a8f487bd0482cbd681c212bd00f308d855e39bb4b0c457448868b1a"
     },
     {
       "path": "can/gemini/read-text-and-documents/index.html",
-      "sha256": "c045b9b052097a3770a507afb1a51fd209424a56fedb484f0f536f31cec748e6"
+      "sha256": "fd791a12f24d39580c9c6b51c8276aa42b6bcb7ac1eca416faff11da4802d309"
     },
     {
       "path": "can/gemini/remember-context-over-time/index.html",
@@ -354,35 +354,35 @@
     },
     {
       "path": "can/gemini/search-the-web/index.html",
-      "sha256": "33ee91533c936e247e633a8439b12186f872d5bf45e40f23e661a8237cd9efbf"
+      "sha256": "8bccf8ce0de8e7051154386f2d9c44df632e9ebe181b5379bb1dd796c3ada44a"
     },
     {
       "path": "can/gemini/see-images-and-screens/index.html",
-      "sha256": "c91195c2acaaead1b9c1bad0b26cc3eec857ad17e735bf4f71b76a46e28c0333"
+      "sha256": "8617fb9a62dfc10693866b3568ce6c29530d820df6093e0b9adb98c6f66df08e"
     },
     {
       "path": "can/gemini/speak-back-in-real-time/index.html",
-      "sha256": "e6d644ea3f7f68a0661132b98d58803d763762c3328cf53c6d164e0e6e058ad4"
+      "sha256": "318bebbca5261a41b3666017e980e4949ac00c754e09589500427de76a818493"
     },
     {
       "path": "can/gemini/take-actions-and-run-tools/index.html",
-      "sha256": "02f94e2b46f3745296c48117c593489fc8b9faf24d23489c4f040cf98debd5fc"
+      "sha256": "03fb40cf8af1475afad98e6c51cee3dfb47184b85e27461170624d71edcd473c"
     },
     {
       "path": "can/gemini/use-files-i-provide/index.html",
-      "sha256": "161c1374b44bcb79f6bf89b2cac555723195b9146d1d29462d1851139fe48da6"
+      "sha256": "432f801393af2279510a4e808c32235cb1dab564ee8d83451cd61733a69ff5f8"
     },
     {
       "path": "can/gemini/use-it-on-my-surfaces/index.html",
-      "sha256": "9dbc1645421f6b3168648066635786dbd24cb2eb695d0b03e26f401facf3f8aa"
+      "sha256": "74be8a20a48b82c34fef818cd18338afca4d050bd2c2cc55a381118a127bb06c"
     },
     {
       "path": "can/gemini/write-and-edit-code/index.html",
-      "sha256": "1b69033e339cd7f73940b870a53be6930989b05c87ee1194a02b2d0807689d7a"
+      "sha256": "9fe6a7d7187588375c36bdb42f3f112128eaae3113d3a0afc9a614a4777d03fa"
     },
     {
       "path": "can/gemini/write-and-explain/index.html",
-      "sha256": "4b65af9dd4a49b7f1fcf8a7d4705a11b701fa2c047bd983ce0249c1ead9bd2cb"
+      "sha256": "146091436d6f59cf50a096d3e807bcaf7aae8d604758b9da3bd93fe1f4edd758"
     },
     {
       "path": "can/grok/connect-to-external-systems/index.html",
@@ -490,39 +490,39 @@
     },
     {
       "path": "capability/build-reusable-ai-workflows/index.html",
-      "sha256": "3df0cb0d6af2f13ca6979883b9d1065c084e58d75425e27e4ee124b0606d2a7b"
+      "sha256": "51318cd6f9b591bf5508422a06d0b8a3bc72d9b0958f72400f07ba300d80dfdb"
     },
     {
       "path": "capability/connect-to-external-systems/index.html",
-      "sha256": "c47d81e2130ed4c76dbeb027ba1e1b8cc677e1d124472b8b615ffa2dd93c7276"
+      "sha256": "dbc67ce916c6a2c769c7b18352a465803eadbe8f6a2cd03a533f8461564395fc"
     },
     {
       "path": "capability/do-multi-step-research/index.html",
-      "sha256": "48b91bac3a7dbd8a5bf11707991bed9f974aacd650c8ad20cf5fde094d68f694"
+      "sha256": "d36f683a8fa2ecdef60a59b02cf2a4aab0c536ab0f1ffa54a2530b0d3747742f"
     },
     {
       "path": "capability/generate-images/index.html",
-      "sha256": "ca7dc539997a75d19addab85e8c3512583ea4584831d7f19f67289a9e5f5ea35"
+      "sha256": "24487b7a43f206bb9e5c51107df265cf8a65c8669bed7e96a0054f7899ef908d"
     },
     {
       "path": "capability/generate-video/index.html",
-      "sha256": "fb0796f0ea21bc32c678e241758f07e26305ee98fc80b9ffa7c1423f13b7576d"
+      "sha256": "f1b24a8d36ba2d413aaa8950fec9f3503ddd1ae25772e712fdc6c4655ff9e01e"
     },
     {
       "path": "capability/hear-audio-and-speech/index.html",
-      "sha256": "e1709a3a01a7b4f721296447970d7874df1ac687c27f1e37c75560ae0dd6211e"
+      "sha256": "633bf272c9d2cd2b1fceaedbd08de61b2269a51163f1202be1a42bbeb89bc14b"
     },
     {
       "path": "capability/make-and-edit-documents/index.html",
-      "sha256": "8e3e141091d53a44f244f76e544e251a421ec37bb9134713e9876bd5c09eccf4"
+      "sha256": "ba6f67bd912d020507ae3a2ff3f6104e3c5680926d96fe4e1b9a0379c72b0226"
     },
     {
       "path": "capability/organize-work-in-projects/index.html",
-      "sha256": "7d67e0f679151b9777d3458d844a51dcbb186ef830a09c44d6ec0b2796788831"
+      "sha256": "d0d410ed384f3cd5f8cba4b107592ab4cac24158f025c60b02672dc584374035"
     },
     {
       "path": "capability/read-text-and-documents/index.html",
-      "sha256": "789ffeeda11dc70f68bc2d612394df477b6b77b8bd5e662d1bcc4afd3b7c2517"
+      "sha256": "5cd6153b4f5a386852e961d5e2d01c148b509ed814848edcaaf2e22b2e06172d"
     },
     {
       "path": "capability/remember-context-over-time/index.html",
@@ -530,35 +530,35 @@
     },
     {
       "path": "capability/search-the-web/index.html",
-      "sha256": "ad5449dc6df0c267f7aed3fb13868e720d894d88041d839c599a3afb78f26bba"
+      "sha256": "108d0cd59e841e61e295fd37d3a3558bb77b1786da99e94cf6b5122b2852a7d2"
     },
     {
       "path": "capability/see-images-and-screens/index.html",
-      "sha256": "ff3c66c1a10a57716b15c48c4c22a45609a5586901b4b3395012cfc9a6a42059"
+      "sha256": "ac14c318074976443ef1dd545aa595fd6d973d5bf8a4ab49c14bdce4ed840937"
     },
     {
       "path": "capability/speak-back-in-real-time/index.html",
-      "sha256": "0b46f2981daf5a89b263ea746a6c1a1968376480c8e4791feb2314c5930cecdc"
+      "sha256": "f1efed1704a454f7fa8167c0fd167adfcb35dc23e57c93acb6fa16d699a7cb74"
     },
     {
       "path": "capability/take-actions-and-run-tools/index.html",
-      "sha256": "6ec7deccdd9ee26851872ba6a95ab239cfe5f580353023172e6dbcc77b3e080a"
+      "sha256": "f1e48a2bf841618b2f449f74c4dce1f78762921a4ed0f90c0d71da4e9c8c8f07"
     },
     {
       "path": "capability/use-files-i-provide/index.html",
-      "sha256": "c47310c8e608991cf9fd788d364903b46573411e51da7893fb65d6e1b9a1dee7"
+      "sha256": "cb2b1c2a1a155c071bf8228685e40597498713453954fe8333c791c6e3f72227"
     },
     {
       "path": "capability/use-it-on-my-surfaces/index.html",
-      "sha256": "44312ca51905aea6219c19f6d74be8bebaa0dc259d7bdfb5a0b703afe1333dc9"
+      "sha256": "3faa9b5a8e94e43e12de9a798827051f369e24d515b89d0bbe8e2bc78c6945dc"
     },
     {
       "path": "capability/write-and-edit-code/index.html",
-      "sha256": "0931b21113bb733805027d3492116063a558a95c700bbdebc7180a2cc5ba03b5"
+      "sha256": "dfa45732dc1797279ec59d7ccb413b3741e48e18b96d7ad75a292db6d5dd9a4a"
     },
     {
       "path": "capability/write-and-explain/index.html",
-      "sha256": "67f16afc8878d1e4c33b3bff0973ef39cee3a6887a0830bb464e2ebedfb595e8"
+      "sha256": "84c76229c1c497e2c96734a96e429b91950f4cc7272a6a05cf8b370bdac244f9"
     },
     {
       "path": "changes/chatgpt/index.html",
@@ -574,7 +574,7 @@
     },
     {
       "path": "changes/gemini/index.html",
-      "sha256": "78dddce9c7522badb390fcd1ef4857412228c96e33cf58e6a0803a47ea27a430"
+      "sha256": "121c50df8af0c1ef08bfdf1876e8335629bb295a04a89d1d8480db878a650a1e"
     },
     {
       "path": "changes/grok/index.html",
@@ -582,7 +582,7 @@
     },
     {
       "path": "changes/index.html",
-      "sha256": "585f174c32bf6062e1850a274ca979aaeede4607709743697c80b4f701186ec9"
+      "sha256": "eef252bce76557bff161751e66ea11c5da1e59a88aec3f55dcfdbc90d5814ab6"
     },
     {
       "path": "changes/perplexity/index.html",
@@ -658,7 +658,7 @@
     },
     {
       "path": "constraints.html",
-      "sha256": "53907b368dbf939b480fe7a19d78b6abf3683763233ee518a0fa0a81a387504b"
+      "sha256": "5be4f5babbb9e5922e36ef0ab5c4d3e7bbef78f1104ac81d14c6d9af7f2b60d7"
     },
     {
       "path": "coverage/agent-tools/index.html",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "b80448feda270e041014bcca96135d2c35267f6616f95d75a8e3e7076177967f"
+      "sha256": "1b02b47706f1eb28e8b2f7efbacc0a9ccfc7aba474af153413bf8d1a917719e8"
     },
     {
       "path": "index.html",
-      "sha256": "5b138063b971955e7120939c7c9bcd639a32e41e8b2aea365129163a54f5525f"
+      "sha256": "626c0079ae874b876d5b39f3652ab49a648387aa1b95b98214f3b52df5609ea9"
     },
     {
       "path": "index.xml",
-      "sha256": "1802a76b8509fa2b5654db6bca1735cfcde52e23ea11ff81e2b0cd8f8340fb7c"
+      "sha256": "4b806b3f7699a1b8f7de2176fad413146e4376f71708ffc6be030b9691f29aa3"
     },
     {
       "path": "llms.txt",

@@ -11,6 +11,13 @@ last_verified: 2026-09-11
 
 | Plan | Price | Notes |
 |------|-------|-------|
+| Free | $0 | Gemini app with usage limits; 15 GB storage |
+| Google AI Plus | $4.99/mo | 2x Free usage limits; adds video generation and Daily Brief; 400 GB |
+| Google AI Pro | $19.99/mo | 4x Free usage limits; Gemini 3.1 Pro; 5 TB |
+| Google AI Ultra | From $99.99/mo | $99.99 = 5x Pro limits, $199.99 = 20x Pro; Deep Think and Gemini Spark; 20 TB+ |
+| Workspace add-on | $20/user/mo | Gemini in Workspace apps (business); not listed on Google's consumer plans page |
+
+------|-------|-------|
 | Free | $0 | Gemini with limits |
 | Google AI Plus | $7.99/mo | Basic Advanced features |
 | Google AI Pro | $19.99/mo | Full Advanced features + 2TB storage |
@@ -29,14 +36,14 @@ last_verified: 2026-09-11
 | URL | https://aistudio.google.com/ |
 | Launched | 2023-12-13T12:00Z |
 | Verified | 2026-03-08|
-| Checked | 2026-09-04|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Rate limits | Free API access |
-| AI Pro | ✅ | Higher limits | Same tool |
+| Google AI Pro | ✅ | Higher limits | Same tool |
 
 ### Platforms
 
@@ -69,6 +76,7 @@ Available globally where Google services are available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2023-12-13T12:00Z | Initial entry |
 
 ---
@@ -82,15 +90,17 @@ Available globally where Google services are available.
 | Gating | free |
 | URL | https://blog.google/technology/ai/notebooklm-audio-overviews/ |
 | Launched | 2024-09-11T12:00Z |
-| Verified | 2026-02-22|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | 3/day | AI-generated podcast summaries |
-| AI Pro | ✅ | 20/day | Higher limits |
+| Google AI Plus | ✅ | More than Free | "More Audio Overviews" per Google's subscriptions page |
+| Google AI Pro | ✅ | 20/day | Higher limits |
+| Google AI Ultra | ✅ | Highest | "Highest limits" per Google's subscriptions page |
 
 ### Platforms
 
@@ -112,7 +122,7 @@ Available globally; initially English only, now 50+ languages.
 
 ### Talking Point
 
-> "Audio Overview transforms your content into AI-generated podcast-style discussions. **Free users get 3 per day**; AI Pro gets 20. Originally from NotebookLM, now integrated into Gemini."
+> "Audio Overview transforms your content into AI-generated podcast-style discussions. **Free users get 3 per day**; Google AI Plus gets more, Google AI Pro gets 20, and Google AI Ultra has the highest limits. Originally from NotebookLM, now integrated into Gemini."
 
 ### Sources
 
@@ -123,6 +133,7 @@ Available globally; initially English only, now 50+ languages.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro |
 | 2025-04-01T12:00Z | 50+ languages supported |
 | 2025-03-18T12:00Z | Integrated into Gemini app |
 | 2024-09-11T12:00Z | Initial entry (NotebookLM) |
@@ -138,15 +149,17 @@ Available globally; initially English only, now 50+ languages.
 | Gating | free |
 | URL | https://gemini.google/overview/canvas/ |
 | Launched | 2025-03-18T12:00Z |
-| Verified | 2026-03-01|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | 5 prompts/day | 32K context |
-| AI Pro | ✅ | 100-500/day | 1M context window |
+| Google AI Plus | ✅ | 2x Free | "2x higher usage limits than Free" per Google's subscriptions page |
+| Google AI Pro | ✅ | 100-500/day | 1M context window |
+| Google AI Ultra | ✅ | 5x–20x Pro | Highest usage limits |
 
 ### Platforms
 
@@ -168,7 +181,7 @@ Available globally where Gemini is available.
 
 ### Talking Point
 
-> "Gemini Canvas is an interactive workspace for creating and refining writing and code projects. **Available on all plans including free**—free users get limited prompts per day, while AI Pro unlocks a 1 million token context window."
+> "Gemini Canvas is an interactive workspace for creating and refining writing and code projects. **Available on all plans including free**—free users get limited prompts per day, Google AI Plus doubles free usage, and Google AI Pro unlocks a 1 million token context window."
 
 ### Sources
 
@@ -179,6 +192,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card |
 | 2025-03-18T12:00Z | Initial entry |
 
 ---
@@ -192,15 +206,17 @@ Available globally where Gemini is available.
 | Gating | free |
 | URL | https://blog.google/products/gemini/google-gemini-deep-research/ |
 | Launched | 2024-12-11T12:00Z |
-| Verified | 2026-04-07 |
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ⚠️ | ~5/month | Gemini Flash model only |
-| AI Pro | ✅ | Full | Full Gemini 3.0 Pro research |
+| Google AI Plus | ✅ | 2x Free | "2x higher usage limits than Free"; model tier not stated by Google |
+| Google AI Pro | ✅ | Full | Full Gemini 3.0 Pro research |
+| Google AI Ultra | ✅ | 5x–20x Pro | Highest usage limits; first access to Deep Think |
 
 ### Platforms
 
@@ -222,7 +238,7 @@ Available globally where Gemini Advanced is available.
 
 ### Talking Point
 
-> "Gemini's Deep Research creates comprehensive reports on complex topics. **Now available on the free tier (~5 reports/month via Gemini Flash)**; AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research."
+> "Gemini's Deep Research creates comprehensive reports on complex topics. **Now available on the free tier (~5 reports/month via Gemini Flash)**; Google AI Plus ($4.99/mo) doubles free usage; Google AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research."
 
 ### Sources
 
@@ -232,6 +248,7 @@ Available globally where Gemini Advanced is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card |
 | 2026-04-07T12:00Z | [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access |
 | 2026-03-23T12:00Z | [Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro for AI Pro tier |
 | 2026-03-04T12:00Z | [Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash |
@@ -249,14 +266,14 @@ Available globally where Gemini Advanced is available.
 | URL | https://gemini.google.com/extensions |
 | Launched | 2023-09-19T12:00Z |
 | Verified | 2026-03-15|
-| Checked | 2026-09-04|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Standard | Google services integration |
-| AI Pro | ✅ | Full | All extensions |
+| Google AI Pro | ✅ | Full | All extensions |
 
 ### Platforms
 
@@ -289,6 +306,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2026-03-14T12:00Z | [Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404) |
 | 2026-03-04T12:00Z | [Verified] Fixed broken URL (removed ?hl=en parameter) |
 | 2025-10-01T12:00Z | Gemini CLI Extensions added with MCP support |
@@ -301,20 +319,20 @@ Available globally where Gemini is available.
 | Property | Value |
 |----------|-------|
 | Category | other |
-| Status | ga |
+| Status | deprecated |
 | Gating | paid |
 | URL | https://gemini.google.com/ |
 | Launched | 2024-02-08T12:00Z |
-| Verified | 2026-04-07 |
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ❌ | — | Standard Gemini only |
-| AI Pro | ✅ | Full | Gemini 3.0 Pro access + 2TB storage |
-| AI Ultra | ✅ | Highest | Maximum limits + 30TB storage |
+| Free | ⚠️ | Varying | Google's $0 plan card: "Varying access to 3.1 Pro" |
+| Google AI Pro | ✅ | Full | Gemini 3.1 Pro, 4x Free usage limits, 5 TB storage |
+| Google AI Ultra | ✅ | Highest | 5x–20x Pro limits, Deep Think, 20 TB+ storage |
 
 ### Platforms
 
@@ -336,7 +354,7 @@ Available in most countries; some features limited in EU.
 
 ### Talking Point
 
-> "Gemini Advanced gives you access to Google's most capable models. **Google AI Pro ($19.99/mo)** includes Gemini Advanced plus 2TB storage. **Google AI Ultra ($249.99/mo)** adds the highest limits and 30TB storage. Free users get standard Gemini only."
+> "Gemini Advanced was Google's name for premium model access; Google's plans pages no longer use it and its help article is gone. **Google AI Pro ($19.99/mo) unlocks Gemini 3.1 Pro with 4x free usage limits; Google AI Ultra (from $99.99/mo) adds the highest limits and Deep Think.** Free users now get varying access to 3.1 Pro rather than none. Marked deprecated — see the Chat record for current model access."
 
 ### Sources
 
@@ -346,6 +364,7 @@ Available in most countries; some features limited in EU.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google's subscriptions page (gemini.google/subscriptions/) ("Varying access to 3.1 Pro"). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision |
 | 2026-04-07T12:00Z | [Verified] Removed AI Plus tier (two April 2026 sources confirm Gemini Advanced access is Pro/Ultra only; Plus not mentioned); added AI Ultra row; updated talking point |
 | 2026-03-23T12:00Z | [Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro |
 | 2026-03-04T12:00Z | [Verified] Google One AI Premium renamed to Google AI Pro ($19.99/mo); Google AI Plus ($7.99/mo) and AI Ultra ($249.99/mo) added; AI Plus also includes Gemini Advanced |
@@ -362,16 +381,17 @@ Available in most countries; some features limited in EU.
 | Gating | paid |
 | URL | https://workspace.google.com/solutions/ai/ |
 | Launched | 2024-06-24T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ⚠️ | Very limited | Basic suggestions only |
-| AI Pro | ✅ | Full | Personal Workspace; Help me create, Fill with Gemini |
-| AI Ultra | ✅ | Full | Highest limits |
+| Google AI Plus | ✅ | Partial | "Gemini in Gmail, Vids, and more" per Google's subscriptions page — Docs not listed at this tier |
+| Google AI Pro | ✅ | Full | Personal Workspace; Help me create, Fill with Gemini |
+| Google AI Ultra | ✅ | Full | Highest limits |
 | Workspace add-on | ✅ | Full | Business Workspace; AI Ultra Access add-on for advanced features |
 
 ### Platforms
@@ -394,7 +414,7 @@ Docs, Sheets, Slides features available globally in English. Drive AI features (
 
 ### Talking Point
 
-> "Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. **March 2026 beta rollout** adds 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. **Requires AI Pro ($19.99/mo), AI Ultra ($249.99/mo), or Workspace add-on.** Drive features are US-only for now; full deck generation in Slides is coming soon."
+> "Gemini integrates directly into Google Docs, Sheets, Slides, and Drive. **March 2026 beta rollout** adds 'Help me create' in Docs (instant drafts from files/emails), 'Fill with Gemini' in Sheets (auto-populate tables), new slide creation in Slides, and AI Overviews + 'Ask Gemini' in Drive. **Google AI Plus ($4.99/mo) covers Gmail and Vids; Google AI Pro ($19.99/mo) adds Docs; Google AI Ultra (from $99.99/mo) has the highest limits; or the Workspace add-on for business accounts.** Drive features are US-only for now; full deck generation in Slides is coming soon."
 
 ### Sources
 
@@ -406,6 +426,7 @@ Docs, Sheets, Slides features available globally in English. Drive AI features (
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google's subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99 |
 | 2026-03-14T12:00Z | [Verified] March 2026 beta rollout: Help me create (Docs), Fill with Gemini (Sheets), new slide creation (Slides), AI Overviews + Ask Gemini (Drive); AI Ultra tier added; Drive features US-only initially; English-only; full Slides deck gen coming soon |
 | 2024-06-24T12:00Z | Initial entry |
 
@@ -479,15 +500,17 @@ Available in supported regions.
 | Gating | free |
 | URL | https://blog.google/products-and-platforms/products/gemini/google-gemini-update-august-2024/ |
 | Launched | 2024-08-01T12:00Z |
-| Verified | 2026-03-08|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Standard | Create custom Gems (free since March 2025) |
-| AI Pro | ✅ | Full | Higher limits, sharing features |
+| Google AI Plus | ✅ | 2x Free | "2x higher usage limits than Free" per Google's subscriptions page |
+| Google AI Pro | ✅ | Full | Higher limits, sharing features |
+| Google AI Ultra | ✅ | 5x–20x Pro | Highest usage limits |
 
 ### Platforms
 
@@ -509,7 +532,7 @@ Available globally.
 
 ### Talking Point
 
-> "Gems are custom AI experts you create for specific tasks. **Now free for all users**—create premade or custom Gems at no cost. AI Pro gets higher limits and sharing features."
+> "Gems are custom AI experts you create for specific tasks. **Now free for all users**—create premade or custom Gems at no cost. Google AI Plus doubles free usage; Google AI Pro gets higher limits and sharing features."
 
 ### Sources
 
@@ -519,6 +542,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card |
 | 2026-02-28T12:00Z | [Verified] Gating changed from paid to free; Gems available to all users since March 2025; URL updated (old blog URL broken) |
 | 2024-08-01T12:00Z | Initial entry |
 
@@ -533,15 +557,17 @@ Available globally.
 | Gating | free |
 | URL | https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/ |
 | Launched | 2024-08-01T12:00Z |
-| Verified | 2026-04-07 |
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | ~10-20/day | Imagen 4 access |
-| AI Pro | ✅ | ~100-150/day | Imagen 4, higher limits |
+| Google AI Plus | ✅ | 2x Free | "2x higher usage limits than Free" per Google's subscriptions page |
+| Google AI Pro | ✅ | ~100-150/day | Imagen 4, higher limits |
+| Google AI Ultra | ✅ | 5x–20x Pro | Highest usage limits |
 
 ### Platforms
 
@@ -563,7 +589,7 @@ Limited in some regions due to content policies.
 
 ### Talking Point
 
-> "Gemini can generate images using **Imagen 4**. **Now free for all users**—free tier gets ~10-20 images/day; AI Pro gets ~100-150/day. Also available via the Gemini API."
+> "Gemini can generate images using **Imagen 4**. **Now free for all users**—free tier gets ~10-20 images/day, Google AI Plus doubles that, and Google AI Pro gets ~100-150/day. Also available via the Gemini API."
 
 ### Sources
 
@@ -573,6 +599,7 @@ Limited in some regions due to content policies.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card |
 | 2026-04-07T12:00Z | [Verified] Gating changed from paid to free; Imagen 4 now available to all Gemini users; free tier ~10-20/day, AI Pro ~100-150/day; model updated from Imagen 3 to Imagen 4 |
 | 2024-08-01T12:00Z | Initial entry |
 
@@ -587,15 +614,17 @@ Limited in some regions due to content policies.
 | Gating | paid |
 | URL | https://gemini.google/overview/image-generation/ |
 | Launched | 2025-08-01T12:00Z |
-| Verified | 2026-03-04|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ❌ | — | Nano Banana 2 (default) only |
-| AI Pro | ✅ | Full | Nano Banana Pro via three-dot menu |
+| Free | ⚠️ | Limited | Nano Banana 2 is the default in the Gemini app; Google's $0 plan card lists "limited access to Nano Banana Pro" via Google Flow only |
+| Google AI Plus | ⚠️ | Limited | As Free ("Everything in Free and…"); full Nano Banana Pro in the Gemini app starts at Google AI Pro |
+| Google AI Pro | ✅ | Full | Nano Banana Pro via three-dot menu |
+| Google AI Ultra | ✅ | Highest | Everything in Pro with the highest usage limits |
 
 ### Platforms
 
@@ -617,7 +646,7 @@ Available globally where Gemini is available. Some content restrictions in certa
 
 ### Talking Point
 
-> "Nano Banana Pro is Gemini's native image generation and editing model, built on Gemini 3 Pro. It's **distinct from Imagen**—optimized for conversational editing, character consistency, and multi-image fusion. Supports 1K-4K resolutions with SynthID watermarks. **Now requires a paid plan (AI Pro, $19.99/mo)**—free users get Nano Banana 2 as the default model instead. Access Nano Banana Pro via the three-dot model menu."
+> "Nano Banana Pro is Gemini's native image generation and editing model, built on Gemini 3 Pro. It's **distinct from Imagen**—optimized for conversational editing, character consistency, and multi-image fusion. Supports 1K-4K resolutions with SynthID watermarks. **Full access requires Google AI Pro ($19.99/mo)**—free and Google AI Plus users get Nano Banana 2 as the default in the Gemini app, with only limited Nano Banana Pro access through Google Flow. Access Nano Banana Pro via the three-dot model menu."
 
 ### Sources
 
@@ -629,6 +658,7 @@ Available globally where Gemini is available. Some content restrictions in certa
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Free row ❌ → ⚠️: Google's subscriptions page (gemini.google/subscriptions/) lists "limited access to Nano Banana Pro" via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro |
 | 2026-03-04T12:00Z | [Verified] Gating changed from free to paid; Nano Banana 2 became default for all users (Feb 26, 2026); free users no longer get Nano Banana Pro |
 | 2025-11-20T12:00Z | Nano Banana Pro launched (Gemini 3 Pro Image) |
 | 2025-08-01T12:00Z | Initial Nano Banana launched (Gemini 2.5 Flash Image) |
@@ -644,15 +674,17 @@ Available globally where Gemini is available. Some content restrictions in certa
 | Gating | free |
 | URL | https://notebooklm.google.com/ |
 | Launched | 2023-12-01T12:00Z |
-| Verified | 2026-02-28|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | 50 sources/notebook | Full access |
-| AI Pro | ✅ | 300 sources/notebook | Higher limits |
+| Google AI Plus | ✅ | More than Free | "More Audio Overviews, notebooks, and more" per Google's subscriptions page |
+| Google AI Pro | ✅ | 300 sources/notebook | Higher limits; Google says "5x more Audio Overviews, notebooks" |
+| Google AI Ultra | ✅ | Highest | "Highest limits and best model capabilities" |
 
 ### Platforms
 
@@ -674,7 +706,7 @@ Available globally where Google services are available.
 
 ### Talking Point
 
-> "NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. **Free to use** with generous limits; AI Pro increases source limits."
+> "NotebookLM lets you upload documents and have AI conversations grounded in your sources—it even generates podcast-style audio summaries. **Free to use** with generous limits; Google AI Plus adds more notebooks and Audio Overviews, Google AI Pro raises source limits, and Google AI Ultra has the highest. Google's plans page now lists it as "Gemini Notebook"."
 
 ### Sources
 
@@ -685,6 +717,7 @@ Available globally where Google services are available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/), which now calls the product "Gemini Notebook" (record title kept; implementations/index.yml binds to the heading) |
 | 2023-12-01T12:00Z | Initial entry |
 
 ---
@@ -699,14 +732,14 @@ Available globally where Google services are available.
 | URL | https://deepmind.google/models/project-astra/ |
 | Launched | 2024-12-11T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-09-04|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Standard | Camera + screen sharing |
-| AI Pro | ✅ | Full | Early access to new features |
+| Google AI Pro | ✅ | Full | Early access to new features |
 
 ### Platforms
 
@@ -739,6 +772,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2025-05-20T12:00Z | Free for all users |
 | 2025-04-07T12:00Z | Expanded to Pixel 9 and Galaxy S25 |
 | 2024-12-11T12:00Z | Initial entry
@@ -754,16 +788,17 @@ Available globally where Gemini is available.
 | Gating | paid |
 | URL | https://deepmind.google/models/veo/ |
 | Launched | 2024-05-14T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-11|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Not available |
-| AI Pro | ✅ | Full | Veo 3.1 via Gemini app and Flow |
-| AI Ultra | ✅ | Highest | Full Veo 3.1 access, largest Flow credit pool |
+| Google AI Plus | ✅ | 200 Flow credits | "Access to more features like video generation" per Google's subscriptions page |
+| Google AI Pro | ✅ | 1,000 Flow credits | Veo 3.1 via Gemini app and Flow |
+| Google AI Ultra | ✅ | 10,000–25,000 Flow credits | Full Veo 3.1 access, largest Flow credit pool |
 | Workspace add-on | ⚠️ | Limited | Veo 3.1 avatars in Google Vids |
 
 ### Platforms
@@ -786,7 +821,7 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 
 ### Talking Point
 
-> "Veo is Google's video generation model. **Veo 3.1 generates 4K video up to 8 seconds with native audio**—including dialogue, sound effects, and ambient noise. Requires **AI Pro ($19.99/mo)** or **AI Ultra ($249.99/mo)** for the highest limits. Available in the Gemini app, Flow, and via API. Supports text-to-video and image-to-video with up to 3 reference images—though **image-to-video is blocked in the EEA, UK, and Switzerland**."
+> "Veo is Google's video generation model. **Veo 3.1 generates 4K video up to 8 seconds with native audio**—including dialogue, sound effects, and ambient noise. Starts at **Google AI Plus ($4.99/mo, 200 Flow credits)**; **Google AI Pro ($19.99/mo, 1,000 credits)** and **Google AI Ultra (from $99.99/mo, 10,000–25,000 credits)** for the highest limits. Available in the Gemini app, Flow, and via API. Supports text-to-video and image-to-video with up to 3 reference images—though **image-to-video is blocked in the EEA, UK, and Switzerland**."
 
 ### Sources
 
@@ -799,6 +834,7 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Added Google AI Plus row — video generation is included at Plus per Google's subscriptions page (gemini.google/subscriptions/); Limits now carry Google's published Flow credit allocations; talking point prices corrected |
 | 2026-08-15T12:00Z | [Verified] Added missing AI Ultra row; Linux corrected ❌ → ✅ (web-based, matching Windows/macOS); regional note sharpened to name the EEA/UK/Switzerland image-to-video restriction; Free remains ❌ (Jul 30–Aug 4 2026 free-video promo has expired) |
 | 2026-01-13T12:00Z | Veo 3.1 4K resolution and vertical video support |
 | 2025-10-01T12:00Z | Veo 3.1 released in Gemini API |
@@ -818,14 +854,14 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 | URL | https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438 |
 | Launched | 2026-03-03T12:00Z |
 | Verified | 2026-03-21|
-| Checked | 2026-09-04|
+| Checked | 2026-09-11|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Beta | Select apps and devices |
-| AI Pro | ✅ | Beta | Select apps and devices |
+| Google AI Pro | ✅ | Beta | Select apps and devices |
 
 ### Platforms
 
@@ -857,6 +893,7 @@ Beta available in the US and South Korea.
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2026-03-21T12:00Z | [Verified] Device support corrected to Pixel 10 series and Samsung Galaxy S26 series; regional availability updated to US and South Korea; supported apps listed |
 | 2026-03-12T12:00Z | Expanded to Samsung Galaxy S26 series |
 | 2026-03-03T12:00Z | Initial entry — agentic app actions launched via March 2026 Pixel Drop |
@@ -930,7 +967,7 @@ Available where Gemini Apps are available (230+ countries on web, 150+ on mobile
 | URL      | https://gemini.google.com |
 | Launched | 2024-02-08T12:00Z |
 | Verified | 2026-08-31 |
-| Checked  | 2026-09-01 |
+| Checked | 2026-09-11|
 
 ### Availability
 
@@ -962,7 +999,7 @@ Available in 230+ countries and territories on web; 150+ countries on mobile. Ag
 
 ### Talking Point
 
-> "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; AI Pro and Ultra unlock **Gemini 3.1 Pro** with higher limits. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac)."
+> "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; Google AI Pro and Ultra unlock **Gemini 3.1 Pro** with higher limits. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac)."
 
 ### Sources
 
@@ -975,6 +1012,7 @@ Available in 230+ countries and territories on web; 150+ countries on mobile. Ag
 
 | Date | Change |
 |------|--------|
+| 2026-09-11T12:00Z | [Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change |
 | 2026-08-31T12:00Z | [Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026) |
 | 2026-03-21T12:00Z | [Verified] Chrome side panel added (Jan 2026); model names updated to Gemini 3 Flash (free) and Gemini 3.1 Pro (paid) |
 | 2026-03-07T12:00Z | Initial entry |

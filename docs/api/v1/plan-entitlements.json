@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T04:36:43.522Z",
+    "generated": "2026-09-12T04:41:26.716Z",
     "version": "1.0"
   },
   "products": {
@@ -593,8 +593,8 @@
           "implementation_count": 12,
           "capability_count": 16
         },
-        "AI Pro": {
-          "price": null,
+        "Google AI Pro": {
+          "price": "$19.99/mo",
           "implementations": [
             "gemini-ai-studio",
             "gemini-audio-overview",
@@ -603,13 +603,16 @@
             "gemini-extensions",
             "gemini-gemini-advanced",
             "gemini-workspace",
+            "gemini-live-voice-mode",
             "gemini-gems-custom-chatbots",
             "gemini-imagen",
             "gemini-nano-banana-pro",
             "gemini-notebooklm",
             "gemini-project-astra",
             "gemini-veo-video-generation",
-            "gemini-agentic-app-actions-android"
+            "gemini-agentic-app-actions-android",
+            "gemini-past-chats-memory",
+            "gemini-chat"
           ],
           "capabilities": [
             "write-and-edit-code",
@@ -621,34 +624,92 @@
             "read-text-and-documents",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "generate-images",
             "organize-work-in-projects",
             "see-images-and-screens",
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
             "generate-video",
-            "take-actions-and-run-tools"
+            "take-actions-and-run-tools",
+            "remember-context-over-time",
+            "write-and-explain"
           ],
-          "implementation_count": 14,
-          "capability_count": 16
+          "implementation_count": 17,
+          "capability_count": 18
         },
-        "AI Ultra": {
-          "price": null,
+        "Google AI Plus": {
+          "price": "$4.99/mo",
           "implementations": [
-            "gemini-gemini-advanced",
+            "gemini-audio-overview",
+            "gemini-canvas",
+            "gemini-deep-research",
             "gemini-workspace",
-            "gemini-veo-video-generation"
+            "gemini-live-voice-mode",
+            "gemini-gems-custom-chatbots",
+            "gemini-imagen",
+            "gemini-notebooklm",
+            "gemini-veo-video-generation",
+            "gemini-past-chats-memory",
+            "gemini-chat"
           ],
           "capabilities": [
             "make-and-edit-documents",
+            "write-and-edit-code",
+            "do-multi-step-research",
+            "search-the-web",
             "read-text-and-documents",
             "connect-to-external-systems",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
-            "generate-video"
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "build-reusable-ai-workflows",
+            "generate-images",
+            "organize-work-in-projects",
+            "generate-video",
+            "remember-context-over-time",
+            "write-and-explain"
           ],
-          "implementation_count": 3,
-          "capability_count": 6
+          "implementation_count": 11,
+          "capability_count": 16
+        },
+        "Google AI Ultra": {
+          "price": "From $99.99/mo",
+          "implementations": [
+            "gemini-audio-overview",
+            "gemini-canvas",
+            "gemini-deep-research",
+            "gemini-gemini-advanced",
+            "gemini-workspace",
+            "gemini-live-voice-mode",
+            "gemini-gems-custom-chatbots",
+            "gemini-imagen",
+            "gemini-nano-banana-pro",
+            "gemini-notebooklm",
+            "gemini-veo-video-generation",
+            "gemini-past-chats-memory",
+            "gemini-chat"
+          ],
+          "capabilities": [
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "do-multi-step-research",
+            "search-the-web",
+            "read-text-and-documents",
+            "connect-to-external-systems",
+            "use-files-i-provide",
+            "use-it-on-my-surfaces",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "build-reusable-ai-workflows",
+            "generate-images",
+            "organize-work-in-projects",
+            "generate-video",
+            "remember-context-over-time",
+            "write-and-explain"
+          ],
+          "implementation_count": 13,
+          "capability_count": 16
         },
         "Workspace add-on": {
           "price": "$20/user/mo",
@@ -666,57 +727,6 @@
           ],
           "implementation_count": 2,
           "capability_count": 6
-        },
-        "Google AI Plus": {
-          "price": "$7.99/mo",
-          "implementations": [
-            "gemini-live-voice-mode",
-            "gemini-past-chats-memory",
-            "gemini-chat"
-          ],
-          "capabilities": [
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
-            "remember-context-over-time",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
-          ],
-          "implementation_count": 3,
-          "capability_count": 5
-        },
-        "Google AI Pro": {
-          "price": "$19.99/mo",
-          "implementations": [
-            "gemini-live-voice-mode",
-            "gemini-past-chats-memory",
-            "gemini-chat"
-          ],
-          "capabilities": [
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
-            "remember-context-over-time",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
-          ],
-          "implementation_count": 3,
-          "capability_count": 5
-        },
-        "Google AI Ultra": {
-          "price": "$249.99/mo",
-          "implementations": [
-            "gemini-live-voice-mode",
-            "gemini-past-chats-memory",
-            "gemini-chat"
-          ],
-          "capabilities": [
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
-            "remember-context-over-time",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
-          ],
-          "implementation_count": 3,
-          "capability_count": 5
         }
       }
     },
