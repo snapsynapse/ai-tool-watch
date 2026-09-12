@@ -2055,22 +2055,18 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "Memory",
     "launched": "2025-02-17T12:00Z",
-    "verified": "2026-09-11",
+    "verified": "2026-03-07",
     "checked": "2026-09-11",
     "sources": [
       {
         "title": "How Grok Memory Works",
         "url": "https://blog.memoryplugin.com/how-grok-memory-works/"
-      },
-      {
-        "title": "Designing Grok Bot — xAI",
-        "url": "https://x.ai/news/designing-grok-bot"
       }
     ],
     "changelog": [
       {
         "date": "2026-09-11T12:00Z",
-        "change": "[Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline) and replaced with official x.ai/news/designing-grok-bot; talking point corrected — memory can be disabled under Settings → Data Controls and individual items forgotten on request, though no itemized memory manager exists"
+        "change": "[Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source"
       },
       {
         "date": "2026-03-07T12:00Z",
@@ -2955,7 +2951,7 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "",
     "launched": "",
-    "verified": "2026-03-20",
+    "verified": "2026-03-07",
     "checked": "2026-09-01",
     "sources": [
       {

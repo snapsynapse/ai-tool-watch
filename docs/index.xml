@@ -5,7 +5,7 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Sep 2026 03:39:48 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 03:56:41 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
     <item>
         <title>Grok — Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</title>
@@ -15,11 +15,11 @@
         <description>Grok: Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</description>
     </item>
     <item>
-        <title>Grok — [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline) and replaced with official x.ai/news/designing-grok-bot; talking point corrected — memory can be disabled under Settings → Data Controls and individual items forgotten on request, though no itemized memory manager exists</title>
+        <title>Grok — [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source</title>
         <link>https://aitool.watch/implementations.html#impl-grok-memory</link>
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-memory?d=2026-09-11</guid>
         <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Grok: [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline) and replaced with official x.ai/news/designing-grok-bot; talking point corrected — memory can be disabled under Settings → Data Controls and individual items forgotten on request, though no itemized memory manager exists</description>
+        <description>Grok: [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source</description>
     </item>
     <item>
         <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>

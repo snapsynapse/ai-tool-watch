@@ -4,7 +4,7 @@ vendor: xAI
 logo: https://x.ai/favicon.ico
 status_page: https://status.x.ai
 pricing_page: https://grok.com/
-last_verified: 2026-09-11
+last_verified: 2026-08-25
 ---
 
 ## Pricing
@@ -542,7 +542,7 @@ Available globally where Grok is available.
 | Gating | free |
 | URL | https://grok.com |
 | Launched | 2025-02-17T12:00Z |
-| Verified | 2026-09-11 |
+| Verified | 2026-03-07 |
 | Checked | 2026-09-11|
 
 ### Availability
@@ -574,17 +574,16 @@ Available globally where Grok is available. Persistent memory may be restricted 
 
 ### Talking Point
 
-> "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important. Users can turn memory off under Settings → Data Controls and ask Grok to forget specific items in chat, but there is no itemized memory manager listing everything saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms."
+> "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important. Users can turn memory off under Settings → Data Controls, but there is no itemized memory manager listing everything saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms."
 
 ### Sources
 
 - [How Grok Memory Works](https://blog.memoryplugin.com/how-grok-memory-works/)
-- [Designing Grok Bot — xAI](https://x.ai/news/designing-grok-bot)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
-| 2026-09-11T12:00Z | [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline) and replaced with official x.ai/news/designing-grok-bot; talking point corrected — memory can be disabled under Settings → Data Controls and individual items forgotten on request, though no itemized memory manager exists |
+| 2026-09-11T12:00Z | [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source |
 | 2026-03-07T12:00Z | Initial entry |
 | 2025-02-17T12:00Z | Persistent memory toggle appeared with Grok 3 launch |
