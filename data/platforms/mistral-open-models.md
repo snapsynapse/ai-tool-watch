@@ -188,7 +188,7 @@ No restrictions (Apache 2.0 license).
 | URL | https://mistral.ai/news/mistral-small-4 |
 | Launched | 2026-03-16T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Checked | 2026-09-23|
 
 ### Availability
 
@@ -224,11 +224,13 @@ No restrictions (Apache 2.0 license). Mistral API availability may vary.
 
 - [Mistral Small 4 Announcement](https://mistral.ai/news/mistral-small-4)
 - [HuggingFace Model Card](https://huggingface.co/mistralai/Mistral-Small-4-119B-2603)
+- [Mistral Small 4 Docs](https://docs.mistral.ai/models/mistral-small-4-0-26-03)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | [Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record keeps the announcement's figure |
 | 2026-03-16T12:00Z | Initial entry |
 
 ---

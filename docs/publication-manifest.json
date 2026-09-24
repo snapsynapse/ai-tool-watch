@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "7473fb3700efd6ba2ea4763df3325e23376d6ec0",
-  "reviewed_input_sha256": "150d3a3542a2ce8e048effe0107e96bc24d541bcc302bcce87a253c95337f5d7",
-  "artifact_sha256": "ee1e459809c306d5ed8b9e9db19015b1e098438a3219cc978938b5816df741b4",
+  "source_revision": "d382262061a60e0158d1fae256a6e05cecaab354",
+  "reviewed_input_sha256": "0e34fc5b9f67479a279d2171312f17c2b600d70b8a7b6efd2660adc7a7f9ccfc",
+  "artifact_sha256": "ae7668c9e97878aeb9b071822400a8506cff6d525566c8ad10052956e68127d3",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "36891cbc34bff9a692efa1f1cdf176d1dd72bad0fcd1189041efb05dea55cfdc"
+      "sha256": "20f6e72e5aec0fe7728fbcb86eb26860313c8188b72eb6c0da1a27048bd1695a"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "cd44d8dae2faf846eb2d11d7e975b7501eb8b6d61b212e6a102c0f1520e47768"
+      "sha256": "626e359ffb432de031142d6937b50f40e948a63a8cf8ec429c51dfe5188dbf60"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "b08f2fc04003584b9ea8801b38d9fb0b4280eb7bf4044a12e70314a87f4bb1b4"
+      "sha256": "0056755828b90cf955431975ed93b9ae4593fb5ebf93714fae813595f80da16a"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "613c2437999344970819b53b531d763d43d41b8d6369abb4fd8341671fc6c2af"
+      "sha256": "70555ee14e2f88a3ba1064d600fab709d2642ff6d59501bf5f09cd71ee20e763"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "2bebefbfcd4f21734a9678d6892f17b85278e152fdef832ed26afcec3a0dd44d"
+      "sha256": "140668d40d37a33823af45d14e5473ebe343e2b96c762482e70926047371578b"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "4d4bab2cadbab929290aff056094b159c1b21742117dfbb518b0163b7624ca12"
+      "sha256": "72fd10624e321476396f3a00a46403873f731d04d206df14844bb19026817d36"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "b9f0b6188680249b71aa43e9bb2487926d896d559a4185b485ff8708b6b8057e"
+      "sha256": "e036bf06279e1caeec1f562314933bd7e9bb8651299e918de210516d6c3ef37d"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "59682abbf92f54dd82cfea92ac44fc05ae044989939a617e77cb91fef7de7b3f"
+      "sha256": "b981eedb143b27979619ba24ccbb410f4d2f32c58c1e0e9a44993beec4bc506e"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "f4c4c8039f03c71208abb707d96aac554184645c75edfd38db3cd0df41206cf7"
+      "sha256": "b5a8eec66a0cbaf0d10a6bbff3bbf4b72e8a8f9f7f4bffdfa030271080370379"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "532fbf40fab829d23c6581669517a8b1ace135bb50ea892534990dfaf06c92d2"
+      "sha256": "e713a7c49df853516b68648570d32c77edcba0b7dfffe88c72088fb50245b774"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "912d84f0603bb1997b702e7523fc6ce826e1e10291f8adde29f56f9eeb32df49"
+      "sha256": "b88c0a471116510d620f98794100d7ec7bb2d07a6a97762e9448d085666084b6"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "a89005d2372f692cfcda3080199857cc720c3f35e85d802d301fb93e3dd5b26a"
+      "sha256": "d3fca8804c1be460bfb32966ef0b457fce809a3047aebc967e0fc76fe46eb83d"
     },
     {
       "path": "assets/export.js",
@@ -270,11 +270,11 @@
     },
     {
       "path": "can/copilot/build-reusable-ai-workflows/index.html",
-      "sha256": "374162509839bdf85cb00e9eeb0c1e32ff6d5e96d72a6c627714390e0506adcc"
+      "sha256": "b02a1ab0dd8e766c900e95c08c4ea95b456167a383a4fad5138839135debf114"
     },
     {
       "path": "can/copilot/connect-to-external-systems/index.html",
-      "sha256": "a64861e4d5614a1600ba43e11bd9cc78396462dac68ecc54a36be9f2f4f2271d"
+      "sha256": "3726d5077fbea76ca3ab484e745c9cbe2728443270bbaa825d35efa08ab8ebca"
     },
     {
       "path": "can/copilot/generate-images/index.html",
@@ -302,7 +302,7 @@
     },
     {
       "path": "can/copilot/take-actions-and-run-tools/index.html",
-      "sha256": "ea92e271a040250d0400b909c22934919ee15c65f33f6a933764b7d9d58c53ac"
+      "sha256": "85c41e7f0c46c2ca608fdcf058da45b104fc2d7b51a25d27f7a90d0458892fa0"
     },
     {
       "path": "can/copilot/use-it-on-my-surfaces/index.html",
@@ -318,7 +318,7 @@
     },
     {
       "path": "can/gemini/connect-to-external-systems/index.html",
-      "sha256": "38a4f217135373ee4517ed42db9bf6b0567c5083153e72845a5efbef7216350f"
+      "sha256": "e6b4239877b7259cd38febed79d9886f2c0352398c441952126517a0af59a753"
     },
     {
       "path": "can/gemini/do-multi-step-research/index.html",
@@ -494,7 +494,7 @@
     },
     {
       "path": "capability/connect-to-external-systems/index.html",
-      "sha256": "dbc67ce916c6a2c769c7b18352a465803eadbe8f6a2cd03a533f8461564395fc"
+      "sha256": "6e747579c6df4da3da4332b06c6055f8063d001587ed1341e073f6fe39bd37cd"
     },
     {
       "path": "capability/do-multi-step-research/index.html",
@@ -570,11 +570,11 @@
     },
     {
       "path": "changes/copilot/index.html",
-      "sha256": "f3fe5d4b13d8dd5e639c9df2a69fcdf50514df5e5e8d5d78c7d86d4308012a81"
+      "sha256": "62c90e4176fc95f6faa1d4f2346b95e56442f7ce8ef0a1dcf853016285a72a63"
     },
     {
       "path": "changes/gemini/index.html",
-      "sha256": "e6d09de6abb431494a84f5418530648531aede91092a38c483870c00dc175006"
+      "sha256": "8956d500755c06c20b5e7f8db9e89dfae0e2f3ce319011da1cd15a4925cf256b"
     },
     {
       "path": "changes/grok/index.html",
@@ -582,7 +582,7 @@
     },
     {
       "path": "changes/index.html",
-      "sha256": "35495297d3e83b184d55cd206b34b7387fd5525edd5b186c42dd9d778e61e76c"
+      "sha256": "8d3a2d4f78f4e3a6d0bf90cb2ed097811325feb5e1ec5daafe4fa2e3efc6a8c5"
     },
     {
       "path": "changes/perplexity/index.html",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "57d6e979ab286bf601717d8bf1f9276c700661e7c9e2cf29521620a3c336ccc5"
+      "sha256": "901f8e21ed1d472a44c6b5f928a6153d8aa94cef87c9a805d641f065b0ccfc22"
     },
     {
       "path": "index.html",
-      "sha256": "9affab786d6d8b8abe7d663424672a85b359304dccd99bf7411cbcd073414fef"
+      "sha256": "19763d6b01944afd14da4bbdcc4f70cc32647c3f1ee3e9e1e01e929be4ce04c9"
     },
     {
       "path": "index.xml",
-      "sha256": "40f98fc0eedcaef54f6994f25a89efcb3337faad5c4d87214592747cf1dcbc80"
+      "sha256": "dac964b54b1dfd67f3382d2458861e2c090b0e87b24679424b2aa428a88adc49"
     },
     {
       "path": "llms.txt",
@@ -722,11 +722,11 @@
     },
     {
       "path": "sitemap.xml",
-      "sha256": "819d9afb8477de33a42d0af98e164ea71d066ef530f253510181b406d00922c1"
+      "sha256": "403719b3fb171379b6d7c7790760adcf1f2829629fcf25bf0e53349e62f81f18"
     },
     {
       "path": "timeline.html",
-      "sha256": "a7fff4c6185ed548a14c6a1ba4b81f5624b3b2ca0adae785d611bbc2f20c6e65"
+      "sha256": "951d3420300bf0f848fcf9e673bb8b45bba962836490eb8e04fe24926773c70f"
     }
   ]
 }

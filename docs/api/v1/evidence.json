@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-21T05:56:26.461Z",
+    "generated": "2026-09-24T02:06:05.641Z",
     "version": "1.0",
     "count": 92
   },
@@ -975,7 +975,7 @@
       "source_heading": "Agent Builder",
       "launched": "2025-02-24T12:00Z",
       "verified": "2026-09-05",
-      "checked": "2026-09-05",
+      "checked": "2026-09-23",
       "sources": [
         {
           "title": "Agent Builder Documentation",
@@ -984,9 +984,17 @@
         {
           "title": "Build Agents Guide",
           "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents"
+        },
+        {
+          "title": "What's New in M365 Copilot Feb 2026",
+          "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-23T12:00Z",
+          "change": "[Correction] Restored Microsoft's February 2026 \"What's New\" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record's only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL"
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: agent authoring remains a commercial Copilot capability. Recorded that Microsoft 365 Premium ships prebuilt Analyst and Researcher agents, which is agent consumption rather than authoring."
@@ -1069,7 +1077,7 @@
       "source_heading": "Copilot Connectors",
       "launched": "2023-11-01T12:00Z",
       "verified": "2026-09-05",
-      "checked": "2026-09-05",
+      "checked": "2026-09-23",
       "sources": [
         {
           "title": "Copilot Connectors Overview",
@@ -1078,9 +1086,17 @@
         {
           "title": "Copilot Connectors Gallery",
           "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery"
+        },
+        {
+          "title": "What's New in M365 Copilot Feb 2026",
+          "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-23T12:00Z",
+          "change": "[Correction] Restored Microsoft's February 2026 \"What's New\" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified"
+        },
         {
           "date": "2026-09-05",
           "change": "[Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license."
@@ -1585,11 +1601,11 @@
       "source_heading": "Extensions",
       "launched": "2023-09-19T12:00Z",
       "verified": "2026-03-15",
-      "checked": "2026-09-11",
+      "checked": "2026-09-23",
       "sources": [
         {
-          "title": "Gemini Extensions",
-          "url": "https://gemini.google.com/extensions"
+          "title": "Use & manage Connected Apps in Gemini — Gemini Apps Help",
+          "url": "https://support.google.com/gemini/answer/13695044"
         },
         {
           "title": "Gemini CLI Extensions",
@@ -1597,6 +1613,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-23T12:00Z",
+          "change": "[Correction] Help article restored as URL and source. The 2026-03-14 \"old URL 404\" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged"
+        },
         {
           "date": "2026-09-11T12:00Z",
           "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
@@ -2854,7 +2874,7 @@
       "source_heading": "Mistral Small 4",
       "launched": "2026-03-16T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-09-01",
+      "checked": "2026-09-23",
       "sources": [
         {
           "title": "Mistral Small 4 Announcement",
@@ -2863,9 +2883,17 @@
         {
           "title": "HuggingFace Model Card",
           "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+        },
+        {
+          "title": "Mistral Small 4 Docs",
+          "url": "https://docs.mistral.ai/models/mistral-small-4-0-26-03"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-23T12:00Z",
+          "change": "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record keeps the announcement's figure"
+        },
         {
           "date": "2026-03-16T12:00Z",
           "change": "Initial entry"

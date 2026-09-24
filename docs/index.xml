@@ -5,8 +5,29 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 05:56:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 02:06:05 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</title>
+        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder?d=2026-09-23</guid>
+        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Microsoft Copilot: [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</description>
+    </item>
+    <item>
+        <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified</title>
+        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-23</guid>
+        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Microsoft Copilot: [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified</description>
+    </item>
+    <item>
+        <title>Gemini — [Correction] Help article restored as URL and source. The 2026-03-14 &quot;old URL 404&quot; was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-extensions</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-extensions?d=2026-09-23</guid>
+        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Correction] Help article restored as URL and source. The 2026-03-14 &quot;old URL 404&quot; was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged</description>
+    </item>
     <item>
         <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
         <link>https://aitool.watch/implementations.html#impl-gemini-ai-studio</link>
@@ -333,27 +354,6 @@
         <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
         <link>https://aitool.watch/implementations.html#impl-chatgpt-deep-research</link>
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-deep-research?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-memory?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-projects</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-projects?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-08-15</guid>
         <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
     </item>
