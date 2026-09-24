@@ -141,3 +141,79 @@ test('state retention runs after failed verification, stages only state, and rea
     assert.equal(result.terminalStatus, 'failed');
     assert.match(result.reasons.join(' '), /statePush_outcome:failure/);
 });
+
+test('an unapproved scheduled run is blocked_unapproved only when gate, envelope and skipped CLI agree', () => {
+    const blocked = input({
+        gateOutcome: 'success', gateApproved: 'false',
+        cliExitCode: undefined, cliOutcome: 'skipped', cliHealthStatus: 'blocked_unapproved'
+    });
+    assert.equal(finalizer.finalStatus(blocked).terminalStatus, 'blocked_unapproved');
+    assert.ok(finalizer.SUCCESSFUL_TERMINAL_STATUSES.has('blocked_unapproved'));
+
+    // A blocked health claim without the gate, or a gate block where the CLI still ran, is a failure.
+    assert.equal(finalizer.finalStatus({ ...blocked, gateApproved: 'true' }).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus({ ...blocked, gateApproved: undefined }).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus({ ...blocked, cliOutcome: 'failure', cliExitCode: '2' }).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus({ ...blocked, cliHealthStatus: 'failed' }).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus({ ...blocked, gateOutcome: 'failure' }).terminalStatus, 'failed');
+    // Downstream failures still win over a block.
+    assert.equal(finalizer.finalStatus({ ...blocked, downstreamOutcomes: { ...blocked.downstreamOutcomes, push: 'failure' } }).terminalStatus, 'failed');
+});
+
+test('workflow gates only the scheduled paid path and wires the gate into finalization', () => {
+    const gate = workflow.match(/- name: Gate scheduled paid verification[\s\S]*?(?=\n\s*- name: Run feature verification)/);
+    assert.ok(gate, 'missing gate step');
+    assert.ok(workflow.indexOf('name: Build verification arguments') < workflow.indexOf('name: Gate scheduled paid verification'));
+    assert.match(gate[0], /SCHEDULE_APPROVAL: \$\{\{ vars\.FRESHNESS_SCHEDULED_VERIFICATION \}\}/);
+    assert.match(gate[0], /workflow_dispatch\) echo 'approved=true'/);
+    assert.match(gate[0], /\*\) echo "::error::Unexpected event/);
+    assert.match(workflow, /- name: Run feature verification\n\s+id: verify\n\s+if: steps\.args\.outcome == 'success' && steps\.gate\.outputs\.approved == 'true'/);
+    assert.match(workflow, /name: Commit durable review state\n\s+id: state_commit\n\s+if: [^\n]*steps\.gate\.outputs\.approved == 'true'/);
+    assert.match(workflow, /GATE_OUTCOME: \$\{\{ steps\.gate\.outcome \}\}/);
+    assert.match(workflow, /GATE_APPROVED: \$\{\{ steps\.gate\.outputs\.approved \}\}/);
+});
+
+test('the gate shell writes a blocked envelope the finalizer accepts, and approves dispatch', () => {
+    const { execFileSync } = require('node:child_process');
+    const gate = workflow.match(/- name: Gate scheduled paid verification[\s\S]*?run: \|\n([\s\S]*?)(?=\n\s*- name: Run feature verification)/);
+    const indent = gate[1].match(/^( *)/)[1].length;
+    const script = gate[1].split('\n').map(line => line.slice(indent)).join('\n');
+    const run = (event, approval) => {
+        const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aitw-gate-'));
+        fs.mkdirSync(path.join(dir, '.verification-reports'));
+        // The initialize step writes results.json before the gate runs.
+        fs.writeFileSync(path.join(dir, '.verification-reports', 'results.json'), '[]\n');
+        const output = path.join(dir, 'github-output');
+        fs.writeFileSync(output, '');
+        const env = { PATH: process.env.PATH, EVENT_NAME: event, GITHUB_OUTPUT: output };
+        if (approval !== undefined) env.SCHEDULE_APPROVAL = approval;
+        execFileSync('bash', ['-c', script], { cwd: dir, env, stdio: 'pipe' });
+        return { dir, output: fs.readFileSync(output, 'utf8') };
+    };
+
+    const dispatch = run('workflow_dispatch');
+    assert.equal(dispatch.output.trim(), 'approved=true');
+    const approved = run('schedule', 'approved');
+    assert.equal(approved.output.trim(), 'approved=true');
+
+    const blocked = run('schedule', '');
+    try {
+        assert.equal(blocked.output.trim(), 'approved=false');
+        const payload = finalizer.finalize({
+            VERIFICATION_REPORTS_DIR: path.join(blocked.dir, '.verification-reports'),
+            JOB_STATUS: 'success', INITIALIZE_OUTCOME: 'success', ARGS_OUTCOME: 'success',
+            GATE_OUTCOME: 'success', GATE_APPROVED: 'false', CLI_OUTCOME: 'skipped',
+            STATE_COMMIT_OUTCOME: 'skipped', STATE_PUSH_OUTCOME: 'skipped',
+            SYNC_EVIDENCE_OUTCOME: 'skipped', VALIDATE_ONTOLOGY_OUTCOME: 'skipped',
+            VALIDATE_STRUCTURED_DATA_OUTCOME: 'skipped', BUILD_OUTCOME: 'skipped',
+            COMMIT_OUTCOME: 'skipped', PUSH_OUTCOME: 'skipped'
+        });
+        assert.deepEqual(payload.evidence.envelopeErrors, []);
+        assert.equal(payload.terminalStatus, 'blocked_unapproved');
+        assert.equal(JSON.parse(fs.readFileSync(path.join(blocked.dir, '.verification-reports', 'alert.json'), 'utf8')).type,
+            'verification_blocked_unapproved');
+    } finally {
+        for (const r of [dispatch, approved, blocked]) fs.rmSync(r.dir, { recursive: true, force: true });
+    }
+    assert.throws(() => run('push'));
+});

@@ -11,7 +11,7 @@ The original five-phase roadmap is complete. The project now has:
 - **Machine-readable API** — 10 JSON files at `docs/api/v1/` with stable IDs, cross-links, and freshness metadata
 - **SEO bridge pages** — 125 programmatic pages (`/can/`, `/compare/`, `/capability/`, `/best-for/`) with schema.org structured data
 - **MCP read layer** — 15 read-only tools via `scripts/mcp-server.js` (zero dependencies, stdio transport)
-- **Verification cascade** — twice-weekly multi-model cross-check with human review gate
+- **Verification cascade** — multi-model cross-check with human review gate. Scheduled runs are blocked (`blocked_unapproved`) until `FRESHNESS_SCHEDULED_VERIFICATION` is approved; manual runs still require `FRESHNESS_MAX_SPEND_USD` and `FRESHNESS_MAX_PROVIDER_CALL_USD`
 - **Reviewed publication** — `scripts/prepare-publication.js` synchronizes canonical evidence, validates source and generated output, checks human/API/MCP coherence, and writes a SHA-256 artifact manifest. GitHub Pages and FTP deployment both verify and consume that one uploaded artifact; hosted acceptance for PR #626 is recorded in `design/evidence/reviewed-publication-2026-09-07.json`.
 - **Structured data validation** — `scripts/validate-structured-data.js` parses every JSON-LD block in generated `docs/**/*.html`, blocking publication on invalid JSON or a missing required property for its `@type` (Organization, WebSite, WebPage/AboutPage, FAQPage/Question/Answer, ItemList/ListItem, DefinedTerm/DefinedTermSet, SoftwareApplication), plus ItemList position gaps/duplicates. It runs during reviewed-publication preparation after `scripts/build.js`.
 - **Talking-point claim validation** — `scripts/validate-claims.js` cross-checks each feature's hand-written talking point against its own availability table, Gating, and Status fields, and flags time-bound wording ("temporary", "promotional") whose Verified date has aged past 60 days. Errors block `build.yml`'s `validate` job and canonical publication preparation after the successful scheduled trial on 2026-09-07; warnings remain advisory.
@@ -48,7 +48,7 @@ Lighthouse scores are consistently in the 90+ range, but some small tweaks could
 
 ### Ongoing
 
-- Keep data accurate through the twice-weekly verification cascade
+- Keep data accurate through the verification cascade (manual runs; scheduled runs await approval)
 - Expand implementation coverage as products ship new capabilities
 - Admit new products from the [watchlist](design/WATCHLIST.md) when they meet scope criteria
 

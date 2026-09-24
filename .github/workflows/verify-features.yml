@@ -126,9 +126,61 @@ jobs:
             exit "$exit_code"
           fi
 
+      # Scheduled paid verification stays off until the repository variable
+      # FRESHNESS_SCHEDULED_VERIFICATION is set to "approved". An unapproved
+      # schedule is a terminal blocked_unapproved outcome: the CLI, provider
+      # calls, state commits and source changes do not run, and the job is not
+      # a failure. It is not coverage either. Manual dispatch is not gated here
+      # and still fails closed when the FRESHNESS_MAX_* spend bounds are unset.
+      - name: Gate scheduled paid verification
+        id: gate
+        if: steps.args.outcome == 'success'
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE_APPROVAL: ${{ vars.FRESHNESS_SCHEDULED_VERIFICATION }}
+        run: |
+          set -euo pipefail
+          case "$EVENT_NAME" in
+            workflow_dispatch) echo 'approved=true' >> "$GITHUB_OUTPUT"; exit 0 ;;
+            schedule) ;;
+            *) echo "::error::Unexpected event: $EVENT_NAME"; exit 1 ;;
+          esac
+          if [ "${SCHEDULE_APPROVAL:-}" = "approved" ]; then
+            echo 'approved=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          finished=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          cat > .verification-reports/health.json <<EOF
+          {"status":"blocked_unapproved","finishedAt":"$finished","counts":{"selected":0,"attempted":0,"adequate":0},"providers":{},"reasons":["scheduled_verification_unapproved"]}
+          EOF
+          cat > .verification-reports/summary.txt <<'EOF'
+          status: blocked_unapproved
+          reason: scheduled paid verification is not approved (FRESHNESS_SCHEDULED_VERIFICATION != approved)
+          provider calls: none
+          coverage: none; this run does not establish freshness or provider health
+          direct notification: not_configured
+          human receipt: unconfirmed
+          missing-run monitor: not_configured
+          EOF
+          cat > .verification-reports/report.md <<'EOF'
+          # Verification report
+
+          Status: blocked_unapproved
+
+          Scheduled paid verification is not approved, so the verification CLI
+          did not start and no provider was called. This is an intentional
+          control outcome, not a failure and not coverage. Run the workflow
+          manually, or set FRESHNESS_SCHEDULED_VERIFICATION to "approved"
+          after spend bounds and review capacity are set.
+          EOF
+          cat > .verification-reports/alert.json <<'EOF'
+          {"type":"verification_blocked_unapproved","severity":"info","notification":{"directNotification":"not_configured","humanReceipt":"unconfirmed","missingRunMonitor":"not_configured"},"evidence":{"reason":"scheduled_verification_unapproved"}}
+          EOF
+          echo 'approved=false' >> "$GITHUB_OUTPUT"
+
       - name: Run feature verification
         id: verify
-        if: steps.args.outcome == 'success'
+        if: steps.args.outcome == 'success' && steps.gate.outputs.approved == 'true'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -163,7 +215,7 @@ jobs:
 
       - name: Commit durable review state
         id: state_commit
-        if: always() && steps.args.outcome == 'success' && steps.args.outputs.dry_run == 'false'
+        if: always() && steps.args.outcome == 'success' && steps.args.outputs.dry_run == 'false' && steps.gate.outputs.approved == 'true'
         run: |
           set -euo pipefail
           state_file='data/maintenance/state.json'
@@ -261,6 +313,8 @@ jobs:
           CLI_OUTCOME: ${{ steps.verify.outcome }}
           INITIALIZE_OUTCOME: ${{ steps.initialize.outcome }}
           ARGS_OUTCOME: ${{ steps.args.outcome }}
+          GATE_OUTCOME: ${{ steps.gate.outcome }}
+          GATE_APPROVED: ${{ steps.gate.outputs.approved }}
           STATE_COMMIT_OUTCOME: ${{ steps.state_commit.outcome }}
           STATE_PUSH_OUTCOME: ${{ steps.state_push.outcome }}
           SYNC_EVIDENCE_OUTCOME: ${{ steps.sync_evidence.outcome }}
