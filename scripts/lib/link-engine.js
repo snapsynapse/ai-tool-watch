@@ -372,7 +372,7 @@ const DEFAULT_OPTIONS = {
  *
  * Strategy (implements §4):
  *   1. HEAD with default profile
- *   2. If 403 or 405 → GET with default profile
+ *   2. If 403, 405 or broken (4xx/5xx) → GET with default profile
  *   3. If still 403 → rotate through alternate profiles with GET
  *   4. If still 403 after all profiles → classify as soft-blocked
  *   5. If signals are conflicting → needs-manual-review
@@ -402,21 +402,13 @@ async function checkUrl(url, options = {}) {
         finalUrl = headRes.redirectUrl;
     }
 
-    // If HEAD is clean (ok, broken, rate-limited, timeout) → done
+    // If HEAD is clean (ok, rate-limited, timeout) → done.
+    // HEAD broken is not trusted on its own: some servers (e.g. support.google.com)
+    // answer HEAD with 404 while GET returns the page, so it falls through to Step 2.
     if (headClass.category === Category.OK) {
         return createResult({
             url, category: Category.OK, http_code: headRes.statusCode,
             final_url: finalUrl, evidence: trail.toString(),
-            checked_at: new Date().toISOString(),
-            attempts, method_used: 'HEAD', request_profile: 'default',
-            latency_ms: Date.now() - startTime
-        });
-    }
-
-    if (headClass.category === Category.BROKEN) {
-        return createResult({
-            url, category: Category.BROKEN, http_code: headRes.statusCode,
-            final_url: null, evidence: trail.toString(),
             checked_at: new Date().toISOString(),
             attempts, method_used: 'HEAD', request_profile: 'default',
             latency_ms: Date.now() - startTime
@@ -460,7 +452,7 @@ async function checkUrl(url, options = {}) {
         });
     }
 
-    // --- Step 2: HEAD returned 403 or 405 → try GET with default profile ---
+    // --- Step 2: HEAD returned 403, 405 or broken → try GET with default profile ---
     //     Capture body to detect challenge pages (§4 conflicting signals)
     attempts++;
     await delay(opts.backoffMs);

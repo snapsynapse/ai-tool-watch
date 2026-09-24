@@ -275,6 +275,42 @@ describe('oversized response headers', () => {
     });
 });
 
+describe('HEAD broken is confirmed with GET', () => {
+
+    async function withServer(handler, fn) {
+        const server = http.createServer(handler);
+        await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+        try {
+            return await fn(`http://127.0.0.1:${server.address().port}/`);
+        } finally {
+            await new Promise(resolve => server.close(resolve));
+        }
+    }
+
+    it('HEAD 404 + GET 200 → ok (support.google.com pattern, #639)', async () => {
+        await withServer((req, res) => {
+            res.writeHead(req.method === 'HEAD' ? 404 : 200);
+            res.end(req.method === 'HEAD' ? undefined : 'article');
+        }, async url => {
+            const result = await checkUrl(url, { timeout: 5000, backoffMs: 0 });
+            assert.equal(result.category, Category.OK);
+            assert.equal(result.method_used, 'GET');
+            assert.match(result.evidence, /HEAD 404.*GET 200/);
+        });
+    });
+
+    it('HEAD 404 + GET 404 → broken', async () => {
+        await withServer((req, res) => {
+            res.writeHead(404);
+            res.end();
+        }, async url => {
+            const result = await checkUrl(url, { timeout: 5000, backoffMs: 0 });
+            assert.equal(result.category, Category.BROKEN);
+            assert.equal(result.http_code, 404);
+        });
+    });
+});
+
 // ===================================================================
 // httpScenarios — validate expected categories from fixture definitions
 // ===================================================================
