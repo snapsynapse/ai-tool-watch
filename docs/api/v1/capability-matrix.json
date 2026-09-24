@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:30:38.044Z",
+    "generated": "2026-09-24T02:31:38.234Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -55,8 +55,7 @@
       "gemini": {
         "available": true,
         "implementations": [
-          "gemini-live-voice-mode",
-          "gemini-project-astra"
+          "gemini-live-voice-mode"
         ],
         "best_gating": "free"
       },
@@ -143,7 +142,7 @@
       "gemini": {
         "available": true,
         "implementations": [
-          "gemini-project-astra"
+          "gemini-live-voice-mode"
         ],
         "best_gating": "free"
       },
@@ -183,8 +182,7 @@
       "gemini": {
         "available": true,
         "implementations": [
-          "gemini-live-voice-mode",
-          "gemini-project-astra"
+          "gemini-live-voice-mode"
         ],
         "best_gating": "free"
       },
