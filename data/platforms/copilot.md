@@ -47,7 +47,7 @@ The feature availability tables below list plans currently available to new cust
 | URL | https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder |
 | Launched | 2025-02-24T12:00Z |
 | Verified | 2026-09-05|
-| Checked | 2026-09-05|
+| Checked | 2026-09-23|
 
 ### Availability
 
@@ -85,11 +85,13 @@ Available in 17 regions including US, Europe, Asia Pacific.
 
 - [Agent Builder Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder)
 - [Build Agents Guide](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents)
+- [What's New in M365 Copilot Feb 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | [Correction] Restored Microsoft's February 2026 "What's New" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record's only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL |
 | 2026-09-05 | [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: agent authoring remains a commercial Copilot capability. Recorded that Microsoft 365 Premium ships prebuilt Analyst and Researcher agents, which is agent consumption rather than authoring. |
 | 2026-03-07T12:00Z | [Verified] Multi-agent coordination added (agents can call other agents as tools); new agent surfaces: Outlook, OneDrive, Teams communities; PowerPoint agentic mode |
 | 2025-11-18T12:00Z | Rebranding to Copilot Studio Lite announced |
@@ -107,7 +109,7 @@ Available in 17 regions including US, Europe, Asia Pacific.
 | URL | https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector |
 | Launched | 2023-11-01T12:00Z |
 | Verified | 2026-09-05|
-| Checked | 2026-09-05|
+| Checked | 2026-09-23|
 
 ### Availability
 
@@ -144,11 +146,13 @@ Available globally where M365 Copilot is available.
 
 - [Copilot Connectors Overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector)
 - [Copilot Connectors Gallery](https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery)
+- [What's New in M365 Copilot Feb 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | [Correction] Restored Microsoft's February 2026 "What's New" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified |
 | 2026-09-05 | [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license. |
 | 2026-03-07T12:00Z | [Verified] Federated connectors added: Notion, HubSpot, Linear, Intercom, Google Contacts, Google Calendar (live data via Researcher tool) |
 | 2025-11-01T12:00Z | MCP integration added |
