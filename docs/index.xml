@@ -5,7 +5,7 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 02:28:33 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 02:30:38 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
     <item>
         <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</title>
