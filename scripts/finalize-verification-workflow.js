@@ -6,7 +6,9 @@ const path = require('path');
 
 const REPORTS_DIR = path.join(__dirname, '..', '.verification-reports');
 const REQUIRED_ENVELOPE = ['health.json', 'results.json', 'summary.txt', 'report.md', 'alert.json'];
-const SUCCESSFUL_TERMINAL_STATUSES = new Set(['healthy', 'idle', 'review_required']);
+// blocked_unapproved is green only because nothing ran: an unapproved scheduled
+// run skipped all paid and mutating steps. It is not coverage or health.
+const SUCCESSFUL_TERMINAL_STATUSES = new Set(['healthy', 'idle', 'review_required', 'blocked_unapproved']);
 const STEP_OUTCOMES = new Set(['success', 'failure', 'skipped', 'cancelled']);
 
 function reportsDirFor(env) {
@@ -53,6 +55,18 @@ function finalStatus(input) {
     const code = input.cliExitCode === undefined || input.cliExitCode === null ? '' : String(input.cliExitCode);
     const cliOutcome = outcome(input.cliOutcome);
     const healthStatus = input.cliHealthStatus || 'missing';
+    const gateBlocked = input.gateApproved === 'false';
+    if (gateBlocked || healthStatus === 'blocked_unapproved') {
+        // Both the gate output and the envelope it wrote must agree, and the CLI must not have run.
+        if (gateBlocked && outcome(input.gateOutcome) === 'success' && healthStatus === 'blocked_unapproved' &&
+            cliOutcome === 'skipped' && code === '') {
+            return { terminalStatus: 'blocked_unapproved', reasons: ['scheduled_verification_unapproved'] };
+        }
+        return {
+            terminalStatus: 'failed',
+            reasons: [`blocked_gate_mismatch:gate=${input.gateApproved || 'missing'},health=${healthStatus},cli=${cliOutcome}`]
+        };
+    }
     if (code === '0' && ['healthy', 'idle'].includes(healthStatus)) {
         if (cliOutcome !== 'success') return { terminalStatus: 'failed', reasons: [`cli_outcome:${cliOutcome}`] };
         return { terminalStatus: healthStatus, reasons };
@@ -109,6 +123,8 @@ function buildInput(env = process.env) {
         envelopePresent,
         envelopeErrors,
         initializeOutcome: env.INITIALIZE_OUTCOME,
+        gateOutcome: env.GATE_OUTCOME,
+        gateApproved: env.GATE_APPROVED,
         jobStatus: env.JOB_STATUS || 'unknown',
         cliExitCode: env.CLI_EXIT_CODE,
         cliOutcome: env.CLI_OUTCOME,
@@ -144,6 +160,7 @@ function finalize(env = process.env) {
         steps: {
             initialize: outcome(input.initializeOutcome),
             args: outcome(input.downstreamOutcomes.args),
+            gate: outcome(input.gateOutcome),
             stateCommit: outcome(input.downstreamOutcomes.stateCommit),
             statePush: outcome(input.downstreamOutcomes.statePush),
             syncEvidence: outcome(input.downstreamOutcomes.syncEvidence),
