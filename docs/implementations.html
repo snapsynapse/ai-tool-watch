@@ -910,7 +910,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. <strong>Requires M365 Copilot ($30/user/mo)</strong>, and is not available on the free tier or any Microsoft 365 consumer plan. As of March 2026, <strong>federated connectors add live data from Notion, HubSpot, Linear, Intercom, Google Contacts, and Google Calendar</strong>.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. <strong>Requires M365 Copilot ($30/user/mo)</strong>, and is not available on the free tier or any Microsoft 365 consumer plan. <strong>Federated connectors use MCP to pull live data</strong> from services such as Notion, HubSpot, Linear, Canva, Google Contacts, and Google Calendar; Microsoft-published ones are on by default unless an admin turns them off, and write actions begin rolling out in early October 2026.</div>
                         
                     </div>
                     <div class="surface-column">
@@ -1287,11 +1287,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="gemini-extensions" data-category="integrations" data-prices="0_20" data-surfaces="windows_macos_ios_android_web_terminal_api">
+                <div class="feature-card" id="gemini-connected-apps-extensions" data-category="integrations" data-prices="0_20" data-surfaces="windows_macos_ios_android_web_terminal_api">
                     <div class="card-main">
                         <div class="feature-header">
-                            <h3><a href="https://support.google.com/gemini/answer/13695044" target="_blank" class="feature-link">Extensions</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('gemini-extensions')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
+                            <h3><a href="https://support.google.com/gemini/answer/13695044" target="_blank" class="feature-link">Connected Apps (Extensions)</a></h3>
+                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('gemini-connected-apps-extensions')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
                         </div>
                         <div class="avail-grid">
                             
@@ -1304,13 +1304,13 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Extensions, now called Connected Apps, connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. <strong>Available on all plans including free.</strong> The Gemini CLI also supports extensions via MCP for developers.</div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Gemini Connected Apps (formerly Extensions) connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. <strong>Available on all plans including free.</strong> The Gemini CLI also supports extensions via MCP for developers.</div>
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-extensions')"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('gemini-connected-apps-extensions')"><span class="date-emoji">🚀</span><span class="date-value">2023-09-19</span></span><span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">2026-03-15</span></span><span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
                         </div>
                     </div>
                 </div>
@@ -3302,7 +3302,7 @@
                         <div class="avail-grid">
                             
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 119B MoE (6B active); datacenter GPUs required</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 119B MoE (6–6.5B active, per Mistral's own sources); datacenter GPUs required</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
@@ -3314,7 +3314,7 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral Small 4 is a 119B Mixture-of-Experts model with only 6B active parameters per token. It combines instruct, reasoning, vision, and code in one open model. <strong>Apache 2.0 license</strong>, but requires <strong>datacenter GPUs (4× H100 minimum)</strong>—this is not a consumer-hardware model. Also available via the Mistral API as `mistral-small-2603`.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></span><span class="notes-text" hidden>datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral Small 4 is a 119B Mixture-of-Experts model with only about 6–6.5B active parameters per token. It combines instruct, reasoning, vision, and code in one open model. <strong>Apache 2.0 license</strong>, but requires <strong>datacenter GPUs (4× H100 minimum)</strong>—this is not a consumer-hardware model. Also available via the Mistral API as `mistral-small-2603`.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></span><span class="notes-text" hidden>datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></div>
                         <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
                     </div>
                     <div class="surface-column">
@@ -3727,7 +3727,8 @@
                 launched: "2023-11-01T12:00Z",
                 verified: "2026-09-05",
                 checked: "2026-09-23",
-                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Restored Microsoft's February 2026 \"What's New\" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified" },
+                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Federated connectors checked against Microsoft Learn's federated connectors overview (updated 2026-09-23). The page no longer describes them as a preview: Microsoft-published federated connectors are enabled by default unless an admin disables them, and create/update/delete actions begin rolling out in early October 2026. Intercom is not in the current connector list and is removed from the talking point; Canva is added. Plan rows not re-verified, so Verified is unchanged" },
+                { date: "2026-09-23T12:00Z", change: "[Correction] Restored Microsoft's February 2026 \"What's New\" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified" },
                 { date: "2026-09-05", change: "[Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license." },
                 { date: "2026-03-07T12:00Z", change: "[Verified] Federated connectors added: Notion, HubSpot, Linear, Intercom, Google Contacts, Google Calendar (live data via Researcher tool)" },
                 { date: "2025-11-01T12:00Z", change: "MCP integration added" },
@@ -3851,13 +3852,14 @@
                 { date: "2026-03-04T12:00Z", change: "[Verified] Gating changed from paid to free; free tier now gets ~5 reports/month via Gemini Flash" },
                 { date: "2024-12-11T12:00Z", change: "Initial entry" }]
             },
-            "gemini-extensions": {
-                name: "Extensions",
+            "gemini-connected-apps-extensions": {
+                name: "Connected Apps (Extensions)",
                 platform: "Gemini",
                 launched: "2023-09-19T12:00Z",
                 verified: "2026-03-15",
                 checked: "2026-09-23",
-                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Help article restored as URL and source. The 2026-03-14 \"old URL 404\" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged" },
+                changes: [{ date: "2026-09-23T12:00Z", change: "Record retitled Extensions → Connected Apps (Extensions) to match Google's current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable" },
+                { date: "2026-09-23T12:00Z", change: "[Correction] Help article restored as URL and source. The 2026-03-14 \"old URL 404\" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged" },
                 { date: "2026-09-11T12:00Z", change: "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature" },
                 { date: "2026-03-14T12:00Z", change: "[Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404)" },
                 { date: "2026-03-04T12:00Z", change: "[Verified] Fixed broken URL (removed ?hl=en parameter)" },
@@ -4143,7 +4145,7 @@
                 launched: "2026-03-16T12:00Z",
                 verified: "2026-03-24",
                 checked: "2026-09-23",
-                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record keeps the announcement's figure" },
+                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record now states 6–6.5B rather than choosing one" },
                 { date: "2026-03-16T12:00Z", change: "Initial entry" }]
             },
             "mistral-open-models-leanstral-mistral": {

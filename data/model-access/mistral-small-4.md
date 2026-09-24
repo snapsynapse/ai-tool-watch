@@ -10,7 +10,7 @@ status: active
 
 ## Summary
 
-Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).
+Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).
 
 ## Deployment Modes
 
@@ -30,7 +30,7 @@ Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per to
 
 - datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200
 - NOT practical for consumer GPUs despite being open-weight
-- 119B total parameters but only ~6B active per token (MoE)
+- 119B total parameters but only ~6–6.5B active per token (MoE); the announcement says 6B, the docs page and model card say 6.5B
 - FP8/NVFP4 support recommended for optimal performance
 
 ## Related Capabilities
