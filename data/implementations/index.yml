@@ -300,7 +300,7 @@
   product: gemini
   provider: google
   source_file: data/platforms/gemini.md
-  source_heading: Extensions
+  source_heading: Connected Apps (Extensions)
   capabilities:
     - connect-to-external-systems
 - id: gemini-gemini-advanced

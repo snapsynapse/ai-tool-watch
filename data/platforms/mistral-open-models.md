@@ -194,7 +194,7 @@ No restrictions (Apache 2.0 license).
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Self-hosted | ✅ | Your hardware | 119B MoE (6B active); datacenter GPUs required |
+| Self-hosted | ✅ | Your hardware | 119B MoE (6–6.5B active, per Mistral's own sources); datacenter GPUs required |
 | Mistral API | ✅ | Usage-based | Hosted endpoint: mistral-small-2603 |
 | NVIDIA NIM | ✅ | Usage-based | Day-0 NIM support |
 
@@ -218,7 +218,7 @@ No restrictions (Apache 2.0 license). Mistral API availability may vary.
 
 ### Talking Point
 
-> "Mistral Small 4 is a 119B Mixture-of-Experts model with only 6B active parameters per token. It combines instruct, reasoning, vision, and code in one open model. **Apache 2.0 license**, but requires **datacenter GPUs (4× H100 minimum)**—this is not a consumer-hardware model. Also available via the Mistral API as `mistral-small-2603`."
+> "Mistral Small 4 is a 119B Mixture-of-Experts model with only about 6–6.5B active parameters per token. It combines instruct, reasoning, vision, and code in one open model. **Apache 2.0 license**, but requires **datacenter GPUs (4× H100 minimum)**—this is not a consumer-hardware model. Also available via the Mistral API as `mistral-small-2603`."
 
 ### Sources
 
@@ -230,7 +230,7 @@ No restrictions (Apache 2.0 license). Mistral API availability may vary.
 
 | Date | Change |
 |------|--------|
-| 2026-09-23T12:00Z | [Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record keeps the announcement's figure |
+| 2026-09-23T12:00Z | [Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record now states 6–6.5B rather than choosing one |
 | 2026-03-16T12:00Z | Initial entry |
 
 ---

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:21:55.518Z",
+    "generated": "2026-09-24T02:28:33.731Z",
     "version": "1.0",
     "count": 18
   },
@@ -828,7 +828,8 @@
         "Connectors",
         "MCP",
         "Actions",
-        "Extensions"
+        "Extensions",
+        "Connected Apps"
       ],
       "common_constraints": [],
       "implementations": [

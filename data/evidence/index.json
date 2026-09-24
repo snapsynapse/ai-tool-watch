@@ -1084,9 +1084,17 @@
       {
         "title": "What's New in M365 Copilot Feb 2026",
         "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489"
+      },
+      {
+        "title": "Federated connectors overview",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-23T12:00Z",
+        "change": "[Correction] Federated connectors checked against Microsoft Learn's federated connectors overview (updated 2026-09-23). The page no longer describes them as a preview: Microsoft-published federated connectors are enabled by default unless an admin disables them, and create/update/delete actions begin rolling out in early October 2026. Intercom is not in the current connector list and is removed from the talking point; Canva is added. Plan rows not re-verified, so Verified is unchanged"
+      },
       {
         "date": "2026-09-23T12:00Z",
         "change": "[Correction] Restored Microsoft's February 2026 \"What's New\" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified"
@@ -1592,7 +1600,7 @@
     "entity_type": "implementation",
     "entity_id": "gemini-extensions",
     "source_file": "data/platforms/gemini.md",
-    "source_heading": "Extensions",
+    "source_heading": "Connected Apps (Extensions)",
     "launched": "2023-09-19T12:00Z",
     "verified": "2026-03-15",
     "checked": "2026-09-23",
@@ -1607,6 +1615,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-23T12:00Z",
+        "change": "Record retitled Extensions → Connected Apps (Extensions) to match Google's current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable"
+      },
       {
         "date": "2026-09-23T12:00Z",
         "change": "[Correction] Help article restored as URL and source. The 2026-03-14 \"old URL 404\" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged"
@@ -2886,7 +2898,7 @@
     "changelog": [
       {
         "date": "2026-09-23T12:00Z",
-        "change": "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record keeps the announcement's figure"
+        "change": "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record now states 6–6.5B rather than choosing one"
       },
       {
         "date": "2026-03-16T12:00Z",

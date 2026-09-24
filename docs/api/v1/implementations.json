@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:21:55.518Z",
+    "generated": "2026-09-24T02:28:33.731Z",
     "version": "1.0",
     "count": 72
   },
@@ -3110,7 +3110,7 @@
           "notes": "Microsoft Graph API"
         }
       ],
-      "talking_point": "Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. **Requires M365 Copilot ($30/user/mo)**, and is not available on the free tier or any Microsoft 365 consumer plan. As of March 2026, **federated connectors add live data from Notion, HubSpot, Linear, Intercom, Google Contacts, and Google Calendar**.",
+      "talking_point": "Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. **Requires M365 Copilot ($30/user/mo)**, and is not available on the free tier or any Microsoft 365 consumer plan. **Federated connectors use MCP to pull live data** from services such as Notion, HubSpot, Linear, Canva, Google Contacts, and Google Calendar; Microsoft-published ones are on by default unless an admin turns them off, and write actions begin rolling out in early October 2026.",
       "launched": "2023-11-01T12:00Z",
       "verified": "2026-09-05",
       "evidence_id": "implementation-copilot-connectors",
@@ -4126,11 +4126,11 @@
     },
     {
       "id": "gemini-extensions",
-      "name": "Extensions",
+      "name": "Connected Apps (Extensions)",
       "product": "gemini",
       "provider": "google",
       "source_file": "data/platforms/gemini.md",
-      "source_heading": "Extensions",
+      "source_heading": "Connected Apps (Extensions)",
       "capabilities": [
         "connect-to-external-systems"
       ],
@@ -4207,7 +4207,7 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini Extensions, now called Connected Apps, connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. **Available on all plans including free.** The Gemini CLI also supports extensions via MCP for developers.",
+      "talking_point": "Gemini Connected Apps (formerly Extensions) connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. **Available on all plans including free.** The Gemini CLI also supports extensions via MCP for developers.",
       "launched": "2023-09-19T12:00Z",
       "verified": "2026-03-15",
       "evidence_id": "implementation-gemini-extensions",

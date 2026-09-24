@@ -140,18 +140,20 @@ Available globally where M365 Copilot is available.
 
 ### Talking Point
 
-> "Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. **Requires M365 Copilot ($30/user/mo)**, and is not available on the free tier or any Microsoft 365 consumer plan. As of March 2026, **federated connectors add live data from Notion, HubSpot, Linear, Intercom, Google Contacts, and Google Calendar**."
+> "Copilot Connectors let M365 Copilot access external data from services like Salesforce, ServiceNow, Box, and more. **Requires M365 Copilot ($30/user/mo)**, and is not available on the free tier or any Microsoft 365 consumer plan. **Federated connectors use MCP to pull live data** from services such as Notion, HubSpot, Linear, Canva, Google Contacts, and Google Calendar; Microsoft-published ones are on by default unless an admin turns them off, and write actions begin rolling out in early October 2026."
 
 ### Sources
 
 - [Copilot Connectors Overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector)
 - [Copilot Connectors Gallery](https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery)
 - [What's New in M365 Copilot Feb 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489)
+- [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | [Correction] Federated connectors checked against Microsoft Learn's federated connectors overview (updated 2026-09-23). The page no longer describes them as a preview: Microsoft-published federated connectors are enabled by default unless an admin disables them, and create/update/delete actions begin rolling out in early October 2026. Intercom is not in the current connector list and is removed from the talking point; Canva is added. Plan rows not re-verified, so Verified is unchanged |
 | 2026-09-23T12:00Z | [Correction] Restored Microsoft's February 2026 "What's New" post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified |
 | 2026-09-05 | [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license. |
 | 2026-03-07T12:00Z | [Verified] Federated connectors added: Notion, HubSpot, Linear, Intercom, Google Contacts, Google Calendar (live data via Researcher tool) |

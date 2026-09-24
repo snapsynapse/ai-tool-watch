@@ -32,3 +32,4 @@ Can connect to external apps, services, APIs, data sources, or tool ecosystems b
 - MCP
 - Actions
 - Extensions
+- Connected Apps

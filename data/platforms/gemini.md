@@ -256,7 +256,7 @@ Available globally where Gemini Advanced is available.
 
 ---
 
-## Extensions
+## Connected Apps (Extensions)
 
 | Property | Value |
 |----------|-------|
@@ -295,7 +295,7 @@ Available globally where Gemini is available.
 
 ### Talking Point
 
-> "Gemini Extensions, now called Connected Apps, connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. **Available on all plans including free.** The Gemini CLI also supports extensions via MCP for developers."
+> "Gemini Connected Apps (formerly Extensions) connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. **Available on all plans including free.** The Gemini CLI also supports extensions via MCP for developers."
 
 ### Sources
 
@@ -306,6 +306,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | Record retitled Extensions → Connected Apps (Extensions) to match Google's current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable |
 | 2026-09-23T12:00Z | [Correction] Help article restored as URL and source. The 2026-03-14 "old URL 404" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2026-03-14T12:00Z | [Verified] URL updated: support.google.com/gemini/answer/13695044 → gemini.google.com/extensions (old URL 404) |
