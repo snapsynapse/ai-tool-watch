@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:30:38.044Z",
+    "generated": "2026-09-24T02:31:38.234Z",
     "version": "1.0"
   },
   "comparisons": [
@@ -395,10 +395,10 @@
         "search-the-web",
         "connect-to-external-systems",
         "use-it-on-my-surfaces",
+        "see-images-and-screens",
         "hear-audio-and-speech",
         "speak-back-in-real-time",
         "generate-images",
-        "see-images-and-screens",
         "generate-video",
         "remember-context-over-time",
         "write-and-explain"
@@ -437,8 +437,8 @@
       "only_a": [
         "write-and-edit-code",
         "build-reusable-ai-workflows",
-        "generate-images",
         "see-images-and-screens",
+        "generate-images",
         "generate-video",
         "remember-context-over-time"
       ],

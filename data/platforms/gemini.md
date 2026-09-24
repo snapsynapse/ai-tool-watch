@@ -444,7 +444,7 @@ Docs, Sheets, Slides features available globally in English. Drive AI features (
 | URL | https://blog.google/products/gemini/gemini-live-audio-updates/ |
 | Launched | 2024-08-13T12:00Z |
 | Verified | 2026-09-11|
-| Checked | 2026-09-11|
+| Checked | 2026-09-23|
 
 ### Availability
 
@@ -475,7 +475,7 @@ Available in supported regions.
 
 ### Talking Point
 
-> "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** Android and iOS only — Google's help pages say it isn't available in the Gemini web app."
+> "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** You can also share your camera or screen during a Live chat so Gemini can see what you see. Android and iOS only — Google's help pages say it isn't available in the Gemini web app."
 
 ### Sources
 
@@ -488,6 +488,7 @@ Available in supported regions.
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | Camera and screen sharing recorded (capability `see-images-and-screens` added). Google's Live help article documents both on Android and iOS, with no plan restriction stated. These capabilities were previously credited to the Project Astra record, which is now folded into this one (#637) |
 | 2026-09-11T12:00Z | [Verified] Gating corrected paid → free: Google's subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google's 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record |
 | 2024-08-13T12:00Z | Initial entry |
 
@@ -729,12 +730,12 @@ Available globally where Google services are available.
 | Property | Value |
 |----------|-------|
 | Category | vision |
-| Status | ga |
+| Status | deprecated |
 | Gating | free |
 | URL | https://deepmind.google/models/project-astra/ |
 | Launched | 2024-12-11T12:00Z |
 | Verified | 2026-02-28|
-| Checked | 2026-09-11|
+| Checked | 2026-09-23|
 
 ### Availability
 
@@ -763,7 +764,7 @@ Available globally where Gemini is available.
 
 ### Talking Point
 
-> "Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. **Now free for everyone** on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more."
+> "Project Astra is Google DeepMind's research prototype for a universal assistant. Its camera and screen sharing now ship in Gemini Live, which is **free for everyone** on iOS and Android. The prototype itself remains waitlist and trusted-tester only. Marked deprecated as a product record — see Gemini Live for current availability."
 
 ### Sources
 
@@ -774,6 +775,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-23T12:00Z | Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind's Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record's capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2025-05-20T12:00Z | Free for all users |
 | 2025-04-07T12:00Z | Expanded to Pixel 9 and Galaxy S25 |

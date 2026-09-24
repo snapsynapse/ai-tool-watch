@@ -328,6 +328,7 @@
   source_file: data/platforms/gemini.md
   source_heading: Gemini Live (Voice Mode)
   capabilities:
+    - see-images-and-screens
     - hear-audio-and-speech
     - speak-back-in-real-time
 - id: gemini-gems-custom-chatbots
@@ -366,10 +367,9 @@
   provider: google
   source_file: data/platforms/gemini.md
   source_heading: Project Astra
-  capabilities:
-    - see-images-and-screens
-    - hear-audio-and-speech
-    - speak-back-in-real-time
+  capabilities: []
+  notes: |
+    Transitional record kept for ID stability after being folded into gemini-live-voice-mode (#637). Its camera and screen capabilities are credited to Gemini Live.
 - id: gemini-veo-video-generation
   product: gemini
   provider: google

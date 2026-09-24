@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "79526961df61ef1443b0a3621b70f259a5730eca",
-  "reviewed_input_sha256": "cf931289eeaba5dd7bdda36ce49f4948187c5964826e7f4c4d4e11d6e5a0076f",
-  "artifact_sha256": "db68b1a68ce0e7e0609754765c9637f5336040e1aff63f0b5bccd5e1a89a8a63",
+  "source_revision": "cf9bb39e53609de12cd88b2e4ac4c650a7ff9b89",
+  "reviewed_input_sha256": "b410a0de27f3bd027717e8b4c8146cf11799cc99131eb1f82ca14dd93e386bdf",
+  "artifact_sha256": "6bc726d5757d06c530ae145eeeb6aeb3486a230fbad84c12f48a497c2944a400",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "674b7261a4d4e2325fbd6513c1a8b0e4ceff88fbaf3bdcc0b94ac2feb5bdd505"
+      "sha256": "01ba22bd47cf682bfdee26f09b1687ca4ad3f202a841fcc90a52b0c750a93279"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "6e1732a812cb37e2c2ec88ebfb20f981383f085c4bfb3d696522e8cc6e6c4eab"
+      "sha256": "4c4697e38bafdd8f4832a27bcca93b8b060faad3905e63bf5e28213bdd412ba7"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "4f3e194ed8c4749130da8eee881ef86b584a064724d7288422afee5302847d39"
+      "sha256": "fc3640f88efbb1693b189109934ce225c9f4b61da44b6f0cc27e8cce0a28d69e"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "76b78230592c462814248b2af55df54280f5baca6444c70fa660e3e8a6f55996"
+      "sha256": "680ad1fa1286339d92b9fc7f716987ab4da0c355229a00882b42215c9c32debf"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "3bc0607436d4f9657b68149a805de0419c6df54c85bae868e9cd5fb5b1439b33"
+      "sha256": "7538e8c6376a57206f0e3c2dfe3127d8e07230a7cd2daa9d31ef90d8111c7277"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "3844a7bee3bc74410fc2753be7bec914debafe63b6aee14732940e10aa65307c"
+      "sha256": "1e3687a61b9c51b0ec698d151777def2883e366fda800410750a572f8c4e9cef"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "6abf6e66c7be7214df24824ad59129e5ff5fa0a5ccf1dd64fb3426622771ae9c"
+      "sha256": "351b3ba0feb6b6a401e078d3a06d6ac1a3fa7d784fc350d84e0f6e1baf8daf1d"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "0051a94eb43ed15d0fc41daf38b94c9a9978a429ea34db64bbefa33337f3e31d"
+      "sha256": "208ec79c28d8b278e0073c05c79102e3075ab89ca8a775256e7de2c515130371"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "fc6720438dc3e14744d9f438aa4a15efa3b5dd47eb5eec773de1b381338a7a80"
+      "sha256": "83d80c2b8fb20291122f90a5e69d909f321a340fe718fdb24cecbb86b305852c"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "395baa79ca0cf038126250d8ed2a091e2f8fed68f1917679c4ab1a72ca7cb041"
+      "sha256": "7b5330fe21330b0ed279a531b680ae41f64bbe8415b825d6f2d1da43152ce4c2"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "16bcfaaa43390c8b17b5a4ec5f5c993532204b5801ab84fc3e957a0390ff8e3b"
+      "sha256": "b4bf228d471220fa2e25c32a1bf33898d73f02023467f80f08920b8779065c53"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "8da5d86bde55415c68efdea27bbb82f6140380c31da125970f2cf5cd68218113"
+      "sha256": "6d5308843d996312153c429127dc5b623f0ef0d2a4f87060e3894aa5d464122b"
     },
     {
       "path": "assets/export.js",
@@ -334,7 +334,7 @@
     },
     {
       "path": "can/gemini/hear-audio-and-speech/index.html",
-      "sha256": "1ea92229efb687f155d4679bc1f3cae4fbc794626155a0dc26ee85ad6691f65b"
+      "sha256": "8f69a97ecbe55e63a1a55db2afa92e12a80f4fbed035e21c9745c1777e83fbad"
     },
     {
       "path": "can/gemini/make-and-edit-documents/index.html",
@@ -358,11 +358,11 @@
     },
     {
       "path": "can/gemini/see-images-and-screens/index.html",
-      "sha256": "8617fb9a62dfc10693866b3568ce6c29530d820df6093e0b9adb98c6f66df08e"
+      "sha256": "d3444fd56dcf921dd0ce67e19d4406993364d2af6b6cff06e2c078179cc99d7d"
     },
     {
       "path": "can/gemini/speak-back-in-real-time/index.html",
-      "sha256": "318bebbca5261a41b3666017e980e4949ac00c754e09589500427de76a818493"
+      "sha256": "4a4c30759ea844440e029419e62d5c55a0a620ec39ec0ffd50f2cb2168cc2522"
     },
     {
       "path": "can/gemini/take-actions-and-run-tools/index.html",
@@ -510,7 +510,7 @@
     },
     {
       "path": "capability/hear-audio-and-speech/index.html",
-      "sha256": "633bf272c9d2cd2b1fceaedbd08de61b2269a51163f1202be1a42bbeb89bc14b"
+      "sha256": "e0ab9c6f4e71927dde32344fe187832db384161e240955f20fac06c221427c49"
     },
     {
       "path": "capability/make-and-edit-documents/index.html",
@@ -534,11 +534,11 @@
     },
     {
       "path": "capability/see-images-and-screens/index.html",
-      "sha256": "ac14c318074976443ef1dd545aa595fd6d973d5bf8a4ab49c14bdce4ed840937"
+      "sha256": "a5a7b3bdb852c58b7ec1d7b4679908835c8187188167b9700ac03b30999e878c"
     },
     {
       "path": "capability/speak-back-in-real-time/index.html",
-      "sha256": "f1efed1704a454f7fa8167c0fd167adfcb35dc23e57c93acb6fa16d699a7cb74"
+      "sha256": "b81766b7b398c25f659b00519afb4468da367024f7a86be9979485214c90d04b"
     },
     {
       "path": "capability/take-actions-and-run-tools/index.html",
@@ -574,7 +574,7 @@
     },
     {
       "path": "changes/gemini/index.html",
-      "sha256": "84df71a65b0705711287c260b18ec340a43f03917474ce0dd1e24f256fa04176"
+      "sha256": "9433c395273c0cf2e1e0e7a36ccd31adaf78980c9de96cc191045d5356b1ee89"
     },
     {
       "path": "changes/grok/index.html",
@@ -582,7 +582,7 @@
     },
     {
       "path": "changes/index.html",
-      "sha256": "17eb3e9566e6b244c20294b98f28b3acfaebd27e30f12c1e41723ab8e14af84a"
+      "sha256": "676f582804647a48bb4b8a2998df1505e7d26e636ce35943e5a843f1807992ce"
     },
     {
       "path": "changes/perplexity/index.html",
@@ -646,11 +646,11 @@
     },
     {
       "path": "compare/gemini-vs-grok/index.html",
-      "sha256": "f42d21bd455efad97c07d6a19b8de7a37ed0b90daa7b9f487a42cc8f605ff9dc"
+      "sha256": "45d4a707fb61546d7332bd5eea2e2811b622f07b1e353e57dd53d8ed106c3f99"
     },
     {
       "path": "compare/gemini-vs-perplexity/index.html",
-      "sha256": "e9d85cfcad871b0b607735207d1e9265617db1645e8459d2f12de4d7d19220ad"
+      "sha256": "d58c607314f2286ca9fddceb4c86f45fd4ee76bece6ee7e532e57e75aef13dd4"
     },
     {
       "path": "compare/grok-vs-perplexity/index.html",
@@ -658,7 +658,7 @@
     },
     {
       "path": "constraints.html",
-      "sha256": "318e26993f56646701ec23d1c667f3e0af4e55ddd71a391312e3e42ffb6f2584"
+      "sha256": "c523f9d4c9ca4314419a226b5373ab60431ef780b5f902b59382891518a3697c"
     },
     {
       "path": "coverage/agent-tools/index.html",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "741647a1e25f86eefab5b68b94fbc1d3dd906ff99cedd0b8b3ed0db10e67a938"
+      "sha256": "9d47cc6d710fa94e3043ae6509afc3be4fa05544008f29ccfd215fc34c679383"
     },
     {
       "path": "index.html",
-      "sha256": "2bc690e3d531d69d359c37520b6c1cc0a63196ec336a6110d1f004ad189a7fe7"
+      "sha256": "7606c2723740e48ece08a1a763f3d5dcfc014bb1b64590f6cd03875aafd75a7d"
     },
     {
       "path": "index.xml",
-      "sha256": "a90190cb1ae99685fe146f4fe8fb34f7244f2e23e04f48a0f9c2595c95548a06"
+      "sha256": "8e8e85a42d09567f81e2736584693893df7a572e71d8e4b87edb968090b60484"
     },
     {
       "path": "llms.txt",
@@ -726,7 +726,7 @@
     },
     {
       "path": "timeline.html",
-      "sha256": "0fceffdfa879014d7c062424e1d7cf4187e5e7ab2fce3aa575ba73aaf5cc8bcd"
+      "sha256": "c3d2b0d7000cf1e4c858034bf5268e99e71fd81fe4a0c99ef7021fa86e0ab9dd"
     }
   ]
 }

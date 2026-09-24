@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:30:38.044Z",
+    "generated": "2026-09-24T02:31:38.234Z",
     "version": "1.0"
   },
   "products": {
@@ -577,6 +577,7 @@
             "build-reusable-ai-workflows",
             "make-and-edit-documents",
             "connect-to-external-systems",
+            "see-images-and-screens",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "generate-images",
@@ -584,7 +585,6 @@
             "use-files-i-provide",
             "read-text-and-documents",
             "do-multi-step-research",
-            "see-images-and-screens",
             "take-actions-and-run-tools",
             "remember-context-over-time",
             "write-and-explain",
@@ -624,11 +624,11 @@
             "read-text-and-documents",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
+            "see-images-and-screens",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "generate-images",
             "organize-work-in-projects",
-            "see-images-and-screens",
             "generate-video",
             "take-actions-and-run-tools",
             "remember-context-over-time",
@@ -661,6 +661,7 @@
             "connect-to-external-systems",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
+            "see-images-and-screens",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "build-reusable-ai-workflows",
@@ -671,7 +672,7 @@
             "write-and-explain"
           ],
           "implementation_count": 11,
-          "capability_count": 16
+          "capability_count": 17
         },
         "Google AI Ultra": {
           "price": "From $99.99/mo",
@@ -699,6 +700,7 @@
             "connect-to-external-systems",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
+            "see-images-and-screens",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "build-reusable-ai-workflows",
@@ -709,7 +711,7 @@
             "write-and-explain"
           ],
           "implementation_count": 13,
-          "capability_count": 16
+          "capability_count": 17
         },
         "Workspace add-on": {
           "price": "$20/user/mo",

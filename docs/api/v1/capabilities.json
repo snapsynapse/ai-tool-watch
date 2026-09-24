@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:30:38.044Z",
+    "generated": "2026-09-24T02:31:38.234Z",
     "version": "1.0",
     "count": 18
   },
@@ -38,11 +38,10 @@
         "chatgpt-advanced-voice-mode",
         "copilot-voice",
         "gemini-live-voice-mode",
-        "gemini-project-astra",
         "grok-voice-mode",
         "perplexity-voice-mode"
       ],
-      "implementation_count": 6,
+      "implementation_count": 5,
       "products": [
         "chatgpt",
         "copilot",
@@ -136,7 +135,7 @@
         "chatgpt-vision-image-understanding",
         "claude-vision-image-understanding",
         "copilot-vision",
-        "gemini-project-astra",
+        "gemini-live-voice-mode",
         "grok-vision-image-understanding"
       ],
       "implementation_count": 5,
@@ -187,11 +186,10 @@
         "chatgpt-advanced-voice-mode",
         "copilot-voice",
         "gemini-live-voice-mode",
-        "gemini-project-astra",
         "grok-voice-mode",
         "perplexity-voice-mode"
       ],
-      "implementation_count": 6,
+      "implementation_count": 5,
       "products": [
         "chatgpt",
         "copilot",

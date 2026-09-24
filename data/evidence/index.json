@@ -1755,7 +1755,7 @@
     "source_heading": "Gemini Live (Voice Mode)",
     "launched": "2024-08-13T12:00Z",
     "verified": "2026-09-11",
-    "checked": "2026-09-11",
+    "checked": "2026-09-23",
     "sources": [
       {
         "title": "Gemini Live",
@@ -1775,6 +1775,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-23T12:00Z",
+        "change": "Camera and screen sharing recorded (capability `see-images-and-screens` added). Google's Live help article documents both on Android and iOS, with no plan restriction stated. These capabilities were previously credited to the Project Astra record, which is now folded into this one (#637)"
+      },
       {
         "date": "2026-09-11T12:00Z",
         "change": "[Verified] Gating corrected paid → free: Google's subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google's 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record"
@@ -1899,7 +1903,7 @@
     "source_heading": "Project Astra",
     "launched": "2024-12-11T12:00Z",
     "verified": "2026-02-28",
-    "checked": "2026-09-11",
+    "checked": "2026-09-23",
     "sources": [
       {
         "title": "Project Astra",
@@ -1911,6 +1915,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-23T12:00Z",
+        "change": "Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind's Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record's capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept"
+      },
       {
         "date": "2026-09-11T12:00Z",
         "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:30:38.044Z",
+    "generated": "2026-09-24T02:31:38.234Z",
     "version": "1.0",
     "count": 72
   },
@@ -4425,6 +4425,7 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Gemini Live (Voice Mode)",
       "capabilities": [
+        "see-images-and-screens",
         "hear-audio-and-speech",
         "speak-back-in-real-time"
       ],
@@ -4513,7 +4514,7 @@
           "notes": "Gemini API"
         }
       ],
-      "talking_point": "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** Android and iOS only — Google's help pages say it isn't available in the Gemini web app.",
+      "talking_point": "Gemini Live is Google's real-time voice mode in the Gemini mobile app, with interruption and back-and-forth built in. **Included on the free plan. Google AI Plus ($4.99/mo), Google AI Pro ($19.99/mo) and Google AI Ultra raise usage limits (2x, 4x, up to 20x); Daily Brief inside Live starts at Google AI Plus and Gemini Spark inside Live starts at Google AI Pro.** You can also share your camera or screen during a Live chat so Gemini can see what you see. Android and iOS only — Google's help pages say it isn't available in the Gemini web app.",
       "launched": "2024-08-13T12:00Z",
       "verified": "2026-09-11",
       "evidence_id": "implementation-gemini-live-voice-mode",
@@ -4933,14 +4934,10 @@
       "provider": "google",
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Project Astra",
-      "capabilities": [
-        "see-images-and-screens",
-        "hear-audio-and-speech",
-        "speak-back-in-real-time"
-      ],
+      "capabilities": [],
       "category": "vision",
       "gating": "free",
-      "status": "ga",
+      "status": "deprecated",
       "plans": [
         {
           "plan": "Free",
@@ -5011,7 +5008,7 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Project Astra brings real-time vision to Gemini—share your camera or screen and get contextual AI assistance. **Now free for everyone** on iOS and Android. It can remember context for 10+ minutes and integrates with Google Search, Maps, and more.",
+      "talking_point": "Project Astra is Google DeepMind's research prototype for a universal assistant. Its camera and screen sharing now ship in Gemini Live, which is **free for everyone** on iOS and Android. The prototype itself remains waitlist and trusted-tester only. Marked deprecated as a product record — see Gemini Live for current availability.",
       "launched": "2024-12-11T12:00Z",
       "verified": "2026-02-28",
       "evidence_id": "implementation-gemini-project-astra",
