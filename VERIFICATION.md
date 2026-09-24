@@ -16,7 +16,7 @@ The CLI returns 0 for healthy or valid idle, 1 for adequate observations requiri
 
 ## Selection and provider calls
 
-The twice-weekly workflow runs Tuesday and Friday at 01:00 UTC, with a default maximum of 50 features per run. The CLI default is 100. The existing oldest-Checked-first selection is preserved, with stable tie ordering. Selection backlog remains visible; a partial batch is never a full-inventory currency claim.
+The twice-weekly workflow is scheduled Tuesday and Friday at 01:00 UTC, with a default maximum of 50 features per run. A scheduled run makes paid calls only when the repository variable `FRESHNESS_SCHEDULED_VERIFICATION` is `approved`. Otherwise it ends as `blocked_unapproved`: the CLI, provider calls, state commit and source changes are skipped, the job does not fail, and the retained report says no coverage was produced. Manual `workflow_dispatch` runs are not gated by that variable. Approval is set separately from the spend bounds below so that configuring a manual run does not also re-enable the schedule. The CLI default is 100. The existing oldest-Checked-first selection is preserved, with stable tie ordering. Selection backlog remains visible; a partial batch is never a full-inventory currency claim.
 
 Same-provider exclusion remains in force for Google, Anthropic, Perplexity and xAI features. The existing adapters and prompts are in `scripts/lib/ai-clients.js`. At least two configured provider keys are needed before the runner starts; the cascade must still establish adequate independent evidence after same-vendor exclusions. A missing or unsuccessful provider is an error, not a negative vote. T04 does not establish live provider availability or introduce EveryAILaw's separate request-budget implementation.
 

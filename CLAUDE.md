@@ -59,7 +59,7 @@ Tests live under `tests/*.test.js`. CI runs them via `node scripts/test-offline.
 
 If `tests/publication-manifest.test.js` fails with `artifact hash mismatch for agents.json`, the cause is almost always a stale `docs/publication-manifest.json`, not `agents.json`. `scripts/verify-publication-manifest.js` reports the first mismatching entry in sorted path order, so a manifest left behind by a bare `build.js` run surfaces under the alphabetically earliest generated file. Re-run `node scripts/prepare-publication.js` and commit the regenerated manifest.
 
-CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu schedule), `deploy-ftp.yml` (deploy to PAICE.work, same schedule), `verify-features.yml` (twice-weekly four-model cascade, Mon/Thu), `check-links.yml` (weekly, Saturdays), `evidence-alerts.yml` (staleness alerts, Mon/Thu), `scan-secrets.yml` (push/PR to main).
+CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu schedule), `deploy-ftp.yml` (deploy to PAICE.work, same schedule), `verify-features.yml` (four-model cascade; Mon/Thu schedule ends as `blocked_unapproved` without paid calls unless `FRESHNESS_SCHEDULED_VERIFICATION=approved`; manual dispatch needs the `FRESHNESS_MAX_*` spend bounds), `check-links.yml` (weekly, Saturdays), `evidence-alerts.yml` (staleness alerts, Mon/Thu), `scan-secrets.yml` (push/PR to main).
 
 ## Current state (as of 2026-07-12)
 
