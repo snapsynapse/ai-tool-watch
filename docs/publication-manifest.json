@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "3a7c4eb5a8b646a73972090eb04ea608f08febb2",
-  "reviewed_input_sha256": "36a137b3bdab99ace4b626375ecbf6417fa4b7154082d9e9fbc619fdf72e2280",
-  "artifact_sha256": "eee992be6d7036a568efe986d8cc32db345baf1808c04addb624d2acbff0168f",
+  "source_revision": "300ae0978eded4187f1b41433259675b5904028e",
+  "reviewed_input_sha256": "e9df55de409044c5164ea4317ac71076597afd0c3ee0a5341613f3e9b0572406",
+  "artifact_sha256": "f6d1ecfaa9c0ecf46098c411962d2f1d2299154e4316d373cd35d6361ba1ae24",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "42515ebcd8ffdc64800ef3ee6cc49ecb5aa3c858049429737c8bbd46fb62e297"
+      "sha256": "0d64c0cc3033eb2107ccae8d0b74a0ba255e2a4316d9cafe903c782c2e9d9dcc"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "c048e62a8d6893ecc4207d4d6de7a7da62d9a0b4a4543432394210108d4ae82e"
+      "sha256": "bfb8c220eaf683429eae13ab7583218981f4908d24545c430bc16e3d6a32812a"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "2c48e9a3273a863f87f11ebc906a3955d65e0b1af41d7824c501a2ae9f12255e"
+      "sha256": "8f820748a01d9f2a58bd6bcc3a4bceee89dcdd0880ab11e13489603bd3308a72"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "4ff258b560330e06d0ed62d399064c0a09cbecf18b29fcd0c81cedf4cec21c59"
+      "sha256": "79bde9621d8777b124f4696d7e1ec985dffd86ec23abb3c382d7c80cc32a5bfd"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "56f02003acc54b7dea115303c3f742d243f3d551af62435d3c9f714a69a3fcd0"
+      "sha256": "d9701bec872bdadef8a01623111a1e02b75d34bb655daac3d09b3074ede2181b"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "e1be4647edab95b2d3bae130c582d23404eb8dd4a74e2b1b5c69ff11ccfe3717"
+      "sha256": "43370903190900db989dff84c3bd302512f81f856e5c4ad8f89652987e8c4423"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "34a8a62eb231e535067ed786a25805658eaabdba6945b3f31125917ce39058a7"
+      "sha256": "8f7dbe818e628ff8d46a9f9edddc7dfb80ea553d2e898f4ee8bd8308de8e589c"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "3578eb98fc1d57e8883c79ee57476e97f4fa7fb6b08ff3471aa3f898befe66aa"
+      "sha256": "e1252d56243fce52531b78f143d8fd6aee59a0eb124b99a816d541b74c6aca48"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "04e665b76840274741965d6348f62a7a4235a0375e297149e98d6f29ac751b92"
+      "sha256": "e363e450ab6fbd4322a7eec46167a9280f78d71372e203aad420f70e37fe8f75"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "e218683df30acb4bf021ccbc4b1a4113553b2668d6125a05fbc41e9085178675"
+      "sha256": "59a7353cf0561ae3303845bec82da2ce36b824442e6aeb9ba9660b5a6c84f6ad"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "584fbb5070edf4f1455dbc2f7bab36db6dd515864d3d9cd72af92f1551642735"
+      "sha256": "1aa8d2f59e183dfb6ab3745630fadad3ce80bd43742a682aec353097359f3e5d"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "282c531992128571e466a79ea897ff7430b0955fb5e0d6017795e8e005364335"
+      "sha256": "760826457438832edc4e32e417dc7f077fe67494443ac31195b1342c30f9cbf2"
     },
     {
       "path": "assets/export.js",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "878120540a446f41d8db62584f17a0d637d040a58c1223396b3ad9cf97cabc01"
+      "sha256": "473b439f575a54ca838b6f064c9fd94b64caca9fa6b04b072e4efbc6bf0b2df1"
     },
     {
       "path": "index.html",
-      "sha256": "6ca7a04f1e142ba97a8b18858bd0e065c5d37068b1fe63decd92d55e81075331"
+      "sha256": "4ee0dba5488dbaa01de0b5f3024b8ef79eca9c8080d1bf22e697361d34a0a22a"
     },
     {
       "path": "index.xml",
-      "sha256": "54262e70d28702c162b8fc16d4fa789748e3e60528ae8a34f3dced89a30b98c8"
+      "sha256": "942def6e2f3d3d92db64c4eb6c48d3a39751231be9062d7269b2d98978058853"
     },
     {
       "path": "llms.txt",

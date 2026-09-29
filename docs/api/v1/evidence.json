@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-29T03:18:54.200Z",
+    "generated": "2026-09-29T03:40:02.088Z",
     "version": "1.0",
     "count": 92
   },
@@ -2536,7 +2536,7 @@
       "source_heading": "Agent Mode (Agentic Actions) / Perplexity Computer",
       "launched": "2024-11-01T12:00Z",
       "verified": "2026-03-21",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Everything is Computer",
@@ -2575,7 +2575,7 @@
       "source_heading": "Buy with Pro (Shopping)",
       "launched": "2024-11-18T12:00Z",
       "verified": "2026-02-07",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Shop like a Pro",
@@ -2610,7 +2610,7 @@
       "source_heading": "Chat",
       "launched": "2022-12-07T12:00Z",
       "verified": "2026-03-07",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity AI",
@@ -2645,7 +2645,7 @@
       "source_heading": "Collections (Spaces)",
       "launched": "2024-10-17T12:00Z",
       "verified": "2026-03-25",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Spaces",
@@ -2672,7 +2672,7 @@
       "source_heading": "Comet Browser",
       "launched": "2025-07-09T12:00Z",
       "verified": "2026-03-31",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Comet Browser",
@@ -2715,7 +2715,7 @@
       "source_heading": "Enterprise App Connectors",
       "launched": "2024-09-01T12:00Z",
       "verified": "2026-03-31",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Enterprise App Connectors",
@@ -2738,7 +2738,7 @@
       "source_heading": "Focus Modes",
       "launched": "2024-01-01T12:00Z",
       "verified": "2026-03-25",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Help",
@@ -2765,7 +2765,7 @@
       "source_heading": "Model Selection",
       "launched": "2024-01-01T12:00Z",
       "verified": "2026-01-29",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Pro Features",
@@ -2788,7 +2788,7 @@
       "source_heading": "Pages",
       "launched": "2024-05-30T12:00Z",
       "verified": "2026-01-29",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Pages",
@@ -2815,7 +2815,7 @@
       "source_heading": "Pro Search",
       "launched": "2024-07-02T12:00Z",
       "verified": "2026-02-07",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Pro",
@@ -2838,7 +2838,7 @@
       "source_heading": "Voice Mode",
       "launched": "2024-10-24T12:00Z",
       "verified": "2026-04-08",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity Mobile App",
@@ -3354,7 +3354,7 @@
       "source_heading": null,
       "launched": null,
       "verified": "2026-01-29",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Perplexity pricing",
