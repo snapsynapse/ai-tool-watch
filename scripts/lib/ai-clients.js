@@ -83,6 +83,31 @@ async function parseSuccessfulResponse(response, logger, provider, usageField = 
 }
 
 /**
+ * Diagnostic: when VERIFY_DEBUG_SHAPE is set, log the key structure of a
+ * provider response (keys, array lengths, and https URLs only; no text).
+ */
+function logResponseShape(logger, provider, data) {
+    if (!process.env.VERIFY_DEBUG_SHAPE || process.env.VERIFY_DEBUG_SHAPE === 'false') return;
+    const urls = [];
+    const walk = (value, depth) => {
+        if (typeof value === 'string') {
+            if (value.startsWith('https://') && urls.length < 8) urls.push(value.slice(0, 160));
+            return 'str';
+        }
+        if (Array.isArray(value)) {
+            return depth > 5 ? `arr(${value.length})` : [`arr(${value.length})`, ...value.slice(0, 2).map(v => walk(v, depth + 1))];
+        }
+        if (value && typeof value === 'object') {
+            if (depth > 5) return 'obj';
+            return Object.fromEntries(Object.keys(value).map(k => [k, walk(value[k], depth + 1)]));
+        }
+        return typeof value;
+    };
+    const shape = walk(data, 0);
+    logger(`SHAPE ${provider} ${JSON.stringify({ shape, urls })}`);
+}
+
+/**
  * Preserve the parsed response and receipt when a successful response cannot
  * be interpreted as a provider completion.
  *
@@ -198,7 +223,7 @@ function buildGrokPrompt(platform, feature, claim) {
 
 ${storedData}
 
-Search X/Twitter for recent posts from ${accounts} about "${feature.name}" feature.
+Search the web for ${platform.vendor}'s official pricing, help-center, and documentation pages about the "${feature.name}" feature, and search X for recent posts from ${accounts}. Cite the official pages you used.
 
 Look for:
 1. Any announcements about pricing changes, new tier availability, or plan restrictions
@@ -281,6 +306,7 @@ class GeminiClient {
                 this.displayName,
                 'usageMetadata'
             );
+            logResponseShape(this.logger, this.displayName, data);
             const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
             if (typeof text !== 'string' || !text) {
@@ -437,6 +463,10 @@ class GrokClient {
             this.logger,
             this.displayName
         );
+        logResponseShape(this.logger, this.displayName, data);
+        const messageParts = (Array.isArray(data.output) ? data.output : [])
+            .filter(item => item?.type === 'message')
+            .flatMap(item => Array.isArray(item.content) ? item.content : []);
         const text = (Array.isArray(data.output) ? data.output : [])
             .filter(item => item?.type === 'message')
             .flatMap(item => Array.isArray(item.content) ? item.content : [])
@@ -448,9 +478,12 @@ class GrokClient {
             throw malformedResponseError(this.displayName, data, usageReceipt);
         }
 
-        const sources = (Array.isArray(data.citations) ? data.citations : [])
+        const annotationUrls = messageParts
+            .flatMap(part => Array.isArray(part?.annotations) ? part.annotations : [])
+            .map(annotation => annotation?.url);
+        const sources = [...new Set([...(Array.isArray(data.citations) ? data.citations : []), ...annotationUrls]
             .map(citation => typeof citation === 'string' ? citation : citation?.url)
-            .filter(url => typeof url === 'string' && url.length > 0);
+            .filter(url => typeof url === 'string' && url.length > 0))];
         const hasSearchEvidence = sources.length > 0;
 
         return {
