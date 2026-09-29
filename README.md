@@ -183,6 +183,7 @@ Architecture, ontology, and project status docs live in [design/](design/):
 - [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
 - [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design
 - [ROADMAP.md](design/ROADMAP.md) — Current project status and outstanding work
+- [INTENT.md](INTENT.md) — Purpose, invariants, scope, and current review decision
 - [WHY_THIS_EXISTS.md](design/WHY_THIS_EXISTS.md) — The problem this project was built to solve
 - [Graceful Boundaries](https://github.com/snapsynapse/graceful-boundaries) — Specification for structured refusal and constructive guidance, applied to the MCP server's error responses
 
