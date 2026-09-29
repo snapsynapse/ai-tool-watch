@@ -481,7 +481,11 @@ class GrokClient {
         const annotationUrls = messageParts
             .flatMap(part => Array.isArray(part?.annotations) ? part.annotations : [])
             .map(annotation => annotation?.url);
-        const sources = [...new Set([...(Array.isArray(data.citations) ? data.citations : []), ...annotationUrls]
+        // Search tool calls list the pages they retrieved on action.sources.
+        const searchUrls = (Array.isArray(data.output) ? data.output : [])
+            .flatMap(item => Array.isArray(item?.action?.sources) ? item.action.sources : [])
+            .map(source => source?.url);
+        const sources = [...new Set([...(Array.isArray(data.citations) ? data.citations : []), ...annotationUrls, ...searchUrls]
             .map(citation => typeof citation === 'string' ? citation : citation?.url)
             .filter(url => typeof url === 'string' && url.length > 0))];
         const hasSearchEvidence = sources.length > 0;
