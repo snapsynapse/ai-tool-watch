@@ -140,7 +140,10 @@ describe('provider usage receipts', () => {
             model: 'grok-4.3',
             created: 1760000002,
             usage: { input_tokens: 8, output_tokens: 13, total_tokens: 21 },
-            output: [{ type: 'message', content: [{ type: 'output_text', text: '1. Pricing: CORRECT.' }] }],
+            output: [
+                { type: 'web_search_call', action: { type: 'search', sources: [{ type: 'url', url: 'https://docs.x.ai/overview' }] } },
+                { type: 'message', content: [{ type: 'output_text', text: '1. Pricing: CORRECT.' }] }
+            ],
             citations: ['https://x.ai/news']
         };
 
@@ -153,7 +156,7 @@ describe('provider usage receipts', () => {
             created: raw.created,
             usage: raw.usage
         });
-        assert.deepStrictEqual(result.sources, ['https://x.ai/news']);
+        assert.deepStrictEqual(result.sources, ['https://x.ai/news', 'https://docs.x.ai/overview']);
         assert.equal(result.hasSearchEvidence, true);
     });
 
