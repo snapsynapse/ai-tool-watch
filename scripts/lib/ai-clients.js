@@ -287,15 +287,20 @@ class GeminiClient {
                 throw malformedResponseError(this.displayName, data, usageReceipt);
             }
 
-            // Extract grounding sources if available
-            const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
-            const hasSearchEvidence = sources.length > 0 ||
-                !!data.candidates?.[0]?.groundingMetadata?.groundingChunks?.length;
+            // Grounding chunks carry the retrieved page URLs; webSearchQueries
+            // are only the query strings and are not sources.
+            const grounding = data.candidates?.[0]?.groundingMetadata || {};
+            const sources = (grounding.groundingChunks || [])
+                .map(chunk => chunk?.web?.uri)
+                .filter(uri => typeof uri === 'string' && uri.length > 0);
+            const searchQueries = grounding.webSearchQueries || [];
+            const hasSearchEvidence = sources.length > 0;
 
             return {
                 model: this.displayName,
                 response: text,
                 sources,
+                searchQueries,
                 hasSearchEvidence,
                 raw: data,
                 usageReceipt
@@ -396,26 +401,29 @@ class GrokClient {
         // Use X/Twitter-specific prompt for Grok
         const prompt = buildGrokPrompt(platform, feature, context.claim);
 
-        const response = await this.fetch('https://api.x.ai/v1/chat/completions', {
+        // Responses API with server-side web and X search; chat completions
+        // does not search and returns no citations.
+        const response = await this.fetch('https://api.x.ai/v1/responses', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.apiKey}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'grok-4-1-fast-non-reasoning',
-                messages: [
+                model: 'grok-4.3',
+                input: [
                     {
                         role: 'system',
-                        content: 'You are Grok, searching X/Twitter for recent announcements about AI product features. Focus on official accounts and verified sources. Report what you find factually.'
+                        content: 'You are Grok, verifying AI product feature availability. Search official vendor pages and official X accounts. Report what you find factually and cite sources.'
                     },
                     {
                         role: 'user',
                         content: prompt
                     }
                 ],
+                tools: [{ type: 'web_search' }, { type: 'x_search' }],
                 temperature: 0.1,
-                max_tokens: 2048
+                max_output_tokens: 2048
             })
         });
 
@@ -429,19 +437,26 @@ class GrokClient {
             this.logger,
             this.displayName
         );
-        const text = data.choices?.[0]?.message?.content || '';
+        const text = (Array.isArray(data.output) ? data.output : [])
+            .filter(item => item?.type === 'message')
+            .flatMap(item => Array.isArray(item.content) ? item.content : [])
+            .filter(part => part?.type === 'output_text' && typeof part.text === 'string')
+            .map(part => part.text)
+            .join('\n');
 
         if (typeof text !== 'string' || !text) {
             throw malformedResponseError(this.displayName, data, usageReceipt);
         }
 
-        // Grok searches X/Twitter by design — if it returned content, it searched
-        const hasSearchEvidence = text.length > 100;
+        const sources = (Array.isArray(data.citations) ? data.citations : [])
+            .map(citation => typeof citation === 'string' ? citation : citation?.url)
+            .filter(url => typeof url === 'string' && url.length > 0);
+        const hasSearchEvidence = sources.length > 0;
 
         return {
             model: this.displayName,
             response: text,
-            sources: [], // Grok doesn't provide structured citations
+            sources,
             hasSearchEvidence,
             raw: data,
             usageReceipt
