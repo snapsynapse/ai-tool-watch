@@ -29,7 +29,7 @@ A plain-English, verified reference for AI tool capabilities, plan gates, and co
 - After editing `scripts/build.js` or anything under `data/`, regenerate with `node scripts/prepare-publication.js` — the canonical finisher — and commit source + regenerated `docs/` together. `node scripts/build.js` alone is not enough: it does not write `docs/publication-manifest.json`, so the commit ships a stale manifest and fails CI.
 - Evidence links must be included or preserved when updating a platform record.
 - Key `scripts/build.js` landmarks (per `AGENTS.md`): `renderSharedFooter()` (~line 1127), `Organization` JSON-LD blocks (search `"@id": "https://snapsynapse.com/#organization"`), `agents.json` generator (~line 4602, `maintainer` field ~4620), `llms.txt` generator (~line 4498).
-- MIT-licensed, stewarded by Snap Synapse LLC, authored by Sam Rogers. Used indirectly by PAICE.work.
+- MIT-licensed, stewarded by Snap Synapse LLC, authored by Sam Rogers. Not a PAICE.work dependency (removed 2026-09-22). Purpose, invariants, and the current review decision live in `INTENT.md`.
 
 ## Build / validate / test (from docs — do not execute without explicit instruction)
 
@@ -61,7 +61,9 @@ If `tests/publication-manifest.test.js` fails with `artifact hash mismatch for a
 
 CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu schedule), `deploy-ftp.yml` (deploy to PAICE.work, same schedule), `verify-features.yml` (four-model cascade; Mon/Thu schedule ends as `blocked_unapproved` without paid calls unless `FRESHNESS_SCHEDULED_VERIFICATION=approved`; manual dispatch needs the `FRESHNESS_MAX_*` spend bounds), `check-links.yml` (weekly, Saturdays), `evidence-alerts.yml` (staleness alerts, Mon/Thu), `scan-secrets.yml` (push/PR to main).
 
-## Current state (as of 2026-07-12)
+## Current state (as of 2026-09-28)
+
+Review period: maintained through 2026-12-31 with one weekly single-person distribution campaign, then a continue-or-retire review. See `INTENT.md` "Status and review". Scheduled verification (Mon/Thu) now ends as `blocked_unapproved` unless paid runs are approved, so freshness depends on reviewed updates.
 
 Per `design/ROADMAP.md`: the original five-phase roadmap is complete (ontology-backed data model, dual-view site, JSON API, 125 SEO bridge pages, MCP read layer, verification cascade). Repo is active — commits land almost daily via automated dashboard rebuilds and Checked/Verified date updates, plus occasional feature work (e.g. cascade signal-suppression fix).
 

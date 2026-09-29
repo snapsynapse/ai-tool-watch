@@ -26,6 +26,7 @@ Decided by Sam Rogers on 2026-09-28:
 - Review at year end. Continue if at least one campaign target cites or links AI Tool Watch, or if measured use appears.
 Known state at the decision:
 - Site and API usage are unmeasured. The site has no analytics, so use is unknown, not zero. GitHub repository traffic is not a substitute.
+- PostHog analytics will be added, per portfolio standard, so the year-end review can use measured site use.
 - A 2026-09-07 review found 49 of 72 implementation records with Verified dates older than 30 days. Under invariant 2 this must be visible on the page, not concealed.
 - The PAICE portfolio dependency was removed on 2026-09-22 (see Relationships). The `deploy-ftp.yml` workflow still deploys to PAICE.work; whether to retire it is undecided.
 ## Competitive position

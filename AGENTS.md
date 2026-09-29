@@ -55,4 +55,4 @@ Safe to edit directly: `LICENSE`, `README.md`, `data/` (source data), `skills/` 
 
 ## Stewardship and use
 
-AI Tool Watch is an open reference under Snap Synapse LLC stewardship, authored by Sam Rogers. It is used indirectly by PAICE.work (`https://paice.work/`). A planned MCP integration will expose AI Tool Watch to PAICE so behavioral-reliability assessments stay current with product changes and PAICE Pro features. The reference remains MIT-licensed and free for any use.
+AI Tool Watch is an open reference under Snap Synapse LLC stewardship, authored by Sam Rogers. The reference is MIT-licensed and free for any use. Purpose, invariants, and scope decisions are in `INTENT.md`, which is authoritative for this repository.
