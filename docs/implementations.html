@@ -149,6 +149,7 @@
                         <option value="100">$100/mo</option>
                         <option value="200">$200/mo</option>
                         <option value="300">$300/mo</option>
+                        <option value="perseat">Per seat</option>
                         <option value="team">Team</option>
                         <option value="enterprise">Enterprise</option>
                     </select>
@@ -2605,7 +2606,10 @@
                 <span class="price-tag"><strong>Premium+</strong>: $40/mo</span>
                 <span class="price-tag"><strong>SuperGrok Lite</strong>: $10/mo</span>
                 <span class="price-tag"><strong>SuperGrok</strong>: $30/mo</span>
+                <span class="price-tag"><strong>SuperGrok Plus</strong>: $100/mo</span>
                 <span class="price-tag"><strong>SuperGrok Heavy</strong>: $300/mo</span>
+                <span class="price-tag"><strong>Business</strong>: Per seat</span>
+                <span class="price-tag"><strong>Enterprise</strong>: Custom</span>
             </div>
             <div class="features-grid">
                 
@@ -2679,42 +2683,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="grok-grok-image-generation-aurora" data-category="image-gen" data-prices="0_8_40_30" data-surfaces="windows_macos_linux_ios_android_web_api">
+                <div class="feature-card" id="grok-grok-image-generation-aurora" data-category="image-gen" data-prices="0_8_40_10_30_100_300" data-surfaces="windows_macos_linux_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://x.ai/blog/grok-image-generation" target="_blank" class="feature-link">Grok Image Generation (Aurora)</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('grok-grok-image-generation-aurora')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-paid">Paid</span></span>
+                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('grok-grok-image-generation-aurora')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
                         </div>
                         <div class="avail-grid">
                             
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">~10/2hrs • Limited free generations</span></span>
-                                <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
-                            </div>
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Premium<span class="plan-tooltip">~20-50/day • Basic generation</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Limited • Included on Free per x.ai/pricing; exact count unpublished</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Premium+<span class="plan-tooltip">~500/day • More generations</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Premium<span class="plan-tooltip">Unverified • X Premium path; limits not published</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">SuperGrok<span class="plan-tooltip">Highest • Priority + most generations</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Premium+<span class="plan-tooltip">Unverified • X Premium+ bundles Imagine per help.x.com</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Lite<span class="plan-tooltip">Unverified • Included per x.ai/pricing</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok<span class="plan-tooltip">Higher • Higher rate limits per x.ai/pricing</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Plus<span class="plan-tooltip">Significantly higher • Shared usage pool across Chat, Imagine, Voice and Build</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Heavy<span class="plan-tooltip">Unverified • Included per x.ai/pricing</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok can generate images using Aurora. <strong>Free users get ~10 generations per 2-hour window</strong>; paid tiers unlock higher daily limits. SuperGrok gets the most generations per day.</div>
+                        
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon partial" title="Windows">Windows</span><span class="plat-icon partial" title="macOS">macOS</span><span class="plat-icon partial" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('grok-grok-image-generation-aurora')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-09</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('grok-grok-image-generation-aurora')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-09</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-28</span></span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="grok-grok-imagine-video-generation" data-category="video-gen" data-prices="0_8_40_30" data-surfaces="windows_macos_linux_ios_android_web_api">
+                <div class="feature-card" id="grok-grok-imagine-video-generation" data-category="video-gen" data-prices="8_40_10_30_100_300" data-surfaces="windows_macos_linux_ios_android_web_api">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://x.ai/blog/grok-imagine" target="_blank" class="feature-link">Grok Imagine (Video Generation)</a></h3>
@@ -2723,29 +2739,41 @@
                         <div class="avail-grid">
                             
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Very limited • ~3/day, 480p previews</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">— • Not included per x.ai/pricing</span></span>
+                                <span class="status"><span class="avail no" aria-label="Not available" role="img">✗</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Premium<span class="plan-tooltip">Unverified • X Premium path; not confirmed by an official source</span></span>
                                 <span class="status"><span class="avail partial" aria-label="Partially available" role="img">~</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Premium<span class="plan-tooltip">50/day • Basic video generation</span></span>
+                                <span class="plan has-tooltip" tabindex="0">Premium+<span class="plan-tooltip">Unverified • X Premium+ bundles Imagine per help.x.com</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Premium+<span class="plan-tooltip">100/day • More generations</span></span>
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Lite<span class="plan-tooltip">Unverified • Included per x.ai/pricing</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">SuperGrok<span class="plan-tooltip">500/day • Priority + most generations</span></span>
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok<span class="plan-tooltip">Higher • Higher rate limits per x.ai/pricing</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Plus<span class="plan-tooltip">Significantly higher • 1080p video; shared usage pool across Chat, Imagine, Voice and Build</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Heavy<span class="plan-tooltip">Unverified • Included per x.ai/pricing</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Grok Imagine generates 6-15 second video clips with synchronized audio in under 20 seconds. <strong>Free users get very limited access (~3/day at 480p)</strong>; paid tiers unlock higher limits (up to 500/day on SuperGrok). Supports text-to-video and image-to-video. 'Spicy Mode' requires paid subscription.</div>
+                        
                         
                     </div>
                     <div class="surface-column">
                         <span class="plat-icon partial" title="Windows">Windows</span><span class="plat-icon partial" title="macOS">macOS</span><span class="plat-icon partial" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('grok-grok-imagine-video-generation')"><span class="date-emoji">🚀</span><span class="date-value">2025-08-04</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-11</span></span>
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('grok-grok-imagine-video-generation')"><span class="date-emoji">🚀</span><span class="date-value">2025-08-04</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-28</span></span>
                         </div>
                     </div>
                 </div>
@@ -2819,7 +2847,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feature-card" id="grok-real-time-x-twitter-data" data-category="search" data-prices="0_8_40_10_30_300" data-surfaces="windows_macos_linux_ios_android_web_terminal_api_tesla">
+                <div class="feature-card" id="grok-real-time-x-twitter-data" data-category="search" data-prices="0_8_40_10_30_100_300" data-surfaces="windows_macos_linux_ios_android_web_terminal_api_tesla">
                     <div class="card-main">
                         <div class="feature-header">
                             <h3><a href="https://grok.com/" target="_blank" class="feature-link">Real-time X/Twitter Data</a></h3>
@@ -2848,7 +2876,11 @@
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                             <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">SuperGrok Heavy<span class="plan-tooltip">Full • Max rate limits, Grok 4.3</span></span>
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Plus<span class="plan-tooltip">Full • Significantly higher usage (x.ai/pricing)</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">SuperGrok Heavy<span class="plan-tooltip">Full • Max rate limits</span></span>
                                 <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
                             </div>
                         </div>
@@ -4045,8 +4077,9 @@
                 platform: "Grok",
                 launched: "2024-12-09T12:00Z",
                 verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-02-28T12:00Z", change: "[Verified] Free tier access confirmed (~10 generations per 2-hour window); paid tier limits updated" },
+                checked: "2026-09-28",
+                changes: [{ date: "2026-09-28T13:00Z", change: "Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged" },
+                { date: "2026-02-28T12:00Z", change: "[Verified] Free tier access confirmed (~10 generations per 2-hour window); paid tier limits updated" },
                 { date: "2024-12-09T12:00Z", change: "Initial entry" }]
             },
             "grok-grok-imagine-video-generation": {
@@ -4054,8 +4087,9 @@
                 platform: "Grok",
                 launched: "2025-08-04T12:00Z",
                 verified: "2026-03-24",
-                checked: "2026-09-11",
-                changes: [{ date: "2026-09-11T12:00Z", change: "Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped" },
+                checked: "2026-09-28",
+                changes: [{ date: "2026-09-28T13:00Z", change: "Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged" },
+                { date: "2026-09-11T12:00Z", change: "Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped" },
                 { date: "2026-08-25T12:00Z", change: "[Verified] Source swap — unofficial supergrok.online (CI link-check timeout) replaced with official xAI Imagine and video-generation docs" },
                 { date: "2026-02-28T12:00Z", change: "[Verified] Free tier access confirmed (very limited, ~3/day at 480p); paid tier daily limits updated" },
                 { date: "2025-11-01T12:00Z", change: "Text-to-video generation added" },

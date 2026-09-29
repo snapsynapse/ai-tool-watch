@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-29T02:58:08.987Z",
+    "generated": "2026-09-29T03:18:54.200Z",
     "version": "1.0",
     "count": 92
   },
@@ -2264,14 +2264,22 @@
       "source_heading": "Grok Image Generation (Aurora)",
       "launched": "2024-12-09T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-09-01",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Grok Image Generation",
           "url": "https://x.ai/blog/grok-image-generation"
+        },
+        {
+          "title": "Pricing: Compare Grok Plans",
+          "url": "https://x.ai/pricing"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-28T13:00Z",
+          "change": "Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged"
+        },
         {
           "date": "2026-02-28T12:00Z",
           "change": "[Verified] Free tier access confirmed (~10 generations per 2-hour window); paid tier limits updated"
@@ -2291,7 +2299,7 @@
       "source_heading": "Grok Imagine (Video Generation)",
       "launched": "2025-08-04T12:00Z",
       "verified": "2026-03-24",
-      "checked": "2026-09-11",
+      "checked": "2026-09-28",
       "sources": [
         {
           "title": "Grok Imagine - TechCrunch",
@@ -2304,9 +2312,17 @@
         {
           "title": "Grok Imagine Overview — xAI Docs",
           "url": "https://docs.x.ai/developers/model-capabilities/imagine"
+        },
+        {
+          "title": "Pricing: Compare Grok Plans",
+          "url": "https://x.ai/pricing"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-09-28T13:00Z",
+          "change": "Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged"
+        },
         {
           "date": "2026-09-11T12:00Z",
           "change": "Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped"

@@ -5,7 +5,7 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2026 02:58:09 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 03:18:54 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
     <item>
         <title>ChatGPT — [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</title>
@@ -139,6 +139,20 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-past-chats-memory?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, &quot;Get personalization with memory of your past Gemini chats&quot;), added as primary source. Google&apos;s settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in &quot;Gemini in Chrome (in countries where Gemini in Chrome is available),&quot; matching this file&apos;s existing convention for that field (see Chat record)</description>
+    </item>
+    <item>
+        <title>Grok — Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</title>
+        <link>https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Grok: Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</description>
+    </item>
+    <item>
+        <title>Grok — Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</title>
+        <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Grok: Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</description>
     </item>
     <item>
         <title>Grok — [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists &quot;Memory across chats — Remembers your preferences and past conversations&quot; as a general, ungated feature, consistent with this record&apos;s free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address</title>
@@ -340,20 +354,6 @@
         <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
         <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice</link>
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer?d=2026-09-07</guid>
         <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
     </item>

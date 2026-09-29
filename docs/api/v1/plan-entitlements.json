@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-29T02:58:08.987Z",
+    "generated": "2026-09-29T03:18:54.200Z",
     "version": "1.0"
   },
   "products": {
@@ -809,7 +809,6 @@
           "implementations": [
             "grok-chat",
             "grok-image-generation-aurora",
-            "grok-imagine-video-generation",
             "grok-studio",
             "grok-voice-mode",
             "grok-real-time-x-twitter-data",
@@ -821,7 +820,6 @@
             "write-and-explain",
             "use-it-on-my-surfaces",
             "generate-images",
-            "generate-video",
             "make-and-edit-documents",
             "write-and-edit-code",
             "hear-audio-and-speech",
@@ -830,47 +828,72 @@
             "remember-context-over-time",
             "see-images-and-screens"
           ],
-          "implementation_count": 9,
-          "capability_count": 11
+          "implementation_count": 8,
+          "capability_count": 10
         },
         "Free": {
           "price": "$0",
           "implementations": [
+            "grok-image-generation-aurora",
             "grok-studio",
             "grok-voice-mode",
             "grok-memory"
           ],
           "capabilities": [
+            "generate-images",
             "make-and-edit-documents",
             "write-and-edit-code",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "remember-context-over-time"
           ],
-          "implementation_count": 3,
-          "capability_count": 5
+          "implementation_count": 4,
+          "capability_count": 6
         },
         "SuperGrok Lite": {
           "price": "$10/mo",
           "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
             "grok-real-time-x-twitter-data"
           ],
           "capabilities": [
+            "generate-images",
+            "generate-video",
             "connect-to-external-systems"
           ],
-          "implementation_count": 1,
-          "capability_count": 1
+          "implementation_count": 3,
+          "capability_count": 3
+        },
+        "SuperGrok Plus": {
+          "price": "$100/mo",
+          "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
+            "grok-real-time-x-twitter-data"
+          ],
+          "capabilities": [
+            "generate-images",
+            "generate-video",
+            "connect-to-external-systems"
+          ],
+          "implementation_count": 3,
+          "capability_count": 3
         },
         "SuperGrok Heavy": {
           "price": "$300/mo",
           "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
             "grok-real-time-x-twitter-data"
           ],
           "capabilities": [
+            "generate-images",
+            "generate-video",
             "connect-to-external-systems"
           ],
-          "implementation_count": 1,
-          "capability_count": 1
+          "implementation_count": 3,
+          "capability_count": 3
         }
       }
     },

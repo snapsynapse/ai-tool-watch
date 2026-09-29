@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-29T02:58:08.987Z",
+    "generated": "2026-09-29T03:18:54.200Z",
     "version": "1.0",
     "count": 72
   },
@@ -5647,32 +5647,50 @@
         "generate-images"
       ],
       "category": "image-gen",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
-          "available": false,
-          "limits": "~10/2hrs",
-          "notes": "Limited free generations"
+          "available": true,
+          "limits": "Limited",
+          "notes": "Included on Free per x.ai/pricing; exact count unpublished"
         },
         {
           "plan": "Premium",
           "available": true,
-          "limits": "~20-50/day",
-          "notes": "Basic generation"
+          "limits": "Unverified",
+          "notes": "X Premium path; limits not published"
         },
         {
           "plan": "Premium+",
           "available": true,
-          "limits": "~500/day",
-          "notes": "More generations"
+          "limits": "Unverified",
+          "notes": "X Premium+ bundles Imagine per help.x.com"
+        },
+        {
+          "plan": "SuperGrok Lite",
+          "available": true,
+          "limits": "Unverified",
+          "notes": "Included per x.ai/pricing"
         },
         {
           "plan": "SuperGrok",
           "available": true,
-          "limits": "Highest",
-          "notes": "Priority + most generations"
+          "limits": "Higher",
+          "notes": "Higher rate limits per x.ai/pricing"
+        },
+        {
+          "plan": "SuperGrok Plus",
+          "available": true,
+          "limits": "Significantly higher",
+          "notes": "Shared usage pool across Chat, Imagine, Voice and Build"
+        },
+        {
+          "plan": "SuperGrok Heavy",
+          "available": true,
+          "limits": "Unverified",
+          "notes": "Included per x.ai/pricing"
         }
       ],
       "surfaces": [
@@ -5731,7 +5749,7 @@
           "notes": "xAI API"
         }
       ],
-      "talking_point": "Grok can generate images using Aurora. **Free users get ~10 generations per 2-hour window**; paid tiers unlock higher daily limits. SuperGrok gets the most generations per day.",
+      "talking_point": "",
       "launched": "2024-12-09T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-image-generation-aurora",
@@ -5754,26 +5772,44 @@
         {
           "plan": "Free",
           "available": false,
-          "limits": "Very limited",
-          "notes": "~3/day, 480p previews"
+          "limits": "—",
+          "notes": "Not included per x.ai/pricing"
         },
         {
           "plan": "Premium",
-          "available": true,
-          "limits": "50/day",
-          "notes": "Basic video generation"
+          "available": false,
+          "limits": "Unverified",
+          "notes": "X Premium path; not confirmed by an official source"
         },
         {
           "plan": "Premium+",
           "available": true,
-          "limits": "100/day",
-          "notes": "More generations"
+          "limits": "Unverified",
+          "notes": "X Premium+ bundles Imagine per help.x.com"
+        },
+        {
+          "plan": "SuperGrok Lite",
+          "available": true,
+          "limits": "Unverified",
+          "notes": "Included per x.ai/pricing"
         },
         {
           "plan": "SuperGrok",
           "available": true,
-          "limits": "500/day",
-          "notes": "Priority + most generations"
+          "limits": "Higher",
+          "notes": "Higher rate limits per x.ai/pricing"
+        },
+        {
+          "plan": "SuperGrok Plus",
+          "available": true,
+          "limits": "Significantly higher",
+          "notes": "1080p video; shared usage pool across Chat, Imagine, Voice and Build"
+        },
+        {
+          "plan": "SuperGrok Heavy",
+          "available": true,
+          "limits": "Unverified",
+          "notes": "Included per x.ai/pricing"
         }
       ],
       "surfaces": [
@@ -5832,7 +5868,7 @@
           "notes": "xAI API"
         }
       ],
-      "talking_point": "Grok Imagine generates 6-15 second video clips with synchronized audio in under 20 seconds. **Free users get very limited access (~3/day at 480p)**; paid tiers unlock higher limits (up to 500/day on SuperGrok). Supports text-to-video and image-to-video. 'Spicy Mode' requires paid subscription.",
+      "talking_point": "",
       "launched": "2025-08-04T12:00Z",
       "verified": "2026-03-24",
       "evidence_id": "implementation-grok-imagine-video-generation",
@@ -6087,10 +6123,16 @@
           "notes": "DeepSearch, ~100 prompts / 2h"
         },
         {
+          "plan": "SuperGrok Plus",
+          "available": true,
+          "limits": "Full",
+          "notes": "Significantly higher usage (x.ai/pricing)"
+        },
+        {
           "plan": "SuperGrok Heavy",
           "available": true,
           "limits": "Full",
-          "notes": "Max rate limits, Grok 4.3"
+          "notes": "Max rate limits"
         }
       ],
       "surfaces": [
