@@ -60,6 +60,11 @@ Set `FRESHNESS_REVIEW_MINUTES_PER_WEEK` to a non-negative whole-minute capacity 
 
 ## Dates and publication
 
+Definitions (adopted 2026-09-28; see `data/_schema.md`):
+
+- Verified: someone read the vendor's own source and confirmed every claim in the record. A human, or an agent whose changes a human reviews. Model agreement alone never updates it.
+- Checked: the record last got an adequate comparison against the outside world, either a Verified review or at least two independent search-grounded models that cited sources and found no change. A failed or unreadable attempt never updates it.
+
 | Field | Automated behavior |
 |---|---|
 | Checked | Advances only for adequately evidenced no-change records in a healthy or adequately review-required run; failed/degraded runs do not advance it |

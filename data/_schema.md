@@ -96,8 +96,8 @@ Available globally except EEA/Switzerland (rolling out).
 | Status | Yes | See values below | Release status (GA, Beta, etc.) |
 | Gating | Yes | See values below | Access type (Free, Paid, etc.) |
 | Launched | Yes | ISO 8601 | When the feature/change officially happened |
-| Verified | Yes | ISO 8601 | When community confirmed info is accurate |
-| Checked | Yes | ISO 8601 | When someone last looked at this entry |
+| Verified | Yes | ISO 8601 | When someone read the vendor's own source and confirmed every claim in the record |
+| Checked | Yes | ISO 8601 | When the record last got an adequate comparison against the outside world |
 
 ### Date Fields Explained
 
@@ -106,19 +106,21 @@ These three dates separate **absolute truth** from **confidence**:
 | Date | What it means | Who updates it | Example |
 |------|---------------|----------------|---------|
 | **Launched** | When the vendor released/changed this | Update when feature changes | `2025-07-17T00:00Z` (Agent Mode GA) |
-| **Verified** | When someone confirmed this is accurate | Update after verifying against official sources | `2026-01-20T12:00Z` |
-| **Checked** | When someone last reviewed this entry | Update every time you look at it | `2026-01-20T14:30Z` |
+| **Verified** | Someone read the vendor's own page and confirmed every claim in the record | A human, or an agent whose changes a human reviews. Model agreement alone never updates it | `2026-01-20T12:00Z` |
+| **Checked** | The record last got an adequate comparison against the outside world: a Verified review, or at least two independent search-grounded models that cited sources and found no change | A Verified review, or the verification collector on an adequate no-change result. A failed or unreadable attempt never updates it | `2026-01-20T14:30Z` |
+
+On the site, Verified is labeled "Confirmed against vendor source" and Checked is labeled "Last checked for changes".
 
 **Example scenario:**
 - You check ChatGPT Agent Mode on Jan 20
 - You confirm the limits are still 40/mo for Plus
-- Update `Checked` to now (you looked)
-- Update `Verified` to now (you confirmed it's accurate)
+- Update `Verified` to now (you read the vendor source and confirmed every claim)
+- Update `Checked` to now (a Verified review is also an adequate check)
 - `Launched` stays the same (nothing changed on OpenAI's side)
 
 **Another scenario:**
 - You check on Jan 25, but OpenAI's help page is down
-- Update `Checked` to now (you tried to look)
+- Leave `Checked` unchanged (an attempt that could not read the source is not a check)
 - Leave `Verified` unchanged (you couldn't confirm)
 - `Launched` stays the same
 
@@ -208,8 +210,8 @@ talking_point      → Talking Point section (quoted text)
 
 1. **Always include sources** - Every feature needs at least one official source link
 2. **Update dates correctly**:
-   - `Checked` → Every time you review an entry
-   - `Verified` → Only when you confirm info is accurate against official sources
+   - `Verified` → Only when you read the vendor's own source and confirm every claim in the record
+   - `Checked` → When you verify the record, or when the collector records an adequate no-change result; never for a failed or unreadable attempt
    - `Launched` → Only when the actual feature changes
 3. **Update the Changelog** - When availability, limits, platforms, or status change
 4. **Use talking points** - Write them as if you're presenting to a training audience
