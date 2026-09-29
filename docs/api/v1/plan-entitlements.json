@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-25T05:52:02.557Z",
+    "generated": "2026-09-29T03:40:30.647Z",
     "version": "1.0"
   },
   "products": {
@@ -249,6 +249,7 @@
             "claude-connectors",
             "claude-mcp-model-context-protocol",
             "claude-projects",
+            "claude-skills",
             "claude-vision-image-understanding",
             "claude-memory",
             "claude-chat"
@@ -259,17 +260,18 @@
             "connect-to-external-systems",
             "organize-work-in-projects",
             "use-files-i-provide",
+            "build-reusable-ai-workflows",
             "see-images-and-screens",
             "read-text-and-documents",
             "remember-context-over-time",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 7,
-          "capability_count": 10
+          "implementation_count": 8,
+          "capability_count": 11
         },
         "Pro": {
-          "price": "$20/mo",
+          "price": "$20/mo ($17/mo billed annually)",
           "implementations": [
             "claude-artifacts",
             "claude-claude-code",
@@ -368,8 +370,9 @@
           "capability_count": 13
         },
         "Team": {
-          "price": "$25/user/mo",
+          "price": "Standard seat $25/mo ($20/mo annual); Premium seat $125/mo ($100/mo annual, 5x Standard usage)",
           "implementations": [
+            "claude-artifacts",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -380,6 +383,7 @@
             "claude-chat"
           ],
           "capabilities": [
+            "make-and-edit-documents",
             "write-and-edit-code",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
@@ -391,12 +395,13 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 8,
-          "capability_count": 10
+          "implementation_count": 9,
+          "capability_count": 11
         },
         "Enterprise": {
-          "price": "Custom",
+          "price": "From $20/seat/mo + usage at API rates (self-serve), or custom (sales-assisted)",
           "implementations": [
+            "claude-artifacts",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -407,6 +412,7 @@
             "claude-chat"
           ],
           "capabilities": [
+            "make-and-edit-documents",
             "write-and-edit-code",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
@@ -418,8 +424,8 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 8,
-          "capability_count": 10
+          "implementation_count": 9,
+          "capability_count": 11
         }
       }
     },
@@ -735,7 +741,7 @@
     "grok": {
       "plans": {
         "Premium+": {
-          "price": "$16/mo",
+          "price": "$40/mo",
           "implementations": [
             "grok-deepsearch",
             "grok-chat",
@@ -803,7 +809,6 @@
           "implementations": [
             "grok-chat",
             "grok-image-generation-aurora",
-            "grok-imagine-video-generation",
             "grok-studio",
             "grok-voice-mode",
             "grok-real-time-x-twitter-data",
@@ -815,7 +820,6 @@
             "write-and-explain",
             "use-it-on-my-surfaces",
             "generate-images",
-            "generate-video",
             "make-and-edit-documents",
             "write-and-edit-code",
             "hear-audio-and-speech",
@@ -824,47 +828,72 @@
             "remember-context-over-time",
             "see-images-and-screens"
           ],
-          "implementation_count": 9,
-          "capability_count": 11
+          "implementation_count": 8,
+          "capability_count": 10
         },
         "Free": {
           "price": "$0",
           "implementations": [
+            "grok-image-generation-aurora",
             "grok-studio",
             "grok-voice-mode",
             "grok-memory"
           ],
           "capabilities": [
+            "generate-images",
             "make-and-edit-documents",
             "write-and-edit-code",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "remember-context-over-time"
           ],
-          "implementation_count": 3,
-          "capability_count": 5
+          "implementation_count": 4,
+          "capability_count": 6
         },
         "SuperGrok Lite": {
           "price": "$10/mo",
           "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
             "grok-real-time-x-twitter-data"
           ],
           "capabilities": [
+            "generate-images",
+            "generate-video",
             "connect-to-external-systems"
           ],
-          "implementation_count": 1,
-          "capability_count": 1
+          "implementation_count": 3,
+          "capability_count": 3
+        },
+        "SuperGrok Plus": {
+          "price": "$100/mo",
+          "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
+            "grok-real-time-x-twitter-data"
+          ],
+          "capabilities": [
+            "generate-images",
+            "generate-video",
+            "connect-to-external-systems"
+          ],
+          "implementation_count": 3,
+          "capability_count": 3
         },
         "SuperGrok Heavy": {
           "price": "$300/mo",
           "implementations": [
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
             "grok-real-time-x-twitter-data"
           ],
           "capabilities": [
+            "generate-images",
+            "generate-video",
             "connect-to-external-systems"
           ],
-          "implementation_count": 1,
-          "capability_count": 1
+          "implementation_count": 3,
+          "capability_count": 3
         }
       }
     },

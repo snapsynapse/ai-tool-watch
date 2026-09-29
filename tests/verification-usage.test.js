@@ -137,10 +137,14 @@ describe('provider usage receipts', () => {
         const logs = [];
         const raw = {
             id: 'xai-request-1',
-            model: 'grok-4-1-fast-non-reasoning',
+            model: 'grok-4.3',
             created: 1760000002,
-            usage: { prompt_tokens: 8, completion_tokens: 13, total_tokens: 21 },
-            choices: [{ message: { content: '1. Pricing: CORRECT.' } }]
+            usage: { input_tokens: 8, output_tokens: 13, total_tokens: 21 },
+            output: [
+                { type: 'web_search_call', action: { type: 'search', sources: [{ type: 'url', url: 'https://docs.x.ai/overview' }] } },
+                { type: 'message', content: [{ type: 'output_text', text: '1. Pricing: CORRECT.' }] }
+            ],
+            citations: ['https://x.ai/news']
         };
 
         const result = await new GrokClient('fixture-key', testOptions(raw, logs))
@@ -152,6 +156,28 @@ describe('provider usage receipts', () => {
             created: raw.created,
             usage: raw.usage
         });
+        assert.deepStrictEqual(result.sources, ['https://x.ai/news', 'https://docs.x.ai/overview']);
+        assert.equal(result.hasSearchEvidence, true);
+    });
+
+    it('uses Gemini grounding chunk URLs as sources, not search queries', async () => {
+        const raw = {
+            usageMetadata: { promptTokenCount: 10, candidatesTokenCount: 20 },
+            candidates: [{
+                content: { parts: [{ text: '1. Pricing: CORRECT.' }] },
+                groundingMetadata: {
+                    webSearchQueries: ['perplexity pro pricing'],
+                    groundingChunks: [{ web: { uri: 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/abc', title: 'perplexity.ai' } }]
+                }
+            }]
+        };
+
+        const result = await new GeminiClient('fixture-key', testOptions(raw, []))
+            .verify(platform, feature);
+
+        assert.deepStrictEqual(result.sources, ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/abc']);
+        assert.deepStrictEqual(result.searchQueries, ['perplexity pro pricing']);
+        assert.equal(result.hasSearchEvidence, true);
     });
 
     it('retains Anthropic usage without fabricating zero values', async () => {

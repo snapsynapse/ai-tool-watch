@@ -4,7 +4,7 @@ vendor: xAI
 logo: https://x.ai/favicon.ico
 status_page: https://status.x.ai
 pricing_page: https://grok.com/
-last_verified: 2026-08-25
+last_verified: 2026-09-28
 ---
 
 ## Pricing
@@ -12,11 +12,29 @@ last_verified: 2026-08-25
 | Plan | Price | Notes |
 |------|-------|-------|
 | Free | $0 | Limited queries via X / grok.com |
-| Premium | $8/mo | Basic Grok access |
-| Premium+ | $16/mo | Enhanced limits |
-| SuperGrok Lite | $10/mo | Lighter limits, image/video access |
-| SuperGrok | $30/mo | Full Grok 4 / 4.1, DeepSearch, ~100 prompts / 2h |
-| SuperGrok Heavy | $300/mo | Max rate limits, full Grok 4.3, Grok Build CLI |
+| Basic (X Premium) | $3/mo | New X Premium entry tier (edit posts, longer posts/video); no Grok-specific benefit called out |
+| Premium | $8/mo | X Premium tier; "increased usage limits on Grok" |
+| Premium+ | $40/mo | X Premium top tier; now bundles SuperGrok access, Grok Bot, Imagine, and Voice Mode (was $16/mo) |
+| SuperGrok Lite | $10/mo | Listed on x.ai/pricing with video generation and Expert; price not shown there (unverified) |
+| SuperGrok | $30/mo | Grok 4.6, Grok Bot, Expert, image and video generation, higher rate limits |
+| SuperGrok Plus | $100/mo | Everything in SuperGrok plus 1080p video, significantly higher usage across Chat, Imagine, Voice and Build, priority access at peak times, early access |
+| SuperGrok Heavy | $300/mo | Max rate limits, priority support; price not shown on x.ai/pricing (unverified) |
+| Business | Per seat | Team admin, no training on your data; price not shown on x.ai/pricing |
+| Enterprise | Custom | SSO, SCIM, customer-managed keys, dedicated data plane |
+
+### Sources
+
+- [About X Premium](https://help.x.com/en/using-x/x-premium)
+- [Pricing: Compare Grok Plans](https://x.ai/pricing)
+- [Grok](https://x.ai/grok)
+- [SuperGrok](https://grok.com/supergrok)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-09-28T13:00Z | [Verified] Read x.ai/pricing (via browser; the page blocks scripts). Added SuperGrok Plus ($100/mo), Business and Enterprise. SuperGrok Lite is listed and sold, so the earlier likely-disabled flag is withdrawn. SuperGrok confirmed at $30/mo; Lite and Heavy prices are not shown on that page |
+| 2026-09-28T12:00Z | [Verified] X Premium restructured to three named tiers — Basic ($3/mo or $32/yr), Premium ($8/mo or $84/yr, unchanged), Premium+ ($40/mo or $395/yr, was $16/mo) — per help.x.com, which now states Premium+ bundles SuperGrok access, Grok Bot, Imagine, and Voice Mode. Basic tier added to this table. SuperGrok Lite flagged as likely disabled: grok.com's live app config (`subscriptions_supergroklite_backend_enabled: false`) and its current subscribe flow list only two grok.com-direct paid plans (SuperGrok $30/mo, SuperGrok Heavy $300/mo); not confirmed fully discontinued. x.ai and help.x.com block automated fetches directly (Cloudflare bot challenge); verified via archive.org mirrors of the same official pages (help.x.com snapshot 2026-09-16, x.ai/grok snapshot 2026-09-21, grok.com/supergrok snapshots 2026-09-12/19) |
 
 ---
 
@@ -84,8 +102,8 @@ Available globally.
 | Gating | paid |
 | URL | https://x.ai/grok |
 | Launched | 2023-11-04T12:00Z |
-| Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -137,20 +155,23 @@ Available globally where X is available.
 |----------|-------|
 | Category | image-gen |
 | Status | ga |
-| Gating | paid |
+| Gating | free |
 | URL | https://x.ai/blog/grok-image-generation |
 | Launched | 2024-12-09T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Checked | 2026-09-28|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | ~10/2hrs | Limited free generations |
-| Premium | ✅ | ~20-50/day | Basic generation |
-| Premium+ | ✅ | ~500/day | More generations |
-| SuperGrok | ✅ | Highest | Priority + most generations |
+| Free | ✅ | Limited | Included on Free per x.ai/pricing; exact count unpublished |
+| Premium | ✅ | Unverified | X Premium path; limits not published |
+| Premium+ | ✅ | Unverified | X Premium+ bundles Imagine per help.x.com |
+| SuperGrok Lite | ✅ | Unverified | Included per x.ai/pricing |
+| SuperGrok | ✅ | Higher | Higher rate limits per x.ai/pricing |
+| SuperGrok Plus | ✅ | Significantly higher | Shared usage pool across Chat, Imagine, Voice and Build |
+| SuperGrok Heavy | ✅ | Unverified | Included per x.ai/pricing |
 
 ### Platforms
 
@@ -172,16 +193,18 @@ Available globally.
 
 ### Talking Point
 
-> "Grok can generate images using Aurora. **Free users get ~10 generations per 2-hour window**; paid tiers unlock higher daily limits. SuperGrok gets the most generations per day."
+"> "Grok can generate images with Imagine. **Available on every plan, including Free**, within limits xAI does not publish as numbers; paid plans raise usage, and SuperGrok Plus draws on a larger shared pool across Chat, Imagine, Voice and Build."
 
 ### Sources
 
 - [Grok Image Generation](https://x.ai/blog/grok-image-generation)
+- [Pricing: Compare Grok Plans](https://x.ai/pricing)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T13:00Z | Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged |
 | 2026-02-28T12:00Z | [Verified] Free tier access confirmed (~10 generations per 2-hour window); paid tier limits updated |
 | 2024-12-09T12:00Z | Initial entry |
 
@@ -197,16 +220,19 @@ Available globally.
 | URL | https://x.ai/blog/grok-imagine |
 | Launched | 2025-08-04T12:00Z |
 | Verified | 2026-03-24|
-| Checked | 2026-09-11|
+| Checked | 2026-09-28|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | Very limited | ~3/day, 480p previews |
-| Premium | ✅ | 50/day | Basic video generation |
-| Premium+ | ✅ | 100/day | More generations |
-| SuperGrok | ✅ | 500/day | Priority + most generations |
+| Free | ❌ | — | Not included per x.ai/pricing |
+| Premium | ⚠️ | Unverified | X Premium path; not confirmed by an official source |
+| Premium+ | ✅ | Unverified | X Premium+ bundles Imagine per help.x.com |
+| SuperGrok Lite | ✅ | Unverified | Included per x.ai/pricing |
+| SuperGrok | ✅ | Higher | Higher rate limits per x.ai/pricing |
+| SuperGrok Plus | ✅ | Significantly higher | 1080p video; shared usage pool across Chat, Imagine, Voice and Build |
+| SuperGrok Heavy | ✅ | Unverified | Included per x.ai/pricing |
 
 ### Platforms
 
@@ -228,18 +254,20 @@ Available globally where X is available.
 
 ### Talking Point
 
-> "Grok Imagine generates 6-15 second video clips with synchronized audio in under 20 seconds. **Free users get very limited access (~3/day at 480p)**; paid tiers unlock higher limits (up to 500/day on SuperGrok). Supports text-to-video and image-to-video. 'Spicy Mode' requires paid subscription."
+"> "Grok Imagine generates video clips up to 15 seconds with synchronized audio. **Video generation requires a paid plan** (SuperGrok Lite and up on grok.com); xAI does not publish per-plan daily counts, and SuperGrok Plus adds 1080p and significantly higher usage from a shared pool. Supports text-to-video and image-to-video."
 
 ### Sources
 
 - [Grok Imagine - TechCrunch](https://techcrunch.com/2025/08/04/grok-imagine-xais-new-ai-image-and-video-generator-lets-you-make-nsfw-content/)
 - [Grok Imagine Video Generation — xAI Docs](https://docs.x.ai/developers/model-capabilities/video/generation)
 - [Grok Imagine Overview — xAI Docs](https://docs.x.ai/developers/model-capabilities/imagine)
+- [Pricing: Compare Grok Plans](https://x.ai/pricing)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T13:00Z | Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged |
 | 2026-09-11T12:00Z | Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped |
 | 2026-08-25T12:00Z | [Verified] Source swap — unofficial supergrok.online (CI link-check timeout) replaced with official xAI Imagine and video-generation docs |
 | 2026-02-28T12:00Z | [Verified] Free tier access confirmed (very limited, ~3/day at 480p); paid tier daily limits updated |
@@ -371,8 +399,8 @@ Available globally where X is available.
 | Gating | free |
 | URL | https://grok.com/ |
 | Launched | 2023-11-04T12:00Z |
-| Verified | 2026-06-18|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -383,7 +411,8 @@ Available globally where X is available.
 | Premium+ | ✅ | Full | Higher quotas |
 | SuperGrok Lite | ✅ | Standard | Real-time posts, lighter limits |
 | SuperGrok | ✅ | Full | DeepSearch, ~100 prompts / 2h |
-| SuperGrok Heavy | ✅ | Full | Max rate limits, Grok 4.3 |
+| SuperGrok Plus | ✅ | Full | Significantly higher usage (x.ai/pricing) |
+| SuperGrok Heavy | ✅ | Full | Max rate limits |
 
 ### Platforms
 
@@ -486,8 +515,8 @@ Available globally.
 | Gating | paid |
 | URL | https://x.ai/blog/grok-2 |
 | Launched | 2024-08-13T12:00Z |
-| Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -542,8 +571,8 @@ Available globally where Grok is available.
 | Gating | free |
 | URL | https://grok.com |
 | Launched | 2025-02-17T12:00Z |
-| Verified | 2026-03-07 |
-| Checked | 2026-09-11|
+| Verified | 2026-09-28 |
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -578,12 +607,14 @@ Available globally where Grok is available. Persistent memory may be restricted 
 
 ### Sources
 
+- [Grok](https://x.ai/grok)
 - [How Grok Memory Works](https://blog.memoryplugin.com/how-grok-memory-works/)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists "Memory across chats — Remembers your preferences and past conversations" as a general, ungated feature, consistent with this record's free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address |
 | 2026-09-11T12:00Z | [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source |
 | 2026-03-07T12:00Z | Initial entry |
 | 2025-02-17T12:00Z | Persistent memory toggle appeared with Grok 3 launch |

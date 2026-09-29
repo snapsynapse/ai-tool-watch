@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-25T05:52:02.557Z",
+    "generated": "2026-09-29T03:40:30.647Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -278,7 +278,7 @@
         "implementations": [
           "grok-image-generation-aurora"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "perplexity": {
         "available": false,
@@ -687,7 +687,7 @@
         "implementations": [
           "claude-skills"
         ],
-        "best_gating": "paid"
+        "best_gating": "free"
       },
       "copilot": {
         "available": true,

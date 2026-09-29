@@ -5,8 +5,162 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 05:52:02 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 03:40:30 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>ChatGPT — [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-security</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-security?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</description>
+    </item>
+    <item>
+        <title>ChatGPT — [Verified] ChatGPT&apos;s image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI&apos;s deprecations page</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] ChatGPT&apos;s image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI&apos;s deprecations page</description>
+    </item>
+    <item>
+        <title>ChatGPT — [Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌</description>
+    </item>
+    <item>
+        <title>ChatGPT — [Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-chat</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-chat?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-artifacts</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Major platform expansion confirmed via code.claude.com docs: native JetBrains IDE plugin added (talking point previously said none existed); Claude Code on the web (claude.ai/code) added; Claude mobile app (iOS/Android) added for monitoring/steering cloud sessions and Remote Control; Chrome extension (browser automation, paid plans) added. Dropped stale claudelog.com VS Code source (unofficial)</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-claude-code</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-claude-code?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Major platform expansion confirmed via code.claude.com docs: native JetBrains IDE plugin added (talking point previously said none existed); Claude Code on the web (claude.ai/code) added; Claude mobile app (iOS/Android) added for monitoring/steering cloud sessions and Remote Control; Chrome extension (browser automation, paid plans) added. Dropped stale claudelog.com VS Code source (unofficial)</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Old &quot;Setting Up Integrations&quot; source (support.anthropic.com/.../10168395) is dead (301 to support.claude.com, then 404); replaced with current &quot;Use connectors to extend Claude&apos;s capabilities&quot; and &quot;custom connectors using remote MCP&quot; articles. Corrected Free-plan notes: custom connectors (remote MCP) are capped at 1 on Free, not unlimited/&quot;full&quot;. Mobile (iOS/Android) can now install connectors directly (beta), not desktop-setup-only. Dropped unverifiable &quot;75+ services&quot; and &quot;Deep Connectors&quot; branding not found in current sources</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-connectors</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Old &quot;Setting Up Integrations&quot; source (support.anthropic.com/.../10168395) is dead (301 to support.claude.com, then 404); replaced with current &quot;Use connectors to extend Claude&apos;s capabilities&quot; and &quot;custom connectors using remote MCP&quot; articles. Corrected Free-plan notes: custom connectors (remote MCP) are capped at 1 on Free, not unlimited/&quot;full&quot;. Mobile (iOS/Android) can now install connectors directly (beta), not desktop-setup-only. Dropped unverifiable &quot;75+ services&quot; and &quot;Deep Connectors&quot; branding not found in current sources</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Major platform expansion per current &quot;Get started with Claude Cowork&quot; article: web (claude.ai), Claude Mobile (iOS/Android), and Chrome side panel added — no longer desktop-only; Windows arm64/x64 restriction no longer documented, dropped. Added new &quot;Claude Cowork and chat are one Claude&quot; source: Anthropic is merging Cowork and chat into one experience, rolling out gradually to Pro/Max first; talking point and Regional updated to reflect this</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-cowork-mode</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-cowork-mode?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Major platform expansion per current &quot;Get started with Claude Cowork&quot; article: web (claude.ai), Claude Mobile (iOS/Android), and Chrome side panel added — no longer desktop-only; Windows arm64/x64 restriction no longer documented, dropped. Added new &quot;Claude Cowork and chat are one Claude&quot; source: Anthropic is merging Cowork and chat into one experience, rolling out gradually to Pro/Max first; talking point and Regional updated to reflect this</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Model lineup and effort levels are far out of date: current flagship models are Sonnet 5.5 / Opus 5.5 / Fable 5.1 (not Opus 4.6), thinking is now mandatory (cannot be disabled) on Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, and a fifth effort level &quot;Extra high&quot; (xhigh) exists between high and max on Opus 4.7 and newer. Talking point rewritten per support.claude.com&apos;s model/effort/thinking settings article; added Opus 5.5 and Sonnet 5.5 announcement sources</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-extended-thinking</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-extended-thinking?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Model lineup and effort levels are far out of date: current flagship models are Sonnet 5.5 / Opus 5.5 / Fable 5.1 (not Opus 4.6), thinking is now mandatory (cannot be disabled) on Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, and a fifth effort level &quot;Extra high&quot; (xhigh) exists between high and max on Opus 4.7 and newer. Talking point rewritten per support.claude.com&apos;s model/effort/thinking settings article; added Opus 5.5 and Sonnet 5.5 announcement sources</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] URL updated to support.claude.com (support.anthropic.com 301s there); Free plan limit clarified as capped at 5 projects (was listed as unqualified &quot;Standard/Full access&quot;); added &quot;Enhanced project knowledge with RAG&quot; — paid plans (Pro/Max/Team/Enterprise) auto-scale project knowledge up to 10x near context limits; talking point updated; noted (not added as a claim) a new beta &quot;Projects&quot; experience rolling out via Claude Code</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-projects</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-projects?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] URL updated to support.claude.com (support.anthropic.com 301s there); Free plan limit clarified as capped at 5 projects (was listed as unqualified &quot;Standard/Full access&quot;); added &quot;Enhanced project knowledge with RAG&quot; — paid plans (Pro/Max/Team/Enterprise) auto-scale project knowledge up to 10x near context limits; talking point updated; noted (not added as a claim) a new beta &quot;Projects&quot; experience rolling out via Claude Code</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Gating changed from paid to free — &quot;How to create custom skills&quot; (support.claude.com, dated July 22, 2026) now states plainly &quot;Skills are available for users on Free, Pro, Max, Team, and Enterprise plans,&quot; contradicting the prior &quot;custom skills require Pro and above&quot; claim; only the newer &quot;record a skill&quot; video-capture creation flow remains Pro/Max/Team-only (Claude for Mac). Old docs.anthropic.com/en/docs/skills source 404s after redirect; replaced with current docs.claude.com Agent Skills overview and the how-to article</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-skills</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-skills?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Gating changed from paid to free — &quot;How to create custom skills&quot; (support.claude.com, dated July 22, 2026) now states plainly &quot;Skills are available for users on Free, Pro, Max, Team, and Enterprise plans,&quot; contradicting the prior &quot;custom skills require Pro and above&quot; claim; only the newer &quot;record a skill&quot; video-capture creation flow remains Pro/Max/Team-only (Claude for Mac). Old docs.anthropic.com/en/docs/skills source 404s after redirect; replaced with current docs.claude.com Agent Skills overview and the how-to article</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] URL updated — docs.anthropic.com now 301s to platform.claude.com; content re-confirmed, no claims changed</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-vision-image-understanding</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-vision-image-understanding?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] URL updated — docs.anthropic.com now 301s to platform.claude.com; content re-confirmed, no claims changed</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Source article renamed/merged: &quot;How does memory work&quot; (support.anthropic.com/.../10166267) now 404s; current article is &quot;Use Claude&apos;s chat search and memory to build on previous context,&quot; which bundles memory with a new, related but distinct **paid-only** &quot;search past chats&quot; (RAG) capability not available on Free. Memory&apos;s own gating (free on Free/Pro/Max, owner-enabled on Team/Enterprise) is unchanged. Talking point updated to distinguish the two features and avoid implying chat search is free</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-memory</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-memory?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Source article renamed/merged: &quot;How does memory work&quot; (support.anthropic.com/.../10166267) now 404s; current article is &quot;Use Claude&apos;s chat search and memory to build on previous context,&quot; which bundles memory with a new, related but distinct **paid-only** &quot;search past chats&quot; (RAG) capability not available on Free. Memory&apos;s own gating (free on Free/Pro/Max, owner-enabled on Team/Enterprise) is unchanged. Talking point updated to distinguish the two features and avoid implying chat search is free</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Model reference corrected: Sonnet 4.6 is several generations stale (Anthropic shipped Sonnet 5 then Sonnet 5.5, announced today, 2026-09-28); Free-tier default updated to Sonnet 5.5. Fixed Max-tier multiplier mix-up in the Availability table: Max 5x had &quot;20x Pro usage&quot; and Max 20x had &quot;Unlimited standard&quot; — corrected to 5x and 20x respectively per anthropic.com/pricing and the Max plan FAQ ($100/mo = 5x Pro usage, $200/mo = 20x Pro usage). Noted the in-progress Cowork+chat merge. claude.ai itself returned HTTP 403 to automated fetches (bot-blocked); anthropic.com/pricing and the support.claude.com model-settings article served as the readable primary sources</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-chat</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-chat?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Model reference corrected: Sonnet 4.6 is several generations stale (Anthropic shipped Sonnet 5 then Sonnet 5.5, announced today, 2026-09-28); Free-tier default updated to Sonnet 5.5. Fixed Max-tier multiplier mix-up in the Availability table: Max 5x had &quot;20x Pro usage&quot; and Max 20x had &quot;Unlimited standard&quot; — corrected to 5x and 20x respectively per anthropic.com/pricing and the Max plan FAQ ($100/mo = 5x Pro usage, $200/mo = 20x Pro usage). Noted the in-progress Cowork+chat merge. claude.ai itself returned HTTP 403 to automated fetches (bot-blocked); anthropic.com/pricing and the support.claude.com model-settings article served as the readable primary sources</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms &quot;AI Studio usage remains free of charge unless users link a paid API key,&quot; and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-ai-studio</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-ai-studio?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms &quot;AI Studio usage remains free of charge unless users link a paid API key,&quot; and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android&apos;s ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the &quot;deepest integration&quot; platform note. No claim changes</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android&apos;s ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the &quot;deepest integration&quot; platform note. No claim changes</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as &quot;a research prototype, being used and refined by a limited number of trusted testers,&quot; with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record&apos;s deprecated status and talking point exactly. No claim changes</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-project-astra</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as &quot;a research prototype, being used and refined by a limited number of trusted testers,&quot; with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record&apos;s deprecated status and talking point exactly. No claim changes</description>
+    </item>
+    <item>
+        <title>Gemini — [Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google&apos;s own term for this feature is &quot;screen automation,&quot; distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point&apos;s named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google&apos;s own term for this feature is &quot;screen automation,&quot; distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point&apos;s named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories</description>
+    </item>
+    <item>
+        <title>Gemini — [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, &quot;Get personalization with memory of your past Gemini chats&quot;), added as primary source. Google&apos;s settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in &quot;Gemini in Chrome (in countries where Gemini in Chrome is available),&quot; matching this file&apos;s existing convention for that field (see Chat record)</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-past-chats-memory</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-past-chats-memory?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, &quot;Get personalization with memory of your past Gemini chats&quot;), added as primary source. Google&apos;s settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in &quot;Gemini in Chrome (in countries where Gemini in Chrome is available),&quot; matching this file&apos;s existing convention for that field (see Chat record)</description>
+    </item>
+    <item>
+        <title>Grok — Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</title>
+        <link>https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Grok: Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</description>
+    </item>
+    <item>
+        <title>Grok — Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</title>
+        <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Grok: Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</description>
+    </item>
+    <item>
+        <title>Grok — [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists &quot;Memory across chats — Remembers your preferences and past conversations&quot; as a general, ungated feature, consistent with this record&apos;s free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address</title>
+        <link>https://aitool.watch/implementations.html#impl-grok-memory</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-memory?d=2026-09-28</guid>
+        <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+        <description>Grok: [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists &quot;Memory across chats — Remembers your preferences and past conversations&quot; as a general, ungated feature, consistent with this record&apos;s free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address</description>
+    </item>
     <item>
         <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</title>
         <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder</link>
@@ -202,160 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice?d=2026-09-07</guid>
         <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-chat?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: agent authoring remains a commercial Copilot capability. Recorded that Microsoft 365 Premium ships prebuilt Analyst and Researcher agents, which is agent consumption rather than authoring.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: agent authoring remains a commercial Copilot capability. Recorded that Microsoft 365 Premium ships prebuilt Analyst and Researcher agents, which is agent consumption rather than authoring.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans, all marked unavailable: connectors remain a commercial Copilot capability requiring a Microsoft 365 Copilot license.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro retired and replaced by Microsoft 365 Premium; Office app integration confirmed as included in Microsoft 365 Personal, Family and Premium, limited to the subscription owner and metered by AI credits. Replaced the dead Copilot Pro store source with Microsoft&apos;s free-vs-subscription and AI credits support pages.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-in-office-apps</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-in-office-apps?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro retired and replaced by Microsoft 365 Premium; Office app integration confirmed as included in Microsoft 365 Personal, Family and Premium, limited to the subscription owner and metered by AI credits. Replaced the dead Copilot Pro store source with Microsoft&apos;s free-vs-subscription and AI credits support pages.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Gating reverted from free to paid: Microsoft now requires a Microsoft 365 Personal, Family, or Premium subscription for Copilot Vision. Status moved from preview to ga. Added per-plan daily limits (10 min Personal/Family, 15 min Premium) and commercial Entra ID access. Platforms expanded well beyond Edge: iOS and Android now supported, Windows shares any app, macOS is a native app. Regional widened from US-only to all supported Copilot regions and languages.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Gating reverted from free to paid: Microsoft now requires a Microsoft 365 Personal, Family, or Premium subscription for Copilot Vision. Status moved from preview to ga. Added per-plan daily limits (10 min Personal/Family, 15 min Premium) and commercial Entra ID access. Platforms expanded well beyond Edge: iOS and Android now supported, Windows shares any app, macOS is a native app. Regional widened from US-only to all supported Copilot regions and languages.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro retired (off sale October 2025, support ended 2026-08-01) and replaced by Microsoft 365 Premium; availability rows re-cut to Free / M365 Personal / Family / Premium. Free tier corrected from &quot;Standard&quot; limits to free-subject-to-capacity, sign-in required. Added Microsoft&apos;s published daily voice allowances (30 min/day Personal and Family, 60 min/day Premium). Added language and government-cloud caveats to regional note. Status remains ga; platform flags unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro retired (off sale October 2025, support ended 2026-08-01) and replaced by Microsoft 365 Premium; availability rows re-cut to Free / M365 Personal / Family / Premium. Free tier corrected from &quot;Standard&quot; limits to free-subject-to-capacity, sign-in required. Added Microsoft&apos;s published daily voice allowances (30 min/day Personal and Family, 60 min/day Premium). Added language and government-cloud caveats to regional note. Status remains ga; platform flags unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — Renamed from &quot;GPT-4 Access&quot; to &quot;Model Access&quot;. Microsoft no longer sells a named model tier, so the old name described a product that stopped existing; the record covers model access and the entitlements attached to it. Implementation id changed from copilot-gpt-4-access to copilot-model-access, which changes the record&apos;s permalink anchor.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: Renamed from &quot;GPT-4 Access&quot; to &quot;Model Access&quot;. Microsoft no longer sells a named model tier, so the old name described a product that stopped existing; the record covers model access and the entitlements attached to it. Implementation id changed from copilot-gpt-4-access to copilot-model-access, which changes the record&apos;s permalink anchor.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] The GPT-4 framing is obsolete: Microsoft&apos;s plan documentation no longer sells a named model tier, and publishes no free-versus-paid model split. Gating changed from paid to mixed, since the paid differentiator is usage limits and advanced features rather than model access. Copilot Pro rows replaced with the Microsoft 365 consumer plans. Dead Copilot Pro store source replaced with Microsoft support pages. Multi-model routing across OpenAI and Microsoft MAI models is secondary reporting, not first-party confirmed. Record is a candidate for renaming away from &quot;GPT-4 Access&quot;.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-model-access?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] The GPT-4 framing is obsolete: Microsoft&apos;s plan documentation no longer sells a named model tier, and publishes no free-versus-paid model split. Gating changed from paid to mixed, since the paid differentiator is usage limits and advanced features rather than model access. Copilot Pro rows replaced with the Microsoft 365 consumer plans. Dead Copilot Pro store source replaced with Microsoft support pages. Multi-model routing across OpenAI and Microsoft MAI models is secondary reporting, not first-party confirmed. Record is a candidate for renaming away from &quot;GPT-4 Access&quot;.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro retired and replaced by Microsoft 365 Premium. Per-plan credits re-cut from Microsoft&apos;s AI credits support page: 60 credits/mo on Personal and Family, usage beyond the standard limit on Premium. Free-tier allowance corrected to &quot;not published&quot; — the previous 15 credits/mo figure described legacy Classic Microsoft 365, not free Copilot.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-image-generation-designer?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro retired and replaced by Microsoft 365 Premium. Per-plan credits re-cut from Microsoft&apos;s AI credits support page: 60 credits/mo on Personal and Family, usage beyond the standard limit on Premium. Free-tier allowance corrected to &quot;not published&quot; — the previous 15 credits/mo figure described legacy Classic Microsoft 365, not free Copilot.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans after Copilot Pro&apos;s retirement; free tier confirmed as no-sign-in basic chat with sign-in unlocking history, longer conversations, image creation and voice. Noted that paid plans buy usage rather than a different model, and that Premium adds the Analyst and Researcher agents. Refreshed the redirected support source.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-chat?d=2026-09-05</guid>
-        <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Verified] Copilot Pro row replaced by the Microsoft 365 consumer plans after Copilot Pro&apos;s retirement; free tier confirmed as no-sign-in basic chat with sign-in unlocking history, longer conversations, image creation and voice. Noted that paid plans buy usage rather than a different model, and that Premium adds the Analyst and Researcher agents. Refreshed the redirected support source.</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] platform: no longer available on Windows</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-09-04</guid>
-        <pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] platform: no longer available on Windows</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-chat?d=2026-08-31</guid>
-        <pubDate>Mon, 31 Aug 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Native Gemini for Mac app added (macOS ❌ → ✅, launched Apr 2026); free-tier model updated to Gemini 3.6 Flash (rolled out Jul 2026)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Gating paid → free — OpenAI documents Codex as included on all ChatGPT plans including Free and Go; corrects contradiction with the availability table</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-08-25</guid>
-        <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Gating paid → free — OpenAI documents Codex as included on all ChatGPT plans including Free and Go; corrects contradiction with the availability table</description>
-    </item>
-    <item>
-        <title>Grok — [Verified] Source swap — unofficial supergrok.online (CI link-check timeout) replaced with official xAI Imagine and video-generation docs</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-08-25</guid>
-        <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
-        <description>Grok: [Verified] Source swap — unofficial supergrok.online (CI link-check timeout) replaced with official xAI Imagine and video-generation docs</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-advanced-voice-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-advanced-voice-mode?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-agent-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-agent-mode?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-canvas</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-canvas?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-chatgpt-search</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-chatgpt-search?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Free/Go access no longer framed as a temporary promotion — OpenAI documents Codex as a standard plan capability with per-tier quotas; rows ⚠️ → ✅</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Free/Go access no longer framed as a temporary promotion — OpenAI documents Codex as a standard plan capability with per-tier quotas; rows ⚠️ → ✅</description>
-    </item>
-    <item>
-        <title>ChatGPT — [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-08-15</guid>
-        <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
-        <description>ChatGPT: [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)</description>
     </item>
 </channel>
 </rss>

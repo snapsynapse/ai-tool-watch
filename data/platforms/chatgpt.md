@@ -29,8 +29,8 @@ last_verified: 2026-08-25
 | Gating | mixed |
 | URL | https://help.openai.com/en/articles/8400625-voice-mode |
 | Launched | 2024-09-24T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -346,8 +346,8 @@ Available globally where ChatGPT is available.
 | Gating | free |
 | URL | https://openai.com/index/introducing-codex/ |
 | Launched | 2025-04-16T12:00Z |
-| Verified | 2026-08-25|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -411,8 +411,8 @@ Available globally.
 | Gating | paid |
 | URL | https://openai.com/index/codex-security-now-in-research-preview/ |
 | Launched | 2026-03-06T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -432,12 +432,12 @@ Available globally.
 |----------|-----------|-------|
 | Windows | ✅ | Via Codex web |
 | macOS | ✅ | Via Codex web |
-| Linux | ❌ |  |
+| Linux | ⚠️ | Via open-source CLI (npm-based, beta, requires access) |
 | iOS | ❌ |  |
 | Android | ❌ |  |
 | Chrome | ❌ |  |
 | web | ✅ | chatgpt.com/codex/security |
-| terminal | ❌ |  |
+| terminal | ✅ | Open-source Codex Security CLI (`npm install @openai/codex-security`), beta, requires access |
 | API | ❌ | Web-only |
 
 ### Regional
@@ -446,17 +446,19 @@ Available globally.
 
 ### Talking Point
 
-> "Codex Security is OpenAI's AI security agent—it connects to your GitHub repos, builds a codebase-specific threat model, validates vulnerabilities in sandboxed environments, and generates fix PRs. **Requires Pro ($200/mo), Enterprise, Business, or Edu**—not available on Plus or lower. Launched March 6, 2026 as a research preview with free usage for the first month."
+> "Codex Security is OpenAI's AI security agent—it connects to your GitHub repos, builds a codebase-specific threat model, validates vulnerabilities in sandboxed environments, and generates fix PRs. **Requires Pro ($200/mo), Enterprise, Business, or Edu**—not available on Plus or lower. Launched March 6, 2026 as a research preview with free usage for the first month. As of July 29, 2026, an **open-source Codex Security CLI** (`npm install @openai/codex-security`) is also available for scanning repositories from the command line, in beta and requiring access."
 
 ### Sources
 
 - [Codex Security: now in research preview](https://openai.com/index/codex-security-now-in-research-preview/)
 - [Codex Security Help](https://help.openai.com/en/articles/20001107-codex-security)
+- [Introducing the open-source Codex Security CLI](https://community.openai.com/t/introducing-the-open-source-codex-security-cli/1388319)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️ |
 | 2026-08-15T12:00Z | [Verified] Removed contradictory Team row (Team ❌ alongside Business ✅ for the same renamed plan); Business row reordered |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
 | 2026-03-14T12:00Z | Initial entry |
@@ -473,8 +475,8 @@ Available globally.
 | Gating | paid |
 | URL | https://chatgpt.com/gpts |
 | Launched | 2023-11-06T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -534,17 +536,17 @@ Available globally where ChatGPT is available.
 | Gating | paid |
 | URL | https://openai.com/index/dall-e-3/ |
 | Launched | 2023-10-01T12:00Z |
-| Verified | 2026-04-08|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | ~2/day | Very limited; now uses GPT Image 1.5 |
-| Go | ✅ | 10x free | Standard access; now uses GPT Image 1.5 |
-| Plus | ✅ | 50x free | Priority; now uses GPT Image 1.5 |
-| Pro | ✅ | Unlimited | No limits; now uses GPT Image 1.5 |
+| Free | ⚠️ | ~2/day | Very limited; now uses ChatGPT Images 2.5 |
+| Go | ✅ | 10x free | Standard access; now uses ChatGPT Images 2.5 |
+| Plus | ✅ | 50x free | Priority; now uses ChatGPT Images 2.5 |
+| Pro | ✅ | Unlimited | No limits; now uses ChatGPT Images 2.5 |
 
 ### Platforms
 
@@ -566,17 +568,19 @@ Available globally.
 
 ### Talking Point
 
-> "ChatGPT image generation now uses **GPT Image 1.5**, replacing DALL-E 3 (March 2025). Available on **all plans including free** with tiered limits. The DALL-E 3 API is **deprecated May 12, 2026**—developers should migrate to `gpt-image-1` or `gpt-image-1-mini`."
+> "ChatGPT image generation now uses **ChatGPT Images 2.5** (rolled out September 8, 2026 across desktop, mobile, and web), which replaced the earlier GPT Image 1.5 default. Available on **all plans including free** with tiered limits. The DALL-E 3 API is **deprecated May 12, 2026**—developers should migrate to `gpt-image-2`, `gpt-image-1`, or `gpt-image-1-mini`. Note: `gpt-image-1` and `gpt-image-1.5` are themselves now slated for API retirement (Oct 23, 2026 and Dec 1, 2026 respectively), in favor of `gpt-image-2.5-sunburst`/`gpt-image-2.5-flare`."
 
 ### Sources
 
 - [ChatGPT Pricing](https://chatgpt.com/pricing)
 - [OpenAI API Deprecations](https://developers.openai.com/api/docs/deprecations)
+- [Introducing ChatGPT Images 2.5](https://community.openai.com/t/introducing-gpt-images-2-5-in-the-api-and-chatgpt/1395897)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] ChatGPT's image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI's deprecations page |
 | 2026-04-08T12:00Z | [Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated |
 | 2023-10-01T12:00Z | Initial entry |
 
@@ -591,8 +595,8 @@ Available globally.
 | Gating | free |
 | URL | https://help.openai.com/en/articles/11011518-chatgpt-deep-research |
 | Launched | 2025-02-03T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -630,6 +634,7 @@ Available globally.
 ### Sources
 
 - [Deep Research Help](https://help.openai.com/en/articles/11011518-chatgpt-deep-research)
+- [Deep Research API Guide](https://developers.openai.com/api/docs/guides/deep-research)
 
 ### Changelog
 
@@ -711,8 +716,8 @@ Available globally; off by default in EEA/UK/Switzerland (must enable manually).
 | Gating | free |
 | URL | https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt |
 | Launched | 2024-12-13T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -750,6 +755,7 @@ Available globally where ChatGPT is available.
 ### Sources
 
 - [Using Projects in ChatGPT](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt)
+- [Projects and Chats Docs](https://learn.chatgpt.com/docs/projects)
 
 ### Changelog
 
@@ -769,8 +775,8 @@ Available globally where ChatGPT is available.
 | Gating | paid |
 | URL | https://openai.com/index/sora-is-here/ |
 | Launched | 2024-12-09T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -795,7 +801,7 @@ Available globally where ChatGPT is available.
 | Chrome | ❌ |  |
 | web | ✅ | sora.com |
 | terminal | ❌ |  |
-| API | ✅ | Async processing |
+| API | ❌ | Sora 2 models and Videos API were shut down 2026-09-24; no replacement API available |
 
 ### Regional
 
@@ -809,11 +815,13 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 
 - [Sora is here](https://openai.com/index/sora-is-here/)
 - [Sora Billing FAQ](https://help.openai.com/en/articles/10245774-sora-billing-faq)
+- [Video Generation API Guide (deprecation notice)](https://developers.openai.com/api/docs/guides/video-generation)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌ |
 | 2026-09-04T06:00Z | [Verified] platform: no longer available on Windows |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
 | 2026-01-10T12:00Z | Free tier access discontinued |
@@ -831,8 +839,8 @@ Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available 
 | Gating | free |
 | URL | https://openai.com/index/hello-gpt-4o/ |
 | Launched | 2024-05-13T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -871,6 +879,7 @@ Available globally where ChatGPT is available.
 
 - [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
 - [ChatGPT Pricing](https://chatgpt.com/pricing)
+- [Images and Vision API Guide](https://developers.openai.com/api/docs/guides/images)
 
 ### Changelog
 
@@ -891,17 +900,17 @@ Available globally where ChatGPT is available.
 | Gating   | free |
 | URL      | https://chatgpt.com |
 | Launched | 2022-11-30T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ✅ | Rate-limited | GPT-5.4 Mini (Thinking menu); ~10 msgs/5 hrs then fallback |
-| Go | ✅ | Higher | GPT-5.4 Mini; 10× free limits |
-| Plus | ✅ | Higher | GPT-5.4 Thinking + Mini; 5× Go limits |
-| Pro | ✅ | Unlimited | GPT-5.4 Pro + Mini; no rate caps; 1M context |
+| Free | ✅ | Rate-limited | GPT-5.5 Mini, transitioning to GPT-6 Luna (rolling out in desktop app from 2026-09-22); ~10 msgs/5 hrs then fallback |
+| Go | ✅ | Higher | GPT-5.5 Mini, transitioning to GPT-6 Luna; 10× free limits |
+| Plus | ✅ | Higher | GPT-5.5 Thinking + Mini, transitioning to GPT-6 Sol (rolling out from 2026-09-22); 5× Go limits |
+| Pro | ✅ | Unlimited | GPT-6 Astra (rolled out 2026-09-04) plus GPT-6 Sol/GPT-5.5 Pro; no rate caps; 1M+ context |
 | Business | ✅ | Full | Plus features + workspace admin |
 | Enterprise | ✅ | Custom | SSO, advanced security |
 
@@ -925,7 +934,7 @@ Available globally where ChatGPT is permitted. Some advanced features may be US-
 
 ### Talking Point
 
-> "ChatGPT's core text conversation is **available on all plans including free** at chatgpt.com, with apps for iOS, Android, Windows, and macOS. Free and Go users now get **GPT-5.4 Mini** (via the Thinking menu); Plus unlocks **GPT-5.4 Thinking**; Pro gets **GPT-5.4 Pro** with 1M context. **GPT-5.4 Nano** is **API-only** ($0.20/1M input tokens). GPT-5.2 Thinking moved to Legacy Models with a 90-day retirement window."
+> "ChatGPT's core text conversation is **available on all plans including free** at chatgpt.com, with apps for iOS, Android, Windows, and macOS. The model lineup has moved on twice since GPT-5.4 (March 2026): GPT-5.5 became the default generation, and **GPT-5.5 itself is scheduled to retire from ChatGPT, ChatGPT Work, and Codex on all plans on October 14, 2026**. OpenAI is actively rolling out its replacement now—**GPT-6 Sol** for Plus/Pro/Business/Enterprise/Edu and **GPT-6 Luna** for Free/Go (from September 22, 2026)—on top of **GPT-6 Astra**, OpenAI's most capable model, which reached Pro/Enterprise/Business-Premium plans and the API on September 4, 2026."
 
 ### Sources
 
@@ -934,11 +943,15 @@ Available globally where ChatGPT is permitted. Some advanced features may be US-
 - [Introducing GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)
 - [Introducing GPT-5.4 Mini and Nano](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)
 - [OpenAI Developer Community: GPT-5.4 Mini and Nano](https://community.openai.com/t/introducing-gpt-5-4-mini-and-nano-our-most-capable-small-models-yet/1377015)
+- [Models docs: GPT-5.5 retirement notice](https://learn.chatgpt.com/docs/models)
+- [Introducing GPT-6-Astra](https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703)
+- [Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT](https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
 | 2026-03-21T12:00Z | [Verified] GPT-5.4 Mini and Nano released: Mini available in ChatGPT (Free/Go via Thinking menu), API, and Codex; Nano is API-only; Mini $0.75/$4.50 per 1M tokens, Nano $0.20/$1.25 per 1M tokens; 400K context; vision support |
 | 2026-03-14T12:00Z | [Verified] GPT-5.4 family released: Plus gets GPT-5.4 Thinking, Pro gets GPT-5.4 Pro; GPT-5.2 Thinking moved to Legacy Models (90-day retirement); 1M context in API; native computer use tool |

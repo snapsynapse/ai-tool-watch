@@ -31,7 +31,7 @@ Repo: https://github.com/snapsynapse/ai-tool-watch
 - Watchlist (candidate products not yet in scope): `design/WATCHLIST.md`
 - Verification cascade docs: `VERIFICATION.md`
 - Companion project (WCAG audit skill): https://github.com/snapsynapse/skill-a11y-audit
-- Companion/consumer project: PAICE.work (behavioral-reliability assessments; planned MCP integration to consume this data)
+- Intent and current review decision: `INTENT.md`. PAICE.work is not a consumer; its planned integration was dropped on 2026-09-22.
 - Deployment targets: GitHub Pages and https://aitool.watch/ (FTP), both consuming the verified `reviewed-publication` artifact from `.github/workflows/build.yml`
 
 ## Current status

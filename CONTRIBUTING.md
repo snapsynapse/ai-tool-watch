@@ -97,9 +97,11 @@ Acceptable sources:
 
 **Not acceptable:** Reddit posts, tweets (unless from official accounts), personal blogs
 
-### Step 4: Update `last_verified`
+### Step 4: Update dates
 
-In the frontmatter, update the verification date:
+Set a feature's `Verified` and `Checked` rows to today only after you read the vendor's own source and confirmed every claim in that record. If you could not read or confirm the source, change neither date. Definitions are in `data/_schema.md`.
+
+If you confirmed the Pricing table against the vendor's pricing page, update the frontmatter date:
 
 ```yaml
 ---

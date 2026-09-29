@@ -188,6 +188,7 @@ jobs:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FRESHNESS_MAX_SPEND_USD: ${{ vars.FRESHNESS_MAX_SPEND_USD }}
+          VERIFY_DEBUG_SHAPE: ${{ inputs.dry_run }}
           FRESHNESS_MAX_PROVIDER_CALL_USD: ${{ vars.FRESHNESS_MAX_PROVIDER_CALL_USD }}
           FRESHNESS_REVIEW_MINUTES_PER_WEEK: ${{ vars.FRESHNESS_REVIEW_MINUTES_PER_WEEK }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

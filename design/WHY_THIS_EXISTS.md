@@ -1,9 +1,22 @@
 # Why This Exists: The Information Gap Between AI Benchmarks and AI Products
 
-Status: Published draft
-Last updated: 2026-03-15
+Status: Published draft, partly superseded (see September 2026 update)
+Last updated: 2026-09-28
 
-This document explains the problem this project was built to solve and why nothing else solves it. It's written for developers who might want to build something similar in their own domain, or who want to understand why a structured knowledge base with no database, no framework, and a twice-weekly AI verification cascade exists at all.
+This document explains the problem this project was built to solve and why, in March 2026, nothing else solved it. It's written for developers who might want to build something similar in their own domain, or who want to understand why a structured knowledge base with no database, no framework, and a twice-weekly AI verification cascade exists at all.
+
+---
+
+## September 2026 update
+
+The body below is the March 2026 rationale, kept as written. Several of its claims no longer hold. [INTENT.md](../INTENT.md) is authoritative for current purpose, audience, and status.
+
+- The gap has narrowed. [Artificial Analysis chatbot comparisons](https://artificialanalysis.ai/agents/chatbots) now cover plans, capabilities, connectors, apps, and privacy. Cross-vendor plan matrices exist, for example [AI Subscription Comparison](https://aisubscriptioncomparison.com/tools/feature-matrix/) and [AI Pricing Guru](https://aipricing.guru/subscriptions/). [Models.dev](https://github.com/anomalyco/models.dev) publishes open structured model metadata. Statements below that no structured resource answers plan-tier questions are out of date.
+- What may still be distinct, pending a direct comparison: plan-tier and surface granularity per claim, a primary source and verified date on every claim, capability-first vocabulary across vendors, and MIT-licensed data served as a JSON API and MCP server.
+- The project is a reference, not a news source: current information in a persistent place. Its currency commitment is a stated age per claim, disclosed at the claim, not a guaranteed maximum age.
+- Scheduled paid verification runs now require explicit approval. Freshness depends on reviewed updates, not on the cascade running unattended.
+- The planned PAICE.work integration never materialized and was dropped on 2026-09-22.
+- Audience priority has shifted: writers and reviewers who need a citable reference, then agents and builders, then educators. The educator use case below remains valid but is not currently exercised by the maintainer.
 
 ---
 

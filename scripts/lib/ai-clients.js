@@ -83,6 +83,31 @@ async function parseSuccessfulResponse(response, logger, provider, usageField = 
 }
 
 /**
+ * Diagnostic: when VERIFY_DEBUG_SHAPE is set, log the key structure of a
+ * provider response (keys, array lengths, and https URLs only; no text).
+ */
+function logResponseShape(logger, provider, data) {
+    if (!process.env.VERIFY_DEBUG_SHAPE || process.env.VERIFY_DEBUG_SHAPE === 'false') return;
+    const urls = [];
+    const walk = (value, depth) => {
+        if (typeof value === 'string') {
+            if (value.startsWith('https://') && urls.length < 8) urls.push(value.slice(0, 160));
+            return 'str';
+        }
+        if (Array.isArray(value)) {
+            return depth > 5 ? `arr(${value.length})` : [`arr(${value.length})`, ...value.slice(0, 2).map(v => walk(v, depth + 1))];
+        }
+        if (value && typeof value === 'object') {
+            if (depth > 5) return 'obj';
+            return Object.fromEntries(Object.keys(value).map(k => [k, walk(value[k], depth + 1)]));
+        }
+        return typeof value;
+    };
+    const shape = walk(data, 0);
+    logger(`SHAPE ${provider} ${JSON.stringify({ shape, urls })}`);
+}
+
+/**
  * Preserve the parsed response and receipt when a successful response cannot
  * be interpreted as a provider completion.
  *
@@ -198,7 +223,7 @@ function buildGrokPrompt(platform, feature, claim) {
 
 ${storedData}
 
-Search X/Twitter for recent posts from ${accounts} about "${feature.name}" feature.
+Search the web for ${platform.vendor}'s official pricing, help-center, and documentation pages about the "${feature.name}" feature, and search X for recent posts from ${accounts}. Cite the official pages you used.
 
 Look for:
 1. Any announcements about pricing changes, new tier availability, or plan restrictions
@@ -281,21 +306,27 @@ class GeminiClient {
                 this.displayName,
                 'usageMetadata'
             );
+            logResponseShape(this.logger, this.displayName, data);
             const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
             if (typeof text !== 'string' || !text) {
                 throw malformedResponseError(this.displayName, data, usageReceipt);
             }
 
-            // Extract grounding sources if available
-            const sources = data.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
-            const hasSearchEvidence = sources.length > 0 ||
-                !!data.candidates?.[0]?.groundingMetadata?.groundingChunks?.length;
+            // Grounding chunks carry the retrieved page URLs; webSearchQueries
+            // are only the query strings and are not sources.
+            const grounding = data.candidates?.[0]?.groundingMetadata || {};
+            const sources = (grounding.groundingChunks || [])
+                .map(chunk => chunk?.web?.uri)
+                .filter(uri => typeof uri === 'string' && uri.length > 0);
+            const searchQueries = grounding.webSearchQueries || [];
+            const hasSearchEvidence = sources.length > 0;
 
             return {
                 model: this.displayName,
                 response: text,
                 sources,
+                searchQueries,
                 hasSearchEvidence,
                 raw: data,
                 usageReceipt
@@ -396,26 +427,29 @@ class GrokClient {
         // Use X/Twitter-specific prompt for Grok
         const prompt = buildGrokPrompt(platform, feature, context.claim);
 
-        const response = await this.fetch('https://api.x.ai/v1/chat/completions', {
+        // Responses API with server-side web and X search; chat completions
+        // does not search and returns no citations.
+        const response = await this.fetch('https://api.x.ai/v1/responses', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.apiKey}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'grok-4-1-fast-non-reasoning',
-                messages: [
+                model: 'grok-4.3',
+                input: [
                     {
                         role: 'system',
-                        content: 'You are Grok, searching X/Twitter for recent announcements about AI product features. Focus on official accounts and verified sources. Report what you find factually.'
+                        content: 'You are Grok, verifying AI product feature availability. Search official vendor pages and official X accounts. Report what you find factually and cite sources.'
                     },
                     {
                         role: 'user',
                         content: prompt
                     }
                 ],
+                tools: [{ type: 'web_search' }, { type: 'x_search' }],
                 temperature: 0.1,
-                max_tokens: 2048
+                max_output_tokens: 2048
             })
         });
 
@@ -429,19 +463,37 @@ class GrokClient {
             this.logger,
             this.displayName
         );
-        const text = data.choices?.[0]?.message?.content || '';
+        logResponseShape(this.logger, this.displayName, data);
+        const messageParts = (Array.isArray(data.output) ? data.output : [])
+            .filter(item => item?.type === 'message')
+            .flatMap(item => Array.isArray(item.content) ? item.content : []);
+        const text = (Array.isArray(data.output) ? data.output : [])
+            .filter(item => item?.type === 'message')
+            .flatMap(item => Array.isArray(item.content) ? item.content : [])
+            .filter(part => part?.type === 'output_text' && typeof part.text === 'string')
+            .map(part => part.text)
+            .join('\n');
 
         if (typeof text !== 'string' || !text) {
             throw malformedResponseError(this.displayName, data, usageReceipt);
         }
 
-        // Grok searches X/Twitter by design — if it returned content, it searched
-        const hasSearchEvidence = text.length > 100;
+        const annotationUrls = messageParts
+            .flatMap(part => Array.isArray(part?.annotations) ? part.annotations : [])
+            .map(annotation => annotation?.url);
+        // Search tool calls list the pages they retrieved on action.sources.
+        const searchUrls = (Array.isArray(data.output) ? data.output : [])
+            .flatMap(item => Array.isArray(item?.action?.sources) ? item.action.sources : [])
+            .map(source => source?.url);
+        const sources = [...new Set([...(Array.isArray(data.citations) ? data.citations : []), ...annotationUrls, ...searchUrls]
+            .map(citation => typeof citation === 'string' ? citation : citation?.url)
+            .filter(url => typeof url === 'string' && url.length > 0))];
+        const hasSearchEvidence = sources.length > 0;
 
         return {
             model: this.displayName,
             response: text,
-            sources: [], // Grok doesn't provide structured citations
+            sources,
             hasSearchEvidence,
             raw: data,
             usageReceipt

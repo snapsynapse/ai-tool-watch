@@ -199,10 +199,10 @@ function renderDateBadges({ launched = '', verified = '', checked = '', featureI
             : `<span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">${formatDateForDisplay(launched)}</span></span>`)
         : '';
     const verifiedBadge = verified
-        ? `<span class="date-item verified" title="Verified"><span class="date-emoji">✓</span><span class="date-value">${formatDateForDisplay(verified)}</span></span>`
+        ? `<span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">${formatDateForDisplay(verified)}</span></span>`
         : '';
     const checkedBadge = checked
-        ? `<span class="date-item checked" title="Checked"><span class="date-emoji">👁</span><span class="date-value">${formatDateForDisplay(checked)}</span></span>`
+        ? `<span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">${formatDateForDisplay(checked)}</span></span>`
         : '';
 
     return `${launchedBadge}${verifiedBadge}${checkedBadge}`;
@@ -1060,7 +1060,7 @@ function renderOntologyProviderSections(ontologyData) {
             metaBits.push(`${group.runtime_products.length} runtime product${group.runtime_products.length === 1 ? '' : 's'}`);
         }
         if (verified) {
-            metaBits.push(`Verified: ${verified}`);
+            metaBits.push(`Confirmed against vendor source: ${verified}`);
         }
         const priceBar = group.runtime_products.length && !group.model_access.length
             ? `<span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>`
@@ -1132,7 +1132,7 @@ function renderSharedFooter() {
                 <a href="${REPO_PULLS_URL}">submit a PR</a>.
             </p>
             <p style="margin-top: 8px;">
-                &copy; 2026 <a href="https://snapsynapse.com/">Snap Synapse LLC</a> | Used by <a href="https://paice.work/">PAICE.work</a> | via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
+                &copy; 2026 <a href="https://snapsynapse.com/">Snap Synapse LLC</a> | via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖
             </p>
             <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
                 <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
@@ -1429,7 +1429,7 @@ function generateHTML(platforms, ontologyData) {
                 <div class="platform-meta">
                     <a href="${p.pricing_page}" target="_blank">Pricing</a>
                     <span>·</span>
-                    <span>Verified: ${p.last_verified}</span>
+                    <span>Pricing confirmed: ${p.last_verified}</span>
                 </div>
             </div>
             <div class="pricing-bar">
@@ -4511,7 +4511,7 @@ function generateLlmsTxt(ontologyData) {
 
 A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
 
-Maintained by PAICE.work. Updated twice weekly via multi-model verification cascade.
+Maintained by Snap Synapse. Every claim carries its primary source and last-verified date.
 
 ## What this site covers
 
@@ -4554,7 +4554,7 @@ Start with the index: ${SITE_URL}api/v1/index.json
 - Respect gating and constraints — "available" does not mean "available to everyone"
 - Don't strip caveats from talking points — they contain important context about restrictions
 - Cache for up to 24 hours; don't poll more than once per hour
-- Attribution appreciated: "Data from AI Tool Watch (${SITE_URL}) by PAICE.work"
+- Attribution appreciated: "Data from AI Tool Watch (${SITE_URL})"
 
 ## Agent access
 
@@ -4613,7 +4613,7 @@ function generateAgentsJson(ontologyData) {
         schema_version: '1.0',
         name: 'ai-tool-watch',
         display_name: DASHBOARD_TITLE,
-        description: `A structured, version-controlled reference tracking ${capCount} AI capabilities across ${prodCount} products with ${implCount} implementations. Updated twice weekly via multi-model verification cascade.`,
+        description: `A structured, version-controlled reference tracking ${capCount} AI capabilities across ${prodCount} products with ${implCount} implementations. Every claim carries its primary source and last-verified date.`,
         url: SITE_URL,
         repository: REPO_URL,
         license: 'MIT',

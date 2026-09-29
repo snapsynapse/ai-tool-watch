@@ -80,7 +80,7 @@ Scope criteria and watchlist: [design/SCOPE.md](design/SCOPE.md), [design/WATCHL
 
 ### Automation
 
-- **Multi-model verification** — Twice-weekly four-model cascade cross-checks all data with human review gate
+- **Multi-model verification** — Four-model cascade cross-checks data with a human review gate (scheduled paid runs require approval)
 - **Link integrity** — Weekly URL validation across all evidence sources
 - **Staleness tracking** — Features not re-verified within 7 days are flagged for the next run
 
@@ -183,6 +183,7 @@ Architecture, ontology, and project status docs live in [design/](design/):
 - [ONTOLOGY.md](design/ONTOLOGY.md) — Core entity types and relationships
 - [ACCESS_LAYERS.md](design/ACCESS_LAYERS.md) — SEO, JSON API, and MCP layer design
 - [ROADMAP.md](design/ROADMAP.md) — Current project status and outstanding work
+- [INTENT.md](INTENT.md) — Purpose, invariants, scope, and current review decision
 - [WHY_THIS_EXISTS.md](design/WHY_THIS_EXISTS.md) — The problem this project was built to solve
 - [Graceful Boundaries](https://github.com/snapsynapse/graceful-boundaries) — Specification for structured refusal and constructive guidance, applied to the MCP server's error responses
 
@@ -194,9 +195,7 @@ AI Tool Watch is free and open. If you rely on this reference, consider [sponsor
 
 ## Stewardship and use
 
-AI Tool Watch is an open reference under [Snap Synapse LLC](https://snapsynapse.com/) stewardship, authored by [Sam Rogers](https://linkedin.com/in/samrogers). It is used indirectly by [PAICE.work](https://paice.work/).
-
-A planned integration will expose AI Tool Watch via MCP to PAICE so behavioral-reliability assessments stay current with product changes and PAICE Pro features. The reference remains MIT-licensed and free for any use.
+AI Tool Watch is an open reference under [Snap Synapse LLC](https://snapsynapse.com/) stewardship, authored by [Sam Rogers](https://linkedin.com/in/samrogers). The reference is MIT-licensed and free for any use. Purpose, invariants, and the current review decision are in [INTENT.md](INTENT.md).
 
 ## License
 
@@ -204,7 +203,7 @@ MIT - see [LICENSE](LICENSE)
 
 ## Credits
 
-Created for [PAICE.work](https://paice.work) and the larger AI community.
+Created for educators, writers, builders, and the larger AI community.
 With help from Claude Code, of course.
 
 ---
