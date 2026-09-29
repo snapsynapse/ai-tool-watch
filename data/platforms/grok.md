@@ -4,7 +4,7 @@ vendor: xAI
 logo: https://x.ai/favicon.ico
 status_page: https://status.x.ai
 pricing_page: https://grok.com/
-last_verified: 2026-08-25
+last_verified: 2026-09-28
 ---
 
 ## Pricing
@@ -12,11 +12,24 @@ last_verified: 2026-08-25
 | Plan | Price | Notes |
 |------|-------|-------|
 | Free | $0 | Limited queries via X / grok.com |
-| Premium | $8/mo | Basic Grok access |
-| Premium+ | $16/mo | Enhanced limits |
-| SuperGrok Lite | $10/mo | Lighter limits, image/video access |
-| SuperGrok | $30/mo | Full Grok 4 / 4.1, DeepSearch, ~100 prompts / 2h |
+| Basic (X Premium) | $3/mo | New X Premium entry tier (edit posts, longer posts/video); no Grok-specific benefit called out |
+| Premium | $8/mo | X Premium tier; "increased usage limits on Grok" |
+| Premium+ | $40/mo | X Premium top tier; now bundles SuperGrok access, Grok Bot, Imagine, and Voice Mode (was $16/mo) |
+| SuperGrok Lite | $10/mo | Lighter limits, image/video access; status uncertain — disabled in grok.com's live subscription config as of Sept 2026, not offered in the current subscribe flow |
+| SuperGrok | $30/mo | Full Grok access, DeepSearch, ~100 prompts / 2h |
 | SuperGrok Heavy | $300/mo | Max rate limits, full Grok 4.3, Grok Build CLI |
+
+### Sources
+
+- [About X Premium](https://help.x.com/en/using-x/x-premium)
+- [Grok](https://x.ai/grok)
+- [SuperGrok](https://grok.com/supergrok)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-09-28T12:00Z | [Verified] X Premium restructured to three named tiers — Basic ($3/mo or $32/yr), Premium ($8/mo or $84/yr, unchanged), Premium+ ($40/mo or $395/yr, was $16/mo) — per help.x.com, which now states Premium+ bundles SuperGrok access, Grok Bot, Imagine, and Voice Mode. Basic tier added to this table. SuperGrok Lite flagged as likely disabled: grok.com's live app config (`subscriptions_supergroklite_backend_enabled: false`) and its current subscribe flow list only two grok.com-direct paid plans (SuperGrok $30/mo, SuperGrok Heavy $300/mo); not confirmed fully discontinued. x.ai and help.x.com block automated fetches directly (Cloudflare bot challenge); verified via archive.org mirrors of the same official pages (help.x.com snapshot 2026-09-16, x.ai/grok snapshot 2026-09-21, grok.com/supergrok snapshots 2026-09-12/19) |
 
 ---
 
@@ -84,8 +97,8 @@ Available globally.
 | Gating | paid |
 | URL | https://x.ai/grok |
 | Launched | 2023-11-04T12:00Z |
-| Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -371,8 +384,8 @@ Available globally where X is available.
 | Gating | free |
 | URL | https://grok.com/ |
 | Launched | 2023-11-04T12:00Z |
-| Verified | 2026-06-18|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -486,8 +499,8 @@ Available globally.
 | Gating | paid |
 | URL | https://x.ai/blog/grok-2 |
 | Launched | 2024-08-13T12:00Z |
-| Verified | 2026-03-24|
-| Checked | 2026-09-01|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -542,8 +555,8 @@ Available globally where Grok is available.
 | Gating | free |
 | URL | https://grok.com |
 | Launched | 2025-02-17T12:00Z |
-| Verified | 2026-03-07 |
-| Checked | 2026-09-11|
+| Verified | 2026-09-28 |
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -578,12 +591,14 @@ Available globally where Grok is available. Persistent memory may be restricted 
 
 ### Sources
 
+- [Grok](https://x.ai/grok)
 - [How Grok Memory Works](https://blog.memoryplugin.com/how-grok-memory-works/)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists "Memory across chats — Remembers your preferences and past conversations" as a general, ungated feature, consistent with this record's free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address |
 | 2026-09-11T12:00Z | [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source |
 | 2026-03-07T12:00Z | Initial entry |
 | 2025-02-17T12:00Z | Persistent memory toggle appeared with Grok 3 launch |

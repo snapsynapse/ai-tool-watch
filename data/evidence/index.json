@@ -6,8 +6,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Advanced Voice Mode",
     "launched": "2024-09-24T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Voice Mode Help",
@@ -166,8 +166,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Chat",
     "launched": "2022-11-30T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "ChatGPT",
@@ -188,9 +188,25 @@
       {
         "title": "OpenAI Developer Community: GPT-5.4 Mini and Nano",
         "url": "https://community.openai.com/t/introducing-gpt-5-4-mini-and-nano-our-most-capable-small-models-yet/1377015"
+      },
+      {
+        "title": "Models docs: GPT-5.5 retirement notice",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Introducing GPT-6-Astra",
+        "url": "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703"
+      },
+      {
+        "title": "Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT",
+        "url": "https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next"
+      },
       {
         "date": "2026-08-15T12:00Z",
         "change": "[Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)"
@@ -221,8 +237,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Codex (Code Agent)",
     "launched": "2025-04-16T12:00Z",
-    "verified": "2026-08-25",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "ChatGPT Pricing",
@@ -276,8 +292,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Codex Security",
     "launched": "2026-03-06T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Codex Security: now in research preview",
@@ -286,9 +302,17 @@
       {
         "title": "Codex Security Help",
         "url": "https://help.openai.com/en/articles/20001107-codex-security"
+      },
+      {
+        "title": "Introducing the open-source Codex Security CLI",
+        "url": "https://community.openai.com/t/introducing-the-open-source-codex-security-cli/1388319"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️"
+      },
       {
         "date": "2026-08-15T12:00Z",
         "change": "[Verified] Removed contradictory Team row (Team ❌ alongside Business ✅ for the same renamed plan); Business row reordered"
@@ -315,8 +339,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Custom GPTs + Actions",
     "launched": "2023-11-06T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Creating a GPT",
@@ -354,8 +378,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "DALL-E Image Generation",
     "launched": "2023-10-01T12:00Z",
-    "verified": "2026-04-08",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "ChatGPT Pricing",
@@ -364,9 +388,17 @@
       {
         "title": "OpenAI API Deprecations",
         "url": "https://developers.openai.com/api/docs/deprecations"
+      },
+      {
+        "title": "Introducing ChatGPT Images 2.5",
+        "url": "https://community.openai.com/t/introducing-gpt-images-2-5-in-the-api-and-chatgpt/1395897"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] ChatGPT's image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI's deprecations page"
+      },
       {
         "date": "2026-04-08T12:00Z",
         "change": "[Verified] DALL-E 3 replaced by GPT Image 1.5 in ChatGPT (March 2025); DALL-E 3 API deprecated May 12, 2026; status changed to deprecated"
@@ -385,12 +417,16 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Deep Research",
     "launched": "2025-02-03T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Deep Research Help",
         "url": "https://help.openai.com/en/articles/11011518-chatgpt-deep-research"
+      },
+      {
+        "title": "Deep Research API Guide",
+        "url": "https://developers.openai.com/api/docs/guides/deep-research"
       }
     ],
     "changelog": [
@@ -455,12 +491,16 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Projects",
     "launched": "2024-12-13T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Using Projects in ChatGPT",
         "url": "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt"
+      },
+      {
+        "title": "Projects and Chats Docs",
+        "url": "https://learn.chatgpt.com/docs/projects"
       }
     ],
     "changelog": [
@@ -521,8 +561,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Sora (Video Generation)",
     "launched": "2024-12-09T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Sora is here",
@@ -531,9 +571,17 @@
       {
         "title": "Sora Billing FAQ",
         "url": "https://help.openai.com/en/articles/10245774-sora-billing-faq"
+      },
+      {
+        "title": "Video Generation API Guide (deprecation notice)",
+        "url": "https://developers.openai.com/api/docs/guides/video-generation"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌"
+      },
       {
         "date": "2026-09-04T06:00Z",
         "change": "[Verified] platform: no longer available on Windows"
@@ -564,8 +612,8 @@
     "source_file": "data/platforms/chatgpt.md",
     "source_heading": "Vision (Image Understanding)",
     "launched": "2024-05-13T12:00Z",
-    "verified": "2026-08-15",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Hello GPT-4o",
@@ -574,6 +622,10 @@
       {
         "title": "ChatGPT Pricing",
         "url": "https://chatgpt.com/pricing"
+      },
+      {
+        "title": "Images and Vision API Guide",
+        "url": "https://developers.openai.com/api/docs/guides/images"
       }
     ],
     "changelog": [
@@ -599,15 +651,19 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Artifacts",
     "launched": "2024-06-20T12:00Z",
-    "verified": "2026-04-06",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "Artifacts Documentation",
-        "url": "https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
+        "title": "What are artifacts and how do I use them?",
+        "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match"
+      },
       {
         "date": "2026-03-07T12:00Z",
         "change": "[Verified] Gating corrected from paid to free — free users have full access; data was internally inconsistent"
@@ -626,8 +682,8 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Chat",
     "launched": "2023-07-11T12:00Z",
-    "verified": "2026-03-20",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Claude",
@@ -636,9 +692,17 @@
       {
         "title": "Anthropic Pricing",
         "url": "https://www.anthropic.com/pricing"
+      },
+      {
+        "title": "Change the model, effort, and thinking settings",
+        "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Model reference corrected: Sonnet 4.6 is several generations stale (Anthropic shipped Sonnet 5 then Sonnet 5.5, announced today, 2026-09-28); Free-tier default updated to Sonnet 5.5. Fixed Max-tier multiplier mix-up in the Availability table: Max 5x had \"20x Pro usage\" and Max 20x had \"Unlimited standard\" — corrected to 5x and 20x respectively per anthropic.com/pricing and the Max plan FAQ ($100/mo = 5x Pro usage, $200/mo = 20x Pro usage). Noted the in-progress Cowork+chat merge. claude.ai itself returned HTTP 403 to automated fetches (bot-blocked); anthropic.com/pricing and the support.claude.com model-settings article served as the readable primary sources"
+      },
       {
         "date": "2026-03-07T12:00Z",
         "change": "Initial entry"
@@ -657,16 +721,24 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Claude Code",
     "launched": "2025-02-24T12:00Z",
-    "verified": "2026-03-22",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Claude Code Documentation",
         "url": "https://code.claude.com/docs/en/features-overview"
       },
       {
-        "title": "VS Code Extension Guide",
-        "url": "https://www.claudelog.com/faqs/how-to-use-claude-code-with-vs-code/"
+        "title": "Claude Code on JetBrains IDEs",
+        "url": "https://code.claude.com/docs/en/jetbrains"
+      },
+      {
+        "title": "Claude Code on mobile",
+        "url": "https://code.claude.com/docs/en/mobile"
+      },
+      {
+        "title": "Claude Code Chrome extension",
+        "url": "https://code.claude.com/docs/en/chrome"
       },
       {
         "title": "Apple Xcode + Claude Agent SDK",
@@ -674,6 +746,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Major platform expansion confirmed via code.claude.com docs: native JetBrains IDE plugin added (talking point previously said none existed); Claude Code on the web (claude.ai/code) added; Claude mobile app (iOS/Android) added for monitoring/steering cloud sessions and Remote Control; Chrome extension (browser automation, paid plans) added. Dropped stale claudelog.com VS Code source (unofficial)"
+      },
       {
         "date": "2026-02-17T12:00Z",
         "change": "[Verified] VS Code extension (out of beta) added to platforms; Xcode via Agent SDK noted; URL updated to code.claude.com; talking point updated"
@@ -692,23 +768,27 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Connectors",
     "launched": "2025-05-01T12:00Z",
-    "verified": "2026-04-08",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "Claude Integrations",
-        "url": "https://claude.ai/blog/integrations"
+        "title": "Use connectors to extend Claude's capabilities",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      },
+      {
+        "title": "Get started with custom connectors using remote MCP",
+        "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
       },
       {
         "title": "Connectors Directory",
         "url": "https://claude.ai/directory"
-      },
-      {
-        "title": "Setting Up Integrations",
-        "url": "https://support.anthropic.com/en/articles/10168395-setting-up-claude-integrations"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Old \"Setting Up Integrations\" source (support.anthropic.com/.../10168395) is dead (301 to support.claude.com, then 404); replaced with current \"Use connectors to extend Claude's capabilities\" and \"custom connectors using remote MCP\" articles. Corrected Free-plan notes: custom connectors (remote MCP) are capped at 1 on Free, not unlimited/\"full\". Mobile (iOS/Android) can now install connectors directly (beta), not desktop-setup-only. Dropped unverifiable \"75+ services\" and \"Deep Connectors\" branding not found in current sources"
+      },
       {
         "date": "2026-04-08T12:00Z",
         "change": "[Verified] Gating changed from paid to free — Free plan now has full remote MCP connector access (not just desktop extensions + GitHub)"
@@ -743,12 +823,20 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Cowork Mode",
     "launched": "2026-01-12T12:00Z",
-    "verified": "2026-04-07",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "Getting Started with Cowork",
+        "title": "Get started with Claude Cowork",
         "url": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
+      },
+      {
+        "title": "Claude Cowork and chat are one Claude",
+        "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
+      },
+      {
+        "title": "Use Claude Cowork on Team and Enterprise plans",
+        "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans"
       },
       {
         "title": "TechCrunch Coverage",
@@ -756,6 +844,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Major platform expansion per current \"Get started with Claude Cowork\" article: web (claude.ai), Claude Mobile (iOS/Android), and Chrome side panel added — no longer desktop-only; Windows arm64/x64 restriction no longer documented, dropped. Added new \"Claude Cowork and chat are one Claude\" source: Anthropic is merging Cowork and chat into one experience, rolling out gradually to Pro/Max first; talking point and Regional updated to reflect this"
+      },
       {
         "date": "2026-02-17T12:00Z",
         "change": "[Verified] Expanded to all paid plans (Pro, Team, Enterprise); Windows x64 support added"
@@ -774,12 +866,24 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Extended Thinking",
     "launched": "2025-02-24T12:00Z",
-    "verified": "2026-04-08",
-    "checked": "2026-09-04",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Extended Thinking Documentation",
         "url": "https://platform.claude.com/docs/en/docs/build-with-claude/extended-thinking"
+      },
+      {
+        "title": "Change the model, effort, and thinking settings",
+        "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+      },
+      {
+        "title": "Introducing Claude Opus 5.5",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5.5",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
       },
       {
         "title": "Claude Opus 4.6 Announcement",
@@ -787,6 +891,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Model lineup and effort levels are far out of date: current flagship models are Sonnet 5.5 / Opus 5.5 / Fable 5.1 (not Opus 4.6), thinking is now mandatory (cannot be disabled) on Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, and a fifth effort level \"Extra high\" (xhigh) exists between high and max on Opus 4.7 and newer. Talking point rewritten per support.claude.com's model/effort/thinking settings article; added Opus 5.5 and Sonnet 5.5 announcement sources"
+      },
       {
         "date": "2026-04-08T12:00Z",
         "change": "[Verified] Gating changed from paid to free — Free plan now has limited Extended Thinking access; Pro upgraded from limited to full access"
@@ -809,8 +917,8 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "MCP (Model Context Protocol)",
     "launched": "2024-11-25T12:00Z",
-    "verified": "2026-03-22",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Introducing Model Context Protocol",
@@ -836,12 +944,16 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Memory",
     "launched": "2025-10-01T12:00Z",
-    "verified": "2026-03-19",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "Claude Memory Guide",
-        "url": "https://aiadopters.club/p/set-up-my-claude-memory"
+        "title": "Use Claude's chat search and memory to build on previous context",
+        "url": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context"
+      },
+      {
+        "title": "Import and export your memory from Claude",
+        "url": "https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude"
       },
       {
         "title": "API Memory Tool",
@@ -849,6 +961,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Source article renamed/merged: \"How does memory work\" (support.anthropic.com/.../10166267) now 404s; current article is \"Use Claude's chat search and memory to build on previous context,\" which bundles memory with a new, related but distinct **paid-only** \"search past chats\" (RAG) capability not available on Free. Memory's own gating (free on Free/Pro/Max, owner-enabled on Team/Enterprise) is unchanged. Talking point updated to distinguish the two features and avoid implying chat search is free"
+      },
       {
         "date": "2026-03-21T12:00Z",
         "change": "[Verified] API Memory Tool now available for developers (type: memory_20250818); 3-layer architecture: Chat Memory, CLAUDE.md, API Memory Tool"
@@ -875,15 +991,23 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Projects",
     "launched": "2024-06-25T12:00Z",
-    "verified": "2026-03-23",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "Projects Documentation",
-        "url": "https://support.anthropic.com/en/articles/9517075-what-are-projects"
+        "title": "What are projects?",
+        "url": "https://support.claude.com/en/articles/9517075-what-are-projects"
+      },
+      {
+        "title": "Retrieval augmented generation (RAG) for projects",
+        "url": "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] URL updated to support.claude.com (support.anthropic.com 301s there); Free plan limit clarified as capped at 5 projects (was listed as unqualified \"Standard/Full access\"); added \"Enhanced project knowledge with RAG\" — paid plans (Pro/Max/Team/Enterprise) auto-scale project knowledge up to 10x near context limits; talking point updated; noted (not added as a claim) a new beta \"Projects\" experience rolling out via Claude Code"
+      },
       {
         "date": "2026-03-23T12:00Z",
         "change": "[Verified] Added missing Enterprise row to availability table (SSO, admin controls, custom limits)"
@@ -906,23 +1030,27 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Skills",
     "launched": "2025-10-16T12:00Z",
-    "verified": "2026-04-03",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
+      {
+        "title": "How to create custom skills",
+        "url": "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
+      },
+      {
+        "title": "Agent Skills overview",
+        "url": "https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview"
+      },
       {
         "title": "Introducing Skills",
         "url": "https://www.anthropic.com/news/skills"
-      },
-      {
-        "title": "Skills Documentation",
-        "url": "https://docs.anthropic.com/en/docs/skills"
-      },
-      {
-        "title": "Claude Sonnet 4.6 Announcement",
-        "url": "https://www.anthropic.com/news/claude-sonnet-4-6"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Gating changed from paid to free — \"How to create custom skills\" (support.claude.com, dated July 22, 2026) now states plainly \"Skills are available for users on Free, Pro, Max, Team, and Enterprise plans,\" contradicting the prior \"custom skills require Pro and above\" claim; only the newer \"record a skill\" video-capture creation flow remains Pro/Max/Team-only (Claude for Mac). Old docs.anthropic.com/en/docs/skills source 404s after redirect; replaced with current docs.claude.com Agent Skills overview and the how-to article"
+      },
       {
         "date": "2026-03-07T12:00Z",
         "change": "[Verified] Free tier now includes prebuilt skills (confirmed in Sonnet 4.6 announcement); talking point corrected to match availability table"
@@ -941,15 +1069,19 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "Vision (Image Understanding)",
     "launched": "2024-03-04T12:00Z",
-    "verified": "2026-03-22",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Vision Documentation",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/vision"
+        "url": "https://platform.claude.com/docs/en/docs/build-with-claude/vision"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] URL updated — docs.anthropic.com now 301s to platform.claude.com; content re-confirmed, no claims changed"
+      },
       {
         "date": "2026-03-15T12:00Z",
         "change": "[Verified] Corrected gating from paid to free — availability table and external sources confirm free-tier access"
@@ -1376,15 +1508,23 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "Agentic App Actions (Android)",
     "launched": "2026-03-03T12:00Z",
-    "verified": "2026-03-21",
-    "checked": "2026-09-11",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
-        "title": "March 2026 Pixel Drop",
+        "title": "Ask Gemini to handle your multi-step tasks in select Android apps — Pixel Phone Help",
+        "url": "https://support.google.com/pixelphone/answer/16940971"
+      },
+      {
+        "title": "March 2026 Pixel Drop (Deccan Herald)",
         "url": "https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google's own term for this feature is \"screen automation,\" distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point's named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories"
+      },
       {
         "date": "2026-09-11T12:00Z",
         "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
@@ -1411,8 +1551,8 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "AI Studio",
     "launched": "2023-12-13T12:00Z",
-    "verified": "2026-03-08",
-    "checked": "2026-09-11",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Google AI Studio",
@@ -1421,9 +1561,17 @@
       {
         "title": "AI Studio Documentation",
         "url": "https://ai.google.dev/aistudio"
+      },
+      {
+        "title": "Gemini API Billing",
+        "url": "https://ai.google.dev/gemini-api/docs/billing"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms \"AI Studio usage remains free of charge unless users link a paid API key,\" and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes"
+      },
       {
         "date": "2026-09-11T12:00Z",
         "change": "[Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature"
@@ -1602,8 +1750,8 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "Connected Apps (Extensions)",
     "launched": "2023-09-19T12:00Z",
-    "verified": "2026-03-15",
-    "checked": "2026-09-23",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Use & manage Connected Apps in Gemini — Gemini Apps Help",
@@ -1615,6 +1763,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android's ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the \"deepest integration\" platform note. No claim changes"
+      },
       {
         "date": "2026-09-23T12:00Z",
         "change": "Record retitled Extensions → Connected Apps (Extensions) to match Google's current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable"
@@ -1871,9 +2023,13 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "Past Chats (Memory)",
     "launched": "2026-02-26T12:00Z",
-    "verified": "2026-03-07",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
+      {
+        "title": "Get personalization with memory of your past Gemini chats — Gemini Apps Help",
+        "url": "https://support.google.com/gemini/answer/16598469"
+      },
       {
         "title": "Gemini Past Chats Free (9to5Google)",
         "url": "https://9to5google.com/2026/02/26/gemini-past-chats-free/"
@@ -1884,6 +2040,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, \"Get personalization with memory of your past Gemini chats\"), added as primary source. Google's settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in \"Gemini in Chrome (in countries where Gemini in Chrome is available),\" matching this file's existing convention for that field (see Chat record)"
+      },
       {
         "date": "2026-03-07T12:00Z",
         "change": "Initial entry"
@@ -1902,8 +2062,8 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "Project Astra",
     "launched": "2024-12-11T12:00Z",
-    "verified": "2026-02-28",
-    "checked": "2026-09-23",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Project Astra",
@@ -1915,6 +2075,10 @@
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as \"a research prototype, being used and refined by a limited number of trusted testers,\" with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record's deprecated status and talking point exactly. No claim changes"
+      },
       {
         "date": "2026-09-23T12:00Z",
         "change": "Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind's Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record's capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept"
@@ -2043,8 +2207,8 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "Grok Chat",
     "launched": "2023-11-04T12:00Z",
-    "verified": "2026-03-24",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Grok Official",
@@ -2171,15 +2335,23 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "Memory",
     "launched": "2025-02-17T12:00Z",
-    "verified": "2026-03-07",
-    "checked": "2026-09-11",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
+      {
+        "title": "Grok",
+        "url": "https://x.ai/grok"
+      },
       {
         "title": "How Grok Memory Works",
         "url": "https://blog.memoryplugin.com/how-grok-memory-works/"
       }
     ],
     "changelog": [
+      {
+        "date": "2026-09-28T12:00Z",
+        "change": "[Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists \"Memory across chats — Remembers your preferences and past conversations\" as a general, ungated feature, consistent with this record's free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address"
+      },
       {
         "date": "2026-09-11T12:00Z",
         "change": "[Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source"
@@ -2202,8 +2374,8 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "Real-time X/Twitter Data",
     "launched": "2023-11-04T12:00Z",
-    "verified": "2026-06-18",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Grok (consumer)",
@@ -2283,8 +2455,8 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "Vision (Image Understanding)",
     "launched": "2024-08-13T12:00Z",
-    "verified": "2026-03-24",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Grok 2 Announcement",
@@ -3021,8 +3193,8 @@
     "source_file": "data/platforms/claude.md",
     "source_heading": "",
     "launched": "",
-    "verified": "2026-03-19",
-    "checked": "2026-09-01",
+    "verified": "2026-09-28",
+    "checked": "2026-09-28",
     "sources": [
       {
         "title": "Claude pricing",
@@ -3057,8 +3229,8 @@
     "source_file": "data/platforms/gemini.md",
     "source_heading": "",
     "launched": "",
-    "verified": "2026-02-28",
-    "checked": "2026-09-01",
+    "verified": "2026-08-31",
+    "checked": "2026-09-11",
     "sources": [
       {
         "title": "Gemini pricing",
@@ -3075,7 +3247,7 @@
     "source_file": "data/platforms/grok.md",
     "source_heading": "",
     "launched": "",
-    "verified": "2026-03-07",
+    "verified": "2026-03-20",
     "checked": "2026-09-01",
     "sources": [
       {

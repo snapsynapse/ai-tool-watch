@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-24T02:43:19.878Z",
+    "generated": "2026-09-29T02:58:08.987Z",
     "version": "1.0",
     "count": 72
   },
@@ -115,9 +115,9 @@
       ],
       "talking_point": "Advanced voice is now **available on every plan, including free**—OpenAI's GPT-Live replaced the old Advanced Voice Mode as the default, with GPT-Live-1 mini for free accounts and GPT-Live-1 for paid. Free users get it on **web and mobile**; **voice in the macOS and Windows desktop apps is paid-only** and returned in July 2026 after being retired in January.",
       "launched": "2024-09-24T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-advanced-voice-mode",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-agent-mode",
@@ -673,9 +673,9 @@
       ],
       "talking_point": "Codex is ChatGPT's coding agent that can write, run, and debug code autonomously. **Available on every plan including Free**, but usage is quota-gated—Free and Go get limited runs, while **Plus ($20/mo) and above** get the usable allowances. Available via **web, desktop apps, and CLI** (`npm i -g @openai/codex`) on macOS, Linux, and Windows (WSL).",
       "launched": "2025-04-16T12:00Z",
-      "verified": "2026-08-25",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-codex-code-agent",
-      "evidence_verified": "2026-08-25"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-codex-security",
@@ -753,7 +753,7 @@
           "surface": "linux",
           "name": "Linux",
           "available": false,
-          "notes": ""
+          "notes": "Via open-source CLI (npm-based, beta, requires access)"
         },
         {
           "surface": "ios",
@@ -782,8 +782,8 @@
         {
           "surface": "terminal",
           "name": "terminal",
-          "available": false,
-          "notes": ""
+          "available": true,
+          "notes": "Open-source Codex Security CLI (`npm install @openai/codex-security`), beta, requires access"
         },
         {
           "surface": "api",
@@ -792,11 +792,11 @@
           "notes": "Web-only"
         }
       ],
-      "talking_point": "Codex Security is OpenAI's AI security agent—it connects to your GitHub repos, builds a codebase-specific threat model, validates vulnerabilities in sandboxed environments, and generates fix PRs. **Requires Pro ($200/mo), Enterprise, Business, or Edu**—not available on Plus or lower. Launched March 6, 2026 as a research preview with free usage for the first month.",
+      "talking_point": "Codex Security is OpenAI's AI security agent—it connects to your GitHub repos, builds a codebase-specific threat model, validates vulnerabilities in sandboxed environments, and generates fix PRs. **Requires Pro ($200/mo), Enterprise, Business, or Edu**—not available on Plus or lower. Launched March 6, 2026 as a research preview with free usage for the first month. As of July 29, 2026, an **open-source Codex Security CLI** (`npm install @openai/codex-security`) is also available for scanning repositories from the command line, in beta and requiring access.",
       "launched": "2026-03-06T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-codex-security",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-custom-gpts-actions",
@@ -908,9 +908,9 @@
       ],
       "talking_point": "Custom GPTs let you create specialized AI assistants with custom instructions, knowledge files, and **Actions for external API integrations**. Actions replaced the old plugin system in April 2024. **Anyone can use public GPTs**, but creating your own with Actions requires Plus ($20/mo) or higher.",
       "launched": "2023-11-06T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-custom-gpts-actions",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-dall-e-image-generation",
@@ -930,25 +930,25 @@
           "plan": "Free",
           "available": false,
           "limits": "~2/day",
-          "notes": "Very limited; now uses GPT Image 1.5"
+          "notes": "Very limited; now uses ChatGPT Images 2.5"
         },
         {
           "plan": "Go",
           "available": true,
           "limits": "10x free",
-          "notes": "Standard access; now uses GPT Image 1.5"
+          "notes": "Standard access; now uses ChatGPT Images 2.5"
         },
         {
           "plan": "Plus",
           "available": true,
           "limits": "50x free",
-          "notes": "Priority; now uses GPT Image 1.5"
+          "notes": "Priority; now uses ChatGPT Images 2.5"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Unlimited",
-          "notes": "No limits; now uses GPT Image 1.5"
+          "notes": "No limits; now uses ChatGPT Images 2.5"
         }
       ],
       "surfaces": [
@@ -1007,11 +1007,11 @@
           "notes": "OpenAI API (DALL-E 3 API deprecated May 12, 2026; migrate to gpt-image-1)"
         }
       ],
-      "talking_point": "ChatGPT image generation now uses **GPT Image 1.5**, replacing DALL-E 3 (March 2025). Available on **all plans including free** with tiered limits. The DALL-E 3 API is **deprecated May 12, 2026**—developers should migrate to `gpt-image-1` or `gpt-image-1-mini`.",
+      "talking_point": "ChatGPT image generation now uses **ChatGPT Images 2.5** (rolled out September 8, 2026 across desktop, mobile, and web), which replaced the earlier GPT Image 1.5 default. Available on **all plans including free** with tiered limits. The DALL-E 3 API is **deprecated May 12, 2026**—developers should migrate to `gpt-image-2`, `gpt-image-1`, or `gpt-image-1-mini`. Note: `gpt-image-1` and `gpt-image-1.5` are themselves now slated for API retirement (Oct 23, 2026 and Dec 1, 2026 respectively), in favor of `gpt-image-2.5-sunburst`/`gpt-image-2.5-flare`.",
       "launched": "2023-10-01T12:00Z",
-      "verified": "2026-04-08",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-dall-e-image-generation",
-      "evidence_verified": "2026-04-08"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-deep-research",
@@ -1123,9 +1123,9 @@
       ],
       "talking_point": "Deep Research lets ChatGPT spend minutes researching a topic thoroughly. **Now available on all plans including free**—free users get 5 lightweight queries/month (powered by o4-mini). Plus gets 10 full + 15 lightweight per month; Pro gets 125 + 125.",
       "launched": "2025-02-03T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-deep-research",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-memory",
@@ -1351,9 +1351,9 @@
       ],
       "talking_point": "Projects let you group related chats, files, and custom instructions into workspaces. **Available on all plans including free**—organize your work across topics with project-specific context.",
       "launched": "2024-12-13T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-projects",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-vision-image-understanding",
@@ -1464,9 +1464,9 @@
       ],
       "talking_point": "GPT-4o understands images natively—upload a photo, screenshot, chart, or diagram and ChatGPT will analyze it. **Available on all plans including free**, subject to your plan's message quota. Works across web, desktop, iOS, and Android. Also accessible via the OpenAI API using the `gpt-4o` model.",
       "launched": "2024-05-13T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-vision-image-understanding",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-sora-video-generation",
@@ -1571,15 +1571,15 @@
         {
           "surface": "api",
           "name": "API",
-          "available": true,
-          "notes": "Async processing"
+          "available": false,
+          "notes": "Sora 2 models and Videos API were shut down 2026-09-24; no replacement API available"
         }
       ],
       "talking_point": "Sora generates videos from text prompts—up to 25 seconds at 1080p. **Requires Plus ($20/mo) or Pro ($200/mo)**. Plus gets 1,000 credits/month (~50 short videos); Pro gets 10,000 credits plus unlimited relaxed-mode generations. Not available in Europe.",
       "launched": "2024-12-09T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-sora-video-generation",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "chatgpt-chat",
@@ -1600,25 +1600,25 @@
           "plan": "Free",
           "available": true,
           "limits": "Rate-limited",
-          "notes": "GPT-5.4 Mini (Thinking menu); ~10 msgs/5 hrs then fallback"
+          "notes": "GPT-5.5 Mini, transitioning to GPT-6 Luna (rolling out in desktop app from 2026-09-22); ~10 msgs/5 hrs then fallback"
         },
         {
           "plan": "Go",
           "available": true,
           "limits": "Higher",
-          "notes": "GPT-5.4 Mini; 10× free limits"
+          "notes": "GPT-5.5 Mini, transitioning to GPT-6 Luna; 10× free limits"
         },
         {
           "plan": "Plus",
           "available": true,
           "limits": "Higher",
-          "notes": "GPT-5.4 Thinking + Mini; 5× Go limits"
+          "notes": "GPT-5.5 Thinking + Mini, transitioning to GPT-6 Sol (rolling out from 2026-09-22); 5× Go limits"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Unlimited",
-          "notes": "GPT-5.4 Pro + Mini; no rate caps; 1M context"
+          "notes": "GPT-6 Astra (rolled out 2026-09-04) plus GPT-6 Sol/GPT-5.5 Pro; no rate caps; 1M+ context"
         },
         {
           "plan": "Business",
@@ -1689,11 +1689,11 @@
           "notes": "OpenAI API (GPT-5.4, Mini, Nano; 1M context)"
         }
       ],
-      "talking_point": "ChatGPT's core text conversation is **available on all plans including free** at chatgpt.com, with apps for iOS, Android, Windows, and macOS. Free and Go users now get **GPT-5.4 Mini** (via the Thinking menu); Plus unlocks **GPT-5.4 Thinking**; Pro gets **GPT-5.4 Pro** with 1M context. **GPT-5.4 Nano** is **API-only** ($0.20/1M input tokens). GPT-5.2 Thinking moved to Legacy Models with a 90-day retirement window.",
+      "talking_point": "ChatGPT's core text conversation is **available on all plans including free** at chatgpt.com, with apps for iOS, Android, Windows, and macOS. The model lineup has moved on twice since GPT-5.4 (March 2026): GPT-5.5 became the default generation, and **GPT-5.5 itself is scheduled to retire from ChatGPT, ChatGPT Work, and Codex on all plans on October 14, 2026**. OpenAI is actively rolling out its replacement now—**GPT-6 Sol** for Plus/Pro/Business/Enterprise/Edu and **GPT-6 Luna** for Free/Go (from September 22, 2026)—on top of **GPT-6 Astra**, OpenAI's most capable model, which reached Pro/Enterprise/Business-Premium plans and the API on September 4, 2026.",
       "launched": "2022-11-30T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-chatgpt-chat",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-artifacts",
@@ -1714,25 +1714,37 @@
           "plan": "Free",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "Create artifacts in chat; no Design/Slides/Docs templates"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
+        },
+        {
+          "plan": "Team",
+          "available": true,
+          "limits": "Standard",
+          "notes": "Full access incl. templates (beta), on by default"
+        },
+        {
+          "plan": "Enterprise",
+          "available": true,
+          "limits": "Custom",
+          "notes": "Full access; templates (beta) off by default until an owner enables them"
         }
       ],
       "surfaces": [
@@ -1758,13 +1770,13 @@
           "surface": "ios",
           "name": "iOS",
           "available": true,
-          "notes": "Mobile app"
+          "notes": "Mobile app (view/ask; templates need web or desktop)"
         },
         {
           "surface": "android",
           "name": "Android",
           "available": true,
-          "notes": "Mobile app"
+          "notes": "Mobile app (view/ask; templates need web or desktop)"
         },
         {
           "surface": "chrome",
@@ -1781,8 +1793,8 @@
         {
           "surface": "terminal",
           "name": "terminal",
-          "available": false,
-          "notes": ""
+          "available": true,
+          "notes": "Via Claude Code — publish session output as an artifact, or make Design/Docs"
         },
         {
           "surface": "api",
@@ -1791,11 +1803,11 @@
           "notes": "Web/app feature only"
         }
       ],
-      "talking_point": "Artifacts are Claude's way of creating standalone content—code, documents, diagrams—in a separate panel. **Available on all plans including free.**",
+      "talking_point": "Artifacts are Claude's way of creating standalone content—a design, a deck, a document, a dashboard, a small interactive tool—in a separate panel. **Available on Free, Pro, Max, Team, and Enterprise**, and in Claude Code on any plan that includes it. Paid plans also get beta templates—**Claude Design, Claude Slides, and Claude Docs**—for polished, shareable output; on Enterprise these are off until an owner turns them on. Artifacts made before September 16, 2026 are 'legacy' artifacts and keep working, but new ones use the current experience.",
       "launched": "2024-06-20T12:00Z",
-      "verified": "2026-04-06",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-artifacts",
-      "evidence_verified": "2026-04-06"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-claude-code",
@@ -1855,43 +1867,43 @@
           "surface": "windows",
           "name": "Windows",
           "available": true,
-          "notes": "Terminal + VS Code extension"
+          "notes": "Terminal + VS Code extension + JetBrains IDEs"
         },
         {
           "surface": "macos",
           "name": "macOS",
           "available": true,
-          "notes": "Terminal + VS Code extension + Xcode (via Agent SDK)"
+          "notes": "Terminal + VS Code extension + JetBrains IDEs + Xcode (via Agent SDK)"
         },
         {
           "surface": "linux",
           "name": "Linux",
           "available": true,
-          "notes": "Terminal + VS Code extension"
+          "notes": "Terminal + VS Code extension + JetBrains IDEs"
         },
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Claude mobile app — start, monitor, and steer cloud sessions; Remote Control for local sessions"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Claude mobile app — start, monitor, and steer cloud sessions; Remote Control for local sessions"
         },
         {
           "surface": "chrome",
           "name": "Chrome",
-          "available": false,
-          "notes": ""
+          "available": true,
+          "notes": "Chrome extension gives browser automation from the CLI/VS Code (Pro, Max, Team, Enterprise)"
         },
         {
           "surface": "web",
           "name": "web",
-          "available": false,
-          "notes": "Terminal/IDE-based only"
+          "available": true,
+          "notes": "Claude Code on the web at claude.ai/code — cloud sessions from the browser"
         },
         {
           "surface": "terminal",
@@ -1906,11 +1918,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Claude Code is Anthropic's agentic coding tool. It requires **Pro subscription at minimum—that's $20/month**. Available as a terminal CLI and a **native VS Code extension** (out of beta), plus Xcode integration via the Claude Agent SDK. No JetBrains plugin yet, but JetBrains AI Assistant integrates Claude models.",
+      "talking_point": "Claude Code is Anthropic's agentic coding tool. It requires **Pro subscription at minimum—that's $20/month**. Available as a terminal CLI, a **native VS Code extension**, and a **native JetBrains plugin** (IntelliJ IDEA, PyCharm, Android Studio, WebStorm, PhpStorm, GoLand), plus Xcode integration via the Claude Agent SDK. It also now runs **in the browser at claude.ai/code** ('Claude Code on the web'), and the **Claude mobile app** (iOS/Android) lets you start, monitor, and steer cloud sessions or use Remote Control on a local session. A **Chrome extension** adds browser automation (reading console/DOM, testing, form-filling) to coding tasks on any paid plan.",
       "launched": "2025-02-24T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-claude-code",
-      "evidence_verified": "2026-03-22"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-connectors",
@@ -1930,7 +1942,7 @@
           "plan": "Free",
           "available": true,
           "limits": "Standard",
-          "notes": "Full remote MCP connectors"
+          "notes": "Web connectors full; custom connectors (remote MCP) limited to 1"
         },
         {
           "plan": "Pro",
@@ -1954,13 +1966,13 @@
           "plan": "Team",
           "available": true,
           "limits": "Full",
-          "notes": "Shared connectors"
+          "notes": "Shared connectors; owner must enable org-wide first"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Full",
-          "notes": "Google Drive Cataloging exclusive"
+          "notes": "Google Drive Cataloging exclusive; owner must enable org-wide first"
         }
       ],
       "surfaces": [
@@ -1986,13 +1998,13 @@
           "surface": "ios",
           "name": "iOS",
           "available": false,
-          "notes": "Use only (setup on desktop)"
+          "notes": "Full use; installing new connectors is in beta (desktop/web still primary for setup)"
         },
         {
           "surface": "android",
           "name": "Android",
           "available": false,
-          "notes": "Use only (setup on desktop)"
+          "notes": "Full use; installing new connectors is in beta (desktop/web still primary for setup)"
         },
         {
           "surface": "chrome",
@@ -2019,11 +2031,11 @@
           "notes": "MCP Connector"
         }
       ],
-      "talking_point": "Connectors let Claude access 75+ services—Google Drive, Notion, Slack, Stripe, and more. **Now free on all plans** including full remote MCP connectors. Deep Connectors (Google Drive, Gmail, DocuSign, FactSet) and a plugin marketplace available. Custom connectors via MCP server URLs available. Browse available connectors at claude.ai/directory.",
+      "talking_point": "Connectors let Claude access your apps and services—Google Drive, Notion, Slack, and more—browsable in the Connectors Directory. **Free on all plans**, including remote MCP connectors (Free is capped at 1 custom connector). Custom connectors via remote MCP server URLs are available on Claude, Cowork, and Claude Desktop. Browse available connectors at claude.ai/directory.",
       "launched": "2025-05-01T12:00Z",
-      "verified": "2026-04-08",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-connectors",
-      "evidence_verified": "2026-04-08"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-cowork-mode",
@@ -2050,31 +2062,31 @@
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Research preview"
+          "notes": "Web/mobile GA; Chrome side panel rolling out"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Subject to Max limits",
-          "notes": "Research preview"
+          "notes": "Full access incl. Chrome side panel"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Subject to Max limits",
-          "notes": "Research preview"
+          "notes": "Full access incl. Chrome side panel"
         },
         {
           "plan": "Team",
           "available": true,
           "limits": "Standard",
-          "notes": "Research preview"
+          "notes": "Full access incl. Chrome side panel; web session use still beta"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": "Research preview"
+          "notes": "Available where an admin has enabled it"
         }
       ],
       "surfaces": [
@@ -2082,13 +2094,13 @@
           "surface": "windows",
           "name": "Windows",
           "available": true,
-          "notes": "Claude Desktop app (x64 only, arm64 not supported)"
+          "notes": "Claude Desktop app (latest version required)"
         },
         {
           "surface": "macos",
           "name": "macOS",
           "available": true,
-          "notes": "Claude Desktop app required"
+          "notes": "Claude Desktop app"
         },
         {
           "surface": "linux",
@@ -2099,26 +2111,26 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Claude mobile app (Pro/Max/Team; Enterprise where admin-enabled)"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
-          "notes": "Not available"
+          "available": true,
+          "notes": "Claude mobile app (Pro/Max/Team; Enterprise where admin-enabled)"
         },
         {
           "surface": "chrome",
           "name": "Chrome",
           "available": false,
-          "notes": ""
+          "notes": "Side panel: Max/Team now, rolling out to Pro"
         },
         {
           "surface": "web",
           "name": "web",
-          "available": false,
-          "notes": "Desktop app only"
+          "available": true,
+          "notes": "claude.ai — Pro, Max, Team; Enterprise where admin-enabled"
         },
         {
           "surface": "terminal",
@@ -2130,14 +2142,14 @@
           "surface": "api",
           "name": "API",
           "available": false,
-          "notes": "Desktop feature only"
+          "notes": "Desktop/web/mobile feature only"
         }
       ],
-      "talking_point": "Cowork is Claude's background agent—**it launched January 2026 and expanded to all paid plans in February**. It's available on Pro ($20/mo) and above, on macOS and Windows desktop. It's still a research preview but already useful for delegating multi-step tasks.",
+      "talking_point": "Cowork brings Claude Code's agentic capabilities to knowledge work beyond coding—it launched January 2026 and expanded to all paid plans in February. It's now available on **web, Claude Desktop (macOS/Windows), and the Claude mobile apps**, not just desktop, with the Chrome side panel rolling out from Max/Team to Pro. As of September 2026, Anthropic is **merging Cowork and chat into a single 'Claude' experience** ('Claude Cowork and chat are one Claude'), rolling out gradually starting with Pro and Max: there's no more mode to pick—any conversation can hand off a task the way Cowork used to.",
       "launched": "2026-01-12T12:00Z",
-      "verified": "2026-04-07",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-cowork-mode",
-      "evidence_verified": "2026-04-07"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-extended-thinking",
@@ -2232,11 +2244,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Extended Thinking lets Claude reason through complex problems step-by-step. With Opus 4.6, **adaptive thinking** is now the recommended mode—Claude decides when deeper reasoning is needed, with four effort levels (low/medium/high/max). Manual thinking mode is deprecated on Opus 4.6. **Now available on all plans including free** (with usage limits); Pro and above get full unrestricted access.",
+      "talking_point": "Extended Thinking lets Claude reason through complex problems step-by-step. As of the **Claude 5.5 family** (Sonnet 5.5, Opus 5.5, Fable 5.1), thinking **cannot be turned off**—it's always on, at every effort level. Effort now has **five levels: low/medium/high/xhigh/max**, with 'Extra high' (xhigh) added for long-running coding and agentic tasks on Opus 4.7 and newer. Older models (Sonnet 4.6, Opus 4.6, Opus 4.7, Sonnet 5, Fable 5) still let you toggle thinking manually. **Available on all plans including free** (with usage limits); Pro and above get full unrestricted access.",
       "launched": "2025-02-24T12:00Z",
-      "verified": "2026-04-08",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-extended-thinking",
-      "evidence_verified": "2026-04-08"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-mcp-model-context-protocol",
@@ -2347,9 +2359,9 @@
       ],
       "talking_point": "MCP is an open standard for connecting Claude to external tools and data sources—databases, file systems, APIs. **Available on all plans including free** via the Claude Desktop app.",
       "launched": "2024-11-25T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-mcp-model-context-protocol",
-      "evidence_verified": "2026-03-22"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-projects",
@@ -2369,38 +2381,38 @@
         {
           "plan": "Free",
           "available": true,
-          "limits": "Standard",
-          "notes": "Full access (added Feb 2026)"
+          "limits": "Up to 5 projects",
+          "notes": "Added Feb 2026"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "RAG auto-scales knowledge up to 10x when it nears context limits"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Extended",
-          "notes": "Higher limits"
+          "notes": "RAG auto-scales knowledge up to 10x when it nears context limits"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Extended",
-          "notes": "Higher limits"
+          "notes": "RAG auto-scales knowledge up to 10x when it nears context limits"
         },
         {
           "plan": "Team",
           "available": true,
           "limits": "Standard",
-          "notes": "Shared projects"
+          "notes": "Shared projects; RAG auto-scaling"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": "SSO, admin controls"
+          "notes": "SSO, admin controls; RAG auto-scaling"
         }
       ],
       "surfaces": [
@@ -2459,11 +2471,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Projects let you organize conversations and documents into workspaces with persistent context. **Now available on all plans including free** as of February 2026.",
+      "talking_point": "Projects let you organize conversations and documents into workspaces with persistent context. **Available on all plans including free** as of February 2026 (Free is capped at 5 projects). On **paid plans**, project knowledge automatically scales through Retrieval-Augmented Generation (RAG), expanding capacity up to **10x** as content approaches context limits. A **new version of projects (beta)** is now rolling out too, starting with Claude Code: a project becomes one conversation that Claude splits into parallel cloud threads.",
       "launched": "2024-06-25T12:00Z",
-      "verified": "2026-03-23",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-projects",
-      "evidence_verified": "2026-03-23"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-skills",
@@ -2476,44 +2488,44 @@
         "build-reusable-ai-workflows"
       ],
       "category": "agents",
-      "gating": "paid",
+      "gating": "free",
       "status": "ga",
       "plans": [
         {
           "plan": "Free",
-          "available": false,
-          "limits": "Limited",
-          "notes": "Prebuilt skills only; custom skills not available"
+          "available": true,
+          "limits": "Standard",
+          "notes": "Prebuilt and custom skills both available (code execution must be enabled); skill recording (record-yourself creation) is Pro/Max/Team only"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access"
+          "notes": "Full access, incl. skill recording (Claude for Mac)"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Extended",
-          "notes": "Higher limits"
+          "notes": "Full access, incl. skill recording (Claude for Mac)"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Extended",
-          "notes": "Higher limits"
+          "notes": "Full access, incl. skill recording (Claude for Mac)"
         },
         {
           "plan": "Team",
           "available": true,
           "limits": "Standard",
-          "notes": "Shared skills"
+          "notes": "Shared skills, incl. skill recording (Claude for Mac)"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": ""
+          "notes": "Skill recording not available"
         }
       ],
       "surfaces": [
@@ -2572,11 +2584,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. **Prebuilt skills are available on all plans including free** (added Feb 2026 with Sonnet 4.6). **Custom skills require Pro and above.**",
+      "talking_point": "Skills are modular folders of instructions and resources that Claude can load on demand to perform specialized tasks—like creating Office documents or running workflows. As of a July 2026 update, **both prebuilt and custom skills are available on Free, Pro, Max, Team, and Enterprise plans** (custom skills need Cloud code execution turned on). The one piece still gated to paid plans is **recording a skill**—showing Claude a screen recording of a task so it drafts the skill for you—available on Pro, Max, and Team in Cowork on Claude for Mac only.",
       "launched": "2025-10-16T12:00Z",
-      "verified": "2026-04-03",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-skills",
-      "evidence_verified": "2026-04-03"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-vision-image-understanding",
@@ -2676,9 +2688,9 @@
       ],
       "talking_point": "Claude can analyze images you upload—documents, screenshots, diagrams. **Available on all plans including free.**",
       "launched": "2024-03-04T12:00Z",
-      "verified": "2026-03-22",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-vision-image-understanding",
-      "evidence_verified": "2026-03-22"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-memory",
@@ -2787,11 +2799,11 @@
           "notes": "Memory Tool (type: memory_20250818) for developers"
         }
       ],
-      "talking_point": "Memory lets Claude remember your preferences and context across conversations—corrections, working style, recurring topics. **Free on all plans** since March 2026. Enable it in Settings → Capabilities → Memory. You can also import memories from other AI tools using the memory import tool.",
+      "talking_point": "Memory lets Claude remember your preferences and context across conversations—corrections, working style, recurring topics. **Free on Free, Pro, and Max** by default (Team/Enterprise: off by default, owner-enabled). Memory is shared between chat and Claude Cowork when Cowork runs in the cloud. A related but separate capability, **searching your past chats** with Claude (RAG-based), requires Pro, Max, Team, or Enterprise. Enable/manage both in Settings → Memory. You can also import memories from other AI tools using the memory import tool.",
       "launched": "2025-10-01T12:00Z",
-      "verified": "2026-03-19",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-memory",
-      "evidence_verified": "2026-03-19"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "claude-chat",
@@ -2812,25 +2824,25 @@
           "plan": "Free",
           "available": true,
           "limits": "Usage caps",
-          "notes": "Sonnet 4.6 with daily usage limits"
+          "notes": "Claude Sonnet 5.5 with 5-hour session usage caps"
         },
         {
           "plan": "Pro",
           "available": true,
-          "limits": "5× free",
+          "limits": "5× Free",
           "notes": "Opus access, higher limits"
         },
         {
           "plan": "Max 5x",
           "available": true,
-          "limits": "Higher",
-          "notes": "Extended thinking, 20× Pro usage"
+          "limits": "5× Pro",
+          "notes": "Extended thinking"
         },
         {
           "plan": "Max 20x",
           "available": true,
-          "limits": "Highest",
-          "notes": "Unlimited standard, highest limits"
+          "limits": "20× Pro",
+          "notes": "Highest limits"
         },
         {
           "plan": "Team",
@@ -2901,11 +2913,11 @@
           "notes": "Anthropic API"
         }
       ],
-      "talking_point": "Claude's core text conversation is **available on all plans including free** at claude.ai, with apps for macOS, iOS, and Android plus desktop clients. The free tier includes Claude Sonnet 4.6 with usage caps; Pro and higher unlock Opus access and significantly higher limits.",
+      "talking_point": "Claude's core text conversation is **available on all plans including free** at claude.ai, with apps for Windows, macOS, Linux, iOS, and Android. The free tier now runs on **Claude Sonnet 5.5** (the Sonnet 4.x line is long superseded) with 5-hour session usage caps; Pro unlocks Opus access and 5x the usage of Free, Max adds a 5x or 20x-of-Pro tier. As of September 2026, Anthropic is **merging Cowork and chat into one 'Claude' experience** on Pro/Max first (see the Cowork Mode entry in this file), so the line between 'just chatting' and handing off a multi-step task is disappearing.",
       "launched": "2023-07-11T12:00Z",
-      "verified": "2026-03-20",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-claude-chat",
-      "evidence_verified": "2026-03-20"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "copilot-agent-builder",
@@ -3817,9 +3829,9 @@
       ],
       "talking_point": "AI Studio is Google's developer playground for Gemini models—test prompts, get API keys, and prototype before building. **Completely free** with generous rate limits.",
       "launched": "2023-12-13T12:00Z",
-      "verified": "2026-03-08",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-gemini-ai-studio",
-      "evidence_verified": "2026-03-08"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "gemini-audio-overview",
@@ -4209,9 +4221,9 @@
       ],
       "talking_point": "Gemini Connected Apps (formerly Extensions) connect Gemini to Google services like Gmail, Calendar, YouTube, Maps, and more. **Available on all plans including free.** The Gemini CLI also supports extensions via MCP for developers.",
       "launched": "2023-09-19T12:00Z",
-      "verified": "2026-03-15",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-gemini-extensions",
-      "evidence_verified": "2026-03-15"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "gemini-gemini-advanced",
@@ -5010,9 +5022,9 @@
       ],
       "talking_point": "Project Astra is Google DeepMind's research prototype for a universal assistant. Its camera and screen sharing now ship in Gemini Live, which is **free for everyone** on iOS and Android. The prototype itself remains waitlist and trusted-tester only. Marked deprecated as a product record — see Gemini Live for current availability.",
       "launched": "2024-12-11T12:00Z",
-      "verified": "2026-02-28",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-gemini-project-astra",
-      "evidence_verified": "2026-02-28"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "gemini-veo-video-generation",
@@ -5178,7 +5190,7 @@
           "surface": "android",
           "name": "Android",
           "available": true,
-          "notes": "Pixel 10 series and Samsung Galaxy S26 series"
+          "notes": "Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, Z Fold 8"
         },
         {
           "surface": "chrome",
@@ -5205,11 +5217,11 @@
           "notes": "Consumer feature only"
         }
       ],
-      "talking_point": "Gemini can now **take actions inside third-party apps on Android**—ordering rides, placing food orders, and completing tasks with minimal user supervision. Available on **Pixel 10 series and Samsung Galaxy S26 series** in the **US and South Korea**. Still in beta with select apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft). No paid plan required.",
+      "talking_point": "Gemini can now use **screen automation** (Google's own name for this beta) to complete multi-step tasks inside third-party Android apps—booking rides, flights and accommodations, ordering food and groceries, buying event tickets, and (on newer devices) buying/selling items—with the user able to view, take control of, or stop the task at any time. Available on **Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8**, in the **US and Korea** (Pixel 10 excluded from Korea). Still beta, English/Korean only, with select apps. No paid plan required.",
       "launched": "2026-03-03T12:00Z",
-      "verified": "2026-03-21",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-gemini-agentic-app-actions-android",
-      "evidence_verified": "2026-03-21"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "gemini-past-chats-memory",
@@ -5284,8 +5296,8 @@
         {
           "surface": "chrome",
           "name": "Chrome",
-          "available": false,
-          "notes": ""
+          "available": true,
+          "notes": "Gemini in Chrome, in countries where that's available"
         },
         {
           "surface": "web",
@@ -5306,11 +5318,11 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Gemini's Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings → Personal context. **Now free for all users**—it rolled out to non-paying accounts in late February 2026. You can control what Gemini remembers via 'Instructions for Gemini' in settings.",
+      "talking_point": "Gemini's Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings & help → Personal Intelligence → Memory. **Now free for all users**—it rolled out to non-paying accounts in late February 2026. Requires a personal Google Account (18+) with Keep Activity on; not available on work/school/supervised accounts, in Gems, or in Live chats.",
       "launched": "2026-02-26T12:00Z",
-      "verified": "2026-03-07",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-gemini-past-chats-memory",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "gemini-chat",
@@ -5620,9 +5632,9 @@
       ],
       "talking_point": "Grok is xAI's chatbot, available through X (Twitter) or via grok.com. **No official desktop apps exist**—access is via web, iOS, or Android. **Free users get very limited access; Premium ($8/mo) unlocks regular use.** SuperGrok at $30/mo gets you the highest limits.",
       "launched": "2023-11-04T12:00Z",
-      "verified": "2026-03-24",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-grok-chat",
-      "evidence_verified": "2026-03-24"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "grok-image-generation-aurora",
@@ -6145,9 +6157,9 @@
       ],
       "talking_point": "Grok has **real-time access to X/Twitter posts**—its unique advantage over other chatbots. **Available on the free tier with lower limits**; paid tiers (X Premium from $8/mo, SuperGrok $30/mo, SuperGrok Heavy $300/mo) get higher quotas and more capable models. Also accessible inside Tesla vehicles.",
       "launched": "2023-11-04T12:00Z",
-      "verified": "2026-06-18",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-grok-real-time-x-twitter-data",
-      "evidence_verified": "2026-06-18"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "grok-think-mode",
@@ -6345,9 +6357,9 @@
       ],
       "talking_point": "Grok has persistent memory that carries user preferences and context across conversations. **Available on all tiers including free.** Memory is selective and automatic—Grok stores key facts it deems important. Users can turn memory off under Settings → Data Controls, but there is no itemized memory manager listing everything saved. The feature appeared with Grok 3 in early 2025 and behavior can be inconsistent across platforms.",
       "launched": "2025-02-17T12:00Z",
-      "verified": "2026-03-07",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-grok-memory",
-      "evidence_verified": "2026-03-07"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "grok-vision-image-understanding",
@@ -6446,9 +6458,9 @@
       ],
       "talking_point": "Grok 2 understands images—upload photos, screenshots, or diagrams and Grok will analyze them. **Requires a paid plan (Premium $8/mo or higher)**. Available on web and mobile.",
       "launched": "2024-08-13T12:00Z",
-      "verified": "2026-03-24",
+      "verified": "2026-09-28",
       "evidence_id": "implementation-grok-vision-image-understanding",
-      "evidence_verified": "2026-03-24"
+      "evidence_verified": "2026-09-28"
     },
     {
       "id": "perplexity-agent-mode-agentic-actions",

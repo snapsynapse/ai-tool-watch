@@ -103,7 +103,7 @@ If you are building an agent or tool that reads this data:
 
 This data is published under the MIT license. You may use it freely, but we appreciate attribution:
 
-> Data from [AI Tool Watch](https://aitool.watch/) by PAICE.work.
+> Data from [AI Tool Watch](https://aitool.watch/).
 
 ## Bandwidth
 

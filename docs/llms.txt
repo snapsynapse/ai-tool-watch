@@ -4,7 +4,7 @@
 
 A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
 
-Maintained by PAICE.work. Updated twice weekly via multi-model verification cascade.
+Maintained by Snap Synapse. Every claim carries its primary source and last-verified date.
 
 ## What this site covers
 
@@ -47,7 +47,7 @@ Start with the index: https://aitool.watch/api/v1/index.json
 - Respect gating and constraints — "available" does not mean "available to everyone"
 - Don't strip caveats from talking points — they contain important context about restrictions
 - Cache for up to 24 hours; don't poll more than once per hour
-- Attribution appreciated: "Data from AI Tool Watch (https://aitool.watch/) by PAICE.work"
+- Attribution appreciated: "Data from AI Tool Watch (https://aitool.watch/)"
 
 ## Agent access
 

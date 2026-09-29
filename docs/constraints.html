@@ -90,8 +90,8 @@
             <h2>Access & Limits</h2>
             <p class="capability-hero-copy">Find what works for you. Filter AI features by cost, platform, and availability constraints.</p>
             <div class="capability-stats">
-                <span class="feature-count">44 free features</span>
-                <span class="feature-count">26 paid features</span>
+                <span class="feature-count">45 free features</span>
+                <span class="feature-count">25 paid features</span>
                 <span class="feature-count">12 region-limited</span>
             </div>
         </section>
@@ -136,7 +136,7 @@
                 <h2>By Access Tier</h2>
             </div>
 
-            <h3 class="constraint-group-label">Free (44)</h3>
+            <h3 class="constraint-group-label">Free (45)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="free" data-surfaces="macos" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -273,7 +273,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -284,7 +284,7 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -345,6 +345,21 @@
                         </div>
                         <div class="constraint-surfaces">
                             <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-free">Free</span>
+                            <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -601,9 +616,9 @@
                         <div class="constraint-surfaces">
                             <span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Beta available in the US and South Korea.</p>
+                        <p class="constraint-regional">Beta available in the US and South Korea; Pixel 10 devices are not supported in Korea (Samsung Galaxy devices are). Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and the interface language set to English or Korean.</p>
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
@@ -614,9 +629,9 @@
                             <span class="constraint-cap-badge">Remember Context Over Time</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.</p>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
                     </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -800,7 +815,7 @@
                     </article>
             </div>
 
-            <h3 class="constraint-group-label">Paid (26)</h3>
+            <h3 class="constraint-group-label">Paid (25)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -817,7 +832,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
@@ -828,7 +843,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -862,7 +877,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -873,11 +888,11 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -888,11 +903,11 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
@@ -903,22 +918,7 @@
                             <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
-                        </div>
-                        
-                    </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
-                        <div class="constraint-card-header">
-                            <span class="price-tag">Claude</span>
-                            <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
-                        </div>
-                        <div class="constraint-card-meta">
-                            <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
-                            <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
-                        </div>
-                        <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -1202,7 +1202,7 @@
                 <h2>By Surface</h2>
             </div>
             
-            <h3 class="constraint-group-label">web (64)</h3>
+            <h3 class="constraint-group-label">web (66)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="mixed" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -1279,7 +1279,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
@@ -1290,7 +1290,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -1369,7 +1369,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -1380,7 +1380,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -1414,7 +1414,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -1425,7 +1425,22 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -1441,6 +1456,21 @@
                         </div>
                         <div class="constraint-surfaces">
                             <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -1474,14 +1504,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -1834,7 +1864,7 @@
                         </div>
                         <p class="constraint-regional">Available in supported regions where Gemini is available. Image-to-video (photo-to-video) is restricted in the EEA, UK, and Switzerland.</p>
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
@@ -1845,9 +1875,9 @@
                             <span class="constraint-cap-badge">Remember Context Over Time</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.</p>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
                     </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -2242,7 +2272,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
@@ -2253,7 +2283,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -2332,7 +2362,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -2343,7 +2373,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -2377,7 +2407,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -2388,11 +2418,11 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -2403,7 +2433,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -2422,7 +2452,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
@@ -2433,7 +2463,7 @@
                             <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -2482,14 +2512,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -3235,7 +3265,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
@@ -3246,7 +3276,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -3325,7 +3355,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -3336,7 +3366,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -3370,7 +3400,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -3381,11 +3411,11 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -3396,7 +3426,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -3415,7 +3445,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
@@ -3426,7 +3456,7 @@
                             <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -3475,14 +3505,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -4151,7 +4181,7 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">Linux (30)</h3>
+            <h3 class="constraint-group-label">Linux (31)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -4168,7 +4198,22 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">ChatGPT</span>
+                            <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -4179,11 +4224,11 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -4194,7 +4239,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -4258,14 +4303,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -4604,7 +4649,7 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">iOS (62)</h3>
+            <h3 class="constraint-group-label">iOS (64)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="mixed" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -4741,7 +4786,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -4752,7 +4797,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -4786,7 +4831,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -4797,7 +4842,22 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -4813,6 +4873,21 @@
                         </div>
                         <div class="constraint-surfaces">
                             <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -4846,14 +4921,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -5206,7 +5281,7 @@
                         </div>
                         <p class="constraint-regional">Available in supported regions where Gemini is available. Image-to-video (photo-to-video) is restricted in the EEA, UK, and Switzerland.</p>
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
@@ -5217,9 +5292,9 @@
                             <span class="constraint-cap-badge">Remember Context Over Time</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.</p>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
                     </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -5537,7 +5612,7 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">Android (63)</h3>
+            <h3 class="constraint-group-label">Android (65)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="mixed" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -5674,7 +5749,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -5685,7 +5760,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -5719,7 +5794,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
@@ -5730,7 +5805,22 @@
                             <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -5746,6 +5836,21 @@
                         </div>
                         <div class="constraint-surfaces">
                             <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         
                     </article>
@@ -5779,14 +5884,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -6152,9 +6257,9 @@
                         <div class="constraint-surfaces">
                             <span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Beta available in the US and South Korea.</p>
+                        <p class="constraint-regional">Beta available in the US and South Korea; Pixel 10 devices are not supported in Korea (Samsung Galaxy devices are). Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and the interface language set to English or Korean.</p>
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
@@ -6165,9 +6270,9 @@
                             <span class="constraint-cap-badge">Remember Context Over Time</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.</p>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
                     </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -6485,9 +6590,54 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">Chrome (9)</h3>
+            <h3 class="constraint-group-label">Chrome (12)</h3>
             <div class="constraint-grid">
-                <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_chrome_web" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-cowork-mode" onclick="passTheme(this)">Cowork Mode</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Do Multi-Step Research</span><span class="constraint-cap-badge">Take Actions and Run Tools</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Gemini</span>
+                            <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-free">Free</span>
+                            <span class="constraint-cap-badge">Remember Context Over Time</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
+                    </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-chat" onclick="passTheme(this)">Chat</a></h4>
@@ -6623,7 +6773,7 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">terminal (7)</h3>
+            <h3 class="constraint-group-label">terminal (9)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -6640,7 +6790,37 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_web_terminal" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">ChatGPT</span>
+                            <h4><a href="implementations.html?p=openai#chatgpt-codex-security" onclick="passTheme(this)">Codex Security</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-preview">Preview</span>
+                            <span class="badge gate-paid">Paid</span>
+                            <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Connect to External Systems</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                        <div class="constraint-card-header">
+                            <span class="price-tag">Claude</span>
+                            <h4><a href="implementations.html?p=anthropic#claude-artifacts" onclick="passTheme(this)">Artifacts</a></h4>
+                        </div>
+                        <div class="constraint-card-meta">
+                            <span class="badge avail-ga">GA</span>
+                            <span class="badge gate-free">Free</span>
+                            <span class="constraint-cap-badge">Make and Edit Documents</span><span class="constraint-cap-badge">Write and Edit Code</span>
+                        </div>
+                        <div class="constraint-surfaces">
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        </div>
+                        
+                    </article>
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -6651,7 +6831,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -6685,14 +6865,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -6731,7 +6911,7 @@
                         
                     </article>
             </div>
-            <h3 class="constraint-group-label">API (50)</h3>
+            <h3 class="constraint-group-label">API (49)</h3>
             <div class="constraint-grid">
                 <article class="constraint-card" data-gating="mixed" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -6853,21 +7033,6 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
-                        <div class="constraint-card-header">
-                            <span class="price-tag">ChatGPT</span>
-                            <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
-                        </div>
-                        <div class="constraint-card-meta">
-                            <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
-                            <span class="constraint-cap-badge">Generate Video</span>
-                        </div>
-                        <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        </div>
-                        <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
-                    </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
@@ -6898,7 +7063,7 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_chrome_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-claude-code" onclick="passTheme(this)">Claude Code</a></h4>
@@ -6909,7 +7074,7 @@
                             <span class="constraint-cap-badge">Write and Edit Code</span><span class="constraint-cap-badge">Take Actions and Run Tools</span><span class="constraint-cap-badge">Use It on My Surfaces</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
                         </div>
                         
                     </article>
@@ -6973,14 +7138,14 @@
                         </div>
                         
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="windows_macos_linux_ios_android_web_terminal_api" data-provider="anthropic" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Claude</span>
                             <h4><a href="implementations.html?p=anthropic#claude-skills" onclick="passTheme(this)">Skills</a></h4>
                         </div>
                         <div class="constraint-card-meta">
                             <span class="badge avail-ga">GA</span>
-                            <span class="badge gate-paid">Paid</span>
+                            <span class="badge gate-free">Free</span>
                             <span class="constraint-cap-badge">Build Reusable AI Workflows</span>
                         </div>
                         <div class="constraint-surfaces">
@@ -7507,7 +7672,7 @@
                         </div>
                         <p class="constraint-regional">Available where ChatGPT is available. Same regional restrictions apply.</p>
                     </article>
-                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web_api" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="paid" data-surfaces="windows_macos_ios_android_web" data-provider="openai" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">ChatGPT</span>
                             <h4><a href="implementations.html?p=openai#chatgpt-sora-video-generation" onclick="passTheme(this)">Sora (Video Generation)</a></h4>
@@ -7518,7 +7683,7 @@
                             <span class="constraint-cap-badge">Generate Video</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
                         <p class="constraint-regional">Available in US, Canada, Japan, Korea, Thailand, Vietnam, Taiwan. Not available in UK, EU, Australia.</p>
                     </article>
@@ -7625,9 +7790,9 @@
                         <div class="constraint-surfaces">
                             <span class="plat-icon no" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Beta available in the US and South Korea.</p>
+                        <p class="constraint-regional">Beta available in the US and South Korea; Pixel 10 devices are not supported in Korea (Samsung Galaxy devices are). Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and the interface language set to English or Korean.</p>
                     </article>
-                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
+                    <article class="constraint-card" data-gating="free" data-surfaces="ios_android_chrome_web" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
                             <span class="price-tag">Gemini</span>
                             <h4><a href="implementations.html?p=google#gemini-past-chats-memory" onclick="passTheme(this)">Past Chats (Memory)</a></h4>
@@ -7638,9 +7803,9 @@
                             <span class="constraint-cap-badge">Remember Context Over Time</span>
                         </div>
                         <div class="constraint-surfaces">
-                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                            <span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon no" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon yes" title="Chrome">Chrome</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
                         </div>
-                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.</p>
+                        <p class="constraint-regional">Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.</p>
                     </article>
                     <article class="constraint-card" data-gating="free" data-surfaces="macos_ios_android_chrome_web_api" data-provider="google" onclick="implCardClick(event, this)" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event, this);}">
                         <div class="constraint-card-header">
@@ -7682,7 +7847,7 @@
                 <a href="https://github.com/snapsynapse/ai-tool-watch/pulls">submit a PR</a>.
             </p>
             <p style="margin-top: 8px;">
-                &copy; 2026 <a href="https://snapsynapse.com/">Snap Synapse LLC</a> | Used by <a href="https://paice.work/">PAICE.work</a> | via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖 | No trackers here, you're welcome.
+                &copy; 2026 <a href="https://snapsynapse.com/">Snap Synapse LLC</a> | via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖
             </p>
             <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
                 <a href="https://github.com/snapsynapse/ai-tool-watch" class="footer-social" title="Star on GitHub">⭐ Star</a>

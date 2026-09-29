@@ -35,8 +35,8 @@ last_verified: 2026-09-11
 | Gating | free |
 | URL | https://aistudio.google.com/ |
 | Launched | 2023-12-13T12:00Z |
-| Verified | 2026-03-08|
-| Checked | 2026-09-11|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -71,11 +71,13 @@ Available globally where Google services are available.
 
 - [Google AI Studio](https://aistudio.google.com/)
 - [AI Studio Documentation](https://ai.google.dev/aistudio)
+- [Gemini API Billing](https://ai.google.dev/gemini-api/docs/billing)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms "AI Studio usage remains free of charge unless users link a paid API key," and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2023-12-13T12:00Z | Initial entry |
 
@@ -265,8 +267,8 @@ Available globally where Gemini Advanced is available.
 | Gating | free |
 | URL | https://support.google.com/gemini/answer/13695044 |
 | Launched | 2023-09-19T12:00Z |
-| Verified | 2026-03-15|
-| Checked | 2026-09-23|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -306,6 +308,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android's ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the "deepest integration" platform note. No claim changes |
 | 2026-09-23T12:00Z | Record retitled Extensions → Connected Apps (Extensions) to match Google's current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable |
 | 2026-09-23T12:00Z | [Correction] Help article restored as URL and source. The 2026-03-14 "old URL 404" was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
@@ -734,8 +737,8 @@ Available globally where Google services are available.
 | Gating | free |
 | URL | https://deepmind.google/models/project-astra/ |
 | Launched | 2024-12-11T12:00Z |
-| Verified | 2026-02-28|
-| Checked | 2026-09-23|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -775,6 +778,7 @@ Available globally where Gemini is available.
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as "a research prototype, being used and refined by a limited number of trusted testers," with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record's deprecated status and talking point exactly. No claim changes |
 | 2026-09-23T12:00Z | Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind's Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record's capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2025-05-20T12:00Z | Free for all users |
@@ -855,10 +859,10 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 | Category | agents |
 | Status | beta |
 | Gating | free |
-| URL | https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438 |
+| URL | https://support.google.com/pixelphone/answer/16940971 |
 | Launched | 2026-03-03T12:00Z |
-| Verified | 2026-03-21|
-| Checked | 2026-09-11|
+| Verified | 2026-09-28|
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -875,7 +879,7 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 | macOS | ❌ |  |
 | Linux | ❌ |  |
 | iOS | ❌ | Android only |
-| Android | ✅ | Pixel 10 series and Samsung Galaxy S26 series |
+| Android | ✅ | Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, Z Fold 8 |
 | Chrome | ❌ |  |
 | web | ❌ | Mobile only |
 | terminal | ❌ |  |
@@ -883,20 +887,22 @@ Available in supported regions where Gemini is available. Image-to-video (photo-
 
 ### Regional
 
-Beta available in the US and South Korea.
+Beta available in the US and South Korea; Pixel 10 devices are not supported in Korea (Samsung Galaxy devices are). Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and the interface language set to English or Korean.
 
 ### Talking Point
 
-> "Gemini can now **take actions inside third-party apps on Android**—ordering rides, placing food orders, and completing tasks with minimal user supervision. Available on **Pixel 10 series and Samsung Galaxy S26 series** in the **US and South Korea**. Still in beta with select apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft). No paid plan required."
+> "Gemini can now use **screen automation** (Google's own name for this beta) to complete multi-step tasks inside third-party Android apps—booking rides, flights and accommodations, ordering food and groceries, buying event tickets, and (on newer devices) buying/selling items—with the user able to view, take control of, or stop the task at any time. Available on **Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8**, in the **US and Korea** (Pixel 10 excluded from Korea). Still beta, English/Korean only, with select apps. No paid plan required."
 
 ### Sources
 
-- [March 2026 Pixel Drop](https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438)
+- [Ask Gemini to handle your multi-step tasks in select Android apps — Pixel Phone Help](https://support.google.com/pixelphone/answer/16940971)
+- [March 2026 Pixel Drop (Deccan Herald)](https://www.deccanherald.com/technology/artificial-intelligence/march-2026-pixel-drop-google-rolls-out-android-update-with-new-ai-features-3920438)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google's own term for this feature is "screen automation," distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point's named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories |
 | 2026-09-11T12:00Z | [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file's Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google's subscriptions page makes no per-plan statement about this feature |
 | 2026-03-21T12:00Z | [Verified] Device support corrected to Pixel 10 series and Samsung Galaxy S26 series; regional availability updated to US and South Korea; supported apps listed |
 | 2026-03-12T12:00Z | Expanded to Samsung Galaxy S26 series |
@@ -911,10 +917,10 @@ Beta available in the US and South Korea.
 | Category | other |
 | Status | ga |
 | Gating | free |
-| URL | https://support.google.com/gemini/answer/14901455 |
+| URL | https://support.google.com/gemini/answer/16598469 |
 | Launched | 2026-02-26T12:00Z |
-| Verified | 2026-03-07 |
-| Checked | 2026-09-01|
+| Verified | 2026-09-28 |
+| Checked | 2026-09-28|
 
 ### Availability
 
@@ -934,21 +940,22 @@ Beta available in the US and South Korea.
 | Linux | ❌ | No native desktop app; use web |
 | iOS | ✅ | Gemini app |
 | Android | ✅ | Gemini app |
-| Chrome | ❌ |  |
+| Chrome | ✅ | Gemini in Chrome, in countries where that's available |
 | web | ✅ | gemini.google.com |
 | terminal | ❌ |  |
 | API | ❌ | Not available via API |
 
 ### Regional
 
-Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet.
+Available where Gemini Apps are available (230+ countries on web, 150+ on mobile). Staggered rollout; some users may not see it yet. Requires the user to be 18+, signed in with a personal Google Account (not work/school/supervised), and to have Keep Activity turned on; not available in Gems or Live chats.
 
 ### Talking Point
 
-> "Gemini's Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings → Personal context. **Now free for all users**—it rolled out to non-paying accounts in late February 2026. You can control what Gemini remembers via 'Instructions for Gemini' in settings."
+> "Gemini's Past Chats feature lets it remember your preferences and context across conversations. Enable it in Settings & help → Personal Intelligence → Memory. **Now free for all users**—it rolled out to non-paying accounts in late February 2026. Requires a personal Google Account (18+) with Keep Activity on; not available on work/school/supervised accounts, in Gems, or in Live chats."
 
 ### Sources
 
+- [Get personalization with memory of your past Gemini chats — Gemini Apps Help](https://support.google.com/gemini/answer/16598469)
 - [Gemini Past Chats Free (9to5Google)](https://9to5google.com/2026/02/26/gemini-past-chats-free/)
 - [Gemini Past Chats Feature (PhoneArena)](https://www.phonearena.com/news/google-is-making-a-core-gemini-feature-available-to-free-users_id178579)
 
@@ -956,6 +963,7 @@ Available where Gemini Apps are available (230+ countries on web, 150+ on mobile
 
 | Date | Change |
 |------|--------|
+| 2026-09-28T12:00Z | [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, "Get personalization with memory of your past Gemini chats"), added as primary source. Google's settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in "Gemini in Chrome (in countries where Gemini in Chrome is available)," matching this file's existing convention for that field (see Chat record) |
 | 2026-03-07T12:00Z | Initial entry |
 | 2026-02-26T12:00Z | Past Chats / Personal context rolled out to free users globally |
 
