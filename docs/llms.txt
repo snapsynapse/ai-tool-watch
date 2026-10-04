@@ -9,7 +9,7 @@ Maintained by Snap Synapse. Every claim carries its primary source and last-veri
 ## What this site covers
 
 - 18 capabilities (e.g., Search the Web, Generate Images, Write and Edit Code)
-- 72 implementations across 6 subscription AI products
+- 73 implementations across 6 subscription AI products
 - 11 open-model access records (Llama, Qwen, DeepSeek, Mistral, Codestral)
 - Plan-level availability (which subscription tier unlocks what)
 - Surface availability (web, desktop, mobile, terminal, API)

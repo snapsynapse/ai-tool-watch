@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0"
   },
   "comparisons": [
@@ -10,6 +10,8 @@
         "claude"
       ],
       "shared_capabilities": [
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
         "do-multi-step-research",
         "take-actions-and-run-tools",
         "connect-to-external-systems",
@@ -25,15 +27,13 @@
         "use-it-on-my-surfaces"
       ],
       "only_a": [
-        "hear-audio-and-speech",
-        "speak-back-in-real-time",
         "search-the-web",
         "generate-images",
         "generate-video"
       ],
       "only_b": [],
-      "shared_count": 13,
-      "only_a_count": 5,
+      "shared_count": 15,
+      "only_a_count": 3,
       "only_b_count": 0
     },
     {
@@ -170,6 +170,8 @@
       ],
       "shared_capabilities": [
         "make-and-edit-documents",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
         "take-actions-and-run-tools",
         "use-it-on-my-surfaces",
         "connect-to-external-systems",
@@ -186,13 +188,11 @@
         "remember-context-over-time"
       ],
       "only_b": [
-        "hear-audio-and-speech",
-        "speak-back-in-real-time",
         "generate-images"
       ],
-      "shared_count": 8,
+      "shared_count": 10,
       "only_a_count": 5,
-      "only_b_count": 3
+      "only_b_count": 1
     },
     {
       "products": [
@@ -202,6 +202,8 @@
       "shared_capabilities": [
         "make-and-edit-documents",
         "write-and-edit-code",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
         "take-actions-and-run-tools",
         "use-it-on-my-surfaces",
         "connect-to-external-systems",
@@ -217,14 +219,12 @@
       "only_a": [],
       "only_b": [
         "search-the-web",
-        "hear-audio-and-speech",
-        "speak-back-in-real-time",
         "generate-images",
         "generate-video"
       ],
-      "shared_count": 13,
+      "shared_count": 15,
       "only_a_count": 0,
-      "only_b_count": 5
+      "only_b_count": 3
     },
     {
       "products": [
@@ -234,6 +234,8 @@
       "shared_capabilities": [
         "make-and-edit-documents",
         "write-and-edit-code",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
         "use-it-on-my-surfaces",
         "connect-to-external-systems",
         "do-multi-step-research",
@@ -251,13 +253,11 @@
       "only_b": [
         "search-the-web",
         "generate-images",
-        "generate-video",
-        "hear-audio-and-speech",
-        "speak-back-in-real-time"
+        "generate-video"
       ],
-      "shared_count": 8,
+      "shared_count": 10,
       "only_a_count": 5,
-      "only_b_count": 5
+      "only_b_count": 3
     },
     {
       "products": [
@@ -266,6 +266,8 @@
       ],
       "shared_capabilities": [
         "make-and-edit-documents",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
         "take-actions-and-run-tools",
         "use-it-on-my-surfaces",
         "connect-to-external-systems",
@@ -282,13 +284,11 @@
         "remember-context-over-time"
       ],
       "only_b": [
-        "search-the-web",
-        "hear-audio-and-speech",
-        "speak-back-in-real-time"
+        "search-the-web"
       ],
-      "shared_count": 9,
+      "shared_count": 11,
       "only_a_count": 4,
-      "only_b_count": 3
+      "only_b_count": 1
     },
     {
       "products": [

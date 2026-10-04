@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0"
   },
   "products": {
@@ -14,36 +14,9 @@
             "chatgpt-canvas",
             "chatgpt-search",
             "chatgpt-codex-code-agent",
-            "chatgpt-projects",
-            "chatgpt-vision-image-understanding",
-            "chatgpt-chat"
-          ],
-          "capabilities": [
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
-            "search-the-web",
-            "take-actions-and-run-tools",
-            "make-and-edit-documents",
-            "write-and-edit-code",
-            "organize-work-in-projects",
-            "use-files-i-provide",
-            "read-text-and-documents",
-            "see-images-and-screens",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
-          ],
-          "implementation_count": 8,
-          "capability_count": 12
-        },
-        "Go": {
-          "price": "$8/mo",
-          "implementations": [
-            "chatgpt-advanced-voice-mode",
-            "chatgpt-atlas-browser",
-            "chatgpt-canvas",
-            "chatgpt-search",
-            "chatgpt-codex-code-agent",
+            "chatgpt-custom-gpts-actions",
             "chatgpt-dall-e-image-generation",
+            "chatgpt-deep-research",
             "chatgpt-memory",
             "chatgpt-projects",
             "chatgpt-vision-image-understanding",
@@ -56,7 +29,10 @@
             "take-actions-and-run-tools",
             "make-and-edit-documents",
             "write-and-edit-code",
+            "build-reusable-ai-workflows",
+            "connect-to-external-systems",
             "generate-images",
+            "do-multi-step-research",
             "remember-context-over-time",
             "organize-work-in-projects",
             "use-files-i-provide",
@@ -65,8 +41,46 @@
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 10,
-          "capability_count": 14
+          "implementation_count": 12,
+          "capability_count": 17
+        },
+        "Go": {
+          "price": "$8/mo",
+          "implementations": [
+            "chatgpt-advanced-voice-mode",
+            "chatgpt-atlas-browser",
+            "chatgpt-canvas",
+            "chatgpt-search",
+            "chatgpt-codex-code-agent",
+            "chatgpt-custom-gpts-actions",
+            "chatgpt-dall-e-image-generation",
+            "chatgpt-deep-research",
+            "chatgpt-memory",
+            "chatgpt-projects",
+            "chatgpt-vision-image-understanding",
+            "chatgpt-chat"
+          ],
+          "capabilities": [
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "search-the-web",
+            "take-actions-and-run-tools",
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "build-reusable-ai-workflows",
+            "connect-to-external-systems",
+            "generate-images",
+            "do-multi-step-research",
+            "remember-context-over-time",
+            "organize-work-in-projects",
+            "use-files-i-provide",
+            "read-text-and-documents",
+            "see-images-and-screens",
+            "write-and-explain",
+            "use-it-on-my-surfaces"
+          ],
+          "implementation_count": 12,
+          "capability_count": 17
         },
         "Plus": {
           "price": "$20/mo",
@@ -165,6 +179,7 @@
             "chatgpt-memory",
             "chatgpt-projects",
             "chatgpt-vision-image-understanding",
+            "chatgpt-sora-video-generation",
             "chatgpt-chat"
           ],
           "capabilities": [
@@ -182,11 +197,12 @@
             "use-files-i-provide",
             "read-text-and-documents",
             "see-images-and-screens",
+            "generate-video",
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 12,
-          "capability_count": 16
+          "implementation_count": 13,
+          "capability_count": 17
         },
         "Enterprise": {
           "price": "Custom",
@@ -246,7 +262,9 @@
           "price": "$0",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-connectors",
+            "claude-extended-thinking",
             "claude-mcp-model-context-protocol",
             "claude-projects",
             "claude-skills",
@@ -257,6 +275,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "connect-to-external-systems",
             "organize-work-in-projects",
             "use-files-i-provide",
@@ -267,13 +287,14 @@
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 8,
-          "capability_count": 11
+          "implementation_count": 10,
+          "capability_count": 13
         },
         "Pro": {
           "price": "$20/mo ($17/mo billed annually)",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -288,6 +309,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
             "connect-to-external-systems",
@@ -300,13 +323,14 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 11,
-          "capability_count": 13
+          "implementation_count": 12,
+          "capability_count": 15
         },
         "Max 5x": {
           "price": "$100/mo",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -321,6 +345,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
             "connect-to-external-systems",
@@ -333,13 +359,14 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 11,
-          "capability_count": 13
+          "implementation_count": 12,
+          "capability_count": 15
         },
         "Max 20x": {
           "price": "$200/mo",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -354,6 +381,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
             "connect-to-external-systems",
@@ -366,13 +395,14 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 11,
-          "capability_count": 13
+          "implementation_count": 12,
+          "capability_count": 15
         },
         "Team": {
           "price": "Standard seat $25/mo ($20/mo annual); Premium seat $125/mo ($100/mo annual, 5x Standard usage)",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -385,6 +415,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
             "connect-to-external-systems",
@@ -395,13 +427,14 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 9,
-          "capability_count": 11
+          "implementation_count": 10,
+          "capability_count": 13
         },
         "Enterprise": {
           "price": "From $20/seat/mo + usage at API rates (self-serve), or custom (sales-assisted)",
           "implementations": [
             "claude-artifacts",
+            "claude-voice-mode",
             "claude-claude-code",
             "claude-connectors",
             "claude-cowork-mode",
@@ -414,6 +447,8 @@
           "capabilities": [
             "make-and-edit-documents",
             "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
             "take-actions-and-run-tools",
             "use-it-on-my-surfaces",
             "connect-to-external-systems",
@@ -424,8 +459,8 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 9,
-          "capability_count": 11
+          "implementation_count": 10,
+          "capability_count": 13
         }
       }
     },
@@ -450,6 +485,18 @@
           ],
           "implementation_count": 4,
           "capability_count": 7
+        },
+        "Copilot Chat (M365 commercial)": {
+          "price": null,
+          "implementations": [
+            "copilot-agent-builder"
+          ],
+          "capabilities": [
+            "build-reusable-ai-workflows",
+            "take-actions-and-run-tools"
+          ],
+          "implementation_count": 1,
+          "capability_count": 2
         },
         "Microsoft 365 Personal": {
           "price": "$9.99/mo",
@@ -532,6 +579,7 @@
           "price": "$0",
           "implementations": [
             "copilot-voice",
+            "copilot-model-access",
             "copilot-image-generation-designer",
             "copilot-chat"
           ],
@@ -542,7 +590,7 @@
             "write-and-explain",
             "use-it-on-my-surfaces"
           ],
-          "implementation_count": 3,
+          "implementation_count": 4,
           "capability_count": 5
         },
         "Microsoft 365 Personal / Family": {
@@ -568,10 +616,14 @@
             "gemini-ai-studio",
             "gemini-audio-overview",
             "gemini-canvas",
+            "gemini-deep-research",
             "gemini-extensions",
+            "gemini-gemini-advanced",
+            "gemini-workspace",
             "gemini-live-voice-mode",
             "gemini-gems-custom-chatbots",
             "gemini-imagen",
+            "gemini-nano-banana-pro",
             "gemini-notebooklm",
             "gemini-project-astra",
             "gemini-agentic-app-actions-android",
@@ -582,22 +634,23 @@
             "write-and-edit-code",
             "build-reusable-ai-workflows",
             "make-and-edit-documents",
+            "do-multi-step-research",
+            "search-the-web",
             "connect-to-external-systems",
+            "read-text-and-documents",
+            "use-files-i-provide",
+            "use-it-on-my-surfaces",
             "see-images-and-screens",
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "generate-images",
             "organize-work-in-projects",
-            "use-files-i-provide",
-            "read-text-and-documents",
-            "do-multi-step-research",
             "take-actions-and-run-tools",
             "remember-context-over-time",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
+            "write-and-explain"
           ],
-          "implementation_count": 12,
-          "capability_count": 16
+          "implementation_count": 16,
+          "capability_count": 17
         },
         "Google AI Pro": {
           "price": "$19.99/mo",
@@ -653,6 +706,7 @@
             "gemini-live-voice-mode",
             "gemini-gems-custom-chatbots",
             "gemini-imagen",
+            "gemini-nano-banana-pro",
             "gemini-notebooklm",
             "gemini-veo-video-generation",
             "gemini-past-chats-memory",
@@ -677,7 +731,7 @@
             "remember-context-over-time",
             "write-and-explain"
           ],
-          "implementation_count": 11,
+          "implementation_count": 12,
           "capability_count": 17
         },
         "Google AI Ultra": {
@@ -723,6 +777,7 @@
           "price": "$20/user/mo",
           "implementations": [
             "gemini-workspace",
+            "gemini-veo-video-generation",
             "gemini-chat"
           ],
           "capabilities": [
@@ -731,15 +786,48 @@
             "connect-to-external-systems",
             "use-files-i-provide",
             "use-it-on-my-surfaces",
+            "generate-video",
             "write-and-explain"
           ],
-          "implementation_count": 2,
-          "capability_count": 6
+          "implementation_count": 3,
+          "capability_count": 7
         }
       }
     },
     "grok": {
       "plans": {
+        "Premium": {
+          "price": "$8/mo",
+          "implementations": [
+            "grok-deepsearch",
+            "grok-chat",
+            "grok-image-generation-aurora",
+            "grok-imagine-video-generation",
+            "grok-studio",
+            "grok-voice-mode",
+            "grok-real-time-x-twitter-data",
+            "grok-think-mode",
+            "grok-memory",
+            "grok-vision-image-understanding"
+          ],
+          "capabilities": [
+            "do-multi-step-research",
+            "search-the-web",
+            "write-and-explain",
+            "use-it-on-my-surfaces",
+            "generate-images",
+            "generate-video",
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "connect-to-external-systems",
+            "remember-context-over-time",
+            "see-images-and-screens"
+          ],
+          "implementation_count": 10,
+          "capability_count": 13
+        },
         "Premium+": {
           "price": "$40/mo",
           "implementations": [
@@ -804,17 +892,15 @@
           "implementation_count": 10,
           "capability_count": 13
         },
-        "Premium": {
-          "price": "$8/mo",
+        "Free": {
+          "price": "$0",
           "implementations": [
             "grok-chat",
             "grok-image-generation-aurora",
             "grok-studio",
             "grok-voice-mode",
             "grok-real-time-x-twitter-data",
-            "grok-think-mode",
-            "grok-memory",
-            "grok-vision-image-understanding"
+            "grok-memory"
           ],
           "capabilities": [
             "write-and-explain",
@@ -825,30 +911,10 @@
             "hear-audio-and-speech",
             "speak-back-in-real-time",
             "connect-to-external-systems",
-            "remember-context-over-time",
-            "see-images-and-screens"
-          ],
-          "implementation_count": 8,
-          "capability_count": 10
-        },
-        "Free": {
-          "price": "$0",
-          "implementations": [
-            "grok-image-generation-aurora",
-            "grok-studio",
-            "grok-voice-mode",
-            "grok-memory"
-          ],
-          "capabilities": [
-            "generate-images",
-            "make-and-edit-documents",
-            "write-and-edit-code",
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
             "remember-context-over-time"
           ],
-          "implementation_count": 4,
-          "capability_count": 6
+          "implementation_count": 6,
+          "capability_count": 9
         },
         "SuperGrok Lite": {
           "price": "$10/mo",
@@ -899,6 +965,36 @@
     },
     "perplexity": {
       "plans": {
+        "Free": {
+          "price": "$0",
+          "implementations": [
+            "perplexity-agent-mode-agentic-actions",
+            "perplexity-buy-with-pro-shopping",
+            "perplexity-collections-spaces",
+            "perplexity-comet-browser",
+            "perplexity-focus-modes",
+            "perplexity-pages",
+            "perplexity-pro-search",
+            "perplexity-voice-mode",
+            "perplexity-chat"
+          ],
+          "capabilities": [
+            "take-actions-and-run-tools",
+            "do-multi-step-research",
+            "connect-to-external-systems",
+            "use-files-i-provide",
+            "organize-work-in-projects",
+            "read-text-and-documents",
+            "search-the-web",
+            "make-and-edit-documents",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "write-and-explain",
+            "use-it-on-my-surfaces"
+          ],
+          "implementation_count": 9,
+          "capability_count": 12
+        },
         "Pro": {
           "price": "$20/mo",
           "implementations": [
@@ -982,33 +1078,6 @@
           ],
           "implementation_count": 5,
           "capability_count": 8
-        },
-        "Free": {
-          "price": "$0",
-          "implementations": [
-            "perplexity-buy-with-pro-shopping",
-            "perplexity-collections-spaces",
-            "perplexity-comet-browser",
-            "perplexity-focus-modes",
-            "perplexity-pages",
-            "perplexity-voice-mode",
-            "perplexity-chat"
-          ],
-          "capabilities": [
-            "take-actions-and-run-tools",
-            "organize-work-in-projects",
-            "use-files-i-provide",
-            "read-text-and-documents",
-            "search-the-web",
-            "do-multi-step-research",
-            "make-and-edit-documents",
-            "hear-audio-and-speech",
-            "speak-back-in-real-time",
-            "write-and-explain",
-            "use-it-on-my-surfaces"
-          ],
-          "implementation_count": 7,
-          "capability_count": 11
         }
       }
     }

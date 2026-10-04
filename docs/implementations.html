@@ -112,8 +112,8 @@
     </header>
     <div class="container" id="main-content">
         <div class="page-intro">
-            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>86</strong> of <strong>86</strong></span>
-            <span class="last-updated">Last built: 2026-10-09</span>
+            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>87</strong> of <strong>87</strong></span>
+            <span class="last-updated">Last built: 2026-10-11</span>
         </div>
 
 
@@ -1770,6 +1770,49 @@
             </div>
             <div class="features-grid">
                 
+                <div class="feature-card" id="claude-voice-mode" data-category="voice" data-prices="0_20_100_200_team_enterprise" data-surfaces="windows_macos_linux_ios_android_web">
+                    <div class="card-main">
+                        <div class="feature-header">
+                            <h3><a href="https://support.claude.com/en/articles/11101966-use-voice-mode" target="_blank" class="feature-link">Voice Mode</a></h3>
+                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('claude-voice-mode')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-beta">Beta</span><span class="badge gate-free">Free</span></span>
+                        </div>
+                        <div class="avail-grid">
+                            
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Free<span class="plan-tooltip">Regular plan limits • Voice conversations count toward normal Free usage limits</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Pro<span class="plan-tooltip">Regular plan limits • Uses the models available on the Pro plan</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Max 5x<span class="plan-tooltip">Regular plan limits • Uses the models available on the Max plan</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Max 20x<span class="plan-tooltip">Regular plan limits • Uses the models available on the Max plan</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Team<span class="plan-tooltip">Regular plan limits • Available to Team members</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="plan has-tooltip" tabindex="0">Enterprise<span class="plan-tooltip">Regular plan limits • Enterprise owners can ask Anthropic Support to disable voice mode</span></span>
+                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
+                            </div>
+                        </div>
+                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Claude Voice Mode provides complete spoken conversations: you speak to Claude and hear its responses. <strong>It is a beta feature available on Free, Pro, Max, Team, and Enterprise</strong> on Claude Mobile (iOS and Android), Claude Desktop (macOS, Windows, and Linux beta), and the web. Voice conversations count toward the regular usage limits of the selected plan. Voice mode is not available in Claude Code or as a dedicated API.</div>
+                        
+                    </div>
+                    <div class="surface-column">
+                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon yes" title="iOS">iOS</span><span class="plat-icon yes" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon no" title="terminal">terminal</span><span class="plat-icon no" title="API">API</span>
+                        <div class="surface-dates">
+                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('claude-voice-mode')"><span class="date-emoji">🚀</span><span class="date-value">2026-07-23</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-10-03</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-10-03</span></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="feature-card" id="claude-artifacts" data-category="local-files" data-prices="0_20_100_200_team_enterprise" data-surfaces="windows_macos_linux_ios_android_web_terminal">
                     <div class="card-main">
                         <div class="feature-header">
@@ -3669,6 +3712,14 @@
                 { date: "2026-03-07T12:00Z", change: "Initial entry" },
                 { date: "2022-11-30T12:00Z", change: "ChatGPT launched publicly" }]
             },
+            "claude-voice-mode": {
+                name: "Voice Mode",
+                platform: "Claude",
+                launched: "2026-07-23T12:00Z",
+                verified: "2026-10-03",
+                checked: "2026-10-03",
+                changes: [{ date: "2026-10-04T03:42Z", change: "[Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion" }]
+            },
             "claude-artifacts": {
                 name: "Artifacts",
                 platform: "Claude",
@@ -4381,7 +4432,7 @@
     </script>
 
     <script>
-        const TOTAL_FEATURES = 86;
+        const TOTAL_FEATURES = 87;
 
         function copyTalkingPoint(el) {
             const notesEl = el.querySelector('.notes-text');

@@ -153,6 +153,27 @@ test('argument validation rejects invalid scopes and truncated or zero numeric v
     assert.equal(parseArgs(['--max','5']).maxFeatures, 5);
 });
 
+test('cascade receives source availability symbols rather than generated API booleans', async () => {
+    const items = inventory(1);
+    items[0].feature.availability = [{ plan: 'Free', available: '⚠️', limits: '~5/month' }];
+    const s = scenario({ items });
+    try {
+        assert.equal(healthExitCode(await s.run()), 0);
+        assert.equal(s.calls.selected[0].feature.availability[0].available, '⚠️');
+    } finally { s.cleanup(); }
+});
+
+test('missing records are outside cascade scope and do not trigger provider calls', async () => {
+    const s = scenario({ options: { platform: 'Claude', feature: 'Missing Voice Mode' } });
+    try {
+        const health = await s.run();
+        assert.equal(health.status, 'failed');
+        assert.match(fs.readFileSync(path.join(s.reportsDir, 'summary.txt'), 'utf8'), /No matching platform or feature/);
+        assert.equal(s.calls.keys, 0);
+        assert.deepEqual(s.calls.selected, []);
+    } finally { s.cleanup(); }
+});
+
 
 test('a truncated returned batch cannot erase previously retained callback evidence', async () => {
     const s = scenario({ items: inventory(2), batch: async (selected, config) => {

@@ -3006,10 +3006,10 @@ function buildDataExport(ontologyData) {
             const platform = impl.source.platform;
             const anchor = impl.source.featureId;
             const availablePlans = (feature.availability || [])
-                .filter(row => row.available && row.available.includes('✅'))
+                .filter(row => row.available && (row.available.includes('✅') || row.available.includes('⚠️')))
                 .map(row => row.plan);
             const surfaceList = (feature.platforms || [])
-                .filter(row => row.available && row.available.includes('✅'))
+                .filter(row => row.available && (row.available.includes('✅') || row.available.includes('⚠️')))
                 .map(row => slugify(row.platform));
             const capabilityNames = (impl.capabilities || [])
                 .map(cid => capabilityMap.get(cid) || cid);
@@ -3110,14 +3110,14 @@ function buildAPIExport(ontologyData, platforms) {
             const feature = impl.source.feature;
             const plans = (feature.availability || []).map(row => ({
                 plan: row.plan,
-                available: !!(row.available && row.available.includes('✅')),
+                available: !!(row.available && (row.available.includes('✅') || row.available.includes('⚠️'))),
                 limits: row.limits || '',
                 notes: row.notes || ''
             }));
             const surfaces = (feature.platforms || []).map(row => ({
                 surface: slugify(row.platform),
                 name: row.platform,
-                available: !!(row.available && row.available.includes('✅')),
+                available: !!(row.available && (row.available.includes('✅') || row.available.includes('⚠️'))),
                 notes: row.notes || ''
             }));
             const evidence = impl.evidence;

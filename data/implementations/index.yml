@@ -124,6 +124,14 @@
   capabilities:
     - make-and-edit-documents
     - write-and-edit-code
+- id: claude-voice-mode
+  product: claude
+  provider: anthropic
+  source_file: data/platforms/claude.md
+  source_heading: Voice Mode
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
 - id: claude-claude-code
   product: claude
   provider: anthropic

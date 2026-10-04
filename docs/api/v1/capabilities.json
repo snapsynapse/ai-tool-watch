@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0",
     "count": 18
   },
@@ -36,20 +36,22 @@
       "common_constraints": [],
       "implementations": [
         "chatgpt-advanced-voice-mode",
+        "claude-voice-mode",
         "copilot-voice",
         "gemini-live-voice-mode",
         "grok-voice-mode",
         "perplexity-voice-mode"
       ],
-      "implementation_count": 5,
+      "implementation_count": 6,
       "products": [
         "chatgpt",
+        "claude",
         "copilot",
         "gemini",
         "grok",
         "perplexity"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },
@@ -184,20 +186,22 @@
       "common_constraints": [],
       "implementations": [
         "chatgpt-advanced-voice-mode",
+        "claude-voice-mode",
         "copilot-voice",
         "gemini-live-voice-mode",
         "grok-voice-mode",
         "perplexity-voice-mode"
       ],
-      "implementation_count": 5,
+      "implementation_count": 6,
       "products": [
         "chatgpt",
+        "claude",
         "copilot",
         "gemini",
         "grok",
         "perplexity"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },

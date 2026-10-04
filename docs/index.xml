@@ -5,8 +5,15 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 07:08:41 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 22:22:41 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Claude — [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-voice-mode</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-voice-mode?d=2026-10-04</guid>
+        <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion</description>
+    </item>
     <item>
         <title>ChatGPT — [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</title>
         <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-security</link>
@@ -347,13 +354,6 @@
         <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
         <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision</link>
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-voice?d=2026-09-07</guid>
         <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
     </item>

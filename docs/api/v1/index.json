@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0"
   },
   "description": "AI Tool Watch — Machine-readable API",
@@ -19,7 +19,7 @@
     "implementations": {
       "path": "implementations.json",
       "description": "All implementations with capability mappings and evidence",
-      "count": 72
+      "count": 73
     },
     "providers": {
       "path": "providers.json",
@@ -34,7 +34,7 @@
     "evidence": {
       "path": "evidence.json",
       "description": "Evidence records with sources and changelog",
-      "count": 92
+      "count": 93
     },
     "capability-matrix": {
       "path": "capability-matrix.json",

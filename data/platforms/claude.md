@@ -20,6 +20,64 @@ last_verified: 2026-09-28
 
 ---
 
+## Voice Mode
+
+| Property | Value |
+|----------|-------|
+| Category | voice |
+| Status | beta |
+| Gating | free |
+| URL | https://support.claude.com/en/articles/11101966-use-voice-mode |
+| Launched | 2026-07-23T12:00Z |
+| Verified | 2026-10-03 |
+| Checked | 2026-10-03 |
+
+### Availability
+
+| Plan | Available | Limits | Notes |
+|------|-----------|--------|-------|
+| Free | ✅ | Regular plan limits | Voice conversations count toward normal Free usage limits |
+| Pro | ✅ | Regular plan limits | Uses the models available on the Pro plan |
+| Max 5x | ✅ | Regular plan limits | Uses the models available on the Max plan |
+| Max 20x | ✅ | Regular plan limits | Uses the models available on the Max plan |
+| Team | ✅ | Regular plan limits | Available to Team members |
+| Enterprise | ✅ | Regular plan limits | Enterprise owners can ask Anthropic Support to disable voice mode |
+
+### Platforms
+
+| Platform | Available | Notes |
+|----------|-----------|-------|
+| Windows | ✅ | Claude Desktop |
+| macOS | ✅ | Claude Desktop |
+| Linux | ✅ | Claude Desktop (beta) |
+| iOS | ✅ | Claude Mobile; designed to work best from a phone |
+| Android | ✅ | Claude Mobile; designed to work best from a phone |
+| Chrome | ❌ | Use claude.ai on the web; not a Claude in Chrome feature |
+| web | ✅ | claude.ai |
+| terminal | ❌ | Voice mode is not available in Claude Code |
+| API | ❌ | Consumer Claude feature; no voice-mode API |
+
+### Regional
+
+Available where Claude is available.
+
+### Talking Point
+
+> "Claude Voice Mode provides complete spoken conversations: you speak to Claude and hear its responses. **It is a beta feature available on Free, Pro, Max, Team, and Enterprise** on Claude Mobile (iOS and Android), Claude Desktop (macOS, Windows, and Linux beta), and the web. Voice conversations count toward the regular usage limits of the selected plan. Voice mode is not available in Claude Code or as a dedicated API."
+
+### Sources
+
+- [Use voice mode](https://support.claude.com/en/articles/11101966-use-voice-mode)
+- [Install Claude Desktop](https://support.claude.com/en/articles/10065433-install-claude-desktop)
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-10-04T03:42Z | [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion |
+
+---
+
 ## Artifacts
 
 | Property | Value |

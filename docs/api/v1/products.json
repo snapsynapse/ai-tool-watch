@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0",
     "count": 9
   },
@@ -55,6 +55,7 @@
       "summary": "Anthropic's product for chat, projects, coding, visual understanding, and connected work.",
       "implementations": [
         "claude-artifacts",
+        "claude-voice-mode",
         "claude-claude-code",
         "claude-connectors",
         "claude-cowork-mode",
@@ -66,7 +67,7 @@
         "claude-memory",
         "claude-chat"
       ],
-      "implementation_count": 11
+      "implementation_count": 12
     },
     {
       "id": "copilot",

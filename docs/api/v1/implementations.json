@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0",
-    "count": 72
+    "count": 73
   },
   "implementations": [
     {
@@ -637,13 +637,13 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
+          "available": true,
           "notes": "Limited"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
+          "available": true,
           "notes": "Limited"
         },
         {
@@ -752,7 +752,7 @@
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Via open-source CLI (npm-based, beta, requires access)"
         },
         {
@@ -815,13 +815,13 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Use only",
           "notes": "Can use public GPTs, cannot create"
         },
         {
           "plan": "Go",
-          "available": false,
+          "available": true,
           "limits": "Use only",
           "notes": "Can use public GPTs, cannot create"
         },
@@ -928,7 +928,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "~2/day",
           "notes": "Very limited; now uses ChatGPT Images 2.5"
         },
@@ -1030,13 +1030,13 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "5/month",
           "notes": "Lightweight only (o4-mini)"
         },
         {
           "plan": "Go",
-          "available": false,
+          "available": true,
           "limits": "5/month",
           "notes": "Lightweight only (o4-mini)"
         },
@@ -1143,7 +1143,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Saved memories only"
         },
@@ -1345,7 +1345,7 @@
         {
           "surface": "api",
           "name": "API",
-          "available": false,
+          "available": true,
           "notes": "Compliance API only"
         }
       ],
@@ -1508,7 +1508,7 @@
         },
         {
           "plan": "Business",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Consumer ToS applies"
         },
@@ -1810,6 +1810,120 @@
       "evidence_verified": "2026-09-28"
     },
     {
+      "id": "claude-voice-mode",
+      "name": "Voice Mode",
+      "product": "claude",
+      "provider": "anthropic",
+      "source_file": "data/platforms/claude.md",
+      "source_heading": "Voice Mode",
+      "capabilities": [
+        "hear-audio-and-speech",
+        "speak-back-in-real-time"
+      ],
+      "category": "voice",
+      "gating": "free",
+      "status": "beta",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Voice conversations count toward normal Free usage limits"
+        },
+        {
+          "plan": "Pro",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Uses the models available on the Pro plan"
+        },
+        {
+          "plan": "Max 5x",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Uses the models available on the Max plan"
+        },
+        {
+          "plan": "Max 20x",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Uses the models available on the Max plan"
+        },
+        {
+          "plan": "Team",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Available to Team members"
+        },
+        {
+          "plan": "Enterprise",
+          "available": true,
+          "limits": "Regular plan limits",
+          "notes": "Enterprise owners can ask Anthropic Support to disable voice mode"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Claude Desktop"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Claude Desktop"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Claude Desktop (beta)"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Claude Mobile; designed to work best from a phone"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Claude Mobile; designed to work best from a phone"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": "Use claude.ai on the web; not a Claude in Chrome feature"
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "claude.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": "Voice mode is not available in Claude Code"
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer Claude feature; no voice-mode API"
+        }
+      ],
+      "talking_point": "Claude Voice Mode provides complete spoken conversations: you speak to Claude and hear its responses. **It is a beta feature available on Free, Pro, Max, Team, and Enterprise** on Claude Mobile (iOS and Android), Claude Desktop (macOS, Windows, and Linux beta), and the web. Voice conversations count toward the regular usage limits of the selected plan. Voice mode is not available in Claude Code or as a dedicated API.",
+      "launched": "2026-07-23T12:00Z",
+      "verified": "2026-10-03",
+      "evidence_id": "implementation-claude-voice-mode",
+      "evidence_verified": "2026-10-03"
+    },
+    {
       "id": "claude-claude-code",
       "name": "Claude Code",
       "product": "claude",
@@ -1997,13 +2111,13 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
+          "available": true,
           "notes": "Full use; installing new connectors is in beta (desktop/web still primary for setup)"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
+          "available": true,
           "notes": "Full use; installing new connectors is in beta (desktop/web still primary for setup)"
         },
         {
@@ -2123,7 +2237,7 @@
         {
           "surface": "chrome",
           "name": "Chrome",
-          "available": false,
+          "available": true,
           "notes": "Side panel: Max/Team now, rolling out to Pro"
         },
         {
@@ -2165,7 +2279,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Available with usage restrictions"
         },
@@ -2437,13 +2551,13 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
+          "available": true,
           "notes": "View only"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
+          "available": true,
           "notes": "View only"
         },
         {
@@ -2960,7 +3074,7 @@
         },
         {
           "plan": "Copilot Chat (M365 commercial)",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Free for basic agents"
         }
@@ -3017,7 +3131,7 @@
         {
           "surface": "api",
           "name": "API",
-          "available": false,
+          "available": true,
           "notes": "Via Copilot Studio"
         }
       ],
@@ -3323,7 +3437,7 @@
         {
           "surface": "web",
           "name": "web",
-          "available": false,
+          "available": true,
           "notes": "Copilot web app for commercial users signed in with Entra ID"
         },
         {
@@ -3461,7 +3575,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Model routing not guaranteed; lower usage limits than subscriptions"
         },
@@ -4051,7 +4165,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "~5/month",
           "notes": "Gemini Flash model only"
         },
@@ -4239,7 +4353,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Varying",
           "notes": "Google's $0 plan card: \"Varying access to 3.1 Pro\""
         },
@@ -4338,7 +4452,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Very limited",
           "notes": "Basic suggestions only"
         },
@@ -4750,13 +4864,13 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Nano Banana 2 is the default in the Gemini app; Google's $0 plan card lists \"limited access to Nano Banana Pro\" via Google Flow only"
         },
         {
           "plan": "Google AI Plus",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "As Free (\"Everything in Free and…\"); full Nano Banana Pro in the Gemini app starts at Google AI Pro"
         },
@@ -5066,7 +5180,7 @@
         },
         {
           "plan": "Workspace add-on",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Veo 3.1 avatars in Google Vids"
         }
@@ -5455,7 +5569,7 @@
         },
         {
           "plan": "Premium",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "Basic access"
         },
@@ -5476,19 +5590,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -5551,7 +5665,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Very limited",
           "notes": "Few queries/day via X"
         },
@@ -5578,19 +5692,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -5697,19 +5811,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -5777,7 +5891,7 @@
         },
         {
           "plan": "Premium",
-          "available": false,
+          "available": true,
           "limits": "Unverified",
           "notes": "X Premium path; not confirmed by an official source"
         },
@@ -5816,19 +5930,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -5918,19 +6032,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -6094,7 +6208,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Limited",
           "notes": "~10 msgs / 2h, lighter models"
         },
@@ -6139,19 +6253,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no GUI desktop app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no GUI desktop app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no GUI desktop app)"
         },
         {
@@ -6244,19 +6358,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -6345,19 +6459,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -6446,19 +6560,19 @@
         {
           "surface": "windows",
           "name": "Windows",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "macos",
           "name": "macOS",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
           "surface": "linux",
           "name": "Linux",
-          "available": false,
+          "available": true,
           "notes": "Web only (no official app)"
         },
         {
@@ -6524,7 +6638,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "Basic",
           "notes": "Simple actions only"
         },
@@ -7254,19 +7368,19 @@
         {
           "surface": "ios",
           "name": "iOS",
-          "available": false,
+          "available": true,
           "notes": "View only"
         },
         {
           "surface": "android",
           "name": "Android",
-          "available": false,
+          "available": true,
           "notes": "View only"
         },
         {
           "surface": "chrome",
           "name": "Chrome",
-          "available": false,
+          "available": true,
           "notes": "View only"
         },
         {
@@ -7311,7 +7425,7 @@
       "plans": [
         {
           "plan": "Free",
-          "available": false,
+          "available": true,
           "limits": "5-10/day",
           "notes": "Limited daily Pro queries"
         },

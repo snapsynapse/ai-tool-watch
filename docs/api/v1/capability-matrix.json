@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-09T07:08:41.486Z",
+    "generated": "2026-10-11T22:22:41.909Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -41,9 +41,11 @@
         "best_gating": "mixed"
       },
       "claude": {
-        "available": false,
-        "implementations": [],
-        "best_gating": null
+        "available": true,
+        "implementations": [
+          "claude-voice-mode"
+        ],
+        "best_gating": "free"
       },
       "copilot": {
         "available": true,
@@ -168,9 +170,11 @@
         "best_gating": "mixed"
       },
       "claude": {
-        "available": false,
-        "implementations": [],
-        "best_gating": null
+        "available": true,
+        "implementations": [
+          "claude-voice-mode"
+        ],
+        "best_gating": "free"
       },
       "copilot": {
         "available": true,
