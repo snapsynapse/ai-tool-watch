@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "744190ade49ac993c583a5b8b1ebe90c615e85c9",
+  "source_revision": "6cf6c2d34ad9eac28a1807362d8305d7d2e86ac6",
   "reviewed_input_sha256": "da536a97cfa177abe89a927d300b0eaf926b2f5b7346222cade71ebbd88e180b",
-  "artifact_sha256": "284a970857d122424ea63f23baa654d0c0612540b40b275ce1e7f956576715b9",
+  "artifact_sha256": "a0d47076ce423ba3ef594d0194e27b0af13261f761f8f52ad0517a7525fc0f62",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "25a7d7577ebae1655bb0aae1121e237fcf39175b7af43eb88a5d2bdbe02a7aac"
+      "sha256": "4a5b8b8a20c55959597f8f279f4a852203b2d60ff1db0002acc886bf5916e7df"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "02809e46e23298d80a0b06ab068927b0f7a598d9dd5ffb6714260ff549b74ead"
+      "sha256": "bb577293b1c8e1a83d39993151c8e41a822837bfb0f98fd3a63a5c43f6a96489"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "400d2c50dfc3590627e859b94c725ca2eaf7f49192ef15923507a1bea0c84ddf"
+      "sha256": "56a71384d877aa4006fe32c152b57a21297f8d030858cac306ec59657858ec49"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "36dc66935134f4187862651505c4916b108272004adeb10d1599c34e90dc79cc"
+      "sha256": "2eaa276c171f900db0c6853ea4c473f600da61b93421f8f37bddf29cc27bdec4"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "5bd1497887930bd60df33fe6ff76e7dfbed0c9539166b7720b8adbfa465a426e"
+      "sha256": "eae246c364c69096a6f86e6af12d086d153794082d5eeb51013af60a185fa284"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "0c50a8e8c6e7b4bba571983d13f859fbc7171a1f31c13646921c52d7ef839c2d"
+      "sha256": "f4b3ab5e3ca93abed05e9cf81f57e51d6a1a5c694185b830976c8c69f2668ab8"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "79ea4b369b6f5fb42481c5be036b2cd50ca4695a8c6d8f6aab83191422bd96cc"
+      "sha256": "f8961ecb8c9f254d5d8108cfef6cedc51e2de011ce63d0593d191e57cb69bdd3"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "a51e8991778b7f1888785162e877b39be3d79ef5bf0880b3e54ffb54f5a225ee"
+      "sha256": "0070d399643f6777da22acdb52159a55952c0bb4db5f0886febc71839b5bc730"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "6fefa609f5c8d9a7c73554c0478cae21b55a933c20fce45c758c28cd9e8df997"
+      "sha256": "8f8caa1b465b2935b844434a4868ead5dd3fbb59104e2ec08ab14b9dd900d748"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "4540bb5f0b0a5f5d8a879fd7cb7c308362df9a27e1e4a481a0bfacd61338abf8"
+      "sha256": "e02f8192263949e7297d020fd0146bca2ff27cf10056ccdba034e3d4992b9b3e"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "41556ca06be45eb3fd6539a1865aa3bbeea69af86cb776e17d9c07bf19f580a2"
+      "sha256": "11edc10f0db1419148b6909456a0e558e3f3f0f2a6a7538db42959f9adb8e39e"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "8175e3da1a74840ead7d78d2b6fa60806cc5ce214a0eca3f2215e6ed6f38ff56"
+      "sha256": "87d8399a6caed9a4aed70f5d36d22a615e03d1f45237797de2849b084d657661"
     },
     {
       "path": "assets/export.js",
@@ -702,7 +702,7 @@
     },
     {
       "path": "index.xml",
-      "sha256": "d9bd708c6123f3513885b74933829ad8cf397da9128f1ca227b8a0cf63314571"
+      "sha256": "eb67af7e26cbeda10bd49ec9a912e9be1192cf0ff44384b73536772ba3107d17"
     },
     {
       "path": "llms.txt",
