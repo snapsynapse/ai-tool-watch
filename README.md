@@ -99,9 +99,15 @@ This site is designed to meet WCAG 2.1 AA standards:
 
 See also: [skill-a11y-audit](https://github.com/snapsynapse/skill-a11y-audit), a companion project that automates WCAG audits as a reusable AI skill.
 
+## Analytics and privacy
+
+Production pages use PostHog for cookieless site-use measurement in the shared Snap Synapse analytics project. Events are accepted only from `aitool.watch`; persistence is memory-only, person profiles require explicit identification, and session replay masks all page text and form inputs. The static site has no accounts or server-side user store. Direct JSON API reads and local MCP use are not measured by PostHog.
+
+See [SECURITY.md](SECURITY.md) for the exact client-side configuration and data boundary.
+
 ## How data stays current
 
-Twice a week, a four-model cascade queries Gemini, Perplexity, Grok, and Claude to cross-check all tracked features. Models are skipped when verifying their own vendor's products. A change is only flagged when at least three models agree. Nothing is auto-merged — confirmed changes are surfaced as GitHub issues for human review.
+The verification workflow checks the due inventory on schedule, but paid provider calls remain blocked unless scheduled verification is explicitly approved. Separately approved manual runs can query Gemini, Perplexity, Grok, and Claude within repository spend caps. Models are skipped when verifying their own vendor's products. A change is only flagged when enough independent evidence agrees. Nothing is auto-merged; confirmed changes are surfaced as GitHub issues for human review.
 
 Link integrity is checked every Saturday. Features carry a `Checked` date; anything older than 7 days is prioritized in the next run.
 

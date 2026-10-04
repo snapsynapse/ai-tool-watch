@@ -25,8 +25,8 @@ Decided by Sam Rogers on 2026-09-28:
 - Run one distribution campaign per week, each aimed at one specific person, through that date. Agents may draft outreach; every send requires the owner's explicit approval.
 - Review at year end. Continue if at least one campaign target cites or links AI Tool Watch, or if measured use appears.
 Known state at the decision:
-- Site and API usage are unmeasured. The site has no analytics, so use is unknown, not zero. GitHub repository traffic is not a substitute.
-- PostHog analytics will be added, per portfolio standard, so the year-end review can use measured site use.
+- At the decision date, site and API use were unmeasured, so use was unknown, not zero. GitHub repository traffic is not a substitute.
+- Production pages use cookieless PostHog analytics in the shared Snap Synapse project, filtered to the `aitool.watch` hostname. Direct JSON API and MCP use remain unmeasured.
 - A 2026-09-07 review found 49 of 72 implementation records with Verified dates older than 30 days. Under invariant 2 this must be visible on the page, not concealed.
 - The PAICE portfolio dependency was removed on 2026-09-22 (see Relationships). The `deploy-ftp.yml` workflow still deploys to PAICE.work; whether to retire it is undecided.
 ## Competitive position
@@ -41,4 +41,5 @@ AI Tool Watch is a Snap Synapse reference, not a PAICE standard. On 2026-09-22 t
 - GitHub Pages publishes through a GitHub Actions workflow that uploads the verified publication artifact, not branch-folder publishing from `main` `/docs`. Reason: the publication manifest verifies the exact artifact before deploy. Root files, including this document, are not served on the site but are public on GitHub because the repository is public.
 - Session handoffs stay local under the gitignored `handoffs/` directory, per the portfolio baseline. Durable decisions from them are migrated here.
 ## Changelog
+- 2026-10-03: Record cookieless PostHog measurement through the shared Snap Synapse project, with website-only scope and hostname isolation.
 - 2026-09-28: Create INTENT.md. Record the reference-not-news positioning, stated-age-per-claim currency commitment, audience priority, the maintain-through-2026-12-31 decision with weekly single-person campaigns and its year-end criterion, the current competitive position, and the removal of the PAICE dependency.

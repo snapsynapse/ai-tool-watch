@@ -29,6 +29,10 @@ const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilit
 const NOT_FOUND_OUTPUT_FILE = path.join(__dirname, '..', 'docs', '404.html');
 const COMPARE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'compare.html');
 const TIMELINE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'timeline.html');
+const PATTERN_TEMPLATE_FILE = path.join(__dirname, 'templates', 'pattern.html');
+const PATTERN_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'pattern.html');
+const DEFINITIONS_TEMPLATE_FILE = path.join(__dirname, 'templates', 'definitions.html');
+const DEFINITIONS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'definitions.html');
 const DATA_EXPORT_FILE = path.join(__dirname, '..', 'docs', 'assets', 'data.json');
 const REPO_URL = 'https://github.com/snapsynapse/ai-tool-watch';
 const REPO_ISSUES_URL = `${REPO_URL}/issues`;
@@ -36,6 +40,8 @@ const REPO_PULLS_URL = `${REPO_URL}/pulls`;
 const SITE_URL = 'https://aitool.watch/';
 const DASHBOARD_TITLE = 'AI Tool Watch';
 const FEATURE_VIEW_TITLE = 'Feature View by Plan';
+// Public, write-only ingest key for the shared Snap Synapse PostHog project.
+const POSTHOG_TOKEN = 'phc_yvhBRWBzBcyTHFwqbAbX6coujC4UHiaAFaXG8uYRYzic';
 
 function slugify(value) {
     return String(value)
@@ -1137,11 +1143,41 @@ function renderSharedFooter() {
             <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
                 <a href="${REPO_URL}" class="footer-social" title="Star on GitHub">⭐ Star</a>
                 <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
-                <a href="https://www.linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://www.linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
+                <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
         </footer>`;
+}
+
+function renderPostHog() {
+    return `<!-- PostHog product analytics: cookieless, shared Snap Synapse project -->
+<script>
+(function(){
+  // Local files, previews, and alternate hostnames never ingest.
+  if (location.hostname !== 'aitool.watch') return;
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('${POSTHOG_TOKEN}', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only',
+    persistence: 'memory',
+    capture_pageview: true,
+    capture_pageleave: true,
+    autocapture: true,
+    capture_exceptions: true,
+    session_recording: {
+      maskAllInputs: true,
+      maskTextSelector: '*'
+    }
+  });
+})();
+</script>`;
+}
+
+function generateStaticTemplate(templatePath) {
+    const template = fs.readFileSync(templatePath, 'utf-8');
+    return template.replace('</head>', `${renderPostHog()}
+</head>`);
 }
 
 function renderThemeScript() {
@@ -1296,6 +1332,7 @@ function generateHTML(platforms, ontologyData) {
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2012,6 +2049,7 @@ function generateCapabilitiesHTML(ontologyData) {
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2378,6 +2416,7 @@ function generateAboutHTML() {
         .about-content th, .about-content td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--card-border); }
         .about-content hr { border: none; border-top: 1px solid var(--card-border); margin: 2rem 0; }
     </style>
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2529,6 +2568,7 @@ function generateTimelineHTML(platforms, ontologyData) {
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2697,6 +2737,7 @@ function generateConstraintsHTML(ontologyData, platforms) {
 
     <link rel="stylesheet" href="assets/styles.css">
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2856,6 +2897,7 @@ function generateCapabilitiesRedirect() {
     <meta http-equiv="refresh" content="0;url=${SITE_URL}">
     <link rel="canonical" href="${SITE_URL}">
     <title>Redirecting...</title>
+    ${renderPostHog()}
 </head>
 <body>
     <p>This page has moved. <a href="${SITE_URL}">Continue to AI Tool Watch</a>.</p>
@@ -2894,6 +2936,7 @@ function generate404HTML() {
         .not-found-links a { padding: 0.5rem 1.25rem; border: 1px solid var(--card-border); border-radius: 6px; text-decoration: none; color: var(--accent); }
         .not-found-links a:hover { background: var(--card-bg); }
     </style>
+    ${renderPostHog()}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -3346,6 +3389,7 @@ function generateCompareHTML(ontologyData) {
     </script>
 
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     ${renderSiteNav('compare')}
@@ -3442,6 +3486,7 @@ function renderBridgeShell({ title, canonicalPath, depth, content, structuredDat
     <meta name="twitter:title" content="${escapeHTML(ogTitle || title)}">
     <meta name="twitter:description" content="${escapeHTML(description)}">${jsonLd}
     ${renderThemeInit()}
+    ${renderPostHog()}
 </head>
 <body>
     ${renderSiteNav('none', prefix)}
@@ -4947,6 +4992,8 @@ function main() {
     const timelineHTML = generateTimelineHTML(platforms, ontologyData);
     const redirectHTML = generateCapabilitiesRedirect();
     const aboutHTML = generateAboutHTML();
+    const patternHTML = generateStaticTemplate(PATTERN_TEMPLATE_FILE);
+    const definitionsHTML = generateStaticTemplate(DEFINITIONS_TEMPLATE_FILE);
 
     // Phase 3: Write HTML output
     fs.writeFileSync(HOMEPAGE_OUTPUT_FILE, homepageHTML);
@@ -4980,6 +5027,12 @@ function main() {
     fs.writeFileSync(aboutFile, aboutHTML);
     console.log(`✅ About page written to ${aboutFile}`);
     console.log(`   File size: ${(aboutHTML.length / 1024).toFixed(1)} KB`);
+
+    fs.writeFileSync(PATTERN_OUTPUT_FILE, patternHTML);
+    console.log(`✅ Pattern page written to ${PATTERN_OUTPUT_FILE}`);
+
+    fs.writeFileSync(DEFINITIONS_OUTPUT_FILE, definitionsHTML);
+    console.log(`✅ Definitions page written to ${DEFINITIONS_OUTPUT_FILE}`);
 
     // Phase 5C: Generate bridge pages (includes changes + coverage pages)
     const bridgePages = generateBridgePages(ontologyData, framingCache, discoveryConfig);

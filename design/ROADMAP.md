@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-09-07
+Last updated: 2026-10-03
 
 ## What's built
 
@@ -17,6 +17,19 @@ The original five-phase roadmap is complete. The project now has:
 - **Talking-point claim validation** — `scripts/validate-claims.js` cross-checks each feature's hand-written talking point against its own availability table, Gating, and Status fields, and flags time-bound wording ("temporary", "promotional") whose Verified date has aged past 60 days. Errors block `build.yml`'s `validate` job and canonical publication preparation after the successful scheduled trial on 2026-09-07; warnings remain advisory.
 
 ## Outstanding work
+
+### 2026 review-period priorities
+
+AI Tool Watch is maintained through 2026-12-31 under the review decision in `INTENT.md`. Work during this period is ordered around proving whether the reference earns continued upkeep:
+
+1. Keep the reviewed-publication artifact valid and verify hosted delivery against its exact bytes.
+2. Measure website use with cookieless PostHog analytics in the shared Snap Synapse project. Direct JSON API and MCP use require separate measurement.
+3. Keep evidence current through bounded manual verification. Scheduled paid provider calls remain blocked until explicitly approved.
+4. Package and assess registry distribution for the read-only MCP server before any separately authorized publication.
+5. Run one owner-approved, single-person distribution campaign per week and record resulting citations, links, or measurable use.
+6. Compare AI Tool Watch with direct structured competitors on coverage, sampled accuracy, freshness, sourcing, and machine readability.
+
+The product-expansion items below remain parked unless they directly support these review-period priorities.
 
 ### Tool Check (deferred)
 
