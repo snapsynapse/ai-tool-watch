@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.snapsynapse/ai-tool-watch",
+  "title": "AI Tool Watch",
+  "description": "Sourced AI product capability, access, plan, and evidence queries through 15 read-only tools.",
+  "version": "2.0.0",
+  "websiteUrl": "https://aitool.watch/",
+  "repository": {
+    "url": "https://github.com/snapsynapse/ai-tool-watch",
+    "source": "github",
+    "id": "1138645470"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "ai-tool-watch",
+      "version": "2.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "license": "MIT",
+      "publisher": "Snap Synapse LLC",
+      "publisher_url": "https://snapsynapse.com/",
+      "agents_json": "https://aitool.watch/agents.json"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "ai-tool-watch",
+  "version": "2.0.0",
+  "mcpName": "io.github.snapsynapse/ai-tool-watch",
+  "description": "Read-only MCP server for sourced AI product capabilities, access, and evidence.",
+  "homepage": "https://aitool.watch/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snapsynapse/ai-tool-watch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/snapsynapse/ai-tool-watch/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Sam Rogers",
+    "url": "https://sam-rogers.com/"
+  },
+  "keywords": [
+    "ai-tools",
+    "capabilities",
+    "evidence",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ai-tool-watch": "scripts/mcp-server.js"
+  },
+  "main": "scripts/mcp-server.js",
+  "files": [
+    "scripts/mcp-server.js",
+    "docs/api/v1/*.json",
+    "docs/agents.json",
+    "mcp.json",
+    "README.md",
+    "LICENSE",
+    "INTENT.md"
+  ]
+}

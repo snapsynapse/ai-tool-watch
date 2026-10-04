@@ -11,6 +11,7 @@ The original five-phase roadmap is complete. The project now has:
 - **Machine-readable API** — 10 JSON files at `docs/api/v1/` with stable IDs, cross-links, and freshness metadata
 - **SEO bridge pages** — 125 programmatic pages (`/can/`, `/compare/`, `/capability/`, `/best-for/`) with schema.org structured data
 - **MCP read layer** — 15 read-only tools via `scripts/mcp-server.js` (zero dependencies, stdio transport)
+- **MCP distribution candidate** — `package.json` and `server.json` define a 75 KB local `ai-tool-watch` package and `io.github.snapsynapse/ai-tool-watch` Registry entry. Schema validation and an isolated tarball install pass; npm and Registry publication remain separately gated.
 - **Verification cascade** — multi-model cross-check with human review gate. Scheduled runs are blocked (`blocked_unapproved`) until `FRESHNESS_SCHEDULED_VERIFICATION` is approved; manual runs still require `FRESHNESS_MAX_SPEND_USD` and `FRESHNESS_MAX_PROVIDER_CALL_USD`
 - **Reviewed publication** — `scripts/prepare-publication.js` synchronizes canonical evidence, validates source and generated output, checks human/API/MCP coherence, and writes a SHA-256 artifact manifest. GitHub Pages and FTP deployment both verify and consume that one uploaded artifact; hosted acceptance for PR #626 is recorded in `design/evidence/reviewed-publication-2026-09-07.json`.
 - **Structured data validation** — `scripts/validate-structured-data.js` parses every JSON-LD block in generated `docs/**/*.html`, blocking publication on invalid JSON or a missing required property for its `@type` (Organization, WebSite, WebPage/AboutPage, FAQPage/Question/Answer, ItemList/ListItem, DefinedTerm/DefinedTermSet, SoftwareApplication), plus ItemList position gaps/duplicates. It runs during reviewed-publication preparation after `scripts/build.js`.
@@ -22,10 +23,10 @@ The original five-phase roadmap is complete. The project now has:
 
 AI Tool Watch is maintained through 2026-12-31 under the review decision in `INTENT.md`. Work during this period is ordered around proving whether the reference earns continued upkeep:
 
-1. Keep the reviewed-publication artifact valid and verify hosted delivery against its exact bytes.
+1. Keep the reviewed-publication artifact valid and verify hosted delivery against its exact bytes. The latest receipt for commit `6cf6c2d` is `design/evidence/reviewed-publication-2026-10-03-posthog.json`.
 2. Measure website use with cookieless PostHog analytics in the shared Snap Synapse project. Direct JSON API and MCP use require separate measurement.
 3. Keep evidence current through bounded manual verification. Scheduled paid provider calls remain blocked until explicitly approved.
-4. Package and assess registry distribution for the read-only MCP server before any separately authorized publication.
+4. Package and assess registry distribution for the read-only MCP server before any separately authorized publication. The local package and Registry manifest now validate; publication and post-publication cold-install proof remain pending approval.
 5. Run one owner-approved, single-person distribution campaign per week and record resulting citations, links, or measurable use.
 6. Compare AI Tool Watch with direct structured competitors on coverage, sampled accuracy, freshness, sourcing, and machine readability.
 

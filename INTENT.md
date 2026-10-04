@@ -41,5 +41,6 @@ AI Tool Watch is a Snap Synapse reference, not a PAICE standard. On 2026-09-22 t
 - GitHub Pages publishes through a GitHub Actions workflow that uploads the verified publication artifact, not branch-folder publishing from `main` `/docs`. Reason: the publication manifest verifies the exact artifact before deploy. Root files, including this document, are not served on the site but are public on GitHub because the repository is public.
 - Session handoffs stay local under the gitignored `handoffs/` directory, per the portfolio baseline. Durable decisions from them are migrated here.
 ## Changelog
+- 2026-10-03: Record exact hosted acceptance for commit `6cf6c2d` and prepare a validated local npm/MCP Registry package candidate. Neither npm nor Registry publication is authorized or complete.
 - 2026-10-03: Record cookieless PostHog measurement through the shared Snap Synapse project, with website-only scope and hostname isolation.
 - 2026-09-28: Create INTENT.md. Record the reference-not-news positioning, stated-age-per-claim currency commitment, audience priority, the maintain-through-2026-12-31 decision with weekly single-person campaigns and its year-end criterion, the current competitive position, and the removal of the PAICE dependency.

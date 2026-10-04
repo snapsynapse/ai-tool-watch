@@ -5,6 +5,8 @@ The workflow validates committed source/evidence before preparation, then stages
 The preparation job records the source commit, source tree, reviewed-input SHA-256, and artifact SHA-256 in the workflow summary after any bot commit, so hosted evidence can tie a deployed artifact to its exact committed tree.
 Hosted acceptance for PR #626 is recorded in `design/evidence/reviewed-publication-2026-09-07.json`: both deployment jobs verified one 181-file artifact, and the canonical live manifest plus 12 critical routes matched it. This does not establish stale-content remediation, direct-email delivery, or independent missed-run monitoring. GitHub's native failure-email canary is already evidenced separately and is not repeated here.
 
+Hosted acceptance for commit `6cf6c2d` is recorded in `design/evidence/reviewed-publication-2026-10-03-posthog.json`. The workflow artifact and all selected live routes matched, establishing delivery of the analytics-enabled build. It does not establish PostHog event ingestion; that requires a separate receipt from the shared project.
+
 ## Existing signals and silence
 `evidence-alerts.yml` reports records older than its declared 30-day threshold through a deduplicated GitHub issue. It is a stale-evidence review signal, not a direct email or proof that a record changed. `verify-features.yml` retains review and failure evidence, writes its workflow summary, and explicitly reports direct notification and missed-run monitoring as `not_configured`.
 

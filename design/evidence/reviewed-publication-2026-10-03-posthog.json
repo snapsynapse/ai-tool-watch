@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-04T02:11:22.179Z",
+  "base_url": "https://aitool.watch/",
+  "source_revision": "6cf6c2d34ad9eac28a1807362d8305d7d2e86ac6",
+  "reviewed_input_sha256": "da536a97cfa177abe89a927d300b0eaf926b2f5b7346222cade71ebbd88e180b",
+  "artifact_sha256": "a0d47076ce423ba3ef594d0194e27b0af13261f761f8f52ad0517a7525fc0f62",
+  "artifact_file_count": 181,
+  "status": "matched",
+  "results": [
+    {
+      "path": "publication-manifest.json",
+      "url": "https://aitool.watch/publication-manifest.json",
+      "expected_sha256": "b14651c80227a83f36a7e70b2f5e5ba1f6a3acb0ea536737a21b38a07e6bd809",
+      "http_status": 200,
+      "sha256": "b14651c80227a83f36a7e70b2f5e5ba1f6a3acb0ea536737a21b38a07e6bd809",
+      "bytes": 27375,
+      "status": "matched"
+    },
+    {
+      "path": "index.html",
+      "url": "https://aitool.watch/",
+      "expected_sha256": "0c53f520054275f79b09e992b125499ed49732e0efe54a8b0bdf0ffe9f608545",
+      "http_status": 200,
+      "sha256": "0c53f520054275f79b09e992b125499ed49732e0efe54a8b0bdf0ffe9f608545",
+      "bytes": 330312,
+      "status": "matched"
+    },
+    {
+      "path": "implementations.html",
+      "url": "https://aitool.watch/implementations.html",
+      "expected_sha256": "df90905944779a3c9fe6efb80913829b6f7d065658226ec250831b8c9d7449f0",
+      "http_status": 200,
+      "sha256": "df90905944779a3c9fe6efb80913829b6f7d065658226ec250831b8c9d7449f0",
+      "bytes": 509374,
+      "status": "matched"
+    },
+    {
+      "path": "about.html",
+      "url": "https://aitool.watch/about.html",
+      "expected_sha256": "99de948a2b7cf17dc1f8b0c9b88be2ea6fae22d13bc3c41b4348f13563ff5190",
+      "http_status": 200,
+      "sha256": "99de948a2b7cf17dc1f8b0c9b88be2ea6fae22d13bc3c41b4348f13563ff5190",
+      "bytes": 28704,
+      "status": "matched"
+    },
+    {
+      "path": "api/v1/index.json",
+      "url": "https://aitool.watch/api/v1/index.json",
+      "expected_sha256": "f4b3ab5e3ca93abed05e9cf81f57e51d6a1a5c694185b830976c8c69f2668ab8",
+      "http_status": 200,
+      "sha256": "f4b3ab5e3ca93abed05e9cf81f57e51d6a1a5c694185b830976c8c69f2668ab8",
+      "bytes": 1576,
+      "status": "matched"
+    },
+    {
+      "path": "api/v1/implementations.json",
+      "url": "https://aitool.watch/api/v1/implementations.json",
+      "expected_sha256": "eae246c364c69096a6f86e6af12d086d153794082d5eeb51013af60a185fa284",
+      "http_status": 200,
+      "sha256": "eae246c364c69096a6f86e6af12d086d153794082d5eeb51013af60a185fa284",
+      "bytes": 220080,
+      "status": "matched"
+    },
+    {
+      "path": "api/v1/evidence.json",
+      "url": "https://aitool.watch/api/v1/evidence.json",
+      "expected_sha256": "2eaa276c171f900db0c6853ea4c473f600da61b93421f8f37bddf29cc27bdec4",
+      "http_status": 200,
+      "sha256": "2eaa276c171f900db0c6853ea4c473f600da61b93421f8f37bddf29cc27bdec4",
+      "bytes": 131974,
+      "status": "matched"
+    },
+    {
+      "path": "api/v1/plan-entitlements.json",
+      "url": "https://aitool.watch/api/v1/plan-entitlements.json",
+      "expected_sha256": "0070d399643f6777da22acdb52159a55952c0bb4db5f0886febc71839b5bc730",
+      "http_status": 200,
+      "sha256": "0070d399643f6777da22acdb52159a55952c0bb4db5f0886febc71839b5bc730",
+      "bytes": 32844,
+      "status": "matched"
+    },
+    {
+      "path": "agents.json",
+      "url": "https://aitool.watch/agents.json",
+      "expected_sha256": "4a5b8b8a20c55959597f8f279f4a852203b2d60ff1db0002acc886bf5916e7df",
+      "http_status": 200,
+      "sha256": "4a5b8b8a20c55959597f8f279f4a852203b2d60ff1db0002acc886bf5916e7df",
+      "bytes": 5308,
+      "status": "matched"
+    },
+    {
+      "path": "llms.txt",
+      "url": "https://aitool.watch/llms.txt",
+      "expected_sha256": "032a98e7528f426b6e69afc24d2a8df297f8217801557ae6e2f81dad106c2cf5",
+      "http_status": 200,
+      "sha256": "032a98e7528f426b6e69afc24d2a8df297f8217801557ae6e2f81dad106c2cf5",
+      "bytes": 4667,
+      "status": "matched"
+    },
+    {
+      "path": "sitemap.xml",
+      "url": "https://aitool.watch/sitemap.xml",
+      "expected_sha256": "f20ef4701dfbded2449b65007d753aedca35099ce67baee2bc3aec96d446f1ab",
+      "http_status": 200,
+      "sha256": "f20ef4701dfbded2449b65007d753aedca35099ce67baee2bc3aec96d446f1ab",
+      "bytes": 3610,
+      "status": "matched"
+    },
+    {
+      "path": "robots.txt",
+      "url": "https://aitool.watch/robots.txt",
+      "expected_sha256": "4aca104465f32f4209118d0eebabcf2035d02d3e6f4ca8b46720426ba9c69bdc",
+      "http_status": 200,
+      "sha256": "4aca104465f32f4209118d0eebabcf2035d02d3e6f4ca8b46720426ba9c69bdc",
+      "bytes": 538,
+      "status": "matched"
+    },
+    {
+      "path": ".well-known/security.txt",
+      "url": "https://aitool.watch/.well-known/security.txt",
+      "expected_sha256": "d8445ab09ae6869d0d6eec1f3e73540b1f7a4479c270903bdbbfd15860bc1c5c",
+      "http_status": 200,
+      "sha256": "d8445ab09ae6869d0d6eec1f3e73540b1f7a4479c270903bdbbfd15860bc1c5c",
+      "bytes": 282,
+      "status": "matched"
+    }
+  ]
+}
