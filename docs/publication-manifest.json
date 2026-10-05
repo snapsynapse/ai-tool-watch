@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "993ae1b386d1dccab00947cc3d3aefda0ebc67b5",
+  "source_revision": "ed4ee5075c1cd6ee5fb0a2f5e06bce1610c0c222",
   "reviewed_input_sha256": "da536a97cfa177abe89a927d300b0eaf926b2f5b7346222cade71ebbd88e180b",
-  "artifact_sha256": "28e3b28182dc741b5d6c9febefb891cbe561bbbe3ab59bbcf848b8ecb677e1d2",
+  "artifact_sha256": "1f975b19623247b2818517d0421662d39509dc2a02baa3aefa8aa932dd61b0b4",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,47 +22,47 @@
     },
     {
       "path": "agents.json",
-      "sha256": "83d51ef34a7c8f56391599be62a814a15fced70304790c61a2584a26f8c72e68"
+      "sha256": "773fa264baa5aba09a065953db235e923244eb4a88331c35f83d9f5b45890e88"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "263d8f32e3679bcb3ae3e887a91ceb3b85d0d33da8764a3adbb8cc56d82cb864"
+      "sha256": "89b4ad62c6c8348f459c0e3dc1007c5e38921339024eb4deb742819526d08f23"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "bcc1065987e47e5850ad9a2a51be1184dac9c5a1ceb18f047cf7087ef5a25bdb"
+      "sha256": "f086b4a85c38a82f58b8c6c9dca0ca4e375ec19651d60dff43202a189e95d0c3"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "718f8f55fd1b9dc0af0ceae77ddb421891aef14dbfb19e5ca4ba497f958dc929"
+      "sha256": "8711dcbd94662d1259760e335431b1b75a149705522cf53307a6ad4afdad3bf9"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "56874e91961adc2808359cd2aa8265847d6955d2e320938e032a4560074eacd1"
+      "sha256": "83b188011e1ba541fa2918eeae7490e313ae4cc9352c42237219cb5476fa26d4"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "854b0541c3c400959f613b3558a3e056a8dbf0eda31dea67220aa40b5075dff0"
+      "sha256": "1e76cc2cdf121363879108b8b41100aea8f9e8871d00039052824f07129c511d"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "615dc9b048dcd6aa0d5b3c4340c7fa13620fa5f9687ab44a7cfdb7681f747235"
+      "sha256": "75195f283fe7d2508e09896fe65bf733510bde1186c5b3c96102eb26b67759a1"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "a069e85e02df64fe2ce6859a2c4c1a9289a8091e9d51fdda8e5e8884d7c5615c"
+      "sha256": "93c0c519c1a29da539c0ff62a094a3dd81707345bd5a4b36f994031614a9525b"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "4a2eb8861549e1fba61d50370ac4e0ea7f4266c6a57490fe3fc186ee2af69a5f"
+      "sha256": "a05e3379613bbae5da0678220d1d4705e819ed30c8cf6a8b00c935a00905d160"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "707bacdb93ee6fe6089fb9a45b4053a4dfbe2e9bdf26f194bd7f05881de66f41"
+      "sha256": "bdd3cc0ccd0dd7c63c6e82acc694d81e29211063f24e5a4700b304dd30e423bf"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "cfc127d766a9ab0f894e8aea42089d9b50e33fa0e885558d92240ffd2dc21175"
+      "sha256": "4dafdad8303ceb079bdec33f09c520d6a86e3e03f9fc4d81df943cd192dc5858"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "0075805c3e5bdc993d04160ee1251231e5d80c3914e39ea384c4832f47443dcb"
+      "sha256": "3156d996065369858b4713a0130f6d2a745b9abeef2b2e85d7814ae8a93e3818"
     },
     {
       "path": "assets/export.js",
@@ -562,7 +562,7 @@
     },
     {
       "path": "changes/chatgpt/index.html",
-      "sha256": "1029cf9071ef9d694be442591da73cecc071d7542b2fb0c1cdce545991162a2d"
+      "sha256": "ee34b19e0fdbbd8792a7822227822b9300d95e8adb445b276ac0b0788b94e10b"
     },
     {
       "path": "changes/claude/index.html",
@@ -570,7 +570,7 @@
     },
     {
       "path": "changes/copilot/index.html",
-      "sha256": "f8f4ce88b81ce0f4cbd4c293c552994ad43888c3e95973fd790167e7f6ab84de"
+      "sha256": "05d731d3929277229230bbafcc51d6e022924222f2550038ccc2ea6d717adb00"
     },
     {
       "path": "changes/gemini/index.html",
@@ -582,7 +582,7 @@
     },
     {
       "path": "changes/index.html",
-      "sha256": "7c7fe16e0acbd0f00f5dd8afc4d08a3418f25da339b1a4826498485e7f88b3e0"
+      "sha256": "ff58091ee7b820c0126affa47733ba18f3b73b9079efb693ba39838dbe066722"
     },
     {
       "path": "changes/perplexity/index.html",
@@ -694,15 +694,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "df90905944779a3c9fe6efb80913829b6f7d065658226ec250831b8c9d7449f0"
+      "sha256": "5204f0ce6a5d670f048ebd27c10fd7b2539cdb8014227666c80526108b8361ce"
     },
     {
       "path": "index.html",
-      "sha256": "0c53f520054275f79b09e992b125499ed49732e0efe54a8b0bdf0ffe9f608545"
+      "sha256": "96a3112459eef768b56ac687fe4e10d31435d333fda3ef0969d2547cddd63959"
     },
     {
       "path": "index.xml",
-      "sha256": "1f2f50c67e44a4e4c6f945aa3230fe411f00e41426b74606393ddf2e37e96721"
+      "sha256": "7da3a05509d3870c8a70cd5810448cbdd86a83fb6a703d448e2a41e632038c04"
     },
     {
       "path": "llms.txt",
@@ -722,7 +722,7 @@
     },
     {
       "path": "sitemap.xml",
-      "sha256": "f20ef4701dfbded2449b65007d753aedca35099ce67baee2bc3aec96d446f1ab"
+      "sha256": "25f1cb9fa1101e462f2df977430c20f254c7469ed6e2c795ea9fce00175b0aaf"
     },
     {
       "path": "timeline.html",
