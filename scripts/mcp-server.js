@@ -130,10 +130,10 @@ const TOOLS = [
     },
     {
         name: 'list_products',
-        description: 'List all products. Optionally filter by kind: "hosted" (e.g. ChatGPT, Claude) or "runtime" (e.g. LM Studio, Ollama). Call this first to discover valid product IDs.',
+        description: 'List all active products (hosted consumer AI products such as ChatGPT and Claude). Self-hosted runtimes (Ollama, LM Studio, text-generation-webui) were archived on 2026-10-11 and are no longer listed; kind "runtime" returns none. Call this first to discover valid product IDs.',
         inputSchema: {
             type: 'object',
-            properties: { kind: { type: 'string', enum: ['hosted', 'runtime'], description: 'Filter by product kind' } },
+            properties: { kind: { type: 'string', enum: ['hosted', 'runtime'], description: 'Filter by product kind. "runtime" is kept for compatibility and returns none since the 2026-10-11 archive.' } },
             additionalProperties: false
         }
     },
@@ -175,7 +175,7 @@ const TOOLS = [
     },
     {
         name: 'search',
-        description: 'Search across capabilities, products, and implementations by keyword. Matches against names, IDs, search terms, related terms, and summaries. Returns top 10 matches ranked by relevance.',
+        description: 'Search across capabilities, products, and implementations by keyword. Matches against names, IDs, search terms, related terms, and summaries. Archived open-model records (frozen 2026-10-11) also match and are flagged archived. Returns top 10 matches ranked by relevance.',
         inputSchema: {
             type: 'object',
             properties: { query: { type: 'string', description: 'Search query (e.g. "voice", "code generation", "image")' } },
@@ -240,15 +240,15 @@ const TOOLS = [
     },
     {
         name: 'list_model_access',
-        description: 'List all open/self-hostable models with IDs, names, providers, deployment modes, and related capabilities. Covers models like Llama, Mistral, DeepSeek, and Qwen.',
+        description: 'List archived open/self-hostable model records (Llama, Mistral, DeepSeek, Qwen) with IDs, names, providers, deployment modes, and related capabilities. These records were frozen on 2026-10-11 when scope narrowed to hosted products; they keep their last-verified dates and are not refreshed.',
         inputSchema: { type: 'object', properties: {}, additionalProperties: false }
     },
     {
         name: 'get_model_access',
-        description: 'Get full details for an open model by ID, including deployment modes, common runtimes, constraints, and related capabilities. Call list_model_access first if you don\'t know the ID.',
+        description: 'Get full details for an archived open-model record by ID, including deployment modes, common runtimes, constraints, related capabilities, and archive date. Frozen on 2026-10-11 and not refreshed; cite its last_verified date. Call list_model_access first if you don\'t know the ID.',
         inputSchema: {
             type: 'object',
-            properties: { id: { type: 'string', description: 'Model access ID (e.g. "llama", "deepseek-v3-r1", "mistral-small-4"). Use list_model_access to discover valid IDs.' } },
+            properties: { id: { type: 'string', description: 'Archived model access ID (e.g. "llama-4", "deepseek-v3-r1", "mistral-small-4"). Use list_model_access to discover valid IDs.' } },
             required: ['id'],
             additionalProperties: false
         }
@@ -434,7 +434,7 @@ function handleSearch({ query }) {
         else if (model.summary && model.summary.toLowerCase().includes(q)) score = 30;
         if (score > 0) results.push({
             type: 'model_access', id: model.id, name: model.name,
-            provider: model.provider, summary: model.summary, score
+            provider: model.provider, summary: model.summary, archived: model.archived === true, score
         });
     }
 
@@ -574,7 +574,8 @@ function handleListModelAccess() {
     const models = (data['model-access']?.model_access || []).map(m => ({
         id: m.id, name: m.name, provider: m.provider, status: m.status,
         deployment_modes: m.deployment_modes, related_capabilities: m.related_capabilities,
-        summary: m.summary, last_verified: m.last_verified
+        summary: m.summary, last_verified: m.last_verified,
+        archived: m.archived === true, archived_on: m.archived_on || null
     }));
     return textResult({ meta: meta(), data: models });
 }

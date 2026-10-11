@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 id: qwen-coder
 name: Qwen-Coder
 provider: alibaba
-record_source: data/platforms/alibaba-open-models.md
+record_source: data/archive/platforms/alibaba-open-models.md
 source_heading: Qwen3-Coder-Next (Alibaba)
 last_verified: 2026-02-22
-status: active
+status: archived
 ---
 
 ## Summary

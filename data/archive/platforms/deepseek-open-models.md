@@ -1,10 +1,11 @@
 ---
+archived_on: 2026-10-11
 name: DeepSeek Open Models
 vendor: DeepSeek
 logo: https://deepseek.com/favicon.ico
 pricing_page: https://github.com/deepseek-ai
 last_verified: 2026-04-13
-build_visibility: hidden
+build_visibility: archive
 ---
 
 ## Pricing

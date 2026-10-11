@@ -4,7 +4,7 @@ Agent guidance for working in this repo. See `AGENTS.md` for the canonical build
 
 ## Purpose
 
-A plain-English, verified reference for AI tool capabilities, plan gates, and constraints — for humans and agents. Canonical URL: https://aitool.watch/. Covers 18 capabilities, ~87 implementations, and 9 open-model access records across ChatGPT, Claude, Copilot, Gemini, Perplexity, Grok, and self-hosted runtimes (Ollama, LM Studio, etc.).
+A plain-English, verified reference for AI tool capabilities, plan gates, and constraints — for humans and agents. Canonical URL: https://aitool.watch/. Covers 18 capabilities and ~73 implementations across hosted products at roughly 1% or greater market share: ChatGPT, Claude, Copilot, Gemini, Perplexity, and Grok. Self-hosted runtimes and the 11 open-model access records were frozen on 2026-10-11 (see `data/archive/` and `docs/archive.html`).
 
 ## Stack
 
@@ -15,7 +15,7 @@ A plain-English, verified reference for AI tool capabilities, plan gates, and co
 
 ## Directory layout
 
-- `data/` — canonical source of truth. `platforms/` (editorial source per product), `capabilities/`, `providers/`, `products/`, `model-access/`, `implementations/index.yml`, `evidence/index.json` (generated, do not hand-edit), `watchlist/`, `archive/`. Format documented in `data/_schema.md` (legacy/transitional) and `design/SCHEMA_PROPOSAL.md` (target ontology).
+- `data/` — canonical source of truth. `platforms/` (editorial source per product), `capabilities/`, `providers/`, `products/`, `implementations/index.yml`, `evidence/index.json` (generated, do not hand-edit), `watchlist/`, `archive/`. `archive/` holds frozen records: `archive/products/`, `archive/providers/`, `archive/model-access/`, and their source files in `archive/platforms/`. `build.js` `loadArchiveData()` renders them on `archive.html` and in `api/v1/archive.json` and `api/v1/model-access.json`; the active loaders, evidence sync, validators, and verification cascade do not read them. Don't edit archived records. Format documented in `data/_schema.md` (legacy/transitional) and `design/SCHEMA_PROPOSAL.md` (target ontology).
 - `docs/` — **generated output, not source.** Every `.html`, `docs/api/v1/*.json`, `docs/agents.json`, `docs/llms.txt`, `docs/sitemap.xml`, `docs/robots.txt`, `docs/index.xml` are produced by `scripts/build.js`. Direct edits are overwritten on next build.
 - `scripts/` — zero-dependency Node tooling: `prepare-publication.js` (the canonical finisher — chains everything below and writes `docs/publication-manifest.json`), `build.js` (site generator), `sync-evidence.js`, `validate-ontology.js`, `validate-claims.js` (talking-point prose vs structured fields), `validate-structured-data.js` (JSON-LD parse + shape check on generated `docs/`), `validate-publication.js` (human/API/MCP coherence), `verify-publication-manifest.js` (artifact vs manifest), `test-offline.js` (the test runner CI uses), `verify-features.js` (multi-model cascade), `check-links.js` / `check-links-browser.js`, `scan-secrets.js`, `mcp-server.js` (read-only MCP server over generated JSON, config in `mcp.json`), `generate-framing.js`, `build-skill-bundles.js`, `lib/` (shared modules: `cascade.js`, `link-engine.js`, `parser.js`, `consistency.js`, etc.).
 - `skills/` — canonical skill sources (`skills/<name>/src/`). Platform-local install folders (`.claude/skills/`, `.perplexity/skills/`) are never canonical and should not be committed. See `skills/README.md`.
@@ -61,9 +61,9 @@ If `tests/publication-manifest.test.js` fails with `artifact hash mismatch for a
 
 CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu schedule), `deploy-ftp.yml` (deploy to PAICE.work, same schedule), `verify-features.yml` (four-model cascade; Mon/Thu schedule ends as `blocked_unapproved` without paid calls unless `FRESHNESS_SCHEDULED_VERIFICATION=approved`; manual dispatch needs the `FRESHNESS_MAX_*` spend bounds), `check-links.yml` (weekly, Saturdays), `evidence-alerts.yml` (staleness alerts, Mon/Thu), `scan-secrets.yml` (push/PR to main).
 
-## Current state (as of 2026-09-28)
+## Current state (as of 2026-10-11)
 
-Review period: maintained through 2026-12-31 with one weekly single-person distribution campaign, then a continue-or-retire review. See `INTENT.md` "Status and review". Scheduled verification (Mon/Thu) now ends as `blocked_unapproved` unless paid runs are approved, so freshness depends on reviewed updates.
+Slimmed to maintenance on 2026-10-11: scope is hosted products at roughly 1% or greater share, and self-hosted runtimes plus open-model access are frozen in the archive. Maintenance bounds and workflow schedules are not yet set; Meta AI addition is pending. The year-end continue-or-retire review still stands. See `INTENT.md` "Status and review". Scheduled verification (Mon/Thu) now ends as `blocked_unapproved` unless paid runs are approved, so freshness depends on reviewed updates.
 
 Per `design/ROADMAP.md`: the original five-phase roadmap is complete (ontology-backed data model, dual-view site, JSON API, 125 SEO bridge pages, MCP read layer, verification cascade). Repo is active — commits land almost daily via automated dashboard rebuilds and Checked/Verified date updates, plus occasional feature work (e.g. cascade signal-suppression fix).
 

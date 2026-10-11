@@ -156,7 +156,7 @@
 <p>A single source of truth for answering questions like:</p>
 <ul><li>"Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)</li>
 <li>"Can I use Claude Cowork on Windows?" (Yes, macOS and Windows x64)</li>
-<li>"Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)</li>
+<li>"Can I use Gemini Deep Research on the free tier?" (Yes, about 5 reports a month)</li>
 <p></ul></p>
 <p>Built for AI facilitators, educators, developers, and AI agents that need accurate, current information about AI tool availability. Browse the site, query the JSON API, or connect an agent via MCP.</p>
 
@@ -170,11 +170,15 @@
 
 <h2>What's covered</h2>
 
-<p>18 capabilities, 87 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.</p>
+<p>18 capabilities and 73 implementations across hosted consumer AI products from providers with roughly 1% or greater public market share.</p>
 
 <p>All prices are in <strong>USD</strong>. Availability reflects the <strong>United States</strong> region by default.</p>
 
-<table><thead><tr><th>Product</th><th>Provider</th><th>Type</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Hosted</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Hosted</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Hosted</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Hosted</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Hosted</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Hosted</td></tr><tr><td><strong>Meta (Llama)</strong></td><td>Meta</td><td>Open model</td></tr><tr><td><strong>Mistral</strong></td><td>Mistral</td><td>Open model</td></tr><tr><td><strong>DeepSeek</strong></td><td>DeepSeek</td><td>Open model</td></tr><tr><td><strong>Alibaba (Qwen)</strong></td><td>Alibaba</td><td>Open model</td></tr><tr><td><strong>Ollama</strong></td><td>Ollama</td><td>Runtime</td></tr><tr><td><strong>LM Studio</strong></td><td>LM Studio</td><td>Runtime</td></tr></tbody></table>
+<table><thead><tr><th>Product</th><th>Provider</th><th>Type</th></tr></thead><tbody><tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>Hosted</td></tr><tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Hosted</td></tr><tr><td><strong>Copilot</strong></td><td>Microsoft</td><td>Hosted</td></tr><tr><td><strong>Gemini</strong></td><td>Google</td><td>Hosted</td></tr><tr><td><strong>Perplexity</strong></td><td>Perplexity AI</td><td>Hosted</td></tr><tr><td><strong>Grok</strong></td><td>xAI</td><td>Hosted</td></tr></tbody></table>
+<h3>Archive</h3>
+
+<p>On 2026-10-11 the project slimmed to maintenance and narrowed scope to hosted products. Self-hosted runtimes (Ollama, LM Studio, text-generation-webui) and the 11 open-model access records (Llama, Mistral, Codestral, DeepSeek, Qwen) were frozen. They keep their last-verified dates, are not refreshed, and live under <code>data/archive/</code>. The site shows them at https://aitool.watch/archive.html, and the API serves them from <code>api/v1/archive.json</code> and <code>api/v1/model-access.json</code>. See <a href="https://github.com/snapsynapse/ai-tool-watch/blob/main/INTENT.md">INTENT.md</a> for the decision.</p>
+
 <p>Scope criteria and watchlist: <a href="https://github.com/snapsynapse/ai-tool-watch/blob/main/design/SCOPE.md">design/SCOPE.md</a>, <a href="https://github.com/snapsynapse/ai-tool-watch/blob/main/design/WATCHLIST.md">design/WATCHLIST.md</a>.</p>
 
 <h2>Features</h2>
@@ -235,7 +239,7 @@
 <p>Found outdated info? Want to add a feature? See <a href="https://github.com/snapsynapse/ai-tool-watch/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
 
 <p>Quick version:</p>
-<p>1. Edit the relevant record in <code>data/platforms/</code>, <code>data/model-access/</code>, <code>data/products/</code>, or <code>data/implementations/</code></p>
+<p>1. Edit the relevant record in <code>data/platforms/</code>, <code>data/products/</code>, or <code>data/implementations/</code> (records under <code>data/archive/</code> are frozen; don't edit them)</p>
 <p>2. Include or preserve the evidence source link</p>
 <p>3. Run <code>node scripts/sync-evidence.js</code></p>
 <p>4. Run <code>node scripts/validate-ontology.js</code></p>
@@ -348,6 +352,7 @@
                 <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
+                <a href="https://aitool.watch/archive.html" class="footer-social" title="Self-hosted runtimes and open-model access, frozen 2026-10-11">Archive</a>
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
         </footer>

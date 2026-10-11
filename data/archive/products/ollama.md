@@ -1,8 +1,9 @@
 ---
+archived_on: 2026-10-11
 id: ollama
 name: Ollama
 provider: ollama
-record_source: data/platforms/ollama-runtime.md
+record_source: data/archive/platforms/ollama-runtime.md
 source_heading: Ollama
 pricing_page: https://ollama.com/
 default_surfaces:
@@ -10,7 +11,7 @@ default_surfaces:
   - terminal
   - api
 last_verified: 2026-03-07
-status: active
+status: archived
 product_kind: runtime
 ---
 

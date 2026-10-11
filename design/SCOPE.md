@@ -1,7 +1,7 @@
 # Scope Rules
 
 Status: Draft 1  
-Last updated: 2026-03-07
+Last updated: 2026-10-11
 
 This document defines what belongs in the AI Capability Reference and what does not.
 
@@ -17,9 +17,10 @@ This project is not trying to catalog the whole AI industry.
 
 The working target is:
 
-- consumer-facing AI products that have meaningful real-world usage or visibility
-- commercially available model families that ordinary users can select, sign up for, or run locally
-- local/open runtimes that materially shape what a person can actually use on their own hardware
+- hosted, consumer-facing AI products from providers with roughly 1% or greater public market share
+- the capabilities, plans, surfaces, and constraints of those products
+
+Self-hosted runtimes and open-model access are out of scope. They were frozen into an archive on 2026-10-11 (see "Archived Domains" below).
 
 That means the reference is intentionally closer to "what people can actually encounter and use" than "everything sold into enterprise AI."
 
@@ -38,9 +39,9 @@ This project is for:
 
 Use this heuristic across all record types:
 
-- include major consumer-facing AI products that appear to have meaningful usage share in the public market
+- include major hosted consumer-facing AI products that appear to have meaningful usage share in the public market
 - treat roughly `~1%` share as a practical signal, not a hard rule
-- include self-hosted/open model families and runtimes when they are realistically usable by the audience, even if no equivalent market-share number exists
+- the line applies to every product; there is no exemption for self-hosted or open systems that lack a market-share number (that exemption was removed on 2026-10-11)
 
 Do not require fake precision where the ecosystem does not provide it.
 
@@ -50,7 +51,6 @@ Public "market share" data is usually available at the product level, not the mo
 - app downloads
 - active users
 - regional usage
-- model downloads or local installs
 
 So the `~1%` threshold is a scope heuristic, not a canonical ontology field.
 
@@ -72,7 +72,6 @@ Strong reasons to include a product:
 
 - it clears the "meaningful public usage/visibility" bar for consumer AI tools
 - people can directly sign up for it, get access to it through a common consumer or prosumer plan, or encounter it in normal use
-- it is a runtime or access surface that materially affects local/self-hosted choices
 
 Examples:
 
@@ -80,8 +79,8 @@ Examples:
 - Claude
 - Gemini
 - Copilot
-- Ollama
-- LM Studio
+- Perplexity
+- Grok
 
 Do not create a product record when the thing is really:
 
@@ -120,14 +119,7 @@ Do not create a capability just because one vendor coined a term for it.
 
 ### Model Access
 
-Include a model-access record when:
-
-- the model family is meaningfully selectable, runnable, or comparable for the audience
-- it represents an important self-hosted/open alternative
-- its access materially changes deployment or capability choices
-- it is commercially available or practically accessible to an ordinary user, not only a business procurement artifact
-
-Do not include model-access records solely to catalog the entire open-model ecosystem.
+No new model-access records. The record type is retained only for the 11 archived records frozen on 2026-10-11. Model choice inside a hosted product is tracked as an implementation or a note on that product.
 
 ## Explicit Exclusion Rules
 
@@ -149,19 +141,18 @@ When that is the main reason for inclusion, note it clearly in the record or sup
 
 This is especially useful for:
 
-- rising tools that have not yet stabilized in public usage data
-- local/open runtimes used in workshops
-- model families that are pedagogically important even when the surrounding product market is noisy
+- rising hosted tools that have not yet stabilized in public usage data
 
-## Open / Self-Hosted Domain Rule
+It does not reopen the archived domains below.
 
-For open/self-hosted systems, do not treat all entries as one category.
+## Archived Domains
 
-Different types belong differently:
+On 2026-10-11 the project slimmed to maintenance and narrowed scope to hosted products at roughly 1% or greater share. These were frozen, not deleted:
 
-- model families -> `Model Access`
-- runtimes like Ollama or LM Studio -> `Product`
-- deployment facts like local API or terminal access -> `Deployment Mode` or `Surface`
+- self-hosted runtimes (Ollama, LM Studio, text-generation-webui) and their providers
+- all 11 open-model access records (Llama, Mistral, Codestral, Leanstral, DeepSeek, Qwen) and their providers and source files
+
+Archived records live under `data/archive/`, keep their last-verified dates, and are not refreshed or verified. The site renders them on `archive.html`; the API serves them from `api/v1/archive.json` and `api/v1/model-access.json`. Do not edit them or point active records at them. Reopening a domain is an owner decision recorded in `INTENT.md`.
 
 ## Decision Questions
 

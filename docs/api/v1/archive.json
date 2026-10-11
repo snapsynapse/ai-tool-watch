@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "generated": "2026-10-11T22:29:17.620Z",
+    "version": "1.0",
+    "frozen_on": "2026-10-11",
+    "reason": "Scope narrowed to hosted consumer AI products from providers with roughly 1% or greater public market share, and maintenance was slimmed. Self-hosted runtimes and open-model access records fall outside that line, so they were frozen rather than kept current.",
+    "page": "https://aitool.watch/archive.html",
+    "counts": {
+      "products": 3,
+      "model_access": 11,
+      "providers": 7
+    }
+  },
+  "products": [
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "provider": "lm-studio",
+      "product_kind": "runtime",
+      "status": "archived",
+      "pricing_page": "https://lmstudio.ai/",
+      "default_surfaces": [
+        "desktop",
+        "api"
+      ],
+      "summary": "LM Studio is a local desktop runtime product for discovering, loading, and chatting with open models through a GUI and optional local API.",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/lm-studio-runtime.md",
+      "source_heading": "LM Studio",
+      "page": "archive.html#runtime-lm-studio"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "provider": "ollama",
+      "product_kind": "runtime",
+      "status": "archived",
+      "pricing_page": "https://ollama.com/",
+      "default_surfaces": [
+        "desktop",
+        "terminal",
+        "api"
+      ],
+      "summary": "Ollama is a local runtime product for downloading, serving, and interacting with open models through a CLI, desktop app, and local API.",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/ollama-runtime.md",
+      "source_heading": "Ollama",
+      "page": "archive.html#runtime-ollama"
+    },
+    {
+      "id": "text-generation-webui",
+      "name": "text-generation-webui",
+      "provider": "oobabooga",
+      "product_kind": "runtime",
+      "status": "archived",
+      "pricing_page": "https://github.com/oobabooga/text-generation-webui",
+      "default_surfaces": [
+        "web",
+        "terminal",
+        "api"
+      ],
+      "summary": "text-generation-webui is a flexible self-hosted runtime product for serving and experimenting with local models through a browser UI and advanced configuration options.",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-07",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/oobabooga-runtime.md",
+      "source_heading": "text-generation-webui",
+      "page": "archive.html#runtime-text-generation-webui"
+    }
+  ],
+  "model_access": [
+    {
+      "id": "codestral",
+      "name": "Codestral",
+      "provider": "mistral",
+      "status": "archived",
+      "summary": "Mistral's code-specialized open model line for self-hosted coding workflows.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-api",
+        "terminal"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "local API wrappers"
+      ],
+      "constraints": [
+        "consumer GPU use is realistic only with enough VRAM or quantization",
+        "primarily valuable for coding rather than general-purpose multimodal use",
+        "not a standalone chat product by itself"
+      ],
+      "related_capabilities": [
+        "write-and-edit-code"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-20",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
+      "source_heading": "Codestral (Mistral)",
+      "page": "archive.html#mistral-open-models-codestral-mistral"
+    },
+    {
+      "id": "deepseek-v3-r1",
+      "name": "DeepSeek V3 / R1",
+      "provider": "deepseek",
+      "status": "archived",
+      "summary": "DeepSeek's open model family spanning large general-purpose and reasoning-oriented self-hosted models.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "local inference stacks"
+      ],
+      "constraints": [
+        "the full flagship models need serious hardware",
+        "local use usually depends on distilled or quantized variants",
+        "organizational policy may restrict use based on provider origin"
+      ],
+      "related_capabilities": [
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-21",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/deepseek-open-models.md",
+      "source_heading": "DeepSeek-V3.2 (unified V3 + R1)",
+      "page": "archive.html#deepseek-open-models-deepseek-v3-2-unified-v3-r1"
+    },
+    {
+      "id": "leanstral",
+      "name": "Leanstral",
+      "provider": "mistral",
+      "status": "archived",
+      "summary": "Mistral's open-source code agent specialized for Lean 4 proof engineering. Apache 2.0 weights with MCP tool-use training. Also available via the Mistral Labs API endpoint `labs-leanstral-2603` and agent mode in Mistral Vibe.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-api",
+        "cloud-api (Mistral Labs endpoint)",
+        "web (Mistral Vibe)"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "local API wrappers",
+        "Mistral Vibe (agent mode)",
+        "Mistral Labs API"
+      ],
+      "constraints": [
+        "specialized for Lean 4 formal verification, not general-purpose coding",
+        "Labs API endpoint may be time-limited",
+        "consumer GPU use depends on model size and quantization"
+      ],
+      "related_capabilities": [
+        "write-and-edit-code",
+        "take-actions-and-run-tools"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
+      "source_heading": "Leanstral (Mistral)",
+      "page": "archive.html#mistral-open-models-leanstral-mistral"
+    },
+    {
+      "id": "llama-3-3",
+      "name": "Llama 3.3",
+      "provider": "meta",
+      "status": "archived",
+      "summary": "Meta's open-weight Llama 3.3 family for self-hosted general-purpose use.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio"
+      ],
+      "constraints": [
+        "higher-end variants still need significant VRAM",
+        "practical local use often depends on quantized builds",
+        "not a packaged end-user product by itself"
+      ],
+      "related_capabilities": [
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-20",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/meta-open-models.md",
+      "source_heading": "Llama 3.3 (Meta)",
+      "page": "archive.html#meta-open-models-llama-3-3-meta"
+    },
+    {
+      "id": "llama-4",
+      "name": "Llama 4",
+      "provider": "meta",
+      "status": "archived",
+      "summary": "Meta's Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "LM Studio",
+        "vLLM",
+        "Ollama"
+      ],
+      "constraints": [
+        "model size and context claims can exceed ordinary consumer hardware",
+        "license terms differ from permissive Apache-style models",
+        "multimodal support depends on runtime compatibility"
+      ],
+      "related_capabilities": [
+        "see-images-and-screens",
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-07",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/meta-open-models.md",
+      "source_heading": "Llama 4 (Meta)",
+      "page": "archive.html#meta-open-models-llama-4-meta"
+    },
+    {
+      "id": "mistral-large-nemo",
+      "name": "Mistral Large / Nemo",
+      "provider": "mistral",
+      "status": "archived",
+      "summary": "Mistral's open model family ranges from consumer-friendly Nemo to much larger self-hosted models approaching frontier quality.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio"
+      ],
+      "constraints": [
+        "runtime practicality depends heavily on which model size is chosen",
+        "larger variants need serious GPU capacity",
+        "the model family should not be treated as a single hardware profile"
+      ],
+      "related_capabilities": [
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-21",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
+      "source_heading": "Mistral Large / Mistral Nemo",
+      "page": "archive.html#mistral-open-models-mistral-large-mistral-nemo"
+    },
+    {
+      "id": "mistral-small-3",
+      "name": "Mistral Small 3",
+      "provider": "mistral",
+      "status": "archived",
+      "summary": "Mistral Small 3 is a locally runnable open model line focused on strong general performance at more achievable hardware sizes.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio",
+        "web UIs over local runtimes"
+      ],
+      "constraints": [
+        "consumer use is realistic but still depends on memory and quantization choices",
+        "capabilities change across minor versions",
+        "performance claims depend on runtime and hardware"
+      ],
+      "related_capabilities": [
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-06",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
+      "source_heading": "Mistral Small 3",
+      "page": "archive.html#mistral-open-models-mistral-small-3"
+    },
+    {
+      "id": "mistral-small-4",
+      "name": "Mistral Small 4",
+      "provider": "mistral",
+      "status": "archived",
+      "summary": "Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).",
+      "deployment_modes": [
+        "self-hosted",
+        "cloud-api (Mistral API / AI Studio)",
+        "cloud-api (NVIDIA NIM)"
+      ],
+      "common_runtimes": [
+        "vLLM",
+        "SGLang",
+        "llama.cpp",
+        "NVIDIA NIM",
+        "Mistral API"
+      ],
+      "constraints": [
+        "datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200",
+        "NOT practical for consumer GPUs despite being open-weight",
+        "119B total parameters but only ~6–6.5B active per token (MoE); the announcement says 6B, the docs page and model card say 6.5B",
+        "FP8/NVFP4 support recommended for optimal performance"
+      ],
+      "related_capabilities": [
+        "write-and-explain",
+        "see-images-and-screens",
+        "write-and-edit-code",
+        "take-actions-and-run-tools"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-23",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
+      "source_heading": "Mistral Small 4",
+      "page": "archive.html#mistral-open-models-mistral-small-4"
+    },
+    {
+      "id": "qwen-2-5",
+      "name": "Qwen 2.5",
+      "provider": "alibaba",
+      "status": "archived",
+      "summary": "Alibaba's Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio"
+      ],
+      "constraints": [
+        "capability and hardware requirements vary substantially by size",
+        "organizational policy may restrict use based on provider origin",
+        "the family includes both practical local sizes and much larger variants"
+      ],
+      "related_capabilities": [
+        "write-and-explain",
+        "write-and-edit-code"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-22",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
+      "source_heading": "Qwen 2.5 (Alibaba)",
+      "page": "archive.html#alibaba-open-models-qwen-2-5-alibaba"
+    },
+    {
+      "id": "qwen-3",
+      "name": "Qwen 3",
+      "provider": "alibaba",
+      "status": "archived",
+      "summary": "Alibaba's Qwen 3 family extends local/open model access with a wide size range and hybrid thinking behaviors.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-on-device",
+        "local-api"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio",
+        "local web UIs"
+      ],
+      "constraints": [
+        "model sizes range from practical local options to very large MoE deployments",
+        "reasoning-style behaviors may depend on runtime or prompt controls",
+        "the family is still model access, not a standalone product experience"
+      ],
+      "related_capabilities": [
+        "write-and-explain"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-06",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
+      "source_heading": "Qwen 3 (Alibaba)",
+      "page": "archive.html#alibaba-open-models-qwen-3-alibaba"
+    },
+    {
+      "id": "qwen-coder",
+      "name": "Qwen-Coder",
+      "provider": "alibaba",
+      "status": "archived",
+      "summary": "Qwen-Coder is Alibaba's code-focused open model line for self-hosted coding tasks.",
+      "deployment_modes": [
+        "self-hosted",
+        "local-api",
+        "terminal"
+      ],
+      "common_runtimes": [
+        "Ollama",
+        "LM Studio"
+      ],
+      "constraints": [
+        "tuned for coding rather than broad multimodal use",
+        "local performance depends on model size and quantization",
+        "not a packaged end-user coding product by itself"
+      ],
+      "related_capabilities": [
+        "write-and-edit-code"
+      ],
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-31",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
+      "source_heading": "Qwen3-Coder-Next (Alibaba)",
+      "page": "archive.html#alibaba-open-models-qwen3-coder-next-alibaba"
+    }
+  ],
+  "providers": [
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "website": "https://qwenlm.github.io/",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "website": "https://github.com/deepseek-ai",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "website": "https://lmstudio.ai",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "website": "https://ai.meta.com/",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral",
+      "website": "https://mistral.ai/",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "website": "https://ollama.com",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    },
+    {
+      "id": "oobabooga",
+      "name": "oobabooga",
+      "website": "https://github.com/oobabooga/text-generation-webui",
+      "archived": true,
+      "archived_on": "2026-10-11"
+    }
+  ]
+}

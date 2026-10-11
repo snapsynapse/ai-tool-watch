@@ -1,18 +1,10 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:22:41.909Z",
+    "generated": "2026-10-11T22:29:17.620Z",
     "version": "1.0",
-    "count": 13
+    "count": 6
   },
   "providers": [
-    {
-      "id": "alibaba",
-      "name": "Alibaba",
-      "logo": "https://www.alibaba.com/favicon.ico",
-      "website": "https://qwenlm.github.io/",
-      "status_page": null,
-      "products": []
-    },
     {
       "id": "anthropic",
       "name": "Anthropic",
@@ -22,14 +14,6 @@
       "products": [
         "claude"
       ]
-    },
-    {
-      "id": "deepseek",
-      "name": "DeepSeek",
-      "logo": "https://deepseek.com/favicon.ico",
-      "website": "https://github.com/deepseek-ai",
-      "status_page": null,
-      "products": []
     },
     {
       "id": "google",
@@ -42,24 +26,6 @@
       ]
     },
     {
-      "id": "lm-studio",
-      "name": "LM Studio",
-      "logo": "https://lmstudio.ai/favicon.ico",
-      "website": "https://lmstudio.ai",
-      "status_page": null,
-      "products": [
-        "lm-studio"
-      ]
-    },
-    {
-      "id": "meta",
-      "name": "Meta",
-      "logo": "https://cdn.simpleicons.org/meta",
-      "website": "https://ai.meta.com/",
-      "status_page": null,
-      "products": []
-    },
-    {
       "id": "microsoft",
       "name": "Microsoft",
       "logo": "https://copilot.microsoft.com/favicon.ico",
@@ -67,34 +33,6 @@
       "status_page": "https://status.office.com",
       "products": [
         "copilot"
-      ]
-    },
-    {
-      "id": "mistral",
-      "name": "Mistral",
-      "logo": "https://cdn.simpleicons.org/mistralai",
-      "website": "https://mistral.ai/",
-      "status_page": null,
-      "products": []
-    },
-    {
-      "id": "ollama",
-      "name": "Ollama",
-      "logo": "https://cdn.simpleicons.org/ollama",
-      "website": "https://ollama.com",
-      "status_page": null,
-      "products": [
-        "ollama"
-      ]
-    },
-    {
-      "id": "oobabooga",
-      "name": "oobabooga",
-      "logo": "https://github.com/oobabooga.png",
-      "website": "https://github.com/oobabooga/text-generation-webui",
-      "status_page": null,
-      "products": [
-        "text-generation-webui"
       ]
     },
     {

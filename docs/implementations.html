@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tool Watch - Feature View by Plan</title>
+    <script>
+        // Permalinks to records frozen on 2026-10-11 now live on the archive page.
+        (function() {
+            var archived = ["runtime-lm-studio","runtime-ollama","runtime-text-generation-webui","mistral-open-models-codestral-mistral","deepseek-open-models-deepseek-v3-2-unified-v3-r1","mistral-open-models-leanstral-mistral","meta-open-models-llama-3-3-meta","meta-open-models-llama-4-meta","mistral-open-models-mistral-large-mistral-nemo","mistral-open-models-mistral-small-3","mistral-open-models-mistral-small-4","alibaba-open-models-qwen-2-5-alibaba","alibaba-open-models-qwen-3-alibaba","alibaba-open-models-qwen3-coder-next-alibaba"];
+            var hash = location.hash.slice(1);
+            if (hash && archived.indexOf(hash) !== -1) location.replace('archive.html#' + hash);
+        })();
+    </script>
     <meta name="description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="https://aitool.watch/implementations.html">
@@ -112,7 +120,7 @@
     </header>
     <div class="container" id="main-content">
         <div class="page-intro">
-            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>87</strong> of <strong>87</strong></span>
+            <span class="feature-count" id="featureCount" aria-live="polite" aria-atomic="true">Showing <strong>73</strong> of <strong>73</strong></span>
             <span class="last-updated">Last built: 2026-10-11</span>
         </div>
 
@@ -129,12 +137,6 @@
                         <option value="anthropic">Anthropic</option>
                         <option value="perplexity-ai">Perplexity AI</option>
                         <option value="xai">xAI</option>
-                        <option value="meta">Meta</option>
-                        <option value="mistral">Mistral</option>
-                        <option value="deepseek">DeepSeek</option>
-                        <option value="alibaba">Alibaba</option>
-                        <option value="ollama">Ollama</option>
-                        <option value="lm-studio">LM Studio</option>
                     </select>
                 </div>
                 <div class="filter-group">
@@ -3065,411 +3067,6 @@
                 </div>
             </div>
         </section>
-        <section class="platform-section" data-platform="alibaba-ontology" data-vendor="alibaba">
-            <div class="platform-header">
-                <h2><img src="https://www.alibaba.com/favicon.ico" alt="Alibaba" class="platform-logo">Alibaba</h2>
-                <div class="platform-meta">
-                    <span>3 model access records · Confirmed against vendor source: 2026-04-06</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Self-hosted</strong>: $0 plus your hardware</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="alibaba-open-models-qwen-2-5-alibaba" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_android_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://qwenlm.github.io/blog/qwen2.5/" target="_blank" class="feature-link">Qwen 2.5</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('alibaba-open-models-qwen-2-5-alibaba')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 0.5B to 72B sizes</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Qwen 2.5 comes in sizes from 0.5B to 72B. <strong>The 7B model runs great on consumer hardware</strong> and punches above its weight. Excellent for coding tasks.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">capability and hardware requirements vary substantially by size</span></span><span class="notes-text" hidden>capability and hardware requirements vary substantially by size</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-2-5-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-22</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="alibaba-open-models-qwen-3-alibaba" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_android_web_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://qwenlm.github.io/blog/qwen3/" target="_blank" class="feature-link">Qwen 3</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('alibaba-open-models-qwen-3-alibaba')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 0.6B to 235B MoE</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Qwen 3 is Alibaba's latest open model family with <strong>hybrid thinking modes</strong>-switch between reasoning and fast response with `/think`. Sizes from 0.6B to 235B MoE, supports 119 languages. Fully open under Apache 2.0.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">model sizes range from practical local options to very large MoE deployments</span></span><span class="notes-text" hidden>model sizes range from practical local options to very large MoE deployments</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">local web UIs</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen-3-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-06</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="alibaba-open-models-qwen3-coder-next-alibaba" data-category="coding" data-prices="0" data-surfaces="windows_macos_linux_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://huggingface.co/Qwen/Qwen3-Coder-Next" target="_blank" class="feature-link">Qwen-Coder</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('alibaba-open-models-qwen3-coder-next-alibaba')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • MoE: 80B total, 3B active — runs on consumer GPUs</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Qwen3-Coder-Next is Alibaba's latest coding model — <strong>MoE architecture with 80B total params but only 3B active</strong>, so it runs on consumer hardware (RTX 5090, 64GB Mac). <strong>256K context</strong>, Apache 2.0 licensed, designed for agentic coding workflows. SWE-Bench Pro score of 44.3%.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">tuned for coding rather than broad multimodal use</span></span><span class="notes-text" hidden>tuned for coding rather than broad multimodal use</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('alibaba-open-models-qwen3-coder-next-alibaba')"><span class="date-emoji">🚀</span><span class="date-value">2026-02-03</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-31</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform-section" data-platform="deepseek-ontology" data-vendor="deepseek">
-            <div class="platform-header">
-                <h2><img src="https://deepseek.com/favicon.ico" alt="DeepSeek" class="platform-logo">DeepSeek</h2>
-                <div class="platform-meta">
-                    <span>1 model access record · Confirmed against vendor source: 2026-03-21</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Self-hosted</strong>: $0 plus your hardware</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="deepseek-open-models-deepseek-v3-2-unified-v3-r1" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://github.com/deepseek-ai/DeepSeek-V3" target="_blank" class="feature-link">DeepSeek V3 / R1</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('deepseek-open-models-deepseek-v3-2-unified-v3-r1')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • V3.2: unified chat + reasoning model (replaces V3 and R1)</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">DeepSeek-V3.2 is a unified open model that combines chat and reasoning in one engine, <strong>replacing the separate V3 and R1 models</strong>. Features DeepSeek Sparse Attention for long-context, thinking-with-tools capability, and performance rivaling GPT-5. <strong>Distilled versions (1.5B-70B) run locally</strong>; full model needs enterprise hardware.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">the full flagship models need serious hardware</span></span><span class="notes-text" hidden>the full flagship models need serious hardware</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local inference stacks</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('deepseek-open-models-deepseek-v3-2-unified-v3-r1')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform-section" data-platform="lm-studio-ontology" data-vendor="lm-studio">
-            <div class="platform-header">
-                <h2><img src="https://lmstudio.ai/favicon.ico" alt="LM Studio" class="platform-logo">LM Studio Runtime</h2>
-                <div class="platform-meta">
-                    <span>1 runtime product · Confirmed against vendor source: 2026-03-24</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="runtime-lm-studio" data-category="" data-prices="0" data-surfaces="desktop_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://lmstudio.ai/" target="_blank" class="feature-link">LM Studio</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('runtime-lm-studio')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Runtime</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • Desktop + headless server runtime with OpenAI-compatible API</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">LM Studio is a local desktop runtime product for discovering, loading, and chatting with open models through a GUI and optional local API.</div>
-                        <div class="capability-tags"><span class="provider-toggle active">Desktop</span><span class="provider-toggle active">Api</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon no" title="Web">Web</span><span class="plat-icon yes" title="Desktop">Desktop</span><span class="plat-icon no" title="Mobile">Mobile</span><span class="plat-icon no" title="Terminal">Terminal</span><span class="plat-icon yes" title="Api">Api</span><span class="plat-icon no" title="Browser">Browser</span><span class="plat-icon no" title="Excel">Excel</span><span class="plat-icon no" title="Word">Word</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('runtime-lm-studio')"><span class="date-emoji">🚀</span><span class="date-value">2023-05</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform-section" data-platform="meta-ontology" data-vendor="meta">
-            <div class="platform-header">
-                <h2><img src="https://cdn.simpleicons.org/meta" alt="Meta" class="platform-logo">Meta</h2>
-                <div class="platform-meta">
-                    <span>2 model access records · Confirmed against vendor source: 2026-04-07</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Self-hosted</strong>: $0 plus your hardware</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="meta-open-models-llama-3-3-meta" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_android_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://ai.meta.com/llama/" target="_blank" class="feature-link">Llama 3.3</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('meta-open-models-llama-3-3-meta')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 70B parameters, 128K context</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Llama 3.3 is Meta's open-weight model. <strong>Completely free to run locally</strong>-you just need the hardware. The 70B model needs ~40GB VRAM for full precision, but quantized versions run on consumer GPUs.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">higher-end variants still need significant VRAM</span></span><span class="notes-text" hidden>higher-end variants still need significant VRAM</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon partial" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('meta-open-models-llama-3-3-meta')"><span class="date-emoji">🚀</span><span class="date-value">2024-12-06</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-20</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="meta-open-models-llama-4-meta" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_web_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://www.llama.com/models/llama-4/" target="_blank" class="feature-link">Llama 4</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('meta-open-models-llama-4-meta')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • Scout 109B, Maverick 400B MoE</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Llama 4 is Meta's first natively multimodal model-text and vision built-in. <strong>Scout has a 10 million token context window</strong> and fits on a single H100. Maverick rivals GPT-4o on benchmarks. Free for commercial use under 700M monthly users.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">model size and context claims can exceed ordinary consumer hardware</span></span><span class="notes-text" hidden>model size and context claims can exceed ordinary consumer hardware</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">Ollama</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('meta-open-models-llama-4-meta')"><span class="date-emoji">🚀</span><span class="date-value">2025-04-05</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform-section" data-platform="mistral-ontology" data-vendor="mistral">
-            <div class="platform-header">
-                <h2><img src="https://cdn.simpleicons.org/mistralai" alt="Mistral" class="platform-logo">Mistral</h2>
-                <div class="platform-meta">
-                    <span>5 model access records · Confirmed against vendor source: 2026-04-06</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Self-hosted</strong>: $0 plus your hardware</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="mistral-open-models-codestral-mistral" data-category="coding" data-prices="0" data-surfaces="windows_macos_linux_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://mistral.ai/news/codestral/" target="_blank" class="feature-link">Codestral</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('mistral-open-models-codestral-mistral')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 22B code-specialized</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Codestral is Mistral's code-specialized model at 22B parameters. <strong>Runs on a good consumer GPU</strong> (16GB+ VRAM recommended) and excels at code completion and generation.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">consumer GPU use is realistic only with enough VRAM or quantization</span></span><span class="notes-text" hidden>consumer GPU use is realistic only with enough VRAM or quantization</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('mistral-open-models-codestral-mistral')"><span class="date-emoji">🚀</span><span class="date-value">2024-05-29</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-20</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="mistral-open-models-leanstral-mistral" data-category="coding" data-prices="0" data-surfaces="windows_macos_linux_web_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://mistral.ai/news/leanstral" target="_blank" class="feature-link">Leanstral</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('mistral-open-models-leanstral-mistral')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • Apache 2.0 weights</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Mistral Labs API<span class="plan-tooltip">Time-limited • Endpoint: labs-leanstral-2603</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Mistral Vibe<span class="plan-tooltip">Agent mode • Web-based access</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Leanstral is Mistral's open-source code agent built for Lean 4 formal verification. <strong>Apache 2.0 weights</strong> with MCP tool-use training. Available self-hosted, via the Labs API, or in Mistral Vibe's agent mode.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">specialized for Lean 4 formal verification, not general-purpose coding</span></span><span class="notes-text" hidden>specialized for Lean 4 formal verification, not general-purpose coding</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span><span class="provider-toggle active">Mistral Vibe (agent mode)</span><span class="provider-toggle active">Mistral Labs API</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('mistral-open-models-leanstral-mistral')"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="mistral-open-models-mistral-large-mistral-nemo" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://mistral.ai/technology/" target="_blank" class="feature-link">Mistral Large / Nemo</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('mistral-open-models-mistral-large-mistral-nemo')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • Nemo: 12B, Large: 123B</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral offers several open models. <strong>Mistral Nemo (12B) runs on consumer hardware</strong>—great for local use. Mistral Large (123B) needs serious GPU power. Note: both are <strong>deprecated on hosted platforms</strong> (Vertex AI, La Plateforme) in favor of Mistral Small 4, but <strong>open weights remain available</strong> for self-hosted via Ollama and LM Studio.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">runtime practicality depends heavily on which model size is chosen</span></span><span class="notes-text" hidden>runtime practicality depends heavily on which model size is chosen</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('mistral-open-models-mistral-large-mistral-nemo')"><span class="date-emoji">🚀</span><span class="date-value">2024-07-18</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="mistral-open-models-mistral-small-3" data-category="other" data-prices="0" data-surfaces="windows_macos_linux_web_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://mistral.ai/news/mistral-small-3" target="_blank" class="feature-link">Mistral Small 3</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('mistral-open-models-mistral-small-3')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 24B parameters</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral Small 3 is a 24B model that matches 70B performance while being <strong>3x faster</strong>. Fits on a single RTX 4090 or a MacBook with 32GB RAM. 81%+ on MMLU, 128K context in v3.1+. Fully open under Apache 2.0.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">consumer use is realistic but still depends on memory and quantization choices</span></span><span class="notes-text" hidden>consumer use is realistic but still depends on memory and quantization choices</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">web UIs over local runtimes</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon yes" title="Windows">Windows</span><span class="plat-icon yes" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon yes" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('mistral-open-models-mistral-small-3')"><span class="date-emoji">🚀</span><span class="date-value">2025-01-30</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-06</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card" id="mistral-open-models-mistral-small-4" data-category="other" data-prices="0" data-surfaces="windows_linux_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://mistral.ai/news/mistral-small-4" target="_blank" class="feature-link">Mistral Small 4</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('mistral-open-models-mistral-small-4')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Free</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • 119B MoE (6–6.5B active, per Mistral's own sources); datacenter GPUs required</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Mistral API<span class="plan-tooltip">Usage-based • Hosted endpoint: mistral-small-2603</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">NVIDIA NIM<span class="plan-tooltip">Usage-based • Day-0 NIM support</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Mistral Small 4 is a 119B Mixture-of-Experts model with only about 6–6.5B active parameters per token. It combines instruct, reasoning, vision, and code in one open model. <strong>Apache 2.0 license</strong>, but requires <strong>datacenter GPUs (4× H100 minimum)</strong>—this is not a consumer-hardware model. Also available via the Mistral API as `mistral-small-2603`.<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></span><span class="notes-text" hidden>datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</span></div>
-                        <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon partial" title="Windows">Windows</span><span class="plat-icon no" title="macOS">macOS</span><span class="plat-icon yes" title="Linux">Linux</span><span class="plat-icon no" title="iOS">iOS</span><span class="plat-icon no" title="Android">Android</span><span class="plat-icon no" title="Chrome">Chrome</span><span class="plat-icon no" title="web">web</span><span class="plat-icon yes" title="terminal">terminal</span><span class="plat-icon yes" title="API">API</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('mistral-open-models-mistral-small-4')"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform-section" data-platform="ollama-ontology" data-vendor="ollama">
-            <div class="platform-header">
-                <h2><img src="https://cdn.simpleicons.org/ollama" alt="Ollama" class="platform-logo">Ollama Runtime</h2>
-                <div class="platform-meta">
-                    <span>1 runtime product · Confirmed against vendor source: 2026-03-24</span>
-                </div>
-            </div>
-            <div class="pricing-bar">
-                <span class="price-tag"><strong>Runtime products</strong>: local tools and serving environments</span>
-            </div>
-            <div class="features-grid">
-
-                <div class="feature-card" id="runtime-ollama" data-category="" data-prices="0" data-surfaces="desktop_terminal_api">
-                    <div class="card-main">
-                        <div class="feature-header">
-                            <h3><a href="https://ollama.com/" target="_blank" class="feature-link">Ollama</a></h3>
-                            <span class="badges"><button class="permalink-btn" onclick="copyPermalink('runtime-ollama')" title="Copy link to this feature" aria-label="Copy permalink">🔗</button><span class="badge avail-ga">GA</span><span class="badge gate-free">Runtime</span></span>
-                        </div>
-                        <div class="avail-grid">
-                            
-                            <div class="avail-item">
-                                <span class="plan has-tooltip" tabindex="0">Self-hosted<span class="plan-tooltip">Your hardware • Local model runtime and local API</span></span>
-                                <span class="status"><span class="avail yes" aria-label="Available" role="img">✓</span></span>
-                            </div>
-                        </div>
-                        <div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">Ollama is a local runtime product for downloading, serving, and interacting with open models through a CLI, desktop app, and local API.</div>
-                        <div class="capability-tags"><span class="provider-toggle active">Desktop</span><span class="provider-toggle active">Terminal</span><span class="provider-toggle active">Api</span></div>
-                    </div>
-                    <div class="surface-column">
-                        <span class="plat-icon no" title="Web">Web</span><span class="plat-icon yes" title="Desktop">Desktop</span><span class="plat-icon no" title="Mobile">Mobile</span><span class="plat-icon yes" title="Terminal">Terminal</span><span class="plat-icon yes" title="Api">Api</span><span class="plat-icon no" title="Browser">Browser</span><span class="plat-icon no" title="Excel">Excel</span><span class="plat-icon no" title="Word">Word</span>
-                        <div class="surface-dates">
-                            <span class="date-item launched clickable" title="Launched" onclick="showChangelog('runtime-ollama')"><span class="date-emoji">🚀</span><span class="date-value">2023-08-01</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <footer>
             <p>
@@ -3485,6 +3082,7 @@
                 <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
+                <a href="https://aitool.watch/archive.html" class="footer-social" title="Self-hosted runtimes and open-model access, frozen 2026-10-11">Archive</a>
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
         </footer>
@@ -3507,48 +3105,6 @@
     <!-- Changelog Data -->
     <script>
         const CHANGELOGS = {
-            "alibaba-open-models-qwen-2-5-alibaba": {
-                name: "Qwen 2.5 (Alibaba)",
-                platform: "Alibaba Open Models",
-                launched: "2024-09-19T12:00Z",
-                verified: "2026-03-22",
-                checked: "2026-09-04",
-                changes: [{ date: "2024-09-19T12:00Z", change: "Initial entry" }]
-            },
-            "alibaba-open-models-qwen-3-alibaba": {
-                name: "Qwen 3 (Alibaba)",
-                platform: "Alibaba Open Models",
-                launched: "2025-04-28T12:00Z",
-                verified: "2026-04-06",
-                checked: "2026-09-04",
-                changes: [{ date: "2025-04-28T12:00Z", change: "Initial entry" }]
-            },
-            "alibaba-open-models-qwen-2-5-coder-alibaba": {
-                name: "Qwen 2.5 Coder (Alibaba)",
-                platform: "Alibaba Open Models",
-                launched: "2024-09-19T12:00Z",
-                verified: "2026-03-23",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-23T12:00Z", change: "[Verified] Renamed from \"Qwen-Coder\" to \"Qwen 2.5 Coder (Alibaba)\" to distinguish from newer Qwen3-Coder-Next" },
-                { date: "2024-09-19T12:00Z", change: "Initial entry" }]
-            },
-            "alibaba-open-models-qwen3-coder-next-alibaba": {
-                name: "Qwen3-Coder-Next (Alibaba)",
-                platform: "Alibaba Open Models",
-                launched: "2026-02-03T12:00Z",
-                verified: "2026-03-31",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-23T12:00Z", change: "Initial entry — new model tracked per issue #400 verification" }]
-            },
-            "alibaba-open-models-qwen-3-5-alibaba": {
-                name: "Qwen 3.5 (Alibaba)",
-                platform: "Alibaba Open Models",
-                launched: "2026-02-16T12:00Z",
-                verified: "2026-03-22",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-03T12:00Z", change: "Qwen 3.5 Small Models released (0.8B, 2B, 4B, 9B)" },
-                { date: "2026-02-16T12:00Z", change: "Initial entry — Qwen 3.5 flagship (397B-A17B) released" }]
-            },
             "chatgpt-advanced-voice-mode": {
                 name: "Advanced Voice Mode",
                 platform: "ChatGPT",
@@ -3929,15 +3485,6 @@
                 { date: "2023-11-15T12:00Z", change: "Bing Chat rebranded to Microsoft Copilot" },
                 { date: "2023-02-07T12:00Z", change: "Bing Chat (predecessor) launched" }]
             },
-            "deepseek-open-models-deepseek-v3-2-unified-v3-r1": {
-                name: "DeepSeek-V3.2 (unified V3 + R1)",
-                platform: "DeepSeek Open Models",
-                launched: "2024-12-27T12:00Z",
-                verified: "2026-03-21",
-                checked: "2026-09-04",
-                changes: [{ date: "2026-03-21T12:00Z", change: "[Verified] V3.2 unified model replaces separate V3 and R1; integrates thinking into tool-use; DeepSeek Sparse Attention for long-context" },
-                { date: "2024-12-27T12:00Z", change: "Initial entry" }]
-            },
             "gemini-ai-studio": {
                 name: "AI Studio",
                 platform: "Gemini",
@@ -4223,85 +3770,6 @@
                 { date: "2026-03-07T12:00Z", change: "Initial entry" },
                 { date: "2025-02-17T12:00Z", change: "Persistent memory toggle appeared with Grok 3 launch" }]
             },
-            "lm-studio-runtime-lm-studio": {
-                name: "LM Studio",
-                platform: "LM Studio Runtime",
-                launched: "2023-05",
-                verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-07T12:00Z", change: "[Verified] Updated for 0.4.x line: llmster headless daemon, continuous batching, parallel requests, OpenAI/Anthropic API compatibility, LM Link remote access; terminal platform now supported" },
-                { date: "2026-03-07T12:00Z", change: "Launch date aligned to official LM Studio statement that the product launched in May 2023 (month precision only)" },
-                { date: "2023-05", change: "Initial entry" }]
-            },
-            "meta-open-models-llama-3-3-meta": {
-                name: "Llama 3.3 (Meta)",
-                platform: "Meta Open Models",
-                launched: "2024-12-06T12:00Z",
-                verified: "2026-03-20",
-                checked: "2026-09-01",
-                changes: [{ date: "2024-12-06T12:00Z", change: "Initial entry" }]
-            },
-            "meta-open-models-llama-4-meta": {
-                name: "Llama 4 (Meta)",
-                platform: "Meta Open Models",
-                launched: "2025-04-05T12:00Z",
-                verified: "2026-04-07",
-                checked: "2026-09-01",
-                changes: [{ date: "2025-04-05T12:00Z", change: "Initial entry" }]
-            },
-            "mistral-open-models-codestral-mistral": {
-                name: "Codestral (Mistral)",
-                platform: "Mistral Open Models",
-                launched: "2024-05-29T12:00Z",
-                verified: "2026-03-20",
-                checked: "2026-09-01",
-                changes: [{ date: "2024-05-29T12:00Z", change: "Initial entry" }]
-            },
-            "mistral-open-models-mistral-large-mistral-nemo": {
-                name: "Mistral Large / Mistral Nemo",
-                platform: "Mistral Open Models",
-                launched: "2024-07-18T12:00Z",
-                verified: "2026-03-21",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-21T12:00Z", change: "[Verified] Models deprecated on hosted platforms (Vertex AI, La Plateforme); open weights still available for self-hosted; Mistral Small 4 now recommended" },
-                { date: "2024-07-18T12:00Z", change: "Initial entry" }]
-            },
-            "mistral-open-models-mistral-small-3": {
-                name: "Mistral Small 3",
-                platform: "Mistral Open Models",
-                launched: "2025-01-30T12:00Z",
-                verified: "2026-04-06",
-                checked: "2026-09-01",
-                changes: [{ date: "2025-06-01T12:00Z", change: "Mistral Small 3.2 with improved function calling" },
-                { date: "2025-03-01T12:00Z", change: "Mistral Small 3.1 with vision, 128K context" },
-                { date: "2025-01-30T12:00Z", change: "Initial entry" }]
-            },
-            "mistral-open-models-mistral-small-4": {
-                name: "Mistral Small 4",
-                platform: "Mistral Open Models",
-                launched: "2026-03-16T12:00Z",
-                verified: "2026-03-24",
-                checked: "2026-09-23",
-                changes: [{ date: "2026-09-23T12:00Z", change: "[Correction] Restored Mistral's model docs page, removed 2026-04-23 after a 404 flag in #602. The page is live and confirms GA on 2026-03-16, Apache 2.0, the `mistral-small-2603` endpoint and 119B total parameters. Mistral's sources differ on active parameters: the announcement says 6B (8B including embedding and output layers), the docs page and model card say 6.5B. The record now states 6–6.5B rather than choosing one" },
-                { date: "2026-03-16T12:00Z", change: "Initial entry" }]
-            },
-            "mistral-open-models-leanstral-mistral": {
-                name: "Leanstral (Mistral)",
-                platform: "Mistral Open Models",
-                launched: "2026-03-16T12:00Z",
-                verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-16T12:00Z", change: "Initial entry" }]
-            },
-            "ollama-runtime-ollama": {
-                name: "Ollama",
-                platform: "Ollama Runtime",
-                launched: "2023-08-01T12:00Z",
-                verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-07T12:00Z", change: "Launch date aligned to earliest official dated Ollama blog evidence found (August 1, 2023)" },
-                { date: "2023-08-01T12:00Z", change: "Initial entry" }]
-            },
             "perplexity-agent-mode-agentic-actions-perplexity-computer": {
                 name: "Agent Mode (Agentic Actions) / Perplexity Computer",
                 platform: "Perplexity",
@@ -4399,40 +3867,12 @@
                 changes: [{ date: "2026-03-07T12:00Z", change: "Initial entry" },
                 { date: "2025-07-09T12:00Z", change: "Comet desktop app launched" },
                 { date: "2022-12-07T12:00Z", change: "Perplexity launched public beta" }]
-            },
-            "runtime-lm-studio": {
-                name: "LM Studio",
-                platform: "LM Studio Runtime",
-                launched: "2023-05",
-                verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-07T12:00Z", change: "[Verified] Updated for 0.4.x line: llmster headless daemon, continuous batching, parallel requests, OpenAI/Anthropic API compatibility, LM Link remote access; terminal platform now supported" },
-                { date: "2026-03-07T12:00Z", change: "Launch date aligned to official LM Studio statement that the product launched in May 2023 (month precision only)" },
-                { date: "2023-05", change: "Initial entry" }]
-            },
-            "runtime-ollama": {
-                name: "Ollama",
-                platform: "Ollama Runtime",
-                launched: "2023-08-01T12:00Z",
-                verified: "2026-03-24",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-07T12:00Z", change: "Launch date aligned to earliest official dated Ollama blog evidence found (August 1, 2023)" },
-                { date: "2023-08-01T12:00Z", change: "Initial entry" }]
-            },
-            "runtime-text-generation-webui": {
-                name: "text-generation-webui",
-                platform: "oobabooga Runtime",
-                launched: "2023-02-27T12:00Z",
-                verified: "2026-03-07",
-                checked: "2026-09-01",
-                changes: [{ date: "2026-03-07T12:00Z", change: "Launch date aligned to earliest public official repo evidence found (issue activity on February 27, 2023)" },
-                { date: "2023-02-27T12:00Z", change: "Initial entry" }]
             }
         };
     </script>
 
     <script>
-        const TOTAL_FEATURES = 87;
+        const TOTAL_FEATURES = 73;
 
         function copyTalkingPoint(el) {
             const notesEl = el.querySelector('.notes-text');

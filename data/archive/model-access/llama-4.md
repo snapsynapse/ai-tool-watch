@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 id: llama-4
 name: Llama 4
 provider: meta
-record_source: data/platforms/meta-open-models.md
+record_source: data/archive/platforms/meta-open-models.md
 source_heading: Llama 4 (Meta)
 last_verified: 2026-02-22
-status: active
+status: archived
 ---
 
 ## Summary

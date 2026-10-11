@@ -1,9 +1,10 @@
 ---
+archived_on: 2026-10-11
 name: oobabooga Runtime
 vendor: oobabooga
 pricing_page: https://github.com/oobabooga/text-generation-webui
 last_verified: 2026-03-07
-build_visibility: hidden
+build_visibility: archive
 ---
 
 ## Pricing

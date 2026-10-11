@@ -1,10 +1,11 @@
 ---
+archived_on: 2026-10-11
 name: Ollama Runtime
 vendor: Ollama
 logo: https://cdn.simpleicons.org/ollama
 pricing_page: https://ollama.com/
 last_verified: 2026-04-13
-build_visibility: hidden
+build_visibility: archive
 ---
 
 ## Pricing

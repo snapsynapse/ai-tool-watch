@@ -3,6 +3,8 @@
 Status: Implemented
 Last updated: 2026-03-15
 
+Archived 2026-10-11: all model-access records and the runtime products moved to `data/archive/` and are frozen; see `design/SCOPE.md` "Archived Domains". The text below describes the design as it stood before the freeze.
+
 This document defines how the ontology-first schema handles open/self-hosted model families that do not fit cleanly into the hosted-product implementation map. Nine model-access records now exist in `data/model-access/`.
 
 ## Why This Exists

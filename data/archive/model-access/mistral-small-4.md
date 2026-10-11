@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 id: mistral-small-4
 name: Mistral Small 4
 provider: mistral
-record_source: data/platforms/mistral-open-models.md
+record_source: data/archive/platforms/mistral-open-models.md
 source_heading: Mistral Small 4
 last_verified: 2026-03-19
-status: active
+status: archived
 ---
 
 ## Summary

@@ -32,10 +32,10 @@ The project uses an ontology-backed data model. Understanding the key directorie
 |-----------|---------|
 | `data/platforms/` | Editorial source of truth for implementation details, plans, constraints, evidence |
 | `data/capabilities/` | Plain-English capability definitions (18 records) |
-| `data/providers/` | Provider records (13 records) |
-| `data/products/` | Product records (9 records) |
-| `data/model-access/` | Open/self-hosted model family records (9 records) |
-| `data/implementations/index.yml` | Implementation-to-capability mappings (71 records) |
+| `data/providers/` | Provider records (6 records) |
+| `data/products/` | Product records (6 records) |
+| `data/archive/` | Records frozen on 2026-10-11 (self-hosted runtimes, open-model access, their providers). Not refreshed; don't edit |
+| `data/implementations/index.yml` | Implementation-to-capability mappings (73 records) |
 | `data/evidence/index.json` | Generated evidence records (do not edit directly) |
 
 ## How to Contribute
@@ -49,7 +49,7 @@ For updating existing implementations, start with the platform file in `data/pla
 - `gemini.md` - Google Gemini
 - `copilot.md` - Microsoft Copilot
 - `grok.md` - xAI Grok
-- Runtime and open-model files also live here (e.g., `ollama-runtime.md`, `meta-open-models.md`)
+- Self-hosted runtime and open-model files were archived on 2026-10-11 and now live in `data/archive/platforms/`; they're frozen
 
 ### Step 2: Make Your Changes
 

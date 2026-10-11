@@ -25,7 +25,7 @@ https://aitool.watch/
 A single source of truth for answering questions like:
 - "Is ChatGPT Agent Mode available on the $8/mo plan?" (No, Plus or higher)
 - "Can I use Claude Cowork on Windows?" (Yes, macOS and Windows x64)
-- "Which open/self-hosted models can I realistically run on my hardware?" (Depends on VRAM)
+- "Can I use Gemini Deep Research on the free tier?" (Yes, about 5 reports a month)
 
 Built for AI facilitators, educators, developers, and AI agents that need accurate, current information about AI tool availability. Browse the site, query the JSON API, or connect an agent via MCP.
 
@@ -39,7 +39,7 @@ Contributing doesn't require a dev environment. You edit a `.md` or `.yml` file,
 
 ## What's covered
 
-18 capabilities, 87 implementations, and 9 open-model access records across major consumer AI products and self-hosted runtimes.
+18 capabilities and 73 implementations across hosted consumer AI products from providers with roughly 1% or greater public market share.
 
 All prices are in **USD**. Availability reflects the **United States** region by default.
 
@@ -51,12 +51,10 @@ All prices are in **USD**. Availability reflects the **United States** region by
 | **Gemini** | Google | Hosted |
 | **Perplexity** | Perplexity AI | Hosted |
 | **Grok** | xAI | Hosted |
-| **Meta (Llama)** | Meta | Open model |
-| **Mistral** | Mistral | Open model |
-| **DeepSeek** | DeepSeek | Open model |
-| **Alibaba (Qwen)** | Alibaba | Open model |
-| **Ollama** | Ollama | Runtime |
-| **LM Studio** | LM Studio | Runtime |
+
+### Archive
+
+On 2026-10-11 the project slimmed to maintenance and narrowed scope to hosted products. Self-hosted runtimes (Ollama, LM Studio, text-generation-webui) and the 11 open-model access records (Llama, Mistral, Codestral, DeepSeek, Qwen) were frozen. They keep their last-verified dates, are not refreshed, and live under `data/archive/`. The site shows them at https://aitool.watch/archive.html, and the API serves them from `api/v1/archive.json` and `api/v1/model-access.json`. See [INTENT.md](INTENT.md) for the decision.
 
 Scope criteria and watchlist: [design/SCOPE.md](design/SCOPE.md), [design/WATCHLIST.md](design/WATCHLIST.md).
 
@@ -118,7 +116,7 @@ See [VERIFICATION.md](VERIFICATION.md) for full documentation, commands, and API
 Found outdated info? Want to add a feature? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Quick version:
-1. Edit the relevant record in `data/platforms/`, `data/model-access/`, `data/products/`, or `data/implementations/`
+1. Edit the relevant record in `data/platforms/`, `data/products/`, or `data/implementations/` (records under `data/archive/` are frozen; don't edit them)
 2. Include or preserve the evidence source link
 3. Run `node scripts/sync-evidence.js`
 4. Run `node scripts/validate-ontology.js`

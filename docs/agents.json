@@ -8,7 +8,7 @@
   "repository": "https://github.com/snapsynapse/ai-tool-watch",
   "license": "MIT",
   "maintainer": "Snap Synapse LLC",
-  "generated": "2026-10-11T22:22:41.978Z",
+  "generated": "2026-10-11T22:29:17.675Z",
   "capabilities": {
     "read": true,
     "write": false,
@@ -55,7 +55,11 @@
       },
       {
         "path": "model-access.json",
-        "description": "Open-model records with deployment modes and constraints"
+        "description": "Archived open-model records, frozen 2026-10-11 and not refreshed"
+      },
+      {
+        "path": "archive.json",
+        "description": "Records frozen 2026-10-11: self-hosted runtimes, open-model access, and their providers"
       },
       {
         "path": "evidence.json",
@@ -95,7 +99,7 @@
       },
       {
         "name": "list_products",
-        "description": "List products, optionally filter by kind (hosted/runtime)"
+        "description": "List active hosted products"
       },
       {
         "name": "get_product",
@@ -135,11 +139,11 @@
       },
       {
         "name": "list_model_access",
-        "description": "All open/self-hostable models with deployment modes"
+        "description": "Archived open-model records, frozen 2026-10-11 and not refreshed"
       },
       {
         "name": "get_model_access",
-        "description": "Full details for an open model by ID"
+        "description": "Full details for an archived open-model record by ID (frozen 2026-10-11)"
       },
       {
         "name": "get_staleness_report",

@@ -1,7 +1,10 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:22:41.909Z",
+    "generated": "2026-10-11T22:29:17.620Z",
     "version": "1.0",
+    "frozen_on": "2026-10-11",
+    "reason": "Scope narrowed to hosted consumer AI products from providers with roughly 1% or greater public market share, and maintenance was slimmed. Self-hosted runtimes and open-model access records fall outside that line, so they were frozen rather than kept current.",
+    "page": "https://aitool.watch/archive.html",
     "count": 11
   },
   "model_access": [
@@ -9,8 +12,7 @@
       "id": "codestral",
       "name": "Codestral",
       "provider": "mistral",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Mistral's code-specialized open model line for self-hosted coding workflows.",
       "deployment_modes": [
         "self-hosted",
@@ -29,17 +31,19 @@
       "related_capabilities": [
         "write-and-edit-code"
       ],
-      "source_file": "data/platforms/mistral-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-20",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
       "source_heading": "Codestral (Mistral)",
-      "evidence_id": "model-access-codestral",
-      "evidence_verified": "2026-03-20"
+      "page": "archive.html#mistral-open-models-codestral-mistral"
     },
     {
       "id": "deepseek-v3-r1",
       "name": "DeepSeek V3 / R1",
       "provider": "deepseek",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "DeepSeek's open model family spanning large general-purpose and reasoning-oriented self-hosted models.",
       "deployment_modes": [
         "self-hosted",
@@ -58,17 +62,19 @@
       "related_capabilities": [
         "write-and-explain"
       ],
-      "source_file": "data/platforms/deepseek-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-21",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/deepseek-open-models.md",
       "source_heading": "DeepSeek-V3.2 (unified V3 + R1)",
-      "evidence_id": "model-access-deepseek-v3-r1",
-      "evidence_verified": "2026-03-21"
+      "page": "archive.html#deepseek-open-models-deepseek-v3-2-unified-v3-r1"
     },
     {
       "id": "leanstral",
       "name": "Leanstral",
       "provider": "mistral",
-      "status": "active",
-      "last_verified": "2026-03-17",
+      "status": "archived",
       "summary": "Mistral's open-source code agent specialized for Lean 4 proof engineering. Apache 2.0 weights with MCP tool-use training. Also available via the Mistral Labs API endpoint `labs-leanstral-2603` and agent mode in Mistral Vibe.",
       "deployment_modes": [
         "self-hosted",
@@ -91,17 +97,19 @@
         "write-and-edit-code",
         "take-actions-and-run-tools"
       ],
-      "source_file": "data/platforms/mistral-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
       "source_heading": "Leanstral (Mistral)",
-      "evidence_id": "model-access-leanstral",
-      "evidence_verified": "2026-03-24"
+      "page": "archive.html#mistral-open-models-leanstral-mistral"
     },
     {
       "id": "llama-3-3",
       "name": "Llama 3.3",
       "provider": "meta",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Meta's open-weight Llama 3.3 family for self-hosted general-purpose use.",
       "deployment_modes": [
         "self-hosted",
@@ -120,17 +128,19 @@
       "related_capabilities": [
         "write-and-explain"
       ],
-      "source_file": "data/platforms/meta-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-20",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/meta-open-models.md",
       "source_heading": "Llama 3.3 (Meta)",
-      "evidence_id": "model-access-llama-3-3",
-      "evidence_verified": "2026-03-20"
+      "page": "archive.html#meta-open-models-llama-3-3-meta"
     },
     {
       "id": "llama-4",
       "name": "Llama 4",
       "provider": "meta",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Meta's Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.",
       "deployment_modes": [
         "self-hosted",
@@ -151,17 +161,19 @@
         "see-images-and-screens",
         "write-and-explain"
       ],
-      "source_file": "data/platforms/meta-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-07",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/meta-open-models.md",
       "source_heading": "Llama 4 (Meta)",
-      "evidence_id": "model-access-llama-4",
-      "evidence_verified": "2026-04-07"
+      "page": "archive.html#meta-open-models-llama-4-meta"
     },
     {
       "id": "mistral-large-nemo",
       "name": "Mistral Large / Nemo",
       "provider": "mistral",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Mistral's open model family ranges from consumer-friendly Nemo to much larger self-hosted models approaching frontier quality.",
       "deployment_modes": [
         "self-hosted",
@@ -180,17 +192,19 @@
       "related_capabilities": [
         "write-and-explain"
       ],
-      "source_file": "data/platforms/mistral-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-21",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
       "source_heading": "Mistral Large / Mistral Nemo",
-      "evidence_id": "model-access-mistral-large-nemo",
-      "evidence_verified": "2026-03-21"
+      "page": "archive.html#mistral-open-models-mistral-large-mistral-nemo"
     },
     {
       "id": "mistral-small-3",
       "name": "Mistral Small 3",
       "provider": "mistral",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Mistral Small 3 is a locally runnable open model line focused on strong general performance at more achievable hardware sizes.",
       "deployment_modes": [
         "self-hosted",
@@ -210,17 +224,19 @@
       "related_capabilities": [
         "write-and-explain"
       ],
-      "source_file": "data/platforms/mistral-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-06",
+      "last_checked": "2026-09-01",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
       "source_heading": "Mistral Small 3",
-      "evidence_id": "model-access-mistral-small-3",
-      "evidence_verified": "2026-04-06"
+      "page": "archive.html#mistral-open-models-mistral-small-3"
     },
     {
       "id": "mistral-small-4",
       "name": "Mistral Small 4",
       "provider": "mistral",
-      "status": "active",
-      "last_verified": "2026-03-19",
+      "status": "archived",
       "summary": "Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).",
       "deployment_modes": [
         "self-hosted",
@@ -246,17 +262,19 @@
         "write-and-edit-code",
         "take-actions-and-run-tools"
       ],
-      "source_file": "data/platforms/mistral-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-24",
+      "last_checked": "2026-09-23",
+      "source_file": "data/archive/platforms/mistral-open-models.md",
       "source_heading": "Mistral Small 4",
-      "evidence_id": "model-access-mistral-small-4",
-      "evidence_verified": "2026-03-24"
+      "page": "archive.html#mistral-open-models-mistral-small-4"
     },
     {
       "id": "qwen-2-5",
       "name": "Qwen 2.5",
       "provider": "alibaba",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Alibaba's Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.",
       "deployment_modes": [
         "self-hosted",
@@ -276,17 +294,19 @@
         "write-and-explain",
         "write-and-edit-code"
       ],
-      "source_file": "data/platforms/alibaba-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-22",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
       "source_heading": "Qwen 2.5 (Alibaba)",
-      "evidence_id": "model-access-qwen-2-5",
-      "evidence_verified": "2026-03-22"
+      "page": "archive.html#alibaba-open-models-qwen-2-5-alibaba"
     },
     {
       "id": "qwen-3",
       "name": "Qwen 3",
       "provider": "alibaba",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Alibaba's Qwen 3 family extends local/open model access with a wide size range and hybrid thinking behaviors.",
       "deployment_modes": [
         "self-hosted",
@@ -306,17 +326,19 @@
       "related_capabilities": [
         "write-and-explain"
       ],
-      "source_file": "data/platforms/alibaba-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-04-06",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
       "source_heading": "Qwen 3 (Alibaba)",
-      "evidence_id": "model-access-qwen-3",
-      "evidence_verified": "2026-04-06"
+      "page": "archive.html#alibaba-open-models-qwen-3-alibaba"
     },
     {
       "id": "qwen-coder",
       "name": "Qwen-Coder",
       "provider": "alibaba",
-      "status": "active",
-      "last_verified": "2026-02-22",
+      "status": "archived",
       "summary": "Qwen-Coder is Alibaba's code-focused open model line for self-hosted coding tasks.",
       "deployment_modes": [
         "self-hosted",
@@ -335,10 +357,13 @@
       "related_capabilities": [
         "write-and-edit-code"
       ],
-      "source_file": "data/platforms/alibaba-open-models.md",
+      "archived": true,
+      "archived_on": "2026-10-11",
+      "last_verified": "2026-03-31",
+      "last_checked": "2026-09-04",
+      "source_file": "data/archive/platforms/alibaba-open-models.md",
       "source_heading": "Qwen3-Coder-Next (Alibaba)",
-      "evidence_id": "model-access-qwen-coder",
-      "evidence_verified": "2026-03-31"
+      "page": "archive.html#alibaba-open-models-qwen3-coder-next-alibaba"
     }
   ]
 }

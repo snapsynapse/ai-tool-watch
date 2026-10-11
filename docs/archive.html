@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive - AI Tool Watch</title>
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="canonical" href="https://aitool.watch/archive.html">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/favicon-56.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="AI Tool Watch" href="https://aitool.watch/index.xml">
+    <meta name="description" content="Self-hosted runtimes and open-model access records frozen on 2026-10-11 when AI Tool Watch narrowed scope to hosted products with roughly 1% or greater market share.">
+    <meta property="og:title" content="AI Tool Watch archive">
+    <meta property="og:description" content="Self-hosted runtimes and open-model access records frozen on 2026-10-11 when AI Tool Watch narrowed scope to hosted products with roughly 1% or greater market share.">
+    <meta property="og:url" content="https://aitool.watch/archive.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AI Tool Watch archive">
+    <meta name="twitter:description" content="Self-hosted runtimes and open-model access records frozen on 2026-10-11 when AI Tool Watch narrowed scope to hosted products with roughly 1% or greater market share.">
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var urlTheme = params.get('theme');
+            var storedTheme = localStorage.getItem('theme');
+            if (urlTheme === 'light' || storedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+    <!-- PostHog product analytics: cookieless, shared Snap Synapse project -->
+<script>
+(function(){
+  // Local files, previews, and alternate hostnames never ingest.
+  if (location.hostname !== 'aitool.watch') return;
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_yvhBRWBzBcyTHFwqbAbX6coujC4UHiaAFaXG8uYRYzic', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only',
+    persistence: 'memory',
+    capture_pageview: true,
+    capture_pageleave: true,
+    autocapture: true,
+    capture_exceptions: true,
+    session_recording: {
+      maskAllInputs: true,
+      maskTextSelector: '*'
+    }
+  });
+})();
+</script>
+</head>
+<body>
+    <header class="site-header">
+        <h1><a href="index.html" onclick="passTheme(this)" style="color: inherit; text-decoration: none;"><img src="assets/favicon-32.png" alt="" class="header-logo" width="28" height="28" aria-hidden="true"> AI Tool Watch</a></h1>
+        <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+            <span class="hamburger-icon"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+            <a href="index.html" class="site-nav-link" onclick="passTheme(this)">Capabilities</a>
+            <a href="implementations.html" class="site-nav-link" onclick="passTheme(this)">Features</a>
+            <a href="compare.html" class="site-nav-link" onclick="passTheme(this)">Compare</a>
+            <a href="changes/" class="site-nav-link" onclick="passTheme(this)">Changes</a>
+            <a href="constraints.html" class="site-nav-link" onclick="passTheme(this)">Limits</a>
+            <a href="timeline.html" class="site-nav-link" onclick="passTheme(this)">Timeline</a>
+            <a href="about.html" class="site-nav-link" onclick="passTheme(this)">About</a>
+        </nav>
+        <div class="header-actions">
+            <div class="site-search" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="searchResults">
+                <input type="search" id="siteSearchInput" class="search-input" placeholder="Search features..." aria-label="Search features" aria-autocomplete="list" aria-controls="searchResults" autocomplete="off">
+                <ul id="searchResults" class="search-results" role="listbox" hidden></ul>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌓</button>
+        </div>
+    </header>
+    <div class="container" id="main-content">
+        <main>
+<h2>Archive: self-hosted runtimes and open-model access</h2>
+<div class="archive-notice" role="note">
+<p><strong>Frozen on 2026-10-11.</strong> Scope narrowed to hosted consumer AI products from providers with roughly 1% or greater public market share, and maintenance was slimmed. Self-hosted runtimes and open-model access records fall outside that line, so they were frozen rather than kept current.</p>
+<p>These records are kept for reference and are not refreshed. Each one shows the date it was last verified before the freeze, so treat anything here as possibly out of date. For current coverage, see <a href="index.html">Capabilities</a> and <a href="implementations.html">Features</a>.</p>
+<p>Machine-readable copies: <a href="api/v1/archive.json">api/v1/archive.json</a> and <a href="api/v1/model-access.json">api/v1/model-access.json</a>.</p>
+</div>
+<h3 id="self-hosted-runtimes">Self-hosted runtimes (3)</h3>
+<div class="archive-table-wrap" tabindex="0" role="region" aria-labelledby="self-hosted-runtimes">
+<table class="plan-table archive-table">
+<thead><tr><th scope="col">Runtime</th><th scope="col">Provider</th><th scope="col">Surfaces</th><th scope="col">Summary</th><th scope="col">Last verified</th><th scope="col">Last checked</th></tr></thead>
+<tbody>
+<tr id="runtime-lm-studio">
+<th scope="row"><a href="https://lmstudio.ai/" rel="noopener">LM Studio</a></th>
+<td>LM Studio</td>
+<td>Desktop, Api</td>
+<td>LM Studio is a local desktop runtime product for discovering, loading, and chatting with open models through a GUI and optional local API.</td>
+<td>2026-03-24</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="runtime-ollama">
+<th scope="row"><a href="https://ollama.com/" rel="noopener">Ollama</a></th>
+<td>Ollama</td>
+<td>Desktop, Terminal, Api</td>
+<td>Ollama is a local runtime product for downloading, serving, and interacting with open models through a CLI, desktop app, and local API.</td>
+<td>2026-03-24</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="runtime-text-generation-webui">
+<th scope="row"><a href="https://github.com/oobabooga/text-generation-webui" rel="noopener">text-generation-webui</a></th>
+<td>oobabooga</td>
+<td>Web, Terminal, Api</td>
+<td>text-generation-webui is a flexible self-hosted runtime product for serving and experimenting with local models through a browser UI and advanced configuration options.</td>
+<td>2026-03-07</td>
+<td>2026-09-01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="open-model-access">Open-model access (11)</h3>
+<div class="archive-table-wrap" tabindex="0" role="region" aria-labelledby="open-model-access">
+<table class="plan-table archive-table">
+<thead><tr><th scope="col">Model family</th><th scope="col">Provider</th><th scope="col">Deployment modes</th><th scope="col">Common runtimes</th><th scope="col">Last verified</th><th scope="col">Last checked</th></tr></thead>
+<tbody>
+<tr id="mistral-open-models-codestral-mistral">
+<th scope="row"><a href="https://mistral.ai/news/codestral/" rel="noopener">Codestral</a></th>
+<td>Mistral</td>
+<td>Self Hosted, Local Api, Terminal</td>
+<td>Ollama, local API wrappers</td>
+<td>2026-03-20</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="deepseek-open-models-deepseek-v3-2-unified-v3-r1">
+<th scope="row"><a href="https://github.com/deepseek-ai/DeepSeek-V3" rel="noopener">DeepSeek V3 / R1</a></th>
+<td>DeepSeek</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, local inference stacks</td>
+<td>2026-03-21</td>
+<td>2026-09-04</td>
+</tr>
+<tr id="mistral-open-models-leanstral-mistral">
+<th scope="row"><a href="https://mistral.ai/news/leanstral" rel="noopener">Leanstral</a></th>
+<td>Mistral</td>
+<td>Self Hosted, Local Api, Cloud Api (Mistral Labs endpoint), Web (Mistral Vibe)</td>
+<td>Ollama, local API wrappers, Mistral Vibe (agent mode), Mistral Labs API</td>
+<td>2026-03-24</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="meta-open-models-llama-3-3-meta">
+<th scope="row"><a href="https://ai.meta.com/llama/" rel="noopener">Llama 3.3</a></th>
+<td>Meta</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, LM Studio</td>
+<td>2026-03-20</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="meta-open-models-llama-4-meta">
+<th scope="row"><a href="https://www.llama.com/models/llama-4/" rel="noopener">Llama 4</a></th>
+<td>Meta</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>LM Studio, vLLM, Ollama</td>
+<td>2026-04-07</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="mistral-open-models-mistral-large-mistral-nemo">
+<th scope="row"><a href="https://mistral.ai/technology/" rel="noopener">Mistral Large / Nemo</a></th>
+<td>Mistral</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, LM Studio</td>
+<td>2026-03-21</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="mistral-open-models-mistral-small-3">
+<th scope="row"><a href="https://mistral.ai/news/mistral-small-3" rel="noopener">Mistral Small 3</a></th>
+<td>Mistral</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, LM Studio, web UIs over local runtimes</td>
+<td>2026-04-06</td>
+<td>2026-09-01</td>
+</tr>
+<tr id="mistral-open-models-mistral-small-4">
+<th scope="row"><a href="https://mistral.ai/news/mistral-small-4" rel="noopener">Mistral Small 4</a></th>
+<td>Mistral</td>
+<td>Self Hosted, Cloud Api (Mistral API / AI Studio), Cloud Api (NVIDIA NIM)</td>
+<td>vLLM, SGLang, llama.cpp, NVIDIA NIM, Mistral API</td>
+<td>2026-03-24</td>
+<td>2026-09-23</td>
+</tr>
+<tr id="alibaba-open-models-qwen-2-5-alibaba">
+<th scope="row"><a href="https://qwenlm.github.io/blog/qwen2.5/" rel="noopener">Qwen 2.5</a></th>
+<td>Alibaba</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, LM Studio</td>
+<td>2026-03-22</td>
+<td>2026-09-04</td>
+</tr>
+<tr id="alibaba-open-models-qwen-3-alibaba">
+<th scope="row"><a href="https://qwenlm.github.io/blog/qwen3/" rel="noopener">Qwen 3</a></th>
+<td>Alibaba</td>
+<td>Self Hosted, Local On Device, Local Api</td>
+<td>Ollama, LM Studio, local web UIs</td>
+<td>2026-04-06</td>
+<td>2026-09-04</td>
+</tr>
+<tr id="alibaba-open-models-qwen3-coder-next-alibaba">
+<th scope="row"><a href="https://huggingface.co/Qwen/Qwen3-Coder-Next" rel="noopener">Qwen-Coder</a></th>
+<td>Alibaba</td>
+<td>Self Hosted, Local Api, Terminal</td>
+<td>Ollama, LM Studio</td>
+<td>2026-03-31</td>
+<td>2026-09-04</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="archived-providers">Archived providers (7)</h3>
+<ul>
+<li><a href="https://qwenlm.github.io/" rel="noopener">Alibaba</a></li>
+<li><a href="https://github.com/deepseek-ai" rel="noopener">DeepSeek</a></li>
+<li><a href="https://lmstudio.ai" rel="noopener">LM Studio</a></li>
+<li><a href="https://ai.meta.com/" rel="noopener">Meta</a></li>
+<li><a href="https://mistral.ai/" rel="noopener">Mistral</a></li>
+<li><a href="https://ollama.com" rel="noopener">Ollama</a></li>
+<li><a href="https://github.com/oobabooga/text-generation-webui" rel="noopener">oobabooga</a></li>
+</ul>
+</main>
+<style>
+.archive-notice { border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; background: var(--card-bg); }
+.archive-notice p + p { margin-top: 0.5rem; }
+.archive-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+.archive-table th[scope="row"] { text-align: left; font-weight: 600; }
+.archive-table td, .archive-table th { vertical-align: top; }
+</style>
+    </div>
+    <footer>
+            <p>
+                Maintained by <a href="https://github.com/snapsynapse">SnapSynapse</a>, with public issues and pull requests welcome.
+                <a href="https://github.com/snapsynapse/ai-tool-watch/issues">Open an issue</a> or
+                <a href="https://github.com/snapsynapse/ai-tool-watch/pulls">submit a PR</a>.
+            </p>
+            <p style="margin-top: 8px;">
+                &copy; 2026 <a href="https://snapsynapse.com/">Snap Synapse LLC</a> | via <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> | 🤓+🤖
+            </p>
+            <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;">
+                <a href="https://github.com/snapsynapse/ai-tool-watch" class="footer-social" title="Star on GitHub">⭐ Star</a>
+                <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
+                <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
+                <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
+                <a href="https://aitool.watch/archive.html" class="footer-social" title="Self-hosted runtimes and open-model access, frozen 2026-10-11">Archive</a>
+                <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
+            </p>
+        </footer>
+    <script src="assets/search.js"></script>
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        function toggleMobileMenu() {
+            const btn = document.querySelector('.hamburger-btn');
+            const menu = document.getElementById('siteNav');
+            const isOpen = menu.classList.toggle('open');
+            btn.classList.toggle('active', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        }
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('siteNav');
+            const btn = document.querySelector('.hamburger-btn');
+            if (menu && btn && menu.classList.contains('open')) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.remove('open');
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        function passTheme(link) {
+            const isLight = document.documentElement.classList.contains('light-mode');
+            if (isLight) {
+                const url = new URL(link.href, window.location.href);
+                url.searchParams.set('theme', 'light');
+                link.href = url.pathname.split('/').pop() + url.search + url.hash;
+            }
+        }
+
+        // Back to top button
+        (function() {
+            var btn = document.createElement('button');
+            btn.className = 'back-to-top';
+            btn.setAttribute('aria-label', 'Back to top');
+            btn.textContent = '\u2191';
+            document.body.appendChild(btn);
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+</html>

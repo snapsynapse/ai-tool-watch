@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 id: llama-3-3
 name: Llama 3.3
 provider: meta
-record_source: data/platforms/meta-open-models.md
+record_source: data/archive/platforms/meta-open-models.md
 source_heading: Llama 3.3 (Meta)
 last_verified: 2026-02-22
-status: active
+status: archived
 ---
 
 ## Summary

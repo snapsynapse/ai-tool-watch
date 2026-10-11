@@ -1,10 +1,11 @@
 ---
+archived_on: 2026-10-11
 name: Mistral Open Models
 vendor: Mistral
 logo: https://cdn.simpleicons.org/mistralai
 pricing_page: https://mistral.ai/models
 last_verified: 2026-04-14
-build_visibility: hidden
+build_visibility: archive
 ---
 
 ## Pricing

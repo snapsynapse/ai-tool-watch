@@ -1,8 +1,9 @@
 ---
+archived_on: 2026-10-11
 id: text-generation-webui
 name: text-generation-webui
 provider: oobabooga
-record_source: data/watchlist/oobabooga-runtime.md
+record_source: data/archive/platforms/oobabooga-runtime.md
 source_heading: text-generation-webui
 pricing_page: https://github.com/oobabooga/text-generation-webui
 default_surfaces:
@@ -10,7 +11,7 @@ default_surfaces:
   - terminal
   - api
 last_verified: 2026-03-07
-status: active
+status: archived
 product_kind: runtime
 ---
 

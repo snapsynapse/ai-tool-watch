@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 name: Meta Open Models
 vendor: Meta
 logo: https://cdn.simpleicons.org/meta
 status_page: https://ai.meta.com/llama/
 pricing_page: https://llama.meta.com/
 last_verified: 2026-04-14
-build_visibility: hidden
+build_visibility: archive
 ---
 
 ## Pricing

@@ -538,37 +538,6 @@
                         </article>
                     </div>
                     
-                    <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>2</strong> relevant model access records</span>
-                        <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
-                    </div>
-                    <div class="capability-implementations" hidden>
-                        
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#meta-open-models-llama-4-meta')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#meta-open-models-llama-4-meta');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Meta</span>
-                                <h4><a href="implementations.html#meta-open-models-llama-4-meta" class="feature-link" onclick="passTheme(this)">Llama 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Meta&#39;s Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-05</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">Ollama</span></div>
-                            <p class="capability-note">model size and context claims can exceed ordinary consumer hardware</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-small-4')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-small-4');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-small-4" class="feature-link" onclick="passTheme(this)">Mistral Small 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
-                            <p class="capability-note">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</p>
-                        </article>
-                    </div>
                 </article>
             </div>
         </section>
@@ -823,109 +792,6 @@
                         </article>
                     </div>
                     
-                    <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>8</strong> relevant model access records</span>
-                        <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
-                    </div>
-                    <div class="capability-implementations" hidden>
-                        
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#deepseek-open-models-deepseek-v3-2-unified-v3-r1')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#deepseek-open-models-deepseek-v3-2-unified-v3-r1');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">DeepSeek</span>
-                                <h4><a href="implementations.html#deepseek-open-models-deepseek-v3-2-unified-v3-r1" class="feature-link" onclick="passTheme(this)">DeepSeek V3 / R1</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">DeepSeek&#39;s open model family spanning large general-purpose and reasoning-oriented self-hosted models.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-27</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local inference stacks</span></div>
-                            <p class="capability-note">the full flagship models need serious hardware</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#meta-open-models-llama-3-3-meta')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#meta-open-models-llama-3-3-meta');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Meta</span>
-                                <h4><a href="implementations.html#meta-open-models-llama-3-3-meta" class="feature-link" onclick="passTheme(this)">Llama 3.3</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Meta&#39;s open-weight Llama 3.3 family for self-hosted general-purpose use.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-12-06</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-20</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                            <p class="capability-note">higher-end variants still need significant VRAM</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#meta-open-models-llama-4-meta')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#meta-open-models-llama-4-meta');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Meta</span>
-                                <h4><a href="implementations.html#meta-open-models-llama-4-meta" class="feature-link" onclick="passTheme(this)">Llama 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Meta&#39;s Llama 4 family extends local/open model access into multimodal and very large-context self-hosted use.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-05</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-07</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">Ollama</span></div>
-                            <p class="capability-note">model size and context claims can exceed ordinary consumer hardware</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-large-mistral-nemo')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-large-mistral-nemo');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-large-mistral-nemo" class="feature-link" onclick="passTheme(this)">Mistral Large / Nemo</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral&#39;s open model family ranges from consumer-friendly Nemo to much larger self-hosted models approaching frontier quality.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-07-18</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-21</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                            <p class="capability-note">runtime practicality depends heavily on which model size is chosen</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-small-3')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-small-3');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-small-3" class="feature-link" onclick="passTheme(this)">Mistral Small 3</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral Small 3 is a locally runnable open model line focused on strong general performance at more achievable hardware sizes.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-01-30</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-06</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">web UIs over local runtimes</span></div>
-                            <p class="capability-note">consumer use is realistic but still depends on memory and quantization choices</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-small-4')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-small-4');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-small-4" class="feature-link" onclick="passTheme(this)">Mistral Small 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
-                            <p class="capability-note">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#alibaba-open-models-qwen-2-5-alibaba')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#alibaba-open-models-qwen-2-5-alibaba');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Alibaba</span>
-                                <h4><a href="implementations.html#alibaba-open-models-qwen-2-5-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 2.5</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-22</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                            <p class="capability-note">capability and hardware requirements vary substantially by size</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#alibaba-open-models-qwen-3-alibaba')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#alibaba-open-models-qwen-3-alibaba');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Alibaba</span>
-                                <h4><a href="implementations.html#alibaba-open-models-qwen-3-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 3</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 3 family extends local/open model access with a wide size range and hybrid thinking behaviors.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2025-04-28</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-04-06</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span><span class="provider-toggle active">local web UIs</span></div>
-                            <p class="capability-note">model sizes range from practical local options to very large MoE deployments</p>
-                        </article>
-                    </div>
                 </article>
             </div>
         </section>
@@ -1409,73 +1275,6 @@
                         </article>
                     </div>
                     
-                    <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>5</strong> relevant model access records</span>
-                        <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
-                    </div>
-                    <div class="capability-implementations" hidden>
-                        
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-codestral-mistral')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-codestral-mistral');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-codestral-mistral" class="feature-link" onclick="passTheme(this)">Codestral</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral&#39;s code-specialized open model line for self-hosted coding workflows.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-05-29</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-20</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span></div>
-                            <p class="capability-note">consumer GPU use is realistic only with enough VRAM or quantization</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-leanstral-mistral')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-leanstral-mistral');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-leanstral-mistral" class="feature-link" onclick="passTheme(this)">Leanstral</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral&#39;s open-source code agent specialized for Lean 4 proof engineering. Apache 2.0 weights with MCP tool-use training. Also available via the Mistral Labs API endpoint `labs-leanstral-2603` and agent mode in Mistral Vibe.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span><span class="provider-toggle active">Mistral Vibe (agent mode)</span><span class="provider-toggle active">Mistral Labs API</span></div>
-                            <p class="capability-note">specialized for Lean 4 formal verification, not general-purpose coding</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-small-4')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-small-4');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-small-4" class="feature-link" onclick="passTheme(this)">Mistral Small 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
-                            <p class="capability-note">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#alibaba-open-models-qwen-2-5-alibaba')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#alibaba-open-models-qwen-2-5-alibaba');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Alibaba</span>
-                                <h4><a href="implementations.html#alibaba-open-models-qwen-2-5-alibaba" class="feature-link" onclick="passTheme(this)">Qwen 2.5</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Alibaba&#39;s Qwen 2.5 family offers a broad range of self-hosted model sizes from lightweight local use to much larger deployments.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2024-09-19</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-22</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                            <p class="capability-note">capability and hardware requirements vary substantially by size</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#alibaba-open-models-qwen3-coder-next-alibaba')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#alibaba-open-models-qwen3-coder-next-alibaba');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Alibaba</span>
-                                <h4><a href="implementations.html#alibaba-open-models-qwen3-coder-next-alibaba" class="feature-link" onclick="passTheme(this)">Qwen-Coder</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Qwen-Coder is Alibaba&#39;s code-focused open model line for self-hosted coding tasks.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-02-03</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-31</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-04</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">LM Studio</span></div>
-                            <p class="capability-note">tuned for coding rather than broad multimodal use</p>
-                        </article>
-                    </div>
                 </article>
             </div>
         </section>
@@ -2304,37 +2103,6 @@
                         </article>
                     </div>
                     
-                    <div class="capability-implementation-header model-access-header" role="button" tabindex="0" aria-expanded="false" title="Click to expand" onclick="toggleImpls(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleImpls(this);}">
-                        <span><strong>2</strong> relevant model access records</span>
-                        <span class="impl-toggle-group"><span class="expand-hint">expand</span><span class="impl-chevron" aria-hidden="true">▶</span></span>
-                    </div>
-                    <div class="capability-implementations" hidden>
-                        
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-leanstral-mistral')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-leanstral-mistral');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-leanstral-mistral" class="feature-link" onclick="passTheme(this)">Leanstral</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral&#39;s open-source code agent specialized for Lean 4 proof engineering. Apache 2.0 weights with MCP tool-use training. Also available via the Mistral Labs API endpoint `labs-leanstral-2603` and agent mode in Mistral Vibe.</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-01</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">Ollama</span><span class="provider-toggle active">local API wrappers</span><span class="provider-toggle active">Mistral Vibe (agent mode)</span><span class="provider-toggle active">Mistral Labs API</span></div>
-                            <p class="capability-note">specialized for Lean 4 formal verification, not general-purpose coding</p>
-                        </article>
-                        <article class="capability-impl capability-impl-model-access" onclick="implCardClick(event, 'implementations.html#mistral-open-models-mistral-small-4')" tabindex="0" onkeydown="if(event.key==='Enter'){implCardClick(event,'implementations.html#mistral-open-models-mistral-small-4');}">
-                            <div class="capability-impl-header">
-                                <span class="price-tag">Mistral</span>
-                                <h4><a href="implementations.html#mistral-open-models-mistral-small-4" class="feature-link" onclick="passTheme(this)">Mistral Small 4</a></h4>
-                            </div>
-                            <p class="capability-impl-copy">Mistral Small 4 is a 119B Mixture-of-Experts model (128 experts, 4 active per token, ~6–6.5B active parameters) that unifies instruct, reasoning, multimodal, and agentic coding into a single open model. Apache 2.0 license. 256k context window with native vision and a configurable `reasoning_effort` parameter. Available via Mistral API and self-hosted, but requires datacenter-class GPUs (4× H100 minimum).</p>
-                            <div class="dates-row">
-                                <span class="date-item launched" title="Launched"><span class="date-emoji">🚀</span><span class="date-value">2026-03-16</span></span><span class="date-item verified" title="Confirmed against the vendor's own source" aria-label="Confirmed against vendor source"><span class="date-emoji">✓</span><span class="date-value">2026-03-24</span></span><span class="date-item checked" title="Last checked for changes" aria-label="Last checked for changes"><span class="date-emoji">👁</span><span class="date-value">2026-09-23</span></span>
-                            </div>
-                            <div class="capability-tags"><span class="provider-toggle active">vLLM</span><span class="provider-toggle active">SGLang</span><span class="provider-toggle active">llama.cpp</span><span class="provider-toggle active">NVIDIA NIM</span><span class="provider-toggle active">Mistral API</span></div>
-                            <p class="capability-note">datacenter-class hardware required: minimum 4× H100 or 2× H200 or 1× DGX B200</p>
-                        </article>
-                    </div>
                 </article>
             </div>
         </section>
@@ -2857,6 +2625,7 @@
                 <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
+                <a href="https://aitool.watch/archive.html" class="footer-social" title="Self-hosted runtimes and open-model access, frozen 2026-10-11">Archive</a>
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
         </footer>

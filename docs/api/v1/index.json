@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:22:41.909Z",
+    "generated": "2026-10-11T22:29:17.620Z",
     "version": "1.0"
   },
   "description": "AI Tool Watch — Machine-readable API",
@@ -14,7 +14,7 @@
     "products": {
       "path": "products.json",
       "description": "All products with provider links and implementation lists",
-      "count": 9
+      "count": 6
     },
     "implementations": {
       "path": "implementations.json",
@@ -24,17 +24,22 @@
     "providers": {
       "path": "providers.json",
       "description": "All providers with product lists",
-      "count": 13
+      "count": 6
     },
     "model-access": {
       "path": "model-access.json",
-      "description": "Model access records with deployment and constraint details",
+      "description": "Archived open-model access records, frozen 2026-10-11 and not refreshed",
       "count": 11
+    },
+    "archive": {
+      "path": "archive.json",
+      "description": "Records frozen 2026-10-11: self-hosted runtimes, open-model access, and their providers",
+      "count": 21
     },
     "evidence": {
       "path": "evidence.json",
       "description": "Evidence records with sources and changelog",
-      "count": 93
+      "count": 79
     },
     "capability-matrix": {
       "path": "capability-matrix.json",

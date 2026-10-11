@@ -18,6 +18,12 @@ const CAPABILITIES_DIR = path.join(__dirname, '..', 'data', 'capabilities');
 const PROVIDERS_DIR = path.join(__dirname, '..', 'data', 'providers');
 const PRODUCTS_DIR = path.join(__dirname, '..', 'data', 'products');
 const MODEL_ACCESS_DIR = path.join(__dirname, '..', 'data', 'model-access');
+const ARCHIVE_DIR = path.join(__dirname, '..', 'data', 'archive');
+const ARCHIVE_PROVIDERS_DIR = path.join(ARCHIVE_DIR, 'providers');
+const ARCHIVE_PRODUCTS_DIR = path.join(ARCHIVE_DIR, 'products');
+const ARCHIVE_MODEL_ACCESS_DIR = path.join(ARCHIVE_DIR, 'model-access');
+const ARCHIVE_FREEZE_DATE = '2026-10-11';
+const ARCHIVE_REASON = 'Scope narrowed to hosted consumer AI products from providers with roughly 1% or greater public market share, and maintenance was slimmed. Self-hosted runtimes and open-model access records fall outside that line, so they were frozen rather than kept current.';
 const IMPLEMENTATIONS_FILE = path.join(__dirname, '..', 'data', 'implementations', 'index.yml');
 const EVIDENCE_FILE = path.join(__dirname, '..', 'data', 'evidence', 'index.json');
 const DISCOVERY_FILE = path.join(__dirname, '..', 'data', 'discovery.yml');
@@ -28,6 +34,7 @@ const CONSTRAINTS_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'constraints.
 const CAPABILITIES_REDIRECT_FILE = path.join(__dirname, '..', 'docs', 'capabilities.html');
 const NOT_FOUND_OUTPUT_FILE = path.join(__dirname, '..', 'docs', '404.html');
 const COMPARE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'compare.html');
+const ARCHIVE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'archive.html');
 const TIMELINE_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'timeline.html');
 const PATTERN_TEMPLATE_FILE = path.join(__dirname, 'templates', 'pattern.html');
 const PATTERN_OUTPUT_FILE = path.join(__dirname, '..', 'docs', 'pattern.html');
@@ -859,6 +866,55 @@ function loadOntologyData(platforms) {
     };
 }
 
+/**
+ * Load the frozen archive: self-hosted runtimes, open-model access records,
+ * and their providers, moved out of the active ontology on ARCHIVE_FREEZE_DATE.
+ * Archived records are rendered as-is and never refreshed.
+ */
+function loadArchiveData() {
+    const listRecords = dir => fs.existsSync(dir)
+        ? fs.readdirSync(dir).filter(f => f.endsWith('.md') && f !== 'README.md').sort()
+        : [];
+    const providers = listRecords(ARCHIVE_PROVIDERS_DIR).map(f => parseProvider(path.join(ARCHIVE_PROVIDERS_DIR, f)));
+    const products = listRecords(ARCHIVE_PRODUCTS_DIR).map(f => parseProduct(path.join(ARCHIVE_PRODUCTS_DIR, f)));
+    const modelAccess = listRecords(ARCHIVE_MODEL_ACCESS_DIR).map(f => parseModelAccess(path.join(ARCHIVE_MODEL_ACCESS_DIR, f)));
+
+    const sourceFiles = [...new Set([...products, ...modelAccess].map(r => r.record_source).filter(Boolean))].sort();
+    const platforms = sourceFiles
+        .filter(source => fs.existsSync(path.join(ROOT_DIR, source)))
+        .map(source => ({ ...parsePlatform(path.join(ROOT_DIR, source)), source_file: source }));
+
+    const featureLookup = new Map();
+    platforms.forEach(platform => {
+        platform.features.forEach(feature => {
+            featureLookup.set(`${platform.source_file}::${feature.name}`, { platform, feature });
+        });
+    });
+    const providerMap = new Map(providers.map(provider => [provider.id, provider]));
+    const enrich = (record, anchor) => {
+        const source = featureLookup.get(`${record.record_source}::${record.source_heading}`) || null;
+        return {
+            ...record,
+            provider_record: providerMap.get(record.provider) || null,
+            source,
+            anchor: anchor(source),
+            verified: source?.feature?.verified || record.last_verified || '',
+            checked: source?.feature?.checked || ''
+        };
+    };
+
+    return {
+        frozen_on: ARCHIVE_FREEZE_DATE,
+        reason: ARCHIVE_REASON,
+        providers,
+        // Anchors match the ids these records had on implementations.html before the freeze.
+        runtime_products: products.map(product => enrich(product, () => `runtime-${product.id}`)),
+        model_access: modelAccess.map(record => enrich(record, source => (
+            source ? featureCardId(source.platform.name, source.feature.name) : `model-access-${record.id}`
+        )))
+    };
+}
+
 function buildPlanPriceMap(platform) {
     const map = new Map();
     (platform.pricing || []).forEach(tier => {
@@ -1145,6 +1201,7 @@ function renderSharedFooter() {
                 <a href="https://paice.substack.com/" class="footer-social" title="Subscribe on Substack"><img src="https://substack.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">Substack</a>
                 <a href="https://linkedin.com/in/samrogers/" class="footer-social" title="Connect on LinkedIn"><img src="https://linkedin.com/favicon.ico" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;">LinkedIn</a>
                 <a href="https://everyailaw.com/" class="footer-social" title="Every AI Law">Every AI Law</a>
+                <a href="${SITE_URL}archive.html" class="footer-social" title="Self-hosted runtimes and open-model access, frozen ${ARCHIVE_FREEZE_DATE}">Archive</a>
                 <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance"><img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-blue-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
             </p>
         </footer>`;
@@ -1282,6 +1339,14 @@ function generateHTML(platforms, ontologyData) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${DASHBOARD_TITLE} - ${FEATURE_VIEW_TITLE}</title>
+    <script>
+        // Permalinks to records frozen on ${ARCHIVE_FREEZE_DATE} now live on the archive page.
+        (function() {
+            var archived = ${JSON.stringify(archivedAnchorIds(ontologyData.archive))};
+            var hash = location.hash.slice(1);
+            if (hash && archived.indexOf(hash) !== -1) location.replace('archive.html#' + hash);
+        })();
+    </script>
     <meta name="description" content="Detailed plan-by-plan availability for AI features across ChatGPT, Claude, Gemini, Copilot, and more.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${SITE_URL}implementations.html">
@@ -2905,6 +2970,92 @@ function generateCapabilitiesRedirect() {
 </html>`;
 }
 
+/**
+ * Old implementations.html anchors for archived records. Used to redirect
+ * pre-freeze permalinks to the matching row on archive.html.
+ */
+function archivedAnchorIds(archive) {
+    return [
+        ...(archive?.runtime_products || []).map(record => record.anchor),
+        ...(archive?.model_access || []).map(record => record.anchor)
+    ].filter(Boolean);
+}
+
+function generateArchiveHTML(archive) {
+    const providerName = record => providerDisplayName(record.provider_record, record.provider);
+    const dateCell = value => escapeHTML(formatDateForDisplay(value) || 'Not recorded');
+    const sourceLink = record => {
+        const url = record.pricing_page || record.source?.feature?.url || '';
+        return url ? `<a href="${escapeHTML(url)}" rel="noopener">${escapeHTML(record.name)}</a>` : escapeHTML(record.name);
+    };
+    const runtimeRows = archive.runtime_products.map(record => `<tr id="${escapeHTML(record.anchor)}">
+<th scope="row">${sourceLink(record)}</th>
+<td>${escapeHTML(providerName(record))}</td>
+<td>${escapeHTML((record.default_surfaces || []).map(humanizeId).join(', '))}</td>
+<td>${escapeHTML(record.summary || '')}</td>
+<td>${dateCell(record.verified)}</td>
+<td>${dateCell(record.checked)}</td>
+</tr>`).join('\n');
+    const modelRows = archive.model_access.map(record => `<tr id="${escapeHTML(record.anchor)}">
+<th scope="row">${sourceLink(record)}</th>
+<td>${escapeHTML(providerName(record))}</td>
+<td>${escapeHTML((record.deployment_modes || []).map(humanizeId).join(', '))}</td>
+<td>${escapeHTML((record.common_runtimes || []).join(', '))}</td>
+<td>${dateCell(record.verified)}</td>
+<td>${dateCell(record.checked)}</td>
+</tr>`).join('\n');
+    const providerList = archive.providers
+        .map(provider => `<li>${provider.website ? `<a href="${escapeHTML(provider.website)}" rel="noopener">${escapeHTML(provider.name)}</a>` : escapeHTML(provider.name)}</li>`)
+        .join('\n');
+
+    const content = `<main>
+<h2>Archive: self-hosted runtimes and open-model access</h2>
+<div class="archive-notice" role="note">
+<p><strong>Frozen on ${escapeHTML(archive.frozen_on)}.</strong> ${escapeHTML(archive.reason)}</p>
+<p>These records are kept for reference and are not refreshed. Each one shows the date it was last verified before the freeze, so treat anything here as possibly out of date. For current coverage, see <a href="index.html">Capabilities</a> and <a href="implementations.html">Features</a>.</p>
+<p>Machine-readable copies: <a href="api/v1/archive.json">api/v1/archive.json</a> and <a href="api/v1/model-access.json">api/v1/model-access.json</a>.</p>
+</div>
+<h3 id="self-hosted-runtimes">Self-hosted runtimes (${archive.runtime_products.length})</h3>
+<div class="archive-table-wrap" tabindex="0" role="region" aria-labelledby="self-hosted-runtimes">
+<table class="plan-table archive-table">
+<thead><tr><th scope="col">Runtime</th><th scope="col">Provider</th><th scope="col">Surfaces</th><th scope="col">Summary</th><th scope="col">Last verified</th><th scope="col">Last checked</th></tr></thead>
+<tbody>
+${runtimeRows}
+</tbody>
+</table>
+</div>
+<h3 id="open-model-access">Open-model access (${archive.model_access.length})</h3>
+<div class="archive-table-wrap" tabindex="0" role="region" aria-labelledby="open-model-access">
+<table class="plan-table archive-table">
+<thead><tr><th scope="col">Model family</th><th scope="col">Provider</th><th scope="col">Deployment modes</th><th scope="col">Common runtimes</th><th scope="col">Last verified</th><th scope="col">Last checked</th></tr></thead>
+<tbody>
+${modelRows}
+</tbody>
+</table>
+</div>
+<h3 id="archived-providers">Archived providers (${archive.providers.length})</h3>
+<ul>
+${providerList}
+</ul>
+</main>
+<style>
+.archive-notice { border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; background: var(--card-bg); }
+.archive-notice p + p { margin-top: 0.5rem; }
+.archive-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+.archive-table th[scope="row"] { text-align: left; font-weight: 600; }
+.archive-table td, .archive-table th { vertical-align: top; }
+</style>`;
+
+    return renderBridgeShell({
+        title: 'Archive',
+        canonicalPath: 'archive.html',
+        depth: 0,
+        content,
+        description: `Self-hosted runtimes and open-model access records frozen on ${archive.frozen_on} when AI Tool Watch narrowed scope to hosted products with roughly 1% or greater market share.`,
+        ogTitle: 'AI Tool Watch archive'
+    });
+}
+
 function generate404HTML() {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -3151,25 +3302,48 @@ function buildAPIExport(ontologyData, platforms) {
         products: (p.products || [])
     }));
 
-    const modelAccess = ontologyData.model_access.map(r => {
-        const evidence = r.evidence;
-        return {
-            id: r.id,
-            name: r.name,
-            provider: r.provider,
-            status: r.status || 'active',
-            last_verified: r.last_verified || null,
-            summary: r.summary || '',
-            deployment_modes: r.deployment_modes || [],
-            common_runtimes: r.common_runtimes || [],
-            constraints: r.constraints || [],
-            related_capabilities: r.related_capabilities || [],
-            source_file: r.record_source || null,
-            source_heading: r.source_heading || null,
-            evidence_id: evidence ? evidence.id : null,
-            evidence_verified: evidence ? evidence.verified : null
-        };
+    // Open-model access was frozen into the archive; the endpoint keeps serving the frozen records.
+    const archive = ontologyData.archive || { frozen_on: ARCHIVE_FREEZE_DATE, reason: ARCHIVE_REASON, providers: [], runtime_products: [], model_access: [] };
+    const archivedRecordFields = r => ({
+        archived: true,
+        archived_on: r.archived_on || archive.frozen_on,
+        last_verified: r.verified || r.last_verified || null,
+        last_checked: r.checked || null,
+        source_file: r.record_source || null,
+        source_heading: r.source_heading || null,
+        page: `archive.html#${r.anchor}`
     });
+    const modelAccess = archive.model_access.map(r => ({
+        id: r.id,
+        name: r.name,
+        provider: r.provider,
+        status: 'archived',
+        summary: r.summary || '',
+        deployment_modes: r.deployment_modes || [],
+        common_runtimes: r.common_runtimes || [],
+        constraints: r.constraints || [],
+        related_capabilities: r.related_capabilities || [],
+        ...archivedRecordFields(r)
+    }));
+    const archivedProducts = archive.runtime_products.map(p => ({
+        id: p.id,
+        name: p.name,
+        provider: p.provider,
+        product_kind: p.product_kind || 'runtime',
+        status: 'archived',
+        pricing_page: p.pricing_page || null,
+        default_surfaces: p.default_surfaces || [],
+        summary: p.summary || '',
+        ...archivedRecordFields(p)
+    }));
+    const archivedProviders = archive.providers.map(p => ({
+        id: p.id,
+        name: p.name,
+        website: p.website || null,
+        archived: true,
+        archived_on: p.archived_on || archive.frozen_on
+    }));
+    const archiveMeta = { generated: timestamp, version: '1.0', frozen_on: archive.frozen_on, reason: archive.reason, page: `${SITE_URL}archive.html` };
 
     const evidence = (ontologyData.evidence || []).map(e => ({
         id: e.id,
@@ -3310,7 +3484,8 @@ function buildAPIExport(ontologyData, platforms) {
             products: { path: 'products.json', description: 'All products with provider links and implementation lists', count: products.length },
             implementations: { path: 'implementations.json', description: 'All implementations with capability mappings and evidence', count: implementations.length },
             providers: { path: 'providers.json', description: 'All providers with product lists', count: providers.length },
-            'model-access': { path: 'model-access.json', description: 'Model access records with deployment and constraint details', count: modelAccess.length },
+            'model-access': { path: 'model-access.json', description: `Archived open-model access records, frozen ${archive.frozen_on} and not refreshed`, count: modelAccess.length },
+            archive: { path: 'archive.json', description: `Records frozen ${archive.frozen_on}: self-hosted runtimes, open-model access, and their providers`, count: archivedProducts.length + modelAccess.length + archivedProviders.length },
             evidence: { path: 'evidence.json', description: 'Evidence records with sources and changelog', count: evidence.length },
             'capability-matrix': { path: 'capability-matrix.json', description: 'Capability × product availability grid' },
             'product-comparisons': { path: 'product-comparisons.json', description: 'Pairwise product capability overlap' },
@@ -3324,7 +3499,8 @@ function buildAPIExport(ontologyData, platforms) {
         'products.json': { meta: { generated: timestamp, version: '1.0', count: products.length }, products },
         'implementations.json': { meta: { generated: timestamp, version: '1.0', count: implementations.length }, implementations },
         'providers.json': { meta: { generated: timestamp, version: '1.0', count: providers.length }, providers },
-        'model-access.json': { meta: { generated: timestamp, version: '1.0', count: modelAccess.length }, model_access: modelAccess },
+        'model-access.json': { meta: { ...archiveMeta, count: modelAccess.length }, model_access: modelAccess },
+        'archive.json': { meta: { ...archiveMeta, counts: { products: archivedProducts.length, model_access: modelAccess.length, providers: archivedProviders.length } }, products: archivedProducts, model_access: modelAccess, providers: archivedProviders },
         'evidence.json': { meta: { generated: timestamp, version: '1.0', count: evidence.length }, evidence },
         'capability-matrix.json': capabilityMatrix,
         'product-comparisons.json': productComparisons,
@@ -4548,13 +4724,13 @@ function generateLlmsTxt(ontologyData) {
     const implCount = ontologyData.implementations.filter(i => i.source).length;
     const prodCount = ontologyData.products.filter(p => p.product_kind !== 'runtime').length;
     const providerCount = ontologyData.providers.length;
-    const modelCount = (ontologyData.model_access || []).length;
+    const archive = ontologyData.archive || { frozen_on: ARCHIVE_FREEZE_DATE, runtime_products: [], model_access: [] };
 
     return `# ${DASHBOARD_TITLE}
 
 > What can this AI actually do?
 
-A plain-English reference for AI capabilities, plans, constraints, and implementations across major subscription AI products (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity) and open models.
+A plain-English reference for AI capabilities, plans, constraints, and implementations across hosted consumer AI products from providers with roughly 1% or greater public market share (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity).
 
 Maintained by Snap Synapse. Every claim carries its primary source and last-verified date.
 
@@ -4562,11 +4738,17 @@ Maintained by Snap Synapse. Every claim carries its primary source and last-veri
 
 - ${capCount} capabilities (e.g., Search the Web, Generate Images, Write and Edit Code)
 - ${implCount} implementations across ${prodCount} subscription AI products
-- ${modelCount} open-model access records (Llama, Qwen, DeepSeek, Mistral, Codestral)
 - Plan-level availability (which subscription tier unlocks what)
 - Surface availability (web, desktop, mobile, terminal, API)
 - Gating (free, paid, limited)
 - Evidence with sources and changelog for every claim
+
+## Archived (frozen ${archive.frozen_on}, not refreshed)
+
+Self-hosted runtimes (${archive.runtime_products.length}) and open-model access records (${archive.model_access.length}) were frozen on ${archive.frozen_on} when scope narrowed to hosted products and maintenance was slimmed. They keep their last-verified dates and may be out of date.
+
+- [Archive page](${SITE_URL}archive.html)
+- [archive.json](${SITE_URL}api/v1/archive.json)
 
 ## Machine-readable API
 
@@ -4580,7 +4762,8 @@ Start with the index: ${SITE_URL}api/v1/index.json
 - [products.json](${SITE_URL}api/v1/products.json): All products with provider links and implementation lists
 - [implementations.json](${SITE_URL}api/v1/implementations.json): All implementations with capability mappings and evidence
 - [providers.json](${SITE_URL}api/v1/providers.json): All providers with product lists
-- [model-access.json](${SITE_URL}api/v1/model-access.json): Model access records with deployment and constraint details
+- [model-access.json](${SITE_URL}api/v1/model-access.json): Archived open-model access records, frozen ${archive.frozen_on}
+- [archive.json](${SITE_URL}api/v1/archive.json): All records frozen ${archive.frozen_on} (self-hosted runtimes, open-model access, providers)
 - [evidence.json](${SITE_URL}api/v1/evidence.json): Evidence records with sources and changelog
 - [capability-matrix.json](${SITE_URL}api/v1/capability-matrix.json): Capability x product availability grid
 - [product-comparisons.json](${SITE_URL}api/v1/product-comparisons.json): Pairwise product capability overlap
@@ -4616,6 +4799,7 @@ Start with the index: ${SITE_URL}api/v1/index.json
 - [Timeline](${SITE_URL}timeline.html): Chronological view of feature launches and changes
 - [About](${SITE_URL}about.html): About the project
 - [Pattern](${SITE_URL}pattern.html): Knowledge as Code: the development pattern behind this project
+- [Archive](${SITE_URL}archive.html): Self-hosted runtimes and open-model access, frozen ${archive.frozen_on}
 
 ## Bridge pages (programmatic)
 
@@ -4689,7 +4873,8 @@ function generateAgentsJson(ontologyData) {
                 { path: 'products.json', description: 'All products with provider links and implementation lists' },
                 { path: 'implementations.json', description: 'All implementations with plan/surface availability and evidence' },
                 { path: 'providers.json', description: 'All providers with logos, websites, and product lists' },
-                { path: 'model-access.json', description: 'Open-model records with deployment modes and constraints' },
+                { path: 'model-access.json', description: `Archived open-model records, frozen ${ARCHIVE_FREEZE_DATE} and not refreshed` },
+                { path: 'archive.json', description: `Records frozen ${ARCHIVE_FREEZE_DATE}: self-hosted runtimes, open-model access, and their providers` },
                 { path: 'evidence.json', description: 'Evidence records with sources, changelog, and verification dates' },
                 { path: 'capability-matrix.json', description: 'Capability x product availability grid with best-gating per cell' },
                 { path: 'product-comparisons.json', description: 'Pairwise product capability overlap for all hosted product pairs' },
@@ -4705,7 +4890,7 @@ function generateAgentsJson(ontologyData) {
             tools: [
                 { name: 'list_capabilities', description: 'List all capabilities with IDs, names, and groups' },
                 { name: 'get_capability', description: 'Full details for a capability by ID' },
-                { name: 'list_products', description: 'List products, optionally filter by kind (hosted/runtime)' },
+                { name: 'list_products', description: 'List active hosted products' },
                 { name: 'get_product', description: 'Full details for a product including plan names' },
                 { name: 'compare_products', description: 'Pairwise capability overlap between two products' },
                 { name: 'check_availability', description: 'Whether a product implements a capability, with gating and plan details' },
@@ -4715,8 +4900,8 @@ function generateAgentsJson(ontologyData) {
                 { name: 'get_provider', description: 'Full details for a provider by ID' },
                 { name: 'find_products_by_capabilities', description: 'Find products supporting ALL specified capabilities' },
                 { name: 'get_evidence', description: 'Verification sources, changelog, and freshness dates for an implementation' },
-                { name: 'list_model_access', description: 'All open/self-hostable models with deployment modes' },
-                { name: 'get_model_access', description: 'Full details for an open model by ID' },
+                { name: 'list_model_access', description: `Archived open-model records, frozen ${ARCHIVE_FREEZE_DATE} and not refreshed` },
+                { name: 'get_model_access', description: `Full details for an archived open-model record by ID (frozen ${ARCHIVE_FREEZE_DATE})` },
                 { name: 'get_staleness_report', description: 'Evidence records whose verified date exceeds a threshold' }
             ]
         },
@@ -4952,6 +5137,8 @@ function main() {
 
     // Load and enrich ontology data
     const ontologyData = loadOntologyData(platforms);
+    ontologyData.archive = loadArchiveData();
+    console.log(`Loaded archive frozen ${ontologyData.archive.frozen_on}: ${ontologyData.archive.runtime_products.length} runtime products, ${ontologyData.archive.model_access.length} model access records, ${ontologyData.archive.providers.length} providers`);
 
     // Ensure output directories exist
     const outputDir = path.dirname(IMPLEMENTATIONS_OUTPUT_FILE);
@@ -5011,6 +5198,10 @@ function main() {
     fs.writeFileSync(COMPARE_OUTPUT_FILE, compareHTML);
     console.log(`✅ Compare page written to ${COMPARE_OUTPUT_FILE}`);
     console.log(`   File size: ${(compareHTML.length / 1024).toFixed(1)} KB`);
+
+    const archiveHTML = generateArchiveHTML(ontologyData.archive);
+    fs.writeFileSync(ARCHIVE_OUTPUT_FILE, archiveHTML);
+    console.log(`✅ Archive page written to ${ARCHIVE_OUTPUT_FILE}`);
 
     fs.writeFileSync(TIMELINE_OUTPUT_FILE, timelineHTML);
     console.log(`✅ Timeline written to ${TIMELINE_OUTPUT_FILE}`);

@@ -1,15 +1,16 @@
 ---
+archived_on: 2026-10-11
 id: lm-studio
 name: LM Studio
 provider: lm-studio
-record_source: data/platforms/lm-studio-runtime.md
+record_source: data/archive/platforms/lm-studio-runtime.md
 source_heading: LM Studio
 pricing_page: https://lmstudio.ai/
 default_surfaces:
   - desktop
   - api
 last_verified: 2026-03-07
-status: active
+status: archived
 product_kind: runtime
 ---
 

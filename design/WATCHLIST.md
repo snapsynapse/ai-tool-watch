@@ -5,7 +5,7 @@ Last updated: 2026-05-29
 
 This file tracks candidates that may belong in the AI Capability Reference but are not yet clearly in scope.
 
-Note: a `data/watchlist/` file that backs an active record (one carrying a feature property table, e.g. `oobabooga-runtime.md` backing the `text-generation-webui` product) is verified on the same cascade as `data/platforms/` files, so its evidence stays fresh. Note-style entries (the template below) are not verified.
+Note: a `data/watchlist/` file that backs an active record (one carrying a feature property table; `oobabooga-runtime.md`, which backed `text-generation-webui`, was the example until both were archived on 2026-10-11) is verified on the same cascade as `data/platforms/` files, so its evidence stays fresh. Note-style entries (the template below) are not verified.
 
 The watchlist exists to keep scope decisions explicit.
 

@@ -1,11 +1,12 @@
 ---
+archived_on: 2026-10-11
 id: leanstral
 name: Leanstral
 provider: mistral
-record_source: data/platforms/mistral-open-models.md
+record_source: data/archive/platforms/mistral-open-models.md
 source_heading: Leanstral (Mistral)
 last_verified: 2026-03-17
-status: active
+status: archived
 ---
 
 ## Summary
