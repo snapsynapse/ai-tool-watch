@@ -54,6 +54,7 @@ AI Tool Watch is a Snap Synapse reference, not a PAICE standard. On 2026-09-22 t
 - GitHub Pages publishes through a GitHub Actions workflow that uploads the verified publication artifact, not branch-folder publishing from `main` `/docs`. Reason: the publication manifest verifies the exact artifact before deploy. Root files, including this document, are not served on the site but are public on GitHub because the repository is public.
 - Session handoffs stay local under the gitignored `handoffs/` directory, per the portfolio baseline. Durable decisions from them are migrated here.
 ## Changelog
+- 2026-10-11: Execute the archive part of the slim decision: self-hosted runtimes, the 11 open-model access records, their providers and source files moved to `data/archive/`, rendered on `archive.html` and `api/v1/archive.json`, with old permalinks redirected. Workflows and maintenance bounds unchanged; Meta AI still pending.
 - 2026-10-11: Record the owner decision to slim to maintenance, keep the ~1% hosted-product scope line, and freeze self-hosted runtimes and open-model access into an archived section. Meta AI addition pending. Execution not started.
 - 2026-10-03: Record exact hosted acceptance for commit `6cf6c2d` and prepare a validated local npm/MCP Registry package candidate. Neither npm nor Registry publication is authorized or complete.
 - 2026-10-03: Record cookieless PostHog measurement through the shared Snap Synapse project, with website-only scope and hostname isolation.
