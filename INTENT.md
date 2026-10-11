@@ -28,8 +28,8 @@ Decided by Sam Rogers on 2026-10-11, superseding the maintenance terms above but
 - Slim to maintenance. Keep the site, JSON API, and MCP server live.
 - Keep the scope line at roughly 1% or greater public market share for hosted products. Lines of 5% and 10% were evaluated and rejected; Copilot, Perplexity, and Grok stay in.
 - Drop non-cloud offerings: self-hosted runtimes (Ollama, LM Studio, text-generation-webui) and the 11 open-model access records. Move them to an archived section that states what was frozen, the freeze date, and why. Archived records keep their last-verified dates and are not refreshed.
-- Pending owner decision: whether to add Meta AI, which clears the 1% line on app usage (Apptopia, September 2026: 17.7% of US consumer chatbot app daily users) but is absent from web-visit share rankings. DeepSeek's hosted chat (Similarweb, June 2026: 3.6% of generative AI web visits) also clears the line and is likewise not tracked.
-- Maintenance bounds (time budget, paid verification, workflow schedules) are not yet set; they follow the scope change.
+- Meta AI is added to scope (clears ~1% on app usage, Apptopia September 2026: 17.7% of US consumer chatbot app daily users). DeepSeek's hosted chat is not added.
+- Resume the Monday and Thursday scheduled verification and the full multi-model cascade. Weekly distribution campaigns wait until the cascade runs reliably on schedule. The spend bounds (FRESHNESS_* repo variables) are not yet set.
 - Execution (data moves, archive page, SCOPE.md, workflow changes) is a separate tranche after main is resynced with origin; nothing has been executed by this record.
 
 Evidence at the 2026-10-11 decision:
@@ -54,8 +54,8 @@ AI Tool Watch is a Snap Synapse reference, not a PAICE standard. On 2026-09-22 t
 - GitHub Pages publishes through a GitHub Actions workflow that uploads the verified publication artifact, not branch-folder publishing from `main` `/docs`. Reason: the publication manifest verifies the exact artifact before deploy. Root files, including this document, are not served on the site but are public on GitHub because the repository is public.
 - Session handoffs stay local under the gitignored `handoffs/` directory, per the portfolio baseline. Durable decisions from them are migrated here.
 ## Changelog
-- 2026-10-11: Execute the archive part of the slim decision: self-hosted runtimes, the 11 open-model access records, their providers and source files moved to `data/archive/`, rendered on `archive.html` and `api/v1/archive.json`, with old permalinks redirected. Workflows and maintenance bounds unchanged; Meta AI still pending.
-- 2026-10-11: Record the owner decision to slim to maintenance, keep the ~1% hosted-product scope line, and freeze self-hosted runtimes and open-model access into an archived section. Meta AI addition pending. Execution not started.
+- 2026-10-11: Execute the archive part of the slim decision: self-hosted runtimes, the 11 open-model access records, their providers and source files moved to `data/archive/`, rendered on `archive.html` and `api/v1/archive.json`, with old permalinks redirected. Workflows unchanged; adding the Meta AI record and resuming the Monday/Thursday cascade are separate tranches.
+- 2026-10-11: Record the owner decision to slim to maintenance, keep the ~1% hosted-product scope line, and freeze self-hosted runtimes and open-model access into an archived section. Add Meta AI to scope; do not add DeepSeek's hosted chat. Resume Monday/Thursday scheduled verification and the full cascade, with weekly campaigns held until it runs reliably; FRESHNESS_* spend bounds not yet set. Execution not started.
 - 2026-10-03: Record exact hosted acceptance for commit `6cf6c2d` and prepare a validated local npm/MCP Registry package candidate. Neither npm nor Registry publication is authorized or complete.
 - 2026-10-03: Record cookieless PostHog measurement through the shared Snap Synapse project, with website-only scope and hostname isolation.
 - 2026-09-28: Create INTENT.md. Record the reference-not-news positioning, stated-age-per-claim currency commitment, audience priority, the maintain-through-2026-12-31 decision with weekly single-person campaigns and its year-end criterion, the current competitive position, and the removal of the PAICE dependency.

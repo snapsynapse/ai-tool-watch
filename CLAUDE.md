@@ -63,7 +63,7 @@ CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu
 
 ## Current state (as of 2026-10-11)
 
-Slimmed to maintenance on 2026-10-11: scope is hosted products at roughly 1% or greater share, and self-hosted runtimes plus open-model access are frozen in the archive. Maintenance bounds and workflow schedules are not yet set; Meta AI addition is pending. The year-end continue-or-retire review still stands. See `INTENT.md` "Status and review". Scheduled verification (Mon/Thu) now ends as `blocked_unapproved` unless paid runs are approved, so freshness depends on reviewed updates.
+Slimmed to maintenance on 2026-10-11: scope is hosted products at roughly 1% or greater share, and self-hosted runtimes plus open-model access are frozen in the archive. Owner decisions not yet executed: add Meta AI (DeepSeek's hosted chat is not added), and resume Monday/Thursday scheduled verification with the full cascade before any weekly campaigns; FRESHNESS_* spend bounds are not yet set. The year-end continue-or-retire review still stands. See `INTENT.md` "Status and review". Scheduled verification (Mon/Thu) now ends as `blocked_unapproved` unless paid runs are approved, so freshness depends on reviewed updates.
 
 Per `design/ROADMAP.md`: the original five-phase roadmap is complete (ontology-backed data model, dual-view site, JSON API, 125 SEO bridge pages, MCP read layer, verification cascade). Repo is active — commits land almost daily via automated dashboard rebuilds and Checked/Verified date updates, plus occasional feature work (e.g. cascade signal-suppression fix).
 
