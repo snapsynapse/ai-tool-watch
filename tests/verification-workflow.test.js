@@ -21,8 +21,7 @@ function input(overrides = {}) {
         cliOutcome: 'success',
         cliHealthStatus: 'healthy',
         downstreamOutcomes: {
-            args: 'success', syncEvidence: 'skipped', validateOntology: 'skipped',
-            validateStructuredData: 'skipped', build: 'skipped', commit: 'skipped', push: 'skipped'
+            args: 'success', build: 'skipped', commit: 'skipped', push: 'skipped'
         },
         ...overrides
     };
@@ -41,8 +40,8 @@ test('review-required exit is green only when the CLI health envelope agrees', (
 
 test('operational CLI exit and downstream publication failures remain failures', () => {
     assert.equal(finalizer.finalStatus(input({ cliExitCode: '2', cliOutcome: 'failure', cliHealthStatus: 'degraded' })).terminalStatus, 'degraded');
-    assert.equal(finalizer.finalStatus(input({ downstreamOutcomes: { args: 'success', syncEvidence: 'success', validateOntology: 'success', validateStructuredData: 'failure', build: 'skipped', commit: 'skipped', push: 'skipped' } })).terminalStatus, 'failed');
-    assert.equal(finalizer.finalStatus(input({ downstreamOutcomes: { args: 'success', syncEvidence: 'success', validateOntology: 'success', validateStructuredData: 'success', build: 'success', commit: 'success', push: 'failure' } })).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus(input({ downstreamOutcomes: { args: 'success', build: 'failure', commit: 'skipped', push: 'skipped' } })).terminalStatus, 'failed');
+    assert.equal(finalizer.finalStatus(input({ downstreamOutcomes: { args: 'success', build: 'success', commit: 'success', push: 'failure' } })).terminalStatus, 'failed');
 });
 
 test('a missing runner evidence envelope cannot be mistaken for health', () => {
@@ -77,9 +76,6 @@ test('finalizer reads the evidence files and rejects corrupt results JSON', () =
             CLI_OUTCOME: 'success',
             INITIALIZE_OUTCOME: 'success',
             ARGS_OUTCOME: 'success',
-            SYNC_EVIDENCE_OUTCOME: 'skipped',
-            VALIDATE_ONTOLOGY_OUTCOME: 'skipped',
-            VALIDATE_STRUCTURED_DATA_OUTCOME: 'skipped',
             BUILD_OUTCOME: 'skipped',
             COMMIT_OUTCOME: 'skipped',
             PUSH_OUTCOME: 'skipped'
@@ -102,10 +98,11 @@ test('workflow preserves schedule, uses safe array argv, and uploads evidence be
     assert.match(workflow, /cron: '0 1 \* \* 2,5'/);
     assert.match(workflow, /args=\(--verbose\)/);
     assert.match(workflow, /node scripts\/verify-features\.js "\$\{args\[@\]\}"/);
-    assert.match(workflow, /name: Sync derived evidence[\s\S]*node scripts\/sync-evidence\.js/);
-    assert.ok(workflow.indexOf('name: Sync derived evidence') < workflow.indexOf('name: Validate ontology'));
-    assert.ok(workflow.indexOf('name: Validate ontology') < workflow.indexOf('name: Generate published data'));
-    assert.ok(workflow.indexOf('name: Generate published data') < workflow.indexOf('name: Validate structured data'));
+    // The repository finisher regenerates evidence, docs/ and the publication
+    // manifest together; a bare build.js left the manifest stale.
+    assert.match(workflow, /name: Prepare reviewed publication[\s\S]*?run: node scripts\/prepare-publication\.js/);
+    assert.doesNotMatch(workflow, /run: node scripts\/build\.js/);
+    assert.ok(workflow.indexOf('name: Prepare reviewed publication') < workflow.indexOf('name: Commit Checked-date updates'));
     assert.match(workflow, /concurrency:\n\s+group: verify-features-\$\{\{ github\.ref \}\}\n\s+cancel-in-progress: false/);
     assert.match(workflow, /git add data\/platforms\/ data\/watchlist\/ data\/evidence\/index\.json docs\//);
     const runBlocks = [...workflow.matchAll(/run: \|\n([\s\S]*?)(?=\n\s*- name:|\n\s*#|$)/g)].map(match => match[1]);
@@ -122,7 +119,7 @@ test('state retention runs after failed verification, stages only state, and rea
     assert.ok(stateCommit, 'missing durable state commit step');
     assert.ok(statePush, 'missing durable state push step');
     assert.ok(workflow.indexOf('name: Run feature verification') < workflow.indexOf('name: Commit durable review state'));
-    assert.ok(workflow.indexOf('name: Push durable review state') < workflow.indexOf('name: Sync derived evidence'));
+    assert.ok(workflow.indexOf('name: Push durable review state') < workflow.indexOf('name: Prepare reviewed publication'));
     assert.match(stateCommit[0], /if: always\(\) && steps\.args\.outcome == 'success' && steps\.args\.outputs\.dry_run == 'false'/);
     assert.match(stateCommit[0], /if \[ ! -f "\$state_file" \]/);
     assert.match(stateCommit[0], /validateState/);
@@ -169,6 +166,14 @@ test('workflow gates only the scheduled paid path and wires the gate into finali
     assert.match(gate[0], /\*\) echo "::error::Unexpected event/);
     assert.match(workflow, /- name: Run feature verification\n\s+id: verify\n\s+if: steps\.args\.outcome == 'success' && steps\.gate\.outputs\.approved == 'true'/);
     assert.match(workflow, /name: Commit durable review state\n\s+id: state_commit\n\s+if: [^\n]*steps\.gate\.outputs\.approved == 'true'/);
+    // A skipped verify step has no outputs, and GitHub coerces the missing
+    // exit_code to 0 in "== '0'". Publication steps must also require that
+    // the verifier actually ran, or a blocked run rebuilds and pushes docs/.
+    for (const name of ['Prepare reviewed publication', 'Commit Checked-date updates']) {
+        const step = workflow.match(new RegExp(`- name: ${name}\\n\\s+id: \\w+\\n\\s+if: ([^\\n]*)`));
+        assert.ok(step, `missing ${name}`);
+        assert.match(step[1], /steps\.verify\.outcome != 'skipped' && steps\.verify\.outputs\.exit_code == '0'/);
+    }
     assert.match(workflow, /GATE_OUTCOME: \$\{\{ steps\.gate\.outcome \}\}/);
     assert.match(workflow, /GATE_APPROVED: \$\{\{ steps\.gate\.outputs\.approved \}\}/);
 });
@@ -204,8 +209,7 @@ test('the gate shell writes a blocked envelope the finalizer accepts, and approv
             JOB_STATUS: 'success', INITIALIZE_OUTCOME: 'success', ARGS_OUTCOME: 'success',
             GATE_OUTCOME: 'success', GATE_APPROVED: 'false', CLI_OUTCOME: 'skipped',
             STATE_COMMIT_OUTCOME: 'skipped', STATE_PUSH_OUTCOME: 'skipped',
-            SYNC_EVIDENCE_OUTCOME: 'skipped', VALIDATE_ONTOLOGY_OUTCOME: 'skipped',
-            VALIDATE_STRUCTURED_DATA_OUTCOME: 'skipped', BUILD_OUTCOME: 'skipped',
+            BUILD_OUTCOME: 'skipped',
             COMMIT_OUTCOME: 'skipped', PUSH_OUTCOME: 'skipped'
         });
         assert.deepEqual(payload.evidence.envelopeErrors, []);

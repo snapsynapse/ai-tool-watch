@@ -243,29 +243,20 @@ jobs:
 
       # Exit code 1 means that evidence was delivered for human review. It is a
       # successful execution state, but never permits source changes or a push.
-      - name: Sync derived evidence
-        id: sync_evidence
-        if: steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
-        run: node scripts/sync-evidence.js
-
-      - name: Validate ontology
-        id: validate_ontology
-        if: steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
-        run: node scripts/validate-ontology.js
-
-      - name: Generate published data
+      # The outcome guard matters: a skipped step has no outputs, and GitHub
+      # coerces a missing exit_code to 0 when comparing it with '0', so a
+      # blocked_unapproved run used to rebuild docs/ and push a bot commit.
+      # prepare-publication.js is the repository finisher (INTENT.md invariant
+      # 6); it also refreshes docs/publication-manifest.json, which a bare
+      # build.js run left stale and which then failed the scheduled build.
+      - name: Prepare reviewed publication
         id: build
-        if: steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
-        run: node scripts/build.js
-
-      - name: Validate structured data
-        id: validate_structured_data
-        if: steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
-        run: node scripts/validate-structured-data.js
+        if: steps.verify.outcome != 'skipped' && steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
+        run: node scripts/prepare-publication.js
 
       - name: Commit Checked-date updates
         id: commit
-        if: steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
+        if: steps.verify.outcome != 'skipped' && steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -318,9 +309,6 @@ jobs:
           GATE_APPROVED: ${{ steps.gate.outputs.approved }}
           STATE_COMMIT_OUTCOME: ${{ steps.state_commit.outcome }}
           STATE_PUSH_OUTCOME: ${{ steps.state_push.outcome }}
-          SYNC_EVIDENCE_OUTCOME: ${{ steps.sync_evidence.outcome }}
-          VALIDATE_ONTOLOGY_OUTCOME: ${{ steps.validate_ontology.outcome }}
-          VALIDATE_STRUCTURED_DATA_OUTCOME: ${{ steps.validate_structured_data.outcome }}
           BUILD_OUTCOME: ${{ steps.build.outcome }}
           COMMIT_OUTCOME: ${{ steps.commit.outcome }}
           PUSH_OUTCOME: ${{ steps.push.outcome }}

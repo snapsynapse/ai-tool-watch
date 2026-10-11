@@ -133,9 +133,6 @@ function buildInput(env = process.env) {
             args: env.ARGS_OUTCOME,
             stateCommit: env.STATE_COMMIT_OUTCOME,
             statePush: env.STATE_PUSH_OUTCOME,
-            syncEvidence: env.SYNC_EVIDENCE_OUTCOME,
-            validateOntology: env.VALIDATE_ONTOLOGY_OUTCOME,
-            validateStructuredData: env.VALIDATE_STRUCTURED_DATA_OUTCOME,
             build: env.BUILD_OUTCOME,
             commit: env.COMMIT_OUTCOME,
             push: env.PUSH_OUTCOME
@@ -163,9 +160,6 @@ function finalize(env = process.env) {
             gate: outcome(input.gateOutcome),
             stateCommit: outcome(input.downstreamOutcomes.stateCommit),
             statePush: outcome(input.downstreamOutcomes.statePush),
-            syncEvidence: outcome(input.downstreamOutcomes.syncEvidence),
-            validateOntology: outcome(input.downstreamOutcomes.validateOntology),
-            validateStructuredData: outcome(input.downstreamOutcomes.validateStructuredData),
             build: outcome(input.downstreamOutcomes.build),
             commit: outcome(input.downstreamOutcomes.commit),
             push: outcome(input.downstreamOutcomes.push)
