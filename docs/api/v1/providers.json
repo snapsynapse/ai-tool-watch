@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0",
-    "count": 6
+    "count": 7
   },
   "providers": [
     {
@@ -23,6 +23,16 @@
       "status_page": "https://status.cloud.google.com",
       "products": [
         "gemini"
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "logo": "https://cdn.simpleicons.org/meta",
+      "website": "https://about.meta.com/",
+      "status_page": null,
+      "products": [
+        "meta-ai"
       ]
     },
     {

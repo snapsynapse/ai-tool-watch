@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0",
-    "count": 6
+    "count": 7
   },
   "products": [
     {
@@ -155,6 +155,36 @@
         "grok-vision-image-understanding"
       ],
       "implementation_count": 10
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI",
+      "provider": "meta",
+      "product_kind": "hosted",
+      "pricing_page": "https://www.meta.com/meta-one-plans/",
+      "default_surfaces": [
+        "web",
+        "mobile"
+      ],
+      "last_verified": "2026-10-11",
+      "summary": "Meta's consumer assistant across the Meta AI app, meta.ai, WhatsApp, Instagram, Facebook, Messenger and Ray-Ban Meta glasses, for chat, search, research, image and video generation, voice, memory and connected-app tasks.",
+      "implementations": [
+        "meta-ai-chat",
+        "meta-ai-muse-image-image-generation",
+        "meta-ai-vibes-video-generation",
+        "meta-ai-voice-conversations",
+        "meta-ai-vision-and-live-ai",
+        "meta-ai-web-search",
+        "meta-ai-research-reports",
+        "meta-ai-memory",
+        "meta-ai-file-and-document-analysis",
+        "meta-ai-canvas-documents",
+        "meta-ai-visual-coding",
+        "meta-ai-connected-apps",
+        "meta-ai-tasks-and-daily-briefings",
+        "meta-ai-on-ai-glasses"
+      ],
+      "implementation_count": 14
     },
     {
       "id": "perplexity",

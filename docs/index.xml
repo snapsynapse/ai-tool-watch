@@ -3,10 +3,108 @@
 <channel>
     <title>AI Tool Watch</title>
     <link>https://aitool.watch/</link>
-    <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
+    <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2026 22:29:17 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 22:57:31 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-muse-image-image-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-muse-image-image-generation?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-vibes-video-generation</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-vibes-video-generation?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-voice-conversations</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-voice-conversations?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-vision-and-live-ai</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-vision-and-live-ai?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-web-search</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-web-search?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-research-reports</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-research-reports?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-memory</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-memory?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-file-and-document-analysis</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-file-and-document-analysis?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-canvas-documents</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-canvas-documents?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-visual-coding</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-visual-coding?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-connected-apps</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-connected-apps?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-tasks-and-daily-briefings</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-tasks-and-daily-briefings?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
+    <item>
+        <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
+        <link>https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-on-ai-glasses</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-on-ai-glasses?d=2026-10-11</guid>
+        <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
+    </item>
     <item>
         <title>Claude — [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion</title>
         <link>https://aitool.watch/implementations.html#impl-claude-voice-mode</link>
@@ -258,104 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-09-11</guid>
         <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google&apos;s subscriptions page (gemini.google/subscriptions/) (&quot;Varying access to 3.1 Pro&quot;). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google&apos;s subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-in-workspace-docs-sheets-etc</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-in-workspace-docs-sheets-etc?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus row (Gmail and Vids, not Docs) from Google&apos;s subscriptions page (gemini.google/subscriptions/); talking point prices corrected — Ultra starts at $99.99/mo, not $249.99</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Gating corrected paid → free: Google&apos;s subscriptions page lists Gemini Live in the $0 plan. Availability expanded from two rows to the full Free / Google AI Plus / Pro / Ultra lineup with official usage multipliers (2x, 4x, 5x–20x) and Live-specific tier features from Google&apos;s 2026-08-26 post (Daily Brief on Plus+, Spark on Pro+). Web ❌ now cites Google help directly. Three official sources added. Resolves #632 questions 1 and 2 for this record</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gems-custom-chatbots</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gems-custom-chatbots?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Gems is listed in the $0 plan card</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-imagen</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-imagen?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); image generation and editing is listed in the $0 plan card</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Free row ❌ → ⚠️: Google&apos;s subscriptions page (gemini.google/subscriptions/) lists &quot;limited access to Nano Banana Pro&quot; via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-nano-banana-pro?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Free row ❌ → ⚠️: Google&apos;s subscriptions page (gemini.google/subscriptions/) lists &quot;limited access to Nano Banana Pro&quot; via Google Flow in the $0 plan; Google AI Plus and Google AI Ultra rows added. Gating stays paid — full Gemini-app access still starts at Google AI Pro</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/), which now calls the product &quot;Gemini Notebook&quot; (record title kept; implementations/index.yml binds to the heading)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-notebooklm</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-notebooklm?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/), which now calls the product &quot;Gemini Notebook&quot; (record title kept; implementations/index.yml binds to the heading)</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-project-astra</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus row — video generation is included at Plus per Google&apos;s subscriptions page (gemini.google/subscriptions/); Limits now carry Google&apos;s published Flow credit allocations; talking point prices corrected</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-veo-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-veo-video-generation?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus row — video generation is included at Plus per Google&apos;s subscriptions page (gemini.google/subscriptions/); Limits now carry Google&apos;s published Flow credit allocations; talking point prices corrected</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-chat?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Talking point plan names normalised to Google AI Pro / Ultra to match the availability rows; no factual change</description>
-    </item>
-    <item>
-        <title>Grok — Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Grok: Per-tier daily generation counts (~3/day free, 50/100/500 per day paid) flagged as unsourced — their only backing was the unofficial supergrok.online source removed in #620, and no official xAI source publishes per-tier consumer video limits. docs.x.ai documents only API per-second pricing, 15s max duration and resolution caps; paid plans are reported to draw on a shared usage pool across Chat/Imagine/Voice/Build. Restructure deferred to the grok.md tier-taxonomy issue. Verified deliberately not bumped</description>
-    </item>
-    <item>
-        <title>Grok — [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-memory?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Grok: [Verified] Dead source compareclaw.com removed (HTTP 402, Vercel DEPLOYMENT_DISABLED — entire domain offline). No official xAI page describing consumer memory was found, so the record now rests on a single third-party source. Talking point corrected — a memory toggle exists under Settings → Data Controls (two independent reports); the earlier claim that memory cannot be inspected or edited was itself unsourced. Verified not bumped: no primary source</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-in-office-apps</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-in-office-apps?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
-    </item>
-    <item>
-        <title>Microsoft Copilot — [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-09-07</guid>
-        <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Microsoft Copilot: [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged.</description>
     </item>
 </channel>
 </rss>

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0"
   },
   "products": {
@@ -960,6 +960,130 @@
           ],
           "implementation_count": 3,
           "capability_count": 3
+        }
+      }
+    },
+    "meta-ai": {
+      "plans": {
+        "Free": {
+          "price": "$0",
+          "implementations": [
+            "meta-ai-chat",
+            "meta-ai-muse-image-image-generation",
+            "meta-ai-vibes-video-generation",
+            "meta-ai-voice-conversations",
+            "meta-ai-vision-and-live-ai",
+            "meta-ai-web-search",
+            "meta-ai-research-reports",
+            "meta-ai-memory",
+            "meta-ai-file-and-document-analysis",
+            "meta-ai-canvas-documents",
+            "meta-ai-visual-coding",
+            "meta-ai-connected-apps",
+            "meta-ai-tasks-and-daily-briefings",
+            "meta-ai-on-ai-glasses"
+          ],
+          "capabilities": [
+            "write-and-explain",
+            "use-it-on-my-surfaces",
+            "generate-images",
+            "generate-video",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "see-images-and-screens",
+            "search-the-web",
+            "do-multi-step-research",
+            "remember-context-over-time",
+            "use-files-i-provide",
+            "read-text-and-documents",
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "connect-to-external-systems",
+            "take-actions-and-run-tools",
+            "build-reusable-ai-workflows"
+          ],
+          "implementation_count": 14,
+          "capability_count": 17
+        },
+        "Meta One Core": {
+          "price": "$7.99/mo",
+          "implementations": [
+            "meta-ai-chat",
+            "meta-ai-muse-image-image-generation",
+            "meta-ai-vibes-video-generation",
+            "meta-ai-voice-conversations",
+            "meta-ai-vision-and-live-ai",
+            "meta-ai-web-search",
+            "meta-ai-research-reports",
+            "meta-ai-memory",
+            "meta-ai-file-and-document-analysis",
+            "meta-ai-canvas-documents",
+            "meta-ai-visual-coding",
+            "meta-ai-connected-apps",
+            "meta-ai-tasks-and-daily-briefings",
+            "meta-ai-on-ai-glasses"
+          ],
+          "capabilities": [
+            "write-and-explain",
+            "use-it-on-my-surfaces",
+            "generate-images",
+            "generate-video",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "see-images-and-screens",
+            "search-the-web",
+            "do-multi-step-research",
+            "remember-context-over-time",
+            "use-files-i-provide",
+            "read-text-and-documents",
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "connect-to-external-systems",
+            "take-actions-and-run-tools",
+            "build-reusable-ai-workflows"
+          ],
+          "implementation_count": 14,
+          "capability_count": 17
+        },
+        "Meta One Premium": {
+          "price": "$19.99/mo",
+          "implementations": [
+            "meta-ai-chat",
+            "meta-ai-muse-image-image-generation",
+            "meta-ai-vibes-video-generation",
+            "meta-ai-voice-conversations",
+            "meta-ai-vision-and-live-ai",
+            "meta-ai-web-search",
+            "meta-ai-research-reports",
+            "meta-ai-memory",
+            "meta-ai-file-and-document-analysis",
+            "meta-ai-canvas-documents",
+            "meta-ai-visual-coding",
+            "meta-ai-connected-apps",
+            "meta-ai-tasks-and-daily-briefings",
+            "meta-ai-on-ai-glasses"
+          ],
+          "capabilities": [
+            "write-and-explain",
+            "use-it-on-my-surfaces",
+            "generate-images",
+            "generate-video",
+            "hear-audio-and-speech",
+            "speak-back-in-real-time",
+            "see-images-and-screens",
+            "search-the-web",
+            "do-multi-step-research",
+            "remember-context-over-time",
+            "use-files-i-provide",
+            "read-text-and-documents",
+            "make-and-edit-documents",
+            "write-and-edit-code",
+            "connect-to-external-systems",
+            "take-actions-and-run-tools",
+            "build-reusable-ai-workflows"
+          ],
+          "implementation_count": 14,
+          "capability_count": 17
         }
       }
     },

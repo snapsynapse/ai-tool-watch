@@ -20,9 +20,13 @@ test('archived records stay out of the active API', () => {
     const products = readApi('products.json').products;
     assert.ok(products.every(product => product.product_kind !== 'runtime'), 'runtime products must not be active');
     const providerIds = readApi('providers.json').providers.map(provider => provider.id);
-    for (const id of ['ollama', 'lm-studio', 'oobabooga', 'alibaba', 'deepseek', 'meta', 'mistral']) {
+    for (const id of ['ollama', 'lm-studio', 'oobabooga', 'alibaba', 'deepseek', 'mistral']) {
         assert.ok(!providerIds.includes(id), `${id} must be archived, not active`);
     }
+    // Meta's open-model (Llama) records stay archived; Meta itself is active again for hosted Meta AI.
+    assert.ok(providerIds.includes('meta'), 'meta must be active for Meta AI');
+    assert.ok(readApi('archive.json').providers.some(provider => provider.id === 'meta'), 'meta must stay in the archive for its frozen Llama records');
+    assert.ok(!readApi('model-access.json').model_access.some(record => record.archived !== true), 'open-model access must stay archived');
 });
 
 test('archive.json and model-access.json serve the frozen records with their dates', () => {

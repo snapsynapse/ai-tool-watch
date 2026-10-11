@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0"
   },
   "capabilities": [
@@ -29,6 +29,7 @@
     "copilot",
     "gemini",
     "grok",
+    "meta-ai",
     "perplexity"
   ],
   "matrix": {
@@ -65,6 +66,13 @@
         "available": true,
         "implementations": [
           "grok-voice-mode"
+        ],
+        "best_gating": "free"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-voice-conversations"
         ],
         "best_gating": "free"
       },
@@ -111,6 +119,13 @@
         "implementations": [],
         "best_gating": null
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-file-and-document-analysis"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": true,
         "implementations": [
@@ -155,6 +170,14 @@
         ],
         "best_gating": "paid"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-vision-and-live-ai",
+          "meta-ai-on-ai-glasses"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": false,
         "implementations": [],
@@ -194,6 +217,13 @@
         "available": true,
         "implementations": [
           "grok-voice-mode"
+        ],
+        "best_gating": "free"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-voice-conversations"
         ],
         "best_gating": "free"
       },
@@ -241,6 +271,13 @@
         ],
         "best_gating": "paid"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-chat"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": true,
         "implementations": [
@@ -284,6 +321,13 @@
         ],
         "best_gating": "free"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-muse-image-image-generation"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": false,
         "implementations": [],
@@ -321,6 +365,13 @@
           "grok-imagine-video-generation"
         ],
         "best_gating": "paid"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-vibes-video-generation"
+        ],
+        "best_gating": "free"
       },
       "perplexity": {
         "available": false,
@@ -362,6 +413,13 @@
         "available": true,
         "implementations": [
           "grok-studio"
+        ],
+        "best_gating": "free"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-canvas-documents"
         ],
         "best_gating": "free"
       },
@@ -411,6 +469,13 @@
         ],
         "best_gating": "free"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-visual-coding"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": false,
         "implementations": [],
@@ -445,6 +510,11 @@
         "best_gating": "free"
       },
       "grok": {
+        "available": false,
+        "implementations": [],
+        "best_gating": null
+      },
+      "meta-ai": {
         "available": false,
         "implementations": [],
         "best_gating": null
@@ -491,6 +561,13 @@
         ],
         "best_gating": "free"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-memory"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": false,
         "implementations": [],
@@ -529,6 +606,13 @@
         "available": false,
         "implementations": [],
         "best_gating": null
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-file-and-document-analysis"
+        ],
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,
@@ -575,6 +659,13 @@
         ],
         "best_gating": "paid"
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-research-reports"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": true,
         "implementations": [
@@ -619,6 +710,14 @@
           "grok-deepsearch"
         ],
         "best_gating": "paid"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-web-search",
+          "meta-ai-research-reports"
+        ],
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,
@@ -668,6 +767,13 @@
         "implementations": [],
         "best_gating": null
       },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-tasks-and-daily-briefings"
+        ],
+        "best_gating": "free"
+      },
       "perplexity": {
         "available": true,
         "implementations": [
@@ -712,6 +818,13 @@
         "available": false,
         "implementations": [],
         "best_gating": null
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-tasks-and-daily-briefings"
+        ],
+        "best_gating": "free"
       },
       "perplexity": {
         "available": false,
@@ -758,6 +871,13 @@
         "available": true,
         "implementations": [
           "grok-real-time-x-twitter-data"
+        ],
+        "best_gating": "free"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-connected-apps"
         ],
         "best_gating": "free"
       },
@@ -808,6 +928,14 @@
           "grok-chat"
         ],
         "best_gating": "paid"
+      },
+      "meta-ai": {
+        "available": true,
+        "implementations": [
+          "meta-ai-chat",
+          "meta-ai-on-ai-glasses"
+        ],
+        "best_gating": "free"
       },
       "perplexity": {
         "available": true,

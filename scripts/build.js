@@ -1512,7 +1512,7 @@ function generateHTML(platforms, ontologyData) {
 
         ${(() => {
             // Sort platforms by vendor order (same as header toggles)
-            const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI'];
+            const vendorOrder = ['OpenAI', 'Microsoft', 'Google', 'Anthropic', 'Perplexity AI', 'xAI', 'Meta'];
             const sortedPlatforms = [...hostedPlatforms].sort((a, b) => {
                 const aIdx = vendorOrder.indexOf(a.vendor);
                 const bIdx = vendorOrder.indexOf(b.vendor);
@@ -3522,7 +3522,7 @@ function generateCompareHTML(ontologyData) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare Products - ${DASHBOARD_TITLE}</title>
-    <meta name="description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.">
+    <meta name="description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.">
     <meta name="theme-color" content="#1a1a2e">
     <link rel="canonical" href="${SITE_URL}compare.html">
 
@@ -3533,7 +3533,7 @@ function generateCompareHTML(ontologyData) {
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Compare Products - ${DASHBOARD_TITLE}">
-    <meta property="og:description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.">
+    <meta property="og:description" content="Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.">
     <meta property="og:image" content="${SITE_URL}imgs/og.png">
     <meta property="og:url" content="${SITE_URL}compare.html">
 
@@ -3552,7 +3552,7 @@ function generateCompareHTML(ontologyData) {
           "@id": "${SITE_URL}compare.html#webpage",
           "url": "${SITE_URL}compare.html",
           "name": "Compare Products - ${DASHBOARD_TITLE}",
-          "description": "Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.",
+          "description": "Side-by-side comparison of AI product capabilities across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.",
           "isPartOf": { "@id": "${SITE_URL}#website" },
           "publisher": { "@id": "https://snapsynapse.com/#organization" },
           "about": {
@@ -4511,7 +4511,7 @@ function generateChangesPages(ontologyData, framingCache) {
     let indexContent = `<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › Recent Changes</nav>\n`;
     indexContent += `<h1>Recent AI Tool Changes</h1>\n`;
     indexContent += renderPageFraming(fc, 'changes/', 'changes', {
-        scope: 'AI tools across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity',
+        scope: 'AI tools across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI',
         count30d: changesCount30d,
         latestChange: latestChangeText
     });
@@ -4550,7 +4550,7 @@ function generateChangesPages(ontologyData, framingCache) {
         depth: 1,
         content: indexContent,
         structuredData: indexStructuredData,
-        description: `Verified changelog for AI tools: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity. ${changesCount30d} changes in the last 30 days. Last updated ${lastmodAll}.`
+        description: `Verified changelog for AI tools: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Meta AI. ${changesCount30d} changes in the last 30 days. Last updated ${lastmodAll}.`
     });
 
     // --- /changes/{product}/ pages ---
@@ -4730,7 +4730,7 @@ function generateLlmsTxt(ontologyData) {
 
 > What can this AI actually do?
 
-A plain-English reference for AI capabilities, plans, constraints, and implementations across hosted consumer AI products from providers with roughly 1% or greater public market share (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity).
+A plain-English reference for AI capabilities, plans, constraints, and implementations across hosted consumer AI products from providers with roughly 1% or greater public market share (ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Meta AI).
 
 Maintained by Snap Synapse. Every claim carries its primary source and last-verified date.
 
@@ -4964,7 +4964,7 @@ function generateFeedXml(platforms) {
 <channel>
     <title>${escapeXml(DASHBOARD_TITLE)}</title>
     <link>${SITE_URL}</link>
-    <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity.</description>
+    <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="${SITE_URL}index.xml" rel="self" type="application/rss+xml"/>

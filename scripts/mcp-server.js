@@ -149,7 +149,7 @@ const TOOLS = [
     },
     {
         name: 'compare_products',
-        description: 'Compare two products by capability overlap. Shows shared capabilities, unique-to-each, and counts. Only works for hosted products (chatgpt, claude, copilot, gemini, grok, perplexity).',
+        description: 'Compare two products by capability overlap. Shows shared capabilities, unique-to-each, and counts. Only works for hosted products (chatgpt, claude, copilot, gemini, grok, perplexity, meta-ai).',
         inputSchema: {
             type: 'object',
             properties: {

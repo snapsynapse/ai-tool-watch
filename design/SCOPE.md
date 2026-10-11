@@ -81,6 +81,7 @@ Examples:
 - Copilot
 - Perplexity
 - Grok
+- Meta AI
 
 Do not create a product record when the thing is really:
 

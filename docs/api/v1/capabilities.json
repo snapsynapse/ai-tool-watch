@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0",
     "count": 18
   },
@@ -40,18 +40,20 @@
         "copilot-voice",
         "gemini-live-voice-mode",
         "grok-voice-mode",
-        "perplexity-voice-mode"
+        "perplexity-voice-mode",
+        "meta-ai-voice-conversations"
       ],
-      "implementation_count": 6,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     },
@@ -90,17 +92,19 @@
         "copilot-office-apps",
         "gemini-workspace",
         "gemini-notebooklm",
-        "perplexity-collections-spaces"
+        "perplexity-collections-spaces",
+        "meta-ai-file-and-document-analysis"
       ],
-      "implementation_count": 6,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },
@@ -138,17 +142,20 @@
         "claude-vision-image-understanding",
         "copilot-vision",
         "gemini-live-voice-mode",
-        "grok-vision-image-understanding"
+        "grok-vision-image-understanding",
+        "meta-ai-vision-and-live-ai",
+        "meta-ai-on-ai-glasses"
       ],
-      "implementation_count": 5,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
-        "grok"
+        "grok",
+        "meta-ai"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },
@@ -187,18 +194,20 @@
         "copilot-voice",
         "gemini-live-voice-mode",
         "grok-voice-mode",
-        "perplexity-voice-mode"
+        "perplexity-voice-mode",
+        "meta-ai-voice-conversations"
       ],
-      "implementation_count": 6,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     },
@@ -237,18 +246,20 @@
         "copilot-chat",
         "gemini-chat",
         "grok-chat",
-        "perplexity-chat"
+        "perplexity-chat",
+        "meta-ai-chat"
       ],
-      "implementation_count": 6,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     },
@@ -287,16 +298,18 @@
         "copilot-image-generation-designer",
         "gemini-imagen",
         "gemini-nano-banana-pro",
-        "grok-image-generation-aurora"
+        "grok-image-generation-aurora",
+        "meta-ai-muse-image-image-generation"
       ],
-      "implementation_count": 5,
+      "implementation_count": 6,
       "products": [
         "chatgpt",
         "copilot",
         "gemini",
-        "grok"
+        "grok",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -331,15 +344,17 @@
       "implementations": [
         "chatgpt-sora-video-generation",
         "gemini-veo-video-generation",
-        "grok-imagine-video-generation"
+        "grok-imagine-video-generation",
+        "meta-ai-vibes-video-generation"
       ],
-      "implementation_count": 3,
+      "implementation_count": 4,
       "products": [
         "chatgpt",
         "gemini",
-        "grok"
+        "grok",
+        "meta-ai"
       ],
-      "product_count": 3,
+      "product_count": 4,
       "model_access": [],
       "model_access_count": 0
     },
@@ -378,18 +393,20 @@
         "gemini-canvas",
         "gemini-workspace",
         "grok-studio",
-        "perplexity-pages"
+        "perplexity-pages",
+        "meta-ai-canvas-documents"
       ],
-      "implementation_count": 7,
+      "implementation_count": 8,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     },
@@ -431,16 +448,18 @@
         "claude-claude-code",
         "gemini-ai-studio",
         "gemini-canvas",
-        "grok-studio"
+        "grok-studio",
+        "meta-ai-visual-coding"
       ],
-      "implementation_count": 8,
+      "implementation_count": 9,
       "products": [
         "chatgpt",
         "claude",
         "gemini",
-        "grok"
+        "grok",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -520,16 +539,18 @@
         "chatgpt-memory",
         "claude-memory",
         "gemini-past-chats-memory",
-        "grok-memory"
+        "grok-memory",
+        "meta-ai-memory"
       ],
-      "implementation_count": 4,
+      "implementation_count": 5,
       "products": [
         "chatgpt",
         "claude",
         "gemini",
-        "grok"
+        "grok",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -567,16 +588,18 @@
         "gemini-workspace",
         "gemini-notebooklm",
         "perplexity-agent-mode-agentic-actions",
-        "perplexity-collections-spaces"
+        "perplexity-collections-spaces",
+        "meta-ai-file-and-document-analysis"
       ],
-      "implementation_count": 6,
+      "implementation_count": 7,
       "products": [
         "chatgpt",
         "claude",
         "gemini",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -618,17 +641,19 @@
         "grok-deepsearch",
         "perplexity-agent-mode-agentic-actions",
         "perplexity-pages",
-        "perplexity-pro-search"
+        "perplexity-pro-search",
+        "meta-ai-research-reports"
       ],
-      "implementation_count": 9,
+      "implementation_count": 10,
       "products": [
         "chatgpt",
         "claude",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },
@@ -669,16 +694,19 @@
         "grok-deepsearch",
         "perplexity-comet-browser",
         "perplexity-focus-modes",
-        "perplexity-pro-search"
+        "perplexity-pro-search",
+        "meta-ai-web-search",
+        "meta-ai-research-reports"
       ],
-      "implementation_count": 8,
+      "implementation_count": 10,
       "products": [
         "chatgpt",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -722,17 +750,19 @@
         "gemini-agentic-app-actions-android",
         "perplexity-agent-mode-agentic-actions",
         "perplexity-buy-with-pro-shopping",
-        "perplexity-comet-browser"
+        "perplexity-comet-browser",
+        "meta-ai-tasks-and-daily-briefings"
       ],
-      "implementation_count": 11,
+      "implementation_count": 12,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 5,
+      "product_count": 6,
       "model_access": [],
       "model_access_count": 0
     },
@@ -770,16 +800,18 @@
         "claude-skills",
         "copilot-agent-builder",
         "gemini-ai-studio",
-        "gemini-gems-custom-chatbots"
+        "gemini-gems-custom-chatbots",
+        "meta-ai-tasks-and-daily-briefings"
       ],
-      "implementation_count": 5,
+      "implementation_count": 6,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
-        "gemini"
+        "gemini",
+        "meta-ai"
       ],
-      "product_count": 4,
+      "product_count": 5,
       "model_access": [],
       "model_access_count": 0
     },
@@ -826,18 +858,20 @@
         "gemini-agentic-app-actions-android",
         "grok-real-time-x-twitter-data",
         "perplexity-agent-mode-agentic-actions",
-        "perplexity-enterprise-app-connectors"
+        "perplexity-enterprise-app-connectors",
+        "meta-ai-connected-apps"
       ],
-      "implementation_count": 13,
+      "implementation_count": 14,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     },
@@ -879,18 +913,21 @@
         "gemini-workspace",
         "gemini-chat",
         "grok-chat",
-        "perplexity-chat"
+        "perplexity-chat",
+        "meta-ai-chat",
+        "meta-ai-on-ai-glasses"
       ],
-      "implementation_count": 9,
+      "implementation_count": 11,
       "products": [
         "chatgpt",
         "claude",
         "copilot",
         "gemini",
         "grok",
-        "perplexity"
+        "perplexity",
+        "meta-ai"
       ],
-      "product_count": 6,
+      "product_count": 7,
       "model_access": [],
       "model_access_count": 0
     }

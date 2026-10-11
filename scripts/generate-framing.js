@@ -270,7 +270,7 @@ Output ONLY the 2-3 sentences, no quotes, no preamble.`;
     }
 
     // Changes pages
-    const changeProducts = ['chatgpt', 'claude', 'gemini', 'copilot', 'grok', 'perplexity'];
+    const changeProducts = ['chatgpt', 'claude', 'gemini', 'copilot', 'grok', 'perplexity', 'meta-ai'];
     for (const prodId of changeProducts) {
         const pagePath = `changes/${prodId}/`;
         if (PAGE_FILTER && PAGE_FILTER !== `/${pagePath}`) continue;
@@ -339,7 +339,7 @@ Context:
 - Most recent: ${latest ? `"${latest.change}" on ${latest.date.split('T')[0]}` : 'none'}
 
 Rules:
-- State this tracks verified changes across ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity
+- State this tracks verified changes across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI
 - Mention the 30-day count
 - Factual tone
 

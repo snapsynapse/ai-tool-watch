@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0",
-    "count": 73
+    "count": 87
   },
   "implementations": [
     {
@@ -7701,6 +7701,1342 @@
       "verified": "2026-03-07",
       "evidence_id": "implementation-perplexity-chat",
       "evidence_verified": "2026-03-07"
+    },
+    {
+      "id": "meta-ai-chat",
+      "name": "Meta AI Chat",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Meta AI Chat",
+      "capabilities": [
+        "write-and-explain",
+        "use-it-on-my-surfaces"
+      ],
+      "category": "other",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": "Instant, Thinking and Shopping modes"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI is Meta's assistant in the Meta AI app, on meta.ai, and inside WhatsApp, Instagram, Facebook and Messenger. **Everyday use is free**; the Meta One Core ($7.99/mo) and Premium ($19.99/mo) plans add media-generation usage, not chat access. Since April 2026 it runs on Meta's Muse Spark model, with Instant and Thinking modes.",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-chat",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-muse-image-image-generation",
+      "name": "Muse Image (Image Generation)",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Muse Image (Image Generation)",
+      "capabilities": [
+        "generate-images"
+      ],
+      "category": "image-gen",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily limit (unpublished)",
+          "notes": "Free for everyday creation"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "More usage",
+          "notes": "Monthly allowance; amount unpublished"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Most usage",
+          "notes": "Expanded monthly allowance for advanced image models; amount unpublished"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; image generation in WhatsApp chats with Meta AI in limited countries"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; image generation in WhatsApp chats with Meta AI in limited countries"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI generates and edits images with Muse Image, including on-photo markup edits and presets. **Free for everyday creation** within a daily limit; Meta One Core and Premium raise the allowance.",
+      "launched": "2026-07-07T18:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-muse-image-image-generation",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-vibes-video-generation",
+      "name": "Vibes (Video Generation)",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Vibes (Video Generation)",
+      "capabilities": [
+        "generate-video"
+      ],
+      "category": "video-gen",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily limit (unpublished)",
+          "notes": "Animate images into videos; edit uploaded clips up to 10 seconds"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "More usage",
+          "notes": "Monthly allowance; amount unpublished"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Most usage",
+          "notes": "Even more video creation per Meta; amount unpublished"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app and Vibes app"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app and Vibes app"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI turns images into short videos (",
+      "launched": "2025-09-25T19:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-vibes-video-generation",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-voice-conversations",
+      "name": "Voice Conversations",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Voice Conversations",
+      "capabilities": [
+        "hear-audio-and-speech",
+        "speak-back-in-real-time"
+      ],
+      "category": "voice",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": ""
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai voice interactions"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI holds spoken conversations in the Meta AI app; you can interrupt, switch topics or swap languages. **Free**. The App Store listing says voice works in 13 languages.",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-voice-conversations",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-vision-and-live-ai",
+      "name": "Vision and Live AI",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Vision and Live AI",
+      "capabilities": [
+        "see-images-and-screens"
+      ],
+      "category": "vision",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": "Photo questions; live camera in the app"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app: photos and live camera; also on AI glasses"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app: photos and live camera; also on AI glasses"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI answers questions about photos, and Live AI in the Meta AI app lets you point the camera and ask about what you see in real time. **Free**.",
+      "launched": "2026-05-12T14:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-vision-and-live-ai",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-web-search",
+      "name": "Web Search",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Web Search",
+      "capabilities": [
+        "search-the-web"
+      ],
+      "category": "search",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": ""
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI searches the web for current answers and mixes in public posts and Reels from Meta's apps. **Free**.",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-web-search",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-research-reports",
+      "name": "Research Reports",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Research Reports",
+      "capabilities": [
+        "do-multi-step-research",
+        "search-the-web"
+      ],
+      "category": "research",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": ""
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI can research a topic in minutes and return a structured report drawn from the web, research papers and public posts on Meta's apps, and you can steer it while it works. **Free**, in select markets.",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-research-reports",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-memory",
+      "name": "Memory",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Memory",
+      "capabilities": [
+        "remember-context-over-time"
+      ],
+      "category": "other",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "—",
+          "notes": "Ask it to remember, or it saves details from context; memories are deletable"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; also WhatsApp, Messenger and Facebook 1:1 chats"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; also WhatsApp, Messenger and Facebook 1:1 chats"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI can remember details you tell it, or pick them up from context, and use them later; you can delete memories at any time. It also personalizes answers from your Meta profile and activity when your accounts share an Accounts Center. **Free**, starting in the US and Canada.",
+      "launched": "2025-01-27T16:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-memory",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-file-and-document-analysis",
+      "name": "File and Document Analysis",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "File and Document Analysis",
+      "capabilities": [
+        "use-files-i-provide",
+        "read-text-and-documents"
+      ],
+      "category": "local-files",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": "Photos, videos, PDFs and spreadsheets"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI analyzes photos, videos, PDFs and spreadsheets you upload. **Free**. Meta publishes no file size or page limits.",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-file-and-document-analysis",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-canvas-documents",
+      "name": "Canvas Documents",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Canvas Documents",
+      "capabilities": [
+        "make-and-edit-documents"
+      ],
+      "category": "other",
+      "gating": "free",
+      "status": "beta",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "—",
+          "notes": "Beta; requires a Meta, Facebook or Instagram login"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": false,
+          "notes": "Steps documented for meta.ai"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": false,
+          "notes": "Steps documented for meta.ai"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "On meta.ai, Meta AI can draft a text document in an editor (Create → Canvas) that you edit, rewrite and illustrate, with saved versions. **Free, in beta**, and you need a Meta, Facebook or Instagram login.",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-canvas-documents",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-visual-coding",
+      "name": "Visual Coding",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Visual Coding",
+      "capabilities": [
+        "write-and-edit-code"
+      ],
+      "category": "coding",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": "Websites, dashboards and mini-games from a prompt"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app; also in WhatsApp, Instagram, Facebook, Messenger"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI can build small websites, dashboards and mini-games from a prompt and share them with friends. **Free**. It's not a coding tool for working in your own codebase.",
+      "launched": "2026-04-08T16:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-visual-coding",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-connected-apps",
+      "name": "Connected Apps",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Connected Apps",
+      "capabilities": [
+        "connect-to-external-systems"
+      ],
+      "category": "integrations",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "—",
+          "notes": "Calendars, email and other third-party apps; Google Workspace for business use"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app: Settings → Apps"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app: Settings → Apps"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI connects to third-party apps such as your calendar and email, so it can add events, check details or summarize unanswered email. **Free**. A connection made in one Accounts Center applies to every account in it.",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-connected-apps",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-tasks-and-daily-briefings",
+      "name": "Tasks and Daily Briefings",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Tasks and Daily Briefings",
+      "capabilities": [
+        "take-actions-and-run-tools",
+        "build-reusable-ai-workflows"
+      ],
+      "category": "agents",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "Daily usage limits (unpublished)",
+          "notes": ""
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": true,
+          "notes": "meta.ai"
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI can take on multi-step plans, follow up without being re-prompted, and run tasks you set up once, such as a daily calendar briefing or a weekly meal plan. **Free**, in select markets. Meta's separate Muse agent app, which acts on websites and makes purchases, isn't part of this record.",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-tasks-and-daily-briefings",
+      "evidence_verified": "2026-10-11"
+    },
+    {
+      "id": "meta-ai-on-ai-glasses",
+      "name": "Meta AI on AI Glasses",
+      "product": "meta-ai",
+      "provider": "meta",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Meta AI on AI Glasses",
+      "capabilities": [
+        "use-it-on-my-surfaces",
+        "see-images-and-screens"
+      ],
+      "category": "other",
+      "gating": "free",
+      "status": "ga",
+      "plans": [
+        {
+          "plan": "Free",
+          "available": true,
+          "limits": "—",
+          "notes": "Requires Ray-Ban Meta, Oakley Meta or Meta Ray-Ban Display glasses"
+        },
+        {
+          "plan": "Meta One Core",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        },
+        {
+          "plan": "Meta One Premium",
+          "available": true,
+          "limits": "Same as Free",
+          "notes": "Meta One adds media-generation usage, not access to this feature"
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "windows",
+          "name": "Windows",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "macos",
+          "name": "macOS",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "linux",
+          "name": "Linux",
+          "available": true,
+          "notes": "Via meta.ai in a desktop browser"
+        },
+        {
+          "surface": "ios",
+          "name": "iOS",
+          "available": true,
+          "notes": "Meta AI app is the glasses companion app"
+        },
+        {
+          "surface": "android",
+          "name": "Android",
+          "available": true,
+          "notes": "Meta AI app is the glasses companion app"
+        },
+        {
+          "surface": "chrome",
+          "name": "Chrome",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "web",
+          "name": "web",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "terminal",
+          "name": "terminal",
+          "available": false,
+          "notes": ""
+        },
+        {
+          "surface": "api",
+          "name": "API",
+          "available": false,
+          "notes": "Consumer feature; Muse Spark API is a private preview for select partners"
+        }
+      ],
+      "talking_point": "Meta AI is built into Ray-Ban Meta, Oakley Meta and Meta Ray-Ban Display glasses, managed from the Meta AI app. **No subscription needed**, but you need the glasses. Muse Spark reached the glasses in the US and Canada first.",
+      "launched": "2026-05-12T14:00Z",
+      "verified": "2026-10-11",
+      "evidence_id": "implementation-meta-ai-on-ai-glasses",
+      "evidence_verified": "2026-10-11"
     }
   ]
 }

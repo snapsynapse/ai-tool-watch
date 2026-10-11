@@ -4,7 +4,7 @@ Agent guidance for working in this repo. See `AGENTS.md` for the canonical build
 
 ## Purpose
 
-A plain-English, verified reference for AI tool capabilities, plan gates, and constraints — for humans and agents. Canonical URL: https://aitool.watch/. Covers 18 capabilities and ~73 implementations across hosted products at roughly 1% or greater market share: ChatGPT, Claude, Copilot, Gemini, Perplexity, and Grok. Self-hosted runtimes and the 11 open-model access records were frozen on 2026-10-11 (see `data/archive/` and `docs/archive.html`).
+A plain-English, verified reference for AI tool capabilities, plan gates, and constraints — for humans and agents. Canonical URL: https://aitool.watch/. Covers 18 capabilities and ~87 implementations across hosted products at roughly 1% or greater market share: ChatGPT, Claude, Copilot, Gemini, Perplexity, Grok, and Meta AI. Self-hosted runtimes and the 11 open-model access records were frozen on 2026-10-11 (see `data/archive/` and `docs/archive.html`).
 
 ## Stack
 

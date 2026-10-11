@@ -574,3 +574,107 @@
   capabilities:
     - write-and-explain
     - use-it-on-my-surfaces
+- id: meta-ai-chat
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Meta AI Chat
+  capabilities:
+    - write-and-explain
+    - use-it-on-my-surfaces
+- id: meta-ai-muse-image-image-generation
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Muse Image (Image Generation)
+  capabilities:
+    - generate-images
+- id: meta-ai-vibes-video-generation
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Vibes (Video Generation)
+  capabilities:
+    - generate-video
+- id: meta-ai-voice-conversations
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Voice Conversations
+  capabilities:
+    - hear-audio-and-speech
+    - speak-back-in-real-time
+- id: meta-ai-vision-and-live-ai
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Vision and Live AI
+  capabilities:
+    - see-images-and-screens
+- id: meta-ai-web-search
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Web Search
+  capabilities:
+    - search-the-web
+- id: meta-ai-research-reports
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Research Reports
+  capabilities:
+    - do-multi-step-research
+    - search-the-web
+- id: meta-ai-memory
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Memory
+  capabilities:
+    - remember-context-over-time
+- id: meta-ai-file-and-document-analysis
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: File and Document Analysis
+  capabilities:
+    - use-files-i-provide
+    - read-text-and-documents
+- id: meta-ai-canvas-documents
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Canvas Documents
+  capabilities:
+    - make-and-edit-documents
+- id: meta-ai-visual-coding
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Visual Coding
+  capabilities:
+    - write-and-edit-code
+- id: meta-ai-connected-apps
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Connected Apps
+  capabilities:
+    - connect-to-external-systems
+- id: meta-ai-tasks-and-daily-briefings
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Tasks and Daily Briefings
+  capabilities:
+    - take-actions-and-run-tools
+    - build-reusable-ai-workflows
+- id: meta-ai-on-ai-glasses
+  product: meta-ai
+  provider: meta
+  source_file: data/platforms/meta-ai.md
+  source_heading: Meta AI on AI Glasses
+  capabilities:
+    - use-it-on-my-surfaces
+    - see-images-and-screens

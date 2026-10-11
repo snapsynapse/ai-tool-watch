@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0",
-    "count": 79
+    "count": 94
   },
   "evidence": [
     {
@@ -2556,6 +2556,508 @@
       "notes": ""
     },
     {
+      "id": "implementation-meta-ai-canvas-documents",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-canvas-documents",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Canvas Documents",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Create text documents with Meta AI on www.meta.ai (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1319682792536795/"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Rich document editor entered testing on meta.ai in select countries"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-chat",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-chat",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Meta AI Chat",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Start a chat with Meta AI (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/943942350800511/"
+        },
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        },
+        {
+          "title": "Introducing Meta One (2026-09-15)",
+          "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/"
+        },
+        {
+          "title": "Meta AI and Vibes (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/3898022273743835/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-04-08T16:00Z",
+          "change": "Muse Spark replaced Llama 4 in the Meta AI app and meta.ai; Instant and Thinking modes added (US first)"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Standalone Meta AI app launched (Llama 4); Meta AI was already in WhatsApp, Instagram, Facebook and Messenger"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-connected-apps",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-connected-apps",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Connected Apps",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Use and manage third-party app connections in Meta AI (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1066348732357744/"
+        },
+        {
+          "title": "Meta AI Doesn't Just Think, It Acts (2026-07-24)",
+          "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
+        },
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-07-24T17:00Z",
+          "change": "Calendar-aware daily briefings and email and calendar connections launched in select markets"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-file-and-document-analysis",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-file-and-document-analysis",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "File and Document Analysis",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Document import for analysis entered testing on meta.ai"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-memory",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-memory",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Memory",
+      "launched": "2025-01-27T16:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Building Toward a Smarter, More Personalized Assistant (2025-01-27)",
+          "url": "https://about.fb.com/news/2025/01/building-toward-a-smarter-more-personalized-assistant/"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Memory and personalized responses in the new Meta AI app (US and Canada)"
+        },
+        {
+          "date": "2025-01-27T16:00Z",
+          "change": "Memory rolled out in 1:1 chats on Facebook, Messenger and WhatsApp (US and Canada)"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-muse-image-image-generation",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-muse-image-image-generation",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Muse Image (Image Generation)",
+      "launched": "2026-07-07T18:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Muse Image: Image Generation Built for Your World (2026-07-07, updated 2026-07-10)",
+          "url": "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/"
+        },
+        {
+          "title": "Generate images and videos using Meta AI and Vibes (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1337455336906126/"
+        },
+        {
+          "title": "Introducing Meta One (2026-09-15)",
+          "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/"
+        },
+        {
+          "title": "Manage AI usage for your Meta One plan (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1831790234178989/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-07-10T22:45Z",
+          "change": "@-mentioning public Instagram accounts as image references withdrawn"
+        },
+        {
+          "date": "2026-07-07T18:00Z",
+          "change": "Muse Image became Meta AI's image model"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-on-ai-glasses",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-on-ai-glasses",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Meta AI on AI Glasses",
+      "launched": "2026-05-12T14:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        },
+        {
+          "title": "The Biggest News From Connect 2026 (2026-09-24)",
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-05-12T14:00Z",
+          "change": "Muse Spark began rolling out on Ray-Ban Meta and Oakley Meta glasses in the US and Canada"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-research-reports",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-research-reports",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Research Reports",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Meta AI Doesn't Just Think, It Acts (2026-07-24)",
+          "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
+        },
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-07-24T17:00Z",
+          "change": "Research reports, slides and real-time steering launched in select markets"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-tasks-and-daily-briefings",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-tasks-and-daily-briefings",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Tasks and Daily Briefings",
+      "launched": "2026-07-24T17:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Meta AI Doesn't Just Think, It Acts (2026-07-24)",
+          "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
+        },
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-07-24T17:00Z",
+          "change": "Plans, follow-through, scheduled tasks and daily briefings launched in select markets (Muse Spark 1.1)"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-vibes-video-generation",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-vibes-video-generation",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Vibes (Video Generation)",
+      "launched": "2025-09-25T19:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Vibes: A New Way to Discover and Create AI Videos (2025-09-25)",
+          "url": "https://about.fb.com/news/2025/09/introducing-vibes-ai-videos/"
+        },
+        {
+          "title": "Generate images and videos using Meta AI and Vibes (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1337455336906126/"
+        },
+        {
+          "title": "Introducing Meta One (2026-09-15)",
+          "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/"
+        },
+        {
+          "title": "Manage AI usage for your Meta One plan (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1831790234178989/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2025-09-25T19:00Z",
+          "change": "Vibes video feed and creation launched as an early preview in the Meta AI app and on meta.ai"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-vision-and-live-ai",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-vision-and-live-ai",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Vision and Live AI",
+      "launched": "2026-05-12T14:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        },
+        {
+          "title": "Start a chat with Meta AI (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/943942350800511/"
+        },
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-05-12T14:00Z",
+          "change": "Live AI (real-time camera) brought from AI glasses to the Meta AI app"
+        },
+        {
+          "date": "2026-04-08T16:00Z",
+          "change": "Muse Spark added stronger multimodal perception"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-visual-coding",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-visual-coding",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Visual Coding",
+      "launched": "2026-04-08T16:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-04-08T16:00Z",
+          "change": "Visual coding arrived with Muse Spark (US first)"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-voice-conversations",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-voice-conversations",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Voice Conversations",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        },
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        },
+        {
+          "title": "Change the voice used by Meta AI (Meta Help Center)",
+          "url": "https://www.meta.com/help/artificial-intelligence/1855165531903875/"
+        },
+        {
+          "title": "Meta AI on the App Store (version 294.0.0)",
+          "url": "https://apps.apple.com/us/app/meta-ai/id1558240027"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2026-05-12T14:00Z",
+          "change": "Muse Spark voice: interrupt, switch topics or languages mid-conversation"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Voice conversations launched with the Meta AI app (US, Canada, Australia, New Zealand)"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "implementation-meta-ai-web-search",
+      "entity_type": "implementation",
+      "entity_id": "meta-ai-web-search",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": "Web Search",
+      "launched": "2025-04-29T15:00Z",
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Introducing the Meta AI App: A New Way to Access Your AI Assistant (2025-04-29)",
+          "url": "https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/"
+        },
+        {
+          "title": "Introducing Muse Spark: Meta's Most Powerful Model Yet (2026-04-08, updated 2026-05-12)",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/"
+        },
+        {
+          "title": "Meta AI Doesn't Just Think, It Acts (2026-07-24)",
+          "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
+        }
+      ],
+      "changelog": [
+        {
+          "date": "2026-10-11T23:00Z",
+          "change": "[Verified] Initial record from Meta's own sources"
+        },
+        {
+          "date": "2025-04-29T15:00Z",
+          "change": "Web search in the Meta AI app at launch"
+        }
+      ],
+      "notes": ""
+    },
+    {
       "id": "implementation-perplexity-agent-mode-agentic-actions",
       "entity_type": "implementation",
       "entity_id": "perplexity-agent-mode-agentic-actions",
@@ -2965,6 +3467,24 @@
         {
           "title": "Grok pricing",
           "url": "https://x.ai/grok"
+        }
+      ],
+      "changelog": [],
+      "notes": "Rolled up from backing platform features."
+    },
+    {
+      "id": "product-meta-ai",
+      "entity_type": "product",
+      "entity_id": "meta-ai",
+      "source_file": "data/platforms/meta-ai.md",
+      "source_heading": null,
+      "launched": null,
+      "verified": "2026-10-11",
+      "checked": "2026-10-11",
+      "sources": [
+        {
+          "title": "Meta AI pricing",
+          "url": "https://www.meta.com/meta-one-plans/"
         }
       ],
       "changelog": [],

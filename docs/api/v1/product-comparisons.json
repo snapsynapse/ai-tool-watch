@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-11T22:29:17.620Z",
+    "generated": "2026-10-11T22:57:31.689Z",
     "version": "1.0"
   },
   "comparisons": [
@@ -134,6 +134,38 @@
     {
       "products": [
         "chatgpt",
+        "meta-ai"
+      ],
+      "shared_capabilities": [
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "do-multi-step-research",
+        "take-actions-and-run-tools",
+        "connect-to-external-systems",
+        "search-the-web",
+        "make-and-edit-documents",
+        "write-and-edit-code",
+        "build-reusable-ai-workflows",
+        "generate-images",
+        "remember-context-over-time",
+        "use-files-i-provide",
+        "read-text-and-documents",
+        "see-images-and-screens",
+        "generate-video",
+        "write-and-explain",
+        "use-it-on-my-surfaces"
+      ],
+      "only_a": [
+        "organize-work-in-projects"
+      ],
+      "only_b": [],
+      "shared_count": 17,
+      "only_a_count": 1,
+      "only_b_count": 0
+    },
+    {
+      "products": [
+        "chatgpt",
         "perplexity"
       ],
       "shared_capabilities": [
@@ -262,6 +294,39 @@
     {
       "products": [
         "claude",
+        "meta-ai"
+      ],
+      "shared_capabilities": [
+        "make-and-edit-documents",
+        "write-and-edit-code",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "take-actions-and-run-tools",
+        "use-it-on-my-surfaces",
+        "connect-to-external-systems",
+        "do-multi-step-research",
+        "use-files-i-provide",
+        "build-reusable-ai-workflows",
+        "see-images-and-screens",
+        "read-text-and-documents",
+        "remember-context-over-time",
+        "write-and-explain"
+      ],
+      "only_a": [
+        "organize-work-in-projects"
+      ],
+      "only_b": [
+        "generate-images",
+        "generate-video",
+        "search-the-web"
+      ],
+      "shared_count": 14,
+      "only_a_count": 1,
+      "only_b_count": 3
+    },
+    {
+      "products": [
+        "claude",
         "perplexity"
       ],
       "shared_capabilities": [
@@ -356,6 +421,37 @@
     {
       "products": [
         "copilot",
+        "meta-ai"
+      ],
+      "shared_capabilities": [
+        "build-reusable-ai-workflows",
+        "take-actions-and-run-tools",
+        "connect-to-external-systems",
+        "make-and-edit-documents",
+        "read-text-and-documents",
+        "use-it-on-my-surfaces",
+        "see-images-and-screens",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "generate-images",
+        "write-and-explain"
+      ],
+      "only_a": [],
+      "only_b": [
+        "generate-video",
+        "search-the-web",
+        "do-multi-step-research",
+        "remember-context-over-time",
+        "use-files-i-provide",
+        "write-and-edit-code"
+      ],
+      "shared_count": 11,
+      "only_a_count": 0,
+      "only_b_count": 6
+    },
+    {
+      "products": [
+        "copilot",
         "perplexity"
       ],
       "shared_capabilities": [
@@ -418,6 +514,38 @@
     {
       "products": [
         "gemini",
+        "meta-ai"
+      ],
+      "shared_capabilities": [
+        "write-and-edit-code",
+        "build-reusable-ai-workflows",
+        "make-and-edit-documents",
+        "do-multi-step-research",
+        "search-the-web",
+        "connect-to-external-systems",
+        "read-text-and-documents",
+        "use-files-i-provide",
+        "use-it-on-my-surfaces",
+        "see-images-and-screens",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "generate-images",
+        "generate-video",
+        "take-actions-and-run-tools",
+        "remember-context-over-time",
+        "write-and-explain"
+      ],
+      "only_a": [
+        "organize-work-in-projects"
+      ],
+      "only_b": [],
+      "shared_count": 17,
+      "only_a_count": 1,
+      "only_b_count": 0
+    },
+    {
+      "products": [
+        "gemini",
         "perplexity"
       ],
       "shared_capabilities": [
@@ -450,6 +578,37 @@
     {
       "products": [
         "grok",
+        "meta-ai"
+      ],
+      "shared_capabilities": [
+        "do-multi-step-research",
+        "search-the-web",
+        "write-and-explain",
+        "use-it-on-my-surfaces",
+        "generate-images",
+        "generate-video",
+        "make-and-edit-documents",
+        "write-and-edit-code",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "connect-to-external-systems",
+        "remember-context-over-time",
+        "see-images-and-screens"
+      ],
+      "only_a": [],
+      "only_b": [
+        "use-files-i-provide",
+        "read-text-and-documents",
+        "take-actions-and-run-tools",
+        "build-reusable-ai-workflows"
+      ],
+      "shared_count": 13,
+      "only_a_count": 0,
+      "only_b_count": 4
+    },
+    {
+      "products": [
+        "grok",
         "perplexity"
       ],
       "shared_capabilities": [
@@ -478,6 +637,39 @@
       "shared_count": 8,
       "only_a_count": 5,
       "only_b_count": 4
+    },
+    {
+      "products": [
+        "meta-ai",
+        "perplexity"
+      ],
+      "shared_capabilities": [
+        "write-and-explain",
+        "use-it-on-my-surfaces",
+        "hear-audio-and-speech",
+        "speak-back-in-real-time",
+        "search-the-web",
+        "do-multi-step-research",
+        "use-files-i-provide",
+        "read-text-and-documents",
+        "make-and-edit-documents",
+        "connect-to-external-systems",
+        "take-actions-and-run-tools"
+      ],
+      "only_a": [
+        "generate-images",
+        "generate-video",
+        "see-images-and-screens",
+        "remember-context-over-time",
+        "write-and-edit-code",
+        "build-reusable-ai-workflows"
+      ],
+      "only_b": [
+        "organize-work-in-projects"
+      ],
+      "shared_count": 11,
+      "only_a_count": 6,
+      "only_b_count": 1
     }
   ]
 }

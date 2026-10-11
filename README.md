@@ -39,7 +39,7 @@ Contributing doesn't require a dev environment. You edit a `.md` or `.yml` file,
 
 ## What's covered
 
-18 capabilities and 73 implementations across hosted consumer AI products from providers with roughly 1% or greater public market share.
+18 capabilities and 87 implementations across hosted consumer AI products from providers with roughly 1% or greater public market share.
 
 All prices are in **USD**. Availability reflects the **United States** region by default.
 
@@ -51,6 +51,7 @@ All prices are in **USD**. Availability reflects the **United States** region by
 | **Gemini** | Google | Hosted |
 | **Perplexity** | Perplexity AI | Hosted |
 | **Grok** | xAI | Hosted |
+| **Meta AI** | Meta | Hosted |
 
 ### Archive
 
