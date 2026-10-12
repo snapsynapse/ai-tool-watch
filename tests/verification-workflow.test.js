@@ -172,7 +172,8 @@ test('workflow gates only the scheduled paid path and wires the gate into finali
     for (const name of ['Prepare reviewed publication', 'Commit Checked-date updates']) {
         const step = workflow.match(new RegExp(`- name: ${name}\\n\\s+id: \\w+\\n\\s+if: ([^\\n]*)`));
         assert.ok(step, `missing ${name}`);
-        assert.match(step[1], /steps\.verify\.outcome != 'skipped' && steps\.verify\.outputs\.exit_code == '0'/);
+        assert.match(step[1], /steps\.verify\.outcome != 'skipped' && \(steps\.verify\.outputs\.exit_code == '0' \|\| steps\.verify\.outputs\.exit_code == '1'\)/);
+        assert.doesNotMatch(step[1], /exit_code == '2'/);
     }
     assert.match(workflow, /GATE_OUTCOME: \$\{\{ steps\.gate\.outcome \}\}/);
     assert.match(workflow, /GATE_APPROVED: \$\{\{ steps\.gate\.outputs\.approved \}\}/);

@@ -149,3 +149,18 @@ test('summary uses contract field names and ignores malformed outcomes', () => {
     assert.equal(summary.byPlatform.Example.no_change, undefined);
     assert.equal(Object.getPrototypeOf(summary.byPlatform), null);
 });
+
+test('an unqualified negative does not end a contradiction before a qualified opposing vote', async () => {
+    // Run 38202972968: a truncated Gemini "no change" without sources plus a
+    // cited positive ended the cascade as an inadequate contradiction.
+    let thirdCalled = false;
+    const result = await runCascade(platform, feature, { clients: [
+        client('provider-a', response(noChange, { hasSearchEvidence: false, sources: [] })),
+        client('provider-b', response(positive)),
+        { name: 'provider-c', displayName: 'provider-c', verify: async () => { thirdCalled = true; return response(noChange); } }
+    ], delayBetweenQueries: 0 });
+    assert.equal(thirdCalled, true);
+    assert.equal(result.outcome, CascadeOutcome.CONTRADICTION);
+    assert.equal(result.results.length, 3);
+    assert.equal(require('../scripts/lib/verification-health').isAdequatelyChecked(result), true);
+});

@@ -414,10 +414,20 @@ async function runCascade(platform, feature, options = {}) {
 
             // Any substantive positive and negative evidence is a review
             // contradiction. Do not downgrade a positive once it is present.
+            // Stop only once both sides come from distinct cited, search-
+            // grounded providers; an unqualified side (for example a model
+            // answer without sources) makes the remaining providers decide.
             if (positiveVotes.length && negativeVotes.length) {
                 outcome = CascadeOutcome.CONTRADICTION;
-                log(`\n⚠ Conflicting positive and negative evidence; retaining contradiction for review.`);
-                break;
+                if (isAdequatelyChecked({ outcome: CascadeOutcome.CONTRADICTION, results })) {
+                    log(`\n⚠ Conflicting positive and negative evidence; retaining contradiction for review.`);
+                    break;
+                }
+                log(`  Contradiction lacks a qualified opposing vote; querying the next provider.`);
+                if (results.length < clients.length) {
+                    await new Promise(resolve => setTimeout(resolve, delayBetweenQueries));
+                }
+                continue;
             }
             if (isAdequatelyChecked({ outcome: CascadeOutcome.NO_CHANGE, results })) {
                 outcome = CascadeOutcome.NO_CHANGE;

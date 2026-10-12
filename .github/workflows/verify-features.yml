@@ -242,7 +242,10 @@ jobs:
           git push
 
       # Exit code 1 means that evidence was delivered for human review. It is a
-      # successful execution state, but never permits source changes or a push.
+      # successful execution state. The CLI has already written Checked dates
+      # only for adequately observed no-change records; findings stay pending
+      # and no data or changelog change is published for them (invariant 4).
+      # Owner decision 2026-10-11: those Checked dates publish on exit 1 too.
       # The outcome guard matters: a skipped step has no outputs, and GitHub
       # coerces a missing exit_code to 0 when comparing it with '0', so a
       # blocked_unapproved run used to rebuild docs/ and push a bot commit.
@@ -251,12 +254,12 @@ jobs:
       # build.js run left stale and which then failed the scheduled build.
       - name: Prepare reviewed publication
         id: build
-        if: steps.verify.outcome != 'skipped' && steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
+        if: steps.verify.outcome != 'skipped' && (steps.verify.outputs.exit_code == '0' || steps.verify.outputs.exit_code == '1') && steps.args.outputs.dry_run == 'false'
         run: node scripts/prepare-publication.js
 
       - name: Commit Checked-date updates
         id: commit
-        if: steps.verify.outcome != 'skipped' && steps.verify.outputs.exit_code == '0' && steps.args.outputs.dry_run == 'false'
+        if: steps.verify.outcome != 'skipped' && (steps.verify.outputs.exit_code == '0' || steps.verify.outputs.exit_code == '1') && steps.args.outputs.dry_run == 'false'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
