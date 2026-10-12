@@ -228,7 +228,7 @@
 
 <h2>How data stays current</h2>
 
-<p>The verification workflow checks the due inventory on schedule, but paid provider calls remain blocked unless scheduled verification is explicitly approved. Separately approved manual runs can query Gemini, Perplexity, Grok, and Claude within repository spend caps. Models are skipped when verifying their own vendor's products. A change is only flagged when enough independent evidence agrees. Nothing is auto-merged; confirmed changes are surfaced as GitHub issues for human review.</p>
+<p>The verification workflow checks the due inventory on schedule, and each run, scheduled or manual, can query Gemini, Perplexity, Grok, and Claude within repository spend caps. Models are skipped when verifying their own vendor's products. A change is only flagged when enough independent evidence agrees. Nothing is auto-merged; confirmed changes are surfaced as GitHub issues for human review.</p>
 
 <p>Link integrity is checked every Saturday. Features carry a <code>Checked</code> date; anything older than 7 days is prioritized in the next run.</p>
 
@@ -271,24 +271,19 @@
 
 <h2>Deployment</h2>
 
-<p>The site prepares and deploys one reviewed artifact on every push to <code>main</code> and on its Monday/Thursday scheduled run. Pull requests validate the source tree and prepare the artifact but do not deploy it.</p>
+<p>The site prepares and deploys one reviewed artifact on every push to <code>main</code> and after each completed Verify Features run. Pull requests validate the source tree and prepare the artifact but do not deploy it.</p>
 
 <h3>How it works</h3>
 
 <p>1. <strong>Validate and prepare jobs</strong> (<code>.github/workflows/build.yml</code>)</p>
 <p>   - Validates the committed source/evidence tree, then runs <code>node scripts/prepare-publication.js</code></p>
 <p>   - Synchronizes canonical evidence, generates <code>docs/</code>, validates the generated site and a human/API/MCP fixture, and writes <code>docs/publication-manifest.json</code></p>
-<p>   - If the scheduled or push run changes canonical inputs or generated output, commits the scoped source and <code>docs/</code> paths with <code>[skip ci]</code></p>
+<p>   - If the push or post-verification run changes canonical inputs or generated output, commits the scoped source and <code>docs/</code> paths with <code>[skip ci]</code></p>
 <p>   - Uploads the resulting <code>reviewed-publication</code> artifact, including hidden files</p>
 
 <p>2. <strong>Deploy job</strong> (same workflow)</p>
 <p>   - Downloads and verifies the reviewed artifact in a fresh directory before uploading it to GitHub Pages</p>
-<p>   - Runs on pushes to <code>main</code> and scheduled builds, not PRs</p>
-
-<p>3. <strong>FTP deploy</strong> (<code>.github/workflows/deploy-ftp.yml</code>)</p>
-<p>   - Reuses the same reviewed artifact, verifies it in a fresh directory, then deploys it to https://aitool.watch/ via FTP</p>
-<p>   - Runs in parallel with the GitHub Pages deployment on push-to-main and scheduled runs</p>
-<p>   - Requires <code>FTP_HOST</code>, <code>FTP_USER</code>, <code>FTP_PASS</code> secrets</p>
+<p>   - Runs on pushes to <code>main</code> and after Verify Features runs, not PRs</p>
 
 <p>The artifact boundary is local and CI evidence only. It does not establish a hosted deployment, direct-email delivery, or independent missed-run monitoring.</p>
 

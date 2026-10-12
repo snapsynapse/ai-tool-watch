@@ -11,7 +11,7 @@ A plain-English, verified reference for AI tool capabilities, plan gates, and co
 - Zero dependencies. No framework, no database, no `package.json`.
 - Plain Markdown + YAML data files under `data/`.
 - A single Node.js script (`scripts/build.js`) generates the entire static site (HTML, JSON API, bridge pages, sitemap) into `docs/`.
-- Deployed via GitHub Actions on push to `main` and on a Mon/Thu scheduled rebuild.
+- Deployed to GitHub Pages via GitHub Actions on push to `main` and after each completed Verify Features run.
 
 ## Directory layout
 
@@ -59,7 +59,7 @@ Tests live under `tests/*.test.js`. CI runs them via `node scripts/test-offline.
 
 If `tests/publication-manifest.test.js` fails with `artifact hash mismatch for agents.json`, the cause is almost always a stale `docs/publication-manifest.json`, not `agents.json`. `scripts/verify-publication-manifest.js` reports the first mismatching entry in sorted path order, so a manifest left behind by a bare `build.js` run surfaces under the alphabetically earliest generated file. Re-run `node scripts/prepare-publication.js` and commit the regenerated manifest.
 
-CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, Mon/Thu schedule), `deploy-ftp.yml` (deploy to PAICE.work, same schedule), `verify-features.yml` (four-model cascade; Mon/Thu schedule ends as `blocked_unapproved` without paid calls unless `FRESHNESS_SCHEDULED_VERIFICATION=approved`; manual dispatch needs the `FRESHNESS_MAX_*` spend bounds), `check-links.yml` (weekly, Saturdays), `evidence-alerts.yml` (staleness alerts, Mon/Thu), `scan-secrets.yml` (push/PR to main).
+CI (`.github/workflows/`): `build.yml` (build + deploy, push/PR to main, and after each completed Verify Features run), `verify-features.yml` (four-model cascade, Mon/Thu evening Pacific, 40 features per scheduled run; a schedule runs paid calls only when `FRESHNESS_SCHEDULED_VERIFICATION=approved`, and every paid run needs the `FRESHNESS_MAX_*` spend bounds; its staleness job opens the stale-features issue), `check-links.yml` (weekly, Saturdays), `scan-secrets.yml` (push/PR to main). `deploy-ftp.yml` and `evidence-alerts.yml` were retired 2026-10-11.
 
 ## Current state (as of 2026-10-11)
 

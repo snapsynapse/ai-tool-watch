@@ -7,22 +7,25 @@ const test = require('node:test');
 
 const ROOT = path.join(__dirname, '..');
 const build = fs.readFileSync(path.join(ROOT, '.github', 'workflows', 'build.yml'), 'utf8');
-const ftp = fs.readFileSync(path.join(ROOT, '.github', 'workflows', 'deploy-ftp.yml'), 'utf8');
-const pagesDeploy = build.slice(build.indexOf('  deploy:\n'), build.indexOf('  deploy-ftp:\n'));
-const ftpDeploy = ftp.slice(ftp.indexOf('  deploy:\n'));
+const pagesDeploy = build.slice(build.indexOf('  deploy:\n'));
 
-test('dependent deploy jobs verify the same fresh downloaded artifact', () => {
-    for (const workflow of [pagesDeploy, ftpDeploy]) {
-        assert.match(workflow, /name: Checkout verifier[\s\S]*actions\/checkout@v4/);
-        assert.match(workflow, /name: Setup Node\.js[\s\S]*node-version: '20'/);
-        assert.match(workflow, /actions\/download-artifact@v4[\s\S]*path: publication/);
-        assert.match(workflow, /node scripts\/verify-publication-manifest\.js publication/);
-    }
+test('the Pages deploy job verifies the fresh downloaded artifact', () => {
+    assert.match(pagesDeploy, /name: Checkout verifier[\s\S]*actions\/checkout@v4/);
+    assert.match(pagesDeploy, /name: Setup Node\.js[\s\S]*node-version: '20'/);
+    assert.match(pagesDeploy, /actions\/download-artifact@v4[\s\S]*path: publication/);
+    assert.match(pagesDeploy, /node scripts\/verify-publication-manifest\.js publication/);
     assert.match(pagesDeploy, /permissions:[\s\S]*contents: read[\s\S]*pages: write/);
     assert.match(pagesDeploy, /actions\/upload-pages-artifact@v3[\s\S]*path: publication/);
-    assert.match(ftpDeploy, /local-dir: \.\/publication\//);
-    assert.match(ftpDeploy, /permissions:\n\s+contents: read/);
-    assert.doesNotMatch(ftpDeploy, /node scripts\/build\.js/);
+    assert.doesNotMatch(pagesDeploy, /node scripts\/build\.js/);
+    // The PAICE.work FTP target was retired on 2026-10-11.
+    assert.ok(!fs.existsSync(path.join(ROOT, '.github', 'workflows', 'deploy-ftp.yml')));
+    assert.doesNotMatch(build, /deploy-ftp|FTP_/);
+});
+
+test('a completed Verify Features run triggers the deploy instead of a fixed cron', () => {
+    assert.match(build, /workflow_run:\n\s+workflows: \[Verify Features\]\n\s+types: \[completed\]\n\s+branches: \[main\]/);
+    assert.doesNotMatch(build, /^\s+schedule:/m);
+    assert.match(pagesDeploy, /if: \(github\.event_name == 'push' \|\| github\.event_name == 'workflow_run'\)/);
 });
 
 test('only preparation can write, and it stages canonical evidence with its docs artifact', () => {
@@ -42,14 +45,11 @@ test('claim validation blocks preparation and deployment after the scheduled tri
     assert.match(build, /reviewed_input_sha256=/);
 });
 
-test('both deployments bind downloads to independent producer identity', () => {
+test('the deployment binds downloads to independent producer identity', () => {
     for (const key of ['source_revision', 'reviewed_input_sha256', 'artifact_sha256']) {
         assert.ok(build.includes(`${key}: \${{ steps.receipt.outputs.${key} }}`));
-        assert.ok(build.includes(`expected-${key.replaceAll('_', '-')}: \${{ needs.prepare-publication.outputs.${key} }}`));
-        assert.ok(ftp.includes(`expected-${key.replaceAll('_', '-')}:\n        required: true\n        type: string`));
-        for (const workflow of [pagesDeploy, ftpDeploy]) {
-            assert.ok(workflow.includes(`--expected-${key.replaceAll('_', '-')} "$EXPECTED_${key.toUpperCase()}"`));
-        }
+        assert.ok(pagesDeploy.includes(`EXPECTED_${key.toUpperCase()}: \${{ needs.prepare-publication.outputs.${key} }}`));
+        assert.ok(pagesDeploy.includes(`--expected-${key.replaceAll('_', '-')} "$EXPECTED_${key.toUpperCase()}"`));
     }
     assert.match(build, /id: receipt[\s\S]*GITHUB_OUTPUT/);
 });

@@ -24,7 +24,7 @@ on:
         description: 'Maximum features to verify'
         required: false
         type: number
-        default: 50
+        default: 40
 
 jobs:
   verify:
@@ -111,7 +111,7 @@ jobs:
             *) echo "::error::Invalid dry_run input."; exit_code=2 ;;
           esac
 
-          max_features="${MAX_FEATURES_INPUT:-50}"
+          max_features="${MAX_FEATURES_INPUT:-40}"
           case "$max_features" in
             ''|*[!0-9]*|0) echo "::error::Invalid max_features input."; exit_code=2 ;;
             *) ;;
@@ -208,7 +208,7 @@ jobs:
           if [ "${DRY_RUN_INPUT:-false}" = "true" ]; then
             args+=(--dry-run)
           fi
-          args+=(--max "${MAX_FEATURES_INPUT:-50}")
+          args+=(--max "${MAX_FEATURES_INPUT:-40}")
           node scripts/verify-features.js "${args[@]}"
           exit_code=$?
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
