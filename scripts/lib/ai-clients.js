@@ -274,9 +274,14 @@ class GeminiClient {
                         contents: [{
                             parts: [{ text: prompt }]
                         }],
+                        // Gemini 2.5 Flash thinking tokens count against
+                        // maxOutputTokens. At 2048 every response in run
+                        // 38202972968 hit MAX_TOKENS after ~2300 thinking
+                        // tokens, before grounding sources were attached.
                         generationConfig: {
                             temperature: 0.1,
-                            maxOutputTokens: 2048
+                            maxOutputTokens: 8192,
+                            thinkingConfig: { thinkingBudget: 1024 }
                         },
                         // Enable search grounding for web results
                         tools: [{
@@ -307,7 +312,13 @@ class GeminiClient {
                 'usageMetadata'
             );
             logResponseShape(this.logger, this.displayName, data);
-            const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+            // Grounded answers can arrive in several text parts; thought
+            // summaries are not part of the answer.
+            const parts = data.candidates?.[0]?.content?.parts || [];
+            const text = parts
+                .filter(part => part && !part.thought && typeof part.text === 'string')
+                .map(part => part.text)
+                .join('');
 
             if (typeof text !== 'string' || !text) {
                 throw malformedResponseError(this.displayName, data, usageReceipt);

@@ -202,3 +202,31 @@ describe('provider usage receipts', () => {
         assert.notEqual(result.usageReceipt.usage, 0);
     });
 });
+
+describe('Gemini request budget', () => {
+    it('caps thinking below the output limit and joins answer parts', async () => {
+        let request;
+        const raw = {
+            candidates: [{
+                finishReason: 'STOP',
+                content: { parts: [
+                    { text: 'planning', thought: true },
+                    { text: '1. Pricing: ' },
+                    { text: 'CORRECT.' }
+                ] },
+                groundingMetadata: { groundingChunks: [{ web: { uri: 'https://example.com/a' } }] }
+            }],
+            usageMetadata: { promptTokenCount: 5, candidatesTokenCount: 7, totalTokenCount: 12 }
+        };
+        const client = new GeminiClient('fixture-key', {
+            fetch: async (url, init) => { request = JSON.parse(init.body); return jsonResponse(raw); },
+            logger: () => {}
+        });
+        const result = await client.verify(platform, feature);
+        // Run 38202972968: thinking consumed a 2048-token limit and every
+        // response ended MAX_TOKENS before grounding sources were attached.
+        assert.ok(request.generationConfig.thinkingConfig.thinkingBudget < request.generationConfig.maxOutputTokens / 2);
+        assert.equal(result.response, '1. Pricing: CORRECT.');
+        assert.equal(result.hasSearchEvidence, true);
+    });
+});

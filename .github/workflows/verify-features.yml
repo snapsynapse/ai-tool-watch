@@ -322,6 +322,9 @@ jobs:
         with:
           name: verification-report
           path: .verification-reports/
+          # upload-artifact v4 skips hidden paths by default, and this
+          # directory is hidden; without this no report was ever uploaded.
+          include-hidden-files: true
           retention-days: 30
 
       # Artifact delivery comes first. This final gate makes operational exit 2,
