@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-16T05:29:34.152Z",
+    "generated": "2026-10-19T04:17:48.135Z",
     "version": "1.0",
     "count": 94
   },
@@ -243,8 +243,8 @@
       "source_file": "data/platforms/chatgpt.md",
       "source_heading": "Codex (Code Agent)",
       "launched": "2025-04-16T12:00Z",
-      "verified": "2026-09-28",
-      "checked": "2026-09-28",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "ChatGPT Pricing",
@@ -264,6 +264,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan)"
+        },
         {
           "date": "2026-08-25T12:00Z",
           "change": "[Verified] Gating paid → free — OpenAI documents Codex as included on all ChatGPT plans including Free and Go; corrects contradiction with the availability table"
@@ -345,12 +349,20 @@
       "source_file": "data/platforms/chatgpt.md",
       "source_heading": "Custom GPTs + Actions",
       "launched": "2023-11-06T12:00Z",
-      "verified": "2026-09-28",
-      "checked": "2026-09-28",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
-          "title": "Creating a GPT",
-          "url": "https://help.openai.com/en/articles/8554397-creating-a-gpt"
+          "title": "Creating and editing GPTs",
+          "url": "https://help.openai.com/en/articles/8554397-creating-and-editing-gpts"
+        },
+        {
+          "title": "Custom GPT retirement and migration FAQ",
+          "url": "https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq"
+        },
+        {
+          "title": "ChatGPT Release Notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         },
         {
           "title": "GPT Actions Documentation",
@@ -362,6 +374,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs)"
+        },
         {
           "date": "2026-08-15T12:00Z",
           "change": "[Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)"
@@ -458,19 +474,27 @@
       "source_file": "data/platforms/chatgpt.md",
       "source_heading": "Memory",
       "launched": "2024-09-05T12:00Z",
-      "verified": "2026-08-15",
-      "checked": "2026-09-04",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "Memory and new controls for ChatGPT",
           "url": "https://openai.com/index/memory-and-new-controls-for-chatgpt/"
         },
         {
-          "title": "Memory FAQ",
-          "url": "https://help.openai.com/en/articles/8590148-memory-faq"
+          "title": "Memory in ChatGPT: remembering what you chat about",
+          "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt-remembering-what-you-chat-about"
+        },
+        {
+          "title": "ChatGPT Release Notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes)"
+        },
         {
           "date": "2026-08-15T12:00Z",
           "change": "[Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29)"
@@ -657,8 +681,8 @@
       "source_file": "data/platforms/claude.md",
       "source_heading": "Artifacts",
       "launched": "2024-06-20T12:00Z",
-      "verified": "2026-09-28",
-      "checked": "2026-09-28",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "What are artifacts and how do I use them?",
@@ -666,6 +690,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated"
+        },
         {
           "date": "2026-09-28T12:00Z",
           "change": "[Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match"
@@ -1431,8 +1459,8 @@
       "source_file": "data/platforms/copilot.md",
       "source_heading": "Copilot Vision",
       "launched": "2024-10-01T12:00Z",
-      "verified": "2026-09-05",
-      "checked": "2026-09-05",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "Copilot Pro new-sales change",
@@ -1444,11 +1472,11 @@
         },
         {
           "title": "Using Copilot Vision",
-          "url": "https://support.microsoft.com/en-us/topic/using-copilot-vision-with-microsoft-copilot-3c67686f-fa97-40f6-8a3e-0e45265d425f"
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-vision-microsoft-365-copilot"
         },
         {
-          "title": "Copilot Vision Preview Announcement",
-          "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/2024/12/05/copilot-vision-now-in-preview-a-new-way-to-browse/"
+          "title": "How Vision in Microsoft 365 Copilot works",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-vision-microsoft-365-works"
         },
         {
           "title": "Paywall Removed (Windows Central)",
@@ -1456,6 +1484,10 @@
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18",
+          "change": "[Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source."
+        },
         {
           "date": "2026-09-07",
           "change": "[Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged."
@@ -1744,15 +1776,27 @@
       "source_file": "data/platforms/gemini.md",
       "source_heading": "Deep Research",
       "launched": "2024-12-11T12:00Z",
-      "verified": "2026-09-11",
-      "checked": "2026-09-11",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "Gemini Deep Research",
           "url": "https://blog.google/products/gemini/google-gemini-deep-research/"
+        },
+        {
+          "title": "Gemini Apps limits and upgrades",
+          "url": "https://support.google.com/gemini/answer/16275805?hl=en"
+        },
+        {
+          "title": "Use Deep Research in Gemini Apps",
+          "url": "https://support.google.com/gemini/answer/15719111?hl=en"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18",
+          "change": "[Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps."
+        },
         {
           "date": "2026-09-11T12:00Z",
           "change": "[Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card"
@@ -3103,19 +3147,27 @@
       "source_file": "data/platforms/perplexity.md",
       "source_heading": "Buy with Pro (Shopping)",
       "launched": "2024-11-18T12:00Z",
-      "verified": "2026-02-07",
-      "checked": "2026-09-28",
+      "verified": "2026-10-18",
+      "checked": "2026-10-18",
       "sources": [
         {
           "title": "Shop like a Pro",
           "url": "https://www.perplexity.ai/hub/blog/shop-like-a-pro"
         },
         {
-          "title": "Buy with Pro Help",
-          "url": "https://www.perplexity.ai/help-center/en/articles/10352906-what-is-shop-like-a-pro"
+          "title": "What is Instant Buy?",
+          "url": "https://perplexity.ai/help-center/en/articles/10352906-what-is-instant-buy"
+        },
+        {
+          "title": "Instant Buy: Buy with PayPal",
+          "url": "https://perplexity.ai/help-center/en/articles/12932923-instant-buy-buy-with-paypal"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim"
+        },
         {
           "date": "2025-11-25T12:00Z",
           "change": "PayPal integration launched"
@@ -3174,14 +3226,18 @@
       "source_heading": "Collections (Spaces)",
       "launched": "2024-10-17T12:00Z",
       "verified": "2026-03-25",
-      "checked": "2026-09-28",
+      "checked": "2026-10-18",
       "sources": [
         {
-          "title": "Perplexity Spaces",
-          "url": "https://www.perplexity.ai/hub/blog/introducing-spaces"
+          "title": "What are Projects?",
+          "url": "https://perplexity.ai/help-center/en/articles/10352961-what-are-spaces"
         }
       ],
       "changelog": [
+        {
+          "date": "2026-10-18T12:00Z",
+          "change": "[Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed"
+        },
         {
           "date": "2026-03-25T12:00Z",
           "change": "[Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited)"

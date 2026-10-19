@@ -25,7 +25,7 @@ test('limited plan availability remains available in the generated API', () => {
 
     const free = implementation.plans.find(plan => plan.plan === 'Free');
     assert.ok(free, 'Gemini Deep Research Free plan is missing');
-    assert.equal(free.limits, '~5/month');
+    assert.equal(free.limits, 'Standard limits');
     assert.equal(free.available, true, 'limited availability must not serialize as unavailable');
 
     const human = humanImplementations().find(item => item.id === 'gemini-deep-research');

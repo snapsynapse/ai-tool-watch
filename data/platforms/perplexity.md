@@ -4,7 +4,7 @@ vendor: Perplexity AI
 logo: https://cdn.simpleicons.org/perplexity
 status_page: https://status.perplexity.ai
 pricing_page: https://www.perplexity.ai/pro
-last_verified: 2026-04-14
+last_verified: 2026-10-18
 ---
 
 ## Pricing
@@ -86,14 +86,14 @@ Available globally via Comet browser and web. Personal Computer limited to initi
 | Gating | free |
 | URL | https://www.perplexity.ai/hub/blog/shop-like-a-pro |
 | Launched | 2024-11-18T12:00Z |
-| Verified | 2026-02-07|
-| Checked | 2026-09-28|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ✅ | Via PayPal | Added Nov 2025 |
+| Free | ✅ | US only | Added Nov 2025 |
 | Pro | ✅ | Full | One-click checkout |
 | Max | ✅ | Full | One-click checkout |
 
@@ -117,17 +117,19 @@ US only. International users redirected to merchant sites.
 
 ### Talking Point
 
-> "Buy with Pro lets you research and purchase products directly in Perplexity—no ads, just AI recommendations. **Now available on all plans** via PayPal integration. Free shipping on all orders. Currently US only."
+> "Buy with Pro, **now called Instant Buy**, lets you research and purchase products directly in Perplexity, with checkout via PayPal. **Available to all users in the United States**, no Pro subscription required. **US only.**"
 
 ### Sources
 
 - [Shop like a Pro](https://www.perplexity.ai/hub/blog/shop-like-a-pro)
-- [Buy with Pro Help](https://www.perplexity.ai/help-center/en/articles/10352906-what-is-shop-like-a-pro)
+- [What is Instant Buy?](https://perplexity.ai/help-center/en/articles/10352906-what-is-instant-buy)
+- [Instant Buy: Buy with PayPal](https://perplexity.ai/help-center/en/articles/12932923-instant-buy-buy-with-paypal)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim |
 | 2025-11-25T12:00Z | PayPal integration launched |
 | 2025-11-19T12:00Z | Expanded to free users |
 | 2024-11-18T12:00Z | Initial entry (Pro only) |
@@ -141,10 +143,10 @@ US only. International users redirected to merchant sites.
 | Category | local-files |
 | Status | ga |
 | Gating | free |
-| URL | https://www.perplexity.ai/hub/blog/introducing-spaces |
+| URL | https://perplexity.ai/help-center/en/articles/10352961-what-are-spaces |
 | Launched | 2024-10-17T12:00Z |
 | Verified | 2026-03-25|
-| Checked | 2026-09-28|
+| Checked | 2026-10-18|
 
 ### Availability
 
@@ -174,16 +176,17 @@ Available globally.
 
 ### Talking Point
 
-> "Collections let you organize research into projects. **Available on all plans**, with more features on Pro."
+> "Collections (Spaces), **now called Projects**, are persistent, shareable workspaces that keep searches, Computer tasks, files, instructions, and connected tools in one hub. **Available on all plans**, with more features on Pro."
 
 ### Sources
 
-- [Perplexity Spaces](https://www.perplexity.ai/hub/blog/introducing-spaces)
+- [What are Projects?](https://perplexity.ai/help-center/en/articles/10352961-what-are-spaces)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed |
 | 2026-03-25T12:00Z | [Verified] Gating corrected from paid to free — availability table shows Free tier has access (limited) |
 | 2024-10-17T12:00Z | Initial entry |
 

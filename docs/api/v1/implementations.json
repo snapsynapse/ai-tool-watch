@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-16T05:29:34.152Z",
+    "generated": "2026-10-19T04:17:48.135Z",
     "version": "1.0",
     "count": 87
   },
@@ -582,13 +582,13 @@
           "plan": "Free",
           "available": true,
           "limits": "Limited",
-          "notes": "Tool-usage caps apply"
+          "notes": "Local clients (app/CLI/IDE); no Codex Cloud"
         },
         {
           "plan": "Go",
           "available": true,
           "limits": "Limited",
-          "notes": "Higher caps than Free"
+          "notes": "Higher caps than Free; no Codex Cloud"
         },
         {
           "plan": "Plus",
@@ -612,7 +612,7 @@
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": ""
+          "notes": "Cloud access subject to workspace enablement"
         }
       ],
       "surfaces": [
@@ -668,14 +668,14 @@
           "surface": "api",
           "name": "API",
           "available": true,
-          "notes": "Codex API"
+          "notes": "Via OpenAI API models; Codex CLI/SDK"
         }
       ],
       "talking_point": "Codex is ChatGPT's coding agent that can write, run, and debug code autonomously. **Available on every plan including Free**, but usage is quota-gated—Free and Go get limited runs, while **Plus ($20/mo) and above** get the usable allowances. Available via **web, desktop apps, and CLI** (`npm i -g @openai/codex`) on macOS, Linux, and Windows (WSL).",
       "launched": "2025-04-16T12:00Z",
-      "verified": "2026-09-28",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-chatgpt-codex-code-agent",
-      "evidence_verified": "2026-09-28"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "chatgpt-codex-security",
@@ -811,7 +811,7 @@
       ],
       "category": "integrations",
       "gating": "paid",
-      "status": "ga",
+      "status": "deprecated",
       "plans": [
         {
           "plan": "Free",
@@ -828,26 +828,26 @@
         {
           "plan": "Plus",
           "available": true,
-          "limits": "Create & use",
-          "notes": "Full access to GPT Builder + Actions"
+          "limits": "Use only",
+          "notes": "New creation ended for personal accounts; existing GPTs usable until 2026-12-11"
         },
         {
           "plan": "Pro",
           "available": true,
-          "limits": "Create & use",
-          "notes": "Full access"
+          "limits": "Use only",
+          "notes": "New creation ended for personal accounts; existing GPTs usable until 2026-12-11"
         },
         {
           "plan": "Business",
           "available": true,
           "limits": "Create & share",
-          "notes": "Private GPTs for team"
+          "notes": "Creation subject to workspace permissions; retires 2026-12-11"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Create & share",
-          "notes": "Private GPTs + admin controls"
+          "notes": "Creation subject to workspace permissions; Enterprise creation planned to end 2026-10-26; retires 2026-12-11 (Enterprise deferral to 2027-02-11)"
         }
       ],
       "surfaces": [
@@ -902,15 +902,15 @@
         {
           "surface": "api",
           "name": "API",
-          "available": true,
-          "notes": "OpenAI API"
+          "available": false,
+          "notes": "GPTs not callable via API; Actions use OpenAPI schemas"
         }
       ],
-      "talking_point": "Custom GPTs let you create specialized AI assistants with custom instructions, knowledge files, and **Actions for external API integrations**. Actions replaced the old plugin system in April 2024. **Anyone can use public GPTs**, but creating your own with Actions requires Plus ($20/mo) or higher.",
+      "talking_point": "Custom GPTs are **retiring 2026-12-11**, with OpenAI migrating users to Plugins. **New GPT creation now only works in Business, Enterprise, and Edu workspaces**; personal Plus and Pro accounts can no longer create them. **Existing GPTs stay usable until retirement**, and Enterprise workspaces can defer to 2027-02-11.",
       "launched": "2023-11-06T12:00Z",
-      "verified": "2026-09-28",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-chatgpt-custom-gpts-actions",
-      "evidence_verified": "2026-09-28"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "chatgpt-dall-e-image-generation",
@@ -1145,7 +1145,7 @@
           "plan": "Free",
           "available": true,
           "limits": "Limited",
-          "notes": "Saved memories only"
+          "notes": "Saved memories + reduced chat-history reference"
         },
         {
           "plan": "Go",
@@ -1174,8 +1174,8 @@
         {
           "plan": "Enterprise",
           "available": true,
-          "limits": "Full",
-          "notes": "Admin controls, no training"
+          "limits": "Partial",
+          "notes": "Admin controls; Reference chat history not yet available (per FAQ)"
         }
       ],
       "surfaces": [
@@ -1234,11 +1234,11 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Memory lets ChatGPT remember your preferences and context across conversations. **All plans get saved memories**; Plus/Pro also get full chat history reference for richer personalization.",
+      "talking_point": "Memory lets ChatGPT remember your preferences and context across conversations. **All consumer plans (Free, Go, Plus, Pro) get saved memories plus chat-history reference**, with Free getting a reduced version. **Enterprise and Edu don't yet get chat-history reference.**",
       "launched": "2024-09-05T12:00Z",
-      "verified": "2026-08-15",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-chatgpt-memory",
-      "evidence_verified": "2026-08-15"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "chatgpt-projects",
@@ -1714,37 +1714,37 @@
           "plan": "Free",
           "available": true,
           "limits": "Standard",
-          "notes": "Create artifacts in chat; no Design/Slides/Docs templates"
+          "notes": "Full access incl. Docs/Slides/Design templates, on by default"
         },
         {
           "plan": "Pro",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
+          "notes": "Docs/Slides/Design on by default; Dashboards template (beta)"
         },
         {
           "plan": "Max 5x",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
+          "notes": "Docs/Slides/Design on by default; Dashboards template (beta)"
         },
         {
           "plan": "Max 20x",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access incl. Design/Slides/Docs templates (beta), on by default"
+          "notes": "Docs/Slides/Design on by default; Dashboards template (beta)"
         },
         {
           "plan": "Team",
           "available": true,
           "limits": "Standard",
-          "notes": "Full access incl. templates (beta), on by default"
+          "notes": "Docs/Slides/Design and Dashboards (beta) on; Motion template (beta) on by default"
         },
         {
           "plan": "Enterprise",
           "available": true,
           "limits": "Custom",
-          "notes": "Full access; templates (beta) off by default until an owner enables them"
+          "notes": "Docs/Slides/Design on by default since 2026-10-15; Dashboards and Motion (beta) off until an owner enables them"
         }
       ],
       "surfaces": [
@@ -1770,13 +1770,13 @@
           "surface": "ios",
           "name": "iOS",
           "available": true,
-          "notes": "Mobile app (view/ask; templates need web or desktop)"
+          "notes": "Mobile app (ask, view, edit; sharing settings need web or desktop)"
         },
         {
           "surface": "android",
           "name": "Android",
           "available": true,
-          "notes": "Mobile app (view/ask; templates need web or desktop)"
+          "notes": "Mobile app (ask, view, edit; sharing settings need web or desktop)"
         },
         {
           "surface": "chrome",
@@ -1803,11 +1803,11 @@
           "notes": "Web/app feature only"
         }
       ],
-      "talking_point": "Artifacts are Claude's way of creating standalone content—a design, a deck, a document, a dashboard, a small interactive tool—in a separate panel. **Available on Free, Pro, Max, Team, and Enterprise**, and in Claude Code on any plan that includes it. Paid plans also get beta templates—**Claude Design, Claude Slides, and Claude Docs**—for polished, shareable output; on Enterprise these are off until an owner turns them on. Artifacts made before September 16, 2026 are 'legacy' artifacts and keep working, but new ones use the current experience.",
+      "talking_point": "Artifacts are Claude's way of creating standalone content—a design, a deck, a document, a dashboard, a small interactive tool—in a separate panel. **Available on Free, Pro, Max, Team, and Enterprise**, and in Claude Code on any plan that includes it. Every plan, **Free included**, gets Docs, Slides, and Design templates on by default. Paid plans add a Dashboards template (beta), and Team and Enterprise add Motion (beta). Artifacts made before September 16, 2026 are 'legacy' artifacts and keep working, but new ones use the current experience.",
       "launched": "2024-06-20T12:00Z",
-      "verified": "2026-09-28",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-claude-artifacts",
-      "evidence_verified": "2026-09-28"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "claude-voice-mode",
@@ -3375,26 +3375,26 @@
         {
           "plan": "Microsoft 365 Personal",
           "available": true,
-          "limits": "10 min/day",
-          "notes": "Windows, macOS, Edge, and Copilot mobile"
+          "limits": "Not published",
+          "notes": "Windows, web, and Copilot mobile"
         },
         {
           "plan": "Microsoft 365 Family",
           "available": true,
-          "limits": "10 min/day",
+          "limits": "Not published",
           "notes": "Subscription owner only"
         },
         {
           "plan": "Microsoft 365 Premium",
           "available": true,
-          "limits": "15 min/day",
-          "notes": "Highest consumer allowance"
+          "limits": "Not published",
+          "notes": "Consumer subscription"
         },
         {
           "plan": "M365 Copilot (commercial)",
           "available": true,
           "limits": "Per license",
-          "notes": "Entra ID sign-in, Copilot web and mobile apps"
+          "notes": "Work account with a Microsoft Copilot license"
         }
       ],
       "surfaces": [
@@ -3408,7 +3408,7 @@
           "surface": "macos",
           "name": "macOS",
           "available": true,
-          "notes": "Native Copilot app"
+          "notes": "Not listed in Microsoft's Vision docs (Windows, web, mobile only)"
         },
         {
           "surface": "linux",
@@ -3438,7 +3438,7 @@
           "surface": "web",
           "name": "web",
           "available": true,
-          "notes": "Copilot web app for commercial users signed in with Entra ID"
+          "notes": "Copilot web app, personal (M365 sub) or work (Copilot license)"
         },
         {
           "surface": "terminal",
@@ -3453,11 +3453,11 @@
           "notes": "No consumer API"
         }
       ],
-      "talking_point": "Copilot Vision lets Copilot watch your screen, a shared app, or your phone camera and talk you through what it sees. It runs inside a Copilot Voice session, so you share a screen and then ask out loud. It is **no longer free**: you now need **Microsoft 365 Personal, Family, or Premium**, capped at **10 minutes a day** on Personal and Family and **15 minutes a day** on Premium. It reaches well beyond Edge now, covering Windows, macOS, and the mobile apps. This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review.",
+      "talking_point": "Copilot Vision lets Copilot watch your screen, a shared app, or your phone camera and talk you through what it sees. It runs inside a Copilot Voice session, so you share a screen and then ask out loud. It is **not free**: you need a **Microsoft 365 Personal, Family, or Premium subscription**, or a **work account with a Microsoft Copilot license**. Microsoft doesn't publish daily time limits. Desktop screen sharing works on **Windows and the web**, plus the Copilot mobile apps. This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review.",
       "launched": "2024-10-01T12:00Z",
-      "verified": "2026-09-05",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-copilot-vision",
-      "evidence_verified": "2026-09-05"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "copilot-voice",
@@ -4166,25 +4166,25 @@
         {
           "plan": "Free",
           "available": true,
-          "limits": "~5/month",
-          "notes": "Gemini Flash model only"
+          "limits": "Standard limits",
+          "notes": "Non-Pro model; may be unavailable at high demand"
         },
         {
           "plan": "Google AI Plus",
           "available": true,
-          "limits": "2x Free",
+          "limits": "2x standard",
           "notes": "\"2x higher usage limits than Free\"; model tier not stated by Google"
         },
         {
           "plan": "Google AI Pro",
           "available": true,
-          "limits": "Full",
-          "notes": "Full Gemini 3.0 Pro research"
+          "limits": "4x standard",
+          "notes": "Reports can use Pro model"
         },
         {
           "plan": "Google AI Ultra",
           "available": true,
-          "limits": "5x–20x Pro",
+          "limits": "5x or 20x Pro (by subscription)",
           "notes": "Highest usage limits; first access to Deep Think"
         }
       ],
@@ -4244,11 +4244,11 @@
           "notes": "Consumer feature only; no dedicated API"
         }
       ],
-      "talking_point": "Gemini's Deep Research creates comprehensive reports on complex topics. **Now available on the free tier (~5 reports/month via Gemini Flash)**; Google AI Plus ($4.99/mo) doubles free usage; Google AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research.",
+      "talking_point": "Gemini's Deep Research creates comprehensive reports on complex topics. It's **available without a plan at standard limits**, though it may be unavailable at high demand. **Google AI Plus gets 2x**, **Google AI Pro gets 4x** and can generate reports with the Pro model, and **Google AI Ultra gets 5x or 20x the AI Pro limit**, depending on subscription.",
       "launched": "2024-12-11T12:00Z",
-      "verified": "2026-09-11",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-gemini-deep-research",
-      "evidence_verified": "2026-09-11"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "gemini-extensions",
@@ -6740,7 +6740,7 @@
         {
           "plan": "Free",
           "available": true,
-          "limits": "Via PayPal",
+          "limits": "US only",
           "notes": "Added Nov 2025"
         },
         {
@@ -6812,11 +6812,11 @@
           "notes": "Not available via API"
         }
       ],
-      "talking_point": "Buy with Pro lets you research and purchase products directly in Perplexity—no ads, just AI recommendations. **Now available on all plans** via PayPal integration. Free shipping on all orders. Currently US only.",
+      "talking_point": "Buy with Pro, **now called Instant Buy**, lets you research and purchase products directly in Perplexity, with checkout via PayPal. **Available to all users in the United States**, no Pro subscription required. **US only.**",
       "launched": "2024-11-18T12:00Z",
-      "verified": "2026-02-07",
+      "verified": "2026-10-18",
       "evidence_id": "implementation-perplexity-buy-with-pro-shopping",
-      "evidence_verified": "2026-02-07"
+      "evidence_verified": "2026-10-18"
     },
     {
       "id": "perplexity-collections-spaces",
@@ -6909,7 +6909,7 @@
           "notes": "Perplexity API"
         }
       ],
-      "talking_point": "Collections let you organize research into projects. **Available on all plans**, with more features on Pro.",
+      "talking_point": "Collections (Spaces), **now called Projects**, are persistent, shareable workspaces that keep searches, Computer tasks, files, instructions, and connected tools in one hub. **Available on all plans**, with more features on Pro.",
       "launched": "2024-10-17T12:00Z",
       "verified": "2026-03-25",
       "evidence_id": "implementation-perplexity-collections-spaces",

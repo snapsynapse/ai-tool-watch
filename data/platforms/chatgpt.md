@@ -4,7 +4,7 @@ vendor: OpenAI
 logo: https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg
 status_page: https://status.openai.com
 pricing_page: https://chatgpt.com/pricing
-last_verified: 2026-08-25
+last_verified: 2026-10-18
 ---
 
 ## Pricing
@@ -346,19 +346,19 @@ Available globally where ChatGPT is available.
 | Gating | free |
 | URL | https://openai.com/index/introducing-codex/ |
 | Launched | 2025-04-16T12:00Z |
-| Verified | 2026-09-28|
-| Checked | 2026-09-28|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ✅ | Limited | Tool-usage caps apply |
-| Go | ✅ | Limited | Higher caps than Free |
+| Free | ✅ | Limited | Local clients (app/CLI/IDE); no Codex Cloud |
+| Go | ✅ | Limited | Higher caps than Free; no Codex Cloud |
 | Plus | ✅ | Included | Access to Codex |
 | Pro | ✅ | Higher | Priority compute |
 | Business | ✅ | Included | |
-| Enterprise | ✅ | Custom | |
+| Enterprise | ✅ | Custom | Cloud access subject to workspace enablement |
 
 ### Platforms
 
@@ -372,7 +372,7 @@ Available globally where ChatGPT is available.
 | Chrome | ❌ |  |
 | web | ✅ | chatgpt.com/codex |
 | terminal | ✅ | Codex CLI (`npm i -g @openai/codex`) |
-| API | ✅ | Codex API |
+| API | ✅ | Via OpenAI API models; Codex CLI/SDK |
 
 ### Regional
 
@@ -393,6 +393,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan) |
 | 2026-08-25T12:00Z | [Verified] Gating paid → free — OpenAI documents Codex as included on all ChatGPT plans including Free and Go; corrects contradiction with the availability table |
 | 2026-08-15T12:00Z | [Verified] Free/Go access no longer framed as a temporary promotion — OpenAI documents Codex as a standard plan capability with per-tier quotas; rows ⚠️ → ✅ |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
@@ -471,12 +472,12 @@ Available globally.
 | Property | Value |
 |----------|-------|
 | Category | integrations |
-| Status | ga |
+| Status | deprecated |
 | Gating | paid |
 | URL | https://chatgpt.com/gpts |
 | Launched | 2023-11-06T12:00Z |
-| Verified | 2026-09-28|
-| Checked | 2026-09-28|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
@@ -484,10 +485,10 @@ Available globally.
 |------|-----------|--------|-------|
 | Free | ⚠️ | Use only | Can use public GPTs, cannot create |
 | Go | ⚠️ | Use only | Can use public GPTs, cannot create |
-| Plus | ✅ | Create & use | Full access to GPT Builder + Actions |
-| Pro | ✅ | Create & use | Full access |
-| Business | ✅ | Create & share | Private GPTs for team |
-| Enterprise | ✅ | Create & share | Private GPTs + admin controls |
+| Plus | ⚠️ | Use only | New creation ended for personal accounts; existing GPTs usable until 2026-12-11 |
+| Pro | ⚠️ | Use only | New creation ended for personal accounts; existing GPTs usable until 2026-12-11 |
+| Business | ✅ | Create & share | Creation subject to workspace permissions; retires 2026-12-11 |
+| Enterprise | ✅ | Create & share | Creation subject to workspace permissions; Enterprise creation planned to end 2026-10-26; retires 2026-12-11 (Enterprise deferral to 2027-02-11) |
 
 ### Platforms
 
@@ -501,7 +502,7 @@ Available globally.
 | Chrome | ❌ |  |
 | web | ✅ | chatgpt.com |
 | terminal | ❌ |  |
-| API | ✅ | OpenAI API |
+| API | ❌ | GPTs not callable via API; Actions use OpenAPI schemas |
 
 ### Regional
 
@@ -509,11 +510,13 @@ Available globally where ChatGPT is available.
 
 ### Talking Point
 
-> "Custom GPTs let you create specialized AI assistants with custom instructions, knowledge files, and **Actions for external API integrations**. Actions replaced the old plugin system in April 2024. **Anyone can use public GPTs**, but creating your own with Actions requires Plus ($20/mo) or higher."
+> "Custom GPTs are **retiring 2026-12-11**, with OpenAI migrating users to Plugins. **New GPT creation now only works in Business, Enterprise, and Edu workspaces**; personal Plus and Pro accounts can no longer create them. **Existing GPTs stay usable until retirement**, and Enterprise workspaces can defer to 2027-02-11."
 
 ### Sources
 
-- [Creating a GPT](https://help.openai.com/en/articles/8554397-creating-a-gpt)
+- [Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts)
+- [Custom GPT retirement and migration FAQ](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq)
+- [ChatGPT Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 - [GPT Actions Documentation](https://platform.openai.com/docs/actions)
 - [GPT Store](https://chatgpt.com/gpts)
 
@@ -521,6 +524,7 @@ Available globally where ChatGPT is available.
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs) |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
 | 2024-04-09T12:00Z | Plugins deprecated, replaced by Actions |
 | 2023-11-06T12:00Z | Initial entry |
@@ -655,19 +659,19 @@ Available globally.
 | Gating | free |
 | URL | https://openai.com/index/memory-and-new-controls-for-chatgpt/ |
 | Launched | 2024-09-05T12:00Z |
-| Verified | 2026-08-15|
-| Checked | 2026-09-04|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | Limited | Saved memories only |
+| Free | ✅ | Limited | Saved memories + reduced chat-history reference |
 | Go | ✅ | Standard | Full chat history reference |
 | Plus | ✅ | Full | Full memory + chat history |
 | Pro | ✅ | Full | Full memory + chat history |
 | Business | ✅ | Full | Admin controls |
-| Enterprise | ✅ | Full | Admin controls, no training |
+| Enterprise | ✅ | Partial | Admin controls; Reference chat history not yet available (per FAQ) |
 
 ### Platforms
 
@@ -685,21 +689,23 @@ Available globally.
 
 ### Regional
 
-Available globally; off by default in EEA/UK/Switzerland (must enable manually).
+Available globally; off by default in EEA (incl. Norway, Iceland, Liechtenstein)/UK/Switzerland (must enable manually).
 
 ### Talking Point
 
-> "Memory lets ChatGPT remember your preferences and context across conversations. **All plans get saved memories**; Plus/Pro also get full chat history reference for richer personalization."
+> "Memory lets ChatGPT remember your preferences and context across conversations. **All consumer plans (Free, Go, Plus, Pro) get saved memories plus chat-history reference**, with Free getting a reduced version. **Enterprise and Edu don't yet get chat-history reference.**"
 
 ### Sources
 
 - [Memory and new controls for ChatGPT](https://openai.com/index/memory-and-new-controls-for-chatgpt/)
-- [Memory FAQ](https://help.openai.com/en/articles/8590148-memory-faq)
+- [Memory in ChatGPT: remembering what you chat about](https://help.openai.com/en/articles/8590148-memory-in-chatgpt-remembering-what-you-chat-about)
+- [ChatGPT Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes) |
 | 2026-08-15T12:00Z | [Verified] Plan renamed Team → Business (OpenAI help-center rename FAQ, effective 2025-08-29) |
 | 2025-06-03T12:00Z | Memory improvements for free users |
 | 2025-04-10T12:00Z | Enhanced memory for Plus/Pro |

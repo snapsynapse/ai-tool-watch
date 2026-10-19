@@ -5,8 +5,64 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 05:29:34 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 04:17:48 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>ChatGPT — [Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan)</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan)</description>
+    </item>
+    <item>
+        <title>ChatGPT — [Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs)</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-custom-gpts-actions</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-custom-gpts-actions?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs)</description>
+    </item>
+    <item>
+        <title>ChatGPT — [Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes)</title>
+        <link>https://aitool.watch/implementations.html#impl-chatgpt-memory</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-memory?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>ChatGPT: [Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes)</description>
+    </item>
+    <item>
+        <title>Claude — [Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated</title>
+        <link>https://aitool.watch/implementations.html#impl-claude-artifacts</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Claude: [Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated</description>
+    </item>
+    <item>
+        <title>Microsoft Copilot — [Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source.</title>
+        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Microsoft Copilot: [Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source.</description>
+    </item>
+    <item>
+        <title>Gemini — [Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps.</title>
+        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Gemini: [Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps.</description>
+    </item>
+    <item>
+        <title>Perplexity — [Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim</title>
+        <link>https://aitool.watch/implementations.html#impl-perplexity-buy-with-pro-shopping</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-buy-with-pro-shopping?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Perplexity: [Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim</description>
+    </item>
+    <item>
+        <title>Perplexity — [Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed</title>
+        <link>https://aitool.watch/implementations.html#impl-perplexity-collections-spaces</link>
+        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-collections-spaces?d=2026-10-18</guid>
+        <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Perplexity: [Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed</description>
+    </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
         <link>https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat</link>
@@ -300,62 +356,6 @@
         <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-23</guid>
         <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Correction] Help article restored as URL and source. The 2026-03-14 &quot;old URL 404&quot; was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged</description>
-    </item>
-    <item>
-        <title>Gemini — Camera and screen sharing recorded (capability `see-images-and-screens` added). Google&apos;s Live help article documents both on Android and iOS, with no plan restriction stated. These capabilities were previously credited to the Project Astra record, which is now folded into this one (#637)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-live-voice-mode?d=2026-09-23</guid>
-        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: Camera and screen sharing recorded (capability `see-images-and-screens` added). Google&apos;s Live help article documents both on Android and iOS, with no plan restriction stated. These capabilities were previously credited to the Project Astra record, which is now folded into this one (#637)</description>
-    </item>
-    <item>
-        <title>Gemini — Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind&apos;s Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record&apos;s capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-project-astra</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-23</guid>
-        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: Status ga → deprecated; folded into Gemini Live (#637). Google DeepMind&apos;s Project Astra page now calls it a research prototype (waitlist, trusted testers) and says its screen sharing and video understanding have been integrated into Gemini Live. The consumer camera/screen feature is recorded on the Gemini Live record, which now carries `see-images-and-screens`. This record&apos;s capabilities are cleared to avoid double-counting; implementation ID `gemini-project-astra` is kept</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-ai-studio</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-ai-studio?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-audio-overview</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-audio-overview?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); existing rows renamed to Google AI Pro</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-canvas</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-canvas?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Canvas is listed in the $0 plan card</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Added Google AI Plus and Google AI Ultra rows from Google&apos;s subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Plan rows renamed AI Pro → Google AI Pro to match the file&apos;s Pricing table (the primary plan vocabulary per scripts/lib/claims.js). No new rows: Google&apos;s subscriptions page makes no per-plan statement about this feature</description>
-    </item>
-    <item>
-        <title>Gemini — [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google&apos;s subscriptions page (gemini.google/subscriptions/) (&quot;Varying access to 3.1 Pro&quot;). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-gemini-advanced</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-gemini-advanced?d=2026-09-11</guid>
-        <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Verified] Status ga → deprecated: the name no longer appears on gemini.google/about, /subscriptions or the Live and desktop pages, and help article 14577972 returns 404. Free row ❌ → ⚠️ per Google&apos;s subscriptions page (gemini.google/subscriptions/) (&quot;Varying access to 3.1 Pro&quot;). Pro/Ultra notes and talking point prices corrected (Ultra from $99.99/mo; 5 TB / 20 TB+). No Plus row, per the 2026-04-07 decision</description>
     </item>
 </channel>
 </rss>

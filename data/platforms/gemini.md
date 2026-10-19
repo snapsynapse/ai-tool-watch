@@ -4,7 +4,7 @@ vendor: Google
 logo: https://cdn.simpleicons.org/googlegemini
 status_page: https://status.cloud.google.com
 pricing_page: https://one.google.com/intl/en/about/google-ai-plans/
-last_verified: 2026-09-11
+last_verified: 2026-10-18
 ---
 
 ## Pricing
@@ -208,17 +208,17 @@ Available globally where Gemini is available.
 | Gating | free |
 | URL | https://blog.google/products/gemini/google-gemini-deep-research/ |
 | Launched | 2024-12-11T12:00Z |
-| Verified | 2026-09-11|
-| Checked | 2026-09-11|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ⚠️ | ~5/month | Gemini Flash model only |
-| Google AI Plus | ✅ | 2x Free | "2x higher usage limits than Free"; model tier not stated by Google |
-| Google AI Pro | ✅ | Full | Full Gemini 3.0 Pro research |
-| Google AI Ultra | ✅ | 5x–20x Pro | Highest usage limits; first access to Deep Think |
+| Free | ⚠️ | Standard limits | Non-Pro model; may be unavailable at high demand |
+| Google AI Plus | ✅ | 2x standard | "2x higher usage limits than Free"; model tier not stated by Google |
+| Google AI Pro | ✅ | 4x standard | Reports can use Pro model |
+| Google AI Ultra | ✅ | 5x or 20x Pro (by subscription) | Highest usage limits; first access to Deep Think |
 
 ### Platforms
 
@@ -236,20 +236,23 @@ Available globally where Gemini is available.
 
 ### Regional
 
-Available globally where Gemini Advanced is available.
+Available globally where Gemini Apps are available.
 
 ### Talking Point
 
-> "Gemini's Deep Research creates comprehensive reports on complex topics. **Now available on the free tier (~5 reports/month via Gemini Flash)**; Google AI Plus ($4.99/mo) doubles free usage; Google AI Pro ($19.99/mo) gets full access with Gemini 3.0 Pro for deeper research."
+> "Gemini's Deep Research creates comprehensive reports on complex topics. It's **available without a plan at standard limits**, though it may be unavailable at high demand. **Google AI Plus gets 2x**, **Google AI Pro gets 4x** and can generate reports with the Pro model, and **Google AI Ultra gets 5x or 20x the AI Pro limit**, depending on subscription."
 
 ### Sources
 
 - [Gemini Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/)
+- [Gemini Apps limits and upgrades](https://support.google.com/gemini/answer/16275805?hl=en)
+- [Use Deep Research in Gemini Apps](https://support.google.com/gemini/answer/15719111?hl=en)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-18 | [Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps. |
 | 2026-09-11T12:00Z | [Verified] Added Google AI Plus and Google AI Ultra rows from Google's subscriptions page (gemini.google/subscriptions/); Deep Research is listed in the $0 plan card |
 | 2026-04-07T12:00Z | [Verified] API platform row corrected to ❌ — Deep Research is a consumer UI feature with no dedicated Gemini API endpoint; two independent sources found no evidence of API access |
 | 2026-03-23T12:00Z | [Verified] Model updated from Gemini 2.5 Pro to Gemini 3.0 Pro for AI Pro tier |

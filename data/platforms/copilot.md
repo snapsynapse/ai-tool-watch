@@ -4,7 +4,7 @@ vendor: Microsoft
 logo: https://copilot.microsoft.com/favicon.ico
 status_page: https://status.office.com
 pricing_page: https://microsoft.com/en-us/microsoft-365-copilot/pricing/individuals
-last_verified: 2026-09-05
+last_verified: 2026-10-18
 ---
 
 ## Pricing
@@ -230,32 +230,32 @@ Available globally.
 | Category | browser |
 | Status | ga |
 | Gating | paid |
-| URL | https://support.microsoft.com/en-us/topic/using-copilot-vision-with-microsoft-copilot-3c67686f-fa97-40f6-8a3e-0e45265d425f |
+| URL | https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-vision-microsoft-365-copilot |
 | Launched | 2024-10-01T12:00Z |
-| Verified | 2026-09-05|
-| Checked | 2026-09-05|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ❌ | — | Subscription required as of 2026 |
-| Microsoft 365 Personal | ✅ | 10 min/day | Windows, macOS, Edge, and Copilot mobile |
-| Microsoft 365 Family | ✅ | 10 min/day | Subscription owner only |
-| Microsoft 365 Premium | ✅ | 15 min/day | Highest consumer allowance |
-| M365 Copilot (commercial) | ✅ | Per license | Entra ID sign-in, Copilot web and mobile apps |
+| Microsoft 365 Personal | ✅ | Not published | Windows, web, and Copilot mobile |
+| Microsoft 365 Family | ✅ | Not published | Subscription owner only |
+| Microsoft 365 Premium | ✅ | Not published | Consumer subscription |
+| M365 Copilot (commercial) | ✅ | Per license | Work account with a Microsoft Copilot license |
 
 ### Platforms
 
 | Platform | Available | Notes |
 |----------|-----------|-------|
 | Windows | ✅ | Share any app or window with Copilot |
-| macOS | ✅ | Native Copilot app |
+| macOS | ⚠️ | Not listed in Microsoft's Vision docs (Windows, web, mobile only) |
 | Linux | ❌ |  |
 | iOS | ✅ | Copilot mobile app, including camera feed |
 | Android | ✅ | Copilot mobile app, including camera feed |
 | Chrome | ❌ | Edge only for in-browser Vision |
-| web | ⚠️ | Copilot web app for commercial users signed in with Entra ID |
+| web | ✅ | Copilot web app, personal (M365 sub) or work (Copilot license) |
 | terminal | ❌ |  |
 | API | ❌ | No consumer API |
 
@@ -265,20 +265,21 @@ Available in all supported Copilot regions and languages. Availability can vary 
 
 ### Talking Point
 
-> "Copilot Vision lets Copilot watch your screen, a shared app, or your phone camera and talk you through what it sees. It runs inside a Copilot Voice session, so you share a screen and then ask out loud. It is **no longer free**: you now need **Microsoft 365 Personal, Family, or Premium**, capped at **10 minutes a day** on Personal and Family and **15 minutes a day** on Premium. It reaches well beyond Edge now, covering Windows, macOS, and the mobile apps. This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review."
+> "Copilot Vision lets Copilot watch your screen, a shared app, or your phone camera and talk you through what it sees. It runs inside a Copilot Voice session, so you share a screen and then ask out loud. It is **not free**: you need a **Microsoft 365 Personal, Family, or Premium subscription**, or a **work account with a Microsoft Copilot license**. Microsoft doesn't publish daily time limits. Desktop screen sharing works on **Windows and the web**, plus the Copilot mobile apps. This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review."
 
 ### Sources
 
 - [Copilot Pro new-sales change](https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/)
 - [Continuing Copilot Pro subscriptions](https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium)
-- [Using Copilot Vision](https://support.microsoft.com/en-us/topic/using-copilot-vision-with-microsoft-copilot-3c67686f-fa97-40f6-8a3e-0e45265d425f)
-- [Copilot Vision Preview Announcement](https://www.microsoft.com/en-us/microsoft-copilot/blog/2024/12/05/copilot-vision-now-in-preview-a-new-way-to-browse/)
+- [Using Copilot Vision](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-vision-microsoft-365-copilot)
+- [How Vision in Microsoft 365 Copilot works](https://support.microsoft.com/en-us/microsoft-365-copilot/how-vision-microsoft-365-works)
 - [Paywall Removed (Windows Central)](https://www.windowscentral.com/software-apps/browsing/microsoft-removes-the-paywall-for-copilot-vision-but-only-for-edge-users)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-18 | [Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source. |
 | 2026-09-07 | [Correction] The prior universal Copilot Pro retirement and 2026-08-01 support-end assertions were unsupported. Microsoft closed new sales, while existing subscriptions can continue. Removed the legacy unavailability row; feature entitlements for continuing subscribers require separate review. Checked/Verified dates are unchanged. |
 | 2026-09-05 | [Verified] Gating reverted from free to paid: Microsoft now requires a Microsoft 365 Personal, Family, or Premium subscription for Copilot Vision. Status moved from preview to ga. Added per-plan daily limits (10 min Personal/Family, 15 min Premium) and commercial Entra ID access. Platforms expanded well beyond Edge: iOS and Android now supported, Windows shares any app, macOS is a native app. Regional widened from US-only to all supported Copilot regions and languages. |
 | 2026-02-17T12:00Z | [Verified] Gating changed from paid to free for Edge users; macOS Edge confirmed; US availability confirmed |

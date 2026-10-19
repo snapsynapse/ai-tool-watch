@@ -4,7 +4,7 @@ vendor: Anthropic
 logo: https://cdn.simpleicons.org/anthropic
 status_page: https://status.anthropic.com
 pricing_page: https://claude.ai/pricing
-last_verified: 2026-09-28
+last_verified: 2026-10-18
 ---
 
 ## Pricing
@@ -87,19 +87,19 @@ Available where Claude is available.
 | Gating | free |
 | URL | https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them |
 | Launched | 2024-06-20T12:00Z |
-| Verified | 2026-09-28|
-| Checked | 2026-09-28|
+| Verified | 2026-10-18|
+| Checked | 2026-10-18|
 
 ### Availability
 
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
-| Free | ✅ | Standard | Create artifacts in chat; no Design/Slides/Docs templates |
-| Pro | ✅ | Standard | Full access incl. Design/Slides/Docs templates (beta), on by default |
-| Max 5x | ✅ | Standard | Full access incl. Design/Slides/Docs templates (beta), on by default |
-| Max 20x | ✅ | Standard | Full access incl. Design/Slides/Docs templates (beta), on by default |
-| Team | ✅ | Standard | Full access incl. templates (beta), on by default |
-| Enterprise | ✅ | Custom | Full access; templates (beta) off by default until an owner enables them |
+| Free | ✅ | Standard | Full access incl. Docs/Slides/Design templates, on by default |
+| Pro | ✅ | Standard | Docs/Slides/Design on by default; Dashboards template (beta) |
+| Max 5x | ✅ | Standard | Docs/Slides/Design on by default; Dashboards template (beta) |
+| Max 20x | ✅ | Standard | Docs/Slides/Design on by default; Dashboards template (beta) |
+| Team | ✅ | Standard | Docs/Slides/Design and Dashboards (beta) on; Motion template (beta) on by default |
+| Enterprise | ✅ | Custom | Docs/Slides/Design on by default since 2026-10-15; Dashboards and Motion (beta) off until an owner enables them |
 
 ### Platforms
 
@@ -108,8 +108,8 @@ Available where Claude is available.
 | Windows | ✅ | Desktop app |
 | macOS | ✅ | Desktop app |
 | Linux | ✅ | Desktop app |
-| iOS | ✅ | Mobile app (view/ask; templates need web or desktop) |
-| Android | ✅ | Mobile app (view/ask; templates need web or desktop) |
+| iOS | ✅ | Mobile app (ask, view, edit; sharing settings need web or desktop) |
+| Android | ✅ | Mobile app (ask, view, edit; sharing settings need web or desktop) |
 | Chrome | ❌ |  |
 | web | ✅ | Best experience |
 | terminal | ✅ | Via Claude Code — publish session output as an artifact, or make Design/Docs |
@@ -121,7 +121,7 @@ Available globally.
 
 ### Talking Point
 
-> "Artifacts are Claude's way of creating standalone content—a design, a deck, a document, a dashboard, a small interactive tool—in a separate panel. **Available on Free, Pro, Max, Team, and Enterprise**, and in Claude Code on any plan that includes it. Paid plans also get beta templates—**Claude Design, Claude Slides, and Claude Docs**—for polished, shareable output; on Enterprise these are off until an owner turns them on. Artifacts made before September 16, 2026 are 'legacy' artifacts and keep working, but new ones use the current experience."
+> "Artifacts are Claude's way of creating standalone content—a design, a deck, a document, a dashboard, a small interactive tool—in a separate panel. **Available on Free, Pro, Max, Team, and Enterprise**, and in Claude Code on any plan that includes it. Every plan, **Free included**, gets Docs, Slides, and Design templates on by default. Paid plans add a Dashboards template (beta), and Team and Enterprise add Motion (beta). Artifacts made before September 16, 2026 are 'legacy' artifacts and keep working, but new ones use the current experience."
 
 ### Sources
 
@@ -131,6 +131,7 @@ Available globally.
 
 | Date | Change |
 |------|--------|
+| 2026-10-18T12:00Z | [Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated |
 | 2026-09-28T12:00Z | [Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match |
 | 2026-03-07T12:00Z | [Verified] Gating corrected from paid to free — free users have full access; data was internally inconsistent |
 | 2024-06-20T12:00Z | Initial entry |
