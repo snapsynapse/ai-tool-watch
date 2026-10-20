@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_revision": "d14bc8ebec4f9bbe6713ef53f7b06ae5f7ebda3c",
+  "source_revision": "89ab7be16bfd95682416bc16b8426e35525ccf6e",
   "reviewed_input_sha256": "b3af777360db6fbe61f5669fe769a290df77630314490dc20014e1a93def6455",
-  "artifact_sha256": "ad38d9c967a6aa92d2b819afabdc26505bd15d952a0a8f7ba3239ad773dc94a0",
+  "artifact_sha256": "8160dc0f19550cad02a5fa65d6d84133cc10c7c12fa78820a650713dd147fbd0",
   "files": [
     {
       "path": ".nojekyll",
@@ -22,51 +22,51 @@
     },
     {
       "path": "agents.json",
-      "sha256": "9b88847114d8a4fb1ccc54dea9506c0ae33b046c86991668f301c97dd545e8f9"
+      "sha256": "1fa33a4c980a448320025e47c133e343029ba32995457f1699025127022b69ad"
     },
     {
       "path": "api/v1/archive.json",
-      "sha256": "66df977c9799b8f4a65efbb9c3a5adfe7efaf148178b5f448a3904d3c2148a37"
+      "sha256": "2c7b51f768756727c294d6d0cea5c275e914085c627a35a1e73f767d57c6a2ff"
     },
     {
       "path": "api/v1/capabilities.json",
-      "sha256": "89c2b6550fe10ffbd57a81e0d5f09eba23203d9c2166335c6e44907634e8acea"
+      "sha256": "26044b9034a897500bec783755e416bac40779d0a85451055fdd0eb27fa9a703"
     },
     {
       "path": "api/v1/capability-matrix.json",
-      "sha256": "1aa0ae2be19dee6fa80ade2ad7e19845c90d9dfc75c2b2a542286ae8d33d68c0"
+      "sha256": "9f0c5408dc2a1a89fc4826d095350ca40b897850d0f83c351faa78d1ad02e7d7"
     },
     {
       "path": "api/v1/evidence.json",
-      "sha256": "9f1f7169851b4632e04657be7839b41b784881676f3003248f63b8b2a7d8b6e5"
+      "sha256": "1a3eefa083840486bd51c9f5542a25d9502f27269ee86e5e0bc108474e1f9655"
     },
     {
       "path": "api/v1/implementations.json",
-      "sha256": "56c6541dbb804ebb98213f61466605f287915bc6470164be03a2e4074d1dc686"
+      "sha256": "ff888c3c51f876864a845acb9f19334db73405c1a208fbf1b7722b789478cdd7"
     },
     {
       "path": "api/v1/index.json",
-      "sha256": "514b78bf5b88f679624bd39ac0fbbf95022de13f625747814e868e8ff7303690"
+      "sha256": "26044d99fe969aba4afd23515c6eca8cfed3ed51a2d31777efb01a2270979c41"
     },
     {
       "path": "api/v1/model-access.json",
-      "sha256": "ad2acbe0adfd421c31f329f5d5c918eb83faf3acc567915e73e7be394d1246c3"
+      "sha256": "33dc23461dc0e22deb48c26328d0cad31ce29af5bcc0418a6f2ec96c67bfb51c"
     },
     {
       "path": "api/v1/plan-entitlements.json",
-      "sha256": "d180c8341280febf541fcf3752c6a554071fbe0a5d213f4ab3f63647e562d04a"
+      "sha256": "89c75c17af7f30af70c6ff57a83578e2a40e06adef42f170dbb8caac9335404b"
     },
     {
       "path": "api/v1/product-comparisons.json",
-      "sha256": "2417d8c3fcd55e166783706fe1bdc206d1081646003264d2c0b7c7861fdc2cef"
+      "sha256": "c4f99e0335b28917395f9861816ef9d4642c78c271d5e45fbd5008e98b99e241"
     },
     {
       "path": "api/v1/products.json",
-      "sha256": "8751f3fb7ac81887b25d75cb2c80188ff695d8f6afb6f3fec7bce07d1a155c7d"
+      "sha256": "8e080158feef73dcdf06dbb666adfaa928b46ad510429cf271a8032c77ec9d0e"
     },
     {
       "path": "api/v1/providers.json",
-      "sha256": "c10ce85551292481b19aa7c441b51500c0ec59490319405687199dffadecab63"
+      "sha256": "14560bc9824ec0b9e39243dccd4bfc96b1637b5c17aa302c745997af41fa1848"
     },
     {
       "path": "api/v1/USAGE.md",
@@ -86,7 +86,7 @@
     },
     {
       "path": "assets/data.json",
-      "sha256": "402a4ee00f527efe0f699d4a4867b7543ae3dd0e3ec6454caeb25bc1191ed57d"
+      "sha256": "380887d1640a4a4aacc730cd199f180d0263485047ab660a2eeafc7e9f4c7f4c"
     },
     {
       "path": "assets/export.js",
@@ -802,15 +802,15 @@
     },
     {
       "path": "implementations.html",
-      "sha256": "354baa401527539140f8683bb5e8d093fa5d025b9ad550fd0e5e4fcab231e375"
+      "sha256": "eadabf516924e89bf44ceaed20e3204620740b16ab91a36545a996f9611f7f68"
     },
     {
       "path": "index.html",
-      "sha256": "9f39d880b78f61e169dc376df990abe5a68ee41c74b18b599ce9ecf47b1d8f66"
+      "sha256": "3caadcfc563c3dee0158ab79e89c63eb8608f28d6e9195b9ea11cbb14d6e35f0"
     },
     {
       "path": "index.xml",
-      "sha256": "f59b55b47b29a44ca4141b89ca265dad929f0197e49dcb6f65c34d6504b04fa0"
+      "sha256": "d9661bf6fb91f619ef0fb36a3ca271aa59595df5275e41ea06b0a965ce36fe00"
     },
     {
       "path": "llms.txt",
@@ -830,7 +830,7 @@
     },
     {
       "path": "sitemap.xml",
-      "sha256": "6479ab388423a5aa9685250fc9069d5ea9bc8c27f82261b7105b513afebdd53e"
+      "sha256": "30ae441a2e3c0b8c2241474c9a60bd7e8097bd62a6d43e43214e901eab69e2b6"
     },
     {
       "path": "timeline.html",
