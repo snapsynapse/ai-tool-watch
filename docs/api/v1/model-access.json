@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-25T01:54:44.385Z",
+    "generated": "2026-10-25T01:57:20.558Z",
     "version": "1.0",
     "frozen_on": "2026-10-11",
     "reason": "Scope narrowed to hosted consumer AI products from providers with roughly 1% or greater public market share, and maintenance was slimmed. Self-hosted runtimes and open-model access records fall outside that line, so they were frozen rather than kept current.",
