@@ -973,6 +973,9 @@ function renderFeatureCard(feature, platform, planPriceMap, options = {}) {
     const supplemental = options.supplemental || '';
     const notes = options.notes || feature.notes;
     const badges = options.badges || `${availabilityBadge(feature.status)}${gatingBadge(feature.gating)}`;
+    const sourceLinks = (feature.sources || []).map(source =>
+        `<a href="${escapeHTML(source.url.replace(/^https:\/\/www\./, 'https://'))}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.title)}</a>`
+    ).join(' · ');
 
     return `
                 <div class="feature-card" id="${featureId}" data-category="${escapeHTML(dataCategory)}" data-prices="${escapeHTML(availablePrices)}" data-surfaces="${escapeHTML(availableSurfaces)}">
@@ -994,6 +997,7 @@ function renderFeatureCard(feature, platform, planPriceMap, options = {}) {
                         </div>
                         ${talkingPoint ? `<div class="talking-point" role="button" tabindex="0" aria-label="Click to copy talking point" onclick="copyTalkingPoint(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyTalkingPoint(this)}">${talkingPoint.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}${notes ? `<span class="notes-tooltip" tabindex="0" aria-label="Additional notes" onclick="event.stopPropagation()"><span class="notes-icon">ℹ️</span><span class="notes-content">${escapeHTML(notes)}</span></span><span class="notes-text" hidden>${escapeHTML(notes)}</span>` : ''}</div>` : ''}
                         ${supplemental}
+                        ${sourceLinks ? `<p class="feature-sources">Sources: ${sourceLinks}</p>` : ''}
                     </div>
                     <div class="surface-column">
                         ${options.platformsRow || renderFeaturePlatformsRow(feature)}
@@ -2586,7 +2590,7 @@ function generateTimelineHTML(platforms, ontologyData) {
                     ? `<span class="timeline-category">${escapeHTML(ev.category)}</span>`
                     : '';
                 return `<div class="timeline-item">
-                        <a href="implementations.html#impl-${ev.featureId}" onclick="passTheme(this)" class="timeline-event-link">${escapeHTML(ev.event)}</a>
+                        <a href="implementations.html#${ev.featureId}" onclick="passTheme(this)" class="timeline-event-link">${escapeHTML(ev.event)}</a>
                         ${categoryTag}
                     </div>`;
             }).join('\n');
@@ -4971,12 +4975,15 @@ function generateFeedXml(platforms) {
 `;
 
     for (const ev of recent) {
-        const link = `${SITE_URL}implementations.html#impl-${ev.featureId}`;
+        const link = `${SITE_URL}implementations.html#${ev.featureId}`;
+        // Preserve feed identity when correcting the destination URL. The old
+        // dated fragment is an opaque identifier, not a working permalink.
+        const guid = `${SITE_URL}implementations.html#impl-${ev.featureId}?d=${ev.date}`;
         const pubDate = new Date(ev.date + 'T12:00:00Z').toUTCString();
         xml += `    <item>
         <title>${escapeXml(ev.product)} — ${escapeXml(ev.event)}</title>
         <link>${link}</link>
-        <guid isPermaLink="true">${link}?d=${ev.date}</guid>
+        <guid isPermaLink="false">${guid}</guid>
         <pubDate>${pubDate}</pubDate>
         <description>${escapeXml(ev.product)}: ${escapeXml(ev.event)}</description>
     </item>

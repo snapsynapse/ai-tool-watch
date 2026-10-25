@@ -314,7 +314,7 @@ Available globally where Perplexity Enterprise is available.
 | Category | search |
 | Status | ga |
 | Gating | free |
-| URL | https://www.perplexity.ai/ |
+| URL | https://perplexity.ai/ |
 | Launched | 2024-01-01T12:00Z |
 | Verified | 2026-03-25|
 | Checked | 2026-09-28|
@@ -347,16 +347,18 @@ Available globally.
 
 ### Talking Point
 
-> "Focus modes let you search specific sources—Academic, YouTube, Reddit, etc. **Available on all plans including free.**"
+> "Focus modes let you search specific sources, such as academic sources. **Available on all plans including free.** Organization accounts use source controls instead of manual focus mode."
 
 ### Sources
 
-- [Perplexity Help](https://www.perplexity.ai/hub/faq)
+- [Why can't I see focus mode on my search bar?](https://perplexity.ai/help-center/en/articles/10354759-why-can-t-i-see-focus-mode-on-my-search-bar)
+- [What is Pro Search?](https://perplexity.ai/help-center/en/articles/10352903-what-is-pro-search)
 
 ### Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-10-24 | Replaced the dead FAQ index with official Focus-mode and Pro Search help articles; added the documented organization-account caveat and narrowed examples to academic sources. Existing plan/platform rows and Verified/Checked dates are preserved; these articles do not re-establish every entitlement or platform claim (#656) |
 | 2026-03-25T12:00Z | [Verified] Gating corrected from paid to free — availability table shows Free tier has full access to all focus modes |
 | 2024-01-01T12:00Z | Initial entry |
 

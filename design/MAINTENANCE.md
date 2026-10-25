@@ -1,0 +1,62 @@
+# Maintenance queue
+Scope: AI Tool Watch only, under Snap Synapse stewardship. `INTENT.md` owns product decisions. This document owns remaining maintenance work; it is not a publication or spending approval.
+## Recovery checkpoint, 2026-10-24
+The local checkout was fast-forwarded to `c22bb22`, preserving the owner's existing `INTENT.md` edits. The initial recovery checkpoint was local and uncommitted; the subsequent delivery authorization and link correction are recorded below. Its dated evidence is [maintenance-recovery-2026-10-24.json](evidence/maintenance-recovery-2026-10-24.json).
+The Focus-specific coherence check exposed a pre-existing omission: human feature cards did not render primary-source links. The renderer now exposes each card's existing canonical sources, with escaped labels/URLs and bare-domain links. The focused regression failed before this fix and verifies that the Focus repair is reachable within its own card and agrees across human/API/MCP readers. No plan/platform or verification-date changes accompany this presentation repair.
+The previous four scheduled verification jobs completed green but retained `blocked_unapproved` evidence: [38362326442](https://github.com/snapsynapse/ai-tool-watch/actions/runs/38362326442), [38855989730](https://github.com/snapsynapse/ai-tool-watch/actions/runs/38855989730), [39376146637](https://github.com/snapsynapse/ai-tool-watch/actions/runs/39376146637), and [39907528864](https://github.com/snapsynapse/ai-tool-watch/actions/runs/39907528864). Each skipped the verifier and made no provider calls. Build success is a separate fact and does not demonstrate provider health, freshness coverage, or live-byte identity.
+## Scheduled activation, held
+The October 11 decision resumed twice-weekly verification in principle and approved $20 per run, $0.20 per provider call, and 40 features per scheduled batch. Both spend variables exist. `FRESHNESS_SCHEDULED_VERIFICATION` is absent, so scheduled execution remains blocked by the existing control.
+The initial October 24 recovery was prepared without push or publication; the owner subsequently authorized delivery of the validated code changes. Scheduled activation remains held because it permits recurring paid calls and automatic source/state commits and pushes. No variable was changed and no paid canary was run.
+When the owner separately authorizes scheduled activation:
+1. Confirm delivery of the reviewed maintenance changes and applicable CI and publication-artifact checks.
+2. Confirm human review capacity and pending findings; `FRESHNESS_REVIEW_MINUTES_PER_WEEK` is currently unset, so capacity is unknown.
+3. Set the existing scheduled-approval variable to `approved` within the recorded bounds; do not raise limits or add another scheduler.
+4. Inspect the next retained provider, usage, health, review, and workflow evidence. `blocked_unapproved` is no coverage; degraded execution is not healthy; review-required is distinct from failure.
+5. Keep distribution held until actual scheduled runs demonstrate reliable operation. The owner has not supplied a numerical reliability threshold; do not invent one from green build counts.
+See [VERIFICATION.md](../VERIFICATION.md) for the collector contract, date meanings, reservations, review metadata, and publication behavior. A dry run can still incur provider charges.
+## Open GitHub issues
+| Issue | Reconciled state | Next action |
+|---|---|---|
+| [#656](https://github.com/snapsynapse/ai-tool-watch/issues/656) | Old Perplexity FAQ index returns 404. Two official help replacements return 200. The local patch adds the organization-account caveat and preserves all plan/platform rows and Verified/Checked dates. | Deliver after approval, then close with the repair evidence. These pages do not establish every stored entitlement or platform claim. |
+| [#646](https://github.com/snapsynapse/ai-tool-watch/issues/646) | The title's 13 is a historical count. The existing `findStaleFeatures(30)` query returned 26 of 87 active features on October 24 local time (October 25 UTC). | Keep open; update its count and description when GitHub writes are authorized. Select a bounded batch under the existing oldest-Checked-first policy rather than treating the old title as the inventory. |
+| [#648](https://github.com/snapsynapse/ai-tool-watch/issues/648) | Contributor requests a directory/market tracker listing. This is outside the current hosted consumer AI-product scope. | Review the draft below, then reply and close when authorized. No admission or external reply occurred. |
+Draft response for #648:
+> Thanks for the submission and founder disclosure. AI Tool Watch tracks capabilities, plans, surfaces, and constraints for major hosted consumer AI products. A directory and market tracker falls outside that scope, so we're declining this addition. The scope criteria are at https://github.com/snapsynapse/ai-tool-watch/blob/main/design/SCOPE.md.
+These are local dispositions, not GitHub issue updates. No issue was commented on or closed during this recovery.
+## Retained review-state mismatch
+`data/maintenance/state.json` still marks two findings pending although linked issues [#649](https://github.com/snapsynapse/ai-tool-watch/issues/649) and [#650](https://github.com/snapsynapse/ai-tool-watch/issues/650) were closed and the repairs landed in `d14bc8e`.
+Preserve the original observations and receipts. The review contract requires a human actor, decision, and reason; closed issues alone do not supply that attestation. Sam's next review can use `scripts/review-freshness.js` to reconcile those metadata entries. This patch does not manufacture a human acceptance.
+## Source-content audit continuation
+The September 23 audit remains a decision queue, not current factual authority. Its private local bundle is `.verification-reports/source-audit-2026-09-23/`; its README owns the extraction/replay details. Raw third-party texts and private review decisions must not be committed to this public repo.
+- Reconcile the saved product-level Fix decisions against subsequent repairs before editing. Read replacement sources against each affected claim. No Verified bump from model verdicts alone.
+- Reconcile moved/dead links individually, limited to the active hosted-product scope. Do not refresh archived runtime or open-model records.
+- Gemini Live absorbed the former Astra capabilities; recheck any surviving prototype/status ambiguity only if an active record still needs it. Issue #637 is closed; do not reopen its old claim automatically.
+- The Grok-tier issue #631 is closed. Reuse saved official evidence only after checking current product/plan records and deciding whether anything remains unresolved.
+- The audit's unread Perplexity sources remain a source-content gap. Apply the current Comet fail-closed rules if a human-shared browser tab is needed; the old handoff's recovery instructions are obsolete.
+- The Microsoft consumer-pricing/lifecycle gap needs an official-source check against current rows before another correction. Later issue repairs do not prove that every old audit finding was addressed.
+- Scheduled spend bounds and the decision against porting EveryAILaw's newer cascade core now belong to `INTENT.md`; do not reopen them from the old queue.
+The private continuation record in LocalBrain preserves the review-page pointer and historical audit sizing. That evidence is diagnostic and dated; it is not source admission or an instruction to rerun paid analysis.
+## Discovery, credibility, and distribution
+- The sitemap remains curated through `data/discovery.yml`, established in `e1f9772`. Inspect the existing discovery set's indexing/impressions before proposing expansion. No Search Console mutation or sitemap expansion is part of this patch.
+- The bounded competitor comparison was completed October 3 and is retained privately in LocalBrain. Reuse its method and qualified positioning; refresh competitor facts before presenting them as current. Claude Voice and the sampled Gemini Free-plan contradiction were subsequently repaired.
+- A broader credibility-indicator audit remains pending: check visible claim dates, primary sources, change history, rollout labels, and method against the actual human/API/MCP output. Keep it distinct from a new market survey.
+- Distribution targets and tactics stay in the private LocalBrain note. Campaigns remain held behind scheduled reliability. Every external send requires owner authorization.
+- Website PostHog is configured; no fresh usage analysis was run here. Direct JSON API and MCP adoption remain unmeasured.
+## Deferred product work
+Tool Check, taxonomy cleanup, ontology-native evidence migration, performance polishing, and new-product admission remain parked unless a maintenance need justifies them.
+TypeSafe capability suggestions remain a deferred navigation hypothesis. The destination-specific experiment plan is private in LocalBrain; earlier legal-catalog results are not acceptance for this catalog. Implementation, inference, backend selection, user trial, and rollout require their own scoped authorization. No TypeSafe calls or integration are part of this recovery.
+Registry/npm publication and cold-install acceptance remain separately gated. Existing local packaging evidence does not establish publication or use.
+
+## Local handoff reconciliation, 2026-10-24
+The September 28 distribution, September 23 source-audit, and September 21 TypeSafe handoffs were processed and removed after their destinations were read back. Repo-owned decisions and remaining work are here and in INTENT/roadmap; private review locators, campaign tactics, and the deferred experiment plan are preserved in their LocalBrain notes. No raw handoff was retained as history. The local `handoffs/` queue is empty.
+
+## Initial local validation, 2026-10-24
+The canonical finisher generated and verified a 208-file artifact. All 370 offline tests passed with zero failures or skips, including the reproduced source-link regression and the Focus-specific human/API/MCP fixture. The secret scan passed for the current tree and Git history; current-only scanning passed again after the renderer change. `git diff --check` passed.
+A bounded comparison against the base artifact confirmed that only Focus Modes implementation content and its evidence record changed; every plan/surface value and Verified/Checked date remained unchanged. The curated sitemap URLs and all six owner-added INTENT lines were preserved. Generated HTML also gains the canonical source links from the renderer repair. These are local checks, not deployment, browser acceptance, or live-byte identity.
+At that initial checkpoint no commit, push, issue update, repository-variable mutation, paid provider call, npm/Registry publication, or deployment had occurred. Main matched the fetched `origin/main` and the recovery changes were uncommitted for review.
+## Final review and link repair, 2026-10-24
+Review found that timeline and RSS links prepended `impl-` to feature IDs, while rendered feature cards use the unprefixed ID. The owner authorized fixing both source templates, adding a fragment-target regression, regenerating, validating, and committing/pushing if the final review passed.
+The two generator links now target the actual card IDs. Existing RSS GUID strings are preserved as opaque identifiers (`isPermaLink="false"`) so correcting links does not reissue previously published items under new identities. The new regression checks every timeline/RSS destination against IDs rendered in `implementations.html`, and confirms the feed identifiers remain explicitly opaque. It failed before the source correction.
+This code-delivery authorization does not activate scheduled paid verification, approve issue replies/closures, or publish npm/Registry packages. Final validation evidence is in the dated recovery JSON; post-push CI and hosted acceptance must be reported from actual results.
+
+Final pre-delivery validation: all 372 offline tests passed, with zero failures or skips. The canonical finisher generated and verified the 208-file artifact; the current-tree secret scan and whitespace check passed. All timeline/RSS event destinations resolve to rendered feature IDs. Owner INTENT additions, plan/surface values, Verified/Checked dates, and curated sitemap URLs are preserved. No outstanding finding remains in this bounded diff review.

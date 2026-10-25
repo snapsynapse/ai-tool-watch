@@ -1,0 +1,299 @@
+{
+  "asOf": "2026-10-25T01:23:55.733Z",
+  "localDate": "2026-10-24",
+  "baseCommit": "c22bb22227a43c49e21420b790dccf845b7fb353",
+  "delivery": "initial recovery checkpoint was local-only; owner subsequently authorized commit/push after the link repair and passing final review",
+  "configuration": {
+    "FRESHNESS_MAX_SPEND_USD": "20",
+    "FRESHNESS_MAX_PROVIDER_CALL_USD": "0.20",
+    "FRESHNESS_SCHEDULED_VERIFICATION": null,
+    "scheduledMaxFeatures": 40
+  },
+  "scheduledRuns": [
+    {
+      "id": 38362326442,
+      "status": "blocked_unapproved",
+      "providerCalls": 0,
+      "coverage": "none"
+    },
+    {
+      "id": 38855989730,
+      "status": "blocked_unapproved",
+      "providerCalls": 0,
+      "coverage": "none"
+    },
+    {
+      "id": 39376146637,
+      "status": "blocked_unapproved",
+      "providerCalls": 0,
+      "coverage": "none"
+    },
+    {
+      "id": 39907528864,
+      "status": "blocked_unapproved",
+      "providerCalls": 0,
+      "coverage": "none"
+    }
+  ],
+  "staleness": {
+    "asOf": "2026-10-25T01:23:55.733Z",
+    "thresholdDays": 30,
+    "comparison": "floor UTC days since Checked > 30",
+    "count": 26,
+    "totalActiveFeatures": 87,
+    "stale": [
+      {
+        "platform": "Grok",
+        "feature": "DeepSearch",
+        "checked": "2026-09-01",
+        "verified": "2026-03-24",
+        "daysSinceChecked": 54
+      },
+      {
+        "platform": "Grok",
+        "feature": "Grok Studio",
+        "checked": "2026-09-01",
+        "verified": "2026-03-20",
+        "daysSinceChecked": 54
+      },
+      {
+        "platform": "Grok",
+        "feature": "Grok Voice Mode",
+        "checked": "2026-09-01",
+        "verified": "2026-03-21",
+        "daysSinceChecked": 54
+      },
+      {
+        "platform": "Grok",
+        "feature": "Think Mode",
+        "checked": "2026-09-01",
+        "verified": "2026-03-24",
+        "daysSinceChecked": 54
+      },
+      {
+        "platform": "ChatGPT",
+        "feature": "Agent Mode",
+        "checked": "2026-09-04",
+        "verified": "2026-08-15",
+        "daysSinceChecked": 51
+      },
+      {
+        "platform": "ChatGPT",
+        "feature": "Atlas Browser",
+        "checked": "2026-09-04",
+        "verified": "2026-03-27",
+        "daysSinceChecked": 51
+      },
+      {
+        "platform": "ChatGPT",
+        "feature": "Canvas",
+        "checked": "2026-09-04",
+        "verified": "2026-08-15",
+        "daysSinceChecked": 51
+      },
+      {
+        "platform": "ChatGPT",
+        "feature": "ChatGPT Search",
+        "checked": "2026-09-04",
+        "verified": "2026-08-15",
+        "daysSinceChecked": 51
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Copilot in Office Apps",
+        "checked": "2026-09-05",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 50
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Copilot Voice",
+        "checked": "2026-09-05",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 50
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Model Access",
+        "checked": "2026-09-05",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 50
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Image Generation (Designer)",
+        "checked": "2026-09-05",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 50
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Chat",
+        "checked": "2026-09-05",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 50
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Audio Overview",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Canvas",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Gemini Advanced",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Gemini in Workspace (Docs, Sheets, etc.)",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Gems (Custom Chatbots)",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Imagen",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Nano Banana Pro",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "NotebookLM",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Veo (Video Generation)",
+        "checked": "2026-09-11",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Chat",
+        "checked": "2026-09-11",
+        "verified": "2026-08-31",
+        "daysSinceChecked": 44
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Agent Builder",
+        "checked": "2026-09-23",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 32
+      },
+      {
+        "platform": "Microsoft Copilot",
+        "feature": "Copilot Connectors",
+        "checked": "2026-09-23",
+        "verified": "2026-09-05",
+        "daysSinceChecked": 32
+      },
+      {
+        "platform": "Gemini",
+        "feature": "Gemini Live (Voice Mode)",
+        "checked": "2026-09-23",
+        "verified": "2026-09-11",
+        "daysSinceChecked": 32
+      }
+    ]
+  },
+  "sourceRepair": {
+    "issue": 656,
+    "oldUrl": "https://perplexity.ai/hub/faq",
+    "oldHttp": 404,
+    "replacements": [
+      {
+        "url": "https://perplexity.ai/help-center/en/articles/10354759-why-can-t-i-see-focus-mode-on-my-search-bar",
+        "http": 200
+      },
+      {
+        "url": "https://perplexity.ai/help-center/en/articles/10352903-what-is-pro-search",
+        "http": 200
+      }
+    ],
+    "scope": "source selection and organization-account caveat only; no complete plan/platform review",
+    "verifiedPreserved": "2026-03-25",
+    "checkedPreserved": "2026-09-28"
+  },
+  "issueDispositions": {
+    "646": "still actionable; historical title count 13, current query count 26",
+    "648": "draft decline under hosted-product scope; no response sent",
+    "656": "local source repair; issue remains open until delivery"
+  },
+  "reviewStateDrift": {
+    "issues": [
+      649,
+      650
+    ],
+    "github": "closed with repairs in d14bc8e",
+    "localFindings": "still pending; preserved without inventing human review metadata"
+  },
+  "scheduledActivation": "still deferred; no variable mutation or paid provider call authorized by code delivery",
+  "initialValidation": {
+    "validatedAt": "2026-10-25T01:33:42.150800+00:00",
+    "offlineTests": {
+      "passed": 370,
+      "failed": 0,
+      "skipped": 0
+    },
+    "publicationFiles": 208,
+    "artifactSha256": "d8780e6124c3931265d6dc7689778d1296be5f8b737e7240789ab62682200074",
+    "focusHumanApiMcp": "passed",
+    "sourceLinkRegression": "failed before renderer fix; passed after",
+    "secretScan": "current tree and history passed; current-only repeated after renderer fix",
+    "diffWhitespace": "passed",
+    "ownerAddedIntentLinesPreserved": 6,
+    "allPlanSurfaceAndVerifiedCheckedValuesPreserved": true,
+    "curatedSitemapUrlsUnchanged": true,
+    "handoffsRemaining": 0
+  },
+  "validation": {
+    "validatedAt": "2026-10-25T01:56:02.112759+00:00",
+    "offlineTests": {
+      "passed": 372,
+      "failed": 0,
+      "skipped": 0
+    },
+    "publicationFiles": 208,
+    "artifactSha256": "e89c1379f314b05b66d9b35f3efa39edb6564b236212d2d35b6a43465b680c8a",
+    "focusHumanApiMcp": "passed",
+    "eventLinks": "all timeline and RSS item destinations resolve to rendered feature IDs",
+    "eventLinkRegression": "failed before source correction; passed after",
+    "rssGuidPolicy": "existing identifier strings retained, now explicitly opaque",
+    "secretScan": "current tree passed after link repair; historical scan passed during initial recovery",
+    "diffWhitespace": "passed",
+    "ownerAddedIntentLinesPreserved": 6,
+    "allPlanSurfaceAndVerifiedCheckedValuesPreserved": true,
+    "curatedSitemapUrlsUnchanged": true,
+    "handoffsRemaining": 0
+  }
+}

@@ -1,85 +1,31 @@
-# Project Status
-
-Last updated: 2026-10-03
-
-## What's built
-
-The original five-phase roadmap is complete. The project now has:
-
-- **Ontology-backed data model** — first-class records for capabilities, providers, products, implementations, model-access, and evidence with cross-record validation
-- **Dual-view site** — capability-first homepage and feature-first detailed availability, both generated from the same canonical source
-- **Machine-readable API** — 10 JSON files at `docs/api/v1/` with stable IDs, cross-links, and freshness metadata
-- **SEO bridge pages** — 125 programmatic pages (`/can/`, `/compare/`, `/capability/`, `/best-for/`) with schema.org structured data
-- **MCP read layer** — 15 read-only tools via `scripts/mcp-server.js` (zero dependencies, stdio transport)
-- **MCP distribution candidate** — `package.json` and `server.json` define a 75 KB local `ai-tool-watch` package and `io.github.snapsynapse/ai-tool-watch` Registry entry. Schema validation and an isolated tarball install pass; npm and Registry publication remain separately gated.
-- **Verification cascade** — multi-model cross-check with human review gate. Scheduled runs are blocked (`blocked_unapproved`) until `FRESHNESS_SCHEDULED_VERIFICATION` is approved; manual runs still require `FRESHNESS_MAX_SPEND_USD` and `FRESHNESS_MAX_PROVIDER_CALL_USD`
-- **Reviewed publication** — `scripts/prepare-publication.js` synchronizes canonical evidence, validates source and generated output, checks human/API/MCP coherence, and writes a SHA-256 artifact manifest. GitHub Pages and FTP deployment both verify and consume that one uploaded artifact; hosted acceptance for PR #626 is recorded in `design/evidence/reviewed-publication-2026-09-07.json`.
-- **Structured data validation** — `scripts/validate-structured-data.js` parses every JSON-LD block in generated `docs/**/*.html`, blocking publication on invalid JSON or a missing required property for its `@type` (Organization, WebSite, WebPage/AboutPage, FAQPage/Question/Answer, ItemList/ListItem, DefinedTerm/DefinedTermSet, SoftwareApplication), plus ItemList position gaps/duplicates. It runs during reviewed-publication preparation after `scripts/build.js`.
-- **Talking-point claim validation** — `scripts/validate-claims.js` cross-checks each feature's hand-written talking point against its own availability table, Gating, and Status fields, and flags time-bound wording ("temporary", "promotional") whose Verified date has aged past 60 days. Errors block `build.yml`'s `validate` job and canonical publication preparation after the successful scheduled trial on 2026-09-07; warnings remain advisory.
-
-## Outstanding work
-
-### 2026 review-period priorities
-
-AI Tool Watch is maintained through 2026-12-31 under the review decision in `INTENT.md`. Work during this period is ordered around proving whether the reference earns continued upkeep:
-
-1. Keep the reviewed-publication artifact valid and verify hosted delivery against its exact bytes. The latest receipt for commit `6cf6c2d` is `design/evidence/reviewed-publication-2026-10-03-posthog.json`.
-2. Measure website use with cookieless PostHog analytics in the shared Snap Synapse project. Direct JSON API and MCP use require separate measurement.
-3. Keep evidence current through bounded manual verification. Scheduled paid provider calls remain blocked until explicitly approved.
-4. Package and assess registry distribution for the read-only MCP server before any separately authorized publication. The local package and Registry manifest now validate; publication and post-publication cold-install proof remain pending approval.
-5. Run one owner-approved, single-person distribution campaign per week and record resulting citations, links, or measurable use.
-6. Compare AI Tool Watch with direct structured competitors on coverage, sampled accuracy, freshness, sourcing, and machine readability.
-
-The product-expansion items below remain parked unless they directly support these review-period priorities.
-
-### Tool Check (deferred)
-
-An interactive "can this AI do X?" experience that consumes the canonical data model. Prerequisites are now met, but activation requires:
-
-- consuming canonical mappings rather than bespoke metadata
-- handling corporate-policy caveats explicitly
-- preserving the distinction between commercial entitlement and org-admin restriction
-
-### Category field cleanup
-
-The `Category` field on implementation records (especially the `other` bucket) is a legacy taxonomy that predates the capability-first model. It still drives filtering on the implementations page. Work needed:
-
-- reduce dependence on `Category` as a primary filter
-- clean up or retire the `other` bucket
-- align filtering with capability groups where possible
-
-### Evidence consolidation
-
-Evidence currently lives in two places: inline in `data/platforms/` feature records and in `data/evidence/index.json` (synced by `scripts/sync-evidence.js`). The goal is to make evidence fully ontology-native so it no longer depends on parsing platform markdown.
-
-### Bridge page measurement
-
-The SEO bridge pages are live but not yet validated against search indexing. Periodically check Google Search Console for indexing status, crawl errors, and query impressions to confirm the pages are capturing traffic as intended.
-
-### Page Optimizations
-
-Lighthouse scores are consistently in the 90+ range, but some small tweaks could likely send every page on this site to a near-perfect score. 
-
-### Ongoing
-
-- Keep data accurate through the verification cascade (manual runs; scheduled runs await approval)
-- Expand implementation coverage as products ship new capabilities
-- Admit new products from the [watchlist](design/WATCHLIST.md) when they meet scope criteria
-
-## Data contracts
-
-- `data/platforms/` — authoritative source for implementation details, plan constraints, surfaces, changelog, and evidence inputs
-- `data/capabilities/`, `data/providers/`, `data/products/`, `data/model-access/`, `data/implementations/index.yml` — first-class ontology records kept coherent by the build and validation pipeline
-- `scripts/build.js` — generates the site, JSON API, and bridge pages from the same canonical source
-- `scripts/mcp-server.js` — reads from generated JSON artifacts; not a second source of truth
-- `scripts/validate-ontology.js` — enforcement point for cross-record integrity
-- Canonical skill sources live under `skills/<name>/src/`; platform-local install folders are not source of truth
-
-## Standing invariants
-
-- Ontology validation passes for all entity types and cross-references
-- Capability-first and feature-first views reflect the same canonical entities
-- JSON export includes stable IDs, freshness fields, source links, and search vocabulary
-- Bridge pages are generated from canonical data, never maintained by hand
-- The legacy feature-first view remains usable while capability-first stays the primary framing
-- New UX work must consume the shared model, not invent a second source of truth
+# Project roadmap
+Last reconciled: 2026-10-24. Scope and owner decisions live in [INTENT.md](../INTENT.md); the actionable maintenance queue and dated evidence live in [MAINTENANCE.md](MAINTENANCE.md).
+## Current direction
+The October 11 owner decision narrowed the reference to major hosted consumer AI products and retained the year-end review. Self-hosted runtimes and open-model access are frozen in the archive. Meta AI is active. Distribution campaigns wait for reliable scheduled verification.
+## Delivered foundation
+- Canonical ontology records drive capability-first and implementation-first pages, static JSON APIs, bridge pages, and the read-only MCP server.
+- `scripts/prepare-publication.js` synchronizes evidence, validates source and generated structures, checks human/API/MCP coherence, and writes the verified publication manifest.
+- GitHub Pages consumes the reviewed artifact. The PAICE FTP workflow and duplicate evidence-alert workflow were retired on October 11.
+- The verification cascade retains source-grounded model observations and human review findings. Only adequate no-change evidence can advance Checked; editorial review owns factual corrections and Verified dates.
+- Cookieless website analytics use the shared Snap Synapse PostHog project with hostname isolation. Direct API/MCP use remains unmeasured.
+- Read-only MCP distribution manifests and an earlier isolated tarball install were validated locally. npm/Registry publication and post-publication acceptance remain pending.
+- The October 3 bounded competitor comparison and sampled Claude Voice/Gemini consistency repairs are completed historical work. They do not establish current market superiority or adoption.
+## Maintenance recovery
+1. Complete the local Perplexity source repair and its publication-artifact/offline validation. Keep factual dates unchanged unless the complete record is reviewed.
+2. Reconcile the missing scheduled-approval variable with the recorded October 11 decision. Both spend limits are configured, but the last four scheduled runs were blocked with no provider calls. Activation remains held under the October 24 no-push/no-publication instruction.
+3. Reconcile open issues and retained review metadata. The current dated staleness query and proposed issue responses are in the maintenance queue; issue titles are not live inventory counts.
+4. Process remaining active-product source-audit decisions against current data. Preserve evidence, exclude frozen archive records, and keep paid work bounded.
+5. Audit credibility indicators and existing discovery-page indexing before considering distribution. Keep sitemap curation intact.
+## Review-period evidence
+Continue maintenance through 2026-12-31 under `INTENT.md`, then assess citation/link evidence or measured use. Refresh website-use evidence before making adoption claims. The October 11 analytics snapshot is historical; no current traffic result was collected in this recovery. Distribution targets and tactics stay private in LocalBrain, and sends remain owner-approved.
+## Deferred work
+- Tool Check: any task-to-capability experience must use canonical mappings and distinguish commercial entitlement from organization policy.
+- TypeSafe suggestions: prepare a destination-specific plan only after the owner reopens this hypothesis; historical authored-query results are not production acceptance.
+- Category filtering and the legacy `other` bucket: align with capability groups only when a demonstrated navigation need warrants the work.
+- Evidence consolidation: make evidence ontology-native without introducing a second factual source.
+- Performance polishing: require a fresh measurement and a maintenance justification before changing the site.
+- New products: apply [SCOPE.md](SCOPE.md); the watchlist does not reopen frozen domains.
+- npm/MCP Registry publication: separate approval and cold-install verification are still needed.
+## Data and publication contracts
+`data/` owns facts, `scripts/build.js` generates `docs/`, and `scripts/mcp-server.js` reads generated JSON. Never edit generated output directly. Finish data/script changes with `node scripts/prepare-publication.js` and run the CI-equivalent offline suite with `node scripts/test-offline.js`. Source and generated outputs travel together when delivery is authorized.
+Stable IDs, provenance, visible freshness, human/API/MCP coherence, the curated discovery set, and the usable legacy implementation view remain invariants. Local tests do not establish deployment or live-byte identity.

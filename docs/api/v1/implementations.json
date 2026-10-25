@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-23T05:46:08.646Z",
+    "generated": "2026-10-25T01:54:44.385Z",
     "version": "1.0",
     "count": 87
   },
@@ -7207,7 +7207,7 @@
           "notes": "Perplexity API"
         }
       ],
-      "talking_point": "Focus modes let you search specific sources—Academic, YouTube, Reddit, etc. **Available on all plans including free.**",
+      "talking_point": "Focus modes let you search specific sources, such as academic sources. **Available on all plans including free.** Organization accounts use source controls instead of manual focus mode.",
       "launched": "2024-01-01T12:00Z",
       "verified": "2026-03-25",
       "evidence_id": "implementation-perplexity-focus-modes",

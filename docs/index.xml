@@ -5,357 +5,357 @@
     <link>https://aitool.watch/</link>
     <description>Recent AI feature launches and changes across ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and Meta AI.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2026 05:46:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 01:54:44 GMT</lastBuildDate>
     <atom:link href="https://aitool.watch/index.xml" rel="self" type="application/rss+xml"/>
     <item>
+        <title>Perplexity — Replaced the dead FAQ index with official Focus-mode and Pro Search help articles; added the documented organization-account caveat and narrowed examples to academic sources. Existing plan/platform rows and Verified/Checked dates are preserved; these articles do not re-establish every entitlement or platform claim (#656)</title>
+        <link>https://aitool.watch/implementations.html#perplexity-focus-modes</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-perplexity-focus-modes?d=2026-10-24</guid>
+        <pubDate>Sat, 24 Oct 2026 12:00:00 GMT</pubDate>
+        <description>Perplexity: Replaced the dead FAQ index with official Focus-mode and Pro Search help articles; added the documented organization-account caveat and narrowed examples to academic sources. Existing plan/platform rows and Verified/Checked dates are preserved; these articles do not re-establish every entitlement or platform claim (#656)</description>
+    </item>
+    <item>
         <title>ChatGPT — [Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-codex-code-agent</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-codex-code-agent?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Free/Go notes: local clients only, no Codex Cloud; Enterprise cloud access subject to workspace enablement; API note clarified (Using Codex with your ChatGPT plan)</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-custom-gpts-actions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-custom-gpts-actions?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-custom-gpts-actions</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-custom-gpts-actions?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Status ga → deprecated: OpenAI announced (release notes 2026-09-11) Custom GPTs retire 2026-12-11 with migration to Plugins; new creation ended for personal Plus/Pro (⚠️ Use only), remains on Business/Enterprise/Edu workspaces (Enterprise creation planned to end 2026-10-26, deferral to 2027-02-11); API ✅ → ❌ (retirement FAQ, creating and editing GPTs)</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes)</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-memory?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-memory</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-memory?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Free gains reduced chat-history reference (⚠️ → ✅); Enterprise limits Full → Partial (chat-history reference not yet available); EEA note names Norway/Iceland/Liechtenstein; FAQ source moved to new slug (OpenAI memory help article, release notes)</description>
     </item>
     <item>
         <title>Claude — [Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-artifacts</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#claude-artifacts</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Docs/Slides/Design templates now on by default on every plan incl. Free (Enterprise since 2026-10-15); added Dashboards template (beta, Pro/Max/Team/Enterprise; off on Enterprise until owner enables) and Motion template (beta, Team on by default, Enterprise off); mobile can now view and edit artifacts (sharing settings need web/desktop); talking point updated</description>
     </item>
     <item>
         <title>Microsoft Copilot — [Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source.</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#microsoft-copilot-copilot-vision</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-vision?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Verified] Microsoft support docs: Vision requires a Microsoft Copilot license with a work account, or Microsoft 365 Personal, Family, or Premium. Web changed to ✅ for personal and work accounts; macOS changed to ⚠️ (docs list Windows, web, and mobile only). Removed unsourced 10/15 min/day caps. Replaced retired support URL with the get-started page and removed the dead preview announcement source.</description>
     </item>
     <item>
         <title>Gemini — [Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps.</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-deep-research</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#gemini-deep-research</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-deep-research?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Google Help limits page: without a plan, standard limits (may be unavailable at high demand); AI Plus 2x, AI Pro 4x, AI Ultra 5x or 20x AI Pro depending on subscription. AI Pro and Ultra reports can use Pro. Dropped unsourced ~5/month and Gemini 3.0 Pro claims; regional wording updated to Gemini Apps.</description>
     </item>
     <item>
         <title>Perplexity — [Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim</title>
-        <link>https://aitool.watch/implementations.html#impl-perplexity-buy-with-pro-shopping</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-buy-with-pro-shopping?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#perplexity-buy-with-pro-shopping</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-perplexity-buy-with-pro-shopping?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>Perplexity: [Verified] Feature now called Instant Buy; replaced dead help article with What is Instant Buy and added Buy with PayPal article; Free limit set to US only; removed unsupported free-shipping claim</description>
     </item>
     <item>
         <title>Perplexity — [Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed</title>
-        <link>https://aitool.watch/implementations.html#impl-perplexity-collections-spaces</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-perplexity-collections-spaces?d=2026-10-18</guid>
+        <link>https://aitool.watch/implementations.html#perplexity-collections-spaces</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-perplexity-collections-spaces?d=2026-10-18</guid>
         <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
         <description>Perplexity: [Checked] Replaced dead Introducing Spaces blog source with What are Projects? help article; feature now called Projects; plan-tier rows not reconfirmed</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-meta-ai-chat</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-chat?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-muse-image-image-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-muse-image-image-generation?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-muse-image-image-generation</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-muse-image-image-generation?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-vibes-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-vibes-video-generation?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-vibes-video-generation</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-vibes-video-generation?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-voice-conversations</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-voice-conversations?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-voice-conversations</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-voice-conversations?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-vision-and-live-ai</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-vision-and-live-ai?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-vision-and-live-ai</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-vision-and-live-ai?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-web-search</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-web-search?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-web-search</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-web-search?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-research-reports</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-research-reports?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-research-reports</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-research-reports?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-memory?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-memory</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-memory?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-file-and-document-analysis</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-file-and-document-analysis?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-file-and-document-analysis</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-file-and-document-analysis?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-canvas-documents</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-canvas-documents?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-canvas-documents</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-canvas-documents?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-visual-coding</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-visual-coding?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-visual-coding</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-visual-coding?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-connected-apps</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-connected-apps?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-connected-apps</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-connected-apps?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-tasks-and-daily-briefings</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-tasks-and-daily-briefings?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-tasks-and-daily-briefings</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-tasks-and-daily-briefings?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Meta AI — [Verified] Initial record from Meta&apos;s own sources</title>
-        <link>https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-on-ai-glasses</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-on-ai-glasses?d=2026-10-11</guid>
+        <link>https://aitool.watch/implementations.html#meta-ai-meta-ai-on-ai-glasses</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-meta-ai-meta-ai-on-ai-glasses?d=2026-10-11</guid>
         <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
         <description>Meta AI: [Verified] Initial record from Meta&apos;s own sources</description>
     </item>
     <item>
         <title>Claude — [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-voice-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-voice-mode?d=2026-10-04</guid>
+        <link>https://aitool.watch/implementations.html#claude-voice-mode</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-voice-mode?d=2026-10-04</guid>
         <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Added the current Voice Mode beta across Free, Pro, Max, Team, and Enterprise; recorded mobile, desktop, Linux beta, and web surfaces; preserved regular plan usage limits and the explicit Claude Code exclusion</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-codex-security</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-codex-security?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-codex-security</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-codex-security?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Added open-source Codex Security CLI (npm install @openai/codex-security, beta, requires access), launched 2026-07-29; terminal row ❌ → ✅, Linux row ❌ → ⚠️</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] ChatGPT&apos;s image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI&apos;s deprecations page</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-dall-e-image-generation</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-dall-e-image-generation?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] ChatGPT&apos;s image generation moved from GPT Image 1.5 to **ChatGPT Images 2.5** (rolled out 2026-09-08 to all ChatGPT/ChatGPT Work/Codex users); availability notes and talking point updated; noted gpt-image-1 (retires 2026-10-23) and gpt-image-1.5 (retires 2026-12-01) are themselves being superseded by gpt-image-2.5-sunburst/flare per OpenAI&apos;s deprecations page</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-sora-video-generation</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-sora-video-generation?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] API row corrected: the Sora 2 models and Videos API were shut down 2026-09-24 with no one-to-one replacement API; API availability ✅ → ❌</description>
     </item>
     <item>
         <title>ChatGPT — [Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next</title>
-        <link>https://aitool.watch/implementations.html#impl-chatgpt-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-chatgpt-chat?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#chatgpt-chat</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-chatgpt-chat?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>ChatGPT: [Verified] Model lineup corrected: file was still describing GPT-5.4 (Mar 2026) as current, but ChatGPT had since moved to GPT-5.5 and is now transitioning to GPT-6 (Astra rolled out 2026-09-04 to Pro/Enterprise/Business-Premium + API; Sol and Luna rolling out 2026-09-22 to Plus/Pro/Business/Enterprise/Edu and Free/Go respectively). GPT-5.5 is scheduled to retire from ChatGPT/ChatGPT Work/Codex on all plans 2026-10-14. Availability table and talking point updated; exact per-plan GPT-6 rollout status may still be in progress from one verification to the next</description>
     </item>
     <item>
         <title>Claude — [Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-artifacts</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-artifacts</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-artifacts?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] URL updated (article renumbered to 17153992); added missing Team/Enterprise rows to Availability; added Design/Slides/Docs templates (beta, paid plans, off by default on Enterprise); Claude Code (terminal) corrected from unavailable to available — can publish session output as an artifact or make Design/Docs; talking point rewritten to match</description>
     </item>
     <item>
         <title>Claude — [Verified] Major platform expansion confirmed via code.claude.com docs: native JetBrains IDE plugin added (talking point previously said none existed); Claude Code on the web (claude.ai/code) added; Claude mobile app (iOS/Android) added for monitoring/steering cloud sessions and Remote Control; Chrome extension (browser automation, paid plans) added. Dropped stale claudelog.com VS Code source (unofficial)</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-claude-code</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-claude-code?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-claude-code</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-claude-code?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Major platform expansion confirmed via code.claude.com docs: native JetBrains IDE plugin added (talking point previously said none existed); Claude Code on the web (claude.ai/code) added; Claude mobile app (iOS/Android) added for monitoring/steering cloud sessions and Remote Control; Chrome extension (browser automation, paid plans) added. Dropped stale claudelog.com VS Code source (unofficial)</description>
     </item>
     <item>
         <title>Claude — [Verified] Old &quot;Setting Up Integrations&quot; source (support.anthropic.com/.../10168395) is dead (301 to support.claude.com, then 404); replaced with current &quot;Use connectors to extend Claude&apos;s capabilities&quot; and &quot;custom connectors using remote MCP&quot; articles. Corrected Free-plan notes: custom connectors (remote MCP) are capped at 1 on Free, not unlimited/&quot;full&quot;. Mobile (iOS/Android) can now install connectors directly (beta), not desktop-setup-only. Dropped unverifiable &quot;75+ services&quot; and &quot;Deep Connectors&quot; branding not found in current sources</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-connectors</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-connectors</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-connectors?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Old &quot;Setting Up Integrations&quot; source (support.anthropic.com/.../10168395) is dead (301 to support.claude.com, then 404); replaced with current &quot;Use connectors to extend Claude&apos;s capabilities&quot; and &quot;custom connectors using remote MCP&quot; articles. Corrected Free-plan notes: custom connectors (remote MCP) are capped at 1 on Free, not unlimited/&quot;full&quot;. Mobile (iOS/Android) can now install connectors directly (beta), not desktop-setup-only. Dropped unverifiable &quot;75+ services&quot; and &quot;Deep Connectors&quot; branding not found in current sources</description>
     </item>
     <item>
         <title>Claude — [Verified] Major platform expansion per current &quot;Get started with Claude Cowork&quot; article: web (claude.ai), Claude Mobile (iOS/Android), and Chrome side panel added — no longer desktop-only; Windows arm64/x64 restriction no longer documented, dropped. Added new &quot;Claude Cowork and chat are one Claude&quot; source: Anthropic is merging Cowork and chat into one experience, rolling out gradually to Pro/Max first; talking point and Regional updated to reflect this</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-cowork-mode</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-cowork-mode?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-cowork-mode</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-cowork-mode?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Major platform expansion per current &quot;Get started with Claude Cowork&quot; article: web (claude.ai), Claude Mobile (iOS/Android), and Chrome side panel added — no longer desktop-only; Windows arm64/x64 restriction no longer documented, dropped. Added new &quot;Claude Cowork and chat are one Claude&quot; source: Anthropic is merging Cowork and chat into one experience, rolling out gradually to Pro/Max first; talking point and Regional updated to reflect this</description>
     </item>
     <item>
         <title>Claude — [Verified] Model lineup and effort levels are far out of date: current flagship models are Sonnet 5.5 / Opus 5.5 / Fable 5.1 (not Opus 4.6), thinking is now mandatory (cannot be disabled) on Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, and a fifth effort level &quot;Extra high&quot; (xhigh) exists between high and max on Opus 4.7 and newer. Talking point rewritten per support.claude.com&apos;s model/effort/thinking settings article; added Opus 5.5 and Sonnet 5.5 announcement sources</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-extended-thinking</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-extended-thinking?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-extended-thinking</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-extended-thinking?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Model lineup and effort levels are far out of date: current flagship models are Sonnet 5.5 / Opus 5.5 / Fable 5.1 (not Opus 4.6), thinking is now mandatory (cannot be disabled) on Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, and a fifth effort level &quot;Extra high&quot; (xhigh) exists between high and max on Opus 4.7 and newer. Talking point rewritten per support.claude.com&apos;s model/effort/thinking settings article; added Opus 5.5 and Sonnet 5.5 announcement sources</description>
     </item>
     <item>
         <title>Claude — [Verified] URL updated to support.claude.com (support.anthropic.com 301s there); Free plan limit clarified as capped at 5 projects (was listed as unqualified &quot;Standard/Full access&quot;); added &quot;Enhanced project knowledge with RAG&quot; — paid plans (Pro/Max/Team/Enterprise) auto-scale project knowledge up to 10x near context limits; talking point updated; noted (not added as a claim) a new beta &quot;Projects&quot; experience rolling out via Claude Code</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-projects</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-projects?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-projects</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-projects?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] URL updated to support.claude.com (support.anthropic.com 301s there); Free plan limit clarified as capped at 5 projects (was listed as unqualified &quot;Standard/Full access&quot;); added &quot;Enhanced project knowledge with RAG&quot; — paid plans (Pro/Max/Team/Enterprise) auto-scale project knowledge up to 10x near context limits; talking point updated; noted (not added as a claim) a new beta &quot;Projects&quot; experience rolling out via Claude Code</description>
     </item>
     <item>
         <title>Claude — [Verified] Gating changed from paid to free — &quot;How to create custom skills&quot; (support.claude.com, dated July 22, 2026) now states plainly &quot;Skills are available for users on Free, Pro, Max, Team, and Enterprise plans,&quot; contradicting the prior &quot;custom skills require Pro and above&quot; claim; only the newer &quot;record a skill&quot; video-capture creation flow remains Pro/Max/Team-only (Claude for Mac). Old docs.anthropic.com/en/docs/skills source 404s after redirect; replaced with current docs.claude.com Agent Skills overview and the how-to article</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-skills</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-skills?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-skills</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-skills?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Gating changed from paid to free — &quot;How to create custom skills&quot; (support.claude.com, dated July 22, 2026) now states plainly &quot;Skills are available for users on Free, Pro, Max, Team, and Enterprise plans,&quot; contradicting the prior &quot;custom skills require Pro and above&quot; claim; only the newer &quot;record a skill&quot; video-capture creation flow remains Pro/Max/Team-only (Claude for Mac). Old docs.anthropic.com/en/docs/skills source 404s after redirect; replaced with current docs.claude.com Agent Skills overview and the how-to article</description>
     </item>
     <item>
         <title>Claude — [Verified] URL updated — docs.anthropic.com now 301s to platform.claude.com; content re-confirmed, no claims changed</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-vision-image-understanding</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-vision-image-understanding?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-vision-image-understanding</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-vision-image-understanding?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] URL updated — docs.anthropic.com now 301s to platform.claude.com; content re-confirmed, no claims changed</description>
     </item>
     <item>
         <title>Claude — [Verified] Source article renamed/merged: &quot;How does memory work&quot; (support.anthropic.com/.../10166267) now 404s; current article is &quot;Use Claude&apos;s chat search and memory to build on previous context,&quot; which bundles memory with a new, related but distinct **paid-only** &quot;search past chats&quot; (RAG) capability not available on Free. Memory&apos;s own gating (free on Free/Pro/Max, owner-enabled on Team/Enterprise) is unchanged. Talking point updated to distinguish the two features and avoid implying chat search is free</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-memory?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-memory</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-memory?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Source article renamed/merged: &quot;How does memory work&quot; (support.anthropic.com/.../10166267) now 404s; current article is &quot;Use Claude&apos;s chat search and memory to build on previous context,&quot; which bundles memory with a new, related but distinct **paid-only** &quot;search past chats&quot; (RAG) capability not available on Free. Memory&apos;s own gating (free on Free/Pro/Max, owner-enabled on Team/Enterprise) is unchanged. Talking point updated to distinguish the two features and avoid implying chat search is free</description>
     </item>
     <item>
         <title>Claude — [Verified] Model reference corrected: Sonnet 4.6 is several generations stale (Anthropic shipped Sonnet 5 then Sonnet 5.5, announced today, 2026-09-28); Free-tier default updated to Sonnet 5.5. Fixed Max-tier multiplier mix-up in the Availability table: Max 5x had &quot;20x Pro usage&quot; and Max 20x had &quot;Unlimited standard&quot; — corrected to 5x and 20x respectively per anthropic.com/pricing and the Max plan FAQ ($100/mo = 5x Pro usage, $200/mo = 20x Pro usage). Noted the in-progress Cowork+chat merge. claude.ai itself returned HTTP 403 to automated fetches (bot-blocked); anthropic.com/pricing and the support.claude.com model-settings article served as the readable primary sources</title>
-        <link>https://aitool.watch/implementations.html#impl-claude-chat</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-claude-chat?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#claude-chat</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-claude-chat?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Claude: [Verified] Model reference corrected: Sonnet 4.6 is several generations stale (Anthropic shipped Sonnet 5 then Sonnet 5.5, announced today, 2026-09-28); Free-tier default updated to Sonnet 5.5. Fixed Max-tier multiplier mix-up in the Availability table: Max 5x had &quot;20x Pro usage&quot; and Max 20x had &quot;Unlimited standard&quot; — corrected to 5x and 20x respectively per anthropic.com/pricing and the Max plan FAQ ($100/mo = 5x Pro usage, $200/mo = 20x Pro usage). Noted the in-progress Cowork+chat merge. claude.ai itself returned HTTP 403 to automated fetches (bot-blocked); anthropic.com/pricing and the support.claude.com model-settings article served as the readable primary sources</description>
     </item>
     <item>
         <title>Gemini — [Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms &quot;AI Studio usage remains free of charge unless users link a paid API key,&quot; and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-ai-studio</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-ai-studio?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#gemini-ai-studio</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-ai-studio?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Re-checked against ai.google.dev/gemini-api/docs/billing, the source that actually substantiates the free-gating claim (the two previously-listed sources are a JS-rendered landing page and a docs page with no pricing text). It confirms &quot;AI Studio usage remains free of charge unless users link a paid API key,&quot; and that a linked billing account moves projects to higher rate limits/advanced models — matching the existing Free/Google AI Pro rows and talking point. No claim changes</description>
     </item>
     <item>
         <title>Gemini — [Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android&apos;s ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the &quot;deepest integration&quot; platform note. No claim changes</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#gemini-connected-apps-extensions</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Re-checked support.google.com/gemini/answer/13695044 (still 200, live content). Confirms the connected-service list (Gmail, Calendar, Search, Flights, Hotels, Maps, YouTube, Spotify, YouTube Music, WhatsApp, Home/smart devices, Phone, Messages) and custom MCP-server apps; page states no per-plan pricing. Android&apos;s ability to use some apps (Phone, Messages, WhatsApp, device assistance) without Keep Activity on supports the &quot;deepest integration&quot; platform note. No claim changes</description>
     </item>
     <item>
         <title>Gemini — [Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as &quot;a research prototype, being used and refined by a limited number of trusted testers,&quot; with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record&apos;s deprecated status and talking point exactly. No claim changes</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-project-astra</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#gemini-project-astra</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-project-astra?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Verified] Re-checked deepmind.google/models/project-astra/. Still describes Astra as &quot;a research prototype, being used and refined by a limited number of trusted testers,&quot; with screen sharing and video understanding already integrated into Gemini Live, and further Astra capabilities (Search, glasses) planned. Matches this record&apos;s deprecated status and talking point exactly. No claim changes</description>
     </item>
     <item>
         <title>Gemini — [Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google&apos;s own term for this feature is &quot;screen automation,&quot; distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point&apos;s named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#gemini-agentic-app-actions-android</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-agentic-app-actions-android?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Correction] Replaced secondary source (Deccan Herald) with the official Pixel Phone Help article as primary/URL. Google&apos;s own term for this feature is &quot;screen automation,&quot; distinct from Gemini Spark and Connected Apps. Device list corrected/expanded to Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Samsung Galaxy S26 series, Z Flip 8, and Z Fold 8 (Z Flip 8/Fold 8 also unlock extra categories: buy/sell, travel booking, event tickets). Regional note corrected: Pixel 10 devices excluded from Korea; added 18+/personal-account/English-Korean requirements. Talking point&apos;s named third-party apps (Uber, DoorDash, Grubhub, Starbucks, Instacart, Lyft) are not confirmed anywhere in the current official documentation, which describes task categories rather than named partners, so they were removed and replaced with the officially documented task categories</description>
     </item>
     <item>
         <title>Gemini — [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, &quot;Get personalization with memory of your past Gemini chats&quot;), added as primary source. Google&apos;s settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in &quot;Gemini in Chrome (in countries where Gemini in Chrome is available),&quot; matching this file&apos;s existing convention for that field (see Chat record)</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-past-chats-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-past-chats-memory?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#gemini-past-chats-memory</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-past-chats-memory?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: [Correction] Original URL (support.google.com/gemini/answer/14901455) now 404s; replaced with the live help article (answer/16598469, &quot;Get personalization with memory of your past Gemini chats&quot;), added as primary source. Google&apos;s settings path renamed Personal context → Personal Intelligence; talking point corrected. Added eligibility requirements confirmed on the article (18+, personal Google Account only, Keep Activity on; unavailable in Gems/Live chats) to Regional. Chrome platform corrected ❌ → ✅: the article states the feature works in &quot;Gemini in Chrome (in countries where Gemini in Chrome is available),&quot; matching this file&apos;s existing convention for that field (see Chat record)</description>
     </item>
     <item>
         <title>Grok — Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#grok-grok-image-generation-aurora</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-grok-grok-image-generation-aurora?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Grok: Per x.ai/pricing, image generation is included on every grok.com plan including Free; Gating corrected to free and grok.com tier rows added. Per-tier counts (~10/2hrs, ~20-50/day, ~500/day) removed as unsourced. X Premium rows not confirmed on that page, so Verified is unchanged</description>
     </item>
     <item>
         <title>Grok — Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#grok-grok-imagine-video-generation</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-grok-grok-imagine-video-generation?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Grok: Per x.ai/pricing: video generation not included on Free (was ⚠️), included on SuperGrok Lite and up; SuperGrok Plus adds 1080p and a larger shared usage pool. Unsourced daily counts removed and marked Unverified, resolving the #631 Limits restructure. X Premium rows not confirmed, so Verified is unchanged</description>
     </item>
     <item>
         <title>Grok — [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists &quot;Memory across chats — Remembers your preferences and past conversations&quot; as a general, ungated feature, consistent with this record&apos;s free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address</title>
-        <link>https://aitool.watch/implementations.html#impl-grok-memory</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-grok-memory?d=2026-09-28</guid>
+        <link>https://aitool.watch/implementations.html#grok-memory</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-grok-memory?d=2026-09-28</guid>
         <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
         <description>Grok: [Verified] Official primary source found and added — x.ai/grok (archive.org snapshot 2026-09-21; direct fetch blocked by Cloudflare) lists &quot;Memory across chats — Remembers your preferences and past conversations&quot; as a general, ungated feature, consistent with this record&apos;s free-tier-included claim. blog.memoryplugin.com retained as the only source for the Settings → Data Controls toggle detail, which x.ai/grok does not address</description>
     </item>
     <item>
         <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder?d=2026-09-23</guid>
+        <link>https://aitool.watch/implementations.html#microsoft-copilot-agent-builder</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-microsoft-copilot-agent-builder?d=2026-09-23</guid>
         <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It is the record&apos;s only source for the March 2026 claims: agents calling other agents as tools, and agents in Outlook, OneDrive and Teams communities. Restored at its current URL</description>
     </item>
     <item>
         <title>Microsoft Copilot — [Correction] Federated connectors checked against Microsoft Learn&apos;s federated connectors overview (updated 2026-09-23). The page no longer describes them as a preview: Microsoft-published federated connectors are enabled by default unless an admin disables them, and create/update/delete actions begin rolling out in early October 2026. Intercom is not in the current connector list and is removed from the talking point; Canva is added. Plan rows not re-verified, so Verified is unchanged</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-23</guid>
+        <link>https://aitool.watch/implementations.html#microsoft-copilot-copilot-connectors</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-23</guid>
         <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] Federated connectors checked against Microsoft Learn&apos;s federated connectors overview (updated 2026-09-23). The page no longer describes them as a preview: Microsoft-published federated connectors are enabled by default unless an admin disables them, and create/update/delete actions begin rolling out in early October 2026. Intercom is not in the current connector list and is removed from the talking point; Canva is added. Plan rows not re-verified, so Verified is unchanged</description>
     </item>
     <item>
         <title>Microsoft Copilot — [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified</title>
-        <link>https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-23</guid>
+        <link>https://aitool.watch/implementations.html#microsoft-copilot-copilot-connectors</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-microsoft-copilot-copilot-connectors?d=2026-09-23</guid>
         <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
         <description>Microsoft Copilot: [Correction] Restored Microsoft&apos;s February 2026 &quot;What&apos;s New&quot; post, removed 2026-04-23 after repeated link-checker flags. Those were false positives: the server answers HEAD with 400 while GET redirects to the live post (fixed in #640). It names the federated connectors in the talking point (plus Canva) and describes them as Public Preview across all tenants. Current preview/GA status was not re-verified</description>
     </item>
     <item>
         <title>Gemini — Record retitled Extensions → Connected Apps (Extensions) to match Google&apos;s current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-23</guid>
+        <link>https://aitool.watch/implementations.html#gemini-connected-apps-extensions</link>
+        <guid isPermaLink="false">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-23</guid>
         <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
         <description>Gemini: Record retitled Extensions → Connected Apps (Extensions) to match Google&apos;s current name for the feature. Implementation ID `gemini-extensions` is unchanged so API and page links stay stable</description>
-    </item>
-    <item>
-        <title>Gemini — [Correction] Help article restored as URL and source. The 2026-03-14 &quot;old URL 404&quot; was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged</title>
-        <link>https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions</link>
-        <guid isPermaLink="true">https://aitool.watch/implementations.html#impl-gemini-connected-apps-extensions?d=2026-09-23</guid>
-        <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
-        <description>Gemini: [Correction] Help article restored as URL and source. The 2026-03-14 &quot;old URL 404&quot; was a link-checker false positive: support.google.com answers HEAD with 404 while GET serves the page (fixed in #640). Its replacement, gemini.google.com/extensions, is a sign-in page with no readable content and is dropped as a source. Google now calls the feature Connected Apps, and the article adds custom apps connected through an MCP server. The article states no per-plan terms, so plan rows and Verified are unchanged</description>
     </item>
 </channel>
 </rss>
