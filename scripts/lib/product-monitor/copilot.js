@@ -21,7 +21,7 @@ const config = {
                 field: 'copilot.pricing.microsoft_365_premium.price',
                 target: { file: 'data/platforms/copilot.md', section: 'Pricing', row: 'Microsoft 365 Premium', column: 'Price' },
                 baseline: '$19.99/mo',
-                baselineExcerpt: '| Microsoft 365 Premium | $19.99/mo | U.S. consumer price in USD; monthly billing. Top consumer tier; adds Analyst and Researcher agents and extended limits |'
+                baselineExcerpt: '| Microsoft 365 Premium | $19.99/mo | U.S. consumer price in USD; monthly billing. Adds Analyst and Researcher agents and extended limits |'
             },
             {
                 field: 'copilot.pricing.copilot_pro.lifecycle',

@@ -17,13 +17,6 @@ last_verified: 2026-10-18
 | Google AI Ultra | From $99.99/mo | $99.99 = 5x Pro limits, $199.99 = 20x Pro; Deep Think and Gemini Spark; 20 TB+ |
 | Workspace add-on | $20/user/mo | Gemini in Workspace apps (business); not listed on Google's consumer plans page |
 
-------|-------|-------|
-| Free | $0 | Gemini with limits |
-| Google AI Plus | $7.99/mo | Basic Advanced features |
-| Google AI Pro | $19.99/mo | Full Advanced features + 2TB storage |
-| Google AI Ultra | $249.99/mo | Highest limits + 30TB storage |
-| Workspace add-on | $20/user/mo | Gemini in Workspace apps |
-
 ---
 
 ## AI Studio
@@ -989,9 +982,9 @@ Available where Gemini Apps are available (230+ countries on web, 150+ on mobile
 | Plan | Available | Limits | Notes |
 |------|-----------|--------|-------|
 | Free | ✅ | Standard | Gemini 3.6 Flash (since Jul 2026); rate-limited |
-| Google AI Plus | ✅ | Higher | Access to advanced models |
-| Google AI Pro | ✅ | Full | Gemini 3.1 Pro, highest limits |
-| Google AI Ultra | ✅ | Highest | Maximum limits, extended context |
+| Google AI Plus | ✅ | 2x standard | Access to advanced models |
+| Google AI Pro | ✅ | 4x standard | Expanded model access; usage limits apply |
+| Google AI Ultra | ✅ | 5x or 20x Pro | Depends on subscription; usage limits apply |
 | Workspace add-on | ✅ | Full | Gemini in G Suite context |
 
 ### Platforms
@@ -1014,12 +1007,13 @@ Available in 230+ countries and territories on web; 150+ countries on mobile. Ag
 
 ### Talking Point
 
-> "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; Google AI Pro and Ultra unlock **Gemini 3.1 Pro** with higher limits. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac)."
+> "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; paid personal plans expand usage: **AI Plus has 2x standard limits, AI Pro 4x, and AI Ultra 5x or 20x Pro**, depending on the subscription. Personal-account limits refresh every 5 hours until the weekly cap; usage depends on prompt complexity, model, feature, and chat length. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac)."
 
 ### Sources
 
 - [Gemini](https://gemini.google.com)
 - [Google AI Plans](https://one.google.com/intl/en/about/google-ai-plans/)
+- [Gemini Apps limits and feature availability](https://support.google.com/gemini/answer/16275805?hl=en)
 - [Gemini in Chrome](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/)
 - [Gemini for Mac](https://gemini.google/mac)
 

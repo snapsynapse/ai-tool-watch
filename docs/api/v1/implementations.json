@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-25T01:57:20.558Z",
+    "generated": "2026-10-27T04:37:52.759Z",
     "version": "1.0",
     "count": 87
   },
@@ -3281,7 +3281,7 @@
           "plan": "Microsoft 365 Premium",
           "available": true,
           "limits": "Extended",
-          "notes": "Adds advanced AI features and Analyst / Researcher agents"
+          "notes": "Subscription owner only; advanced AI features and Analyst / Researcher agents"
         },
         {
           "plan": "M365 Copilot",
@@ -3346,7 +3346,7 @@
           "notes": "No consumer API"
         }
       ],
-      "talking_point": "Copilot in Word, Excel, PowerPoint and Outlook now comes with **any paid Microsoft 365 consumer plan, starting at $9.99/mo for Personal**, or with a **Microsoft 365 Copilot commercial license ($30/user/mo)**. Free Copilot still doesn't include Office integration. Two catches: the AI benefits go to the **subscription owner only**, even on Family, and usage draws on monthly AI credits. **Copilot Pro is closed to new customers; existing subscribers can continue or switch to Microsoft 365 Premium.** This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review.",
+      "talking_point": "Copilot in Word, Excel, PowerPoint and Outlook now comes with **any paid Microsoft 365 consumer plan, starting at $9.99/mo for Personal**, or with a **Microsoft 365 Copilot commercial license ($30/user/mo)**. Free Copilot still doesn't include Office integration. Two catches: the AI benefits go to the **subscription owner only**, even on Family, and usage is measured by **AI credits or feature-specific limits**, depending on the feature and entry point. **Copilot Pro is closed to new customers; existing subscribers can continue or switch to Microsoft 365 Premium.** This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review.",
       "launched": "2023-11-01T12:00Z",
       "verified": "2026-09-05",
       "evidence_id": "implementation-copilot-office-apps",
@@ -5462,20 +5462,20 @@
         {
           "plan": "Google AI Plus",
           "available": true,
-          "limits": "Higher",
+          "limits": "2x standard",
           "notes": "Access to advanced models"
         },
         {
           "plan": "Google AI Pro",
           "available": true,
-          "limits": "Full",
-          "notes": "Gemini 3.1 Pro, highest limits"
+          "limits": "4x standard",
+          "notes": "Expanded model access; usage limits apply"
         },
         {
           "plan": "Google AI Ultra",
           "available": true,
-          "limits": "Highest",
-          "notes": "Maximum limits, extended context"
+          "limits": "5x or 20x Pro",
+          "notes": "Depends on subscription; usage limits apply"
         },
         {
           "plan": "Workspace add-on",
@@ -5540,7 +5540,7 @@
           "notes": "Google AI Studio / Gemini API"
         }
       ],
-      "talking_point": "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; Google AI Pro and Ultra unlock **Gemini 3.1 Pro** with higher limits. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac).",
+      "talking_point": "Gemini's core text Q&A is **available for free** at gemini.google.com to anyone with a Google account, in 230+ countries on web and 150+ countries on mobile. Free tier uses **Gemini 3.6 Flash**; paid personal plans expand usage: **AI Plus has 2x standard limits, AI Pro 4x, and AI Ultra 5x or 20x Pro**, depending on the subscription. Personal-account limits refresh every 5 hours until the weekly cap; usage depends on prompt complexity, model, feature, and chat length. **Gemini side panel now available in Chrome** (Jan 2026) with Auto Browse for Google AI Pro/Ultra subscribers. A **native Gemini app for Mac** launched April 2026 (gemini.google/mac).",
       "launched": "2024-02-08T12:00Z",
       "verified": "2026-08-31",
       "evidence_id": "implementation-gemini-chat",

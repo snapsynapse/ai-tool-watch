@@ -14,7 +14,7 @@ last_verified: 2026-10-18
 | Free | $0 | Web and app chat; sign in for history, longer conversations, image creation, voice |
 | Microsoft 365 Personal | $9.99/mo | Copilot in the desktop Office apps; AI credits and per-feature limits apply |
 | Microsoft 365 Family | $12.99/mo | Same AI benefits as Personal, available to the subscription owner only |
-| Microsoft 365 Premium | $19.99/mo | U.S. consumer price in USD; monthly billing. Top consumer tier; adds Analyst and Researcher agents and extended limits |
+| Microsoft 365 Premium | $19.99/mo | U.S. consumer price in USD; monthly billing. Adds Analyst and Researcher agents and extended limits |
 | Microsoft 365 Copilot | $30/user/mo | Commercial license; full Copilot in M365 apps (requires an M365 business license) |
 
 Microsoft stopped selling Copilot Pro to new customers in October 2025. Existing subscribers can keep their subscriptions or switch to Microsoft 365 Premium. A support-end date for existing subscriptions has not been established by the sources reviewed here.
@@ -181,7 +181,7 @@ Available globally where M365 Copilot is available.
 | Free | ❌ | — | Web and app chat only; no Office app integration |
 | Microsoft 365 Personal | ✅ | AI credits + per-feature limits | Word, Excel, PowerPoint, Outlook, OneNote; subscription owner only |
 | Microsoft 365 Family | ✅ | AI credits + per-feature limits | Same as Personal; AI benefits limited to the subscription owner |
-| Microsoft 365 Premium | ✅ | Extended | Adds advanced AI features and Analyst / Researcher agents |
+| Microsoft 365 Premium | ✅ | Extended | Subscription owner only; advanced AI features and Analyst / Researcher agents |
 | M365 Copilot | ✅ | Full | Commercial license; enterprise features |
 
 ### Platforms
@@ -204,14 +204,14 @@ Available globally.
 
 ### Talking Point
 
-> "Copilot in Word, Excel, PowerPoint and Outlook now comes with **any paid Microsoft 365 consumer plan, starting at $9.99/mo for Personal**, or with a **Microsoft 365 Copilot commercial license ($30/user/mo)**. Free Copilot still doesn't include Office integration. Two catches: the AI benefits go to the **subscription owner only**, even on Family, and usage draws on monthly AI credits. **Copilot Pro is closed to new customers; existing subscribers can continue or switch to Microsoft 365 Premium.** This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review."
+> "Copilot in Word, Excel, PowerPoint and Outlook now comes with **any paid Microsoft 365 consumer plan, starting at $9.99/mo for Personal**, or with a **Microsoft 365 Copilot commercial license ($30/user/mo)**. Free Copilot still doesn't include Office integration. Two catches: the AI benefits go to the **subscription owner only**, even on Family, and usage is measured by **AI credits or feature-specific limits**, depending on the feature and entry point. **Copilot Pro is closed to new customers; existing subscribers can continue or switch to Microsoft 365 Premium.** This table covers plans available to new customers; legacy Copilot Pro feature entitlements need separate review."
 
 ### Sources
 
 - [Copilot Pro new-sales change](https://microsoft.com/en-us/microsoft-365/blog/2025/10/01/meet-microsoft-365-premium-your-ai-and-productivity-powerhouse/)
 - [Continuing Copilot Pro subscriptions](https://support.microsoft.com/en-us/office/introducing-microsoft-365-premium)
 - [Microsoft Copilot free vs Copilot in Microsoft 365](https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365)
-- [AI credits and limits for Microsoft 365 subscriptions](https://support.microsoft.com/en-us/office/ai-credits-and-limits-for-microsoft-365-personal-family-and-premium-68530f1a-4459-4d02-9818-8233c1f673b8)
+- [How AI usage works across Microsoft 365 subscriptions for individuals](https://support.microsoft.com/en-us/microsoft-365-copilot/ai-credits-and-limits-for-microsoft-365-subscriptions)
 
 ### Changelog
 

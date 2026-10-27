@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-25T01:57:20.558Z",
+    "generated": "2026-10-27T04:37:52.759Z",
     "version": "1.0",
     "count": 94
   },
@@ -1432,8 +1432,8 @@
           "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365"
         },
         {
-          "title": "AI credits and limits for Microsoft 365 subscriptions",
-          "url": "https://support.microsoft.com/en-us/office/ai-credits-and-limits-for-microsoft-365-personal-family-and-premium-68530f1a-4459-4d02-9818-8233c1f673b8"
+          "title": "How AI usage works across Microsoft 365 subscriptions for individuals",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/ai-credits-and-limits-for-microsoft-365-subscriptions"
         }
       ],
       "changelog": [
@@ -1735,6 +1735,10 @@
         {
           "title": "Google AI Plans",
           "url": "https://one.google.com/intl/en/about/google-ai-plans/"
+        },
+        {
+          "title": "Gemini Apps limits and feature availability",
+          "url": "https://support.google.com/gemini/answer/16275805?hl=en"
         },
         {
           "title": "Gemini in Chrome",

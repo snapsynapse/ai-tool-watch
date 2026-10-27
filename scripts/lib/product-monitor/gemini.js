@@ -8,7 +8,7 @@ const { visibleText } = require('./text');
 
 const CHAT_FILE = 'data/platforms/gemini.md';
 const MAC_BASELINE_EXCERPT = '| macOS    | ✅ | Native Gemini for Mac app (macOS 15+), launched Apr 2026; gemini.google/mac |';
-const PRO_PRICE_BASELINE_EXCERPT = '| Google AI Pro | $19.99/mo | Full Advanced features + 2TB storage |';
+const PRO_PRICE_BASELINE_EXCERPT = '| Google AI Pro | $19.99/mo | 4x Free usage limits; Gemini 3.1 Pro; 5 TB |';
 
 const macClaim = {
     field: 'chat.platforms.macOS.available',
