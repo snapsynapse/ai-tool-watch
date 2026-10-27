@@ -13,6 +13,7 @@ const { isAdequatelyChecked } = require('./verification-health');
 const ResultType = {
     NEGATIVE: 'negative',      // No change detected
     POSITIVE: 'positive',      // Change detected
+    ABSTAIN: 'abstain',        // Unresolved assessment; retain for human review
     ERROR: 'error',            // Query failed
     SKIPPED: 'skipped'         // Model skipped (same provider)
 };
@@ -117,7 +118,8 @@ function classifySection(body) {
 
     // Abstain check first — a model saying "insufficient sources" is not a
     // vote for "incorrect" even if the word "incorrect" appears elsewhere.
-    if (ABSTAIN_PHRASES.some(p => lower.includes(p))) {
+    if (ABSTAIN_PHRASES.some(p => lower.includes(p)) ||
+        /\b(unverified|unsupported|incomplete|unknown|not (?:fully )?(?:verified|confirmed|supported|correct|accurate))\b/i.test(body)) {
         return 'abstain';
     }
 
@@ -129,11 +131,7 @@ function classifySection(body) {
     if (incorrect && !correct) return 'incorrect';
     if (correct && !incorrect) return 'correct';
     if (correct && incorrect) {
-        // Both present — defer to whichever appears first (models usually
-        // lead with the verdict).
-        const iPos = body.search(/\bincorrect\b/i);
-        const cPos = body.search(/\bcorrect\b/i);
-        return iPos >= 0 && (cPos < 0 || iPos < cPos) ? 'incorrect' : 'correct';
+        return 'abstain';
     }
     return 'unknown';
 }
@@ -150,7 +148,7 @@ function classifySection(body) {
  *
  * @param {string} response
  * @param {Object} storedFeature
- * @returns {{hasChange: boolean, changes: Array<Object>, confidence: number, sectionVerdicts?: Object, isEmpty?: boolean, abstainCount?: number}}
+ * @returns {{hasChange: boolean, isNoChange: boolean, changes: Array<Object>, confidence: number, sectionVerdicts?: Object, isEmpty?: boolean, abstainCount?: number}}
  */
 function parseResponse(response, storedFeature) {
     const responseLower = response.toLowerCase();
@@ -167,7 +165,7 @@ function parseResponse(response, storedFeature) {
         (BOILERPLATE_PREFIXES.some(p => responseLower.startsWith(p)) &&
          response.trim().length < 500);
     if (isBoilerplate) {
-        return { hasChange: false, changes: [], confidence: 0, isEmpty: true };
+        return { hasChange: false, isNoChange: false, changes: [], confidence: 0, isEmpty: true };
     }
 
     // Per-section classification.
@@ -240,13 +238,17 @@ function parseResponse(response, storedFeature) {
     // is insufficient — "incorrect" without specifics is noise; specifics
     // without a material verdict (e.g. in section 7 commentary) is history.
     const hasChange = incorrectMaterial.length > 0 && uniqueChanges.length > 0;
+    // Failure to extract a change is not evidence that stored claims are
+    // correct. Every material section needs an explicit correctness verdict.
+    const isNoChange = [...MATERIAL_SECTIONS].every(key => sectionVerdicts[key] === 'correct');
 
     const confidence = hasChange
         ? Math.min(0.9, 0.5 + (uniqueChanges.length * 0.1))
-        : (abstainCount >= 3 ? 0.3 : 0.7);
+        : (isNoChange ? 0.7 : 0.3);
 
     return {
         hasChange,
+        isNoChange,
         changes: uniqueChanges,
         confidence,
         sectionVerdicts,
@@ -390,8 +392,10 @@ async function runCascade(platform, feature, options = {}) {
                 hasChange: parsed.hasChange,
                 changes: parsed.changes,
                 confidence: parsed.confidence,
+                sectionVerdicts: parsed.sectionVerdicts,
                 hasSearchEvidence: !!response.hasSearchEvidence,
-                type: parsed.hasChange ? ResultType.POSITIVE : ResultType.NEGATIVE
+                type: parsed.hasChange ? ResultType.POSITIVE :
+                    parsed.isNoChange ? ResultType.NEGATIVE : ResultType.ABSTAIN
             };
 
             results.push(result);
@@ -403,7 +407,7 @@ async function runCascade(platform, feature, options = {}) {
                 log(`  Changes detected: ${parsed.changes.length}`);
             }
 
-            if (!parsed.hasChange && !response.hasSearchEvidence) {
+            if (parsed.isNoChange && !response.hasSearchEvidence) {
                 log(`  ⚠ ${client.displayName} said "no change" without search evidence — vote not counted`);
             }
 
@@ -466,7 +470,7 @@ async function runCascade(platform, feature, options = {}) {
 
     // No substantive provider result is an error; one result or unqualified
     // evidence remains inconclusive. Neither case may be reported as no change.
-    const substantiveResults = results.filter(r => r.type === ResultType.POSITIVE || r.type === ResultType.NEGATIVE);
+    const substantiveResults = results.filter(r => [ResultType.POSITIVE, ResultType.NEGATIVE, ResultType.ABSTAIN].includes(r.type));
     if (substantiveResults.length === 0) {
         outcome = CascadeOutcome.ERROR;
     }

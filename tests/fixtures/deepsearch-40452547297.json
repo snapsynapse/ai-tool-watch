@@ -1,0 +1,189 @@
+{
+  "sourceRun": "https://github.com/snapsynapse/ai-tool-watch/actions/runs/40452547297",
+  "sourceRevision": "0ab241396175dab5c3c0165042fa5c4573c2dbb7",
+  "platform": {
+    "name": "Grok",
+    "vendor": "xAI"
+  },
+  "feature": {
+    "name": "DeepSearch",
+    "category": "research",
+    "status": "ga",
+    "gating": "paid",
+    "availability": [
+      {
+        "plan": "Free",
+        "available": "❌",
+        "limits": "—",
+        "notes": "Not available"
+      },
+      {
+        "plan": "Premium",
+        "available": "⚠️",
+        "limits": "Limited",
+        "notes": "Basic access"
+      },
+      {
+        "plan": "Premium+",
+        "available": "✅",
+        "limits": "Standard",
+        "notes": "Full access"
+      },
+      {
+        "plan": "SuperGrok",
+        "available": "✅",
+        "limits": "Unlimited",
+        "notes": "Priority"
+      }
+    ],
+    "platforms": [
+      {
+        "platform": "Windows",
+        "available": "⚠️",
+        "notes": "Web only (no official app)"
+      },
+      {
+        "platform": "macOS",
+        "available": "⚠️",
+        "notes": "Web only (no official app)"
+      },
+      {
+        "platform": "Linux",
+        "available": "⚠️",
+        "notes": "Web only (no official app)"
+      },
+      {
+        "platform": "iOS",
+        "available": "✅",
+        "notes": "X app + standalone"
+      },
+      {
+        "platform": "Android",
+        "available": "✅",
+        "notes": "X app + standalone"
+      },
+      {
+        "platform": "Chrome",
+        "available": "❌",
+        "notes": ""
+      },
+      {
+        "platform": "web",
+        "available": "✅",
+        "notes": "grok.com"
+      },
+      {
+        "platform": "terminal",
+        "available": "❌",
+        "notes": ""
+      },
+      {
+        "platform": "API",
+        "available": "✅",
+        "notes": "xAI API"
+      }
+    ]
+  },
+  "answers": [
+    {
+      "model": "Gemini Flash",
+      "modelName": "gemini",
+      "response": "Here's a verification of your Grok \"DeepSearch\" feature data:\n\n### 1. Pricing Tier Availability\n\n**Stored Data:**\n```json\n\"availability\": [\n  { \"plan\": \"Free\", \"available\": \"❌\", \"limits\": \"—\", \"notes\": \"Not available\" },\n  { \"plan\": \"Premium\", \"available\": \"⚠️\", \"limits\": \"Limited\", \"notes\": \"Basic access\" },\n  { \"plan\": \"Premium+\", \"available\": \"✅\", \"limits\": \"Standard\", \"notes\": \"Full access\" },\n  { \"plan\": \"SuperGrok\", \"available\": \"✅\", \"limits\": \"Unlimited\", \"notes\": \"Priority\" }\n]\n```\n\n**Current Status:** **INCORRECT**\n\nGrok's pricing structure underwent significant changes on October 12, 2026, with new customers now subscribing through \"The X Subscription\" which bundles Grok, Cursor, and X Premium features. Existing SuperGrok subscribers can retain their old plans.\n\nHere's the updated availability for DeepSearch:\n\n*   **Free:** DeepSearch is available with usage caps. Free users typically get around 10-20 prompts every two hours, with a limit of approximately 3 DeepSearch queries per day..\n*   **X Premium (formerly Basic/Premium):** This plan, priced at around $8/month, offers increased Grok usage limits above the free tier but *does not specifically unlock DeepSearch*..\n*   **SuperGrok Lite ($10/month):** While it includes \"Expert mode (deeper reasoning)\", DeepSearch is generally associated with SuperGrok and higher for full access..\n*   **SuperGrok ($30/month):** This plan provides full DeepSearch access. Standard SuperGrok users can run up to 50 DeepSearch queries per day..\n*   **SuperGrok Plus ($100/month):** This tier offers significantly higher usage limits across all features, including DeepSearch, faster responses, and priority access..\n*   **SuperGrok Heavy ($300/month):** This is the top consumer plan, offering the highest rate limits, including 200 DeepSearch queries per day..\n*   **X Premium+ ($40/month):** This plan bundles full Grok access with X platform features, implying DeepSearch access, though SuperGrok ($30) is noted to offer more AI-specific capabilities including DeepSearch for less money if the X features are not a priority..\n*   **API:** DeepSearch functionality is available via the xAI API, mapping to `web_search` and `x_search` server-side tools..\n\n**Summary of Changes:**\n*   DeepSearch is now available on the **Free** tier with limits.\n*   The \"Premium\" plan (now X Premium) does *not* specifically include DeepSearch.\n*   New tiers like **SuperGrok Lite**, **SuperGrok Plus**, and **SuperGrok Heavy** have been introduced, each with different DeepSearch access and limits.\n*   The \"Unlimited\" note for SuperGrok is incorrect; there are specific daily query limits.\n\n### 2. Platform/Surface Availability\n\n**Stored Data:**\n```json\n\"platforms\": [\n  { \"platform\": \"Windows\", \"available\": \"⚠️\", \"notes\": \"Web only (no official app)\" },\n  { \"platform\": \"macOS\", \"available\": \"⚠️\", \"notes\": \"Web only (no official app)\" },\n  { \"platform\": \"Linux\", \"available\": \"⚠️\", \"notes\": \"Web only (no official app)\" },\n  { \"platform\": \"iOS\", \"available\": \"✅\", \"notes\": \"X app + standalone\" },\n  { \"platform\": \"Android\", \"available\": \"✅\", \"notes\": \"X app + standalone\" },\n  { \"platform\": \"Chrome\", \"available\": \"❌\", \"notes\": \"\" },\n  { \"platform\": \"web\", \"available\": \"✅\", \"notes\": \"grok.com\" },\n  { \"platform\": \"terminal\", \"available\": \"❌\", \"notes\": \"\" },\n  { \"platform\": \"API\", \"available\": \"✅\", \"notes\": \"xAI API\" }\n]\n```\n\n**Current Status:** **MOSTLY CORRECT, with minor updates.**\n\n*   **Windows, macOS, Linux:** Your data states \"Web only (no official app)\". While xAI does not publish an *official* desktop application, third-party clients like Askimo exist for Windows, Mac, and Linux that connect to Grok via the public xAI API and support DeepSearch.. The official interface remains web-based at grok.com or embedded in the X/Twitter app.\n*   **iOS & Android:** DeepSearch is available on the official Grok mobile apps for iOS and Android, as well as through the X app..\n*   **Web:** DeepSearch is available on grok.com..\n*   **Chrome (Browser Extension):** There is no indication of an official DeepSearch feature specifically for a Chrome extension.\n*   **Terminal:** No direct terminal application for DeepSearch was found, but it can be accessed via API, which could be integrated into terminal workflows.\n*   **API:** DeepSearch is available through the xAI API, using `web_search` and `x_search` server-side tools..\n\n**Summary of Changes:**\n*   The \"Web only (no official app)\" note for Windows, macOS, and Linux is still largely accurate for *official* support, but third-party desktop clients exist that offer DeepSearch. This is a nuance rather than a direct inaccuracy of your stored data's \"⚠️\" status.\n\n### 3. Current Status\n\n**Stored Data:** `\"status\": \"ga\"`\n\n**Current Status:** **CORRECT**\n\nDeepSearch was launched with Grok 3 in February 2025 as its first agent and is generally available across various tiers and platforms.. The current flagship model is Grok 4.20 Beta 2, but DeepSearch itself is a stable feature..\n\n### 4. Access Gating\n\n**Stored Data:** `\"gating\": \"paid\"`\n\n**Current Status:** **INCORRECT**\n\nDeepSearch is **not exclusively paid-only**. It is available on the **Free** tier with usage caps, and full access is available on paid plans (SuperGrok and above)..\n\n### 5. Regional Availability\n\n**Stored Data:** \"Available globally.\"\n\n**Current Status:** **INCORRECT**\n\nDeepSearch, as part of Grok, is not available globally without restrictions.\n\n*   Grok is generally available in all countries where X (formerly Twitter) is available, but if X is blocked, Grok is also blocked, especially when accessed through X integration..\n*   The Grok iPhone app is not available in the App Store in at least 14 countries as of October 18, 2026, including Afghanistan, Belarus, China, both Congos, Iraq, Lebanon, Libya, Macau, Myanmar, Russia, Venezuela, Yemen, and Zimbabwe. xAI's terms also rule out countries under US sanctions (e.g., Iran, Cuba, North Korea, Syria)..\n*   Grok has faced bans or restrictions in countries like Indonesia, Malaysia, the Philippines (over deepfake concerns), and Turkey (content censorship)..\n*   In the EU, due to Digital Markets Act (DMA) compliance requirements, some Grok features, including Voice Mode (and potentially others like DeepSearch), may be delayed or restricted, though SuperGrok subscribers might have better access via grok.com. Full EU availability is expected before the end of 2026..\n\n**Summary of Changes:**\n*   Grok, and by extension DeepSearch, is **not available globally**. It is restricted in several countries due to App Store availability, US sanctions, and local government bans/regulations.\n\n### 6. Official URL\n\n**Current Status:** **CORRECT**\n\nThe official product/feature page URL for Grok, which includes information about DeepSearch, is **grok.com**.. This URL is active and accessible.\n\n### 7. Recent Changes\n\n**Current Status:** **No major specific changes to \"DeepSearch\" detected in the last 30 days.**\n\nWhile there have been significant changes to Grok's overall pricing structure (The X Subscription launched October 12, 2026) and API models (Grok 4.7 released September 21, 2026), no specific announcements or changes directly impacting the core functionality or availability of \"DeepSearch\" itself have been highlighted within the last 30 days (since September 27, 2026). The information regarding DeepSearch's availability on various tiers and platforms, and its usage limits, appears to be consistent with reports from earlier in 2026.",
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGkkxtjP_XBTGOT8os7Uco1jkpuEji4iOg0q3pmzqaxlQ73tOo5fRf9jKwCT0kol_6nhHlud_PE4OVgvJObKJcipD_2qUhMht5JZlYsSfOWUYTie-sEVIJQJX71juJzv092194GMnvpBYfAN704WZPcXTUPw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdjR2G10mVWz8Wr37ftFD3VIM85Y0YcVNVXO9VzIefxGqCILcf5iyl_IWIp0CR4abB2P-gbHXnwlxiY3Qx7hiXPa1Aic-rmHMnpIbKxmbKIitqjhOtbuCGiVfNfNv9FEqL661t_8Wtug==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvPfRrw0USAIJeapvqusCU1aMPhCEgFLpzxlZ7MkxGx5KcZGdRrocMpmyvfGsyuTzhnyTVa0eiwcqCu6OzQGVs7wHdmG4r6UN9q9CddgdzhSMjfaSCp9PenF6_wJlU555LT_GbaSoY6QuuZWMCXuuGDezPyUhVQsPuECc=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnp-liBsPeF_-lAMfyMVE1sGQFHPQU4YKwQeLLH9eu-JyCtTc_KfWFh783NZqN6YvKFoOiRjyGaR-B_PHxVcF6OjZbi1A--vTTScAx_wONiDCJU9l2TcC84rsob6O_C_Jpht3KQg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw-s2auvW3JMQL7YhmlPUQySCqSpAbSbY3MlL_bGStVQHLQ3vwp4io-BB3DaajctmA7VqWbypiJ630lXuswz29TF7OB1G8WGSEq6IRiQSTgtqVHd2F_8pbwhgaq371zTAT2c2YJP3HXDHUOOHq8g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOysFJrBuVVEC0HWRfHNWMtzYDaipqmqh2ZncNSwwx1mU272zpNuI0zNQOCiVE8JKa9RZmCMZBtf60A3_SRuy_7Zg3pDKF2ls1gl5hRE4s2lW2S4n2-jzF0Ky5x0UOHtebUFNBxDY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpm1kCaQ9wE4BIxr4FD7QmJhaE3-BaevfFAif1z7hhKUwhVg_-Vk_lGCZmWCkBH4OmFcqLWgAoZJTrt2vk6g1CFZSV9Vxz6QoKMohI8dL221i1hJZujewwIt4hydgliO8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLV9M1ESt8LCUlXzC2b0XVTiDGljRX1V9HJvCleqSShCqZCYOEKiVbl3rzD0TW9uFKpjyYB1haDrAZbn8i3xAn_Y62yttLL6yIjae5ldKTix6KtKcBSDvAnDl_uh7i1lS9u5P__sJ2WGgscekOkJGaX08W",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_GIEb9IX912_sSEFdJnQUSLpjwFLPC87ROGEh9HzOEbPZIM3aFNFziFkmpk_EoKdbYTbq8FQyzda6kYXyTlMO3tmhbOOpVSFc3D_yIs5Yqhjbs-_7cNcya-TtDzwP7Ai7bW6a4ov9qaDYhiFaByyVnmSAII963C7oE3bw2jXmjA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_uaGpC8HKhEfVuwZSlFnW3LdHBMiedJDFJPxuhoJQNuihJE1YRNzzkjZYdIyBEGbQzL2ATvDqydWtJP_ETkxzSdoRx6--Ka7AKCb9QsEHJMNC6ulLYFuKrXqSPLvCv7W_Bl0DyayhH57NE0cT",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnIyJpNIzs2ddLwW2ZWNakkWqB1SQtw_JGQvIXozXOgUGADVZduI81uYUBJnktI1_2VcydGFFAik3KNGWusm3yVcmboTFRpt1h1Ekew6hFfNMwlHMoExkhepFcVszB78X6Indo2ek=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6GKhIuFwfdV4BMbafeFaiqeyZV43PB5Oc0CmtsFsQqE2kb4o-xqO8EbO6DdN9xLI2jKree9heOhjPd_IKFbOoQM0Hte6Hbt9e21pAe-5ASdXNaNyYjj5LcMVtNApeAl3zusZSSmw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtab99Kw11qF8EkWKBCbkeaF-otOpMYqX1I1MPN_CM73HM88KPEshVepBwN5FmSlpj-ppi_koC1iOD1ARGJEG2uVdtHuSVa69WY8s8d5O4TuYonSsjCjLw7gPypggkEktcR07CVN1V-B4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfMCmYpzoJ7yCBvSw8B6xKf44knIeZXflqv_qSwERMLCdUHbUJ_0B0KjUpxw5CWDijnRFsK47NgKn6xSvSBIKCtV26hx0vW2YiQYREpIFMPP4tBzL3-xI68UOmIigoLqHZLBj_BjDEKqwgQYKc3g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7gMn2czJq6Kqj_yEufY7IxePK52bQNsuVBLl1ChTrDXhMPx8lomEHGfCABboRVpf7W5buE605otYAAXHf9po83u49UxkytNRDOhdTBQLT1bc9BoLS6v5vBEUcu1mBZRQXqObxuWDuM4MBaF8R7rN3Zw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLi9s45HvH9XMSa_jXvTDJ5E2E-zsdj7j3_UKqxtx84xjoHvnMoybB8mFTSGz4ot7gMp_0AQvO1lczPJ0efDilRllBToG_AhqBeJ11clRDUgmoXXXCUKQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV-X7poFZzYUPpOUanLIyRSItENtNUw_TBqQ_vPmP4JkaxZ047TTCr0Nl3dv3BoQBR3bJ9ptgTQDy_w0tZPCkJS26iJyVEpjXGcZ3k8-mrRswgBFmkrEKe1SL3Sw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaR-wkeLCvHywgF7Aaaj2rNMgmFXe-PL8cKrP6ek95wcygLZm2V5LOrKlH9Ovwr0kjZt3P2Wq8tgRIRf8dxReNhr9NWOi4ERQ-ODXdaVcx9_00oIjJds-7SUw6uAQWf85NfjHpNZljCwwLWaw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgv6zKw0HUspcxejC2Xo4nC08t1EqgqCYkM7jhFEZWerkiTPnEvIA2iPWbRv6-WgM0oodGCl5Oe4grT6d5faV87Tj_dpNX9zxgncKaWnFIn9j2hivSlABOJbQFfMQFkjUPQGfWfBbe",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ-QAVcW6W-_WR1ZxBcxkNxgGRvZrheNlwhr9l6QeHgAgCTeaSwOwFYzGVad90u4KY-e0jhNjof8vYT8nGz90nim6VmLq_y6IsBkSpF_F3cmwn_-eP9Qg4RWfYi5LsOAwc6A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtaQd28b0Zoaa-bFwHbr10KnIpYamtGSHsOvR0SrPTC4ETKDEMNaOSuIilQdZEk7RysZR3ER77LIy6QkMZoYPSQn0Pi6YxDDb3VsOx9ksOpoqFFCkoOmgWd_ksY7rf2-XBAqsjUvCGPbRKYAt6o-kkkg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYaf76w-hEqxI6v_eT0d7-yG4_lWMbenX7nW8-dOJdhRxUxuyFWN1crhQFWI6jpQkshFlO8V9YtQ_rEBe4xttk2b005w5fdlIDktsYkCTPVcvaCm4ur5rBKIXtqPHlkWLPZnPehl3JqjdmcCB9-nE4meRKwkLmh7z0fQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKYPAZzzQD6yqDWxzpNZJA441JbHk9zjCfD_3kl_F71tb-nDoX3m2_oHioo7LLnvTWMHBIm8zZyXJYzpyjbWlGwX25GxMkrBHJ2_E=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG51mJQonNuAqPv2HyDvjPNdo2Q7IbIl_zXeEMXyjxfM-PaDcFMPhkIQbc3h-RGkMi7-X6kFEi6-b5GMEVjXDjpR8yl5apptzqpLT3bf7DhgbwceZtjbdGkz-p3x6WlnDTDLkamLA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCz4WZ0eclDHzEBehkJY7HnETdMX-kTEQpXjspiZW7fau3ROn-73hlDt0e9xlUtCQRcvwUR16Z98TMvOBZMLonznjkh2sz_K-XRjfPWxn8DMTVq_SEVMO2-cre3bUtz0aFnTYJng==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFcKpK8fB-Z2mptMEl5c6dmKSQNRiAO4IXZ2FSDqNRduMEydADPy8svJQm40m8tz5pVPErmFnaOUppDJhhQCWXZgXXkatUq-D-F-eQCrNV0BoGPb09VN6BSmn7OqKjIU9VRbtGpYz1klkQPRG3Vrmha_XuDyOWN2W9u_tjcCXye7GWKfK63B5TLvTldsXWzu3PcznhB9OOAVYxruavvIYh3nOYXZ-pAfMEIsRCua0Hg9Ri211IUeV-W0KKbMc=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBMjMe179ORxXD6GgzfS-4WDzYgbrzA8oSUs-zAhIyLMoIiaYoehgBA5qPqIy0Odq9Kz53RtRLXnjjbCXQYPEi31Ty1DOOX-ufzXOxrNOWe1GAXyfZq0lCnZa--IImGotKEpWeaIIF0iSwCH5vyPgoSJtc2A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1z2T8skKqvYTWhRXwFZoJfVtoLa71pHev9bQOQuYCy9lwlGVwOe_LiTW497JDHhRYwHDgPYTbTYIC1kIv6NBuMFnPjqKUF1haS1mufe3mFxuwXmtfjUX8YkpZnV3QrNGgc9kXT1LGeIU_T4ELTv6f3n2ghLgh",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi0QO5mPuQpQqc7jnc3cIgK_t4_4R0XuONSAxTc0SIHDf69LKAXa_61E1648w9z9OAEqRhHuiHYiaBGx6Lizky0OS039OLHfKcoCzX7ypynA0CZqaPZaQX11Iql3HTehhVgOXj1LzoEKJ0pvTEAAd73S0g-ymMLx0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHWQaxUuw0w6E2GcSzlBhDGDQJqB7BYAR--oRDG7bl2t6IMTpj0Np43XFjNBToDMUM-2AmYxW12s20JTq1oWKfICmKxlV3iqQ-5rBCJ8niUMux8eNKH7o_Vo9SHe8WkcuHzOkaFKypHpIdKWWCIgrDdzzQVRG9sx4oLcmf5TSXjQ=="
+      ],
+      "hasSearchEvidence": true,
+      "usageReceipt": {
+        "id": null,
+        "model": null,
+        "created": null,
+        "usage": {
+          "promptTokenCount": 881,
+          "candidatesTokenCount": 2125,
+          "totalTokenCount": 5834,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 881
+            }
+          ],
+          "toolUsePromptTokenCount": 1449,
+          "toolUsePromptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1449
+            }
+          ],
+          "thoughtsTokenCount": 1379,
+          "serviceTier": "standard"
+        }
+      },
+      "responseSha256": "e1dd7b51f448e9b3d3e7ec3d8ae133de48a40c3e85ed72cf1a60553ca9e9afe7"
+    },
+    {
+      "model": "Perplexity",
+      "modelName": "perplexity",
+      "response": "As of the latest official information retrieved, the stored record is **partly outdated and cannot be fully verified**. Official xAI material confirms DeepSearch access for Premium+ and describes broader Grok access with limits, but it does not publish a complete, current DeepSearch-by-plan matrix or exact per-tier quotas.\n\n## 1. Pricing-tier availability and limits\n\n**Stored data: INCORRECT / incomplete.**\n\n- **Free:** Grok is free to use, but free access is limited and the available sources do not confirm that DeepSearch is entirely unavailable.[1][3][6]\n- **Basic / X Premium:** No current official source retrieved confirms DeepSearch access or its quota.\n- **Premium:** xAI’s original DeepSearch announcement said DeepSearch launched immediately for **X Premium+**, while Grok 3 capabilities were being rolled out to other users with usage limits.[8]\n- **Premium+:** **Confirmed access** in the original announcement.[8]\n- **SuperGrok:** Current xAI information describes paid SuperGrok plans as raising usage limits and unlocking additional capabilities, but it does not specify a DeepSearch quota by individual SuperGrok tier.[3][6]\n- **SuperGrok Lite, SuperGrok Plus, SuperGrok Heavy:** No retrieved official source provides a current DeepSearch entitlement or numeric limit for each tier.\n- **Business / Enterprise:** DeepSearch was announced for Enterprise partners through the API, but the retrieved material does not establish current availability, quotas, or whether that offering remains separately branded as DeepSearch.[8]\n- **API:** The xAI API offers web-search and other tools with usage-based pricing, but the retrieved pricing documentation does not establish that the consumer DeepSearch product itself is an API feature.[5]\n\n**Exact usage limits:** No authoritative current quota table was found. Therefore, the stored labels “Basic access,” “Standard,” and “Unlimited” are not verifiable, and “Unlimited” for SuperGrok should not be retained without a current official plan-specific statement. xAI describes plan usage as a shared allowance across products rather than promising unlimited use.[3]\n\n## 2. Platform and surface availability\n\n**Stored data: INCORRECT / partly unsupported.**\n\n- **Web:** **Confirmed.** Grok is available at grok.com.[1][6]\n- **iOS:** **Confirmed.** xAI lists a standalone iOS app.[1]\n- **Android:** **Confirmed.** xAI lists a standalone Android app.[1]\n- **X platform:** **Confirmed.** Grok is also available through X.[1][7]\n- **Windows, macOS, Linux:** The retrieved official material confirms browser access but does not confirm native desktop applications. “Web only” is plausible, but not explicitly documented by the sources retrieved.\n- **Terminal:** No official DeepSearch terminal surface was confirmed.\n- **API:** **Partly supported, but not as stored.** xAI provides an API with models and tools, including web search, but the sources do not confirm a directly callable consumer “DeepSearch” endpoint.[5][9]\n\nThe stored iOS and Android notes are therefore broadly correct for Grok access, but “DeepSearch available” should be treated as unverified unless the app’s current feature documentation explicitly names it.\n\n## 3. Current status\n\n**Stored status “GA”: UNVERIFIED / likely too strong.**\n\nDeepSearch was announced as a rollout feature in February 2025, with the announcement describing it as “rolling out” and separately saying Enterprise API availability would come later.[8] The current official product page promotes Grok and “multi-agent reasoning,” but the retrieved material does not label DeepSearch as GA, Beta, Preview, or Deprecated.[6]\n\nRecommended value: **“Active; official lifecycle label not published”** rather than GA.\n\n## 4. Access gating\n\n**Stored gating “paid”: INCORRECT / incomplete.**\n\nxAI states that Grok has limited free access depending on location and that paid plans unlock full features or higher limits.[1] Consequently, DeepSearch cannot safely be categorized as universally paid-only based on the available official information.\n\nRecommended value: **“Plan- and region-dependent; free access may be limited, paid plans provide higher limits/features.”**\n\n## 5. Regional availability\n\n**Stored “available globally”: INCORRECT / unsupported.**\n\nxAI explicitly says availability of limited free access and paid plans depends on the user’s location.[1] The retrieved sources do not establish that DeepSearch itself is available in every country, nor do they provide a current country-by-country list.\n\nRecommended value: **“Region-dependent; no complete official country list verified.”**\n\n## 6. Official URL\n\nThe official Grok product page is **grok.com**, and xAI’s product page is active and presents Grok as free to try on the web and in apps.[1][6] The original DeepSearch announcement is hosted on xAI’s official news site and documents the feature’s launch.[8]\n\nThe stored web entry is therefore **CORRECT**, but the record should distinguish the general Grok product page from a dedicated DeepSearch page; no dedicated current DeepSearch URL was confirmed.\n\n## 7. Recent changes\n\n**Stored record: CHANGE DETECTED / current plan structure is evolving.**\n\nThe retrieved official material describes newer consolidated subscription structures and shared usage allowances across Grok-related products, indicating that older labels such as Premium+, SuperGrok Lite, SuperGrok Plus, and SuperGrok Heavy may not map cleanly to the current commercial structure.[3][10] No retrieved official announcement specifically confirms a DeepSearch change within the last 30 days, so a feature-specific recent-change claim cannot be made.\n\n### Recommended database correction\n\n- **status:** `active — lifecycle label not publicly specified`\n- **gating:** `region- and plan-dependent`\n- **Free:** `limited/unclear; do not mark definitively unavailable`\n- **Premium+:** `confirmed historically; current quota unverified`\n- **SuperGrok tiers:** `higher limits/features; DeepSearch-specific entitlement unverified`\n- **Web/iOS/Android/X:** `confirmed Grok surfaces`\n- **API:** `xAI API available, but direct DeepSearch endpoint unconfirmed`\n- **regional availability:** `region-dependent`\n- **limits:** `not publicly specified in retrieved official documentation`\n- **official URL:** `grok.com` / xAI Grok product page; active[1][6]",
+      "sources": [
+        "https://x.ai/legal/faq",
+        "https://docs.x.ai/developers/pricing",
+        "https://docs.x.ai/grok/overview",
+        "https://docs.x.ai/developers/models",
+        "https://docs.x.ai/developers/pricing.md",
+        "https://x.ai/grok",
+        "https://x.ai/news/grok-1212",
+        "https://x.ai/news/grok-3",
+        "https://x.ai/api",
+        "https://x.ai/news/x-subscription"
+      ],
+      "hasSearchEvidence": true,
+      "usageReceipt": {
+        "id": "resp_b6276bd8-04f2-4691-bd7e-b4e5d94a4d70",
+        "model": "sonar-pro",
+        "created": 1793077070,
+        "usage": {
+          "completion_tokens": 1363,
+          "cost": {
+            "input_tokens_cost": 0.0023,
+            "output_tokens_cost": 0.00341,
+            "request_cost": 0.0025,
+            "total_cost": 0.00821
+          },
+          "prompt_tokens": 813,
+          "search_context_size": "low",
+          "total_tokens": 2176
+        }
+      },
+      "responseSha256": "fb11edb5d0a21b0e4a87c55240f141a94200019e3c08b7e5ca0cf1757db413ce"
+    }
+  ]
+}

@@ -48,6 +48,31 @@ test('one result and unsupported no-change evidence remain inconclusive', async 
     assert.equal(noCitation.outcome, CascadeOutcome.INCONCLUSIVE);
 });
 
+test('missing, uncertain, mixed or unextractable material verdicts require review', async () => {
+    for (const text of [
+        noChange.replace('1. Pricing: CORRECT. Stored data matches.', '1. Pricing: INCORRECT. The quota is overstated.'),
+        noChange.replace('2. Platform: CORRECT. Stored data matches.\n', ''),
+        noChange.replace('3. Status: CORRECT. Stored data matches.', '3. Status: UNVERIFIED. General product access is confirmed.'),
+        noChange.replace('4. Gating: CORRECT. Stored data matches.', '4. Gating: CORRECT in part, but the plan restriction is incorrect.')
+    ]) {
+        const result = await runCascade(platform, feature, { clients: [
+            client('provider-a', response(text)), client('provider-b', response(text))
+        ], delayBetweenQueries: 0 });
+        assert.equal(result.outcome, CascadeOutcome.INCONCLUSIVE);
+        assert.ok(result.results.every(vote => vote.type === 'abstain'));
+    }
+});
+
+test('two later no-change votes cannot erase an unresolved assessment', async () => {
+    const result = await runCascade(platform, feature, { clients: [
+        client('provider-a', response(noChange.replace('Pricing: CORRECT', 'Pricing: INCORRECT'))),
+        client('provider-b', response(noChange)), client('provider-c', response(noChange))
+    ], delayBetweenQueries: 0 });
+    assert.equal(result.results.length, 3);
+    assert.equal(result.outcome, CascadeOutcome.INCONCLUSIVE);
+    assert.equal(require('../scripts/lib/verification-health').isAdequatelyChecked({ ...result, outcome: 'no_change' }), false);
+});
+
 test('positive evidence is retained as a contradiction, never discarded', async () => {
     const result = await runCascade(platform, feature, { clients: [
         client('provider-a', response(positive)),

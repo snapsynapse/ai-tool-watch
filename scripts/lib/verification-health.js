@@ -3,7 +3,7 @@
 // Evidence coverage is a machine-readable run property. It never advances a
 // verification date and it never substitutes for review of a change candidate.
 const OUTCOMES = new Set(['no_change', 'confirmed', 'contradiction', 'inconclusive', 'error']);
-const VOTE_TYPES = new Set(['negative', 'positive', 'error', 'skipped']);
+const VOTE_TYPES = new Set(['negative', 'positive', 'abstain', 'error', 'skipped']);
 
 function nonEmptyString(value) {
     return typeof value === 'string' && value.trim().length > 0;
@@ -50,10 +50,11 @@ function isAdequatelyChecked(result) {
     const qualifiedPositive = qualifiedProviders(votes, 'positive');
     const hasPositive = votes.some(vote => vote?.type === 'positive');
     const hasNegative = votes.some(vote => vote?.type === 'negative');
+    const hasAbstention = votes.some(vote => vote?.type === 'abstain');
     const requiredConfirmations = Math.max(2, Number.isInteger(result.requiredConfirmations) &&
         result.requiredConfirmations > 0 ? result.requiredConfirmations : 3);
 
-    if (result.outcome === 'no_change') return qualifiedNegative.size >= 2 && !hasPositive;
+    if (result.outcome === 'no_change') return qualifiedNegative.size >= 2 && !hasPositive && !hasAbstention;
     if (result.outcome === 'confirmed') return qualifiedPositive.size >= requiredConfirmations && !hasNegative;
     if (result.outcome === 'contradiction') {
         const opposingProviders = new Set([...qualifiedPositive, ...qualifiedNegative]);
